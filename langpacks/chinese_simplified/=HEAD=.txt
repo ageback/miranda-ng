@@ -1,0 +1,6 @@
+Miranda Language Pack Version 1
+Language: 简体中文
+Locale: 0936
+Authors: Michael Lu
+Author-email: yeskky@gmail.com
+Last-Modified-Using: Miranda NG 0.95.11
