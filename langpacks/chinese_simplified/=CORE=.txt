@@ -61,11 +61,11 @@
 [Hide from list only, in order to keep their history and ignore/visibility settings]
 
 [Use Options -> Contacts -> Ignore to unhide contacts.]
-
+使用 选项 - >通讯录 - >忽略 来取消隐藏联系人。
 [Are you sure you want to delete %s?]
-
+您确定要删除 ％s 吗？
 [This will erase all history and settings for this contact!]
-
+这将删除此联系人的所有历史记录和设置！
 [Hide offline users]
 隐藏离线用户
 [Hide empty groups]
@@ -103,9 +103,9 @@
 [Contact list]
 联系人列表
 [System tray icon]
-
+系统托盘图标
 [System tray icon when using multiple protocols]
-
+使用多个协议时的系统托盘图标
 [Contact list sorting]
 联系人列表排序
 [Window]
@@ -113,13 +113,13 @@
 [Always on top]
 总在顶层
 [Tool style main window]
-
+工具样式主窗口
 [Minimize to tray]
-
+最小化到托盘
 [Show menu bar]
-
+显示菜单栏
 [Easy move]
-
+轻松移动
 [Show title bar]
 显示标题栏
 [Title bar text:]
@@ -235,9 +235,9 @@
 [Show icons]
 
 [Show protocol names]
-
+显示协议名称
 [Show status text]
-
+显示状态文字
 [Right click opens status menu]
 
 [Right click opens Miranda NG menu]
@@ -250,27 +250,27 @@
 
 ;file \src\core\stdfile\res\resource.rc
 [Send file(s)]
-
+发送文件
 [&Send]
-
+发送(&S)
 [Cancel]
-
+取消
 [To:]
-
+到：
 [File(s):]
-
+文件：
 [&Choose again...]
-
+再次选择(&C)...
 [Total size:]
-
+总大小：
 [Description:]
-
+描述：
 [&User menu]
-
+用户菜单(&U)
 [User &details]
-
+用户详情(&D)
 [&History]
-
+历史(&H)
 [Incoming file transfer]
 
 [A&ccept]
@@ -296,7 +296,7 @@
 [No data transferred]
 
 [File already exists]
-
+文件已存在
 [Resume]
 
 [Resume all]
@@ -308,11 +308,11 @@
 [Save as...]
 
 [Auto rename]
-
+自动重命名
 [Skip]
-
+跳过
 [Cancel transfer]
-
+取消传送
 [You are about to receive the file]
 
 [Existing file]
