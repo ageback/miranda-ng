@@ -6,9 +6,9 @@
 ;  Authors: eugene.nv
 ;============================================================
 [Adds Restart menu item.]
-
+添加重启菜单项。
 ;file \plugins\Restart\src\restart.cpp
 [Restart]
-
+重启
 [Restart Plugin]
-
+重启插件

@@ -6,84 +6,84 @@
 ;  Authors: Artem Shpynov, Ricardo Pescuma Domenecci and Anton Senko based on clist_mw by Bethoven
 ;============================================================
 [Displays contacts, event notifications, protocol status with advanced visual modifications. Supported multi-window modifications, enhanced metacontact cooperation.]
-
+显示联系人，事件通知，协议状态，带有高级可视化修改。支持多窗口修改，增强了中继联系人(metacontact)插件协作。
 ;file \plugins\Clist_modern\res\resource.rc
 [Settings]
-
+设置
 [Background color:]
-
+背景颜色：
 [Selection color:]
-
+选择颜色：
 [Use background bitmap]
-
+使用背景位图
 [Stretch to width]
-
+伸展到宽度
 [Stretch to height]
-
+伸展到高度
 [Tile horizontally]
-
+水平平铺
 [Tile vertically]
-
+垂直平铺
 [Scroll with text]
-
+与文字一起滚动
 [Stretch proportionally]
-
+按比例拉伸
 [Tile vertically according to row height]
-
+根据行高垂直平铺
 [Use Windows colors]
-
+使用Windows颜色
 [Available skins]
-
+可用的皮肤
 [Rescan]
-
+重新扫描
 [Apply]
-
+应用
 [Info]
-
+信息
 [\n\n\nPlease select one of available skins. \n\nOr browse for skin not in list.]
-
+\n\n\n请选择一个可用的皮肤。\n\n或浏览不在列表中的皮肤。
 [Skin preview]
-
+皮肤预览
 [WARNING: \tSkins can modify your current profile. Rollback is not possible. \n\t\tPlease BACKUP your database before applying skin.]
-
+警告：\t皮肤可以修改您当前的个人资料。无法回滚。\n\t\t请在应用外观之前备份数据库。
 [* Restart may be required for all changes to take effect]
-
+* 可能需要重新启动才能使所有更改生效
 [Skin folder]
-
+皮肤文件夹
 [Download more skins]
-
+下载更多皮肤
 [Available view modes]
-
+可用的视图模式
 [Include protocols]
-
+包括协议
 [New]
-
+新
 [Include groups]
-
+包括分组
 [Show contacts in groups]
-
+在分组中显示联系人
 [Include status modes]
-
+包括状态模式
 [Cancel]
-
+取消
 [Sticky contacts]
-
+固定的联系人
 [Clear all]
-
+清除所有
 [Using the contact list on the left side, you can select contacts which will be "sticky" for this view mode. These contacts will ignore the standard filter rules and only use the status mode filter below.]
-
+使用左侧的联系人列表，您可以选择“固定”于此视图模式的联系人。这些联系人将忽略标准过滤规则，仅使用下面的状态模式过滤器。
 [Protocol]
-
+协议
 [Group]
-
+分组
 [Status mode]
-
+状态模式
 [Automatically clear this view mode after]
-
+自动清除此视图模式于此时间之后
 [seconds]
-
+秒
 [View mode options]
-
+视图模式选项
 [Editing view mode]
 
 [Last message]
@@ -233,19 +233,19 @@
 [Event notify area]
 
 [Disabled]
-
+已禁用
 [Show automatically]
-
+自动显示
 [Always visible]
-
+总是可见
 [Dock to sides]
-
+停靠到边缘
 [and minimum]
-
+和最小
 [Items]
 
 [Show divider between online and offline contacts]
-
+在线和离线联系人之间显示分隔
 [Hot track items as mouse passes over]
 
 [Disable drag and drop of items]
@@ -776,13 +776,13 @@
 [&Contact rate]
 
 [None]
-
+无
 [Low]
-
+低
 [Medium]
-
+中
 [High]
-
+高
 [Contact rate: none]
 
 [Contact rate: low]
@@ -896,52 +896,52 @@
 [Show offline contacts]
 
 [Find user]
-
+查找用户
 [Use/Disable groups]
-
+使用/禁止分组
 [Use groups]
-
+使用分组
 [Enable/Disable sounds]
-
+启用/禁用声音
 [Enable sounds]
-
+启用声音
 [Disable sounds]
-
+禁用声音
 [Minimize]
-
+最小化
 [To view a toolbar in Clist_modern you need the TopToolBar plugin. Click Yes to download it or No to continue]
 
 [Toolbar background]
-
+工具栏背景
 [Toolbar upgrade]
-
+工具栏升级
 ;file \plugins\Clist_modern\src\modern_viewmodebar.cpp
 [Ungrouped contacts]
-
+未分组的联系人
 [And]
-
+和
 [Or]
-
+或
 [Older than]
-
+老于
 [Newer than]
-
+新于
 [Minutes]
-
+分
 [Hours]
-
+小时
 [Days]
-
+天
 [Configuring view mode: %s]
-
+配置视图模式：%s
 [All contacts]
-
+所有联系人
 [Filtering]
-
+过滤
 [*** All contacts ***]
-
+*** 所有联系人 ***
 [Configure view modes]
-
+配置视图模式
 [Really delete this view mode? This cannot be undone]
 
 [Delete a view mode]

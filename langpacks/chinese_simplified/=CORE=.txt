@@ -59,7 +59,7 @@
 [Yes]
 是
 [Hide from list only, in order to keep their history and ignore/visibility settings]
-
+仅从列表中隐藏，以保留其历史记录和忽略/可见性设置
 [Use Options -> Contacts -> Ignore to unhide contacts.]
 使用 选项 - >通讯录 - >忽略 来取消隐藏联系人。
 [Are you sure you want to delete %s?]
@@ -91,15 +91,15 @@
 [Show]
 显示
 [icon when statuses differ]
-
+当状态不一样时的图标
 [Cycle icons every]
-
+循环图标每
 [seconds, when statuses differ]
-
+秒，当状态不一样时
 [Show multiple icons]
-
+显示多个图标
 [Only when statuses differ]
-
+仅当状态不一样时
 [Contact list]
 联系人列表
 [System tray icon]
@@ -129,31 +129,31 @@
 [Pin to desktop]
 固定到桌面
 [Hide contact list after it has been idle for]
-
+在闲置以下时间后,隐藏联系人列表
 [seconds]
 秒
 [Automatically resize window to height of list]
-
+自动调整窗口大小为列表高度
 [maximum]
-
+最大
 [% of screen]
-
+% 的屏幕
 [Size upwards]
-
+尺寸向上
 [If window is partially covered, bring to front instead of hiding]
-
+如果窗口被部分覆盖，将其带到前面而不是隐藏
 [Enable docking]
-
+启用停靠
 [Translucency options]
-
+透明度选项
 [Fade contact list in/out]
-
+淡入/淡出联系人列表
 [Transparent contact list]
-
+透明联系人列表
 [Inactive opacity:]
-
+不活动的不透明度：
 [Active opacity:]
-
+活动不的透明度：
 [Items]
 
 [Show divider between online and offline contacts]
@@ -1045,19 +1045,19 @@
 [&Remove...]
 
 [Miranda NG is being restarted.\nPlease wait...]
-
+Miranda NG 正在重启。\n请稍等...
 [Error console]
-
+错误控制台
 [Error notifications]
-
+错误通知
 [Font effect]
-
+字体效果
 [Effect:]
-
+效果:
 [Base color:]
-
+基础颜色:
 [opacity:]
-
+不透明度:
 [Secondary color:]
 
 [Select the extra icons to be shown in the contact list:]
@@ -1211,39 +1211,39 @@
 [Google Translate]
 
 [&Main menu]
-
+主菜单(&M)
 [&Status]
-
+状态(&S)
 [&Offline\tCtrl+0]
-
+离线(&O)\tCtrl+0] 
 [On&line\tCtrl+1]
-
+在线(&L)\tCtrl+1
 [&Away\tCtrl+2]
-
+离开(&A)\tCtrl+2
 [&Not available\tCtrl+3]
-
+不可用(&N)\tCtrl+3
 [Occ&upied\tCtrl+4]
-
+忙碌(&U)\tCtrl+4
 [&Do not disturb\tCtrl+5]
-
+勿扰(&D)\tCtrl+5
 [&Free for chat\tCtrl+6]
-
+有空聊天(&F)\tCtrl+6
 [&Invisible\tCtrl+7]
-
+隐身(&I)\tCtrl+7
 [On the &phone\tCtrl+8]
-
+接电话(&P)\tCtrl+8
 [Out to &lunch\tCtrl+9]
-
+外出吃饭(&L)\tCtrl+9
 ;file \src\core\stdautoaway\src\options.cpp
 [Status]
-
+状态
 [Idle]
-
+空闲
 ;file \src\core\stdaway\src\awaymsg.cpp
 [Re&ad %s message]
-
+阅读 %s 消息(&A)
 [Re&ad status message]
-
+阅读状态消息(&A)
 ;file \src\core\stdaway\src\sendmsg.cpp
 [I've been away since %time%.]
 
@@ -2384,106 +2384,106 @@
 
 ;file \src\mir_app\src\keyboard.cpp
 [Show/Hide contact list]
-
+显示/隐藏联系人列表
 [Read message]
-
+阅读消息
 [Open Options page]
-
+打开选项页面
 [Open logging options]
-
+打开日志选项
 [Open 'Find user' dialog]
-
+打开‘查找用户’对话框
 ;file \src\mir_app\src\lpopts.cpp
 [built-in]
-
+内置
 [(incompatible)]
-
+(不兼容)
 [Unknown]
-
+未知
 [Languages]
-
+语言
 ;file \src\mir_app\src\menu_clist.cpp
 [Custom status]
-
+自定义状态
 [%s (locked)]
-
+%s(锁定)
 [Status menu]
-
+状态菜单
 [Main menu]
-
+主菜单
 ;file \src\mir_app\src\menu_frames.cpp
 [Frame menu]
-
+框架菜单
 ;file \src\mir_app\src\menu_groups.cpp
 [Group menu]
-
+分组菜单
 [Subgroup menu]
-
+子分组菜单
 ;file \src\mir_app\src\menu_options.cpp
 [New submenu]
-
+新建子菜单
 [Menus]
-
+菜单
 ;file \src\mir_app\src\menu_tray.cpp
 [Tray menu]
-
+托盘菜单
 [&Hide/show]
-
+隐藏/显示(&H)
 [&Options...]
-
+选项(&O)
 [&About]
-
+关于(&A)
 ;file \src\mir_app\src\menu_utils.cpp
 [Menu icons]
-
+菜单图标
 ;file \src\mir_app\src\metacontacts.h
 [You are going to remove all the contacts associated with this metacontact.\nThis will delete the metacontact.\n\nProceed anyway?]
-
+你将要移除所有关联到此中断联系人的联系人。\n这将删除该中继联系人。\n\n仍然要继续吗？
 ;file \src\mir_app\src\meta_addto.cpp
 [Either there is no metacontact in the database (in this case you should first convert a contact into one)\nor there is none that can host this contact.\nAnother solution could be to convert this contact into a new metacontact.\n\nConvert this contact into a new metacontact?]
 
 [This contact is a metacontact.\nYou can't add a metacontact to another metacontact.\n\nPlease choose another.]
-
+此联系人是一个中继联系人。\n你不能将一个中继联系人添加到另一个中继联系人。\n\n请选择另一个。
 [Metacontact conflict]
-
+中继联系人冲突
 [This contact is already associated to a metacontact.\nYou cannot add a contact to multiple metacontacts.]
-
+此联系人已经关联到一个中继联系人。\n你不能添加一个联系人到多个中继联系人。
 [Multiple metacontacts]
-
+多个中继联系人
 [No suitable metacontact found]
-
+未找到合适的中继联系人
 [a contact]
-
+一个联系人
 [Adding %s...]
-
+正在添加 %s...
 [Please select a metacontact]
-
+请选择一个中继联系人
 [No metacontact selected]
-
+未选择中继联系人
 [Assignment to the metacontact failed.]
-
+分配到该中继联系人失败。
 [Assignment failure]
-
+分配失败
 ;file \src\mir_app\src\meta_edit.cpp
 [Protocol]
-
+协议
 [Send offline]
-
+发送离线
 [Send &online]
-
+发送在线(&O)
 [Delete metacontact?]
-
+删除中继联系人吗?
 ;file \src\mir_app\src\meta_main.cpp
 [Toggle off]
-
+切换关闭
 [Toggle on]
-
+切换打开
 [Convert to metacontact]
-
+转换为中继联系人
 [Add to existing]
-
+添加到已存在
 [Edit]
-
+编辑
 [Set to default]
 
 [MetaContacts]
