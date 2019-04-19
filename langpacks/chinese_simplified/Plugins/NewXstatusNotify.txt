@@ -11,25 +11,25 @@
 [Notify when contact changes to one of these statuses]
 
 [Online]
-
+离线
 [Offline]
-
+在线
 [Invisible]
-
+隐身
 [Free for chat]
-
+有空聊天
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Out to lunch]
-
+外出吃饭
 [On the phone]
-
+接电话
 [Always when changing from offline]
 
 [Notify when contact changes]

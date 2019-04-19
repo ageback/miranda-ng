@@ -48,7 +48,7 @@
 [Use %time% for the current time, %date% for the current date]
 使用 %time% 作为当前时间，%date% 作为当前日期 
 [Change %s message]
-
+更改 %s 消息
 [Closing in %d]
 在 %d 后关闭
 ;file \src\core\stdclist\res\resource.rc
@@ -155,33 +155,33 @@
 [Active opacity:]
 活动不的透明度：
 [Items]
-
+项
 [Show divider between online and offline contacts]
-
+在线和离线联系人之间显示分隔
 [Hot track items as mouse passes over]
-
+鼠标经过时热跟踪项目
 [Disable drag and drop of items]
-
+禁止拖放项目
 [Disable rename of items by clicking twice]
-
+禁止通过两次点击来重命名项目
 [Show selection even when list is not focused]
-
+即使列表未获得焦点也显示选择
 [Make selection highlight translucent]
-
+使选择高亮半透明
 [Dim idle contacts]
-
+变暗淡空闲联系人
 ['Hide offline' means to hide:]
-
+‘隐藏离线’意思是隐藏：
 [Groups]
-
+分组
 [Draw a line alongside group names]
-
+在组名旁边画一条线
 [Show counts of number of contacts in a group]
-
+显示分组中联系人数量的计数
 [Hide group counts when there are none online]
-
+当没有在线时隐藏分组计数
 [Sort groups alphabetically]
-
+按字母顺序排序分组
 [Quick search in open groups only]
 
 [Indent groups by:]

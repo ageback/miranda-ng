@@ -718,27 +718,27 @@
 [Not focused]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [Out to lunch]
-
+外出吃饭
 [On the phone]
-
+接电话
 [Name]
-
+名称
 [Name (use locale settings)]
 
 [Last message time]

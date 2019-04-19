@@ -55,7 +55,7 @@ Last-Modified-Using: Miranda NG 0.95.11
 [Use %time% for the current time, %date% for the current date]
 使用 %time% 作为当前时间，%date% 作为当前日期 
 [Change %s message]
-
+更改 %s 消息
 [Closing in %d]
 在 %d 后关闭
 ;file \src\core\stdclist\res\resource.rc
@@ -162,33 +162,33 @@ Last-Modified-Using: Miranda NG 0.95.11
 [Active opacity:]
 活动不的透明度：
 [Items]
-
+项
 [Show divider between online and offline contacts]
-
+在线和离线联系人之间显示分隔
 [Hot track items as mouse passes over]
-
+鼠标经过时热跟踪项目
 [Disable drag and drop of items]
-
+禁止拖放项目
 [Disable rename of items by clicking twice]
-
+禁止通过两次点击来重命名项目
 [Show selection even when list is not focused]
-
+即使列表未获得焦点也显示选择
 [Make selection highlight translucent]
-
+使选择高亮半透明
 [Dim idle contacts]
-
+变暗淡空闲联系人
 ['Hide offline' means to hide:]
-
+‘隐藏离线’意思是隐藏：
 [Groups]
-
+分组
 [Draw a line alongside group names]
-
+在组名旁边画一条线
 [Show counts of number of contacts in a group]
-
+显示分组中联系人数量的计数
 [Hide group counts when there are none online]
-
+当没有在线时隐藏分组计数
 [Sort groups alphabetically]
-
+按字母顺序排序分组
 [Quick search in open groups only]
 
 [Indent groups by:]
@@ -7197,27 +7197,27 @@ Miranda NG 正在重启。\n请稍等...
 [Not focused]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [Out to lunch]
-
+外出吃饭
 [On the phone]
-
+接电话
 [Name]
-
+名称
 [Name (use locale settings)]
 
 [Last message time]
@@ -20270,25 +20270,25 @@ Miranda NG 正在重启。\n请稍等...
 [Notify when contact changes to one of these statuses]
 
 [Online]
-
+离线
 [Offline]
-
+在线
 [Invisible]
-
+隐身
 [Free for chat]
-
+有空聊天
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Out to lunch]
-
+外出吃饭
 [On the phone]
-
+接电话
 [Always when changing from offline]
 
 [Notify when contact changes]
