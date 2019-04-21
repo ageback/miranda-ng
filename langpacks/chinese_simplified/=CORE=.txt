@@ -151,7 +151,7 @@
 [Transparent contact list]
 透明联系人列表
 [Inactive opacity:]
-不活动的不透明度：
+非活动不透明度：
 [Active opacity:]
 活动不的透明度：
 [Items]
@@ -272,41 +272,41 @@
 [&History]
 历史(&H)
 [Incoming file transfer]
-
+传入文件传输
 [A&ccept]
-
+接收(&C)
 [&Decline]
-
+拒绝(&D)
 [From:]
-
+来自：
 [Date:]
-
+日期：
 [Files:]
-
+文件：
 [Save to:]
-
+保存到：
 [&Add]
-
+添加(&A)
 [&Open...]
-
+打开(&O)...
 [Open &folder]
-
+打开文件夹(&F)
 [Transfer completed, open file(s).]
-
+传输完成，打开文件。
 [No data transferred]
-
+无数据被传输
 [File already exists]
 文件已存在
 [Resume]
-
+恢复
 [Resume all]
-
+恢复所有
 [Overwrite]
-
+覆盖
 [Overwrite all]
-
+覆盖所有
 [Save as...]
-
+保存为...
 [Auto rename]
 自动重命名
 [Skip]
@@ -314,130 +314,130 @@
 [Cancel transfer]
 取消传送
 [You are about to receive the file]
-
+你将接收该文件
 [Existing file]
-
+存在的文件
 [Size:]
-
+大小：
 [Last modified:]
-
+上次修改：
 [Type:]
-
+类型：
 [Open file]
-
+打开文件
 [Open folder]
-
+打开文件夹
 [File properties]
-
+文件属性
 [File being received]
-
+正在接收的文件
 [File transfers]
-
+文件传输
 [Clear completed]
-
+清除已完成的
 [Close]
-
+关闭
 [Receiving files]
-
+正在接收文件
 [Received files folder:]
-
+已接收的文件目录：
 [Variables allowed: %userid%, %nick%, %proto%, %miranda_path%, %userprofile%]
-
+允许的变量：%userid%, %nick%, %proto%, %miranda_path%, %userprofile%
 [Auto-accept incoming files from people on my contact list]
-
+自动接收来自我的联系人列表的传入文件
 [Minimize the file transfer window]
-
+最小化文件传输窗口
 [Close window when transfer completes]
-
+传输完成时关闭窗口
 [Clear completed transfers on window closing]
-
+关闭窗口时清除已完成的传输
 [Virus scanner]
-
+病毒扫描
 [Scan files:]
-
+扫描文件：
 [Never, do not use virus scanning]
-
+从不，不要使用病毒扫描
 [When all files have been downloaded]
-
+当所有文件被下载后
 [As each file finishes downloading]
-
+每当一个文件完成下载时
 [Command line:]
-
+命令行：
 [%f will be replaced by the file or folder name to be scanned]
-
+%f 将被要扫描的文件或文件夹名称替换
 [Warn me before opening a file that has not been scanned]
-
+打开未被扫描的文件之前警告我
 [If incoming files already exist]
-
+如果传入文件已经存在
 [Ask me]
-
+询问我
 [Rename (append " (1)", etc.)]
-
+重命名(追加"(1)"，等等)
 [You will always be asked about files from people not on your contact list]
-
+您将始终会被询问不在您的联系人列表中的人的文件
 ;file \src\core\stdmsg\res\resource.rc
 [Automatically popup window when:]
-
+自动弹出窗口，当：
 [In background]
-
+在后台
 [Maximum number of flashes]
-
+最大闪动次数
 [Close the message window on send]
-
+当发送时关闭消息窗口
 [Minimize the message window on send]
-
+当发送时最小化消息窗口
 [Use the contact's status icon as the window icon]
-
+使用联系人的状态图标作为窗口图标
 [Save the window size and location individually for each contact]
-
+为每个联系人单独保存窗口大小和位置
 [Cascade new windows]
-
+级联新窗口
 [Support Ctrl+Up/Down in message area to show previously sent messages]
-
+支持在消息区域使用 Ctrl+上/下 来显示以前发送的消息
 [Delete temporary contacts when closing message window]
-
+关闭消息窗口时删除临时联系人
 [Enable avatar support in the message window]
-
+在消息窗口中启用头像支持
 [Limit avatar height to]
-
+限制头像高度为
 [Show 'Send' button]
-
+显示“发送”按钮
 [Show character count]
-
+显示字符数
 [Show toolbar buttons on top row]
-
+在顶部行显示工具栏按钮
 [Send message on double 'Enter']
-
+按两次“回车”时发送消息
 [Send message on 'Enter']
-
+按“回车”时发送消息
 [Send message on 'Ctrl+Enter']
-
+按“Ctrl+回车”时发送消息
 [Show warning when message has not been received after]
-
+显示警告，当消息未被接收于此时间后
 [Send error]
-
+发送出错
 [An error has occurred. The protocol reported the following error:]
-
+出现了一个错误。协议报告了如下错误：
 [while sending the following message:]
-
+当发送以下消息时：
 [Try again]
-
+再试一次
 [Message window event log]
-
+消息窗口事件日志
 [Show names]
-
+显示名称
 [Show timestamp]
-
+显示时间戳
 [Show seconds]
-
+显示秒
 [Show dates]
-
+显示日期
 [Show formatting]
-
+显示格式
 [Load history events]
-
+加载历史事件
 [Load unread events only]
-
+仅加载未读事件
 [Load number of previous events]
 
 [Load previous events less than]
@@ -921,7 +921,7 @@
 [Resolve hostnames through proxy]
 
 [Port range:]
-
+端口范围：
 [Example: 1050-1070, 2000-2010, 2500]
 
 [Validate SSL certificates]
