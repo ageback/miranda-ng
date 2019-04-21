@@ -183,71 +183,71 @@
 [Sort groups alphabetically]
 按字母顺序排序分组
 [Quick search in open groups only]
-
+仅在打开的分组中快速搜索
 [Indent groups by:]
-
+缩进组按：
 [pixels]
-
+像素
 [Visual]
-
+可视化
 [Scroll list smoothly]
-
+平滑滚动列表
 [Time:]
-
+时间：
 [milliseconds]
-
+毫秒：
 [Left margin:]
-
+左边距：
 [Hide vertical scroll bar]
-
+隐藏垂直滚动栏
 [Row height:]
-
+行高：
 [Gamma correction]
-
+伽玛校正
 [Gray out entire list when:]
-
+在以下情况下灰显整个列表：
 [Contact list background]
-
+联系人列表背景
 [Background color]
-
+背景色
 [Selection color]
-
+选择颜色
 [Use background image]
-
+使用背景图像
 [Stretch to width]
-
+伸展到宽度
 [Stretch to height]
-
+伸展到高度
 [Tile horizontally]
-
+水平平铺
 [Tile vertically]
-
+垂直平铺
 [Scroll with text]
-
+与文字一起滚动
 [Stretch proportionally]
-
+按比例拉伸
 [Use Windows colors]
-
+使用 Windows 颜色
 [Status bar]
-
+状态栏
 [Show status bar]
-
+显示状态栏
 [Show icons]
-
+显示图标
 [Show protocol names]
 显示协议名称
 [Show status text]
 显示状态文字
 [Right click opens status menu]
-
+右键点击打开状态菜单
 [Right click opens Miranda NG menu]
-
+右键点击打开 Miranda NG 菜单
 [Make sections equal width]
-
+使选择宽度相等
 [Show bevels on panels]
-
+在面板上显示斜面
 [Show resize grip indicator]
-
+显示调整大小的拖动指示器
 ;file \src\core\stdfile\res\resource.rc
 [Send file(s)]
 发送文件
@@ -1167,49 +1167,49 @@ Miranda NG 正在重启。\n请稍等...
 [Disable &groups]
 
 [Hide Miranda]
-
+隐藏 Miranda
 [Group]
-
+分组
 [&New subgroup]
-
+新建子分组(&N)
 [&Hide offline users in here]
-
+隐藏此处的离线用户(&H)
 [&Rename group]
-
+重命名分组(&R)
 [&Delete group]
-
+删除分组(&D)
 [&Reset to default]
-
+重置为默认(&R)
 [find/add]
-
+查找/添加
 [&Add to list]
-
+添加到列表(&A)
 [Send &message]
-
+发送消息(&M)
 [&Open link]
-
+打开链接(&O)
 [&Copy link]
-
+复制链接(&C)
 [Cancel change]
-
+取消变更
 [Ungroup]
-
+不分组
 [List]
-
+列表
 [&Message]
-
+消息(&M)
 [Clear lo&g]
-
+清除日志(&G)
 [Word lookup]
-
+单词查找
 [Yandex]
-
+Yandex
 [Wikipedia (en)]
-
+维基百科(英语)
 [Google Maps]
-
+Google 地图
 [Google Translate]
-
+Google 翻译
 [&Main menu]
 主菜单(&M)
 [&Status]
@@ -2773,45 +2773,45 @@ Miranda NG 正在重启。\n请稍等...
 [Move to group]
 
 [On]
-
+开
 [Off]
-
+半
 [Unused]
-
+未使用
 [Frames]
-
+框架
 [Add group]
-
+添加分组
 [Warning]
-
+警告
 [Always visible]
-
+总是可见
 [Always invisible]
-
+总是隐身
 [Locked status]
-
+锁定状态
 [Status icons]
-
+状态图标
 [%s icons]
-
+%s 图标
 [Main icons]
-
+主图标
 ;file \src\mir_app\src\sounds.cpp
 [Sound files]
-
+声音文件
 [WAV files]
-
+WAV 文件
 [Unselect all]
-
+取消选择所有
 ;file \src\mir_app\src\srmm_base.cpp
 ;file \src\mir_app\src\srmm_toolbar.cpp
 [<Separator>]
-
+<分隔符>
 [Toolbar]
-
+工具栏
 ;file \src\mir_app\src\utils.cpp
 [Unspecified]
-
+未指定
 [Afghanistan]
 
 [Aland Islands]
@@ -2903,7 +2903,7 @@ Miranda NG 正在重启。\n请稍等...
 [Chile]
 
 [China]
-
+中国
 [Christmas Island]
 
 [Cocos (Keeling) Islands]
@@ -3328,6 +3328,6 @@ Miranda NG 正在重启。\n请稍等...
 
 ;file \include\m_popup.h
 [Do nothing]
-
+啥都不干
 [Dismiss popup]
 
