@@ -451,343 +451,343 @@
 [Show tabs at the bottom]
 在底部显示标签
 [Send typing notifications to the following users when you are typing a message to them:]
-
+当你向以下用户输入消息时，给他们发送正在输入通知：
 [Show typing notifications when a user is typing a message]
-
+当一个用户正在输入消息时显示正在输入通知
 [Update inactive message window icons when a user is typing]
-
+当一个用户正在输入时更新非活动消息窗口图标
 [Show typing notification when no message dialog is open]
-
+当没有打开消息对话框时显示正在输入通知
 [Flash in the system tray and in the contact list]
-
+在系统托盘和联系人列表中闪动
 [Show balloon popup]
-
+显示气泡弹出
 [Show these events only:]
-
+仅显示这些事件：
 [Actions]
 动作
 [Messages]
 消息
 [Nick changes]
-
+昵称变更
 [Users joining]
-
+用户加入
 [Users leaving]
-
+用户离开
 [Topic changes]
-
+话题变更
 [Status changes]
-
+状态变更
 [Information]
-
+信息
 [Disconnects]
-
+断开连接
 [User kicks]
-
+用户踢出
 [Notices]
-
+通知
 [Options]
-
+选项
 [Log options]
-
+日志选项
 [Log timestamp]
-
+日志时间戳
 [Timestamp]
-
+时间戳
 [Other name]
-
+其他名字
 [Your name]
-
+你的名字
 [Enable highlighting]
-
+启用高亮
 [Limit log text to (events):]
-
+限制日志文字到（事件）：
 [Trim to (KB)]
-
+修剪到(KB)
 [Words to highlight (wildcards allowed)]
-
+要高亮的单词(允许通配符)
 [Enable logging to disk]
-
+启用日志保存到磁盘
 [Log directory]
-
+日志目录
 [Other]
-
+其他
 [Add new rooms to group:]
-
+增加新的房间到分组：
 [Nick list row distance (pixels):]
-
+昵称列表行距（像素）：
 [Use same style as in the message log]
-
+使用与消息日志中相同的样式
 [Use default colors]
-
+使用默认颜色
 [Use custom colors]
-
+使用自定义颜色
 [Popups for the StdMsg plugin]
-
+用于 StdMsg 插件的弹出
 [Timeout (s)]
-
+超时(秒)
 [Text]
-
+文字
 [Background]
-
+背景
 [(Setting timeout to 0 means default setting and -1 means indefinite time)]
-
+(设置超时为 0 表示默认设置，-1 表示无限时间)
 [Message]
-
+消息
 [Undo]
-
+撤销
 [Redo]
-
+重做
 [Copy]
-
+复制
 [Cut]
-
+剪切
 [Paste]
-
+粘贴
 [Select all]
-
+选择全部
 [Clear]
-
+清除
 [Tabs]
-
+标签
 [&Close tab]
-
+关闭标签(&C)
 [C&lose other tabs]
-
+关闭其他标签(&L)
 [&Open at this position]
-
+在此位置打开(&O)
 [Log]
-
+日志
 [C&lear log]
-
+清除日志(&L)
 [&Copy]
-
+复制(&C)
 [Co&py all]
-
+复制所有(&P)
 [Select &all]
-
+选择所有(&A)
 [Paste and send]
-
+粘贴并发送
 [Delete]
-
+删除
 ;file \src\core\stdpopup\res\resource.rc
 [Popup history]
-
+弹出历史
 [Case sensitive]
-
+区分大小写
 [Default timeout]
-
+默认超时
 [Never timeout]
-
+从不超时
 [Set timeout:]
-
+设置超时：
 [Width:]
-
+宽度：
 [Maximum height:]
-
+最大高度：
 [Opacity (%):]
-
+不透明度(%)：
 [Border]
-
+边框
 [Round corners (window)]
-
+圆角边框(窗口)
 [Preview]
-
+预览
 [Transparent background]
-
+透明背景
 [Layout]
-
+布局
 [Avatar size:]
-
+头像大小：
 [Disable when]
-
+禁用当
 [Global hover]
-
+全局悬停
 [Sidebar width:]
-
+侧边栏宽度：
 [Text indent:]
-
+文字缩进：
 [Padding:]
-
+填充：
 [Round corners (avatar)]
-
+圆角(头像)
 [Text color:]
-
+文字颜色：
 [Background color:]
-
+背景颜色：
 [Set timeout]
-
+设置超时
 [Timeout value (0 = default):]
-
+超时值（0＝默认）：
 ;file \src\core\stduihist\res\resource.rc
 [Find]
-
+查找
 [&Find next]
-
+查找下一个(&F)
 [Find what:]
-
+查找什么：
 [Message history]
-
+消息历史
 [&Find...]
-
+查找(&F)...
 ;file \src\core\stduserinfo\res\resource.rc
 [Add phone number]
-
+添加电话号码
 [Enter country, area code and phone number:]
-
+输入国家，区号和电话号码：
 [Or enter a full international number:]
-
+或输入完整的国际号码：
 [Phone can receive SMS text messages]
-
+电话可以接收短信
 [Add e-mail address]
-
+添加电子邮件地址
 [%s: user details]
-
+%s：用户详情
 [View personal user details and more]
-
+查看个人用户详情和更多
 [Update now]
-
+现在更新
 [Updating]
-
+正在更新
 [Nickname:]
-
+昵称：
 [First name:]
-
+名字：
 [Gender:]
-
+性别：
 [Last name:]
-
+姓：
 [Age:]
-
+年龄：
 [E-mail:]
-
+电子邮件：
 [Date of birth:]
-
+生日：
 [Marital status:]
-
+婚姻状况：
 [Phone:]
-
+电话：
 [Web page:]
-
+网页：
 [Past background:]
-
+过去的背景：
 [Interests:]
-
+兴趣
 [About:]
 关于：
 [My notes:]
-
+我的笔记：
 [Street:]
-
+街道：
 [City:]
-
+城市：
 [State:]
-
+州：
 [Postal code:]
-
+邮政编码：
 [Country:]
-
+国家：
 [Spoken languages:]
-
+口语：
 [Timezone:]
-
+时区：
 [Local time:]
-
+本地时间：
 [Set custom time zone]
-
+设置自定义时区
 [Company:]
-
+公司：
 [Department:]
-
+部门：
 [Position:]
-
+职位：
 [Website:]
-
+网站：
 ;file \src\mir_app\res\resource.rc
 [Enter account name (for example, My Google)]
-
+输入帐户名称（例如，我的Google）
 [Choose the protocol type]
-
+选择协议类型
 [Specify the internal account name (optional)]
-
+指定内部帐户名称（可选）
 [Add contact]
-
+添加联系人
 [Send authorization request]
-
+发送授权请求
 [Open contact's chat window]
-
+打开联系人聊天窗口
 [Custom name:]
-
+自定义名字：
 [Group:]
-
+分组：
 [Authorization request]
-
+授权请求
 [&Yes]
-
+是(&)
 [&No]
-
+否(&N)
 [Contact display options]
-
+联系人显示选项
 [Instead of displaying contacts by their nickname,\ndrag to choose another order:]
-
+不要按昵称显示联系人，\n而是拖动以选择其他顺序：
 [Miranda NG profile manager]
-
+Miranda NG 配置管理器
 [Manage your Miranda NG profile]
-
+管理你的 Miranda NG 配置
 [&Run]
-
+运行(&R)
 [&Exit]
-
+退出(&E)
 [Start in service mode with]
-
+用服务模式启动
 [Find/add contacts]
-
+查找/添加联系人
 [Search:]
-
+搜索：
 [E-mail address]
-
+电子邮件地址
 [Name]
-
+名字
 [Nick:]
-
+昵称：
 [First:]
 
 [Last:]
 
 [Advanced]
-
+高级
 [Advanced >>]
-
+高级
 [&Search]
-
+搜索(&S)
 [More options]
-
+更多选项
 [Add to list]
-
+添加到列表
 [Custom]
-
+自定义
 [Here you can add contacts to your contact list]
-
+在这里你可以添加联系人到你的联系人列表
 [Configure your Miranda NG options]
-
+配置你的 Miranda NG 选项
 [Apply]
-
+应用
 [Please select a subentry from the list]
-
+请从列表中选择一个子项
 [Install database settings]
-
+安装数据库设置
 [A file containing new database settings has been placed in the Miranda NG directory.]
-
+包含新数据库设置的文件已放置在Miranda NG目录中。
 [Do you want to import the settings now?]
-
+你想现在导入设置吗？
 [No to all]
-
+全否
 [&View contents]
-
+查看联系人(&V)
 [Security systems to prevent malicious changes are in place and you will be warned before changes that are not known to be safe.]
-
+防止恶意更改的安全系统已到位，您将在未知安全的更改之前收到警告。
 [Database setting change]
-
+数据库设置变更
 [Database settings are being imported from]
 
 [This file wishes to change the setting]
@@ -835,101 +835,101 @@
 [OutputDebugString()]
 
 [File]
-
+文件
 [Run program when Miranda NG starts (e.g., tail -f, dbgview, etc.):]
 
 [Run now]
-
+立即运行
 [Show this dialog box when Miranda NG starts]
 
 [Sounds]
-
+声音
 [&Change...]
-
+更改(&C)...
 [&Preview]
-
+预览(&P)
 [Download more sounds]
-
+下载更多声音
 [Sound information]
-
+声音信息
 [Location:]
-
+位置：
 [Name:]
-
+名称：
 [Enable sound events]
-
+启用声音事件
 [The following events are being ignored:]
-
+以下事件被忽略：
 [Files]
-
+文件
 [Online notification]
-
+上线提醒
 [Auth requests]
-
+授权请求
 [All events]
-
+所有事件
 [None]
-
+无
 [Only the ticked contacts will be shown on the main contact list]
-
+只有勾选的联系人才会显示在主要联系人列表中
 [Ignore]
-
+忽略
 [Typing]
-
+正在输入
 [Visibility]
-
+可见性
 [You are visible to this person even when in invisible mode]
-
+即使在隐身模式下，你也可以被此人看见
 [You are never visible to this person]
-
+你永远不会被这个人看到
 [Icon index]
-
+图标索引
 [Icon library:]
-
+图标库：
 [Drag icons to main list to assign them:]
-
+将图标拖到主列表中以指定它们：
 [Import multiple]
-
+导入多个
 [To main icons]
-
+到主要图标
 [To]
-
+到
 [<< &Import]
-
+<< 导入(&I)
 [Download more icons]
-
+下载更多图标
 [To default status icons]
-
+到默认状态图标
 [Logging...]
-
+日志记录...
 [Outgoing connections]
-
+传出连接
 [Use proxy server]
-
+使用代理服务器
 [Host:]
-
+主机：
 [Port:]
-
+端口
 [(often %d)]
-
+(经常 %d)
 [Use custom login (domain login picked up automatically)]
-
+使用自定义登录（自动登录域名登录）
 [Username:]
-
+用户名：
 [Password:]
-
+密码：
 [Resolve hostnames through proxy]
-
+通过代理解析主机名
 [Port range:]
 端口范围：
 [Example: 1050-1070, 2000-2010, 2500]
-
+例如：1050-1070, 2000-2010, 2500
 [Validate SSL certificates]
-
+验证SSL证书
 [Incoming connections]
-
+传入连接
 [Enable UPnP port mapping]
-
+启用 UPnP 端口映射
 [These changes will take effect the next time you connect to the network.]
 
 [Please complete the following form to create a new user profile]
