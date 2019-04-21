@@ -439,17 +439,17 @@
 [Load unread events only]
 仅加载未读事件
 [Load number of previous events]
-
+加载先前事件的数量
 [Load previous events less than]
-
+加载之前的事件少于
 [minutes old]
-
+分钟
 [Use a tabbed interface]
-
+使用标签式界面
 [Close tab on double click]
-
+双击时关闭标签
 [Show tabs at the bottom]
-
+在底部显示标签
 [Send typing notifications to the following users when you are typing a message to them:]
 
 [Show typing notifications when a user is typing a message]
@@ -465,9 +465,9 @@
 [Show these events only:]
 
 [Actions]
-
+动作
 [Messages]
-
+消息
 [Nick changes]
 
 [Users joining]
