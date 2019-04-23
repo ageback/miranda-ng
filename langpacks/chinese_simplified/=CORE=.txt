@@ -1762,228 +1762,228 @@ Google 翻译
 [&Color]
 颜色(&C)
 [Select a foreground color for the text (Ctrl+K)]
-
+为文字选择一个背景颜色(Ctrl+K)
 [&Background color]
-
+背景色(&B)
 [Select a background color for the text (Ctrl+L)]
-
+为文字选择一个背景颜色(Ctrl+L)
 [&Room settings]
-
+房间设置(&R)
 [Control this room (Ctrl+O)]
-
+控制这个房间(Ctrl+O)
 [&Show/hide nick list]
-
+显示/隐藏昵称列表(&S)
 [Show/hide the nick list (Ctrl+N)]
-
+显示/隐藏昵称列表(Ctrl+N)
 [&Filter]
-
+过滤器(&F)
 [Enable/disable the event filter (Ctrl+F)]
-
+启用/禁用事件过滤器(Ctrl+F)
 [Miranda could not load the built-in message module, msftedit.dll is missing. Press 'Yes' to continue loading Miranda.]
-
+Miranda 无法加载内置消息模块，msftedit.dll 丢失。点击“是”继续加载 Miranda.
 [Instant messages]
-
+即时消息
 [Incoming (focused window)]
-
+传入消息（获得焦点的窗口）
 [Incoming (unfocused window)]
-
+传入消息（未获得焦点的窗口）
 [Incoming (new session)]
-
+传入消息（新会话）
 [Message send error]
-
+消息发送出错
 [Contact started typing]
-
+联系人开始输入
 [Contact stopped typing]
-
+联系人停止输入
 ;file \src\core\stdmsg\src\msgtimedout.cpp
 [An unknown error has occurred.]
-
+发生了未知的错误。
 ;file \src\core\stdpopup\src\icons.cpp
 [Popups are enabled]
-
+启用弹出窗口
 [Popups are disabled]
-
+禁用弹出窗口
 ;file \src\core\stdpopup\src\notify_imp.cpp
 ;file \src\core\stdpopup\src\options.cpp
 [Example]
-
+示例
 [The quick brown fox jumped over the lazy dog.]
-
+快速的棕色狐狸跳过懒狗。
 [Example With a Long Title]
-
+标题较长的示例
 [Thequickbrownfoxjumpedoverthelazydog.]
-
+Thequickbrownfoxjumpedoverthelazydog.
 [An avatar.]
-
+一个头像。
 [Bottom right]
-
+底部右侧
 [Bottom left]
-
+底部左侧
 [Top right]
-
+顶部右侧
 [Top left]
-
+顶部左侧
 [Icon on left]
-
+图标在左侧
 [Icon on right]
-
+图标在右侧
 [No time]
-
+无时间
 [Time on left]
-
+时间在左侧
 [Time on right]
-
+时间在右侧
 [Time above avatar]
-
+时间在头像上面
 [No avatar]
-
+无头像
 [Left avatar]
-
+左侧头像
 [Right avatar]
-
+右侧头像
 [Full-screen app running]
-
+全屏程序运行
 [No animate]
-
+无动画
 [Horizontal animate]
-
+水平动画
 [Vertical animate]
-
+垂直动画
 [You cannot set a default timeout of 0.\nValue has been reset.]
-
+你不能设置默认超时值为 0. 值已经被重置。
 [Settings]
-
+设置
 [Classes]
-
+分类
 ;file \src\core\stdpopup\src\services.cpp
 [Disable popups]
-
+禁用弹出窗口
 [Enable popups]
-
+启用弹出窗口
 ;file \src\core\stdpopup\src\yapp.cpp
 [Toggle popups]
-
+切换弹出窗口
 [First line]
-
+第一行
 [Second line]
-
+第二行
 [Time]
-
+时间
 [Sidebar]
-
+侧栏
 [Title underline]
-
+标题下划线
 ;file \src\core\stdpopup\src\yapp_history_dlg.cpp
 [Copy title to clipboard]
-
+复制标题到剪贴板
 [Copy message to clipboard]
-
+复制消息到剪贴板
 [Copy timestamp to clipboard]
-
+复制时间戳到剪贴板
 ;file \src\core\stdssl\src\netlibssl.cpp
 [Client cannot decode host message. Possible causes: host does not support SSL or requires not existing security package]
-
+[客户端无法解码主机消息。 可能的原因：主机不支持SSL或需要不存在的安全包]
 [Host we are connecting to is not the one certificate was issued for]
-
+我们连接的主机不是颁发的证书对应的主机
 ;file \src\core\stduihist\src\history.cpp
 [Invalid message]
-
+无效的消息
 [Outgoing message]
-
+传出消息
 [Incoming message]
-
+传入消息
 [Outgoing file]
-
+传出文件
 [Incoming file]
-
+传入文件
 [History for %s]
-
+%s 的历史
 [Are you sure you want to delete this history item?]
-
+你确定你要删除此历史项吗？
 [Delete history]
-
+删除历史
 [View &history]
-
+查看历史(&H)
 ;file \src\core\stduserinfo\src\contactinfo.cpp
 [Edit e-mail address]
-
+编辑电子邮件地址
 [Edit phone number]
-
+编辑电话号码
 [The phone number should start with a + and consist of numbers, spaces, brackets and hyphens only.]
-
+电话号码应以+开头，仅包含数字，空格，括号和连字符。
 [Invalid phone number]
-
+无效电话号码
 [Primary]
-
+主要的
 [Custom %d]
-
+自定义 %d
 [Fax]
-
+传真
 [Mobile]
-
+手机
 [Work phone]
-
+工作电话
 [Work fax]
-
+工作传真
 ;file \src\core\stduserinfo\src\stdinfo.cpp
 [Male]
-
+男性
 [Female]
-
+女性
 [<not specified>]
-
+<未指定>
 [Single]
-
+单身
 [Close relationships]
-
+亲密关系
 [Engaged]
-
+订婚
 [Married]
-
+已婚
 [Divorced]
-
+离婚
 [Separated]
-
+分居
 [Widowed]
-
+寡
 [Actively searching]
-
+积极寻找
 [In love]
-
+恋爱
 [It's complicated]
-
+情况很复杂
 [In a civil union]
-
+在民间联盟
 [Summary]
-
+摘要
 [Contact]
-
+联系
 [Location]
-
+位置
 [Work]
-
+工作
 [Background info]
-
+背景信息
 [Notes]
-
+笔记
 ;file \src\core\stduserinfo\src\userinfo.cpp
 [Owner]
-
+所有者
 [View/change my &details...]
-
+查看/更改我的详细信息(&D)...
 ;file \src\core\stduseronline\src\useronline.cpp
 [%s is online]
-
+%s 在线
 [Alerts]
-
+警告
 ;file \src\mir_app\src\addcontact.cpp
 [Add %s]
-
+添加 %s
 [Please authorize my request and add me to your contact list.]
-
+请授权我的请求并将我添加到您的联系人列表中。
 ;file \src\mir_app\src\auth.cpp
 [<Unknown>]
-
+<未知>
 [%s requested authorization\n%u (%s) on %s]
 
 [%s requested authorization\n%u on %s]
@@ -1991,7 +1991,7 @@ Google 翻译
 [%s requested authorization\n%s on %s]
 
 [(Unknown)]
-
+（未知）
 [Feature is not supported by protocol]
 
 [%s added you to the contact list\n%u (%s) on %s]
@@ -2001,9 +2001,9 @@ Google 翻译
 [%s added you to the contact list\n%s on %s]
 
 [%s requests authorization]
-
+%s 请求授权
 [%u requests authorization]
-
+%u 请求授权
 [%s added you to their contact list]
 
 [%u added you to their contact list]
