@@ -1253,51 +1253,51 @@ Google 翻译
 阅读状态消息(&A)
 ;file \src\core\stdaway\src\sendmsg.cpp
 [I've been away since %time%.]
-
+从 %time% 起我已经离开了。
 [Give it up, I'm not in!]
-
+放弃吧，我不在！
 [Not right now.]
-
+不是现在。
 [Give a guy some peace, would ya?]
-
+给一个人一些平静，会吧？
 [I'm a chatbot!]
-
+我是聊天机器人！
 [Yep, I'm here.]
-
+是的，我在这里。
 [Nope, not here.]
-
+不，不在这里。
 [I'm hiding from the mafia.]
-
+我在躲避黑手党。
 [That'll be the phone.]
-
+那将是电话。
 [Mmm... food.]
-
+嗯......食物。
 [idleeeeeeee]
-
+空闲闲闲闲闲
 ;file \src\core\stdclist\src\clcfonts.cpp
 [Standard contacts]
-
+标准联系人
 [Online contacts to whom you have a different visibility]
-
+你有不同可见性的在线联系人
 [Offline contacts]
-
+离线联系人
 [Contacts which are 'not on list']
-
+“不在列表中”的联系人
 [Group member counts]
-
+分组成员计数
 [Dividers]
-
+分隔
 [Offline contacts to whom you have a different visibility]
-
+你有不同可见性的离线联系人
 [Selected text]
-
+选择文字
 [Hottrack text]
-
+热追踪文字
 [Quicksearch text]
-
+快速搜索文字
 ;file \src\core\stdclist\src\clcopts.cpp
 [Not focused]
-
+未聚集的
 [Offline]
 离线
 [Online]
@@ -1305,188 +1305,188 @@ Google 翻译
 [Away]
 离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [Out to lunch]
-
+外出吃饭
 [On the phone]
-
+在打电话
 [List background]
-
+列表背景
 ;file \src\core\stdclist\src\clistopts.cpp
 [Global]
-
+全局
 ;file \src\core\stdclist\src\cluiopts.cpp
 ;file \src\core\stdcrypt\src\encrypt.cpp
 [Standard crypto provider]
-
+标准加密提供程序
 ;file \src\core\stdemail\src\email.cpp
 [User has not registered an e-mail address]
-
+用户还没有注册电子邮件地址
 [Send e-mail]
-
+发送电子邮件
 [&E-mail]
-
+电子邮件(&E)
 ;file \src\core\stdfile\src\file.cpp
 [File from %s]
-
+来自文件 %s
 [bytes]
-
+字节
 [&File]
-
+文件(&F)
 [File &transfers...]
-
+文件传输(&T)...
 [Incoming]
-
+传入
 [Complete]
-
+完成
 [Error]
-
+错误
 [Denied]
-
+被拒绝
 ;file \src\core\stdfile\src\fileexistsdlg.cpp
 [%s file]
-
+%s 文件
 [All files]
-
+所有文件
 ;file \src\core\stdfile\src\fileopts.cpp
 [Executable files]
-
+可执行文件
 [Events]
-
+事件
 ;file \src\core\stdfile\src\filerecvdlg.cpp
 [Select folder]
-
+选择文件夹
 [My received files]
-
+我接收到的文件
 [Add contact permanently to list]
-
+永久添加联系人到列表
 [View user's details]
-
+查看用户详情
 [View user's history]
-
+查看用户历史
 [User menu]
-
+用户菜单
 [Canceled]
-
+已取消
 [This file transfer has been canceled by the other side]
-
+文件传输已被对方取消
 ;file \src\core\stdfile\src\filesenddlg.cpp
 [%d files]
-
+%d 文件
 [%d directories]
-
+%d 目录
 ;file \src\core\stdfile\src\filexferdlg.cpp
 [This file has not yet been scanned for viruses. Are you certain you want to open it?]
-
+此文件尚未针对病毒进行扫描。 你确定要打开吗？
 [File received]
-
+收到的文件
 [of]
-
+的
 [Request sent, waiting for acceptance...]
-
+请求已发送，等待接受...
 [Waiting for connection...]
-
+等待连接...
 [Unable to initiate transfer.]
-
+无法初始化传输。
 [Contact menu]
-
+联系人菜单
 [Open...]
-
+打开...
 [sec]
-
+秒
 [remaining]
-
+剩余
 [Decision sent]
-
+决定已发送
 [Connecting...]
-
+正在连接...
 [Connecting to proxy...]
-
+正在连接到代理...
 [Connected]
-
+已连接
 [Initializing...]
-
+正在初始化...
 [Moving to next file...]
-
+转到下一个文件...
 [Sending...]
-
+正在发送...
 [Receiving...]
-
+正在接收...
 [File transfer denied]
-
+文件传输被拒绝
 [File transfer failed]
-
+文件传输失败
 [Transfer completed.]
-
+传输完成。
 [Transfer completed, open file.]
-
+传输完成，打开文件。
 [Transfer completed, open folder.]
-
+传输完成，打开文件夹。
 [Scanning for viruses...]
-
+正在扫描病毒...
 [Transfer and virus scan complete]
-
+传输和病毒扫描完成
 ;file \src\core\stdfile\src\ftmanager.cpp
 [Outgoing]
-
+传出
 ;file \src\core\stdmsg\src\chat_manager.cpp
 [Message sessions]
-
+消息会话
 [Chat module]
-
+聊天模块
 [Group chat log background]
-
+分组聊天日志背景
 [Message background]
-
+消息背景
 [Nick list background]
-
+昵称列表背景
 [Nick list lines]
-
+昵称列表行
 [Nick list background (selected)]
-
+昵称列表背景（选中的）
 ;file \src\core\stdmsg\src\chat_options.cpp
 [Flash window when someone speaks]
-
+有人说话时闪动窗口
 [Flash window when a word is highlighted]
-
+突出显示单词时闪动窗口
 [Show list of users in the chat room]
-
+显示聊天室中的用户列表
 [Show button for sending messages]
-
+显示发送消息的按钮
 [Show buttons for controlling the chat room]
-
+显示控制聊天室的按钮
 [Show buttons for formatting the text you are typing]
-
+显示用于格式化你正在输入的文字的按钮
 [Show button menus when right clicking the buttons]
-
+当右键点击按钮时显示按钮菜单
 [Show the topic of the room on your contact list (if supported)]
-
+在你的联系人列表显示房间主题（如果支持）
 [Do not play sounds when the chat room is focused]
-
+当聊天室获得焦点时不要播放声音
 [Do not pop up the window when joining a chat room]
-
+当加入聊天室时不要弹出窗口
 [Show contact statuses if protocol supports them]
-
+如果协议支持，则显示联系人状态
 [Display contact status icon before user role icon]
-
+在用户角色图标前显示联系人状态图标
 [Prefix all events with a timestamp]
-
+在所有事件前加时间戳前缀
 [Only prefix with timestamp if it has changed]
-
+仅当发生改变时加时间戳前缀
 [Timestamp has same color as the event]
-
+时间戳的颜色和事件相同
 [Indent the second line of a message]
-
+缩进消息的第二行
 [Limit user names in the message log to 20 characters]
-
+限制消息日志中的用户名为20字符
 [Add ':' to auto-completed user names]
 
 [Strip colors from messages in the log]
