@@ -1481,286 +1481,286 @@ Google 翻译
 [Limit user names in the message log to 20 characters]
 限制消息日志中的用户名为20字符
 [Add ':' to auto-completed user names]
-
+添加 ':' 到自动完成的用户名
 [Strip colors from messages in the log]
-
+从日志中的消息中去除颜色
 [Enable the 'event filter' for new rooms]
-
+为新房间启用“事件过滤器”
 [Show topic changes]
-
+显示主题更改
 [Show users joining]
-
+显示用户加入
 [Show users disconnecting]
-
+显示用户断开连接
 [Show messages]
-
+显示消息
 [Show actions]
-
+显示动作
 [Show users leaving]
-
+显示用户离开
 [Show users being kicked]
-
+显示被踢的用户
 [Show notices]
-
+显示通知
 [Show users changing name]
-
+显示用户更改名称
 [Show information messages]
-
+显示信息消息
 [Show status changes of users]
-
+显示用户的状态变更
 [Show icon for topic changes]
-
+显示主题更改的图标
 [Show icon for users joining]
-
+显示用户加入的图标
 [Show icon for users disconnecting]
-
+显示用户断开连接的图标
 [Show icon for messages]
-
+显示消息的图标
 [Show icon for actions]
-
+显示动作的图标
 [Show icon for highlights]
-
+显示高亮的图标
 [Show icon for users leaving]
-
+显示用户离开的图标
 [Show icon for users kicking other user]
-
+显示用户踢其他用户的图标
 [Show icon for notices]
-
+显示通知的图标
 [Show icon for name changes]
-
+显示名字变更的图标
 [Show icon for information messages]
-
+显示信息消息的图标
 [Show icon for status changes]
-
+显示状态变更的图标
 [Show icons in tray only when the chat room is not active]
-
+仅在聊天室未激活时在托盘中显示图标
 [Show icon in tray for topic changes]
-
+在托盘中显示主题更改图标
 [Show icon in tray for users joining]
-
+在托盘中显示用户加入的图标
 [Show icon in tray for users disconnecting]
-
+在托盘中显示用户断开连接的图标
 [Show icon in tray for messages]
-
+在托盘中显示消息的图标
 [Show icon in tray for actions]
-
+在托盘中显示动作的图标
 [Show icon in tray for highlights]
-
+在托盘中显示高亮的图标
 [Show icon in tray for users leaving]
-
+在托盘中显示用户离开的图标
 [Show icon in tray for users kicking other user]
-
+在托盘中显示用户踢其他用户的图标
 [Show icon in tray for notices]
-
+在托盘中显示显示通知的图标
 [Show icon in tray for name changes]
-
+在托盘中显示名称变更的图标
 [Show icon in tray for information messages]
-
+在托盘中显示信息消息的图标
 [Show icon in tray for status changes]
-
+在托盘中显示状态变更的图标
 [Show popups only when the chat room is not active]
-
+仅在聊天室未激活时显示弹出窗口
 [Show popup for topic changes]
-
+显示主题变更的弹出窗口
 [Show popup for users joining]
-
+显示用户加入的弹出窗口
 [Show popup for users disconnecting]
-
+显示用户断开连接的弹出窗口
 [Show popup for messages]
-
+显示消息的弹出窗口
 [Show popup for actions]
-
+显示动作的弹出窗口
 [Show popup for highlights]
-
+显示高亮的弹出窗口
 [Show popup for users leaving]
-
+显示用户离开的弹出窗口
 [Show popup for users kicking other user]
-
+显示用户踢其他用户的弹出窗口
 [Show popup for notices]
-
+显示通知的弹出窗口
 [Show popup for name changes]
-
+显示名称变更的弹出窗口
 [Show popup for information messages]
-
+显示信息消息的弹出窗口
 [Show popup for status changes]
-
+显示状态变更的弹出窗口
 [Window icon]
-
+窗口图标
 [Bold]
-
+粗体
 [Italics]
-
+斜体
 [Underlined]
-
+下划线
 [Smiley button]
-
+笑脸按钮
 [Room history]
-
+房间历史
 [Room settings]
-
+房间设置
 [Event filter disabled]
-
+禁用事件过滤器
 [Event filter enabled]
-
+启用事件过滤器
 [Hide nick list]
-
+隐藏昵称列表
 [Show nick list]
-
+显示昵称列表
 [Icon overlay]
-
+图标叠加层
 [Status 1 (10x10)]
-
+状态 1  (10x10)
 [Status 2 (10x10)]
-
+状态 2  (10x10)
 [Status 3 (10x10)]
-
+状态 3  (10x10)
 [Status 4 (10x10)]
-
+状态 4  (10x10)
 [Status 5 (10x10)]
-
+状态 5  (10x10)
 [Status 6 (10x10)]
-
+状态 6  (10x10)
 [Message in (10x10)]
-
+传入消息  (10x10)
 [Message out (10x10)]
-
+传出消息  (10x10)
 [Action (10x10)]
-
+动作  (10x10)
 [Add status (10x10)]
-
+添加状态  (10x10)
 [Remove status (10x10)]
-
+移除状态  (10x10)
 [Join (10x10)]
-
+加入  (10x10)
 [Leave (10x10)]
-
+离开  (10x10)
 [Quit (10x10)]
-
+退出  (10x10)
 [Kick (10x10)]
-
+踢  (10x10)
 [Nick change (10x10)]
-
+昵称变更  (10x10)
 [Notice (10x10)]
-
+通知  (10x10)
 [Topic (10x10)]
-
+主题  (10x10)
 [Highlight (10x10)]
-
+高亮  (10x10)
 [Information (10x10)]
-
+信息  (10x10)
 [Messaging]
-
+消息
 [Group chats]
-
+分组聊天
 [Group chats log]
-
+分给聊天日志
 [Appearance and functionality of chat room windows]
-
+聊天室窗口的外观和功能
 [Appearance of the message log]
-
+消息日志的外观
 [Default events to show in new chat rooms if the 'event filter' is enabled]
-
+当启用了“事件过滤器”时，要在新聊天室中显示的默认事件
 [Icons to display in the message log]
-
+要在消息日志中显示的图标
 [Icons to display in the tray]
-
+要在托盘中显示的图标
 [Popups to display]
-
+要显示的弹出窗口
 [General]
-
+通用
 [Chat log]
-
+聊天日志
 [Chat]
-
+聊天
 [Popups]
-
+弹出窗口
 ;file \src\core\stdmsg\src\chat_window.cpp
 [%s: chat room (%u user)]
-
+%s：聊天室（%u 用户）
 [%s: chat room (%u users)]
-
+%s：聊天室（%u 用户）
 [%s: message session]
-
+%s：消息会话
 [%s: message session (%u users)]
-
+%s：消息会话（%u 用户）
 [Nickname]
-
+昵称
 [Unique ID]
-
+唯一身份
 ;file \src\core\stdmsg\src\cmdlist.cpp
 [The message send timed out.]
-
+消息发送超时。
 ;file \src\core\stdmsg\src\globals.cpp
 [Incoming message (10x10)]
-
+传入消息  (10x10)
 [Outgoing message (10x10)]
-
+传出消息  (10x10)
 ;file \src\core\stdmsg\src\msgdialog.cpp
 [Last message received on %s at %s.]
-
+最后一条消息接收于 %s %s。
 [Message session]
-
+消息会话
 [%s is typing a message...]
-
+%s 正在输入消息...
 ;file \src\core\stdmsg\src\msglog.cpp
 [Me]
-
+我
 [File sent]
-
+文件已发送
 ;file \src\core\stdmsg\src\msgoptions.cpp
 [Outgoing messages]
-
+传出消息
 [Incoming messages]
-
+传入消息
 [Outgoing name]
-
+传出名称
 [Outgoing time]
-
+传入名称
 [Outgoing colon]
-
+传出冒号
 [Incoming name]
-
+传入名称
 [Incoming time]
-
+传入时间
 [Incoming colon]
-
+传入冒号
 [Message area]
-
+消息区域
 [Other events]
-
+其他事件
 [Message log]
-
+消息日志
 [** New contacts **]
-
+** 新联系人 **
 [** Unknown contacts **]
-
+** 未知联系人 **
 [Messaging log]
-
+消息日志
 [Typing notify]
-
+输入通知
 ;file \src\core\stdmsg\src\msgs.cpp
 [Message from %s]
-
+来自 %s 的消息
 [%s is typing a message]
-
+%s 正在输入消息
 [Typing notification]
-
+输入通知
 [View user's history (Ctrl+H)]
-
+查看用户历史(Ctrl+H)
 [&Bold]
-
+粗体(&B)
 [Make the text bold (Ctrl+B)]
-
+使文字变为粗体(Ctrl + B)
 [&Italic]
-
+斜体(&I)
 [Make the text italicized (Ctrl+I)]
-
+使文字变为斜体(Ctrl+I)
 [&Underline]
-
+下划线(&U)
 [Make the text underlined (Ctrl+U)]
-
+使文字加下划线(Ctrl+U)
 [&Color]
-
+颜色(&C)
 [Select a foreground color for the text (Ctrl+K)]
 
 [&Background color]
