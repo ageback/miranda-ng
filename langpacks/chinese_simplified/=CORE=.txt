@@ -751,9 +751,9 @@ Miranda NG 配置管理器
 [Nick:]
 昵称：
 [First:]
-
+名:
 [Last:]
-
+姓:
 [Advanced]
 高级
 [Advanced >>]
@@ -1147,7 +1147,7 @@ Miranda NG 正在重启。\n请稍等...
 [About Miranda NG]
 关于 Miranda NG
 [Credits >]
-
+贡献者 >
 [Tray]
 托盘
 [&Hide/Show]
@@ -2102,7 +2102,7 @@ Thequickbrownfoxjumpedoverthelazydog.
 [%s wants your attention in %s]
 %s希望你注意%s
 [%s speaks in %s]
-
+%s 在 %s 中说话
 [%s has joined %s]
 %s 加入了 %s
 [%s has left %s]
@@ -2112,99 +2112,99 @@ Thequickbrownfoxjumpedoverthelazydog.
 [Notice from %s]
 来自 %s 的通知
 [Topic change in %s]
-
+%s中的主题更改了
 [Information in %s]
-
+%s 中的信息
 [%s enables '%s' status for %s in %s]
-
+%s 启用了 '%s%' 状态为了 %s 于 %s 中
 [%s disables '%s' status for %s in %s]
-
+%s 禁用了 '%s%' 状态为了 %s 于 %s 中 
 [%s says: %s]
-
+%s 说：%s
 [%s has left (%s)]
-
+%s 离开了 (%s) 
 [%s has disconnected (%s)]
-
+%s 已经断开连接 (%s)
 [%s kicked %s (%s)]
-
+%s 踢了 %s (%s)
 [Notice from %s: %s]
-
+来自 %s 的通知：%s
 [The topic is '%s']
-
+主题为 ‘%s’
 [The topic is '%s' (set by %s)]
-
+主题为 ‘%s’(由 %s 设置)
 [Chat rooms]
-
+聊天室
 [Look up '%s':]
-
+查找 '%s'：
 [No word to look up]
-
+没有查找单词
 [&Message %s]
-
+消息%s(&M)
 ;file \src\mir_app\src\clcitems.cpp
 ;file \src\mir_app\src\clistgroups.cpp
 [New group]
-
+新分组
 [Are you sure you want to delete group '%s'? This operation cannot be undone.]
-
+你确定要删除分组 '%s' 吗？该操作无法被撤销。
 [Delete group]
-
+删除分组
 [You already have a group with that name. Please enter a unique name for the group.]
-
+您已经拥有一个具有该名称的组。 请输入该组的唯一名称。
 [Rename group]
-
+重命名分组
 [This group]
-
+此分组
 ;file \src\mir_app\src\clistmod.cpp
 [Connecting]
-
+正在连接
 [Connecting (attempt %d)]
-
+正在连接(尝试 %d) 
 ;file \src\mir_app\src\clistsettings.cpp
 [(Unknown contact)]
-
+(未知联系人)
 ;file \src\mir_app\src\clui.cpp
 [This contact is on an instant messaging system which stores its contact list on a central server. The contact will be removed from the server and from your contact list when you next connect to that network.]
-
+此联系人在即时消息系统上，该系统将其联系人列表存储在中央服务器上。 当您下次连接到该网络时，联系人将从服务器和联系人列表中删除。
 [De&lete]
-
+删除(&L)
 [&Rename]
-
+重命名(&R)
 [&Add permanently to list]
-
+永久添加到列表(&A)
 ;file \src\mir_app\src\colorchooser.cpp
 ;file \src\mir_app\src\contacts.cpp
 [My custom name (not movable)]
-
+我的自定义名称(不可移动)
 [Nick]
-
+昵称
 [FirstName]
-
+名字
 [E-mail]
-
+电子邮件
 [LastName]
-
+姓
 [Username]
-
+用户名
 [FirstName LastName]
-
+名 姓
 [LastName FirstName]
-
+姓 名
 ['(Unknown contact)' (not movable)]
-
+'(未知联系人)' (不可移动)
 ['(Unknown contact)']
-
+'(未知联系人)'
 [Contact names]
-
+联系人名称
 ;file \src\mir_app\src\database.cpp
 [Miranda is trying to upgrade your profile structure.\nIt cannot move profile %s to the new location %s\nBecause profile with this name already exists. Please resolve the issue manually.]
-
+Miranda正在尝试升级您的配置文件结构。\n它无法将配置文件%s移动到新位置%s\n因为已存在具有此名称的配置文件。 请手动解决此问题。
 [Miranda is trying to upgrade your profile structure.\nIt cannot move profile %s to the new location %s automatically\nMost likely this is due to insufficient privileges. Please move profile manually.]
-
+Miranda正在尝试升级您的个人资料结构。\n它无法自动将配置文件%s移动到新位置%s\n很可能这是由于权限不足。请手动移动配置文件。
 [Profile cannot be placed into Miranda root folder.\nPlease move Miranda profile to some other location.]
-
+配置文件无法放入Miranda根文件夹。\n请将Miranda配置文件移至其他位置。
 [Miranda is unable to open '%s' because you do not have any profile plugins installed.\nYou need to install dbx_mdbx.dll]
-
+Miranda无法打开'%s'，因为您没有安装任何配置文件插件。\n您需要安装dbx_mdbx.dll
 [Miranda was unable to open '%s', it's in an unknown format.]
 
 [Miranda was unable to open '%s'\nIt's inaccessible or used by other application or Miranda instance]
