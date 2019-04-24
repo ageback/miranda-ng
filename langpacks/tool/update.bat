@@ -1,0 +1,1 @@
+LangpackSuite.exe \q  \pchinese_simplified \n"D:\!utils\Miranda-IM-NG\Languages\langpack_chinese_simplified.txt"
