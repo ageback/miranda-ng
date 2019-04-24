@@ -2039,78 +2039,78 @@ Thequickbrownfoxjumpedoverthelazydog.
 [ (set by %s)]
  (由 %s 设置) 
 [%s enables '%s' status for %s]
-
+%s 启用了 '%s' 状态为 %s
 [%s disables '%s' status for %s]
-
+%s 禁用了 '%s' 状态为 %s 
 [<invalid>]
-
+<无效>
 ;file \src\mir_app\src\chat_opts.cpp
 [Others nicknames]
-
+其他人的昵称
 [Your nickname]
-
+你的昵称
 [User has joined]
-
+用户已加入
 [User has left]
-
+用户已离开
 [User has disconnected]
-
+用户已断开连接
 [User kicked ...]
-
+用户被踢...
 [User is now known as ...]
-
+用户现在称为...
 [Notice from user]
-
+来自用户的通知
 [The topic is ...]
-
+主题是...
 [Information messages]
-
+信息消息
 [User enables status for ...]
-
+用户启用状态为...
 [User disables status for ...]
-
+用户禁用状态为...  
 [Action message]
-
+动作消息
 [Highlighted message]
-
+高亮的消息
 [Nick list members (online)]
-
+昵称列表成员（在线）
 [Nick list members (away)]
-
+昵称列表成员（离开） 
 [Message typing area]
-
+消息输入区域
 [Chat log symbols (Webdings)]
-
+聊天日志符号(Webdings)
 ;file \src\mir_app\src\chat_svc.cpp
 [&Leave chat]
-
+离开聊天(&L)
 [Message is highlighted]
-
+消息被高亮
 [User has performed an action]
-
+用户执行了一个动作
 [User has kicked some other user]
-
+用户踢了某个其他用户
 [User's status was changed]
-
+用户的状态改变了
 [User has changed name]
-
+用户更改了名称
 [User has sent a notice]
-
+用户发送了一个通知
 [The topic has been changed]
-
+主题被更改了
 ;file \src\mir_app\src\chat_tools.cpp
 [%s wants your attention in %s]
-
+%s希望你注意%s
 [%s speaks in %s]
 
 [%s has joined %s]
-
+%s 加入了 %s
 [%s has left %s]
-
+%s 离开了 %s 
 [%s kicked %s from %s]
-
+%s 踢了 %s 从 %s
 [Notice from %s]
-
+来自 %s 的通知
 [Topic change in %s]
 
 [Information in %s]
