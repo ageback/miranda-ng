@@ -1882,7 +1882,7 @@ Thequickbrownfoxjumpedoverthelazydog.
 复制时间戳到剪贴板
 ;file \src\core\stdssl\src\netlibssl.cpp
 [Client cannot decode host message. Possible causes: host does not support SSL or requires not existing security package]
-[客户端无法解码主机消息。 可能的原因：主机不支持SSL或需要不存在的安全包]
+客户端无法解码主机消息。 可能的原因：主机不支持SSL或需要不存在的安全包
 [Host we are connecting to is not the one certificate was issued for]
 我们连接的主机不是颁发的证书对应的主机
 ;file \src\core\stduihist\src\history.cpp
