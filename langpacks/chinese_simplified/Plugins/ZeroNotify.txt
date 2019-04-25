@@ -6,21 +6,21 @@
 ;  Authors: bidyut, Maat
 ;============================================================
 [Adds options to automatically disable notifications when a protocol is in a certain status.]
-
+添加选项以在协议处于特定状态时自动禁用通知。
 ;file \plugins\ZeroNotification\res\ZeroNotify.rc
 [No sounds when:]
-
+以下时间没有声音：
 [No CList blink when:]
-
+以下时间无 CList 闪动：
 [No SysTray blink when:]
-
+以下时间无系统托盘闪动：
 ;file \plugins\ZeroNotification\src\options.cpp
 [Zero Notifications]
-
+零通知
 [Plugins]
 插件
 ;file \plugins\ZeroNotification\src\stdafx.h
 [Disable &Sounds]
-
+禁用声音(&S)
 [Enable &Sounds]
-
+启用声音(&S)

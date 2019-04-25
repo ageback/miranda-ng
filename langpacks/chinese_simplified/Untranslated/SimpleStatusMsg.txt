@@ -71,7 +71,6 @@
 [&Go to URL in Away message]
 [Change status message]
 [Open status message dialog]
-[Status message]
 [Status message...]
 [External Applications]
 [retrieves song name of the song currently playing in Winamp (Simple Status Message compatible)]

@@ -37,7 +37,7 @@
 [Extra status]
 
 [Status message]
-
+状态消息
 [Plugin activation]
 
 [Automatically turn off Popups and Sounds on status change]

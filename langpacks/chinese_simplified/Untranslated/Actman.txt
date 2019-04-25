@@ -156,7 +156,6 @@
 [Yes, No, Cancel]
 [Yes, No]
 [Retry, Cancel]
-[Database]
 [Contact type]
 [Own settings]
 [Manual]

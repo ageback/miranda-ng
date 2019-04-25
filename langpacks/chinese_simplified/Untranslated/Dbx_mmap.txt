@@ -34,4 +34,3 @@
 [Wrong old password entered!]
 [Password is too short!]
 [Passwords do not match!]
-[Database]

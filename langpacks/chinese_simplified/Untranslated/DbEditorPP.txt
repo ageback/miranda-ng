@@ -118,7 +118,6 @@
 [String setting]
 [Unicode setting]
 [Open Database Editor]
-[Database]
 [Open user tree in DBE++]
 [[UNLOADED]]
 [Are you sure you want to delete contact "%s"?]

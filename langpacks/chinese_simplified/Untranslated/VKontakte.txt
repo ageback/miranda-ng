@@ -1,7 +1,6 @@
 [VKontakte protocol support for Miranda NG.]
 [Show in protocol menu ]
 [Create new chat]
-[Status message]
 [Send message to my wall]
 [Load news from VK]
 [Load history for all contacts from VK]

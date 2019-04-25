@@ -49,7 +49,7 @@
 [Opens message dialog]
 
 [Behavior]
-
+行为
 [Misc]
 
 [Obey 'Suppress online notification' settings]

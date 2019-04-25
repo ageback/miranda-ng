@@ -123,9 +123,9 @@
 [Status]
 状态
 [Status message]
-
+状态消息
 [Listening to]
-
+正在听
 [My details]
 
 [Background]

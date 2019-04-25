@@ -13,7 +13,7 @@
 [Show second line]
 
 [Show avatars]
-
+显示头像
 [Draw avatar border]
 
 [Round corners by]

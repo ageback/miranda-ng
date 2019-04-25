@@ -133,7 +133,7 @@
 [Avatars]
 头像
 [Show avatars]
-
+显示头像
 [Height]
 
 [Draw a border around avatars]
@@ -335,9 +335,9 @@
 [View mode options]
 视图模式选项
 [Editing view mode]
-
+编辑视图模式
 [Last message]
-
+上个消息
 [Per contact skins:]
 
 [< Reload]
@@ -404,7 +404,7 @@
 [Select view mode]
 
 [Setup view modes]
-
+安装视图模式
 [Clear view mode]
 
 ;file \plugins\Clist_nicer\src\clcopts.cpp
@@ -502,7 +502,7 @@
 [Sounds are off]
 
 [Reset view mode]
-
+重置视图模式
 [Configure view modes]
 配置视图模式
 [Setup accounts]
@@ -670,22 +670,22 @@
 [*** All contacts ***]
 *** 所有联系人 ***
 [Really delete this view mode? This cannot be undone]
-
+真的删除这个视图模式吗？这无法撤销
 [Delete a view mode]
-
+删除一个视图模式
 [No view mode]
 
 [A view mode with this name does already exist]
-
+已经存在此名称的视图模式
 [Duplicate name]
-
+复制名称
 [Setup view modes...]
-
+安装视图模式...
 [Clear current view mode]
 
 [Select a view mode]
-
+选择一个视图模式
 [Clear view mode and return to default display]
-
+清除视图模式并返回到默认显示N
 [View modes]
-
+视图模式

@@ -362,7 +362,7 @@
 [Retry, Cancel]
 
 [Database]
-
+数据库
 [Contact type]
 
 [Own settings]

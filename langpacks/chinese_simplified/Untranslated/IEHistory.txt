@@ -10,7 +10,6 @@
 [Other options]
 [Load items in background]
 [RTL is default text direction]
-[Text:]
 [Direction]
 [Up]
 [Down]

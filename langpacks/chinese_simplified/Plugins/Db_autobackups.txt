@@ -67,7 +67,7 @@
 [All files]
 所有文件
 [Database]
-
+数据库
 [Backup profile]
 
 [Save profile as...]

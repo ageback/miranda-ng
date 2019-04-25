@@ -209,11 +209,11 @@
 [Status]
 状态
 [Status message]
-
+状态消息
 [Extra status]
 
 [Listening to]
-
+正在听
 [Miranda uptime]
 
 [Contact list event]
@@ -353,7 +353,7 @@
 [IP internal:]
 
 [Last message]
-
+上个消息
 [Last message: (%sys:last_msg_reltime% ago)]
 
 [Name]
@@ -369,7 +369,7 @@
 [Number of msg [OUT]:]
 
 [Contact time]
-
+联系时间
 [Time:]
 时间：
 [xStatus title]

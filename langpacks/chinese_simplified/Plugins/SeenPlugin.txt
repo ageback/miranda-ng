@@ -135,7 +135,7 @@
 [status]
 状态
 [status message]
-
+状态消息
 [old status]
 
 [external IP]

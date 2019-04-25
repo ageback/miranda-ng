@@ -21,7 +21,7 @@
 [Visibility:]
 
 [Text:]
-
+文字：
 [URL:]
 
 [Place:]

@@ -13,7 +13,7 @@
 [Create new chat]
 
 [Status message]
-
+状态消息
 [Send message to my wall]
 
 [Load news from VK]

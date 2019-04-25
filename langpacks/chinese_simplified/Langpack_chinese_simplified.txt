@@ -2772,6 +2772,8 @@ PNG位图
 警告
 [Info]
 信息
+[Database]
+数据库
 [Settings]
 设置
 [Contact list]
@@ -4007,6 +4009,8 @@ x100 毫秒
 联系人列表排序
 [Avatars]
 头像
+[Show avatars]
+显示头像
 [Icons]
 图标
 [Dim idle contacts]
@@ -4145,6 +4149,10 @@ x100 毫秒
 自动清除此视图模式于此时间之后
 [View mode options]
 视图模式选项
+[Editing view mode]
+编辑视图模式
+[Last message]
+上个消息
 [Download more skins]
 下载更多皮肤
 [Use/Disable groups]
@@ -4155,6 +4163,8 @@ x100 毫秒
 启用/禁用声音
 [Status menu]
 状态菜单
+[Setup view modes]
+安装视图模式
 [Not focused]
 未聚集的
 [Offline]
@@ -4191,6 +4201,8 @@ x100 毫秒
 高级
 [Global]
 全局
+[Reset view mode]
+重置视图模式
 [Configure view modes]
 配置视图模式
 [Default]
@@ -4251,6 +4263,22 @@ x100 毫秒
 过滤
 [*** All contacts ***]
 *** 所有联系人 ***
+[Really delete this view mode? This cannot be undone]
+真的删除这个视图模式吗？这无法撤销
+[Delete a view mode]
+删除一个视图模式
+[A view mode with this name does already exist]
+已经存在此名称的视图模式
+[Duplicate name]
+复制名称
+[Setup view modes...]
+安装视图模式...
+[Select a view mode]
+选择一个视图模式
+[Clear view mode and return to default display]
+清除视图模式并返回到默认显示N
+[View modes]
+视图模式
 #muuid {21948c89-b549-4c9d-8b4f-3f3726ec6b4b}
 ;============================================================
 ;  File: Cln_skinedit.dll
@@ -4471,6 +4499,8 @@ GnuPG插件 - 选择公钥
 设置
 [Handle]
 处理
+[Database]
+数据库
 [<UNKNOWN>]
 <未知>
 [Contacts]
@@ -4488,6 +4518,8 @@ GnuPG插件 - 选择公钥
 取消
 [Remove]
 移除
+[Database]
+数据库
 #muuid {81c220a6-0226-4ad6-bfca-217b17a16053}
 ;============================================================
 ;  File: Db_autobackups.dll
@@ -4503,6 +4535,8 @@ GnuPG插件 - 选择公钥
 错误
 [All files]
 所有文件
+[Database]
+数据库
 [Popups]
 弹出窗口
 [days]
@@ -4569,6 +4603,8 @@ GnuPG插件 - 选择公钥
 电子邮件：
 [Password:]
 密码：
+[Text:]
+文字：
 [Cancel]
 取消
 [User details]
@@ -4604,6 +4640,8 @@ GnuPG插件 - 选择公钥
 ;============================================================
 [Customize]
 自定义
+[Show avatars]
+显示头像
 [Show]
 显示
 [Contacts]
@@ -5062,6 +5100,8 @@ URL
 查找下一个(&F)
 [Cancel]
 取消
+[Text:]
+文字：
 [Error]
 错误
 [Time:]
@@ -5321,6 +5361,8 @@ URL
 笔记
 [Add contact]
 添加联系人
+[Status Message]
+状态消息
 [To]
 到
 [Are you sure?]
@@ -5369,6 +5411,8 @@ URL
 恋爱
 [on the phone]
 在打电话
+[Listening To]
+正在听
 #muuid {119d7288-2050-448d-9900-d86ac70426bf}
 ;============================================================
 ;  File: KeyboardNotify.dll
@@ -5486,6 +5530,8 @@ URL
 联系人
 [seconds]
 秒
+[Listening to]
+正在听
 [<Unknown>]
 <未知>
 [Status]
@@ -5520,6 +5566,10 @@ URL
 可见性
 [Ignore]
 忽略
+[Status message]
+状态消息
+[Listening to]
+正在听
 [Always visible]
 总是可见
 [Messages]
@@ -5786,6 +5836,10 @@ URL
 昵称
 [Status]
 状态
+[Status message]
+状态消息
+[Listening to]
+正在听
 [Background]
 背景
 [Contact list]
@@ -5958,6 +6012,8 @@ URL
 外出吃饭
 [On the phone]
 接电话
+[Status message]
+状态消息
 [Configure]
 配置
 [Preview]
@@ -6511,6 +6567,8 @@ URL
 ;  Version: 3.0.1.10
 ;  Authors: Miranda NG team
 ;============================================================
+[Behavior]
+行为
 [Cascade new windows]
 级联新窗口
 [Show warning when message has not been received after]
@@ -6525,6 +6583,8 @@ URL
 显示标题栏
 [Show status bar]
 显示状态栏
+[Show avatars]
+显示头像
 [Message window event log]
 消息窗口事件日志
 [Show icons]
@@ -7081,6 +7141,8 @@ Google 翻译
 分组
 [status]
 状态
+[status message]
+状态消息
 [protocol]
 协议
 [Contacts]
@@ -7210,6 +7272,8 @@ Google 翻译
 关闭(&C)
 [Re&ad %s message]
 阅读 %s 消息(&A)
+[Status message]
+状态消息
 [%s (locked)]
 %s(锁定)
 [global]
@@ -7838,6 +7902,10 @@ Google 翻译
 不透明度(%)：
 [Status]
 状态
+[Status message]
+状态消息
+[Listening to]
+正在听
 [Icon on left]
 图标在左侧
 [Icon on right]
@@ -7872,10 +7940,14 @@ Google 翻译
 主页：
 [Idle]
 空闲
+[Last message]
+上个消息
 [Name]
 名字
 [Name:]
 名称：
+[Contact time]
+联系时间
 [Time:]
 时间：
 [Background]
@@ -7922,6 +7994,8 @@ Google 翻译
 正在输入
 [sec]
 秒
+[Behavior]
+行为
 [Preview]
 预览
 [Translucency options]
@@ -8273,6 +8347,8 @@ Google 翻译
 ;  Version: 0.1.9.1
 ;  Authors: Miranda NG team
 ;============================================================
+[Status message]
+状态消息
 [off]
 半
 [Other]
@@ -8384,6 +8460,8 @@ Google 翻译
 联系人列表
 [Reset]
 重置
+[Status Message]
+状态消息
 [City:]
 城市：
 [Dismiss Popup]

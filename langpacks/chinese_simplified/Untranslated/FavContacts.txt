@@ -1,6 +1,5 @@
 [Favorite contacts menu.]
 [Show second line]
-[Show avatars]
 [Draw avatar border]
 [Round corners by]
 [px.]

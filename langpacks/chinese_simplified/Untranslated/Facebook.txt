@@ -3,7 +3,6 @@
 [What's on your mind?]
 [Wall:]
 [Visibility:]
-[Text:]
 [URL:]
 [Place:]
 [Contacts >>]

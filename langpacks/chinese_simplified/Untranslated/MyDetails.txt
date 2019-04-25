@@ -48,8 +48,6 @@
 [Cycle through accounts]
 [Don't cycle through accounts]
 [<no status name>]
-[Status message]
-[Listening to]
 [My details]
 [Avatar border]
 [Show my details]

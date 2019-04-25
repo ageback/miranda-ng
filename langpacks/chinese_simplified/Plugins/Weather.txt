@@ -193,7 +193,7 @@
 [Reset]
 重置
 [Status Message]
-
+状态消息
 [Sunset]
 
 [Feel-like]

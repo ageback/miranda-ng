@@ -6,11 +6,11 @@
 ;  Authors: ZERO_BiT
 ;============================================================
 [Adds Miranda NG icon into Alt+Tab switch dialog even if Miranda's main window has style other Title bar.]
-
+将Miranda NG图标添加到Alt + Tab切换对话框中，即使Miranda的主窗口具有其他标题栏的样式。
 ;file \plugins\ZeroSwitch\src\ZeroSwitch.cpp
 [Plugin works under Windows XP only]
-
+插件仅适用于Windows XP
 [ZeroSwitch plugin failed]
-
+ZeroSwitch 插件失败
 [Oops, we've got a big hook error here :(]
-
+哎呀，我们这里有一个大钩子错误:(

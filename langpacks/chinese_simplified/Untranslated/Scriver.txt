@@ -1,5 +1,4 @@
 [Scriver - send and receive instant messages.]
-[Behavior]
 [Automatically pop up the window when]
 [and stay minimized]
 [Save size and location for each contact]
@@ -20,7 +19,6 @@
 [Limit number of group chats tabs per window to]
 [Show toolbar]
 [Show info bar]
-[Show avatars]
 [Show progress indicator]
 [Enable transparency]
 [active]

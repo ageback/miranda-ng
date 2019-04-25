@@ -23,7 +23,6 @@
 [Disable &AutoBackups notification]
 [Miranda NG databases]
 [Compressed Miranda NG databases]
-[Database]
 [Backup profile]
 [Save profile as...]
 [Database backups]

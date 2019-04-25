@@ -41,7 +41,7 @@
 [Cancel]
 取消
 [Text:]
-
+文字：
 [Direction]
 
 [Up]

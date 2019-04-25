@@ -107,11 +107,11 @@
 [Accounts per line]
 每行帐户
 [* To increase status bar height:\nset in Main menu -> Frames -> Status Bar -> Show title then pull appeared title of status bar up or down.]
-
+* 要增加状态栏高度：\n在主菜单中选择 -> 框架 -> 状态栏 -> 显示标题，然后向上或向下拉出状态栏的标题。
 [Hold [Shift] to inverse [Right Click] behavior.]
-
+按住[Shift]反转[右键单击]行为。
 [[Ctrl]+[Left Click] to filter only protocol. Click on empty space to show all.]
-
+[Ctrl] + [左键单击]仅过滤协议。 点击空白区域即可显示所有内容。
 [Set options per account]
 设置每个帐户选项
 [Enable custom account settings]

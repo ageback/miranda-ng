@@ -3,7 +3,6 @@
 [Always when changing from offline]
 [Notify when contact changes]
 [Extra status]
-[Status message]
 [Plugin activation]
 [Automatically turn off Popups and Sounds on status change]
 [Notify me for people not on my contact list]

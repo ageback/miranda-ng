@@ -183,7 +183,7 @@
 [Open status message dialog]
 
 [Status message]
-
+状态消息
 [Status message...]
 
 [%s (locked)]

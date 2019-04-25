@@ -40,7 +40,6 @@
 [hours (12)]
 [AM/PM]
 [UIN/handle]
-[status message]
 [old status]
 [external IP]
 [internal IP]

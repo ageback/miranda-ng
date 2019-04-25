@@ -76,7 +76,6 @@
 [History Log]
 [Variable List]
 [More Variables]
-[Status Message]
 [Sunset]
 [Feel-like]
 [Today's Low]

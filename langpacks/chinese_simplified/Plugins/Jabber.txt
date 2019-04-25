@@ -911,7 +911,7 @@ URL
 [Highest priority (server's choice)]
 
 [Status Message]
-
+状态消息
 ;file \protocols\JabberG\src\jabber_message_handlers.cpp
 ;file \protocols\JabberG\src\jabber_misc.cpp
 [To]
@@ -2090,7 +2090,7 @@ URL
 [Activity: %s]
 
 [Listening To]
-
+正在听
 [Moods]
 
 [Activities]
