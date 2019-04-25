@@ -758,9 +758,9 @@ Miranda NG 配置管理器
 [Nick:]
 昵称：
 [First:]
-
+名:
 [Last:]
-
+姓:
 [Advanced]
 高级
 [Advanced >>]
@@ -796,59 +796,59 @@ Miranda NG 配置管理器
 [Database setting change]
 数据库设置变更
 [Database settings are being imported from]
-
+正在导入数据库设置从
 [This file wishes to change the setting]
-
+此文件希望更改设置
 [to the value]
-
+为值
 [Do you want to allow this change?]
-
+你要允许此更改吗？
 [&Allow all further changes to this section]
-
+允许对此部分进行所有进一步更改(&A)
 [Cancel import]
-
+取消导入
 [Database import complete]
-
+数据库导入成功
 [The import has completed from]
-
+导入完成从
 [What do you want to do with the file now?]
-
+你现在想对这个文件做什么？
 [&Recycle]
-
+回收(&R)
 [&Delete]
-
+删除(&D)
 [&Move/Rename]
-
+移动/重命名(&M)
 [&Leave]
-
+离开(&L)
 [Netlib log options]
-
+Netlib 日志选项
 [Received bytes]
-
+收到的字节
 [Sent bytes]
-
+发送的字节
 [Additional data due to proxy communication]
-
+代理通信导致的其他数据
 [SSL traffic]
-
+SSL流量
 [Text dumps where available]
-
+文本转储可用
 [Auto-detect text]
-
+自动检测文本
 [Calling modules' names]
-
+调用模块的名称
 [Log to]
-
+日志到
 [OutputDebugString()]
-
+OutputDebugString() 
 [File]
 文件
 [Run program when Miranda NG starts (e.g., tail -f, dbgview, etc.):]
-
+Miranda NG启动时运行程序（例如，tail -f，dbgview等）：
 [Run now]
 立即运行
 [Show this dialog box when Miranda NG starts]
-
+Miranda NG启动时显示此对话框
 [Sounds]
 声音
 [&Change...]
@@ -938,119 +938,119 @@ Miranda NG 配置管理器
 [Enable UPnP port mapping]
 启用 UPnP 端口映射
 [These changes will take effect the next time you connect to the network.]
-
+这些更改将在您下次连接到网络时生效。
 [Please complete the following form to create a new user profile]
-
+请填写以下表单以创建新的用户配置文件
 [Profile]
-
+配置文件
 [e.g., Workplace]
-
+例如，工作场所
 [You can select a different database driver from the default, it may offer more features or abilities, if in doubt use the default.]
-
+您可以选择默认值以外的不同的数据库驱动程序，它可能提供更多功能或能力，如果有疑问则使用默认值。
 [Driver]
-
+驱动程序
 [Problem: Unable to find any database drivers, this means you cannot create a new profile, you need to get dbx_mdbx.dll]
-
+问题：无法找到任何数据库驱动程序，这意味着您无法创建新的配置文件，您需要获取dbx_mdbx.dll
 [Download more plugins]
 下载更多插件
 [Author(s):]
-
+作者：
 [Homepage:]
-
+主页：
 [Unique ID:]
-
+唯一身份：
 [Copyright:]
-
+版权：
 [Please restart Miranda NG for your changes to take effect.]
-
+请重新启动Miranda NG以使更改生效。
 [Fonts and colors]
-
+字体和颜色
 [Reset]
-
+重置
 [Export...]
-
+导出...
 [Color/background]
-
+颜色/背景
 [Text effect]
-
+文字效果
 [Text color]
-
+文字颜色
 [Choose font]
-
+选择字体
 [Icons]
-
+图标
 [&Load icon set...]
-
+加载图标集...(&L)
 [&Import icons >>]
-
+导入图标(&I) >>
 [Menu objects]
-
+菜单对象
 [Menu items]
-
+菜单项
 [Protocol menus]
-
+协议菜单
 [Move to the main menu]
-
+移到主菜单
 [Move to the status bar]
-
+移到状态栏
 [Warning!\r\nThis menu object not support user defined options.]
-
+警告！\r\n此菜单对象不支持用户定义选项。
 [Insert submenu]
-
+插入子菜单
 [Insert separator]
-
+插入分隔符
 [Module:]
-
+模块：
 [Service:]
-
+服务：
 [Default]
-
+默认
 [Set]
-
+设置
 [Enable icons]
-
+启用图标
 [Show accounts in the following order,\ndrag to choose another order:]
-
+用以下顺序显示帐户，\n拖动以选择另一种顺序：
 [Account order and visibility]
-
+帐户顺序和可见性
 [Note: Miranda NG will have to be restarted for changes to take effect.]
-
+注意：必须重新启动Miranda NG才能使更改生效。
 [Key bindings]
-
+键绑定
 [Shortcut:]
-
+快捷键：
 [Add]
-
+添加
 [Remove]
-
+移除
 [Undo changes]
-
+撤销更改
 [Reset to default]
-
+重置为默认
 [Hotkeys]
-
+热键
 [Accounts]
-
+帐户
 [Configure your IM accounts]
-
+配置你的IM帐户
 [Account information:]
-
+帐户信息：
 [Additional:]
-
+附加：
 [Configure network...]
-
+配置网络...
 [Get more protocols...]
-
+获得更多协议...
 [&Add...]
-
+添加(&A)...
 [&Edit]
-
+编辑(&E)
 [&Options]
-
+选项(&O)
 [&Upgrade]
-
+升级(&U)
 [&Remove...]
-
+移除(&R)...
 [Miranda NG is being restarted.\nPlease wait...]
 Miranda NG 正在重启。\n请稍等...
 [Error console]
@@ -1066,113 +1066,113 @@ Miranda NG 正在重启。\n请稍等...
 [opacity:]
 不透明度:
 [Secondary color:]
-
+第二颜色：
 [Select the extra icons to be shown in the contact list:]
-
+选择要在联系人列表中显示的额外图标：
 [*only the first %d icons will be shown]
-
+*仅显示第一个%d图标
 [You can group/ungroup icons by selecting them (Ctrl+left click) and using the popup menu (right click)]
-
+您可以通过选择（Ctrl +左键单击）和使用弹出菜单（右键单击）对图标进行分组/取消组合
 [Add to existing metacontact]
-
+添加到已有的中继联系人
 [Please select a metacontact:]
-
+请选择一个中继联系人:
 [Sort alphabetically]
-
+按字母顺序排序
 [Editing]
-
+编辑
 [Contacts]
-
+联系人
 [&Remove]
-
+移除(&R)
 [&Set as default]
-
+设为默认(&S)
 [Move &up]
-
+上移(&U)
 [Move &down]
-
+下移(&D)
 [Send &offline]
-
+发送离线(&O)
 [&Apply]
-
+应用(&A)
 [Context menu]
-
+上下文菜单
 [Use contact's unique ID]
-
+使用联系人的唯一身份
 [Use contact's display name]
-
+使用联系人的显示名称
 [Contact labels]
-
+联系人标签
 [When I click on a sub in the popup menu...]
-
+当我点击弹出菜单中的一个子菜单...
 [Set default and open message window]
-
+设置默认并打开消息窗口
 [Show subcontact context menu]
-
+显示子联系人上下文菜单
 [Show user information]
-
+显示用户信息
 [Display subcontact nickname]
-
+显示子联系人昵称
 [Display subcontact display name]
-
+显示子联系人显示名称
 [Lock name to first contact]
-
+锁定名称到第一个联系人
 [Current language:]
-
+当前语言:
 [Last modified using:]
-
+上次修改使用:
 [Locale:]
-
+区域设置：
 [Reload langpack]
-
+重新加载语言包
 [Download more language packs]
-
+下载更多语言包
 [Show in IM chats]
-
+在 IM 聊天中显示
 [Show in chat rooms]
-
+在聊天室中显示
 [Gap between buttons:]
-
+按钮之间的间隙：
 [Hide if there isn't enough space]
-
+如果空间不足则隐藏
 [&Authorize]
-
+授权(&A)
 [&Deny]
-
+拒绝(&D)
 [Decide &later]
-
+稍后决定(&L)
 [Reason:]
-
+原因:
 [Denial reason:]
-
+拒绝理由:
 [Add to contact list if authorized]
-
+如果授权，添加到联系人列表
 [You were added]
-
+你被添加了
 [&Close]
-
+关闭(&C)
 [About Miranda NG]
-
+关于 Miranda NG
 [Credits >]
-
+贡献者 >
 [Tray]
-
+托盘
 [&Hide/Show]
 显示/隐藏(&H)
 [E&xit]
-
+退出(&X)
 [Nowhere]
-
+没有地方
 [&New group]
-
+新分组(&N)
 [&Hide offline users]
-
+隐藏离线用户(&H)
 [Hide &offline users out here]
-
+隐藏这里的离线用户(&O)
 [Hide &empty groups]
-
+隐藏空分组(&E)
 [Disable &groups]
-
+禁用分组(&G)
 [Hide Miranda]
 隐藏 Miranda
 [Group]
@@ -1488,730 +1488,730 @@ Google 翻译
 [Limit user names in the message log to 20 characters]
 限制消息日志中的用户名为20字符
 [Add ':' to auto-completed user names]
-
+添加 ':' 到自动完成的用户名
 [Strip colors from messages in the log]
-
+从日志中的消息中去除颜色
 [Enable the 'event filter' for new rooms]
-
+为新房间启用“事件过滤器”
 [Show topic changes]
-
+显示主题更改
 [Show users joining]
-
+显示用户加入
 [Show users disconnecting]
-
+显示用户断开连接
 [Show messages]
-
+显示消息
 [Show actions]
-
+显示动作
 [Show users leaving]
-
+显示用户离开
 [Show users being kicked]
-
+显示被踢的用户
 [Show notices]
-
+显示通知
 [Show users changing name]
-
+显示用户更改名称
 [Show information messages]
-
+显示信息消息
 [Show status changes of users]
-
+显示用户的状态变更
 [Show icon for topic changes]
-
+显示主题更改的图标
 [Show icon for users joining]
-
+显示用户加入的图标
 [Show icon for users disconnecting]
-
+显示用户断开连接的图标
 [Show icon for messages]
-
+显示消息的图标
 [Show icon for actions]
-
+显示动作的图标
 [Show icon for highlights]
-
+显示高亮的图标
 [Show icon for users leaving]
-
+显示用户离开的图标
 [Show icon for users kicking other user]
-
+显示用户踢其他用户的图标
 [Show icon for notices]
-
+显示通知的图标
 [Show icon for name changes]
-
+显示名字变更的图标
 [Show icon for information messages]
-
+显示信息消息的图标
 [Show icon for status changes]
-
+显示状态变更的图标
 [Show icons in tray only when the chat room is not active]
-
+仅在聊天室未激活时在托盘中显示图标
 [Show icon in tray for topic changes]
-
+在托盘中显示主题更改图标
 [Show icon in tray for users joining]
-
+在托盘中显示用户加入的图标
 [Show icon in tray for users disconnecting]
-
+在托盘中显示用户断开连接的图标
 [Show icon in tray for messages]
-
+在托盘中显示消息的图标
 [Show icon in tray for actions]
-
+在托盘中显示动作的图标
 [Show icon in tray for highlights]
-
+在托盘中显示高亮的图标
 [Show icon in tray for users leaving]
-
+在托盘中显示用户离开的图标
 [Show icon in tray for users kicking other user]
-
+在托盘中显示用户踢其他用户的图标
 [Show icon in tray for notices]
-
+在托盘中显示显示通知的图标
 [Show icon in tray for name changes]
-
+在托盘中显示名称变更的图标
 [Show icon in tray for information messages]
-
+在托盘中显示信息消息的图标
 [Show icon in tray for status changes]
-
+在托盘中显示状态变更的图标
 [Show popups only when the chat room is not active]
-
+仅在聊天室未激活时显示弹出窗口
 [Show popup for topic changes]
-
+显示主题变更的弹出窗口
 [Show popup for users joining]
-
+显示用户加入的弹出窗口
 [Show popup for users disconnecting]
-
+显示用户断开连接的弹出窗口
 [Show popup for messages]
-
+显示消息的弹出窗口
 [Show popup for actions]
-
+显示动作的弹出窗口
 [Show popup for highlights]
-
+显示高亮的弹出窗口
 [Show popup for users leaving]
-
+显示用户离开的弹出窗口
 [Show popup for users kicking other user]
-
+显示用户踢其他用户的弹出窗口
 [Show popup for notices]
-
+显示通知的弹出窗口
 [Show popup for name changes]
-
+显示名称变更的弹出窗口
 [Show popup for information messages]
-
+显示信息消息的弹出窗口
 [Show popup for status changes]
-
+显示状态变更的弹出窗口
 [Window icon]
-
+窗口图标
 [Bold]
-
+粗体
 [Italics]
-
+斜体
 [Underlined]
-
+下划线
 [Smiley button]
-
+笑脸按钮
 [Room history]
-
+房间历史
 [Room settings]
-
+房间设置
 [Event filter disabled]
-
+禁用事件过滤器
 [Event filter enabled]
-
+启用事件过滤器
 [Hide nick list]
-
+隐藏昵称列表
 [Show nick list]
-
+显示昵称列表
 [Icon overlay]
-
+图标叠加层
 [Status 1 (10x10)]
-
+状态 1  (10x10)
 [Status 2 (10x10)]
-
+状态 2  (10x10)
 [Status 3 (10x10)]
-
+状态 3  (10x10)
 [Status 4 (10x10)]
-
+状态 4  (10x10)
 [Status 5 (10x10)]
-
+状态 5  (10x10)
 [Status 6 (10x10)]
-
+状态 6  (10x10)
 [Message in (10x10)]
-
+传入消息  (10x10)
 [Message out (10x10)]
-
+传出消息  (10x10)
 [Action (10x10)]
-
+动作  (10x10)
 [Add status (10x10)]
-
+添加状态  (10x10)
 [Remove status (10x10)]
-
+移除状态  (10x10)
 [Join (10x10)]
-
+加入  (10x10)
 [Leave (10x10)]
-
+离开  (10x10)
 [Quit (10x10)]
-
+退出  (10x10)
 [Kick (10x10)]
-
+踢  (10x10)
 [Nick change (10x10)]
-
+昵称变更  (10x10)
 [Notice (10x10)]
-
+通知  (10x10)
 [Topic (10x10)]
-
+主题  (10x10)
 [Highlight (10x10)]
-
+高亮  (10x10)
 [Information (10x10)]
-
+信息  (10x10)
 [Messaging]
-
+消息
 [Group chats]
-
+分组聊天
 [Group chats log]
-
+分给聊天日志
 [Appearance and functionality of chat room windows]
-
+聊天室窗口的外观和功能
 [Appearance of the message log]
-
+消息日志的外观
 [Default events to show in new chat rooms if the 'event filter' is enabled]
-
+当启用了“事件过滤器”时，要在新聊天室中显示的默认事件
 [Icons to display in the message log]
-
+要在消息日志中显示的图标
 [Icons to display in the tray]
-
+要在托盘中显示的图标
 [Popups to display]
-
+要显示的弹出窗口
 [General]
-
+通用
 [Chat log]
-
+聊天日志
 [Chat]
-
+聊天
 [Popups]
-
+弹出窗口
 ;file \src\core\stdmsg\src\chat_window.cpp
 [%s: chat room (%u user)]
-
+%s：聊天室（%u 用户）
 [%s: chat room (%u users)]
-
+%s：聊天室（%u 用户）
 [%s: message session]
-
+%s：消息会话
 [%s: message session (%u users)]
-
+%s：消息会话（%u 用户）
 [Nickname]
-
+昵称
 [Unique ID]
-
+唯一身份
 ;file \src\core\stdmsg\src\cmdlist.cpp
 [The message send timed out.]
-
+消息发送超时。
 ;file \src\core\stdmsg\src\globals.cpp
 [Incoming message (10x10)]
-
+传入消息  (10x10)
 [Outgoing message (10x10)]
-
+传出消息  (10x10)
 ;file \src\core\stdmsg\src\msgdialog.cpp
 [Last message received on %s at %s.]
-
+最后一条消息接收于 %s %s。
 [Message session]
-
+消息会话
 [%s is typing a message...]
-
+%s 正在输入消息...
 ;file \src\core\stdmsg\src\msglog.cpp
 [Me]
-
+我
 [File sent]
-
+文件已发送
 ;file \src\core\stdmsg\src\msgoptions.cpp
 [Outgoing messages]
-
+传出消息
 [Incoming messages]
-
+传入消息
 [Outgoing name]
-
+传出名称
 [Outgoing time]
-
+传入名称
 [Outgoing colon]
-
+传出冒号
 [Incoming name]
-
+传入名称
 [Incoming time]
-
+传入时间
 [Incoming colon]
-
+传入冒号
 [Message area]
-
+消息区域
 [Other events]
-
+其他事件
 [Message log]
-
+消息日志
 [** New contacts **]
-
+** 新联系人 **
 [** Unknown contacts **]
-
+** 未知联系人 **
 [Messaging log]
-
+消息日志
 [Typing notify]
-
+输入通知
 ;file \src\core\stdmsg\src\msgs.cpp
 [Message from %s]
-
+来自 %s 的消息
 [%s is typing a message]
-
+%s 正在输入消息
 [Typing notification]
-
+输入通知
 [View user's history (Ctrl+H)]
-
+查看用户历史(Ctrl+H)
 [&Bold]
-
+粗体(&B)
 [Make the text bold (Ctrl+B)]
-
+使文字变为粗体(Ctrl + B)
 [&Italic]
-
+斜体(&I)
 [Make the text italicized (Ctrl+I)]
-
+使文字变为斜体(Ctrl+I)
 [&Underline]
-
+下划线(&U)
 [Make the text underlined (Ctrl+U)]
-
+使文字加下划线(Ctrl+U)
 [&Color]
-
+颜色(&C)
 [Select a foreground color for the text (Ctrl+K)]
-
+为文字选择一个背景颜色(Ctrl+K)
 [&Background color]
-
+背景色(&B)
 [Select a background color for the text (Ctrl+L)]
-
+为文字选择一个背景颜色(Ctrl+L)
 [&Room settings]
-
+房间设置(&R)
 [Control this room (Ctrl+O)]
-
+控制这个房间(Ctrl+O)
 [&Show/hide nick list]
-
+显示/隐藏昵称列表(&S)
 [Show/hide the nick list (Ctrl+N)]
-
+显示/隐藏昵称列表(Ctrl+N)
 [&Filter]
-
+过滤器(&F)
 [Enable/disable the event filter (Ctrl+F)]
-
+启用/禁用事件过滤器(Ctrl+F)
 [Miranda could not load the built-in message module, msftedit.dll is missing. Press 'Yes' to continue loading Miranda.]
-
+Miranda 无法加载内置消息模块，msftedit.dll 丢失。点击“是”继续加载 Miranda.
 [Instant messages]
-
+即时消息
 [Incoming (focused window)]
-
+传入消息（获得焦点的窗口）
 [Incoming (unfocused window)]
-
+传入消息（未获得焦点的窗口）
 [Incoming (new session)]
-
+传入消息（新会话）
 [Message send error]
-
+消息发送出错
 [Contact started typing]
-
+联系人开始输入
 [Contact stopped typing]
-
+联系人停止输入
 ;file \src\core\stdmsg\src\msgtimedout.cpp
 [An unknown error has occurred.]
-
+发生了未知的错误。
 ;file \src\core\stdpopup\src\icons.cpp
 [Popups are enabled]
-
+启用弹出窗口
 [Popups are disabled]
-
+禁用弹出窗口
 ;file \src\core\stdpopup\src\notify_imp.cpp
 ;file \src\core\stdpopup\src\options.cpp
 [Example]
-
+示例
 [The quick brown fox jumped over the lazy dog.]
-
+快速的棕色狐狸跳过懒狗。
 [Example With a Long Title]
-
+标题较长的示例
 [Thequickbrownfoxjumpedoverthelazydog.]
-
+Thequickbrownfoxjumpedoverthelazydog.
 [An avatar.]
-
+一个头像。
 [Bottom right]
-
+底部右侧
 [Bottom left]
-
+底部左侧
 [Top right]
-
+顶部右侧
 [Top left]
-
+顶部左侧
 [Icon on left]
-
+图标在左侧
 [Icon on right]
-
+图标在右侧
 [No time]
-
+无时间
 [Time on left]
-
+时间在左侧
 [Time on right]
-
+时间在右侧
 [Time above avatar]
-
+时间在头像上面
 [No avatar]
-
+无头像
 [Left avatar]
-
+左侧头像
 [Right avatar]
-
+右侧头像
 [Full-screen app running]
-
+全屏程序运行
 [No animate]
-
+无动画
 [Horizontal animate]
-
+水平动画
 [Vertical animate]
-
+垂直动画
 [You cannot set a default timeout of 0.\nValue has been reset.]
-
+你不能设置默认超时值为 0. 值已经被重置。
 [Settings]
-
+设置
 [Classes]
-
+分类
 ;file \src\core\stdpopup\src\services.cpp
 [Disable popups]
-
+禁用弹出窗口
 [Enable popups]
-
+启用弹出窗口
 ;file \src\core\stdpopup\src\yapp.cpp
 [Toggle popups]
-
+切换弹出窗口
 [First line]
-
+第一行
 [Second line]
-
+第二行
 [Time]
-
+时间
 [Sidebar]
-
+侧栏
 [Title underline]
-
+标题下划线
 ;file \src\core\stdpopup\src\yapp_history_dlg.cpp
 [Copy title to clipboard]
-
+复制标题到剪贴板
 [Copy message to clipboard]
-
+复制消息到剪贴板
 [Copy timestamp to clipboard]
-
+复制时间戳到剪贴板
 ;file \src\core\stdssl\src\netlibssl.cpp
 [Client cannot decode host message. Possible causes: host does not support SSL or requires not existing security package]
-
+[客户端无法解码主机消息。 可能的原因：主机不支持SSL或需要不存在的安全包]
 [Host we are connecting to is not the one certificate was issued for]
-
+我们连接的主机不是颁发的证书对应的主机
 ;file \src\core\stduihist\src\history.cpp
 [Invalid message]
-
+无效的消息
 [Outgoing message]
-
+传出消息
 [Incoming message]
-
+传入消息
 [Outgoing file]
-
+传出文件
 [Incoming file]
-
+传入文件
 [History for %s]
-
+%s 的历史
 [Are you sure you want to delete this history item?]
-
+你确定你要删除此历史项吗？
 [Delete history]
-
+删除历史
 [View &history]
-
+查看历史(&H)
 ;file \src\core\stduserinfo\src\contactinfo.cpp
 [Edit e-mail address]
-
+编辑电子邮件地址
 [Edit phone number]
-
+编辑电话号码
 [The phone number should start with a + and consist of numbers, spaces, brackets and hyphens only.]
-
+电话号码应以+开头，仅包含数字，空格，括号和连字符。
 [Invalid phone number]
-
+无效电话号码
 [Primary]
-
+主要的
 [Custom %d]
-
+自定义 %d
 [Fax]
-
+传真
 [Mobile]
-
+手机
 [Work phone]
-
+工作电话
 [Work fax]
-
+工作传真
 ;file \src\core\stduserinfo\src\stdinfo.cpp
 [Male]
-
+男性
 [Female]
-
+女性
 [<not specified>]
-
+<未指定>
 [Single]
-
+单身
 [Close relationships]
-
+亲密关系
 [Engaged]
-
+订婚
 [Married]
-
+已婚
 [Divorced]
-
+离婚
 [Separated]
-
+分居
 [Widowed]
-
+寡
 [Actively searching]
-
+积极寻找
 [In love]
-
+恋爱
 [It's complicated]
-
+情况很复杂
 [In a civil union]
-
+在民间联盟
 [Summary]
-
+摘要
 [Contact]
-
+联系
 [Location]
-
+位置
 [Work]
-
+工作
 [Background info]
-
+背景信息
 [Notes]
-
+笔记
 ;file \src\core\stduserinfo\src\userinfo.cpp
 [Owner]
-
+所有者
 [View/change my &details...]
-
+查看/更改我的详细信息(&D)...
 ;file \src\core\stduseronline\src\useronline.cpp
 [%s is online]
-
+%s 在线
 [Alerts]
-
+警告
 ;file \src\mir_app\src\addcontact.cpp
 [Add %s]
-
+添加 %s
 [Please authorize my request and add me to your contact list.]
-
+请授权我的请求并将我添加到您的联系人列表中。
 ;file \src\mir_app\src\auth.cpp
 [<Unknown>]
-
+<未知>
 [%s requested authorization\n%u (%s) on %s]
-
+%s 请求授权\n%u (%s) 在 %s 上
 [%s requested authorization\n%u on %s]
-
+%s 请求授权\n%u 在 %s 上 
 [%s requested authorization\n%s on %s]
-
+%s 请求授权\n%s 在 %s 上 
 [(Unknown)]
-
+（未知）
 [Feature is not supported by protocol]
-
+功能不被协议支持
 [%s added you to the contact list\n%u (%s) on %s]
-
+%s 将你添加到联系人列表\n%u (%s) 在 %s 上
 [%s added you to the contact list\n%u on %s]
-
+%s 将你添加到联系人列表\n%u 在 %s 上 
 [%s added you to the contact list\n%s on %s]
-
+%s 将你添加到联系人列表\n%s 在 %s 上 
 [%s requests authorization]
-
+%s 请求授权
 [%u requests authorization]
-
+%u 请求授权
 [%s added you to their contact list]
-
+%s 将你添加到他们的联系人列表
 [%u added you to their contact list]
-
+%u 将你添加到他们的联系人列表 
 [Added event]
-
+已添加事件
 ;file \src\mir_app\src\chat_clist.cpp
 [&Join chat]
-
+加入聊天(&J)
 [&Open/close chat window]
-
+打开/关闭聊天窗口(&O)
 ;file \src\mir_app\src\chat_log.cpp
 [%s has joined]
-
+%s 已加入
 [You have joined %s]
-
+你加入了 %s
 [%s has left]
-
+%s 已经离开
 [%s has disconnected]
-
+%s 已经断开连接
 [%s is now known as %s]
-
+%s 现在称为 %s
 [You are now known as %s]
-
+你现在被称为 %s
 [%s kicked %s]
-
+%s 踢了 %s
 [Notice from %s: ]
-
+通知来自 %s:
 [The topic is '%s%s']
-
+主题是 '%s%s' 
 [ (set by %s on %s)]
-
+ (由 %s 设置在 %s) 
 [ (set by %s)]
-
+ (由 %s 设置) 
 [%s enables '%s' status for %s]
-
+%s 启用了 '%s' 状态为 %s
 [%s disables '%s' status for %s]
-
+%s 禁用了 '%s' 状态为 %s 
 [<invalid>]
-
+<无效>
 ;file \src\mir_app\src\chat_opts.cpp
 [Others nicknames]
-
+其他人的昵称
 [Your nickname]
-
+你的昵称
 [User has joined]
-
+用户已加入
 [User has left]
-
+用户已离开
 [User has disconnected]
-
+用户已断开连接
 [User kicked ...]
-
+用户被踢...
 [User is now known as ...]
-
+用户现在称为...
 [Notice from user]
-
+来自用户的通知
 [The topic is ...]
-
+主题是...
 [Information messages]
-
+信息消息
 [User enables status for ...]
-
+用户启用状态为...
 [User disables status for ...]
-
+用户禁用状态为...  
 [Action message]
-
+动作消息
 [Highlighted message]
-
+高亮的消息
 [Nick list members (online)]
-
+昵称列表成员（在线）
 [Nick list members (away)]
-
+昵称列表成员（离开） 
 [Message typing area]
-
+消息输入区域
 [Chat log symbols (Webdings)]
-
+聊天日志符号(Webdings)
 ;file \src\mir_app\src\chat_svc.cpp
 [&Leave chat]
-
+离开聊天(&L)
 [Message is highlighted]
-
+消息被高亮
 [User has performed an action]
-
+用户执行了一个动作
 [User has kicked some other user]
-
+用户踢了某个其他用户
 [User's status was changed]
-
+用户的状态改变了
 [User has changed name]
-
+用户更改了名称
 [User has sent a notice]
-
+用户发送了一个通知
 [The topic has been changed]
-
+主题被更改了
 ;file \src\mir_app\src\chat_tools.cpp
 [%s wants your attention in %s]
-
+%s希望你注意%s
 [%s speaks in %s]
-
+%s 在 %s 中说话
 [%s has joined %s]
-
+%s 加入了 %s
 [%s has left %s]
-
+%s 离开了 %s 
 [%s kicked %s from %s]
-
+%s 踢了 %s 从 %s
 [Notice from %s]
-
+来自 %s 的通知
 [Topic change in %s]
-
+%s中的主题更改了
 [Information in %s]
-
+%s 中的信息
 [%s enables '%s' status for %s in %s]
-
+%s 启用了 '%s%' 状态为了 %s 于 %s 中
 [%s disables '%s' status for %s in %s]
-
+%s 禁用了 '%s%' 状态为了 %s 于 %s 中 
 [%s says: %s]
-
+%s 说：%s
 [%s has left (%s)]
-
+%s 离开了 (%s) 
 [%s has disconnected (%s)]
-
+%s 已经断开连接 (%s)
 [%s kicked %s (%s)]
-
+%s 踢了 %s (%s)
 [Notice from %s: %s]
-
+来自 %s 的通知：%s
 [The topic is '%s']
-
+主题为 ‘%s’
 [The topic is '%s' (set by %s)]
-
+主题为 ‘%s’(由 %s 设置)
 [Chat rooms]
-
+聊天室
 [Look up '%s':]
-
+查找 '%s'：
 [No word to look up]
-
+没有查找单词
 [&Message %s]
-
+消息%s(&M)
 ;file \src\mir_app\src\clcitems.cpp
 ;file \src\mir_app\src\clistgroups.cpp
 [New group]
-
+新分组
 [Are you sure you want to delete group '%s'? This operation cannot be undone.]
-
+你确定要删除分组 '%s' 吗？该操作无法被撤销。
 [Delete group]
-
+删除分组
 [You already have a group with that name. Please enter a unique name for the group.]
-
+您已经拥有一个具有该名称的组。 请输入该组的唯一名称。
 [Rename group]
-
+重命名分组
 [This group]
-
+此分组
 ;file \src\mir_app\src\clistmod.cpp
 [Connecting]
-
+正在连接
 [Connecting (attempt %d)]
-
+正在连接(尝试 %d) 
 ;file \src\mir_app\src\clistsettings.cpp
 [(Unknown contact)]
-
+(未知联系人)
 ;file \src\mir_app\src\clui.cpp
 [This contact is on an instant messaging system which stores its contact list on a central server. The contact will be removed from the server and from your contact list when you next connect to that network.]
-
+此联系人在即时消息系统上，该系统将其联系人列表存储在中央服务器上。 当您下次连接到该网络时，联系人将从服务器和联系人列表中删除。
 [De&lete]
-
+删除(&L)
 [&Rename]
-
+重命名(&R)
 [&Add permanently to list]
-
+永久添加到列表(&A)
 ;file \src\mir_app\src\colorchooser.cpp
 ;file \src\mir_app\src\contacts.cpp
 [My custom name (not movable)]
-
+我的自定义名称(不可移动)
 [Nick]
-
+昵称
 [FirstName]
-
+名字
 [E-mail]
-
+电子邮件
 [LastName]
-
+姓
 [Username]
-
+用户名
 [FirstName LastName]
-
+名 姓
 [LastName FirstName]
-
+姓 名
 ['(Unknown contact)' (not movable)]
-
+'(未知联系人)' (不可移动)
 ['(Unknown contact)']
-
+'(未知联系人)'
 [Contact names]
-
+联系人名称
 ;file \src\mir_app\src\database.cpp
 [Miranda is trying to upgrade your profile structure.\nIt cannot move profile %s to the new location %s\nBecause profile with this name already exists. Please resolve the issue manually.]
-
+Miranda正在尝试升级您的配置文件结构。\n它无法将配置文件%s移动到新位置%s\n因为已存在具有此名称的配置文件。 请手动解决此问题。
 [Miranda is trying to upgrade your profile structure.\nIt cannot move profile %s to the new location %s automatically\nMost likely this is due to insufficient privileges. Please move profile manually.]
-
+Miranda正在尝试升级您的个人资料结构。\n它无法自动将配置文件%s移动到新位置%s\n很可能这是由于权限不足。请手动移动配置文件。
 [Profile cannot be placed into Miranda root folder.\nPlease move Miranda profile to some other location.]
-
+配置文件无法放入Miranda根文件夹。\n请将Miranda配置文件移至其他位置。
 [Miranda is unable to open '%s' because you do not have any profile plugins installed.\nYou need to install dbx_mdbx.dll]
-
+Miranda无法打开'%s'，因为您没有安装任何配置文件插件。\n您需要安装dbx_mdbx.dll
 [Miranda was unable to open '%s', it's in an unknown format.]
 
 [Miranda was unable to open '%s'\nIt's inaccessible or used by other application or Miranda instance]
@@ -2492,149 +2492,149 @@ Google 翻译
 [Edit]
 编辑
 [Set to default]
-
+设为默认
 [MetaContacts]
-
+中继联系人
 ;file \src\mir_app\src\meta_menu.cpp
 [There was a problem in assigning the contact to the metacontact]
-
+将联系人分配给中继联系人时出现问题
 [This will remove the metacontact permanently.\n\nProceed anyway?]
-
+这将永久移除该中继联系人.\n\n仍然要继续吗？
 [Are you sure?]
-
+你确定吗？
 [Remove from metacontact]
-
+从中继联系人中移除
 [Toggle metacontacts off]
-
+切换中继联系人关闭
 [Toggle metacontacts on]
-
+切换中继联系人开启
 [Add to existing metacontact...]
-
+添加到已有的中继联系人...
 [Edit metacontact...]
-
+编辑中继联系人
 [Set as metacontact default]
-
+设为默认中继联系人
 [Delete metacontact]
-
+删除中继联系人
 [Subcontacts]
-
+子联系人
 ;file \src\mir_app\src\meta_options.cpp
 [Metacontacts]
-
+中继联系人
 ;file \src\mir_app\src\meta_services.cpp
 [No online contacts found.]
-
+未找到在线联系人。
 [Select metacontact]
-
+选择中继联系人
 ;file \src\mir_app\src\meta_utils.cpp
 [Could not retrieve contact protocol]
-
+无法获取联系人协议
 [Assignment error]
-
+分配错误
 [Could not get unique ID of contact]
-
+无法获得联系人的唯一身份
 [Contact is 'not on list' - please add the contact to your contact list before assigning.]
-
+联系人“不在列表上”- 在分配前请添加添加联系人到你的联系人列表。
 [Metacontact is full]
-
+中继联系人满了
 [Could not write contact protocol to metacontact]
-
+无法将联系人协议写到中继联系人
 [Could not write unique ID of contact to metacontact]
-
+无法将联系人的唯一身份写到中继联系人
 [Could not write nickname of contact to metacontact]
-
+无法将联系人的昵称写到中继联系人
 ;file \src\mir_app\src\movetogroup.cpp
 [<Root group>]
-
+<根分组>
 [&Move to group]
-
+移到分组(&M)
 ;file \src\mir_app\src\netliblog.cpp
 [Standard Netlib log]
-
+标准 Netlib 日志
 [No times]
-
+无时间
 [Standard hh:mm:ss times]
-
+标准 hh:mm:ss 时间
 [Times in milliseconds]
-
+以毫秒为单位
 [Times in microseconds]
-
+以微秒为单位
 [(Miranda core logging)]
-
+(Miranda 核心日志)
 [Select where log file will be created]
-
+选择将创建日志文件的位置
 [Select program to be run]
-
+选择要运行的程序
 ;file \src\mir_app\src\netlibopts.cpp
 [<mixed>]
-
+<混合>
 [<All connections>]
-
+<所有连接>
 [Network]
-
+网络
 ;file \src\mir_app\src\newplugins.cpp
 [No messaging plugins loaded. Please install/enable one of the messaging plugins, for instance, "StdMsg.dll"]
-
+未加载消息插件。请安装/启用消息插件中的一个，例如，"StdMsg.dll"
 ['%s' is disabled, re-enable?]
-
+'%s' 已被禁用，是否重新启用？
 [Re-enable Miranda plugin?]
-
+是否重新启用 Miranda 插件？
 [Core plugin '%s' cannot be loaded or missing. Miranda will exit now]
-
+核心插件 '%s' 无法加载或已丢失。Miranda 现在将退出。
 [Fatal error]
-
+严重错误
 [Unable to load plugin in service mode!]
-
+无法在服务模式中加载插件！
 [Unable to start any of the installed contact list plugins, I even ignored your preferences for which contact list couldn't load any.]
-
+无法启动任何已安装的联系人列表插件，我甚至忽略了您无法加载任何联系人列表的首选项。
 [Can't find a contact list plugin! You need StdClist or any other contact list plugin.]
-
+找不到联系人列表插件！ 您需要StdClist或任何其他联系人列表插件。
 ;file \src\mir_app\src\options.cpp
 [<all modules>]
-
+<所有模块>
 [<core modules>]
-
+<核心模块>
 [Loading... %d%%]
-
+正在载入... ％d%%
 [%s options]
-
+%s 选项
 [Miranda NG options]
-
+Miranda NG 选项
 ;file \src\mir_app\src\path.cpp
 [Avatars]
-
+头像
 [Avatars root folder]
-
+头像根文件夹
 ;file \src\mir_app\src\pluginopts.cpp
 [Plugin]
-
+插件
 [Version]
-
+版本
 [Miranda NG must be restarted to apply changes for these plugins:]
-
+必须重新启动Miranda NG才能对这些插件应用更改：
 [Do you want to restart it now?]
-
+你想现在重启吗？
 [Plugins]
-
+插件
 ;file \src\mir_app\src\profilemanager.cpp
 [The profile '%s' already exists. Do you want to move it to the Recycle Bin?\n\nWARNING: The profile will be deleted if Recycle Bin is disabled.\nWARNING: A profile may contain confidential information and should be properly deleted.]
-
+配置文件'％s'已存在。 是否要将其移至回收站？\n\n警告：如果禁用回收站，则将删除该配置文件。\n警告：配置文件可能包含机密信息，应正确删除。
 [The profile already exists]
-
+配置文件已存在
 [Couldn't move '%s' to the Recycle Bin. Please select another profile name.]
-
+无法将'％s'移动到回收站。 请选择其他配置文件名称。
 [Problem moving profile]
-
+移动配置文件问题
 [Unable to create the profile '%s', the error was %x]
-
+无法创建配置文件 '%s'，错误为 %x
 [Problem creating profile]
-
+创建配置文件问题
 [&Create]
-
+创建(&C)
 [<In use>]
-
+<正在使用>
 [<Unknown format>]
-
+<未知格式>
 [Are you sure you want to remove profile "%s"?]
 
 [&Convert]
@@ -2687,33 +2687,33 @@ Google 翻译
 [You need to disable plugin to delete this account]
 
 [Account ID]
-
+帐户ID
 [<unknown>]
-
+<未知>
 [Protocol is not loaded.]
-
+协议未加载。
 [Create new account]
-
+创建新帐户
 [Editing account]
-
+编辑帐户
 [Upgrading account]
-
+升级帐户
 [Account name must be filled.]
-
+必须填写帐户名称。
 [Account error]
-
+帐号错误
 [Account name has to be unique. Please enter unique name.]
-
+帐户名称必须是唯一的。 请输入唯一名称。
 [&Accounts...]
-
+帐号(&A)...
 ;file \src\mir_app\src\proto_order.cpp
 ;file \src\mir_app\src\proto_utils.cpp
 [Request authorization]
-
+请求授权
 [Grant authorization]
-
+授权
 [Revoke authorization]
-
+撤销授权
 ;file \src\mir_app\src\searchresults.cpp
 [Could not start a search on '%s', there was a problem - is %s connected?]
 
@@ -2726,59 +2726,59 @@ Google 翻译
 [%d %s users found]
 
 [%d users found (]
-
+%d 用户被找到 (
 [No users found]
-
+未找到用户
 ;file \src\mir_app\src\skin2opts.cpp
 [Icon sets]
-
+图标集
 ;file \src\mir_app\src\skinicons.cpp
 [URL]
-
+URL
 [User online]
-
+用户在线
 [Group (open)]
-
+分组（打开）
 [Group (closed)]
-
+分组（关闭）
 [User details]
-
+用户详情
 [History]
-
+历史
 [Down arrow]
-
+向下箭头
 [Find user]
-
+查找用户
 [Search all]
-
+搜索所有
 [Tick]
-
+勾
 [No tick]
-
+不勾
 [Help]
-
+帮助
 [Miranda website]
-
+Miranda 网站
 [Small dot]
-
+小点
 [Filled blob]
-
+填充blob
 [Empty blob]
-
+空blob
 [Unicode plugin]
-
+Unicode 插件
 [ANSI plugin]
-
+ANSI 插件
 [Show/Hide]
-
+显示/隐藏
 [Exit]
-
+退出
 [Join chat]
-
+加入聊天
 [Leave chat]
-
+离开聊天
 [Move to group]
-
+移到分组
 [On]
 开
 [Off]
