@@ -36,7 +36,6 @@
 [OTR unverified]
 [OTR finished]
 [OTR not secure]
-[Refresh]
 [Start OTR]
 [Stop OTR]
 [OTR status (Click for more options)]

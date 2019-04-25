@@ -53,7 +53,6 @@
 [Free memory]
 [Save]
 [All]
-[Refresh]
 [QuickSearch]
 [Show Offline contacts]
 [New column]

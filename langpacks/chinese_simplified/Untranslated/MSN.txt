@@ -19,7 +19,6 @@
 [Allowed (active) contact]
 [Blocked contact]
 [Somebody included you in his/her server list]
-[Refresh]
 [Enable Popup notifications]
 [Enable Contact List notifications]
 [Enable Tray notifications]

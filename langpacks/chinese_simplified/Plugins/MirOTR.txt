@@ -90,7 +90,7 @@
 [OTR not secure]
 
 [Refresh]
-
+刷新
 ;file \plugins\MirOTR\src\language.h
 [Start OTR]
 

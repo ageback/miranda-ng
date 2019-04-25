@@ -34,7 +34,7 @@
 [Gadu-Gadu number]
 
 [User ID]
-
+用户 ID
 [ICQ number]
 
 [Nickname]

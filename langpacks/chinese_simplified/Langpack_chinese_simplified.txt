@@ -2754,6 +2754,8 @@ PNG位图
 插件
 [Contact]
 联系
+[Refresh]
+刷新
 [Service:]
 服务：
 [File]
@@ -3524,18 +3526,62 @@ PNG位图
 秒
 [View mode options]
 视图模式选项
+[Editing view mode]
+编辑视图模式
+[Last message]
+上个消息
 [Status bar]
 状态栏
 [Show status bar]
 显示状态栏
 [Make sections equal width]
 使选择宽度相等
+[Space between]
+之间的空间
+[Borders]
+边框
+[Vertical align]
+垂直对齐
+[Horizontal align]
+水平对齐
+[Multiline status bar:]
+多行状态栏：
+[Accounts per line]
+每行帐户
+[Set options per account]
+设置每个帐户选项
+[Enable custom account settings]
+启用自定义帐户设置
+[Hide account completely]
+完全隐藏帐户
 [Show protocol names]
 显示协议名称
+[Show status name]
+显示状态名称
+[Show xStatus name]
+显示 xStatus 名称
+[Show protocol icon]
+显示协议图标
+[Use connecting icon]
+使用连接图标
+[Show xStatus icon]
+显示 xStatus 图标 
+[Show both icons]
+显示两个图标
+[Show normal status as overlay]
+将正常状态显示为叠加层
+[Status overlay opacity is 75%]
+状态叠加层不透明度为75%
+[Show unread emails (if supported)]
+显示未计邮件（如果支持）
 [Right click opens status menu]
 右键点击打开状态菜单
 [Right click opens Miranda menu]
 右键点击打开 Miranda 菜单
+[Space on left]
+左侧空间
+[Space on right]
+右侧空间 
 [Delete contact]
 删除联系人
 [No]
@@ -3558,14 +3604,36 @@ PNG位图
 禁用分组
 [Ask before deleting contacts]
 删除联系人之前询问
+[Don't move offline user to bottom]
+不要将离线用户移到底部
 [Contact list]
 联系人列表
 [Contact list sorting]
 联系人列表排序
+[1st:]
+第1：
+[2nd:]
+第2：
+[3rd:]
+第3：
+[Place offline users out of groups]
+将离线用户放到分组外
 [Gamma correction]
 伽玛校正
 [Default]
 默认
+[Full selection]
+完整选择
+[Less selection]
+更少选择
+[No selection]
+不选择
+[Selection mode]
+选择模式
+[Bring to front if covered]
+如果被覆盖，带到前面
+[Hide contact list after]
+隐藏联系人列表在之后
 [Automatically resize window to height of list]
 自动调整窗口大小为列表高度
 [maximum]
@@ -3574,10 +3642,32 @@ PNG位图
 % 的屏幕
 [Size upwards]
 尺寸向上
+[Behavior]
+行为
+[Lock manual resize]
+锁定手动调整大小
+[Drag to]
+拖到
+[Easy scroll]
+轻松滚动
 [Easy move]
 轻松移动
+[x100 ms]
+x100 毫秒
+[show delay]
+显示延时
+[hide delay]
+隐藏延时
+[Hide method]
+隐藏方法
 [pixels]
 像素
+[keep on screen]
+保持在屏幕上
+[Snap to edges]
+对齐边缘
+[Event notify area]
+事件通知区域
 [Disabled]
 已禁用
 [Show automatically]
@@ -3616,6 +3706,8 @@ PNG位图
 当没有在线时隐藏分组计数
 [Sort groups alphabetically]
 按字母顺序排序分组
+[Quicksearch in open groups only]
+快速搜索仅在打开的分组中
 [Indent groups by:]
 缩进组按：
 [Visual]
@@ -3626,6 +3718,10 @@ PNG位图
 时间：
 [milliseconds]
 毫秒：
+[Hide vertical scrollbar]
+隐藏垂直滚动栏
+[Fade out entire list when:]
+以下时间淡出整个列表：
 [Single click interface]
 单击界面
 [Always show status in tooltip]
@@ -3662,10 +3758,32 @@ PNG位图
 框架
 [Left margin:]
 左边距：
+[Right margin:]
+右边距： 
+[Show avatars]
+显示头像
+[Draw overlay icons]
+绘制叠加图标
+[Max size (pixels):]
+最大尺寸（像素）：
+[Round corners of avatars]
+头像的圆角
+[Border color:]
+边框颜色：
+[Text:]
+文字：
 [Status]
 状态
 [Nickname]
 昵称
+[Status message]
+状态消息
+[Listening to]
+正在听
+[Contact time]
+联系时间
+[Show status if there is no status message]
+如果没有状态消息时显示状态
 [Preview]
 预览
 [Options]
@@ -3800,6 +3918,28 @@ PNG位图
 *** 所有联系人 ***
 [Configure view modes]
 配置视图模式
+[Really delete this view mode? This cannot be undone]
+真的删除这个视图模式吗？这无法撤销
+[Delete a view mode]
+删除一个视图模式
+[A view mode with this name does already exist]
+已经存在此名称的视图模式
+[Duplicate name]
+复制名称
+[Setup view modes...]
+安装视图模式...
+[Select a view mode]
+选择一个视图模式
+[Setup view modes]
+安装视图模式
+[Clear view mode and return to default display]
+清除视图模式并返回到默认显示N
+[Reset view mode]
+重置视图模式
+[View mode background]
+视图模式背景
+[View modes]
+视图模式
 #muuid {8f79b4ee-eb48-4a03-873e-27be6b7e9a25}
 ;============================================================
 ;  File: Clist_nicer.dll
@@ -4242,8 +4382,20 @@ PNG位图
 ;  Version: 1.0.4.8
 ;  Authors: Baloo
 ;============================================================
+[Crypto++ library for SecureIM plugin.]
+SecureIM插件的Crypto++库。
+[GnuPG Plugin - Passphrase]
+GnuPG插件 - 密码
+[Enter passphrase for the secret key of user:]
+输入用户密钥的密码：
+[User ID]
+用户 ID
 [Cancel]
 取消
+[GnuPG Plugin - Select public key]
+GnuPG插件 - 选择公钥
+[Refresh]
+刷新
 #muuid {c8cc7414-6507-4af6-925a-83c1d2f7be8c}
 ;============================================================
 ;  File: CSList.dll
@@ -4368,6 +4520,8 @@ PNG位图
 ;============================================================
 [Custom]
 自定义
+[User ID]
+用户 ID
 [Nickname]
 昵称
 [E-mail address]
@@ -5137,6 +5291,8 @@ URL
 URL
 [Messages]
 消息
+[Refresh]
+刷新
 [Authorization request]
 授权请求
 [Nickname]
@@ -5463,6 +5619,8 @@ URL
 否(&N)
 [&Yes]
 是(&)
+[Refresh]
+刷新
 [Yes]
 是
 [No]
@@ -5578,6 +5736,8 @@ URL
 昵称：
 [Reset]
 重置
+[Refresh]
+刷新
 [Other]
 其他
 [Cancel]
@@ -6172,8 +6332,18 @@ URL
 ;  Version: 0.0.0.5
 ;  Authors: Roman Gemini
 ;============================================================
+[Adds a menu item to change or load a different profile of Miranda NG or restart.]
+添加菜单项以更改或加载Miranda NG的其他配置文件或重新启动。
+[Load profile]
+加载配置文件
+[Change profile]
+更改配置文件
 [Restart]
 重启
+[Profile manager]
+配置文件管理器
+[Database]
+数据库
 #muuid {f93ba59c-4f48-4f2e-8a91-77a2801527a3}
 ;============================================================
 ;  File: QuickContacts.dll
@@ -6234,6 +6404,8 @@ URL
 服务：
 [Close]
 关闭
+[Refresh]
+刷新
 [Male]
 男性
 [Female]

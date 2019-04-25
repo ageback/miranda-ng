@@ -6,15 +6,15 @@
 ;  Authors: Roman Gemini
 ;============================================================
 [Adds a menu item to change or load a different profile of Miranda NG or restart.]
-
+添加菜单项以更改或加载Miranda NG的其他配置文件或重新启动。
 ;file \plugins\ProfileManager\src\pmanagerEx.cpp
 [Load profile]
-
+加载配置文件
 [Change profile]
-
+更改配置文件
 [Restart]
 重启
 [Profile manager]
-
+配置文件管理器
 [Database]
-
+数据库

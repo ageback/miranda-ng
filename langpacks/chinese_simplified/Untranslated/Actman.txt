@@ -87,7 +87,6 @@
 [Close immediately]
 [Close for macro]
 [Choose contact]
-[Refresh]
 [Keep handle only]
 [Get from active window]
 [Chain]

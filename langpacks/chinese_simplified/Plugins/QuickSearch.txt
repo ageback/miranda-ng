@@ -142,7 +142,7 @@
 [Close]
 关闭
 [Refresh]
-
+刷新
 [QuickSearch]
 
 [Show Offline contacts]

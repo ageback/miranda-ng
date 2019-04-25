@@ -125,7 +125,6 @@
 [View as tree]
 [View as list]
 [Favorites]
-[Refresh]
 [JID:]
 [Node:]
 [Filter:]

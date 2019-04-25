@@ -206,7 +206,7 @@
 [Choose contact]
 
 [Refresh]
-
+刷新
 [Keep handle only]
 
 [Get from active window]

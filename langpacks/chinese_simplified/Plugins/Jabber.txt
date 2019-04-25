@@ -321,7 +321,7 @@ URL
 [Favorites]
 
 [Refresh]
-
+刷新
 [JID:]
 
 [Node:]

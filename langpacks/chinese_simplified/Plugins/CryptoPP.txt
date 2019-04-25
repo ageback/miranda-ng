@@ -6,17 +6,17 @@
 ;  Authors: Baloo
 ;============================================================
 [Crypto++ library for SecureIM plugin.]
-
+SecureIM插件的Crypto++库。
 ;file \plugins\CryptoPP\src\GPGw\gpg.rc
 [GnuPG Plugin - Passphrase]
-
+GnuPG插件 - 密码
 [Enter passphrase for the secret key of user:]
-
+输入用户密钥的密码：
 [User ID]
-
+用户 ID
 [Cancel]
 取消
 [GnuPG Plugin - Select public key]
-
+GnuPG插件 - 选择公钥
 [Refresh]
-
+刷新

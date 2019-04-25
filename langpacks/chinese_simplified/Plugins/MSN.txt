@@ -55,7 +55,7 @@
 [Somebody included you in his/her server list]
 
 [Refresh]
-
+刷新
 [Enable Popup notifications]
 
 [Enable Contact List notifications]
