@@ -2648,15 +2648,15 @@ Miranda NG 选项
 新配置文件
 ;file \src\mir_app\src\proto_opts.cpp
 [WARNING! The account is going to be deleted. It means that all its settings, contacts and histories will be also erased.\n\nAre you absolutely sure?]
-
+警告！ 该帐户将被删除。 这意味着它的所有设置，联系人和历史记录也将被删除。\n\n你绝对确定吗？
 [Your account was successfully upgraded. To activate it, restart of Miranda is needed.\n\nIf you want to restart Miranda now, press Yes, if you want to upgrade another account, press No]
-
+您的帐户已成功升级。 要激活它，需要重新启动Miranda。\n\n如果要立即重启Miranda，请按是，如果要升级其他帐户，请按否
 [This account uses legacy protocol plugin. Use Miranda NG options dialogs to change its preferences.]
-
+此帐户使用旧版协议插件。 使用Miranda NG选项对话框更改其首选项。
 [Welcome to Miranda NG's account manager!\nHere you can set up your IM accounts.\n\nSelect an account from the list on the left to see the available options. Alternatively, just click on the Plus sign underneath the list to set up a new IM account.]
-
+欢迎来到Miranda NG的帐户管理器！\n您可以设置您的IM帐户。\n\n从左侧列表中选择一个帐户以查看可用选项。 或者，只需点击列表下方的加号即可设置新的IM帐户。
 [Account is disabled. Please activate it to access options.]
-
+帐户被禁用。请启用它以访问选项。
 [New account]
 新帐户
 [Remove account]
@@ -2676,9 +2676,9 @@ Miranda NG 选项
 [Account is online. Disable account?]
 帐户在线。禁用帐户吗？
 [Account %s is being deleted]
-
+帐户 %s 正在被删除
 [You need to disable plugin to delete this account]
-
+你需要禁用插件来删除这个帐户
 [Account ID]
 帐户ID
 [<unknown>]
@@ -2709,15 +2709,15 @@ Miranda NG 选项
 撤销授权
 ;file \src\mir_app\src\searchresults.cpp
 [Could not start a search on '%s', there was a problem - is %s connected?]
-
+无法在'%s'上开始搜索，出现问题 - %s 已连接吗？
 [Could not search on any of the protocols, are you online?]
-
+无法搜索任何协议，你在线吗？
 [Problem with search]
-
+搜索有问题
 [1 %s user found]
-
+1 %s 用户被找到
 [%d %s users found]
-
+%d %s 用户被找到 
 [%d users found (]
 %d 用户被找到 (
 [No users found]
