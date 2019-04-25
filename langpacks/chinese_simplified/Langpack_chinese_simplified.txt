@@ -1278,7 +1278,7 @@ Google 翻译
 [Quicksearch text]
 快速搜索文字
 [Not focused]
-未聚集的
+未聚焦的
 [Offline]
 离线
 [Online]
@@ -5482,6 +5482,10 @@ URL
 ;  Version: 0.0.1.6
 ;  Authors: Robert Pösel
 ;============================================================
+[Plugin shows mobile icon in contact list next to contacts which are using mobile client.]
+在联系人列表中，在使用移动客户端的联系人旁边显示移动图标的插件
+[Mobile State]
+移动状态
 #muuid {eebc474c-b0ad-470f-99a8-9dd9210ce233}
 ;============================================================
 ;  File: mRadio.dll
@@ -5599,6 +5603,8 @@ URL
 ;  Version: 0.8.0.1
 ;  Authors: Merlin_de, Victor Pavlychko
 ;============================================================
+[Provides text render API for different plugins.]
+为不同的插件提供文字渲染API。
 #muuid {a82baeb3-a33c-4036-b837-7803a5b6c2ab}
 ;============================================================
 ;  File: MyDetails.dll
@@ -6260,6 +6266,16 @@ URL
 ;  Version: 0.0.2.1
 ;  Authors: Kildor, Thief
 ;============================================================
+[Shows rating of contact in contact list (if present).]
+显示联系人列表中的联系人评级（如果存在）。
+[Rate high]
+评级高
+[Rate medium]
+评级中
+[Rate low]
+评级低
+[Contact rate]
+联系人评级
 #muuid {0e5f3b9d-ebcd-44d7-9374-d8e5d88df4e3}
 ;============================================================
 ;  File: RecentContacts.dll
@@ -8057,6 +8073,10 @@ Google 翻译
 ;  Version: 0.0.0.1
 ;  Authors: Yasnovidyashii
 ;============================================================
+[This plugin adds the main menu item used to view Miranda NG pack user guide.]
+此插件添加了用于查看Miranda NG 程序包用户指南的主菜单项。
+[User Guide]
+用户指南
 #muuid {59b0036e-5403-422e-883b-c9aaf425682b}
 ;============================================================
 ;  File: Variables.dll

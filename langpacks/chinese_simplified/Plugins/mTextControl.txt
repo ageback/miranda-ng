@@ -6,4 +6,4 @@
 ;  Authors: Merlin_de, Victor Pavlychko
 ;============================================================
 [Provides text render API for different plugins.]
-
+为不同的插件提供文字渲染API。

@@ -6,7 +6,7 @@
 ;  Authors: Yasnovidyashii
 ;============================================================
 [This plugin adds the main menu item used to view Miranda NG pack user guide.]
-
+此插件添加了用于查看Miranda NG 程序包用户指南的主菜单项。
 ;file \plugins\UserGuide\src\main.cpp
 [User Guide]
-
+用户指南

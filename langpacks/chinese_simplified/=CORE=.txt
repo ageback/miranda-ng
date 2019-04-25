@@ -1290,7 +1290,7 @@ Google 翻译
 快速搜索文字
 ;file \src\core\stdclist\src\clcopts.cpp
 [Not focused]
-未聚集的
+未聚焦的
 [Offline]
 离线
 [Online]

@@ -6,7 +6,7 @@
 ;  Authors: Robert Pösel
 ;============================================================
 [Plugin shows mobile icon in contact list next to contacts which are using mobile client.]
-
+在联系人列表中，在使用移动客户端的联系人旁边显示移动图标的插件
 ;file \plugins\MobileState\src\main.cpp
 [Mobile State]
-
+移动状态

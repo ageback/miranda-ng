@@ -6,13 +6,13 @@
 ;  Authors: Kildor, Thief
 ;============================================================
 [Shows rating of contact in contact list (if present).]
-
+显示联系人列表中的联系人评级（如果存在）。
 ;file \plugins\Rate\src\main.cpp
 [Rate high]
-
+评级高
 [Rate medium]
-
+评级中
 [Rate low]
-
+评级低
 [Contact rate]
-
+联系人评级
