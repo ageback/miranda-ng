@@ -13,7 +13,7 @@
 [Send]
 
 [Cancel]
-
+取消
 [Pounce being sent to]
 
 [Buddy Pounce]
@@ -29,19 +29,19 @@
 [Setting text...........]
 
 [Settings]
-
+设置
 [Contact To Send Pounce To]
 
 [<< Simple]
 
 [Advanced >>]
-
+高级
 [The Message]
 
 [Dialog]
 
 [Status]
-
+状态
 [Use Advanced Dialog]
 
 [The Message (characters: )]
@@ -68,23 +68,23 @@
 [Any]
 
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [On the phone]
-
+在打电话
 [Out to lunch]
-
+外出吃饭
 [Send If Their Status changes]
 
 [From Offline]
@@ -122,7 +122,7 @@
 [Give up after... (0 to not give up)]
 
 [Days]
-
+天
 [Show confirmation window? (0 to not Show)]
 
 [Seconds to wait before sending]
@@ -137,6 +137,6 @@
 
 ;file \plugins\BuddyPounce\src\main.cpp
 [Message sessions]
-
+消息会话
 [&Buddy Pounce]
 

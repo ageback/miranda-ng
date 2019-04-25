@@ -11,15 +11,15 @@
 [Unread emails]
 
 [Close]
-
+关闭
 [Mark as read]
 
 [Connection]
 
 [Username:]
-
+用户名：
 [Password:]
-
+密码：
 [Server:]
 
 [Preferences]
@@ -27,11 +27,11 @@
 [Check every]
 
 [seconds]
-
+秒
 [Force reconnect every]
 
 [minutes]
-
+分
 [Check server before trying to connect]
 
 [Try to connect]
@@ -70,7 +70,7 @@
 [Exchange notify]
 
 [Plugins]
-
+插件
 [Forcefully reconnecting to Exchange server ...]
 
 ;file \plugins\Exchange\src\MirandaExchange.cpp

@@ -15,9 +15,9 @@
 [Popup Delay (seconds)]
 
 [Background color]
-
+背景色
 [Text color]
-
+文字颜色
 [Previe&w]
 
 [Show infinitely]
@@ -29,7 +29,7 @@
 [Popup color settings]
 
 [Use windows colors]
-
+使用 Windows 颜色
 [Use default Popup colors]
 
 [Choose colors]
@@ -58,7 +58,7 @@
 [Common Dialog Error 0x%lx]
 
 [Error]
-
+错误
 [Not implemented yet...]
 
 [Who uses my files]
@@ -69,7 +69,7 @@
 [User]
 
 [File]
-
+文件
 [Access]
 
 [Plugin WhoUsesMyFiles requires admin privileges in order to work.]
@@ -88,6 +88,6 @@
 [Show connections list]
 
 [Popups]
-
+弹出窗口
 [WUMF: Show connections]
 

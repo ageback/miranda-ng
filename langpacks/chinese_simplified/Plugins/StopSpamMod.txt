@@ -89,14 +89,14 @@
 [If math expression is turned on, you can use following expression in message text:\nXX+XX-X/X*X\neach X will be replaced by one random number and answer will be expression result.\nMessage must contain only one expression without spaces.]
 
 [Info]
-
+信息
 [Message sessions]
-
+消息会话
 [General]
-
+通用
 [Messages]
-
+消息
 [Accounts]
-
+帐户
 [Advanced]
-
+高级

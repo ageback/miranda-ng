@@ -34,7 +34,7 @@
 [Outgoing WATrack notify]
 
 [&Copy Link]
-
+复制链接(&C)
 [WATrack notify]
 
 [Open Link]
@@ -414,7 +414,7 @@
 [Outgoing contacts]
 
 [Outgoing file]
-
+传出文件
 [Selected background]
 
 [SMTP Simple]
@@ -426,7 +426,7 @@
 [Toggle &Processing]
 
 [Toolbar]
-
+工具栏
 [Link URLs]
 
 [History++]
@@ -516,7 +516,7 @@
 [All Items]
 
 [and]
-
+和
 [Authorization Request by %s (%s%s%d): %s]
 
 [Authorization Request Sample]
@@ -602,7 +602,7 @@
 [You Were Added Message Sample]
 
 [Authorization request]
-
+授权请求
 [Your were added message]
 
 [Show events count in menu]
@@ -644,7 +644,7 @@
 [%d min]
 
 [&Reset to Default]
-
+重置为默认(&R)
 [Contact history]
 
 [Incoming nick]
@@ -668,11 +668,11 @@
 [Co&py]
 
 [Select &All]
-
+选择所有(&A)
 [Send &Message]
-
+发送消息(&M)
 [User Details]
-
+用户详情
 [Enable SmileyAdd support]
 
 [Always RTL]
@@ -682,13 +682,13 @@
 [Show event icons]
 
 [View user's history]
-
+查看用户历史
 [View User's History]
-
+查看用户历史
 [View &History]
-
+查看历史(&H)
 [User Menu]
-
+用户菜单
 [Prev]
 
 [Incoming events]
@@ -696,4 +696,4 @@
 [Outgoing events]
 
 [Unused]
-
+未使用

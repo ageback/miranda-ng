@@ -31,7 +31,6 @@
 [Resource]
 [Platform]
 [Security]
-[Protocol]
 [Miranda NG stable]
 [Miranda IM (old versions)]
 [Miranda (unknown)]
@@ -93,4 +92,3 @@
 [NewGPG overlay]
 [MirOTR overlay]
 [SecureIM overlay]
-[Icons]

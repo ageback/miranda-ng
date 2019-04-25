@@ -17,7 +17,7 @@
 [recognize messages sent with hotkey only]
 
 [Contacts]
-
+联系人
 [Show offline contacts on these protocols:]
 
 [But hide them if protocol is offline]

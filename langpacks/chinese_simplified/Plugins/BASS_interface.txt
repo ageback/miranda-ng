@@ -27,38 +27,38 @@
 [Play only if]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [On the phone]
-
+在打电话
 [Out to lunch]
-
+外出吃饭
 [Preview]
-
+预览
 ;file \plugins\BASS_interface\src\Main.cpp
 [Un4seen's BASS version: %d.%d.%d.%d]
 
 [--default device--]
 
 [Sounds]
-
+声音
 [Disable sounds]
-
+禁用声音
 [Enable sounds]
-
+启用声音
 [Frame background]
 
 [BASS Interface]

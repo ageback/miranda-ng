@@ -41,7 +41,7 @@
 [&Next >]
 
 [Cancel]
-
+取消
 [< &Back]
 
 [Import all settings, contacts and all messages]
@@ -69,30 +69,30 @@
 [Select items to import:]
 
 [Incoming]
-
+传入
 [Outgoing]
-
+传出
 [Only since:]
 
 [Messages]
-
+消息
 [File Transfers]
-
+文件传输
 [Other]
-
+其他
 [Choose appropriate accounts for import]
 
 [Enter file name for import:]
 
 [Copy]
-
+复制
 ;file \plugins\Import\src\import.cpp
 [<New account>]
 
 [Old account]
 
 [New account]
-
+新帐户
 [Protocol %S is not loaded, skipping account %s creation]
 
 [Unable to create an account %s of protocol %S]
@@ -168,7 +168,7 @@
 [Miranda NG database]
 
 [All Files]
-
+所有文件
 [You cannot import your current profile into itself]
 
 ;file \plugins\Import\src\ui.cpp

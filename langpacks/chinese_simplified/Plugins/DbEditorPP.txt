@@ -15,7 +15,7 @@
 [Exact match]
 
 [&Search]
-
+搜索(&S)
 [Module name]
 
 [Setting name]
@@ -23,9 +23,9 @@
 [Setting value]
 
 [Case sensitive]
-
+区分大小写
 [&Cancel]
-
+取消(&C)
 [Replace with]
 
 [Entirely]
@@ -43,7 +43,7 @@
 [Popup timeout (0 for infinite)]
 
 [Background color]
-
+背景色
 [Add a module to contact]
 
 [Add a module named]
@@ -51,11 +51,11 @@
 [Add to all contacts (including Settings)]
 
 [Cancel]
-
+取消
 [Edit setting]
 
 [Name]
-
+名字
 [Value]
 
 [Base]
@@ -95,7 +95,7 @@
 [Refresh &settings]
 
 [E&xit]
-
+退出(&X)
 [&Actions]
 
 [&Search and replace]
@@ -125,7 +125,7 @@
 [From pasted &text]
 
 [&Options]
-
+选项(&O)
 [&Sort by protocol]
 
 [Show &all]
@@ -147,11 +147,11 @@
 [&Open options]
 
 [&Edit]
-
+编辑(&E)
 [&Copy]
-
+复制(&C)
 [&Delete]
-
+删除(&D)
 [Convert to]
 
 [&Byte]
@@ -165,7 +165,7 @@
 [&Unicode]
 
 [New]
-
+新
 [BL&OB]
 
 [&Watch]
@@ -173,7 +173,7 @@
 [&Refresh]
 
 [&Rename]
-
+重命名(&R)
 [Copy to contact]
 
 [Export module]
@@ -218,7 +218,7 @@
 [INI Files]
 
 [All Files]
-
+所有文件
 [Export to file]
 
 [Couldn't open file for writing]
@@ -231,7 +231,7 @@
 [Result]
 
 [Contact]
-
+联系
 [Module]
 
 [Setting]
@@ -258,7 +258,7 @@
 [Open module]
 
 [Settings]
-
+设置
 [Contacts group]
 
 [Unknown contact]
@@ -282,7 +282,7 @@
 [Unicode setting]
 
 [Handle]
-
+处理
 ;file \plugins\DbEditorPP\src\main.cpp
 [Open Database Editor]
 
@@ -291,7 +291,7 @@
 [Open user tree in DBE++]
 
 [<UNKNOWN>]
-
+<未知>
 [[UNLOADED]]
 
 ;file \plugins\DbEditorPP\src\main_window.cpp
@@ -312,7 +312,7 @@
 [Loading modules...]
 
 [Contacts]
-
+联系人
 ;file \plugins\DbEditorPP\src\options.cpp
 ;file \plugins\DbEditorPP\src\renamemodule.cpp
 [Add module to "%s"]
@@ -321,7 +321,7 @@
 [Type]
 
 [Size]
-
+大小
 [Unable to store value in this data type!]
 
 [Are you sure you want to delete setting(s): %d?]

@@ -11,27 +11,27 @@
 [Gmail account]
 
 [Name:]
-
+名称：
 [Password:]
-
+密码：
 [Add]
-
+添加
 [Save]
 
 [Delete]
-
+删除
 [Configuration]
 
 [Check Gmail inbox every]
 
 [minutes]
-
+分
 [Notify using:]
 
 [Duration:]
 
 [seconds]
-
+秒
 [Text|Background:]
 
 [On double click:]
@@ -65,7 +65,7 @@
 
 ;file \protocols\GmailNotifier\src\main.cpp
 [Other]
-
+其他
 [Gmail: New thread(s)]
 
 [Gmail Notifier connection]
@@ -78,4 +78,4 @@
 [GmailNotifier]
 
 [Network]
-
+网络

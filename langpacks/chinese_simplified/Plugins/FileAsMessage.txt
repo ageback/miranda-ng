@@ -13,7 +13,7 @@
 [Filename:]
 
 [Size:]
-
+大小：
 [Chunk size]
 
 [ms]
@@ -21,7 +21,7 @@
 [Delays between sends]
 
 [bytes]
-
+字节
 [Transfer settings]
 
 [Appearance]
@@ -52,13 +52,13 @@
 [Request sent. Awaiting of acceptance..]
 
 [Sending...]
-
+正在发送...
 [Received successfully]
 
 [Requesting of missing chunks]
 
 [Receiving...]
-
+正在接收...
 [Sent successfully]
 
 [Unknown command for "File As Message" was received]
@@ -99,7 +99,7 @@
 [Main]
 
 [Events]
-
+事件
 [File As Message...]
 
 ;file \plugins\FileAsMessage\src\stdafx.h

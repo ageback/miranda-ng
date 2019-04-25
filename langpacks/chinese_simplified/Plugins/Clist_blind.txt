@@ -9,21 +9,21 @@
 
 ;file \plugins\Clist_blind\res\resource.rc
 [Delete contact]
-
+删除联系人
 [Are you sure you want to delete %s?]
-
+您确定要删除 ％s 吗？
 [This will erase all history and settings for this contact!]
-
+这将删除此联系人的所有历史记录和设置！
 [Yes]
-
+是
 [No]
-
+否
 [Hide from list only, in order to keep their history and ignore/visibility settings]
-
+仅从列表中隐藏，以保留其历史记录和忽略/可见性设置
 [Use Options -> Contacts -> Ignore to unhide contacts.]
-
+使用 选项 - >通讯录 - >忽略 来取消隐藏联系人。
 [Hotkeys]
-
+热键
 [Show/Hide:]
 
 [Read message:]
@@ -37,158 +37,158 @@
 [Show options]
 
 [Hide offline users]
-
+隐藏离线用户
 [Hide empty groups]
-
+隐藏空分组
 [Disable groups]
-
+禁用分组
 [Ask before deleting contacts]
-
+删除联系人之前询问
 [Sort contacts by name]
-
+按名字排序联系人
 [Sort contacts by status]
-
+按状态排序联系人
 [Sort contacts by protocol]
-
+按协议排序联系人 
 [Single click interface]
-
+单击界面
 [Always show status in tooltip]
-
+总是在工具提示中显示状态
 [Disable icon blinking]
-
+禁止图标闪动
 [ms delay]
-
+毫秒延迟
 [Show]
-
+显示
 [icon when statuses differ]
-
+当状态不一样时的图标
 [Cycle icons every]
-
+循环图标每
 [seconds, when statuses differ]
-
+秒，当状态不一样时
 [Show multiple icons]
-
+显示多个图标
 [Only when statuses differ]
-
+仅当状态不一样时
 [Contact list]
-
+联系人列表
 [System tray icon]
-
+系统托盘图标
 [System tray icon when using multiple protocols]
-
+使用多个协议时的系统托盘图标
 [Contact list sorting]
-
+联系人列表排序
 [Window]
-
+窗口
 [Always on top]
-
+总在顶层
 [Tool style main window]
-
+工具样式主窗口
 [Minimize to tray]
-
+最小化到托盘
 [Hide contact list after it has been idle for]
-
+在闲置以下时间后,隐藏联系人列表
 [seconds]
-
+秒
 [Automatically resize window to height of list]
-
+自动调整窗口大小为列表高度
 [maximum]
-
+最大
 [% of screen]
-
+% 的屏幕
 [Size upwards]
-
+尺寸向上
 [Title bar text:]
-
+标题栏文本：
 [Translucency options]
-
+透明度选项
 [Fade contact list in/out]
-
+淡入/淡出联系人列表
 [Transparent contact list]
-
+透明联系人列表
 [Inactive opacity:]
-
+非活动不透明度：
 [Active opacity:]
-
+活动不的透明度：
 [Show menu bar]
-
+显示菜单栏
 [Easy move]
-
+轻松移动
 [Show title bar]
-
+显示标题栏
 [If window is partially covered, bring to front instead of hiding]
-
+如果窗口被部分覆盖，将其带到前面而不是隐藏
 [Show drop shadow (restart required)]
-
+显示拖放阴影（需要重启）
 [Pin to desktop]
-
+固定到桌面
 [Items]
-
+项
 ['Hide offline' means to hide:]
-
+‘隐藏离线’意思是隐藏：
 [Groups]
-
+分组
 [Show counts of number of contacts in a group]
-
+显示分组中联系人数量的计数
 [Hide group counts when there are none online]
-
+当没有在线时隐藏分组计数
 [Sort groups alphabetically]
-
+按字母顺序排序分组
 [Quick search in open groups only]
-
+仅在打开的分组中快速搜索
 [Templates]
 
 [Contact:]
 
 [Group:]
-
+分组：
 [Divider:]
 
 [Info:]
 
 [Status bar]
-
+状态栏
 [Show status bar]
-
+显示状态栏
 [Show icons]
-
+显示图标
 [Show protocol names]
-
+显示协议名称
 [Show status text]
-
+显示状态文字
 [Right click opens status menu]
-
+右键点击打开状态菜单
 [Right click opens Miranda NG menu]
-
+右键点击打开 Miranda NG 菜单
 [Make sections equal width]
-
+使选择宽度相等
 [Show bevels on panels]
-
+在面板上显示斜面
 [Show resize grip indicator]
-
+显示调整大小的拖动指示器
 ;file \plugins\Clist_blind\src\clcopts.cpp
 [Not focused]
-
+未聚集的
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [Out to lunch]
-
+外出吃饭
 [On the phone]
-
+在打电话
 [Group: %name% %count% [%mode%]]
 
 [Divider: %s]
@@ -196,10 +196,10 @@
 [Info: %s]
 
 [List]
-
+列表
 ;file \plugins\Clist_blind\src\clistopts.cpp
 [Global]
-
+全局
 ;file \plugins\Clist_blind\src\cluiopts.cpp
 ;file \plugins\Clist_blind\src\init.cpp
 [Unknown protocol]

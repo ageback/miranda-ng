@@ -61,7 +61,7 @@
 [Chance Rain 90% Chance Of Precipitation]
 
 [Clear]
-
+清除
 [Cloudy]
 
 [Day Length Diff]

@@ -11,7 +11,7 @@
 [Select crypto provider]
 
 [Cancel]
-
+取消
 [Login to Miranda NG]
 
 [New password]
@@ -25,7 +25,7 @@
 [Change]
 
 [Remove]
-
+移除
 [Old password]
 
 [Database encryption mode]

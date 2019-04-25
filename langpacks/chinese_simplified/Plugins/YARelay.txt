@@ -13,25 +13,25 @@
 [Everyone]
 
 [Contact]
-
+联系
 [Forward when your status is...]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [Forward messages to...]
 
 [Template]
@@ -62,6 +62,6 @@
 [!DON'T FORWARD!]
 
 [Message sessions]
-
+消息会话
 [Messages forwarding]
 

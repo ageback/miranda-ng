@@ -3,7 +3,6 @@
 [Enable last-sent-to]
 [recognize all messages sent]
 [recognize messages sent with hotkey only]
-[Contacts]
 [Show offline contacts on these protocols:]
 [But hide them if protocol is offline]
 [Append group name to contact name]

@@ -11,7 +11,7 @@
 [Skin items]
 
 [General]
-
+通用
 [Gradient]
 
 [Left to right]
@@ -37,7 +37,7 @@
 [First color]
 
 [Text color]
-
+文字颜色
 [Second color]
 
 [Transparent]
@@ -62,7 +62,7 @@
 [Copy from]
 
 [<None>]
-
+<无>
 [Raised]
 
 [Sunken]

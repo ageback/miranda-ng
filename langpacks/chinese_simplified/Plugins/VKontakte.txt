@@ -27,7 +27,7 @@
 [[img] BBCode support for image]
 
 [off]
-
+半
 [for original size images]
 
 [for preview max 130px*130px]
@@ -45,7 +45,7 @@
 [BBCode support on attachments]
 
 [Other]
-
+其他
 [Process stickers as smileys]
 
 [Shorten links for audio attachments]
@@ -87,7 +87,7 @@
 [Friends]
 
 [Groups]
-
+分组
 [Include banned sources]
 
 [Pages]
@@ -113,11 +113,11 @@
 [E-mail or phone number:]
 
 [Password:]
-
+密码：
 [Open VKontakte site]
 
 [Advanced]
-
+高级
 [Do not open chat windows on creation]
 
 [Sync read message status from server]
@@ -153,7 +153,7 @@
 [as regular status only]
 
 [Group chats]
-
+分组聊天
 [Message for return to group chat:]
 
 [Login settings]
@@ -183,7 +183,7 @@
 [Submit]
 
 [Cancel]
-
+取消
 [Open in browser]
 
 [Invite user to chat]
@@ -236,7 +236,7 @@
 [Access denied! Data will not be sent or received.]
 
 [Error]
-
+错误
 [You have to validate your account before you can use VK in Miranda NG]
 
 [Error %d. Data will not be sent or received.]
@@ -326,7 +326,7 @@
 [Unsupported or unknown attachment type: %s]
 
 [(Unknown contact)]
-
+(未知联系人)
 [Message from]
 
 [at]
@@ -367,17 +367,17 @@
 [chat action not supported]
 
 [Unknown]
-
+未知
 [Enter new chat title]
 
 [This chat is going to be destroyed forever with all its contents. This action cannot be undone. Are you sure?]
 
 [Warning]
-
+警告
 [You've been kicked by ]
 
 [Chat]
-
+聊天
 [&Invite a user]
 
 [View/change &title]
@@ -391,7 +391,7 @@
 [&Kick]
 
 [%s is typing a message...]
-
+%s 正在输入消息...
 ;file \protocols\VKontakte\src\vk_dialogs.cpp
 [Enter the text you see]
 
@@ -489,7 +489,7 @@
 
 ;file \protocols\VKontakte\src\vk_options.cpp
 [Network]
-
+网络
 [Account]
 
 [News and notifications]

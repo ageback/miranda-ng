@@ -11,9 +11,9 @@
 [Custom folders]
 
 [Preview]
-
+预览
 [Edit]
-
+编辑
 [Refresh preview]
 
 [Variables help]
@@ -21,7 +21,7 @@
 [Custom folders variables help]
 
 [Close]
-
+关闭
 ;file \plugins\Folders\src\dlg_handlers.cpp
 [Don't forget to click on Apply to save the changes. If you don't then the changes won't]
 
@@ -80,4 +80,4 @@
 [Folders]
 
 [Customize]
-
+自定义

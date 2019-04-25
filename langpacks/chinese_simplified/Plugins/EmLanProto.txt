@@ -15,7 +15,7 @@
 [Use computer name]
 
 [Your name]
-
+你的名字
 [Select your name]
 
 ;file \protocols\EmLanProto\src\amdproto.cpp
@@ -24,4 +24,4 @@
 [E-mage LAN protocol]
 
 [Network]
-
+网络

@@ -10,4 +10,3 @@
 [Disable AuthState icons]
 [Enable AuthState icons]
 [Auth state]
-[Icons]

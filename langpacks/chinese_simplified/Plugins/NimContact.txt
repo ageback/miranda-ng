@@ -19,7 +19,7 @@
 [file(#)]
 
 [URL]
-
+URL
 [Update URL every]
 
 [Intervals]
@@ -47,7 +47,7 @@
 [Contact list settings]
 
 [Group:]
-
+分组：
 [Status Icon]
 
 [Group\\Sub-Group]
@@ -77,7 +77,7 @@
 [&Test String]
 
 [&Exit]
-
+退出(&E)
 [String to test]
 
 [Returns....]
@@ -97,7 +97,7 @@
 [filename()]
 
 [Help]
-
+帮助
 [Copy / Export contact]
 
 [&Export Non-IM Contact]
@@ -110,7 +110,7 @@
 
 ;file \protocols\Non-IM Contact\src\contactinfo.cpp
 [Select Folder]
-
+选择文件夹
 [Non-IM Contact protocol timer is Disabled]
 
 [Timer intervals... Non-IM Contact Protocol timer is %d seconds]
@@ -127,7 +127,7 @@
 [Copy Contact]
 
 [Files]
-
+文件
 [Edit Non-IM Contact "%s"]
 
 ;file \protocols\Non-IM Contact\src\files.cpp
@@ -144,7 +144,7 @@
 
 ;file \protocols\Non-IM Contact\src\main.cpp
 [Plugins]
-
+插件
 [Main Icon]
 
 [Non-IM Contact]

@@ -18,15 +18,15 @@
 [All]
 
 [Messages]
-
+消息
 [Files]
-
+文件
 [User Online]
-
+用户在线
 [Authorization]
 
 [Typing Notify]
-
+输入通知
 [Full Ignore]
 
 [Partial Ignore]
@@ -37,4 +37,4 @@
 
 ;file \plugins\IgnoreState\src\options.cpp
 [Icons]
-
+图标

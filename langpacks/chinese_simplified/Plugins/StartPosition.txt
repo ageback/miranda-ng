@@ -30,6 +30,6 @@
 
 ;file \plugins\StartPosition\src\startposition.cpp
 [Contact list]
-
+联系人列表
 [Start position]
 

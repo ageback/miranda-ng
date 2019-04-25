@@ -9,9 +9,9 @@
 
 ;file \plugins\HistoryLinkListPlus\res\linklist.rc
 [Search]
-
+搜索
 [Close]
-
+关闭
 [Search for:]
 
 [Message direction]
@@ -37,19 +37,19 @@
 [Color select]
 
 [Incoming messages]
-
+传入消息
 [Plugin default]
 
 [Preview]
-
+预览
 [Outgoing messages]
-
+传出消息
 [Background color]
-
+背景色
 [Use Miranda settings]
 
 [Text color]
-
+文字颜色
 [General settings]
 
 [Open links always in a new window]
@@ -67,19 +67,19 @@
 [Parting line]
 
 [Timestamp]
-
+时间戳
 [Direction]
 
 [Type]
 
 [&File]
-
+文件(&F)
 [&Save]
 
 [&Close]
-
+关闭(&C)
 [&Options]
-
+选项(&O)
 [Message &direction]
 
 [&Outgoing messages only]
@@ -95,7 +95,7 @@
 [&Clear search results]
 
 [&Search]
-
+搜索(&S)
 [link]
 
 [Open]
@@ -114,11 +114,11 @@
 [There are no links in history!]
 
 [Error]
-
+错误
 [incoming]
-
+传入
 [outgoing]
-
+传出
 [Filter]
 
 [no filter]
@@ -129,7 +129,7 @@
 
 ;file \plugins\HistoryLinkListPlus\src\linklist.cpp
 [History]
-
+历史
 [Processing history...]
 
 [Could not create window!]
@@ -151,6 +151,6 @@
 [RTF file]
 
 [All files]
-
+所有文件
 [Save RTF File]
 

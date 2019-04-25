@@ -13,7 +13,7 @@
 [Events to react on]
 
 [Incoming messages]
-
+传入消息
 [Incoming files]
 
 [Everything else]
@@ -31,7 +31,7 @@
 [Flash until]
 
 [seconds]
-
+秒
 [is re-attended]
 
 [Events are opened]
@@ -53,31 +53,31 @@
 [Only notify if status is]
 
 [Online]
-
+在线
 [Away]
-
+离开
 [Occupied]
-
+忙碌
 [Not available]
-
+不可用
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [On the phone]
-
+在打电话
 [Out to lunch]
-
+外出吃饭
 [Pending Events]
 
 [Remind me every]
 
 [minutes]
-
+分
 [Offline]
-
+离线
 [xStatuses]
 
 [Keys to flash]
@@ -109,7 +109,7 @@
 [Slow]
 
 [&Preview]
-
+预览(&P)
 [Emulate key presses (Use this option if you are using a USB keyboard)]
 
 [Create/Edit Themes]
@@ -119,15 +119,15 @@
 [Test]
 
 [Add]
-
+添加
 [Update]
 
 [Delete]
-
+删除
 [Import/Export]
 
 [Export...]
-
+导出...
 [Import...]
 
 [Override existing]
@@ -137,7 +137,7 @@
 [Program]
 
 [Cancel]
-
+取消
 [Set LEDs for events]
 
 [Num]
@@ -153,13 +153,13 @@
 [URL events]
 
 [Other events]
-
+其他事件
 [Consider event opened after]
 
 [Use custom theme]
 
 [The following events are being ignored:]
-
+以下事件被忽略：
 [Ignore messages]
 
 [Ignore files]
@@ -171,14 +171,14 @@
 [Ignore none]
 
 [Ignore]
-
+忽略
 [Set xStatus list]
 
 ;file \plugins\KeyboardNotify\src\ignore.cpp
 [** All contacts **]
-
+** 所有联系人 **
 [** Unknown contacts **]
-
+** 未知联系人 **
 ;file \plugins\KeyboardNotify\src\options.cpp
 [left -> right]
 
@@ -191,15 +191,15 @@
 [\n; End of automatically generated Keyboard Notify Theme file\n]
 
 [None]
-
+无
 [Protocol]
-
+协议
 [Keyboard Notify Theme]
 
 [All Files]
-
+所有文件
 [Accounts]
-
+帐户
 [Rules]
 
 [Flashing]
@@ -209,4 +209,4 @@
 [Keyboard Flash]
 
 [Events]
-
+事件

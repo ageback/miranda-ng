@@ -122,7 +122,7 @@
 [Currently used decoder]
 
 [connecting]
-
+正在连接
 [aborting]
 
 [Can't initialize device]
@@ -160,7 +160,7 @@
 [Tries to connect]
 
 [Mute]
-
+静音
 [mRadio volume control]
 
 [mRadio off]
@@ -180,7 +180,7 @@
 [Mute with Miranda]
 
 [Advanced]
-
+高级
 [Stop]
 
 [Play]
@@ -188,7 +188,7 @@
 [Frame background]
 
 [OFF]
-
+半
 [Volume]
 
 [Device list]
@@ -196,7 +196,7 @@
 [Equalizer]
 
 [New]
-
+新
 [Quick Open]
 
 [bass.dll not found! Choose bass.dll path manually]

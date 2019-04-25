@@ -53,13 +53,13 @@
 [Date]
 
 [Time]
-
+时间
 [Repeat each day]
 
 [Reminder Note:]
 
 [None]
-
+无
 [Daily]
 
 [Weekly]
@@ -73,7 +73,7 @@
 [&Add Reminder]
 
 [&Close]
-
+关闭(&C)
 [&View Reminders]
 
 [Reminder]
@@ -111,13 +111,13 @@
 [Appearance]
 
 [Background Color]
-
+背景色
 [Custom...]
 
 [Reset]
-
+重置
 [Text Color]
-
+文字颜色
 [Font]
 
 [Paste Title]
@@ -125,9 +125,9 @@
 [Reset Title]
 
 [Undo]
-
+撤销
 [&Copy]
-
+复制(&C)
 [&Paste]
 
 [C&ut]
@@ -201,7 +201,7 @@
 [Miranda could not load the Notes & Reminders plugin, Msftedit.dll is missing. If you are using WINE, please make sure you have Msftedit.dll installed. Press 'Yes' to continue loading Miranda.]
 
 [Alerts]
-
+警告
 [Reminder triggered]
 
 [Reminder triggered (Alternative 1)]
@@ -250,7 +250,7 @@
 [Top]
 
 [Notes]
-
+笔记
 [Note text]
 
 [Date/Title]
@@ -269,12 +269,12 @@
 [Select Executable]
 
 [Plugins]
-
+插件
 ;file \plugins\NotesAndReminders\src\reminders.cpp
 [Minutes]
-
+分
 [Hours]
-
+小时
 [The specified time is invalid due to begin of daylight saving (summer time).]
 
 [The specified time is invalid.]
@@ -284,7 +284,7 @@
 [Day]
 
 [Days]
-
+天
 [Week]
 
 [The specified time offset is invalid.]
@@ -294,11 +294,11 @@
 [Every]
 
 [Seconds]
-
+秒
 [Never]
 
 [Default]
-
+默认
 [Alternative 1]
 
 [Alternative 2]

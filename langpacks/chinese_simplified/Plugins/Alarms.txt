@@ -9,11 +9,11 @@
 
 ;file \plugins\Alarms\res\resource.rc
 [New]
-
+新
 [Delete]
-
+删除
 [Edit]
-
+编辑
 [Alarms]
 
 [Use popup plugin]
@@ -21,9 +21,9 @@
 [Default snooze:]
 
 [minutes]
-
+分
 [Row height:]
-
+行高：
 [Indent:]
 
 [Reminder frame]
@@ -47,17 +47,17 @@
 [Don't steal focus unless idle]
 
 [Preview]
-
+预览
 [Alarm]
 
 [Cancel]
-
+取消
 [Title:]
 
 [Description:]
-
+描述：
 [Actions]
-
+动作
 [Popup window]
 
 [Sound:]
@@ -125,9 +125,9 @@
 [&Edit...]
 
 [&Delete]
-
+删除(&D)
 [&Options...]
-
+选项(&O)
 [&New alarm...]
 
 ;file \plugins\Alarms\src\alarmlist.cpp
@@ -154,9 +154,9 @@
 [Title]
 
 [Background]
-
+背景
 [Window]
-
+窗口
 ;file \plugins\Alarms\src\frame.cpp
 [%dh %dm]
 
@@ -167,7 +167,7 @@
 [Show reminders]
 
 [Frames]
-
+框架
 [Alarm reminders]
 
 ;file \plugins\Alarms\src\icons.cpp
@@ -199,8 +199,8 @@
 [Please enter a title for this alarm.]
 
 [Error]
-
+错误
 [The alarm time you have selected is in the past.]
 
 [Events]
-
+事件

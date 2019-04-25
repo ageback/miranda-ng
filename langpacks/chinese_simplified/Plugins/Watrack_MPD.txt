@@ -21,6 +21,6 @@
 [Winamp Track]
 
 [Plugins]
-
+插件
 [Watrack MPD]
 

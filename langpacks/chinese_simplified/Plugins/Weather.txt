@@ -15,15 +15,15 @@
 [Webpage]
 
 [Close]
-
+关闭
 [Options]
-
+选项
 [Update weather information on startup]
 
 [Update weather information every]
 
 [minutes]
-
+分
 [Consider weather info updated only when condition and temperature are changed]
 
 [Remove old data when updating]
@@ -57,7 +57,7 @@
 [knots]
 
 [Visibility]
-
+可见性
 [km]
 
 [miles]
@@ -127,21 +127,21 @@
 [Change]
 
 [Cancel]
-
+取消
 [Popup Options]
 
 [Enable popups]
-
+启用弹出窗口
 [Popup only when condition changes]
 
 [Colors]
 
 [Background color]
-
+背景色
 [Text color]
-
+文字颜色
 [Use Windows colors]
-
+使用 Windows 颜色
 [Popup Actions]
 
 [Left Click]
@@ -153,7 +153,7 @@
 [Delay]
 
 [seconds]
-
+秒
 [From popup plugin]
 
 [Permanent]
@@ -165,17 +165,17 @@
 [Variables]
 
 [Default]
-
+默认
 [Preview]
-
+预览
 [Updates]
 
 [Alerts]
-
+警告
 [Errors]
 
 [Contact List]
-
+联系人列表
 [Brief Info Title]
 
 [Note Text]
@@ -191,7 +191,7 @@
 [More Variables]
 
 [Reset]
-
+重置
 [Status Message]
 
 [Sunset]
@@ -231,11 +231,11 @@
 [Reload INI]
 
 [City:]
-
+城市：
 [Menu]
 
 [Dismiss Popup]
-
+关闭弹出窗口
 [Open brief information]
 
 [Open complete forecast]
@@ -373,11 +373,11 @@
 [View webpage]
 
 [Reset to default]
-
+重置为默认
 [Text Files]
-
+文本文件
 [All Files]
-
+所有文件
 ;file \protocols\Weather\src\weather_conv.cpp
 [mb]
 
@@ -422,7 +422,7 @@
 
 ;file \protocols\Weather\src\weather_info.cpp
 [Name]
-
+名字
 [Author]
 
 [File Version]
@@ -430,7 +430,7 @@
 [INI Version]
 
 [Items]
-
+项
 [Display Name]
 
 [File Name]
@@ -440,7 +440,7 @@
 [Weather INI information for "%s":]
 
 [Name:]
-
+名称：
 [Internal Name:]
 
 [Author:]
@@ -456,9 +456,9 @@
 [Memory Used:]
 
 [bytes]
-
+字节
 [Description:]
-
+描述：
 ;file \protocols\Weather\src\weather_ini.cpp
 [All update data has been reloaded.]
 
@@ -477,13 +477,13 @@
 [Weather Protocol Text Preview]
 
 [Network]
-
+网络
 [General]
-
+通用
 [Display]
 
 [Popups]
-
+弹出窗口
 ;file \protocols\Weather\src\weather_popup.cpp
 ;file \protocols\Weather\src\weather_svcs.cpp
 [Station ID]
@@ -519,7 +519,7 @@
 [Variable]
 
 [Information]
-
+信息
 [Retrieving new data, please wait...]
 
 [More Info]

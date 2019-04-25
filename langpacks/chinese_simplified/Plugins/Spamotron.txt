@@ -43,13 +43,13 @@
 [Analyze]
 
 [Settings]
-
+设置
 [Enabled accounts:]
 
 [Auto approve on:]
 
 [Outgoing message]
-
+传出消息
 [Incoming message with any word from list:]
 
 [Hide contact until verified]
@@ -97,7 +97,7 @@
 [Foreground]
 
 [Background]
-
+背景
 [Timeout (sec)]
 
 [Contact blocked]
@@ -111,9 +111,9 @@
 [Windows colors]
 
 [Default timeout]
-
+默认超时
 [Preview]
-
+预览
 ;file \plugins\Spamotron\src\bayes.cpp
 [Bayes database path]
 
@@ -133,13 +133,13 @@
 [Message score]
 
 [Message sessions]
-
+消息会话
 [Messages]
-
+消息
 [Bayes]
 
 [Popups]
-
+弹出窗口
 ;file \plugins\Spamotron\src\popups.cpp
 [Message blocked due to preview action]
 

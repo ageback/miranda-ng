@@ -11,9 +11,9 @@
 [ASTERISK style]
 
 [Background color]
-
+背景色
 [Text color]
-
+文字颜色
 [ERROR style]
 
 [EXCLAMATION style]
@@ -21,7 +21,7 @@
 [QUESTION style]
 
 [Preview]
-
+预览
 [Timeout]
 
 [Special values of the "Timeout":\n -1 - infinity, 0 - use default timeout value]
@@ -32,7 +32,7 @@
 [MessagePopup]
 
 [Popups]
-
+弹出窗口
 ;file \plugins\MsgPopup\src\options.cpp
 [Message with question]
 

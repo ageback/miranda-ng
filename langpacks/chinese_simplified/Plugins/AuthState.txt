@@ -33,4 +33,4 @@
 
 ;file \plugins\AuthState\src\options.cpp
 [Icons]
-
+图标

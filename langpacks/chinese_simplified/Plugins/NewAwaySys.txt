@@ -63,7 +63,7 @@
 [Send an autoreply]
 
 [&Delete]
-
+删除(&D)
 [New &category]
 
 [Save as &new]
@@ -79,7 +79,7 @@
 [New category]
 
 [Delete]
-
+删除
 [Wait]
 
 [seconds before closing the status message dialog (-1=don't close)]
@@ -113,15 +113,15 @@
 [Update status messages for non-ICQ protocols every]
 
 [seconds]
-
+秒
 [Don't show the message dialog for]
 
 [%s message for %s]
 
 [Retrieving %s message...]
-
+正在接收 %s 消息...
 [&Cancel]
-
+取消(&C)
 [Notify of requests]
 
 [Don't notify of requests]
@@ -153,7 +153,7 @@
 [Create new &category]
 
 [&Rename]
-
+重命名(&R)
 [Set as &default for]
 
 ;file \plugins\NewAwaySysMod\src\AwayOpt.cpp
@@ -170,21 +170,21 @@
 [When this checkbox is ticked, NewAwaySys counts "send times" starting from the last status message change, even if status mode didn't change.\nWhen the checkbox isn't ticked, "send times" are counted from last status mode change (i.e., disabled state is more restrictive).]
 
 [Message]
-
+消息
 [File]
-
+文件
 [** All contacts **]
-
+** 所有联系人 **
 [** Not-on-list contacts **]
 
 [Status messages]
-
+状态消息
 [Main options]
 
 [Autoreply]
 
 [Contacts]
-
+联系人
 [Predefined messages]
 
 [Recent messages]
@@ -200,64 +200,64 @@
 [Default messages]
 
 [Online]
-
+在线
 [Yep, I'm here.]
-
+是的，我在这里。
 [Away]
-
+离开
 [Been gone since %nas_awaysince_time%, will be back later.]
 
 [Not available]
-
+不可用
 [Give it up, I'm not in!]
-
+放弃吧，我不在！
 [Occupied]
-
+忙碌
 [Not right now.]
-
+不是现在。
 [Do not disturb]
-
+勿扰
 [Give a guy some peace, would ya?]
-
+给一个人一些平静，会吧？
 [Free for chat]
-
+有空聊天
 [I'm a chatbot!]
-
+我是聊天机器人！
 [Invisible]
-
+隐身
 [I'm hiding from the mafia.]
-
+我在躲避黑手党。
 [On the phone]
-
+在打电话
 [I've been on the phone since %nas_awaysince_time%, give me a sec!]
 
 [Out to lunch]
-
+外出吃饭
 [Been having ?ifgreater(?ctime(H),2,?ifgreater(?ctime(H),10,?ifgreater(?ctime(H),16,supper,dinner),breakfast),supper) since %nas_awaysince_time%.]
 
 ;file \plugins\NewAwaySysMod\src\AwaySys.cpp
 [Toggle Off]
-
+切换关闭
 [Toggle On]
-
+切换打开
 [Dot]
 
 [Ignore]
-
+忽略
 [Indefinite]
 
 [Set status message]
 
 [Add]
-
+添加
 [Save]
 
 [Settings]
-
+设置
 [Set %s message for the contact]
 
 [Re&ad %s message]
-
+阅读 %s 消息(&A)
 [Toggle autoreply on/off]
 
 [Toggle autoreply off]
@@ -295,9 +295,9 @@
 [Read status message]
 
 [On]
-
+开
 [Off]
-
+半
 [Use the default setting]
 
 [NewAwaySys: Incoming status message request]
@@ -318,7 +318,7 @@
 
 ;file \plugins\NewAwaySysMod\src\ReadAwayMsg.cpp
 [&Close]
-
+关闭(&C)
 ;file \plugins\NewAwaySysMod\src\SetAwayMsg.cpp
 [Save, replacing the selected message]
 
@@ -331,7 +331,7 @@
 [Send an autoreply to selected contact(s)]
 
 [Apply]
-
+应用
 [Do you want to apply the message?]
 
 [Set message for]
@@ -345,7 +345,7 @@
 [all accounts]
 
 [Closing in %d]
-
+在 %d 后关闭
 ;file \plugins\NewAwaySysMod\src\stdafx.h
 [Miranda NG autoreply >\r\n%extratext%]
 
@@ -354,8 +354,8 @@
 [Away System]
 
 [Status]
-
+状态
 [Popups]
-
+弹出窗口
 [Variables plugin is not installed]
 

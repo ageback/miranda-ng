@@ -23,4 +23,4 @@
 
 ;file \plugins\CountryFlags\src\options.cpp
 [Icons]
-
+图标

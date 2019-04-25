@@ -13,11 +13,11 @@
 [Update data every]
 
 [minutes]
-
+分
 [Delay update on start]
 
 [seconds]
-
+秒
 [Hide icon on status bar]
 
 [Disable main menu items]
@@ -31,11 +31,11 @@
 [Window appearance]
 
 [Background color:]
-
+背景颜色：
 [Text color:]
-
+文字颜色：
 [Bold]
-
+粗体
 [Italic]
 
 [Underline]
@@ -87,15 +87,15 @@
 [Remove HTML]
 
 [Cancel]
-
+取消
 [Apply]
-
+应用
 [Find]
-
+查找
 [&Find next]
-
+查找下一个(&F)
 [Find what:]
-
+查找什么：
 [Search was completed.]
 
 [Events and alerts]
@@ -141,19 +141,19 @@
 [Permanent]
 
 [Preview]
-
+预览
 [Colors]
 
 [Use custom colors]
-
+使用自定义颜色
 [Use Windows colors]
-
+使用 Windows 颜色
 [Use same colors as data window]
 
 [Background]
-
+背景
 [Text]
-
+文字
 [Left click action]
 
 [Open data display window]
@@ -161,21 +161,21 @@
 [Open web page]
 
 [Dismiss popup]
-
+关闭弹出窗口
 [Right click action]
 
 [Log]
-
+日志
 [&Copy]
-
+复制(&C)
 [C&ut]
 
 [&Delete]
-
+删除(&D)
 [&Paste]
 
 [Co&py all]
-
+复制所有(&P)
 [&Select all]
 
 [C&lear all]
@@ -211,9 +211,9 @@
 [All Webview sites have been updated.]
 
 [Network]
-
+网络
 [Popups]
-
+弹出窗口
 ;file \protocols\WebView\src\webview_alerts.cpp
 [Cannot write to file]
 
@@ -296,7 +296,7 @@
 [Alert!]
 
 [Online]
-
+在线
 [A site is already downloading, try again in a moment.]
 
 [Bytes in display]

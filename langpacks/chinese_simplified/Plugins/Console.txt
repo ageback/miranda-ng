@@ -64,13 +64,13 @@
 [Services]
 
 [Text]
-
+文字
 [Background]
-
+背景
 [Text Files (*.txt)]
 
 [All Files]
-
+所有文件
 [Save selection to file]
 
 [Save log to file]

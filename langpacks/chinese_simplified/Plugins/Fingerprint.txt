@@ -75,7 +75,7 @@
 [Security]
 
 [Protocol]
-
+协议
 ;file \plugins\FingerprintNG\src\masks.cpp
 [Miranda NG stable]
 
@@ -201,4 +201,4 @@
 
 ;file \plugins\FingerprintNG\src\options.cpp
 [Icons]
-
+图标

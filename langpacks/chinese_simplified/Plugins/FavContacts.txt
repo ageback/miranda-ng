@@ -9,7 +9,7 @@
 
 ;file \plugins\FavContacts\res\resource.rc
 [Customize]
-
+自定义
 [Show second line]
 
 [Show avatars]
@@ -41,7 +41,7 @@
 [Dim idle contact icons]
 
 [Show]
-
+显示
 [recent contacts]
 
 ;file \plugins\FavContacts\src\favlist.h
@@ -57,18 +57,18 @@
 ;file \plugins\FavContacts\src\menu.cpp
 ;file \plugins\FavContacts\src\options.cpp
 [Contacts]
-
+联系人
 ;file \plugins\FavContacts\src\services.cpp
 [Contact name]
 
 [Second line]
-
+第二行
 [Selected contact name (color)]
 
 [Selected second line (color)]
 
 [Background]
-
+背景
 [Selected background]
 
 [Show favorite contacts]

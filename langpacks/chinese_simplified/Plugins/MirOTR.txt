@@ -63,13 +63,13 @@
 [Socialist Millionaires Protocol\r\nVerification progress]
 
 [&Cancel]
-
+取消(&C)
 [Socialist Millionaires Protocol\r\nVerification]
 
 [&No]
-
+否(&N)
 [&Yes]
-
+是(&)
 [OTR status]
 
 [&Start OTR session]
@@ -97,9 +97,9 @@
 [Stop OTR]
 
 [Yes]
-
+是
 [No]
-
+否
 [OTR status (Click for more options)]
 
 [OTR Encryption: Disabled]
@@ -143,15 +143,15 @@
 [Generating new private key for protocol '%s'.\nPlease Wait...]
 
 [General]
-
+通用
 [Protocols]
 
 [Contacts]
-
+联系人
 [Fingerprints]
 
 [Contact]
-
+联系
 [Account]
 
 [Policy]
@@ -165,7 +165,7 @@
 [Conv. HTML]
 
 [Default]
-
+默认
 [Generating new key for '%s'. Continue?]
 
 [Removing key for '%s'. Continue?]

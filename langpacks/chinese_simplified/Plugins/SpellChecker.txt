@@ -19,7 +19,7 @@
 [Edit...]
 
 [Remove]
-
+移除
 [Add auto-replace word]
 
 [Wrong word:]
@@ -31,7 +31,7 @@
 [Use variables in correction]
 
 [Cancel]
-
+取消
 [Spell Checker]
 
 [Default language:]
@@ -47,7 +47,7 @@
 [Download more dictionaries]
 
 [Advanced]
-
+高级
 [Underline type:]
 
 [Show corrections in submenu]
@@ -80,7 +80,7 @@
 
 ;file \plugins\SpellChecker\src\options.cpp
 [Message sessions]
-
+消息会话
 [Auto-replacements]
 
 [Line]
@@ -115,9 +115,9 @@
 [Enabled]
 
 [Disabled]
-
+已禁用
 [Unknown]
-
+未知
 ;file \plugins\SpellChecker\src\utils.cpp
 [There are %d spelling errors. Are you sure you want to send this message?]
 

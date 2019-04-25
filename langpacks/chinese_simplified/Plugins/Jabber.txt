@@ -13,15 +13,15 @@
 [Tags:]
 
 [Cancel]
-
+取消
 [Type:]
-
+类型：
 [User:]
 
 [Domain/Server:]
 
 [Password:]
-
+密码：
 [Save password]
 
 [Resource:]
@@ -49,7 +49,7 @@
 [Export to file]
 
 [Username:]
-
+用户名：
 [Change password]
 
 [Priority:]
@@ -59,7 +59,7 @@
 [List of public servers]
 
 [Port:]
-
+端口
 [Use SSL]
 
 [Use TLS]
@@ -71,7 +71,7 @@
 [Manually specify connection host]
 
 [Host:]
-
+主机：
 [Keep connection alive]
 
 [Automatically delete contacts not in my roster]
@@ -107,7 +107,7 @@
 [Back]
 
 [Complete]
-
+完成
 [Jabber Password]
 
 [Remember password for this session]
@@ -119,43 +119,43 @@
 [Address2:]
 
 [City:]
-
+城市：
 [State:]
-
+州：
 [ZIP:]
 
 [Country:]
-
+国家：
 [Full name:]
 
 [Nickname:]
-
+昵称：
 [First name:]
-
+名字：
 [Middle:]
 
 [Last name:]
-
+姓：
 [Date of birth:]
-
+生日：
 [YYYY-MM-DD]
 
 [Gender:]
-
+性别：
 [Occupation:]
 
 [Homepage:]
-
+主页：
 [Company:]
-
+公司：
 [Department:]
-
+部门：
 [Title:]
 
 [E-mail:]
-
+电子邮件：
 [Phone:]
-
+电话：
 [Jabber vCard: Add Email Address]
 
 [Email address:]
@@ -163,7 +163,7 @@
 [Home]
 
 [Work]
-
+工作
 [Internet]
 
 [Jabber vCard: Add Phone Number]
@@ -173,7 +173,7 @@
 [Voice]
 
 [Fax]
-
+传真
 [Pager]
 
 [Text/Messaging]
@@ -189,9 +189,9 @@
 [Save]
 
 [Delete]
-
+删除
 [Description:]
-
+描述：
 [Change Password]
 
 [Current Password:]
@@ -223,7 +223,7 @@
 [Other JID:]
 
 [Add]
-
+添加
 [Invitation reason:]
 
 [&Invite]
@@ -241,11 +241,11 @@
 [Store conference rooms and web links on server.]
 
 [Remove]
-
+移除
 [Edit]
-
+编辑
 [Close]
-
+关闭
 [Bookmark Details]
 
 [Bookmark Type]
@@ -255,7 +255,7 @@
 [Transport]
 
 [URL]
-
+URL
 [Auto-join (Automatically join Bookmarks must be enabled in Miranda options)]
 
 [Room JID/ URL:]
@@ -301,7 +301,7 @@
 [following stanza types:]
 
 [Messages]
-
+消息
 [Queries]
 
 [Incoming presence]
@@ -351,7 +351,7 @@
 [Slap:]
 
 [Authorization request]
-
+授权请求
 [Accept or reject incoming request]
 
 [Someone (maybe you) has requested the following file:]
@@ -413,7 +413,7 @@
 [Address (JID or URL)]
 
 [Nickname]
-
+昵称
 [Conferences]
 
 [Links]
@@ -519,13 +519,13 @@
 
 ;file \protocols\JabberG\src\jabber_chat.cpp
 [None]
-
+无
 [Member]
 
 [Admin]
 
 [Owner]
-
+所有者
 [Visitor]
 
 [Participant]
@@ -581,15 +581,15 @@
 [&Send presence]
 
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [&Leave chat session]
 
 [&Slap]
@@ -599,7 +599,7 @@
 [Member &info]
 
 [User &details]
-
+用户详情(&D)
 [&Add to roster]
 
 [&Copy to clipboard]
@@ -728,16 +728,16 @@
 [Change nickname in <%s>]
 
 [Error]
-
+错误
 [Group chat invitation to\n%s]
 
 ;file \protocols\JabberG\src\jabber_icolib.cpp
 [Status icons]
-
+状态图标
 [transport]
 
 [Notes]
-
+笔记
 [Multi-User Conference]
 
 [Agents list]
@@ -759,7 +759,7 @@
 [OpenID Request]
 
 [Add contact]
-
+添加联系人
 [Open]
 
 [Discovery succeeded]
@@ -915,7 +915,7 @@
 ;file \protocols\JabberG\src\jabber_message_handlers.cpp
 ;file \protocols\JabberG\src\jabber_misc.cpp
 [To]
-
+到
 [From]
 
 [Both]
@@ -934,7 +934,7 @@
 [Notes are not saved, close this window without uploading data to server?]
 
 [Are you sure?]
-
+你确定吗？
 [Incoming note]
 
 ;file \protocols\JabberG\src\jabber_omemo.cpp
@@ -1326,7 +1326,7 @@
 [You must be online]
 
 [Messaging]
-
+消息
 [Send messages slower, but with full acknowledgment]
 
 [Enable avatars]
@@ -1360,7 +1360,7 @@
 [Enable stream compression (if possible)]
 
 [Other]
-
+其他
 [Enable remote controlling (from another resource of same JID only)]
 
 [Show transport agents on contact list]
@@ -1390,7 +1390,7 @@
 [Use OMEMO encryption for messages if possible (XEP-0384) (Basic support without GUI)]
 
 [General]
-
+通用
 [Autoaccept multiuser chat invitations]
 
 [Automatically join bookmarks on login]
@@ -1412,15 +1412,15 @@
 [Role changes]
 
 [Status changes]
-
+状态变更
 [Don't notify history messages]
 
 [Network]
-
+网络
 [Account]
 
 [Advanced]
-
+高级
 [Public XMPP Network]
 
 [Secure XMPP Network]
@@ -1484,7 +1484,7 @@
 [all.]
 
 [messages]
-
+消息
 [ and ]
 
 [incoming presences]
@@ -1550,9 +1550,9 @@
 [** Subscription: none **]
 
 [<none>]
-
+<无>
 [Message]
-
+消息
 [Presence (in)]
 
 [Presence (out)]
@@ -1584,7 +1584,7 @@
 
 ;file \protocols\JabberG\src\jabber_roster.cpp
 [Group]
-
+分组
 [Subscription]
 
 [Uploading...]
@@ -1592,7 +1592,7 @@
 [Downloading...]
 
 [Connecting...]
-
+正在连接...
 [XML for MS Excel (UTF-8 encoded)]
 
 ;file \protocols\JabberG\src\jabber_search.cpp
@@ -1622,7 +1622,7 @@
 [Outcast]
 
 [Nick:]
-
+昵称：
 [Status:]
 
 [Real JID:]
@@ -1644,15 +1644,15 @@
 
 ;file \protocols\JabberG\src\jabber_userinfo.cpp
 [<not specified>]
-
+<未指定>
 [Resource]
 
 [Software]
 
 [Version]
-
+版本
 [System]
-
+系统
 [Last activity]
 
 [Operating system]
@@ -1678,7 +1678,7 @@
 [Last active resource]
 
 [Copy]
-
+复制
 [Copy only this value]
 
 [format]
@@ -1729,7 +1729,7 @@
 [Unknown error message]
 
 [Offline]
-
+离线
 [Advanced Status]
 
 [Set mood...]
@@ -1738,9 +1738,9 @@
 
 ;file \protocols\JabberG\src\jabber_vcard.cpp
 [Male]
-
+男性
 [Female]
-
+女性
 [Only JPG, GIF, and BMP image files smaller than 40 KB are supported.]
 
 [Jabber vCard]
@@ -1750,7 +1750,7 @@
 [Jabber vCard: Edit Phone Number]
 
 [Contacts]
-
+联系人
 [Note]
 
 ;file \protocols\JabberG\src\jabber_ws.cpp
@@ -1850,7 +1850,7 @@
 [In awe]
 
 [In love]
-
+恋爱
 [Indignant]
 
 [Interested]
@@ -2054,7 +2054,7 @@
 [in real life]
 
 [on the phone]
-
+在打电话
 [on video phone]
 
 [Traveling]

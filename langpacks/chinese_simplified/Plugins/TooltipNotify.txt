@@ -15,23 +15,23 @@
 [Allow tooltip notifications for the following users:]
 
 [Cancel]
-
+取消
 [Notify upon the following events]
 
 [Online]
-
+在线
 [Offline]
-
+离线
 [All other]
 
 [Typing]
-
+正在输入
 [Protocols]
 
 [Suppress notifications upon connection for]
 
 [sec]
-
+秒
 [Prefix protocol name]
 
 [Duration]
@@ -59,31 +59,31 @@
 [Transparent input]
 
 [Preview]
-
+预览
 [Translucency options]
-
+透明度选项
 [Transparent tooltip]
 
 [Contacts]
-
+联系人
 [Idle]
-
+空闲
 ;file \plugins\TooltipNotify\src\TooltipNotify.cpp
 [Tooltip Notify]
 
 [Other status]
 
 [Other]
-
+其他
 [Popups]
-
+弹出窗口
 [** New contacts **]
-
+** 新联系人 **
 [** Unknown contacts **]
-
+** 未知联系人 **
 [Not Idle]
 
 [Unknown]
-
+未知
 [is]
 

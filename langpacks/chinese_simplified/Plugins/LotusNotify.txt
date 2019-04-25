@@ -17,7 +17,7 @@
 [Database:]
 
 [Password:]
-
+密码：
 [try detect]
 
 [autoregister]
@@ -33,9 +33,9 @@
 [Set popup colors]
 
 [Background]
-
+背景
 [Text]
-
+文字
 [Close after:]
 
 [sec (0 default, -1 disabled)]
@@ -90,9 +90,9 @@
 [Attachments: %d bytes]
 
 [Status]
-
+状态
 [Plugins]
-
+插件
 [Connection]
 
 [Popup]

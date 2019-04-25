@@ -15,7 +15,7 @@
 [User ID]
 
 [Cancel]
-
+取消
 [GnuPG Plugin - Select public key]
 
 [Refresh]

@@ -11,7 +11,7 @@
 [View Version Information]
 
 [Close]
-
+关闭
 [Copy To Clipboard]
 
 [To File]
@@ -19,7 +19,7 @@
 [Support for vi.miranda-ng.org]
 
 [Username]
-
+用户名
 [Password]
 
 [Upload automatically when changed]
@@ -37,11 +37,11 @@
 [View]
 
 [&Copy]
-
+复制(&C)
 [Co&py All]
-
+复制所有(&P)
 [Select &All]
-
+选择所有(&A)
 ;file \plugins\CrashDumper\src\crshdmp.cpp
 [Version Info stored into file %s]
 
@@ -62,7 +62,7 @@
 [Store to file]
 
 [Show]
-
+显示
 [Show with DLLs]
 
 [Upload]

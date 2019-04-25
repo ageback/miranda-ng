@@ -11,13 +11,13 @@
 [Shown menu items]
 
 [Visibility]
-
+可见性
 [Show alpha icons]
 
 [Hide from list]
 
 [Ignore]
-
+忽略
 [Copy to Account (Ctrl+click for move to Account)]
 
 [Browse Received Files]
@@ -58,7 +58,7 @@
 [Show in list]
 
 [Always visible]
-
+总是可见
 [Never visible]
 
 [Copy to Account]
@@ -68,19 +68,19 @@
 [All]
 
 [Messages]
-
+消息
 [Files]
-
+文件
 [User Online]
-
+用户在线
 [Authorization]
 
 [Typing Notify]
-
+输入通知
 [Open ignore settings]
 
 [MenuItemEx]
 
 ;file \plugins\MenuItemEx\src\options.cpp
 [Customize]
-
+自定义

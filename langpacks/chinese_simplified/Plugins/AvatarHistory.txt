@@ -9,7 +9,7 @@
 
 ;file \plugins\AvatarHistory\res\AvatarHistory.rc
 [Save as...]
-
+保存为...
 [Delete this entry]
 
 [Delete this entry and the bitmap file]
@@ -19,7 +19,7 @@
 [Static]
 
 [Open folder]
-
+打开文件夹
 [Store this user's old avatars in disk]
 
 [Log this user's avatars changes to history]
@@ -37,23 +37,23 @@
 [Colors]
 
 [Background color]
-
+背景色
 [Text color]
-
+文字颜色
 [Use Windows colors]
-
+使用 Windows 颜色
 [Use default colors]
-
+使用默认颜色
 [Delay]
 
 [From popup plugin]
 
 [Custom]
-
+自定义
 [Permanent]
 
 [Actions]
-
+动作
 [On right click:]
 
 [On left click:]
@@ -65,7 +65,7 @@
 [Avatar removal:]
 
 [Preview]
-
+预览
 [Avatar history: Select how to store history avatars]
 
 [Please select how the avatar history should be stored. This setting CANNOT be changed in future, because it would cause all previous history to be lost.]
@@ -121,7 +121,7 @@
 [Avatar history: Unable to save avatar]
 
 [Avatars]
-
+头像
 [Avatar History]
 
 [Contact changed avatar]
@@ -133,7 +133,7 @@
 
 ;file \plugins\AvatarHistory\src\options.cpp
 [Do nothing]
-
+啥都不干
 [Close popup]
 
 [Show avatar history]
@@ -145,11 +145,11 @@
 [Test description]
 
 [History]
-
+历史
 [Avatar]
 
 [Popups]
-
+弹出窗口
 [Avatar change]
 
 ;file \plugins\AvatarHistory\src\stdafx.h

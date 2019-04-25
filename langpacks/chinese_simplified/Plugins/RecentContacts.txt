@@ -22,12 +22,12 @@
 
 ;file \plugins\RecentContacts\src\options.cpp
 [Contacts]
-
+联系人
 ;file \plugins\RecentContacts\src\RecentContacts.cpp
 [Main icon]
 
 [Contact]
-
+联系
 [Toggle Ignore]
 
 [Ignore Contact]

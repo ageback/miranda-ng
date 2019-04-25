@@ -20,15 +20,15 @@
 [Reload]
 
 [New]
-
+新
 [Up]
 
 [Down]
 
 [Delete]
-
+删除
 [Default]
-
+默认
 [Additional Options]
 
 [Tool Window Style]
@@ -44,7 +44,7 @@
 [Show Client Icons]
 
 [Settings]
-
+设置
 [Title:]
 
 [Account]
@@ -54,17 +54,17 @@
 [UserID]
 
 [Nickname]
-
+昵称
 [First name]
 
 [Last name]
 
 [Group]
-
+分组
 [Container]
 
 [E-mail]
-
+电子邮件
 [Client ID]
 
 [Ext IP]
@@ -82,7 +82,7 @@
 [Contact add time]
 
 [Type:]
-
+类型：
 [DB setting]
 
 [Script]
@@ -92,7 +92,7 @@
 [Contact info]
 
 [Other]
-
+其他
 [Data type:]
 
 [Byte]
@@ -108,13 +108,13 @@
 [String]
 
 [TimeStamp]
-
+时间戳
 [Module:]
-
+模块：
 [Setting:]
 
 [Service:]
-
+服务：
 [Param]
 
 [number value]
@@ -140,7 +140,7 @@
 [All]
 
 [Close]
-
+关闭
 [Refresh]
 
 [QuickSearch]
@@ -162,11 +162,11 @@
 [Delete Column]
 
 [Male]
-
+男性
 [Female]
-
+女性
 [Contacts]
-
+联系人
 [ContactInfo]
 
 [LastEvent]
@@ -204,21 +204,21 @@
 [Subcontact foreground]
 
 [&Delete]
-
+删除(&D)
 [&Copy]
-
+复制(&C)
 [C&onvert to Meta]
 
 [Attach to &Tab container]
 
 [&Move to Group]
-
+移到分组(&M)
 [Some of selected contacts in different metacontacts already]
 
 [Do you really want to delete selected contacts?]
 
 [Warning]
-
+警告
 [One or more contacts in same Meta already. Try to convert anyway?]
 
 [Editing of column ]
@@ -230,11 +230,11 @@
 [) Online: ]
 
 [Online]
-
+在线
 [deleted]
 
 [off]
-
+半
 [active]
 
 [Colorize]
@@ -260,13 +260,13 @@
 [Change setting through QS]
 
 [default]
-
+默认
 [Selected]
 
 [contacts]
-
+联系人
 [Unknown]
-
+未知
 [Stay on Top]
 
 ; these lines are not present in the sources, but they are present in compiled plugin

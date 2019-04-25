@@ -11,11 +11,11 @@
 [Set my nickname]
 
 [Nickname:]
-
+昵称：
 [Cancel]
-
+取消
 [General]
-
+通用
 [RTL]
 
 [Align text to right]
@@ -47,13 +47,13 @@
 [Cycle through accounts every:]
 
 [seconds]
-
+秒
 [Avatar]
 
 [Custom size:]
 
 [pixels]
-
+像素
 [Allow it to grow]
 
 [Draw border]
@@ -119,9 +119,9 @@
 
 ;file \plugins\MyDetails\src\frame.cpp
 [Nickname]
-
+昵称
 [Status]
-
+状态
 [Status message]
 
 [Listening to]
@@ -129,7 +129,7 @@
 [My details]
 
 [Background]
-
+背景
 [Avatar border]
 
 [Show my details]
@@ -151,7 +151,7 @@
 
 ;file \plugins\MyDetails\src\options.cpp
 [Contact list]
-
+联系人列表
 ;file \plugins\MyDetails\src\services.cpp
 [Set my nickname for %s]
 

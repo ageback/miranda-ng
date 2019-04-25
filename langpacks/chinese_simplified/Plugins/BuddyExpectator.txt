@@ -35,25 +35,25 @@
 [Colors]
 
 [Background]
-
+背景
 [Text]
-
+文字
 [Use Popups colors]
 
 [Use Windows colors]
-
+使用 Windows 颜色
 [Delay]
 
 [Default]
-
+默认
 [Custom]
-
+自定义
 [Permanent]
 
 [sec]
-
+秒
 [Preview]
-
+预览
 [Last seen online:]
 
 [Last input message:]
@@ -61,7 +61,7 @@
 [Custom absence period:]
 
 [days]
-
+天
 [Never hide this contact]
 
 [Enable Miss You]
@@ -74,7 +74,7 @@
 [Enabled]
 
 [Disabled]
-
+已禁用
 [Hide]
 
 [Never hide]
@@ -119,7 +119,7 @@
 [years]
 
 [Do nothing]
-
+啥都不干
 [Delete the contact]
 
 [Contact name]
@@ -127,9 +127,9 @@
 [has returned after being absent since %d days]
 
 [Contacts]
-
+联系人
 [Popups]
-
+弹出窗口
 [not detected]
 
 [not found]

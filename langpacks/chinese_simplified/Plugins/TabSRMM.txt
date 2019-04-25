@@ -11,49 +11,49 @@
 [Show these events]
 
 [Actions]
-
+动作
 [Messages]
-
+消息
 [Nick changes]
-
+昵称变更
 [Users joining]
-
+用户加入
 [Users leaving]
-
+用户离开
 [Topic changes]
-
+话题变更
 [Status changes]
-
+状态变更
 [Information]
-
+信息
 [Disconnects]
-
+断开连接
 [User kicks]
-
+用户踢出
 [Notices]
-
+通知
 [Popup]
 
 [Tray]
-
+托盘
 [Options]
-
+选项
 [Add new rooms to group:]
-
+增加新的房间到分组：
 [Log files]
 
 [Enable logging to disk]
-
+启用日志保存到磁盘
 [Log directory]
-
+日志目录
 [Maximum size for log files (in KB)]
 
 [Group chat log formatting]
 
 [Your name]
-
+你的名字
 [Other name]
-
+其他名字
 [Timestamp (window)]
 
 [Timestamp (logfile)]
@@ -100,13 +100,13 @@
 [&Retry]
 
 [&Cancel]
-
+取消(&C)
 [&Send]
-
+发送(&S)
 [&Add]
-
+添加(&A)
 [&Remove]
-
+移除(&R)
 ;file \plugins\TabSRMM\res\resource.rc
 [Customize the panel]
 
@@ -137,7 +137,7 @@
 [Message send timeout]
 
 [seconds]
-
+秒
 [Input history size]
 
 [entries]
@@ -159,21 +159,21 @@
 [Popup options]
 
 [Text]
-
+文字
 [Background]
-
+背景
 [Timeout (seconds, 0 = default, -1 = no timeout)]
 
 [Message]
-
+消息
 [Default colors]
 
 [Others]
 
 [Preview]
-
+预览
 [Group chats]
-
+分组聊天
 [Errors]
 
 [Use the message log color theme for group chat popups]
@@ -181,7 +181,7 @@
 [Dialog]
 
 [Cancel]
-
+取消
 [All modes]
 
 [Choose modes]
@@ -209,7 +209,7 @@
 [Always trim message log to]
 
 [events]
-
+事件
 [Only show tab bar when it's needed]
 
 [Container stays on top]
@@ -269,7 +269,7 @@
 [When checked, this container will use private settings, otherwise settings are shared among containers.]
 
 [Apply]
-
+应用
 [Static]
 
 [Tab location]
@@ -333,21 +333,21 @@
 [RTL templates...]
 
 [Load history events]
-
+加载历史事件
 [Load unread events only]
-
+仅加载未读事件
 [Load number of previous events]
-
+加载先前事件的数量
 [Load previous events less than]
-
+加载之前的事件少于
 [minutes old]
-
+分钟
 [Global message log display]
 
 [Typing notification options]
 
 [Send typing notifications to the following users when you are typing a message to them:]
-
+当你向以下用户输入消息时，给他们发送正在输入通知：
 [        Show typing notifications in the message window]
 
 [Flash window once on typing events (only if flashing enabled)]
@@ -357,7 +357,7 @@
 [Show typing notification when message dialog is open]
 
 [Show typing notification when no message dialog is open]
-
+当没有打开消息对话框时显示正在输入通知
 [Show balloon tooltip in the system tray]
 
 [        Show popups when a user is typing]
@@ -379,9 +379,9 @@
 [Available containers]
 
 [Delete]
-
+删除
 [Rename]
-
+重命名
 [Create a new container]
 
 [Create new]
@@ -407,7 +407,7 @@
 [Flash interval]
 
 [milliseconds]
-
+毫秒：
 [Help on containers]
 
 [Windows Aero settings]
@@ -417,7 +417,7 @@
 [Use Windows 7 task bar enhancements (restart required)]
 
 [Popups]
-
+弹出窗口
 [...is &typing]
 
 [...stopped t&yping]
@@ -441,7 +441,7 @@
 [Permanent]
 
 [Custom]
-
+自定义
 [...stopped typing]
 
 [Popups timeout]
@@ -457,7 +457,7 @@
 [Define up to 5 colors which you can use with some variables]
 
 [Close]
-
+关闭
 [Update preview]
 
 [Save template]
@@ -489,7 +489,7 @@
 [Selected skin]
 
 [Rescan]
-
+重新扫描
 [Load this skin on startup]
 
 [Reload active skin]
@@ -515,9 +515,9 @@
 [Import from a file...]
 
 [Download more skins]
-
+下载更多皮肤
 [Icons]
-
+图标
 [Event type icons in the message log]
 
 [Text symbols as event markers]
@@ -569,19 +569,19 @@
 [Do not show this message again]
 
 [Yes]
-
+是
 [No]
-
+否
 [Log]
-
+日志
 [&Copy]
-
+复制(&C)
 [&Quote]
 
 [Co&py all]
-
+复制所有(&P)
 [Select &all]
-
+选择所有(&A)
 [Clear log]
 
 [Freeze log]
@@ -591,15 +591,15 @@
 [&Open in existing window]
 
 [&Copy link]
-
+复制链接(&C)
 [Editor]
 
 [Cut]
-
+剪切
 [Copy]
-
+复制
 [Paste]
-
+粘贴
 [Paste formatted text]
 
 [Paste and send immediately]
@@ -607,7 +607,7 @@
 [Copy all]
 
 [Select all]
-
+选择全部
 [Show message length indicator]
 
 [Close tab]
@@ -629,7 +629,7 @@
 [Show contact picture]
 
 [Default]
-
+默认
 [Hidden for this contact]
 
 [Visible for this contact]
@@ -659,7 +659,7 @@
 [Splitter position]
 
 [Global]
-
+全局
 [Private]
 
 [Send text formatting]
@@ -667,7 +667,7 @@
 [BBCode]
 
 [Off]
-
+半
 [This contact]
 
 [Global setting]
@@ -717,9 +717,9 @@
 [Cancel all multisend jobs]
 
 [Copy message to clipboard]
-
+复制消息到剪贴板
 [&File]
-
+文件(&F)
 [Save message log as...]
 
 [Close message session\tCtrl+W]
@@ -729,13 +729,13 @@
 [&View]
 
 [Show menu bar]
-
+显示菜单栏
 [Show status bar]
-
+显示状态栏
 [Info panel...]
 
 [Toolbar]
-
+工具栏
 [Show toolbar]
 
 [Place toolbar at bottom]
@@ -792,7 +792,7 @@
 [Message log options]
 
 [View user's history]
-
+查看用户历史
 [Edit user notes]
 
 [Select font color]
@@ -807,34 +807,34 @@
 
 ;file \plugins\TabSRMM\src\chat_log.cpp
 [%s has joined]
-
+%s 已加入
 [You have joined %s]
-
+你加入了 %s
 [%s has left]
-
+%s 已经离开
 [%s has disconnected]
-
+%s 已经断开连接
 [%s is now known as %s]
-
+%s 现在称为 %s
 [You are now known as %s]
-
+你现在被称为 %s
 [%s kicked %s]
-
+%s 踢了 %s
 [Notice from %s: ]
-
+通知来自 %s:
 [The topic is '%s%s']
-
+主题是 '%s%s' 
 [ (set by %s on %s)]
-
+ (由 %s 设置在 %s) 
 [ (set by %s)]
-
+ (由 %s 设置) 
 [%s enables '%s' status for %s]
-
+%s 启用了 '%s' 状态为 %s
 [%s disables '%s' status for %s]
-
+%s 禁用了 '%s' 状态为 %s 
 ;file \plugins\TabSRMM\src\chat_main.cpp
 [Message sessions]
-
+消息会话
 ;file \plugins\TabSRMM\src\chat_options.cpp
 [Input area background]
 
@@ -875,7 +875,7 @@
 [Generic text color (only when fill color is set)]
 
 [Tabs]
-
+标签
 [Normal text]
 
 [Active text]
@@ -937,13 +937,13 @@
 [* Symbols (outgoing)]
 
 [Nickname]
-
+昵称
 [UIN]
 
 [Status]
-
+状态
 [Protocol]
-
+协议
 [Contacts local time]
 
 [Window caption (skinned mode)]
@@ -951,23 +951,23 @@
 [Open new chat rooms in the default container]
 
 [Flash window when someone speaks]
-
+有人说话时闪动窗口
 [Flash window when a word is highlighted]
-
+突出显示单词时闪动窗口
 [Create tabs or windows for highlight events]
 
 [Activate chat window on highlight]
 
 [Show list of users in the chat room]
-
+显示聊天室中的用户列表
 [Colorize nicknames in member list]
 
 [Show button menus when right clicking the buttons]
-
+当右键点击按钮时显示按钮菜单
 [Show topic as status message on the contact list]
 
 [Do not pop up the window when joining a chat room]
-
+当加入聊天室时不要弹出窗口
 [Sync splitter position with standard IM sessions]
 
 [Show contact's status modes if supported by the protocol]
@@ -979,15 +979,15 @@
 [Use alternative sorting method in member list]
 
 [Prefix all events with a timestamp]
-
+在所有事件前加时间戳前缀
 [Timestamp only when event time differs]
 
 [Timestamp has same color as the event]
-
+时间戳的颜色和事件相同
 [Indent the second line of a message]
-
+缩进消息的第二行
 [Limit user names in the message log to 20 characters]
-
+限制消息日志中的用户名为20字符
 [Add a colon (:) to auto-completed user names]
 
 [Add a comma instead of a colon to auto-completed user names]
@@ -995,9 +995,9 @@
 [Start private conversation on double click in nick list (insert nick if unchecked)]
 
 [Strip colors from messages in the log]
-
+从日志中的消息中去除颜色
 [Enable the 'event filter' for new rooms]
-
+为新房间启用“事件过滤器”
 [Use IRC style status indicators in the log]
 
 [Allow clickable user names in the message log]
@@ -1009,51 +1009,51 @@
 [Scale down icons to 10x10 pixels in the chat log]
 
 [Window Icon]
-
+窗口图标
 [Icon overlay]
-
+图标叠加层
 [Status 1 (10x10)]
-
+状态 1  (10x10)
 [Status 2 (10x10)]
-
+状态 2  (10x10)
 [Status 3 (10x10)]
-
+状态 3  (10x10)
 [Status 4 (10x10)]
-
+状态 4  (10x10)
 [Status 5 (10x10)]
-
+状态 5  (10x10)
 [Status 6 (10x10)]
-
+状态 6  (10x10)
 [Message in (10x10)]
-
+传入消息  (10x10)
 [Message out (10x10)]
-
+传出消息  (10x10)
 [Action (10x10)]
-
+动作  (10x10)
 [Add Status (10x10)]
-
+添加状态  (10x10)
 [Remove Status (10x10)]
-
+移除状态  (10x10)
 [Join (10x10)]
-
+加入  (10x10)
 [Leave (10x10)]
-
+离开  (10x10)
 [Quit (10x10)]
-
+退出  (10x10)
 [Kick (10x10)]
-
+踢  (10x10)
 [Notice (10x10)]
-
+通知  (10x10)
 [Nickchange (10x10)]
 
 [Topic (10x10)]
-
+主题  (10x10)
 [Highlight (10x10)]
-
+高亮  (10x10)
 [Information (10x10)]
-
+信息  (10x10)
 [Message Sessions]
-
+消息会话
 [Group chat windows]
 
 [Group chat log]
@@ -1071,19 +1071,19 @@
 [Selection background]
 
 [Selected text]
-
+选择文字
 [Incremental search highlight]
 
 [Fields background]
 
 [Nick list background]
-
+昵称列表背景
 [Group chat log background]
-
+分组聊天日志背景
 [Appearance and functionality of chat room windows]
-
+聊天室窗口的外观和功能
 [Appearance of the message log]
-
+消息日志的外观
 [nick of current contact (if defined)]
 
 [protocol name of current contact (if defined). Account name is used when protocol supports multiple accounts]
@@ -1135,9 +1135,9 @@
 [Variables]
 
 [All files]
-
+所有文件
 [Select folder]
-
+选择文件夹
 [No markers]
 
 [Show as icons]
@@ -1145,7 +1145,7 @@
 [Show as text symbols]
 
 [Settings]
-
+设置
 [Log formatting]
 
 [Events and filters]
@@ -1165,11 +1165,11 @@
 [, %d %s, %d %s idle]
 
 [hours]
-
+小时
 [hour]
 
 [minutes]
-
+分
 [minute]
 
 [, %d %s idle]
@@ -1183,9 +1183,9 @@
 [, event filter active]
 
 [%s: message session]
-
+%s：消息会话
 [%s: message session (%u users)]
-
+%s：消息会话（%u 用户）
 ;file \plugins\TabSRMM\src\container.cpp
 [Message session...]
 
@@ -1246,7 +1246,7 @@
 [Sounds are %s. Click to toggle status, hold Shift and click to set for all open containers]
 
 [disabled]
-
+已禁用
 [enabled]
 
 [Sending typing notifications is %s.]
@@ -1261,7 +1261,7 @@
 [TabSRMM warning message]
 
 [Incoming file]
-
+传入文件
 [No description given]
 
 [Incoming file (invalid format)]
@@ -1282,32 +1282,32 @@
 [You cannot edit user notes when there are unsent messages]
 
 [%s is typing a message...]
-
+%s 正在输入消息...
 [Last received: %s at %s]
 
 [%s has entered text.]
 
 [%s is typing a message]
-
+%s 正在输入消息
 [Auto scrolling is disabled, %d message(s) queued (press F12 to enable it)]
 
 ;file \plugins\TabSRMM\src\globals.cpp
 [Instant messages]
-
+即时消息
 [Incoming (focused window)]
-
+传入消息（获得焦点的窗口）
 [Incoming (unfocused window)]
-
+传入消息（未获得焦点的窗口）
 [Incoming (new session)]
-
+传入消息（新会话）
 [Outgoing]
-
+传出
 [Message send error]
-
+消息发送出错
 [&Message]
-
+消息(&M)
 [Other]
-
+其他
 [TabSRMM: typing]
 
 [TabSRMM session list]
@@ -1319,7 +1319,7 @@
 [&Send later job list...]
 
 [Message from %s]
-
+来自 %s 的消息
 [signed off.]
 
 [signed on and is now %s.]
@@ -1330,7 +1330,7 @@
 [Most recent unread session]
 
 [Paste and send]
-
+粘贴并发送
 [Contact's messaging preferences]
 
 [Send a file]
@@ -1403,7 +1403,7 @@
 [chat room]
 
 [contact]
-
+联系
 [Do not synchronize the panel height with IM windows]
 
 [Do not synchronize the panel height with group chat windows]
@@ -1432,13 +1432,13 @@
 [Skins]
 
 [Avatars]
-
+头像
 [Saved TabSRMM avatars]
 
 [Group chat logs root]
 
 [Typing notification]
-
+输入通知
 ;file \plugins\TabSRMM\src\modplus.cpp
 [Insert [img] tag / surround selected text with [img][/img]]
 
@@ -1495,7 +1495,7 @@
 [The 'paste and send' feature is disabled. You can enable it on the 'General' options page in the 'Sending messages' section]
 
 ['(Unknown contact)']
-
+'(未知联系人)'
 [JPEG-compressed images]
 
 ;file \plugins\TabSRMM\src\msglog.cpp
@@ -1589,9 +1589,9 @@
 [You have chosen to use an external plugin for displaying the message history in the chat window. Most of the settings on this page are for the standard message log viewer only and will have no effect. To change the appearance of the message log, you must configure either IEView or History++.]
 
 [** New contacts **]
-
+** 新联系人 **
 [** Unknown contacts **]
-
+** 未知联系人 **
 [Always]
 
 [Always, but no popup when window is focused]
@@ -1607,15 +1607,15 @@
 [Choose status modes]
 
 [General]
-
+通用
 [Tabs and layout]
 
 [Containers]
 
 [Message log]
-
+消息日志
 [Typing notify]
-
+输入通知
 [Message window]
 
 [Load and apply]
@@ -1634,7 +1634,7 @@
 [Save and close]
 
 [Smiley button]
-
+笑脸按钮
 [Format bold]
 
 [Format italic]
@@ -1648,9 +1648,9 @@
 [Format strike-through]
 
 [Background color]
-
+背景色
 [Room settings]
-
+房间设置
 [Event filter]
 
 [Nick list]
@@ -1658,9 +1658,9 @@
 [Message delivery error]
 
 [Incoming message]
-
+传入消息
 [Outgoing message]
-
+传出消息
 [Status change]
 
 [Static container icon]
@@ -1686,7 +1686,7 @@
 [Frame 4]
 
 [Message Log]
-
+消息日志
 [Animated Tray]
 
 [Clock symbol (for the info panel clock)]
@@ -1708,7 +1708,7 @@
 [You cannot delete the default container]
 
 [Error]
-
+错误
 [You cannot rename the default container]
 
 [This name is already in use]
@@ -1733,7 +1733,7 @@
 [Pending]
 
 [Contact]
-
+联系
 [Original timestamp]
 
 [Message text]
@@ -1853,7 +1853,7 @@
 [Show headers]
 
 [Dismiss popup]
-
+关闭弹出窗口
 [Open event]
 
 [Dismiss event]
@@ -1873,7 +1873,7 @@
 [Disable notifications]
 
 [System tray icon]
-
+系统托盘图标
 [Left click actions (popups only)]
 
 [Right click actions (popups only)]
@@ -1891,13 +1891,13 @@
 [Send on Shift+Enter]
 
 [Send message on 'Enter']
-
+按“回车”时发送消息
 [Send message on double 'Enter']
-
+按两次“回车”时发送消息
 [Minimize the message window on send]
-
+当发送时最小化消息窗口
 [Close the message window on send]
-
+当发送时关闭消息窗口
 [Always flash contact list and tray icon for new messages]
 
 [Delete temporary contacts on close]
@@ -1983,9 +1983,9 @@
 [...is typing a message.]
 
 [Contact started typing]
-
+联系人开始输入
 [Contact stopped typing]
-
+联系人停止输入
 ;file \plugins\TabSRMM\src\userprefs.cpp
 [Force default message log]
 

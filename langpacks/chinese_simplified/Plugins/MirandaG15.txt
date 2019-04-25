@@ -61,13 +61,13 @@
 [Notification duration]
 
 [events]
-
+事件
 [seconds]
-
+秒
 [Notification types]
 
 [Incoming messages]
-
+传入消息
 [Contact signs off]
 
 [Contact changes status]
@@ -93,17 +93,17 @@
 [Show timestamps]
 
 [Messages]
-
+消息
 [User events]
 
 [Emotes]
 
 [Status changes]
-
+状态变更
 [Group chat events:]
 
 [Notices]
-
+通知
 [Channel events]
 
 [Cut off nicknames after]
@@ -121,7 +121,7 @@
 [Show the contacts protocols]
 
 [Hide offline users]
-
+隐藏离线用户
 [Use ignore settings]
 
 [Use groups/subgroups]
@@ -175,7 +175,7 @@
 [On incoming messages:]
 
 [Do nothing]
-
+啥都不干
 [Scroll to the first line]
 
 [Scroll to the last line]
@@ -200,6 +200,6 @@
 [Chat sessions]
 
 [Contact list]
-
+联系人列表
 [No device attached]
 

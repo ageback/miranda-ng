@@ -74,7 +74,7 @@
 [Frame template]
 
 [Text effect]
-
+文字效果
 [Text movement]
 
 [Text rotation speed (1-20)]
@@ -388,7 +388,7 @@
 [Show by request only]
 
 [second line]
-
+第二行
 [Cover filenames]
 
 [Music Info]
@@ -424,7 +424,7 @@
 [Create Report]
 
 [Context menu]
-
+上下文菜单
 [/me listening "%title%"]
 
 [Report file name not defined]
@@ -596,7 +596,7 @@
 [Precision]
 
 [none]
-
+无
 [kb]
 
 [Kb]

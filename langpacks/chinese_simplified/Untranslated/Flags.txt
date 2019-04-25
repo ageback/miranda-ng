@@ -5,4 +5,3 @@
 [Use &IP-to-country database for country detection]
 [Use &unknown flag if the country cannot be determined]
 [Country flag]
-[Icons]

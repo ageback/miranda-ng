@@ -7,4 +7,3 @@
 [- Add "---" for separator.]
 [- Press [v] button for variable's help.]
 [Button]
-[Message sessions]

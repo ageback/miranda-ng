@@ -8,6 +8,5 @@
 [Last message is not read]
 [Last message read]
 [Last message was not sent]
-[Sending...]
 [Last message read at %X %x]
 [Last message read (unknown time)]

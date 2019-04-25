@@ -13,11 +13,11 @@
 [ID:]
 
 [Password:]
-
+密码：
 [Server name:]
 
 [Port:]
-
+端口
 [Client ID and version]
 
 [Error display]
@@ -29,7 +29,7 @@
 [Use system tray balloons]
 
 [Contacts]
-
+联系人
 [Get contacts from server]
 
 [Upload contacts]
@@ -45,7 +45,7 @@
 [40 or 128 bit]
 
 [None]
-
+无
 [Meanwhile lib ver: 1.0.2]
 
 [Disconnected]
@@ -53,11 +53,11 @@
 [Send announcement]
 
 [Cancel]
-
+取消
 [Message text:]
 
 [Select all]
-
+选择全部
 [Invert\nselection]
 
 ;file \protocols\Sametime\src\conference.cpp
@@ -89,7 +89,7 @@
 [Server protocol version: %03d.%03d]
 
 [Network]
-
+网络
 ;file \protocols\Sametime\src\sametime.cpp
 [Protocol icon]
 
@@ -98,7 +98,7 @@
 [Notification]
 
 [Error]
-
+错误
 ;file \protocols\Sametime\src\sametime_proto.cpp
 [%s connection]
 
@@ -120,7 +120,7 @@
 [Failed to upload contacts - storage service unavailable.]
 
 [Name]
-
+名字
 [Description]
 
 [Group?]

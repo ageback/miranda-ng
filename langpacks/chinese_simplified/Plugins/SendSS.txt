@@ -13,9 +13,9 @@
 [All]
 
 [None]
-
+无
 [Cancel]
-
+取消
 [Send screenshot to <unknown>]
 
 [Take a screenshot and send it to a contact]
@@ -45,9 +45,9 @@
 [Copyright]
 
 [&Close]
-
+关闭(&C)
 [Edit]
-
+编辑
 [Caption:]
 
 [Size (HxW):]
@@ -61,20 +61,20 @@
 [File:]
 
 [Description:]
-
+描述：
 [Result]
 
 [Thumbnail]
 
 [&Copy]
-
+复制(&C)
 [Close]
-
+关闭
 ;file \plugins\SendScreenshotPlus\src\CSend.cpp
 [Resulting URL from\n]
 
 [Copy]
-
+复制
 [Copy BBCode]
 
 [Copy BBCode w/ link]
@@ -82,11 +82,11 @@
 [%s requires a valid contact!]
 
 [Error]
-
+错误
 [GCHAT error]
 
 [An unknown error has occurred.]
-
+发生了未知的错误。
 ;file \plugins\SendScreenshotPlus\src\CSend.h
 [Unable to initiate %s.]
 
@@ -156,13 +156,13 @@
 [Retry]
 
 [Yes]
-
+是
 [No]
-
+否
 [Abort]
 
 [Ignore]
-
+忽略
 ;file \plugins\SendScreenshotPlus\src\Main.cpp
 [Main Icon]
 
@@ -171,9 +171,9 @@
 [Target Desktop]
 
 [Help]
-
+帮助
 [Open Folder]
-
+打开文件夹
 [Description off]
 
 [Description on]
@@ -195,7 +195,7 @@
 [BBCode link]
 
 [Down arrow]
-
+向下箭头
 [Could not create screenshot folder (error code: %d):\n%s\nDo you have write permissions?]
 
 [Could not create main dialog.]
@@ -225,7 +225,7 @@
 [Send screenshot to %s]
 
 [Window]
-
+窗口
 [Desktop]
 
 [<Entire Desktop>]
@@ -235,13 +235,13 @@
 [ (primary)]
 
 [File]
-
+文件
 [<Only save>]
 
 [File Transfer]
 
 [E-mail]
-
+电子邮件
 [FTP File]
 
 [Upload Pie (30m)]

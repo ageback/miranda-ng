@@ -27,7 +27,6 @@
 [Chance Rain 50% Chance Of Precipitation]
 [Chance Rain 80% Chance Of Precipitation]
 [Chance Rain 90% Chance Of Precipitation]
-[Clear]
 [Cloudy]
 [Day Length Diff]
 [Day Length]

@@ -24,7 +24,7 @@
 
 ;file \protocols\Dummy\src\dummy.h
 [Custom]
-
+自定义
 [Screen name]
 
 [User name]
@@ -38,11 +38,11 @@
 [ICQ number]
 
 [Nickname]
-
+昵称
 [Visible name]
 
 [E-mail address]
-
+电子邮件地址
 [Live ID]
 
 [Skype name]
@@ -54,7 +54,7 @@
 [Tox ID]
 
 [Username]
-
+用户名
 [VKontakte ID]
 
 [WhatsApp ID]

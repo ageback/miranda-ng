@@ -9,7 +9,7 @@
 
 ;file \plugins\PasteIt\res\PasteIt.rc
 [Settings]
-
+设置
 [Default web page]
 
 [Default file encoding]
@@ -25,7 +25,7 @@
 [Web page to configure]
 
 [Configure]
-
+配置
 [Default formatting]
 
 [Auto-detect format from file extension]
@@ -41,13 +41,13 @@
 [Configure formatting]
 
 [Cancel]
-
+取消
 [Up]
 
 [Down]
 
 [Delete]
-
+删除
 [Restore defaults]
 
 [Download more]
@@ -117,7 +117,7 @@
 [Paste It - Select file]
 
 [Error]
-
+错误
 [Paste from clipboard]
 
 [Paste from file]
@@ -132,7 +132,7 @@
 [File size is %d KB, do you really want to paste such a large file?]
 
 [Are You sure?]
-
+你确定吗？
 [Cannot read file '%s']
 
 [File size is larger then 10 MB, cannot be sent]

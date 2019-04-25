@@ -11,7 +11,7 @@
 [Selected totals]
 
 [Accounts]
-
+帐户
 [Units]
 
 [Clear statistics]
@@ -23,19 +23,19 @@
 [kilobytes]
 
 [minutes]
-
+分
 [Background color:]
-
+背景颜色：
 [Text color:]
-
+文字颜色：
 [Reset to default]
-
+重置为默认
 [Popup timeout]
 
 [From popup plugin]
 
 [Custom]
-
+自定义
 [Test]
 
 [Show now]
@@ -64,7 +64,7 @@
 [Total online]
 
 [General]
-
+通用
 [Draw frame as skin element]
 
 [Show tooltip in traffic window]
@@ -90,16 +90,16 @@
 [Services]
 
 [Options]
-
+选项
 [Traffic counter]
 
 [Statistics]
 
 [Popups]
-
+弹出窗口
 ;file \plugins\TrafficCounter\src\statistics.cpp
 [Bytes]
-
+字节
 [KB]
 
 [MB]
@@ -119,13 +119,13 @@
 [Period]
 
 [Incoming]
-
+传入
 [Outgoing]
-
+传出
 [Sum]
 
 [Online]
-
+在线
 [Now traffic statistics for selected accounts will be cleared.\nContinue?]
 
 [Couldn't read statistics file]

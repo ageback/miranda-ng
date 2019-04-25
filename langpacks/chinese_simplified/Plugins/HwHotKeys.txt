@@ -13,11 +13,11 @@
 [Assign]
 
 [Clear]
-
+清除
 [Show/Hide contact list]
-
+显示/隐藏联系人列表
 [Read message]
-
+阅读消息
 [Last pressed key]
 
 [Extended flag (1xx), Hardware scan code (x23), KeyName]
@@ -28,6 +28,6 @@
 
 ;file \plugins\HwHotKeys\src\HwHotKeys_DllMain.cpp
 [Customize]
-
+自定义
 [Hardware HotKeys]
 

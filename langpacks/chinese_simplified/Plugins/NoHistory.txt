@@ -31,13 +31,13 @@
 [Enable]
 
 [Clear]
-
+清除
 [No History]
 
 ;file \plugins\NoHistory\src\options.cpp
 [** All contacts **]
-
+** 所有联系人 **
 [History]
-
+历史
 [Logging]
 

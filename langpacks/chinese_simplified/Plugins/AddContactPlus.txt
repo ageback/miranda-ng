@@ -9,7 +9,7 @@
 
 ;file \plugins\AddContactPlus\res\resource.rc
 [Add contact]
-
+添加联系人
 [Add a contact to your contact list]
 
 [Account:]
@@ -17,26 +17,26 @@
 [Contact ID:]
 
 [Custom name:]
-
+自定义名字：
 [Group:]
-
+分组：
 [Options]
-
+选项
 [Add temporarily]
 
 [Send authorization request]
-
+发送授权请求
 [Authorization request]
-
+授权请求
 [&Add]
-
+添加(&A)
 [&Cancel]
-
+取消(&C)
 ;file \plugins\AddContactPlus\src\addcontact.cpp
 [Please authorize my request and add me to your contact list.]
-
+请授权我的请求并将我添加到您的联系人列表中。
 [None]
-
+无
 [The contact cannot be added to your contact list. Please make sure the contact ID is entered correctly.]
 
 [The contact cannot be added to your contact list. If you are not logged into the selected account, please try to do so. Also, make sure the contact ID is entered correctly.]

@@ -21,15 +21,15 @@
 [Password]
 
 [&Add]
-
+添加(&A)
 [&Edit]
-
+编辑(&E)
 [&Del]
 
 [User info - Required]
 
 [Nick]
-
+昵称
 [Alternative nick]
 
 [Full name (e-mail)]
@@ -39,13 +39,13 @@
 [Ident]
 
 [System]
-
+系统
 [Port]
 
 [only while connecting]
 
 [Other]
-
+其他
 [Force visible (-i)]
 
 [Rejoin channel if kicked]
@@ -79,9 +79,9 @@
 [Ping]
 
 [Version]
-
+版本
 [Time]
-
+时间
 [Userinfo]
 
 [&Refresh]
@@ -89,9 +89,9 @@
 [&Query]
 
 [&Close]
-
+关闭(&C)
 [Name]
-
+名字
 [Address]
 
 [Channels]
@@ -111,7 +111,7 @@
 [Question]
 
 [&Cancel]
-
+取消(&C)
 [Perform]
 
 [&Set]
@@ -133,15 +133,15 @@
 [Auto]
 
 [On]
-
+开
 [Off]
-
+半
 [Host address]
 
 [Server description]
 
 [Network]
-
+网络
 [Channels on server]
 
 [&Join]
@@ -205,7 +205,7 @@
 [Attempt reverse DCC (good if firewalled)]
 
 [none]
-
+无
 [everyone on the contact list]
 
 [everyone]
@@ -235,7 +235,7 @@
 [&Accept]
 
 [&Deny]
-
+拒绝(&D)
 [Enable (*)]
 
 [Ignore channel messages by default]
@@ -253,9 +253,9 @@
 [Queries]
 
 [Messages]
-
+消息
 [Notices]
-
+通知
 [Ignore mask (nick!user@host)]
 
 [Network (*)]
@@ -267,7 +267,7 @@
 [Server:]
 
 [Password:]
-
+密码：
 ;file \protocols\IRCG\src\clist.cpp
 [CTCP chat request from %s]
 
@@ -311,7 +311,7 @@
 [CTCP %s reply from %s: %s]
 
 [Owner]
-
+所有者
 [Admin]
 
 [Op]
@@ -341,13 +341,13 @@
 [Change nickname]
 
 [Unknown]
-
+未知
 [IRC error]
 
 [Please enter the hostmask (nick!user@host)\nNOTE! Contacts on your contact list are never ignored]
 
 [Ignore]
-
+忽略
 [Please enter the reason]
 
 [Ban'n Kick]
@@ -412,7 +412,7 @@
 [%s client-to-client connections]
 
 [Nickname]
-
+昵称
 [DCC ERROR: No valid files specified]
 
 [DCC reversed file transfer request sent to %s [%s]]
@@ -433,15 +433,15 @@
 [Main]
 
 [Add]
-
+添加
 [Apply]
-
+应用
 [Rename]
-
+重命名
 [Edit]
-
+编辑
 [Cancel]
-
+取消
 [Channel list]
 
 [Quick connect]
@@ -527,7 +527,7 @@
 [Event: Disconnect]
 
 [ALL NETWORKS]
-
+所有网络
 [Click to set commands that will be performed for this event]
 
 [Click to delete the commands for this event]
@@ -553,7 +553,7 @@
 [DCC and CTCP]
 
 [Advanced]
-
+高级
 ;file \protocols\IRCG\src\output.cpp
 [WallOps from %s: ]
 
@@ -750,7 +750,7 @@
 
 ;file \protocols\IRCG\src\tools.cpp
 [Offline]
-
+离线
 ;file \protocols\IRCG\src\userinfo.cpp
 [Faster! Searches the network for an exact match of the nickname only. The hostmask is optional and provides further security if used. Wildcards (? and *) are allowed.]
 

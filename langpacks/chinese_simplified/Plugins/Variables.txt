@@ -41,11 +41,11 @@
 [The token %extratext% is translated into a string which depends on the situation in which the string is parsed. Use this dialog to simulate the string to which %extratext% translates.]
 
 [Close]
-
+关闭
 [The Variables plugin translates various tokens into a certain value. An example is: I'm running Miranda %mirandaversion%. The substring %mirandaversion% will be translated into the correct version number. The following list shows all available tokens.]
 
 [Notes]
-
+笔记
 [Variables...]
 
 ;file \plugins\Variables\src\help.cpp
@@ -56,9 +56,9 @@
 [Input]
 
 [Cancel]
-
+取消
 [Help]
-
+帮助
 [Variables Help]
 
 [Open String Formatting Help]
@@ -159,7 +159,7 @@
 
 ;file \plugins\Variables\src\parse_metacontacts.cpp
 [Metacontacts]
-
+中继联系人
 [get parent metacontact of contact x]
 
 [get default subcontact x]

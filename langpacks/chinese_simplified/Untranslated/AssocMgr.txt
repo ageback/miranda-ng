@@ -10,7 +10,6 @@
 [File types]
 [File association error]
 [There was an error writing to the registry to modify the file/url associations.\nReason: %s]
-[Unknown]
 [Autostart error]
 [There was an error writing to the registry to modify the autostart list.\n\nReason: %s]
 [Services]

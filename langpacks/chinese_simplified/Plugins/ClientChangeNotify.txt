@@ -35,7 +35,7 @@
 [Delay]
 
 [Sec]
-
+秒
 [0 = Default]
 
 [-1 = Infinite]
@@ -43,13 +43,13 @@
 [Colors]
 
 [Background]
-
+背景
 [Use default]
 
 [Text]
-
+文字
 [Preview]
-
+预览
 [Ignore these clients (separated by semicolons):]
 
 [(you have to install pcre16.mir to use regular expressions here)]
@@ -68,7 +68,7 @@
 [ClientChangeNotify: Client changed]
 
 [Popups]
-
+弹出窗口
 ;file \plugins\ClientChangeNotify\src\Misc.h
 [Error #%d]
 
@@ -88,6 +88,6 @@
 [Open contact history]
 
 [Do nothing]
-
+啥都不干
 [ClientChangeNotify]
 

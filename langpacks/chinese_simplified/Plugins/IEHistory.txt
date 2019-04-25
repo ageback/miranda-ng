@@ -11,13 +11,13 @@
 [Dialog]
 
 [Close]
-
+关闭
 [&Prev]
 
 [&Next]
 
 [&Search]
-
+搜索(&S)
 [Number of events to load]
 
 [Load all events]
@@ -35,11 +35,11 @@
 [RTL is default text direction]
 
 [Search]
-
+搜索
 [&Find next]
-
+查找下一个(&F)
 [Cancel]
-
+取消
 [Text:]
 
 [Direction]
@@ -56,21 +56,21 @@
 [You can't close the window now, wait for all events to load.]
 
 [Error]
-
+错误
 [Text search]
 
 [Time search]
 
 [Time:]
-
+时间：
 [Search finished. No more entries...]
 
 [Information]
-
+信息
 [History]
-
+历史
 ;file \plugins\IEHistory\src\IEHistory.cpp
 [View &history]
-
+查看历史(&H)
 [&System History]
 

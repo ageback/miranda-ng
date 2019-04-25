@@ -11,7 +11,7 @@
 [Automatic backups]
 
 [Disabled]
-
+已禁用
 [When Miranda starts]
 
 [When Miranda exits]
@@ -41,7 +41,7 @@
 [Backup progress]
 
 [Cancel]
-
+取消
 ;file \plugins\Db_autobackups\src\backup.cpp
 [Backup in progress]
 
@@ -50,7 +50,7 @@
 [Uploading to cloud failed]
 
 [Error]
-
+错误
 [Database backed up]
 
 [Database back up in process...]
@@ -65,7 +65,7 @@
 [Compressed Miranda NG databases]
 
 [All files]
-
+所有文件
 [Database]
 
 [Backup profile]
@@ -73,18 +73,18 @@
 [Save profile as...]
 
 [Popups]
-
+弹出窗口
 [Database backups]
 
 [Backup folder]
 
 ;file \plugins\Db_autobackups\src\options.cpp
 [days]
-
+天
 [hours]
-
+小时
 [minutes]
-
+分
 [path to Miranda root folder]
 
 [path to folder containing Miranda profiles]

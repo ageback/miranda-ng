@@ -67,7 +67,7 @@
 [New Menu Entry]
 
 [Message sessions]
-
+消息会话
 ;file \plugins\QuickMessages\src\Utils.cpp
 [Quick Messages Button %u]
 

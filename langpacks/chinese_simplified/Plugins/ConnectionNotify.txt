@@ -13,15 +13,15 @@
 [Popup options]
 
 [Background]
-
+背景
 [Text]
-
+文字
 [Close after:]
 
 [sec (0 default, -1 disabled)]
 
 [Settings]
-
+设置
 [try resolve addresses]
 
 [Version:]
@@ -31,7 +31,7 @@
 [Attempt interval (ms)]
 
 [Delete]
-
+删除
 ['Online' means:]
 
 [Filters]
@@ -41,7 +41,7 @@
 [Move up]
 
 [Add]
-
+添加
 [Rule editor]
 
 [Application name]
@@ -51,14 +51,14 @@
 [Action:]
 
 [Cancel]
-
+取消
 [* and ? wildcard characters also available (for port enter number or *)]
 
 [Remote IP:Port]
 
 ;file \protocols\ConnectionNotify\src\ConnectionNotify.cpp
 [Show]
-
+显示
 [Hide]
 
 [Always show popup]
@@ -66,7 +66,7 @@
 [Never show popup]
 
 [Status]
-
+状态
 [Application]
 
 [Internal socket]
@@ -76,7 +76,7 @@
 [Action]
 
 [Plugins]
-
+插件
 [New Connection Notification]
 
 ;file \protocols\ConnectionNotify\src\filter.cpp

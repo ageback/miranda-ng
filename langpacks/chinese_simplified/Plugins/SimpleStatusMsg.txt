@@ -11,9 +11,9 @@
 [%s message for %s]
 
 [&Cancel]
-
+取消(&C)
 [Retrieving %s message...]
-
+正在接收 %s 消息...
 [Co&py to clipboard]
 
 [%s message (%s)]
@@ -35,7 +35,7 @@
 [Do not set status message]
 
 [Status messages]
-
+状态消息
 [Pop up dialog asking for new message]
 
 [Set an empty message]
@@ -55,7 +55,7 @@
 [Update variables in status messages every]
 
 [seconds]
-
+秒
 [Do not update variables during idle]
 
 [Do not update variables on ICQ status message requests]
@@ -67,7 +67,7 @@
 [Exclude %date% token from parsing (restart required)]
 
 [Layout]
-
+布局
 [Show status list]
 
 [Show status profiles in status list]
@@ -79,7 +79,7 @@
 [Show icons in message list]
 
 [Other]
-
+其他
 [Store up to]
 
 [recent messages (0 = disable)]
@@ -103,7 +103,7 @@
 [Set status after]
 
 [milliseconds]
-
+毫秒：
 [Protocol:]
 
 [Status:]
@@ -151,22 +151,22 @@
 [More variables...]
 
 [Cut]
-
+剪切
 [Copy]
-
+复制
 [Paste]
-
+粘贴
 [Delete]
-
+删除
 [Select all]
-
+选择全部
 ;file \plugins\SimpleStatusMsg\src\awaymsg.cpp
 [Failed to retrieve %s message.]
 
 [&Close]
-
+关闭(&C)
 [Re&ad %s message]
-
+阅读 %s 消息(&A)
 [Copy %s message]
 
 [&Go to URL in %s message]
@@ -187,7 +187,7 @@
 [Status message...]
 
 [%s (locked)]
-
+%s(锁定)
 [External Applications]
 
 [retrieves song name of the song currently playing in Winamp (Simple Status Message compatible)]
@@ -208,9 +208,9 @@
 [Delete selected]
 
 [global]
-
+全局
 [Closing in %d]
-
+在 %d 后关闭
 [Are you sure you want to clear status message history?]
 
 [Confirm clearing history]
@@ -237,11 +237,11 @@
 [Startup status]
 
 [Status]
-
+状态
 [General]
-
+通用
 [Advanced]
-
+高级
 ;file \plugins\SimpleStatusMsg\src\utils.cpp
 [Recent message]
 
@@ -252,24 +252,24 @@
 [Simple Status Message]
 
 [I've been away since %time%.]
-
+从 %time% 起我已经离开了。
 [Give it up, I'm not in!]
-
+放弃吧，我不在！
 [Not right now.]
-
+不是现在。
 [Give a guy some peace, would ya?]
-
+给一个人一些平静，会吧？
 [I'm a chatbot!]
-
+我是聊天机器人！
 [Yep, I'm here.]
-
+是的，我在这里。
 [Nope, not here.]
-
+不，不在这里。
 [I'm hiding from the mafia.]
-
+我在躲避黑手党。
 [That'll be the phone.]
-
+那将是电话。
 [Mmm... food.]
-
+嗯......食物。
 [idleeeeeeee]
-
+空闲闲闲闲闲

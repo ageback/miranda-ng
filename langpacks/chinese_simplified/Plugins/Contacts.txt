@@ -11,19 +11,19 @@
 [Send contacts]
 
 [&Add]
-
+添加(&A)
 [&User menu]
-
+用户菜单(&U)
 [User &details]
-
+用户详情(&D)
 [&History]
-
+历史(&H)
 [Choose contacts to be send:]
 
 [&Send]
-
+发送(&S)
 [Cancel]
-
+取消
 [&Select All]
 
 [Received contacts]
@@ -33,47 +33,47 @@
 [&Details]
 
 [Close]
-
+关闭
 [Contacts send error]
 
 [An error has occurred. The protocol reported the following error:]
-
+出现了一个错误。协议报告了如下错误：
 [Try again]
-
+再试一次
 [Popup]
 
 [Add to List]
-
+添加到列表
 [User details]
-
+用户详情
 [Send Message]
 
 ;file \plugins\ContactsPlus\src\main.cpp
 [Contacts received from]
 
 [Contacts]
-
+联系人
 [Events]
-
+事件
 [Incoming Contacts]
 
 [Outgoing Contacts]
 
 ;file \plugins\ContactsPlus\src\receive.cpp
 [Nick]
-
+昵称
 [First Name]
 
 [Last Name]
 
 [Add Contact Permanently to List]
-
+永久添加联系人到列表
 [View User's Details]
-
+查看用户详情
 [View User's History]
-
+查看用户历史
 [User Menu]
-
+用户菜单
 [Contacts from]
 
 ;file \plugins\ContactsPlus\src\send.cpp

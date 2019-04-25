@@ -28,7 +28,7 @@
 [Last message was not sent]
 
 [Sending...]
-
+正在发送...
 [Last message read at %X %x]
 
 [Last message read (unknown time)]

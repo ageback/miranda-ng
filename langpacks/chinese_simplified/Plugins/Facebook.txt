@@ -9,9 +9,9 @@
 
 ;file \protocols\FacebookRM\res\facebook.rc
 [E-mail:]
-
+电子邮件：
 [Password:]
-
+密码：
 [Create a new Facebook account]
 
 [What's on your mind?]
@@ -33,11 +33,11 @@
 [Share]
 
 [Cancel]
-
+取消
 [User details]
-
+用户详情
 [Contacts]
-
+联系人
 [Default group:]
 
 [Automatically set 'Ignore status change' flag]
@@ -87,7 +87,7 @@
 [Allow posting statuses to my pages (may slow down login)]
 
 [Advanced]
-
+高级
 [Send typing notifications even when Invisible]
 
 [Typing is one way how user is determined active. If you don't want to be seen "active 1 min ago" on Facebook, uncheck this option and also don't interact with website at all. Sending messages from Miranda should be ok, but don't 100% rely on it either.]
@@ -99,7 +99,7 @@
 [Submit]
 
 [Messages]
-
+消息
 [Keep messages as unread on server (don't send "seen" info)]
 
 [Show stickers as custom smileys (EXPERIMENTAL)]
@@ -135,7 +135,7 @@
 [&Destroy chat session]
 
 [User &details]
-
+用户详情(&D)
 [User &history]
 
 [Delete conversation]
@@ -247,7 +247,7 @@
 [Only me]
 
 [Default]
-
+默认
 [<< Contacts]
 
 [What's on your mind, %s?]
@@ -260,7 +260,7 @@
 [a link]
 
 [files]
-
+文件
 [a file]
 
 [User sent %s:]
@@ -270,7 +270,7 @@
 [Reaction]
 
 [%s is typing a message...]
-
+%s 正在输入消息...
 ;file \protocols\FacebookRM\src\messages.cpp
 [You cannot send messages when you are offline.]
 
@@ -317,13 +317,13 @@
 [Facebook ID must be numeric value.]
 
 [Network]
-
+网络
 [Account]
 
 [Events]
-
+事件
 [Messaging]
-
+消息
 [Share status...]
 
 [Own wall]
@@ -339,7 +339,7 @@
 [Wall posts]
 
 [Other events]
-
+其他事件
 [Friendship events]
 
 [Real-time friends activity]

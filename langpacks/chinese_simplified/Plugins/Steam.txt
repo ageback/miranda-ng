@@ -9,19 +9,19 @@
 
 ;file \protocols\Steam\res\Resource.rc
 [Username:]
-
+用户名：
 [Password:]
-
+密码：
 [Default group:]
 
 [Account]
 
 [Contacts]
-
+联系人
 [Use bigger avatars]
 
 [Message sessions]
-
+消息会话
 [Show chat state events (i.e., user closed chat session)]
 
 [Connection]
@@ -31,7 +31,7 @@
 [Captcha]
 
 [Cancel]
-
+取消
 [As an added account security measure, you'll need to grant access by entering the special code we've just sent to your email address.]
 
 [Go to email domain]
@@ -83,9 +83,9 @@
 
 ;file \protocols\Steam\src\steam_options.cpp
 [Name]
-
+名字
 [Network]
-
+网络
 ;file \protocols\Steam\src\steam_proto.cpp
 [Protocols]
 

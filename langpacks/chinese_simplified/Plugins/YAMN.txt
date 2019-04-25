@@ -13,33 +13,33 @@
 [Version:]
 
 [Description:]
-
+描述：
 [Copyright:]
-
+版权：
 [Homepage:]
-
+主页：
 [Account]
 
 [Name:]
-
+名称：
 [Server:]
 
 [Port:]
-
+端口
 [User Name:]
 
 [Password:]
-
+密码：
 [Codepage:]
 
 [Default]
-
+默认
 [Disable STLS]
 
 [Status:]
 
 [Options]
-
+选项
 [Check this account]
 
 [Startup check]
@@ -65,7 +65,7 @@
 [Sound]
 
 [Message]
-
+消息
 [Keyboard Flash]
 
 [Tray Icon]
@@ -85,29 +85,29 @@
 [Check while...]
 
 [Cancel]
-
+取消
 [Choose modes]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [On the phone]
-
+在打电话
 [Out to lunch]
-
+外出吃饭
 [YAMN General Options]
 
 [TopToolBar button "Check mail"]
@@ -151,11 +151,11 @@
 [..s Popup duration]
 
 [Preview]
-
+预览
 [Background color]
-
+背景色
 [Text color]
-
+文字颜色
 ;file \protocols\YAMN\src\main.cpp
 [Check &mail (All Account)]
 
@@ -178,7 +178,7 @@
 
 ;file \protocols\YAMN\src\services.cpp
 [Nick]
-
+昵称
 [No new mail message]
 
 ;file \protocols\YAMN\src\browser\badconnect.cpp
@@ -216,13 +216,13 @@
 [Delete selected]
 
 [Select All]
-
+选择全部
 [From]
 
 [Subject]
 
 [Size]
-
+大小
 [Date]
 
 [Do you really want to delete %d selected mails?]
@@ -316,25 +316,25 @@
 
 ;file \protocols\YAMN\src\proto\pop3\pop3opt.cpp
 [Network]
-
+网络
 [Accounts]
-
+帐户
 [General]
-
+通用
 [Plugins]
-
+插件
 [Popups]
-
+弹出窗口
 [No account selected]
 
 [Time left to next check [s]: %d]
 
 [New Account]
-
+新帐户
 [Executables]
 
 [All Files]
-
+所有文件
 [Select executable used for notification]
 
 [Dialog box error]

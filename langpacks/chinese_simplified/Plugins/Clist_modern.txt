@@ -89,11 +89,11 @@
 [Last message]
 
 [Status bar]
-
+状态栏
 [Show status bar]
-
+显示状态栏
 [Make sections equal width]
-
+使选择宽度相等
 [Space between]
 
 [Borders]
@@ -119,7 +119,7 @@
 [Hide account completely]
 
 [Show protocol names]
-
+显示协议名称
 [Show status name]
 
 [Show xStatus name]
@@ -139,41 +139,41 @@
 [Show unread emails (if supported)]
 
 [Right click opens status menu]
-
+右键点击打开状态菜单
 [Right click opens Miranda menu]
-
+右键点击打开 Miranda 菜单
 [Space on left]
 
 [Space on right]
 
 [Delete contact]
-
+删除联系人
 [No]
-
+否
 [Yes]
-
+是
 [Hide from list only, in order to keep their history and ignore/visibility settings]
-
+仅从列表中隐藏，以保留其历史记录和忽略/可见性设置
 [Use Options -> Contacts -> Ignore to unhide contacts.]
-
+使用 选项 - >通讯录 - >忽略 来取消隐藏联系人。
 [Are you sure you want to delete %s?]
-
+您确定要删除 ％s 吗？
 [This will erase all history and settings for this contact!]
-
+这将删除此联系人的所有历史记录和设置！
 [Hide offline users]
-
+隐藏离线用户
 [Hide empty groups]
-
+隐藏空分组
 [Disable groups]
-
+禁用分组
 [Ask before deleting contacts]
-
+删除联系人之前询问
 [Don't move offline user to bottom]
 
 [Contact list]
-
+联系人列表
 [Contact list sorting]
-
+联系人列表排序
 [1st:]
 
 [2nd:]
@@ -183,9 +183,9 @@
 [Place offline users out of groups]
 
 [Gamma correction]
-
+伽玛校正
 [Default]
-
+默认
 [Full selection]
 
 [Less selection]
@@ -199,13 +199,13 @@
 [Hide contact list after]
 
 [Automatically resize window to height of list]
-
+自动调整窗口大小为列表高度
 [maximum]
-
+最大
 [% of screen]
-
+% 的屏幕
 [Size upwards]
-
+尺寸向上
 [Behavior]
 
 [Lock manual resize]
@@ -215,7 +215,7 @@
 [Easy scroll]
 
 [Easy move]
-
+轻松移动
 [x100 ms]
 
 [show delay]
@@ -225,7 +225,7 @@
 [Hide method]
 
 [pixels]
-
+像素
 [keep on screen]
 
 [Snap to edges]
@@ -243,59 +243,59 @@
 [and minimum]
 和最小
 [Items]
-
+项
 [Show divider between online and offline contacts]
 在线和离线联系人之间显示分隔
 [Hot track items as mouse passes over]
-
+鼠标经过时热跟踪项目
 [Disable drag and drop of items]
-
+禁止拖放项目
 [Disable rename of items by clicking twice]
-
+禁止通过两次点击来重命名项目
 [Show selection even when list is not focused]
-
+即使列表未获得焦点也显示选择
 [Make selection highlight translucent]
-
+使选择高亮半透明
 [Dim idle contacts]
-
+变暗淡空闲联系人
 ['Hide offline' means to hide:]
-
+‘隐藏离线’意思是隐藏：
 [Groups]
-
+分组
 [Draw a line alongside group names]
-
+在组名旁边画一条线
 [Show counts of number of contacts in a group]
-
+显示分组中联系人数量的计数
 [Hide group counts when there are none online]
-
+当没有在线时隐藏分组计数
 [Sort groups alphabetically]
-
+按字母顺序排序分组
 [Quicksearch in open groups only]
 
 [Indent groups by:]
-
+缩进组按：
 [Visual]
-
+可视化
 [Scroll list smoothly]
-
+平滑滚动列表
 [Time:]
-
+时间：
 [milliseconds]
-
+毫秒：
 [Hide vertical scrollbar]
 
 [Fade out entire list when:]
 
 [Single click interface]
-
+单击界面
 [Always show status in tooltip]
-
+总是在工具提示中显示状态
 [Disable icon blinking]
-
+禁止图标闪动
 [ms, delay between icon blinking]
 
 [System tray icon]
-
+系统托盘图标
 [Use xStatus icon]
 
 [Icon mode]
@@ -343,9 +343,9 @@
 [Appearance]
 
 [Always on top]
-
+总在顶层
 [Pin to desktop]
-
+固定到桌面
 [Client area margins]
 
 [Thin border main window]
@@ -353,29 +353,29 @@
 [Borderless main window]
 
 [Show menu bar]
-
+显示菜单栏
 [Show title bar]
-
+显示标题栏
 [Title bar text:]
-
+标题栏文本：
 [Tool style main window]
-
+工具样式主窗口
 [Minimize to tray]
-
+最小化到托盘
 [Translucency options]
-
+透明度选项
 [Fade contact list in/out]
-
+淡入/淡出联系人列表
 [Transparent contact list]
-
+透明联系人列表
 [Inactive opacity:]
-
+非活动不透明度：
 [Active opacity:]
-
+活动不的透明度：
 [Enable drop shadow (restart required)]
 
 [Frames]
-
+框架
 [Gaps between frames:]
 
 [Gaps after captions:]
@@ -407,7 +407,7 @@
 [Down]
 
 [Left margin:]
-
+左边距：
 [Right margin:]
 
 [Compact mode (show avatars and additional text on selected contacts only)]
@@ -479,9 +479,9 @@
 [Text:]
 
 [Status]
-
+状态
 [Nickname]
-
+昵称
 [Status message]
 
 [Listening to]
@@ -503,7 +503,7 @@
 [Draw smileys on third line]
 
 [Preview]
-
+预览
 [Top/Left]
 
 [Bottom/Right]
@@ -513,7 +513,7 @@
 [Align]
 
 [Options]
-
+选项
 [Visible]
 
 [Show title]
@@ -521,7 +521,7 @@
 [Locked]
 
 [Border]
-
+边框
 [Floating]
 
 [Frames order]
@@ -589,17 +589,17 @@
 
 ;file \plugins\Clist_modern\src\groupmenu.cpp
 [&Hide/show]
-
+隐藏/显示(&H)
 [&Find/add contacts...]
-
+查找/添加联系人(&F)...
 [&Main menu]
-
+主菜单(&M)
 [&Status]
-
+状态(&S)
 [&Options...]
-
+选项(&O)
 [&About]
-
+关于(&A)
 [&Show offline users in here]
 
 ;file \plugins\Clist_modern\src\modern_cachefuncs.cpp
@@ -637,7 +637,7 @@
 [Contact list smileys]
 
 [List background]
-
+列表背景
 [Menu background]
 
 [Status bar background]
@@ -646,7 +646,7 @@
 
 ;file \plugins\Clist_modern\src\modern_clcopts.cpp
 [Contact names]
-
+联系人名称
 [Row items]
 
 [Frame texts]
@@ -654,7 +654,7 @@
 [Special colors]
 
 [Standard contacts]
-
+标准联系人
 [Away contacts]
 
 [Do not disturb contacts]
@@ -672,11 +672,11 @@
 [Out to lunch contacts]
 
 [Offline contacts]
-
+离线联系人
 [Online contacts to whom you have a different visibility]
-
+你有不同可见性的在线联系人
 [Offline contacts to whom you have a different visibility]
-
+你有不同可见性的离线联系人
 [Contacts who are 'not on list']
 
 [Open groups]
@@ -688,9 +688,9 @@
 [Closed group member counts]
 
 [Dividers]
-
+分隔
 [Second line]
-
+第二行
 [Third line]
 
 [Status bar text]
@@ -700,11 +700,11 @@
 [Current view mode text]
 
 [Background]
-
+背景
 [Hot text]
 
 [Selected text]
-
+选择文字
 [Quick search text]
 
 [Menu text]
@@ -716,7 +716,7 @@
 [3rd party frames transparent back color]
 
 [Not focused]
-
+未聚集的
 [Offline]
 离线
 [Online]
@@ -758,13 +758,13 @@
 [Behind right edge]
 
 [General]
-
+通用
 [Tray]
-
+托盘
 [List]
-
+列表
 [Window]
-
+窗口
 ;file \plugins\Clist_modern\src\modern_clistevents.cpp
 [No events]
 
@@ -799,9 +799,9 @@
 [Icon]
 
 [Text]
-
+文字
 [Extra icons]
-
+额外图标
 [Left align group names]
 
 [Center group names]
@@ -812,7 +812,7 @@
 
 ;file \plugins\Clist_modern\src\modern_clistsettings.cpp
 [(Unknown contact)]
-
+(未知联系人)
 ;file \plugins\Clist_modern\src\modern_clui.cpp
 [Show avatar]
 
@@ -882,11 +882,11 @@
 
 ;file \plugins\Clist_modern\src\modern_toolbar.cpp
 [Main menu]
-
+主菜单
 [Status menu]
-
+状态菜单
 [Accounts]
-
+帐户
 [Accounts...]
 
 [Show/Hide offline contacts]

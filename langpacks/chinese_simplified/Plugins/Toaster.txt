@@ -9,7 +9,7 @@
 
 ;file \plugins\Toaster\res\resource.rc
 [Preview]
-
+预览
 [Add shortcut]
 
 [Enabled]
@@ -25,8 +25,8 @@
 [Shortcut was added to the start menu]
 
 [Information]
-
+信息
 [Warning]
-
+警告
 [Error]
-
+错误

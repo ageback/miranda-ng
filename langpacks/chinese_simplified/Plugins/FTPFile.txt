@@ -17,7 +17,7 @@
 [Password]
 
 [URL]
-
+URL
 [Directory on server]
 
 [Port]
@@ -29,7 +29,7 @@
 [Account name]
 
 [Protocol]
-
+协议
 [Default FTP server]
 
 [File download link]
@@ -41,13 +41,13 @@
 [Autosend download link to contact]
 
 [Menu items]
-
+菜单项
 [Use submenu (restart required)]
 
 [Hide inactive accounts]
 
 [Other]
-
+其他
 [Automatically delete file from FTP server after (experimental):]
 
 [ZIP support]
@@ -67,17 +67,17 @@
 [Remaining:]
 
 [Summary]
-
+摘要
 [To:]
-
+到：
 [Nick]
-
+昵称
 [Close]
-
+关闭
 [Clipboard]
 
 [Options]
-
+选项
 [Pause]
 
 [File Manager]
@@ -93,7 +93,7 @@
 [FTP File Manager]
 
 [Select All]
-
+选择全部
 [Deselect All]
 
 [Delete from list]
@@ -103,13 +103,13 @@
 [Enter file name]
 
 [Cancel]
-
+取消
 [File exists]
 
 [Rename]
-
+重命名
 [Overwrite]
-
+覆盖
 [File with the same name already exists on the server.]
 
 [How to proceed?]
@@ -121,7 +121,7 @@
 [Automatically delete file after...]
 
 [Disabled]
-
+已禁用
 [Delete from List]
 
 [Copy Link]
@@ -153,7 +153,7 @@
 [Send file]
 
 [Resume]
-
+恢复
 [FTP File]
 
 [FTP Server %d]
@@ -192,13 +192,13 @@
 [The selected folder does not contain any files.\nFTP File sends files only from the selected folder, not from subfolders.]
 
 [CANCELED]
-
+已取消
 [COMPLETED]
 
 [CONNECTING...]
-
+正在连接...
 [CREATED]
-
+创建
 [PACKING...]
 
 [PAUSED]
@@ -206,7 +206,7 @@
 [WAITING...]
 
 [UNKNOWN]
-
+未知
 ;file \plugins\FTPFileYM\src\job_packer.cpp
 [Error occurred when zipping the file(s).]
 
@@ -239,7 +239,7 @@
 [You have to fill and enable at least one FTP server in setting.]
 
 [Clear All]
-
+清除所有
 ;file \plugins\FTPFileYM\src\options.cpp
 [FTP (Standard)]
 
@@ -250,16 +250,16 @@
 [SFTP (Secure FTP over SSH)]
 
 [minutes]
-
+分
 [hours]
-
+小时
 [days]
-
+天
 [Services]
 
 [Accounts]
-
+帐户
 [Advanced]
-
+高级
 ;file \plugins\FTPFileYM\src\serverlist.cpp
 ;file \plugins\FTPFileYM\src\utils.cpp

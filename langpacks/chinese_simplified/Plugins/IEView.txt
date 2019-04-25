@@ -9,11 +9,11 @@
 
 ;file \plugins\IEView\res\ieview.rc
 [Copy]
-
+复制
 [Copy Link]
 
 [Select All]
-
+选择全部
 [Save Image As...]
 
 [Print]
@@ -23,7 +23,7 @@
 [Show source]
 
 [Options]
-
+选项
 [Enable BBCodes]
 
 [Currently the following BBCodes are supported: [b][i][u][s][img][size][color][url]]
@@ -37,7 +37,7 @@
 [Embed YouTube videos]
 
 [Size:]
-
+大小：
 [Mode]
 
 [Compatibility Mode]
@@ -49,7 +49,7 @@
 [Background image]
 
 [Scroll with text]
-
+与文字一起滚动
 [Template Options]
 
 [Use message grouping]
@@ -59,7 +59,7 @@
 [Show time]
 
 [Show seconds]
-
+显示秒
 [Show date]
 
 [Use long date format]
@@ -72,10 +72,10 @@
 [Outgoing File Transfer]
 
 [Incoming File Transfer]
-
+传入文件传输
 ;file \plugins\IEView\src\HTMLBuilder.cpp
 [(Unknown Contact)]
-
+(未知联系人)
 [ requested authorization]
 
 [ was added.]
@@ -97,40 +97,40 @@
 [The topic is %s.]
 
 [Error]
-
+错误
 ;file \plugins\IEView\src\Options.cpp
 [Default]
-
+默认
 [Template]
 
 [All Files]
-
+所有文件
 [All Images]
 
 [Style Sheet]
 
 [Message sessions]
-
+消息会话
 [IEView]
 
 [General]
-
+通用
 [Skins]
 
 [Message Log]
-
+消息日志
 [Group chats]
-
+分组聊天
 [History]
-
+历史
 ;file \plugins\IEView\src\ScriverHTMLBuilder.cpp
 [Today]
 
 [Yesterday]
 
 [File sent]
-
+文件已发送
 [File received]
-
+收到的文件
 ;file \plugins\IEView\src\TabSRMMHTMLBuilder.cpp
 ;file \plugins\IEView\src\TemplateHTMLBuilder.cpp

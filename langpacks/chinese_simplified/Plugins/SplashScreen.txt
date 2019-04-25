@@ -42,7 +42,7 @@
 [Graphic files]
 
 [Sound Files]
-
+声音文件
 [Skins]
 
 [Splash Screen]

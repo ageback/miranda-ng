@@ -17,45 +17,45 @@
 [&Update]
 
 [Updating]
-
+正在更新
 [Cancel]
-
+取消
 [Apply]
-
+应用
 [Nick:]
-
+昵称：
 [Display name:]
 
 [Title:]
 
 [First name:]
-
+名字：
 [Second name:]
 
 [Last name:]
-
+姓：
 [Prefix:]
 
 [Female]
-
+女性
 [Male]
-
+男性
 [Marital status:]
-
+婚姻状况：
 [Partner:]
 
 [Language skills]
 
 [Street:]
-
+街道：
 [Postal code:]
-
+邮政编码：
 [City:]
-
+城市：
 [County/State:]
 
 [Country:]
-
+国家：
 [Contact added to contact list:]
 
 [Just from the beginning.]
@@ -63,15 +63,15 @@
 [Your contact's local time is:]
 
 [Timezone:]
-
+时区：
 [Company:]
-
+公司：
 [Department:]
-
+部门：
 [Office:]
 
 [Position:]
-
+职位：
 [Occupation:]
 
 [Superior:]
@@ -79,17 +79,17 @@
 [Assistant:]
 
 [Add phone number]
-
+添加电话号码
 [Enter your phone number\nand don't worry about formatting.]
 
 [Enter a category for this number:]
 
 [Enter country, area code and phone number:]
-
+输入国家，区号和电话号码：
 [Or enter a full international number:]
-
+或输入完整的国际号码：
 [Phone can receive SMS text messages]
-
+电话可以接收短信
 [Add e-mail]
 
 [Enter your full e-mail address.\n(e.g., john.doe@provider.com)]
@@ -107,7 +107,7 @@
 [Check every]
 
 [hours]
-
+小时
 [Icon flashing on event]
 
 [Enabled]
@@ -127,19 +127,19 @@
 [Birthday popup colors]
 
 [Background color]
-
+背景色
 [Text color]
-
+文字颜色
 [Use Windows colors]
-
+使用 Windows 颜色
 [Use default colors]
-
+使用默认颜色
 [Delay]
 
 [From popup plugin]
 
 [Custom]
-
+自定义
 [Permanent]
 
 [Show reminder messages as popups (if reminder is enabled)]
@@ -151,9 +151,9 @@
 [Replace message boxes with popups]
 
 [Preview]
-
+预览
 [Homepage:]
-
+主页：
 [Add affiliation]
 
 [Add past]
@@ -161,7 +161,7 @@
 [Add interest]
 
 [Delete]
-
+删除
 [Anniversary editor]
 
 [Add/Edit your anniversary here.]
@@ -195,13 +195,13 @@
 [Popup this dialog on a contact's anniversary]
 
 [Icons]
-
+图标
 [Check file version of default IconPack to prevent wrong icon display]
 
 [Display icons on each dialog button]
 
 [Metacontacts]
-
+中继联系人
 [Scan subcontacts for missing information]
 
 [Enable extended 'send/receive e-mail' service (*)]
@@ -253,35 +253,35 @@
 [All]
 
 [None]
-
+无
 [Show menu item]
 
 [Main menu]
-
+主菜单
 [Cascade:]
 
 [Off]
-
+半
 [Export/import items]
 
 [Contact menu]
-
+联系人菜单
 [Group menu]
-
+分组菜单
 [Subgroup menu]
-
+子分组菜单
 [Account menu]
 
 [Extra icons]
-
+额外图标
 [Replace the following default icons:]
 
 [Homepage]
-
+主页
 [Phone]
 
 [E-mail]
-
+电子邮件
 [Gender]
 
 [Misc]
@@ -299,7 +299,7 @@
 [Birthday]
 
 [Age:]
-
+年龄：
 [Zodiac:]
 
 [not found]
@@ -387,12 +387,12 @@
 [Delete an existing anniversary]
 
 [Unspecified]
-
+未指定
 ;file \plugins\UserInfoEx\src\ctrl_contact.cpp
 [Edit e-mail]
 
 [Edit phone number]
-
+编辑电话号码
 [The phone number should start with a + and consist of\nnumbers, spaces, brackets and hyphens only.]
 
 [Choose the item to display]
@@ -408,12 +408,12 @@
 [Do you really want to delete the current selected item?\n\t%s\n\t%s]
 
 [Other]
-
+其他
 ;file \plugins\UserInfoEx\src\dlg_anniversarylist.cpp
 [ETA]
 
 [Contact]
-
+联系
 [Proto]
 
 [Age/Nr.]
@@ -423,7 +423,7 @@
 [Date]
 
 [All contacts]
-
+所有联系人
 [Birthdays only]
 
 [Anniversaries only]
@@ -436,15 +436,15 @@
 [Retry]
 
 [Yes]
-
+是
 [No]
-
+否
 [Abort]
 
 [Ignore]
-
+忽略
 [Error]
-
+错误
 ;file \plugins\UserInfoEx\src\dlg_propsheet.cpp
 [Upload details]
 
@@ -461,31 +461,31 @@
 [Details dialog failed to be created. Returning error is %d.]
 
 [General]
-
+通用
 [Contact (private)]
 
 [Anniversaries]
 
 [Work]
-
+工作
 [Contact (work)]
 
 [About]
 
 [Profile]
-
+配置文件
 [Notes]
-
+笔记
 [Export to file]
 
 [Import from file]
 
 [Owner]
-
+所有者
 [edit contact information]
 
 [View personal user details and more]
-
+查看个人用户详情和更多
 [Upload ICQ details]
 
 [Upload failed]
@@ -493,17 +493,17 @@
 [Your details were not uploaded successfully.\nThey were written to database only.]
 
 [updating]
-
+正在更新
 ;file \plugins\UserInfoEx\src\init.cpp
 [User &details]
-
+用户详情(&D)
 [Check anniversaries]
 
 ;file \plugins\UserInfoEx\src\mir_icolib.cpp
 [Main]
 
 [Default]
-
+默认
 [IM naming]
 
 [Password]
@@ -537,19 +537,19 @@
 [Goto]
 
 [Fax]
-
+传真
 [Cellular]
 
 [Custom phone]
 
 [Down arrow]
-
+向下箭头
 [Add]
-
+添加
 [Edit]
-
+编辑
 [Search]
-
+搜索
 [Export/import]
 
 [Backup birthday]
@@ -619,7 +619,7 @@
 [&Import user details]
 
 [View/change my &details...]
-
+查看/更改我的详细信息(&D)...
 [Export all contacts]
 
 [Import all contacts]
@@ -638,9 +638,9 @@
 
 ;file \plugins\UserInfoEx\src\psp_about.cpp
 [My notes:]
-
+我的笔记：
 [About:]
-
+关于：
 ;file \plugins\UserInfoEx\src\psp_anniversary.cpp
 [Please enter a valid description first!]
 
@@ -685,13 +685,13 @@
 [This is the reminder message]
 
 [Contacts]
-
+联系人
 [Advanced]
-
+高级
 [Details dialog]
 
 [Popups]
-
+弹出窗口
 ;file \plugins\UserInfoEx\src\psp_profile.cpp
 [Past]
 
@@ -1057,27 +1057,27 @@
 [Past Organization]
 
 [Single]
-
+单身
 [Close relationships]
-
+亲密关系
 [Engaged]
-
+订婚
 [Married]
-
+已婚
 [Divorced]
-
+离婚
 [Separated]
-
+分居
 [Widowed]
-
+寡
 [Actively searching]
-
+积极寻找
 [In love]
-
+恋爱
 [It's complicated]
-
+情况很复杂
 [In a civil union]
-
+在民间联盟
 [jun.]
 
 [sen.]
@@ -1085,7 +1085,7 @@
 ;file \plugins\UserInfoEx\src\svc_constants.h
 ;file \plugins\UserInfoEx\src\svc_email.cpp
 [Send e-mail]
-
+发送电子邮件
 [Memory allocation error!]
 
 [E-mail (UInfoEx)]
@@ -1177,7 +1177,7 @@
 
 ;file \plugins\UserInfoEx\src\ex_import\dlg_ExImModules.cpp
 [All Contacts]
-
+所有联系人
 [Required modules]
 
 [Optional modules]
@@ -1206,7 +1206,7 @@
 
 ;file \plugins\UserInfoEx\src\ex_import\svc_ExImport.cpp
 [all Contacts]
-
+所有联系人
 [Select a destination file...]
 
 [Import User Details from VCard]
@@ -1223,7 +1223,7 @@
 [The version of the XMLCard is not supported by UserInfoEx]
 
 [Complete]
-
+完成
 [Owner contact successfully imported.]
 
 [Selected XMLCard does not contain an owner contact!]

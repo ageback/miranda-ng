@@ -11,7 +11,7 @@
 [UIN/e-mail:]
 
 [Password:]
-
+密码：
 [Sign in/sign up using phone]
 
 [Do not open chat windows on creation]
@@ -19,7 +19,7 @@
 [Use tray icon notifications]
 
 [E-mail]
-
+电子邮件
 [Launch mailbox in a browser on click]
 
 [If a contact goes Offline, set this status instead and cache it for given timeout in seconds (0 - disabled)]
@@ -31,7 +31,7 @@
 [&Invite]
 
 [Cancel]
-
+取消
 [Account registration]
 
 [Enter full phone number]
@@ -47,7 +47,7 @@
 [Idle since:]
 
 [Nick:]
-
+昵称：
 [Member since:]
 
 [Last seen:]
@@ -66,16 +66,16 @@
 [E-mail notification]
 
 [Ignore]
-
+忽略
 [Remove Ignore]
 
 ;file \protocols\ICQ-WIM\src\options.cpp
 [Network]
-
+网络
 [General]
-
+通用
 [Advanced]
-
+高级
 ;file \protocols\ICQ-WIM\src\poll.cpp
 [You received e-mail from %s: %s]
 

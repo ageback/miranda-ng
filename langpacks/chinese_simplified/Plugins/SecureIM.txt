@@ -33,11 +33,11 @@
 [Key Exchange Timeout:]
 
 [sec]
-
+秒
 [Offline Key Timeout:]
 
 [days]
-
+天
 [Reset All]
 
 [Protocols]
@@ -89,7 +89,7 @@
 [Back]
 
 [Text]
-
+文字
 [Key agreement colors]
 
 [Secure connection colors]
@@ -99,9 +99,9 @@
 [SecureIM Popup Colors]
 
 [Preview]
-
+预览
 [Events]
-
+事件
 [Popup Timeout]
 
 [Time in Seconds]
@@ -123,11 +123,11 @@
 [Please type in your password]
 
 [Username:]
-
+用户名：
 [Password:]
-
+密码：
 [Cancel]
-
+取消
 [SecureIM plugin Passphrase of private key]
 
 [Enter passphrase for the secret key:]
@@ -143,7 +143,7 @@
 [RSA/AES SecureIM]
 
 [Status]
-
+状态
 [Always Try to Establish Secure IM]
 
 [Secure IM Enabled]
@@ -230,17 +230,17 @@
 [Can't import RSA public key!]
 
 [General]
-
+通用
 [Nickname]
-
+昵称
 [Name]
-
+名字
 [Password is too short!]
 
 [ON]
-
+开
 [Off]
-
+半
 [Keyrings loaded.]
 
 [Keyrings not loaded!]
@@ -264,7 +264,7 @@
 [Native]
 
 [Disabled]
-
+已禁用
 [Enabled]
 
 [Always try]
@@ -329,13 +329,13 @@
 
 ;file \plugins\SecureIM\src\loadicons.cpp
 [Contact List]
-
+联系人列表
 [Connection Disabled]
 
 [Connection Established]
 
 [Contact Menu]
-
+联系人菜单
 [Disable Secure Connection]
 
 [Establish Secure Connection]
@@ -343,7 +343,7 @@
 [Message Window]
 
 [Popups]
-
+弹出窗口
 [Secure Connection Disabled]
 
 [Secure Connection Established]
@@ -372,7 +372,7 @@
 [SecureIM]
 
 [Icons]
-
+图标
 [Incoming Secure Message]
 
 [Outgoing Secure Message]
@@ -381,13 +381,13 @@
 
 ;file \plugins\SecureIM\src\options.cpp
 [Executable Files]
-
+可执行文件
 [Select GnuPG Executable]
 
 [ASC files]
 
 [All files]
-
+所有文件
 [Open Key File]
 
 [Save Private Key File]

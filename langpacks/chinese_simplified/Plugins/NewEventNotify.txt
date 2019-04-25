@@ -19,15 +19,15 @@
 [Popup options]
 
 [Message]
-
+消息
 [File]
-
+文件
 [Others]
 
 [Text]
-
+文字
 [Background]
-
+背景
 [Timeout]
 
 [Notify me of...]
@@ -35,7 +35,7 @@
 [Left click actions]
 
 [Dismiss popup]
-
+关闭弹出窗口
 [Open event]
 
 [Dismiss event]
@@ -55,7 +55,7 @@
 [Merge popups from one user]
 
 [Preview]
-
+预览
 [Show date]
 
 [Show time]
@@ -69,14 +69,14 @@
 [Last message display last]
 
 [Edit]
-
+编辑
 [No popups for RSS contacts]
 
 [No popups for read messages]
 
 ;file \plugins\NewEventNotify\src\menuitem.cpp
 [Popups]
-
+弹出窗口
 ;file \plugins\NewEventNotify\src\options.cpp
 [Event Notify]
 
@@ -99,7 +99,7 @@
 
 ;file \plugins\NewEventNotify\src\stdafx.h
 [Contacts]
-
+联系人
 [You were added!]
 
 [Requests your authorization]

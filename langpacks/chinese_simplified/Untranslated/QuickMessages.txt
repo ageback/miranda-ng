@@ -27,5 +27,4 @@
 [You win!]
 [New Button]
 [New Menu Entry]
-[Message sessions]
 [Quick Messages Button %u]

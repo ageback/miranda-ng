@@ -13,19 +13,19 @@
 [Gadu-Gadu Number:]
 
 [Password:]
-
+密码：
 [E-mail:]
-
+电子邮件：
 [Create new account]
-
+创建新帐户
 [Remove account]
-
+移除帐户
 [Change password]
 
 [Retrieve password]
 
 [Options]
-
+选项
 [Friends only]
 
 [Show offline users with status message as invisible in contact list]
@@ -69,39 +69,39 @@
 [Use direct connections]
 
 [Port:]
-
+端口
 [Use forwarding]
 
 [Host:]
-
+主机：
 [Number:]
 
 [Internal IP:]
 
 [First name:]
-
+名字：
 [Last name:]
-
+姓：
 [Family name:]
 
 [Nickname:]
-
+昵称：
 [Gender:]
-
+性别：
 [City:]
-
+城市：
 [Origin city:]
 
 [Birth year:]
 
 [Description:]
-
+描述：
 [&Save changes]
 
 [Enter token to continue]
 
 [Cancel]
-
+取消
 [Create Gadu-Gadu account]
 
 [This will create new Gadu-Gadu account]
@@ -113,7 +113,7 @@
 [New e-mail:]
 
 [&Create]
-
+创建(&C)
 [Remove Gadu-Gadu account]
 
 [This will remove your Gadu-Gadu account]
@@ -121,7 +121,7 @@
 [Yes, I want to remove my account]
 
 [Remove]
-
+移除
 [Change Gadu-Gadu password]
 
 [Changes current Gadu-Gadu user password]
@@ -133,13 +133,13 @@
 [Age from:]
 
 [to:]
-
+到：
 [Search online users only]
 
 [&Close]
-
+关闭(&C)
 [&Send]
-
+发送(&S)
 [Open new conference]
 
 [Select conference participants]
@@ -181,7 +181,7 @@
 [Gadu-Gadu servers are now down. Try again later.]
 
 [Unknown]
-
+未知
 [External direct connections hostname %s is invalid. Disabling external host forwarding.]
 
 [Server hostname %s is invalid. Using default hostname provided by the network.]
@@ -189,7 +189,7 @@
 [Connection cannot be established. errno=%d: %s]
 
 [Age:]
-
+年龄：
 [List import successful.]
 
 [List remove successful.]
@@ -197,7 +197,7 @@
 [List export successful.]
 
 [Me]
-
+我
 [Unknown client]
 
 [You have logged in at another location]
@@ -208,15 +208,15 @@
 
 ;file \protocols\Gadu-Gadu\src\dialogs.cpp
 [Male]
-
+男性
 [Female]
-
+女性
 [<not specified>]
-
+<未指定>
 [<Last Status>]
 
 [System tray icon]
-
+系统托盘图标
 [Popup window]
 
 [Message with [img] BBCode]
@@ -232,13 +232,13 @@
 [You have to be logged in before you can change your details.]
 
 [Network]
-
+网络
 [General]
-
+通用
 [Conference]
 
 [Advanced]
-
+高级
 ;file \protocols\Gadu-Gadu\src\filetransfer.cpp
 [Cannot create transfer file. ERROR: %d: %s (dcc)\n%s]
 
@@ -262,7 +262,7 @@
 [&Block]
 
 [Contact list]
-
+联系人列表
 ;file \protocols\Gadu-Gadu\src\gg_proto.cpp
 [%s connection]
 
@@ -355,13 +355,13 @@
 [List cannot be removed because of error: %s (Error: %d)]
 
 [Text files]
-
+文本文件
 [All Files]
-
+所有文件
 [List cannot be imported from file "%s" because of error:\n\t%s (Error: %d)]
 
 [contacts]
-
+联系人
 [List cannot be exported to file "%s" because of error:\n\t%s (Error: %d)]
 
 [List cannot be exported because of error:\n\t%s (Error: %d)]
@@ -387,7 +387,7 @@
 [Ask]
 
 [Ignore]
-
+忽略
 ;file \protocols\Gadu-Gadu\src\ownerinfo.cpp
 [Password could not be reminded because of error:\n\t%s (Error: %d)]
 

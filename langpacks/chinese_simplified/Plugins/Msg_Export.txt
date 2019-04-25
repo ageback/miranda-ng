@@ -39,9 +39,9 @@
 [Auto filename]
 
 [Clear all]
-
+清除所有
 [Help]
-
+帮助
 [Export all history]
 
 [Exporting old messages]
@@ -49,11 +49,11 @@
 [History file for %s (%s, format %s)]
 
 [&Find...]
-
+查找(&F)...
 [&External]
 
 [&Close]
-
+关闭(&C)
 [When filename changes]
 
 [Prompt for action]
@@ -61,7 +61,7 @@
 [Rename file]
 
 [Do nothing]
-
+啥都不干
 [When user is deleted]
 
 [Delete file]
@@ -69,13 +69,13 @@
 [Debug]
 
 [User &details]
-
+用户详情(&D)
 [Export selected]
 
 [Set to default filename]
 
 [Copy]
-
+复制
 ;file \plugins\Msg_Export\src\FileViewer.cpp
 [Miranda database contains %d events]
 
@@ -108,15 +108,15 @@
 [You need to restart Miranda to change the history function]
 
 [Executable files]
-
+可执行文件
 [All files]
-
+所有文件
 [Select Destination Directory]
 
 [File]
-
+文件
 [Nick]
-
+昵称
 [Proto]
 
 [UIN]
@@ -128,11 +128,11 @@
 [Message export]
 
 [History]
-
+历史
 [General]
-
+通用
 [Contacts]
-
+联系人
 [Additional]
 
 ;file \plugins\Msg_Export\src\stdafx.h
@@ -142,7 +142,7 @@
 [No_Group]
 
 [(Unknown Contact)]
-
+(未知联系人)
 [File name for the user "%s" has changed!\n\nfrom:\t%s\nto:\t%s\n\nDo you wish to rename file?]
 
 [Failed to rename file\n\nfrom:\t%s\nto:\t%s\n\nFailed with error: %s]
@@ -156,11 +156,11 @@
 [All\0*.*\0Text\0*.TXT\0\0]
 
 [FirstName]
-
+名字
 [LastName]
-
+姓
 [e-mail]
-
+电子邮件
 [Age]
 
 [Gender]
@@ -172,7 +172,7 @@
 [Phone]
 
 [Homepage]
-
+主页
 [About]
 
 [      History for]
@@ -180,7 +180,7 @@
 [User]
 
 [Protocol]
-
+协议
 [File: ]
 
 [Description: ]

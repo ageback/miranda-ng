@@ -11,9 +11,9 @@
 [Live ID:]
 
 [Password:]
-
+密码：
 [Nickname:]
-
+昵称：
 [Create a new Windows Live account]
 
 [Expert]
@@ -35,7 +35,7 @@
 [Gateway:]
 
 [Reset]
-
+重置
 [Notify me when a message delivery has failed]
 
 [Incoming file transfers]
@@ -65,7 +65,7 @@
 [Ignore new messages not in Inbox folder]
 
 [Other]
-
+其他
 [Display errors using popups]
 
 [Enable 'Chat Session Established' popup]
@@ -75,7 +75,7 @@
 [Set Nickname]
 
 [Cancel]
-
+取消
 [Mobile Device (used for SMS)]
 
 [Spouse/Partner]
@@ -91,7 +91,7 @@
 [Birthday]
 
 [Nickname]
-
+昵称
 [Place:]
 
 [MSN Delete Contact]
@@ -107,9 +107,9 @@
 [&Invite]
 
 [&Cancel]
-
+取消(&C)
 [Add]
-
+添加
 ;file \protocols\MSN\src\msn_chat.cpp
 [Admin]
 
@@ -122,7 +122,7 @@
 [&Leave chat session]
 
 [User &details]
-
+用户详情(&D)
 [User &history]
 
 [&Kick user]
@@ -183,7 +183,7 @@
 [Hotmail Inbox]
 
 [Profile]
-
+配置文件
 [MSN Services]
 
 [Block user]
@@ -193,7 +193,7 @@
 [Start Netmeeting]
 
 [Contact list]
-
+联系人列表
 [Allowed list]
 
 [Blocked list]
@@ -219,7 +219,7 @@
 [MSN Protocol requires message timeout to be not less then 60 sec. Correct the timeout value.]
 
 [Network]
-
+网络
 [Account]
 
 [Connection]

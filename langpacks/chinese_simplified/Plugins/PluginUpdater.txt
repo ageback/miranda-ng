@@ -17,9 +17,9 @@
 [Details >>]
 
 [Cancel]
-
+取消
 [Select &all]
-
+选择所有(&A)
 [Select &none]
 
 [Hotkey]
@@ -57,7 +57,7 @@
 [Notifications]
 
 [Restart]
-
+重启
 [Errors]
 
 [Info messages]
@@ -65,7 +65,7 @@
 [Back]
 
 [Text]
-
+文字
 [Colors]
 
 [Use cus&tom colors]
@@ -75,7 +75,7 @@
 [Use defa&ult colors]
 
 [Preview]
-
+预览
 [Click action]
 
 [On left click]
@@ -89,11 +89,11 @@
 [-1 = Infinite]
 
 [Sec]
-
+秒
 [For "Restart" popup setting is always infinity]
 
 [Popups]
-
+弹出窗口
 [Component list]
 
 [Here is the complete list of missing Miranda NG components. Check components that you want to download.\n\nClick on info icon to view component info page.]
@@ -120,13 +120,13 @@
 [State]
 
 [Plugins]
-
+插件
 [Icons]
-
+图标
 [Languages]
-
+语言
 [Other]
-
+其他
 [List is empty.]
 
 [List loading already started!]
@@ -166,16 +166,16 @@
 [Close popup]
 
 [Do nothing]
-
+啥都不干
 ;file \plugins\PluginUpdater\src\Options.cpp
 [Backup database before update]
 
 [Stable version (incompatible with current development version)]
 
 [hours]
-
+小时
 [days]
-
+天
 [Change platform to 64-bit]
 
 [Test]

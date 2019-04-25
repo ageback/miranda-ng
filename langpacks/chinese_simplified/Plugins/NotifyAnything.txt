@@ -13,11 +13,11 @@
 [Only listen to localhost]
 
 [Port:]
-
+端口
 [(Default is 12001)]
 
 [Password:]
-
+密码：
 [Allow actions to execute programs]
 
 [Sound]
@@ -40,7 +40,7 @@
 [NotifyAnything: FormatMessage failed, error code was 0x]
 
 [Error]
-
+错误
 ;file \plugins\NotifyAnything\src\options.cpp
 [Log (*.log)\0*.log\0Text (*.txt)\0*.txt\0All Files (*.*)\0*.*\0]
 
@@ -49,4 +49,4 @@
 [NotifyAnything]
 
 [Plugins]
-
+插件

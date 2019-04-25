@@ -13,7 +13,7 @@
 [Change profile]
 
 [Restart]
-
+重启
 [Profile manager]
 
 [Database]

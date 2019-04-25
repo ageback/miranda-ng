@@ -9,7 +9,7 @@
 
 ;file \plugins\wbOSD\res\wbOSD.rc
 [General]
-
+通用
 [Align]
 
 [Select font]
@@ -27,9 +27,9 @@
 [Shadow distance:]
 
 [Other]
-
+其他
 [Background color]
-
+背景色
 [Transparent]
 
 [Alpha:]
@@ -41,11 +41,11 @@
 [Announce]
 
 [Status changes]
-
+状态变更
 [Show my status changes]
 
 [Text color]
-
+文字颜色
 [Show events]
 
 [Format:]
@@ -61,8 +61,8 @@
 [Variables:\n  %n : Nick\n  %m : Message\n  %l : New line]
 
 [Help]
-
+帮助
 [Miranda NG is great and this is a long message.]
 
 [Plugins]
-
+插件

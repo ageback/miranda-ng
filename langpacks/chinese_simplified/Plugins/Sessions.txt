@@ -15,7 +15,7 @@
 [Restore Last Session]
 
 [Do nothing]
-
+啥都不干
 [Only if last session present]
 
 [Startup delay]
@@ -25,9 +25,9 @@
 [User Sessions Management]
 
 [Edit]
-
+编辑
 [Delete]
-
+删除
 [Save]
 
 [Action on Exit]
@@ -55,7 +55,7 @@
 [&Restore Session]
 
 [&Cancel]
-
+取消(&C)
 [Choose session to restore from the list:]
 
 [Del]
@@ -73,7 +73,7 @@
 [Sessions Manager]
 
 [Cancel]
-
+取消
 [Save your current session?]
 
 ;file \plugins\Sessions\Src\Main.cpp
@@ -121,7 +121,7 @@
 [View]
 
 [Message sessions]
-
+消息会话
 ;file \plugins\Sessions\Src\Utils.cpp
 [Session Before Last Crash]
 

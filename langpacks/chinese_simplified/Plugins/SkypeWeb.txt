@@ -11,7 +11,7 @@
 [Create group chat]
 
 [Cancel]
-
+取消
 [Mark users you want to invite to a new chat]
 
 [Invite user to chat]
@@ -21,7 +21,7 @@
 [Skypename:]
 
 [Password:]
-
+密码：
 [Default group:]
 
 [Account]
@@ -59,7 +59,7 @@
 [This chat is going to be destroyed forever with all its contents. This action cannot be undone. Are you sure?]
 
 [Warning]
-
+警告
 [&Invite user...]
 
 [&Leave chat session]
@@ -80,7 +80,7 @@
 
 ;file \protocols\SkypeWeb\src\skype_contacts.cpp
 [Are you sure?]
-
+你确定吗？
 ;file \protocols\SkypeWeb\src\skype_db.cpp
 [Incoming call]
 
@@ -97,7 +97,7 @@
 [Moji]
 
 [File]
-
+文件
 [Unknown event]
 
 ;file \protocols\SkypeWeb\src\skype_events.cpp
@@ -175,7 +175,7 @@
 
 ;file \protocols\SkypeWeb\src\skype_options.cpp
 [Network]
-
+网络
 ;file \protocols\SkypeWeb\src\skype_popups.cpp
 [Notifications]
 

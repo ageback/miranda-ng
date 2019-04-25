@@ -9,9 +9,9 @@
 
 ;file \plugins\TipperYM\res\resource.rc
 [Layout]
-
+布局
 [Text indent:]
-
+文字缩进：
 [Title indent:]
 
 [Value indent:]
@@ -31,7 +31,7 @@
 [Values:]
 
 [Window]
-
+窗口
 [Max width:]
 
 [Min width:]
@@ -41,15 +41,15 @@
 [Min height:]
 
 [Avatar size:]
-
+头像大小：
 [Sidebar width:]
-
+侧边栏宽度：
 [Hover time:]
 
 [Show if list not focused]
 
 [Options]
-
+选项
 [Show title]
 
 [Status bar tips]
@@ -57,7 +57,7 @@
 [Avatar border]
 
 [Round corners (avatar)]
-
+圆角(头像)
 [Keep original avatar size]
 
 [Substitution]
@@ -65,7 +65,7 @@
 [Label:]
 
 [Module:]
-
+模块：
 [Contact protocol module]
 
 [Setting or prefix:]
@@ -73,7 +73,7 @@
 [Translation:]
 
 [Cancel]
-
+取消
 [Item]
 
 [Value:]
@@ -89,23 +89,23 @@
 [Preset items:]
 
 [Items]
-
+项
 [Substitutions]
 
 [Add]
-
+添加
 [Remove]
-
+移除
 [Up]
 
 [Down]
 
 [Edit]
-
+编辑
 [Separator]
 
 [Extra icons]
-
+额外图标
 [Smileys support]
 
 [Enable SmileyAdd support]
@@ -141,7 +141,7 @@
 [Get more skins]
 
 [Preview]
-
+预览
 [No preview]
 
 [Effects]
@@ -151,9 +151,9 @@
 [Shadow]
 
 [Border]
-
+边框
 [Round corners (window)]
-
+圆角边框(窗口)
 [Skin option]
 
 [Enable skin coloring]
@@ -165,7 +165,7 @@
 [Transparency]
 
 [Opacity (%):]
-
+不透明度(%)：
 [Aero Glass (Vista+)]
 
 [Enable tray tooltips]
@@ -207,7 +207,7 @@
 [Unread emails]
 
 [Status]
-
+状态
 [Status message]
 
 [Extra status]
@@ -237,17 +237,17 @@
 [No icon]
 
 [Icon on left]
-
+图标在左侧
 [Icon on right]
-
+图标在右侧
 [Bottom right]
-
+底部右侧
 [Bottom left]
-
+底部左侧
 [Top right]
-
+顶部右侧
 [Top left]
-
+顶部左侧
 [Top]
 
 [Center]
@@ -259,15 +259,15 @@
 [Right]
 
 [No avatar]
-
+无头像
 [Left avatar]
-
+左侧头像
 [Right avatar]
-
+右侧头像
 [Max avatar size:]
 
 [None]
-
+无
 [Animation]
 
 [Fade]
@@ -277,7 +277,7 @@
 [Tooltips]
 
 [Customize]
-
+自定义
 [Content]
 
 [Tray tooltip]
@@ -286,7 +286,7 @@
 
 ;file \plugins\TipperYM\src\popwin.cpp
 [%s (locked)]
-
+%s(锁定)
 [%s ago]
 
 [Log on:]
@@ -318,7 +318,7 @@
 [Fav. contacts]
 
 [Other]
-
+其他
 [Miranda uptime:]
 
 ;file \plugins\TipperYM\src\preset_items.cpp
@@ -337,15 +337,15 @@
 [Email:]
 
 [Gender:]
-
+性别：
 [Homepage]
-
+主页
 [Homepage:]
-
+主页：
 [Identifier]
 
 [Idle]
-
+空闲
 [Idle:]
 
 [IP internal]
@@ -357,9 +357,9 @@
 [Last message: (%sys:last_msg_reltime% ago)]
 
 [Name]
-
+名字
 [Name:]
-
+名称：
 [Number of received messages]
 
 [Number of msg [IN]:]
@@ -371,7 +371,7 @@
 [Contact time]
 
 [Time:]
-
+时间：
 [xStatus title]
 
 [xStatus title:]
@@ -456,11 +456,11 @@
 
 ;file \plugins\TipperYM\src\tipper.cpp
 [Background]
-
+背景
 [Dividers]
-
+分隔
 [Sidebar]
-
+侧栏
 [Title]
 
 [Labels]
@@ -480,7 +480,7 @@
 [Reload]
 
 [Apply]
-
+应用
 ;file \plugins\TipperYM\src\translations.cpp
 [Afrikaans]
 
@@ -665,9 +665,9 @@
 [December]
 
 [Female]
-
+女性
 [Male]
-
+男性
 [%dy %dd %dh %dm]
 
 [%dd]

@@ -31,11 +31,11 @@
 [Delete separator/launch button]
 
 [Name:]
-
+名称：
 [Path:]
 
 [Set]
-
+设置
 ;file \plugins\TopToolBar\src\InternalButtons.cpp
 [Show main menu]
 
@@ -44,7 +44,7 @@
 [Show accounts manager]
 
 [Find/add contacts]
-
+查找/添加联系人
 [Show status menu]
 
 [Show/hide offline contacts]
@@ -62,19 +62,19 @@
 [Enable/disable groups]
 
 [Disable groups]
-
+禁用分组
 [Enable groups]
 
 [Enable/disable sounds]
-
+启用/禁用声音
 [Enable sounds]
-
+启用声音
 [Disable sounds]
-
+禁用声音
 [Minimize contact list]
 
 [Exit]
-
+退出
 ;file \plugins\TopToolBar\src\main.cpp
 [Execute]
 
@@ -89,8 +89,8 @@
 
 ;file \plugins\TopToolBar\src\ttbopt.cpp
 [Default]
-
+默认
 [Contact list]
-
+联系人列表
 [Toolbar]
-
+工具栏

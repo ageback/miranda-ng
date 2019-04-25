@@ -100,7 +100,7 @@
 [We are already waiting for new stranger...]
 
 [Connecting...]
-
+正在连接...
 [Waiting for Stranger...]
 
 ;file \protocols\Omegle\src\constants.h
@@ -126,7 +126,7 @@
 [Visible name]
 
 [Network]
-
+网络
 [Account]
 
 ;file \protocols\Omegle\src\theme.cpp

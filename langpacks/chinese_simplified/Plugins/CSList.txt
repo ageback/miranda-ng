@@ -17,7 +17,7 @@
 [Add/Modify]
 
 [Cancel]
-
+取消
 [List settings]
 
 [Confirm deletion of items]
@@ -32,13 +32,13 @@
 [Add new item]
 
 [Add]
-
+添加
 [Modify item]
 
 [Modify]
-
+修改
 [Warning]
-
+警告
 [This field doesn't accept string longer than %d characters. The string will be truncated.]
 
 [Favorites]
@@ -48,14 +48,14 @@
 [Title]
 
 [Message]
-
+消息
 [Do you really want to delete selected item?]
 
 [Do you want old database entries to be deleted after Import?]
 
 ;file \plugins\CSList\src\stdafx.h
 [Main Menu]
-
+主菜单
 [Main Icon]
 
 [Modify selected item]
@@ -63,13 +63,13 @@
 [Delete selected item]
 
 [Remove]
-
+移除
 [Set/unset current item as favorite]
 
 [Favorite]
 
 [Undo changes]
-
+撤销更改
 [Import statuses from database]
 
 [Import]
@@ -85,8 +85,8 @@
 [Clear custom status (reset to None) and close]
 
 [Clear]
-
+清除
 [Set custom status to selected one and close]
 
 [Set]
-
+设置

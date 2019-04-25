@@ -19,9 +19,9 @@
 [Export]
 
 [Name:]
-
+名称：
 [Password:]
-
+密码：
 [Default group:]
 
 [Create Tox profile]
@@ -59,11 +59,11 @@
 [Enter password]
 
 [Cancel]
-
+取消
 [Tox profile is encrypted. Enter the password to continue.]
 
 [Add]
-
+添加
 [Update]
 
 [IPv4 address/ Host]
@@ -111,7 +111,7 @@
 [Tox profile]
 
 [All files]
-
+所有文件
 [Select Tox profile]
 
 [Save Tox profile]
@@ -123,7 +123,7 @@
 [Enter IPv4]
 
 [Error]
-
+错误
 [Enter port]
 
 [Enter public key]
@@ -133,11 +133,11 @@
 [User nodes]
 
 [Are you sure?]
-
+你确定吗？
 [Node deleting]
 
 [Network]
-
+网络
 [Account]
 
 [Nodes]

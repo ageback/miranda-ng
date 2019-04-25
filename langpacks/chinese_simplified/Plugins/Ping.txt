@@ -21,9 +21,9 @@
 [Log Filename:]
 
 [Network]
-
+网络
 [Popups]
-
+弹出窗口
 [Reply]
 
 [Block Repetitions]
@@ -41,7 +41,7 @@
 [Indent:]
 
 [Row height:]
-
+行高：
 [Repeats for success/failure:]
 
 [Attach to contact list]
@@ -49,11 +49,11 @@
 [Use CSV format]
 
 [Add]
-
+添加
 [Remove]
-
+移除
 [Edit]
-
+编辑
 [Up]
 
 [Down]
@@ -61,7 +61,7 @@
 [Edit Host]
 
 [Cancel]
-
+取消
 [Address:]
 
 [Label:]
@@ -69,7 +69,7 @@
 [TCP Connect]
 
 [Port:]
-
+端口
 [Control Protocol:]
 
 [Set my status to:]
@@ -79,7 +79,7 @@
 [Execute the following command on double-click:]
 
 [Contact]
-
+联系
 [Protocols]
 
 [(Optional) Command Parameters:]
@@ -105,15 +105,15 @@
 [Text Files (*.txt)]
 
 [All Files]
-
+所有文件
 [Open log file]
 
 [<none>]
-
+<无>
 [<all>]
 
 [Settings]
-
+设置
 [Hosts]
 
 ;file \plugins\Ping\src\ping.cpp
@@ -126,7 +126,7 @@
 [Testing]
 
 [Disabled]
-
+已禁用
 ;file \plugins\Ping\src\pinggraph.cpp
 [Show grid lines]
 
@@ -162,7 +162,7 @@
 [Show/Hide &Ping Window]
 
 [List]
-
+列表
 ;file \plugins\Ping\src\rawping.cpp
 [Host %s requests that you reduce the amount of traffic you are sending.]
 
@@ -170,4 +170,4 @@
 [Unknown Address]
 
 [Unknown]
-
+未知

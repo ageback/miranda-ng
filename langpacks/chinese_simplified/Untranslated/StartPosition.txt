@@ -9,5 +9,4 @@
 [Always start...]
 [minimized to system tray]
 [opened]
-[Contact list]
 [Start position]

@@ -41,17 +41,17 @@
 [show message window with pasted message]
 
 [** All contacts **]
-
+** 所有联系人 **
 [Protocol]
-
+协议
 [Services]
 
 [Options]
-
+选项
 [Contacts]
-
+联系人
 [Accounts]
-
+帐户
 ;file \plugins\MirFox\src\MirandaUtils.cpp
 [MirFox log]
 

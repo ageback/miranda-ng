@@ -11,7 +11,7 @@
 [Account:]
 
 [Nick:]
-
+昵称：
 [Sound:]
 
 [Not set]
@@ -21,25 +21,25 @@
 [Test play]
 
 [Reset]
-
+重置
 [Ignore sound for this contact]
 
 [Cancel]
-
+取消
 ;file \plugins\XSoundNotify\src\dialog.cpp
 [Custom sound for %s (%s)]
 
 [Sound files]
-
+声音文件
 [WAV files]
-
+WAV 文件
 ;file \plugins\XSoundNotify\src\options.cpp
 [All contacts]
-
+所有联系人
 [(Unknown contact)]
-
+(未知联系人)
 [Sounds]
-
+声音
 [XSound Notify]
 
 ;file \plugins\XSoundNotify\src\xsn_main.cpp

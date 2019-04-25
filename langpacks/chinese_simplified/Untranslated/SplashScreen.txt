@@ -15,6 +15,5 @@
 [Preview...]
 [Download more splash screens]
 [Graphic files]
-[Sound Files]
 [Skins]
 [Splash Screen]

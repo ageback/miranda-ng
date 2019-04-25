@@ -15,7 +15,7 @@
 [and stay minimized]
 
 [Cascade new windows]
-
+级联新窗口
 [Save size and location for each contact]
 
 [Minimize on send]
@@ -27,13 +27,13 @@
 [Delete temporary contacts on closing]
 
 [Show warning when message has not been received after]
-
+显示警告，当消息未被接收于此时间后
 [seconds]
-
+秒
 [Send message on:]
 
 [Tabs]
-
+标签
 [Enable tabs]
 
 [Always show tab bar]
@@ -55,11 +55,11 @@
 [Limit number of group chats tabs per window to]
 
 [Layout]
-
+布局
 [Show title bar]
-
+显示标题栏
 [Show status bar]
-
+显示状态栏
 [Show toolbar]
 
 [Show info bar]
@@ -81,15 +81,15 @@
 [You can use embedded variables here: %name% for contact's name, %status% for its status, %statusmsg% for its status message and %account% for its account's name]
 
 [Message window event log]
-
+消息窗口事件日志
 [Enable IEView]
 
 [Show icons]
-
+显示图标
 [Show time]
 
 [Show seconds]
-
+显示秒
 [Show date]
 
 [Long date format]
@@ -97,7 +97,7 @@
 [Relative date]
 
 [Show names]
-
+显示名称
 [Enable message grouping]
 
 [Mark follow-up messages with timestamp]
@@ -119,37 +119,37 @@
 [Events in the last]
 
 [events]
-
+事件
 [minutes]
-
+分
 [Typing notification options]
 
 [Send typing notifications to the following users when you are typing a message to them:]
-
+当你向以下用户输入消息时，给他们发送正在输入通知：
 [Show typing notification switch in the status bar]
 
 [Show typing notifications when a user is typing a message]
-
+当一个用户正在输入消息时显示正在输入通知
 [Update message window icons when a user is typing]
 
 [Show typing notification when no message dialog is open]
-
+当没有打开消息对话框时显示正在输入通知
 [Flash in the system tray and in the contact list]
-
+在系统托盘和联系人列表中闪动
 [Show balloon popup]
-
+显示气泡弹出
 [Send error]
-
+发送出错
 [An error has occurred. The protocol reported the following error:]
-
+出现了一个错误。协议报告了如下错误：
 [while sending the following message:]
-
+当发送以下消息时：
 [Try again]
-
+再试一次
 [Cancel]
-
+取消
 [Message session]
-
+消息会话
 [Send to all tabs]
 
 [You are about to send a message to all open tabs.\nAre you sure?]
@@ -157,63 +157,63 @@
 [Remember my choice for this container]
 
 [Yes]
-
+是
 [No]
-
+否
 [Show these events only:]
-
+仅显示这些事件：
 [Actions]
-
+动作
 [Messages]
-
+消息
 [Nick changes]
-
+昵称变更
 [Users joining]
-
+用户加入
 [Users leaving]
-
+用户离开
 [Topic changes]
-
+话题变更
 [Status changes]
-
+状态变更
 [Information]
-
+信息
 [Disconnects]
-
+断开连接
 [User kicks]
-
+用户踢出
 [Notices]
-
+通知
 [Options]
-
+选项
 [Other]
-
+其他
 [Add new rooms to group:]
-
+增加新的房间到分组：
 [Nick list row height]
 
 [pixels]
-
+像素
 [Log options]
-
+日志选项
 [Your name]
-
+你的名字
 [Other name]
-
+其他名字
 [Timestamp]
-
+时间戳
 [Log timestamp]
-
+日志时间戳
 [Limit log text to (events):]
-
+限制日志文字到（事件）：
 [Enable highlighting]
-
+启用高亮
 [Words to highlight (wildcards allowed)]
-
+要高亮的单词(允许通配符)
 [Save logs]
 
 [Location]
-
+位置
 [Trim to]
 
 [KB]
@@ -221,70 +221,70 @@
 [Group chat]
 
 [Use same style as in the message log]
-
+使用与消息日志中相同的样式
 [Use default colors]
-
+使用默认颜色
 [Use custom colors]
-
+使用自定义颜色
 [Text]
-
+文字
 [Background]
-
+背景
 [Timeout (s)]
-
+超时(秒)
 [(0 means default setting, -1 means indefinite time)]
 
 [Log]
-
+日志
 [&Copy]
-
+复制(&C)
 [Co&py all]
-
+复制所有(&P)
 [Select &all]
-
+选择所有(&A)
 [Word lookup]
-
+单词查找
 [Yandex]
-
+Yandex
 [Wikipedia (en)]
-
+维基百科(英语)
 [Google Maps]
-
+Google 地图
 [Google Translate]
-
+Google 翻译
 [C&lear log]
-
+清除日志(&L)
 [&Open link]
-
+打开链接(&O)
 [&Copy link]
-
+复制链接(&C)
 [Message]
-
+消息
 [Undo]
-
+撤销
 [Redo]
-
+重做
 [Cut]
-
+剪切
 [Copy]
-
+复制
 [Paste]
-
+粘贴
 [Paste && send]
 
 [Delete]
-
+删除
 [Clear]
-
+清除
 [Close other tabs]
 
 [Close tab]
 
 ;file \plugins\Scriver\src\chat_main.cpp
 [Messaging]
-
+消息
 [Group chats]
-
+分组聊天
 ;file \plugins\Scriver\src\chat_options.cpp
 [Flash when someone speaks]
 
@@ -299,7 +299,7 @@
 [Do not play sounds when focused]
 
 [Do not pop up the window when joining a chat room]
-
+当加入聊天室时不要弹出窗口
 [Show contact statuses (if supported)]
 
 [Display contact status icon before role icon]
@@ -307,13 +307,13 @@
 [Add ':' to auto-completed names]
 
 [Prefix all events with a timestamp]
-
+在所有事件前加时间戳前缀
 [Only prefix with timestamp if it has changed]
-
+仅当发生改变时加时间戳前缀
 [Timestamp has same color as event]
 
 [Indent the second line of a message]
-
+缩进消息的第二行
 [Limit user names to 20 characters]
 
 [Strip colors from messages]
@@ -321,83 +321,83 @@
 [Enable 'event filter' for new rooms]
 
 [Show topic changes]
-
+显示主题更改
 [Show users joining]
-
+显示用户加入
 [Show users disconnecting]
-
+显示用户断开连接
 [Show messages]
-
+显示消息
 [Show actions]
-
+显示动作
 [Show users leaving]
-
+显示用户离开
 [Show users being kicked]
-
+显示被踢的用户
 [Show notices]
-
+显示通知
 [Show users changing name]
-
+显示用户更改名称
 [Show information messages]
-
+显示信息消息
 [Show status changes of users]
-
+显示用户的状态变更
 [Show icons in tray only when the chat room is not active]
-
+仅在聊天室未激活时在托盘中显示图标
 [Show icon in tray for topic changes]
-
+在托盘中显示主题更改图标
 [Show icon in tray for users joining]
-
+在托盘中显示用户加入的图标
 [Show icon in tray for users disconnecting]
-
+在托盘中显示用户断开连接的图标
 [Show icon in tray for messages]
-
+在托盘中显示消息的图标
 [Show icon in tray for actions]
-
+在托盘中显示动作的图标
 [Show icon in tray for highlights]
-
+在托盘中显示高亮的图标
 [Show icon in tray for users leaving]
-
+在托盘中显示用户离开的图标
 [Show icon in tray for users kicking other user]
-
+在托盘中显示用户踢其他用户的图标
 [Show icon in tray for notices]
-
+在托盘中显示显示通知的图标
 [Show icon in tray for name changes]
-
+在托盘中显示名称变更的图标
 [Show icon in tray for information messages]
-
+在托盘中显示信息消息的图标
 [Show icon in tray for status changes]
-
+在托盘中显示状态变更的图标
 [Show popups only when the chat room is not active]
-
+仅在聊天室未激活时显示弹出窗口
 [Show popup for topic changes]
-
+显示主题变更的弹出窗口
 [Show popup for users joining]
-
+显示用户加入的弹出窗口
 [Show popup for users disconnecting]
-
+显示用户断开连接的弹出窗口
 [Show popup for messages]
-
+显示消息的弹出窗口
 [Show popup for actions]
-
+显示动作的弹出窗口
 [Show popup for highlights]
-
+显示高亮的弹出窗口
 [Show popup for users leaving]
-
+显示用户离开的弹出窗口
 [Show popup for users kicking other user]
-
+显示用户踢其他用户的弹出窗口
 [Show popup for notices]
-
+显示通知的弹出窗口
 [Show popup for name changes]
-
+显示名称变更的弹出窗口
 [Show popup for information messages]
-
+显示信息消息的弹出窗口
 [Show popup for status changes]
-
+显示状态变更的弹出窗口
 [Appearance and functionality of chat windows]
 
 [Icons to display in the tray]
-
+要在托盘中显示的图标
 [nick of current contact (if defined)]
 
 [protocol name of current contact (if defined). Account name is used when protocol supports multiple accounts]
@@ -451,27 +451,27 @@
 [Appearance]
 
 [Default events to show in new chat rooms if the 'event filter' is enabled]
-
+当启用了“事件过滤器”时，要在新聊天室中显示的默认事件
 [Select folder]
-
+选择文件夹
 ;file \plugins\Scriver\src\chat_window.cpp
 [%s: chat room (%u user)]
-
+%s：聊天室（%u 用户）
 [%s: chat room (%u users)]
-
+%s：聊天室（%u 用户）
 [%s: message session]
-
+%s：消息会话
 [%s: message session (%u users)]
-
+%s：消息会话（%u 用户）
 [Nickname]
-
+昵称
 [Unique ID]
-
+唯一身份
 [Status]
-
+状态
 ;file \plugins\Scriver\src\globals.cpp
 [Add contact]
-
+添加联系人
 [User's details]
 
 [User's history]
@@ -479,7 +479,7 @@
 [Send message]
 
 [Smiley button]
-
+笑脸按钮
 [User is typing]
 
 [Typing notification off]
@@ -491,75 +491,75 @@
 [Close button]
 
 [Icon overlay]
-
+图标叠加层
 [Incoming message (10x10)]
-
+传入消息  (10x10)
 [Outgoing message (10x10)]
-
+传出消息  (10x10)
 [Notice (10x10)]
-
+通知  (10x10)
 [Window Icon]
-
+窗口图标
 [Text color]
-
+文字颜色
 [Background color]
-
+背景色
 [Bold]
-
+粗体
 [Italics]
-
+斜体
 [Underlined]
-
+下划线
 [Room history]
-
+房间历史
 [Room settings]
-
+房间设置
 [Event filter disabled]
-
+禁用事件过滤器
 [Event filter enabled]
-
+启用事件过滤器
 [Hide nick list]
-
+隐藏昵称列表
 [Show nick list]
-
+显示昵称列表
 [Status 1 (10x10)]
-
+状态 1  (10x10)
 [Status 2 (10x10)]
-
+状态 2  (10x10)
 [Status 3 (10x10)]
-
+状态 3  (10x10)
 [Status 4 (10x10)]
-
+状态 4  (10x10)
 [Status 5 (10x10)]
-
+状态 5  (10x10)
 [Status 6 (10x10)]
-
+状态 6  (10x10)
 [Message in (10x10)]
-
+传入消息  (10x10)
 [Message out (10x10)]
-
+传出消息  (10x10)
 [Action (10x10)]
-
+动作  (10x10)
 [Add Status (10x10)]
-
+添加状态  (10x10)
 [Remove status (10x10)]
-
+移除状态  (10x10)
 [Join (10x10)]
-
+加入  (10x10)
 [Leave (10x10)]
-
+离开  (10x10)
 [Quit (10x10)]
-
+退出  (10x10)
 [Kick (10x10)]
-
+踢  (10x10)
 [Nickchange (10x10)]
 
 [Topic (10x10)]
-
+主题  (10x10)
 [Highlight (10x10)]
-
+高亮  (10x10)
 [Information (10x10)]
-
+信息  (10x10)
 [Single Messaging]
 
 [Thai]
@@ -623,18 +623,18 @@
 [Sending in progress: %d message(s) left...]
 
 [%s is typing a message...]
-
+%s 正在输入消息...
 [Last message received on %s at %s.]
-
+最后一条消息接收于 %s %s。
 [Look up '%s':]
-
+查找 '%s'：
 [No word to look up]
-
+没有查找单词
 [User menu - %s]
 
 ;file \plugins\Scriver\src\msglog.cpp
 [Me]
-
+我
 [O Lord, bless this Thy hand grenade that with it Thou mayest blow Thine enemies]
 
 [to tiny bits, in Thy mercy]
@@ -650,36 +650,36 @@
 [Yesterday]
 
 [File sent]
-
+文件已发送
 [File received]
-
+收到的文件
 ;file \plugins\Scriver\src\msgoptions.cpp
 [Outgoing messages]
-
+传出消息
 [Outgoing background]
 
 [Incoming messages]
-
+传入消息
 [Incoming background]
 
 [Outgoing name]
-
+传出名称
 [Outgoing time]
-
+传入名称
 [Outgoing colon]
-
+传出冒号
 [Incoming name]
-
+传入名称
 [Incoming time]
-
+传入时间
 [Incoming colon]
-
+传入冒号
 [Message area]
-
+消息区域
 [Input area background]
 
 [Unused]
-
+未使用
 [Info bar contact name]
 
 [Info bar background]
@@ -689,25 +689,25 @@
 [Line between messages]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [Out to lunch]
-
+外出吃饭
 [On the phone]
-
+在打电话
 [Enter]
 
 [Double 'Enter']
@@ -717,102 +717,102 @@
 [Shift+Enter]
 
 [** New contacts **]
-
+** 新联系人 **
 [** Unknown contacts **]
-
+** 未知联系人 **
 [Message sessions]
-
+消息会话
 [General]
-
+通用
 [Event log]
 
 [Typing notify]
-
+输入通知
 [Popups]
-
+弹出窗口
 ;file \plugins\Scriver\src\msgs.cpp
 [Message from %s]
-
+来自 %s 的消息
 [%s is typing a message]
-
+%s 正在输入消息
 [Typing notification]
-
+输入通知
 [&Quote]
 
 [Quote]
 
 [&Add]
-
+添加(&A)
 [Add contact permanently to list]
-
+永久添加联系人到列表
 [&User menu]
-
+用户菜单(&U)
 [User menu]
-
+用户菜单
 [User &details]
-
+用户详情(&D)
 [View user's details]
-
+查看用户详情
 [&History]
-
+历史(&H)
 [View user's history (Ctrl+H)]
-
+查看用户历史(Ctrl+H)
 [&Bold]
-
+粗体(&B)
 [Make the text bold (Ctrl+B)]
-
+使文字变为粗体(Ctrl + B)
 [&Italic]
-
+斜体(&I)
 [Make the text italicized (Ctrl+I)]
-
+使文字变为斜体(Ctrl+I)
 [&Underline]
-
+下划线(&U)
 [Make the text underlined (Ctrl+U)]
-
+使文字加下划线(Ctrl+U)
 [&Color]
-
+颜色(&C)
 [Select a foreground color for the text (Ctrl+K)]
-
+为文字选择一个背景颜色(Ctrl+K)
 [&Background color]
-
+背景色(&B)
 [Select a background color for the text (Ctrl+L)]
-
+为文字选择一个背景颜色(Ctrl+L)
 [&Room settings]
-
+房间设置(&R)
 [Control this room (Ctrl+O)]
-
+控制这个房间(Ctrl+O)
 [&Show/hide nick list]
-
+显示/隐藏昵称列表(&S)
 [Show/hide the nick list (Ctrl+N)]
-
+显示/隐藏昵称列表(Ctrl+N)
 [&Filter]
-
+过滤器(&F)
 [Enable/disable the event filter (Ctrl+F)]
-
+启用/禁用事件过滤器(Ctrl+F)
 [&Message]
-
+消息(&M)
 [Miranda could not load the built-in message module, Msftedit.dll is missing. If you are using WINE, please make sure you have Msftedit.dll installed. Press 'Yes' to continue loading Miranda.]
 
 [Instant messages]
-
+即时消息
 [Incoming (focused window)]
-
+传入消息（获得焦点的窗口）
 [Incoming (unfocused window)]
-
+传入消息（未获得焦点的窗口）
 [Incoming (new session)]
-
+传入消息（新会话）
 [Outgoing]
-
+传出
 [Contact started typing]
-
+联系人开始输入
 [Contact stopped typing]
-
+联系人停止输入
 ;file \plugins\Scriver\src\msgtimedout.cpp
 [An unknown error has occurred.]
-
+发生了未知的错误。
 ;file \plugins\Scriver\src\sendqueue.cpp
 [The message send timed out.]
-
+消息发送超时。
 ;file \plugins\Scriver\src\tabs.cpp
 [Always on top]
-
+总在顶层

@@ -8,11 +8,11 @@
 [Plugin for manage hotkeys to open contact window, insert text, run program and call services]
 
 [Apply]
-
+应用
 [New]
-
+新
 [Delete]
-
+删除
 [Up]
 
 [Down]
@@ -26,9 +26,9 @@
 [Choose action]
 
 [&Yes]
-
+是(&)
 [&No]
-
+否(&N)
 [A&ppend]
 
 [Yes to &All]
@@ -48,7 +48,7 @@
 [Actman settings converted to new version]
 
 [Actions]
-
+动作
 [No description]
 
 [Reload]
@@ -56,11 +56,11 @@
 [Append data to file?]
 
 [Help]
-
+帮助
 [Action]
 
 [Notes]
-
+笔记
 [INI]
 
 [Read]
@@ -180,9 +180,9 @@
 [Structure help]
 
 [Name]
-
+名字
 [Plugin]
-
+插件
 [Descr]
 
 [&Change]
@@ -202,7 +202,7 @@
 [Close for macro]
 
 [Contact]
-
+联系
 [Choose contact]
 
 [Refresh]
@@ -264,7 +264,7 @@
 ['<proto>' in service name will be replaced by protocol name for contact handle in parameter]
 
 [Service:]
-
+服务：
 [In/Out]
 
 [Clipboard]
@@ -274,7 +274,7 @@
 [Paste from]
 
 [File]
-
+文件
 [Append]
 
 [UTF8+sign]
@@ -302,9 +302,9 @@
 [& and]
 
 [Text]
-
+文字
 [Case sensitive]
-
+区分大小写
 [Opposite order]
 
 [empty]
@@ -340,15 +340,15 @@
 [Right justified text]
 
 [Icons]
-
+图标
 [Error]
-
+错误
 [Question]
 
 [Warning]
-
+警告
 [Info]
-
+信息
 [Buttons]
 
 [OK, Cancel]
@@ -402,9 +402,9 @@
 [Slot 9]
 
 [Settings]
-
+设置
 [Contact list]
-
+联系人列表
 [Active accounts only]
 
 [Contact list format]
@@ -416,7 +416,7 @@
 [value]
 
 [name]
-
+名字
 [value (name)]
 
 [name 'value']
@@ -442,9 +442,9 @@
 [Start immediately]
 
 [Days]
-
+天
 [Time]
-
+时间
 [Date]
 
 [Repeat]
@@ -482,15 +482,15 @@
 [Core Hotkey]
 
 [Main menu]
-
+主菜单
 [Contact menu]
-
+联系人菜单
 [Tray menu]
-
+托盘菜单
 [Protocol menus]
-
+协议菜单
 [Status menu]
-
+状态菜单
 [Common]
 
 [2 state button/item]
@@ -514,7 +514,7 @@
 [Custom settings]
 
 [Separated]
-
+分居
 [Do not translate]
 
 [Show window for new/changed profile password]
@@ -548,25 +548,25 @@
 [Change 'hide offline contacts' option value]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Do not disturb]
-
+勿扰
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [On the phone]
-
+在打电话
 [Out to lunch]
-
+外出吃饭
 [Set global status]
 
 [Switch contact list status]
@@ -606,7 +606,7 @@
 [Open bug report page]
 
 [System]
-
+系统
 [Shows contact history or (wParam=0) system history]
 
 [Erases contact's history. hContact can be NULL(0) to empty system history]
@@ -656,7 +656,7 @@
 [All protocols]
 
 [Protocol]
-
+协议
 [signed -2 if proto can't set this, -1 on protocol not found, else 0]
 
 [Shows a dialog to set the avatar for all possible protocols]
@@ -670,7 +670,7 @@
 [Opens the options dialog, optionally at the specified page]
 
 [Check for updates]
-
+检查更新
 [with confirmation]
 
 [without confirmation]
@@ -766,13 +766,13 @@
 [Manage Jabber Bookmarks]
 
 [text]
-
+文字
 [Set status message]
 
 [Set protocol status]
 
 [None]
-
+无
 [Angry]
 
 [Taking a bath]
@@ -818,7 +818,7 @@
 [Working]
 
 [Typing]
-
+正在输入
 [Picnic]
 
 [Cooking]
@@ -844,7 +844,7 @@
 [Action group list was changed: some was added or deleted]
 
 [contact list]
-
+联系人列表
 [The context menu for a contact is about to be built]
 
 [Double click on the contact list]

@@ -3,6 +3,5 @@
 [No CList blink when:]
 [No SysTray blink when:]
 [Zero Notifications]
-[Plugins]
 [Disable &Sounds]
 [Enable &Sounds]

@@ -19,7 +19,7 @@
 [Use default status message]
 
 [Disable Sounds]
-
+禁用声音
 [Show the Tray Icon]
 
 [When I return:]
@@ -33,9 +33,9 @@
 [Miranda NG is locked.\nEnter password to unlock it.]
 
 [Password:]
-
+密码：
 [Cancel]
-
+取消
 [Workstation is locked]
 
 [Screen Saver is running]
@@ -71,8 +71,8 @@
 
 ;file \plugins\BossKeyPlus\src\Options.cpp
 [Events]
-
+事件
 [Main]
 
 [Advanced]
-
+高级

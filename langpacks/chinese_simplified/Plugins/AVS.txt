@@ -47,9 +47,9 @@
 [Change]
 
 [Delete]
-
+删除
 [Reset]
-
+重置
 [Picture options]
 
 [Protect the picture]
@@ -61,11 +61,11 @@
 [Use defaults]
 
 [Cancel]
-
+取消
 [Options]
-
+选项
 [Background]
-
+背景
 [Transparent]
 
 [Points:]
@@ -73,7 +73,7 @@
 [Color diff:]
 
 [Set]
-
+设置
 [Use per protocol avatars]
 
 ;file \plugins\AVS\src\acc.cpp
@@ -81,7 +81,7 @@
 
 ;file \plugins\AVS\src\main.cpp
 [Avatars]
-
+头像
 [My Avatars]
 
 [My Global Avatar Cache]
@@ -100,7 +100,7 @@
 [Contact has no avatar]
 
 [Contacts]
-
+联系人
 [Protocols]
 
 [Contact avatars]
@@ -108,22 +108,22 @@
 [Own avatars]
 
 [No avatar]
-
+无头像
 [Are you sure you want to remove your avatar?]
 
 [Avatar]
 
 ;file \plugins\AVS\src\services.cpp
 [All files]
-
+所有文件
 [Windows bitmaps]
-
+Windows 位图
 [JPEG bitmaps]
-
+JPEG 位图
 [GIF bitmaps]
-
+GIF 位图
 [PNG bitmaps]
-
+PNG位图
 [Flash animations]
 
 [XML files]

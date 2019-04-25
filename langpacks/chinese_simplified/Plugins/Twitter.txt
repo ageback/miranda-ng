@@ -15,7 +15,7 @@
 [Default group:]
 
 [Username:]
-
+用户名：
 [<Sign in to link your Twitter account>]
 
 [Send Tweet]
@@ -23,7 +23,7 @@
 [Send]
 
 [Cancel]
-
+取消
 [Miscellaneous options]
 
 [Use group chat for Twitter feed]
@@ -35,7 +35,7 @@
 [Once every]
 
 [sec]
-
+秒
 [These changes will take effect the next time you connect to the Twitter network.]
 
 [Treat tweets as messages]
@@ -45,25 +45,25 @@
 [Colors]
 
 [Use Windows colors]
-
+使用 Windows 颜色
 [Use Popup colors]
 
 [Use custom colors]
-
+使用自定义颜色
 [Back]
 
 [Text]
-
+文字
 [Timeouts]
 
 [Use default]
 
 [Custom]
-
+自定义
 [Permanent]
 
 [Preview]
-
+预览
 [But not during sign-on]
 
 [Enter Twitter PIN]
@@ -92,11 +92,11 @@
 [Send Tweet...]
 
 [Network]
-
+网络
 [Basic]
 
 [Popups]
-
+弹出窗口
 [%s Protocol]
 
 [Don't be crazy! Everyone knows the max tweet size is 140, and you're trying to fit %d chars in there?]

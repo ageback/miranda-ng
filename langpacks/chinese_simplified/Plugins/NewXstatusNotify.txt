@@ -43,7 +43,7 @@
 [Automatically turn off Popups and Sounds on status change]
 
 [Configure]
-
+配置
 [Notify me for people not on my contact list]
 
 [Use individual sounds]
@@ -61,21 +61,21 @@
 [Change]
 
 [Preview]
-
+预览
 [Delete]
-
+删除
 [Enable sounds]
-
+启用声音
 [Enable popups]
-
+启用弹出窗口
 [Status Notify]
 
 [Individual sounds are disabled.\n\nTo enable them, go to Options -> Status -> Status Notify, enable\n"Use individual sounds" checkbox, and then reopen this dialog.]
 
 [Sounds]
-
+声音
 [Popups]
-
+弹出窗口
 [Extra status notify]
 
 [Extra status logging]
@@ -91,17 +91,17 @@
 [Popups when status changes to:]
 
 [Background]
-
+背景
 [Text]
-
+文字
 [Colors]
 
 [Use custom colors]
-
+使用自定义颜色
 [Use Windows colors]
-
+使用 Windows 颜色
 [Use default colors]
-
+使用默认颜色
 [Popup text]
 
 [Show contact group name]
@@ -117,7 +117,7 @@
 [Timeout]
 
 [Sec]
-
+秒
 [Connection timeout]
 
 [0 = Default]
@@ -155,7 +155,7 @@
 [Variables]
 
 [Reset]
-
+重置
 [Disable notifications]
 
 [Disable globally]
@@ -165,7 +165,7 @@
 [Disable only if I change global status]
 
 [Cancel]
-
+取消
 [Log extra status changes]
 
 [Log extra status changes to file]
@@ -187,9 +187,9 @@
 [Log extra status when opening message window]
 
 [General]
-
+通用
 [Accounts]
-
+帐户
 [Enable/Disable accounts which you don't wish to be notified for:]
 
 [Notify when contact changes status message]
@@ -218,17 +218,17 @@
 
 ;file \plugins\NewXstatusNotify\src\indsnd.cpp
 [Sound files]
-
+声音文件
 [All files]
-
+所有文件
 [Wave files]
 
 [Status]
-
+状态
 [Sound file]
 
 [** All contacts **]
-
+** 所有联系人 **
 ;file \plugins\NewXstatusNotify\src\indsnd.h
 [(default sound)]
 
@@ -240,15 +240,15 @@
 [<no status message>]
 
 [Contact]
-
+联系
 [<unknown>]
-
+<未知>
 [%s is now %s]
 
 [%s, %s. %s changed status to %s (was %s)\r\n]
 
 [connecting]
-
+正在连接
 [aborting]
 
 [playing]
@@ -361,9 +361,9 @@
 
 ;file \plugins\NewXstatusNotify\src\options.cpp
 [All Files]
-
+所有文件
 [Log]
-
+日志
 [This is status message]
 
 [This is extra status]
@@ -381,7 +381,7 @@
 [Status logging]
 
 [Filtering]
-
+过滤
 ;file \plugins\NewXstatusNotify\src\popup.h
 [(was %s)]
 
@@ -396,7 +396,7 @@
 [Open contact history]
 
 [Do nothing]
-
+啥都不干
 ;file \plugins\NewXstatusNotify\src\utils.cpp
 [Can't open the log file!]
 

@@ -43,31 +43,31 @@
 [* Nudge sending delay is hardcoded and cannot be changed.]
 
 [Preview]
-
+预览
 [Text]
-
+文字
 [Allow nudges when you're:]
 
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Do not disturb]
-
+勿扰
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [On the phone]
-
+在打电话
 [Out to lunch]
-
+外出吃饭
 [Shaking contact list options]
 
 [Number of moves]
@@ -102,6 +102,6 @@
 
 ;file \plugins\Nudge\src\options.cpp
 [Events]
-
+事件
 [Window Shaking]
 

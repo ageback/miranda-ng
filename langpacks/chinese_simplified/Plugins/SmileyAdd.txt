@@ -13,13 +13,13 @@
 [Specify smiley pack for each category]
 
 [Name:]
-
+名称：
 [Author:]
 
 [Version:]
 
 [Preview]
-
+预览
 [Use per protocol global smiley packs]
 
 [Display]
@@ -70,18 +70,18 @@
 [Assign smiley category]
 
 [Background color]
-
+背景色
 [Only one instance of SmileyAdd could be executed.\nRemove duplicate instances from 'Plugins' directory]
 
 ;file \plugins\SmileyAdd\src\options.cpp
 [Smiley packs]
 
 [All files]
-
+所有文件
 [Smileys]
 
 [Customize]
-
+自定义
 ;file \plugins\SmileyAdd\src\services.cpp
 [Protocol specific]
 

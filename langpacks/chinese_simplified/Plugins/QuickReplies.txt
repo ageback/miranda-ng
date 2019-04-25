@@ -27,4 +27,4 @@
 
 ;file \plugins\QuickReplies\src\options.cpp
 [Message sessions]
-
+消息会话

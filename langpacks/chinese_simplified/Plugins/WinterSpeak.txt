@@ -27,35 +27,35 @@
 [Welcome Message]
 
 [Status Changes]
-
+状态变更
 [Offline]
-
+离线
 [Online]
-
+在线
 [Away]
-
+离开
 [Do not disturb]
-
+勿扰
 [Not available]
-
+不可用
 [Occupied]
-
+忙碌
 [Free for chat]
-
+有空聊天
 [Invisible]
-
+隐身
 [Occurring Events]
 
 [Incoming message]
-
+传入消息
 [Incoming File]
-
+传入文件
 [Authorization request]
-
+授权请求
 [Added to contact list]
 
 [Status messages]
-
+状态消息
 [Announce status changes on connect]
 
 [Message Events]
@@ -71,24 +71,24 @@
 [Active Users]
 
 [The following events are being ignored:]
-
+以下事件被忽略：
 [Messages]
-
+消息
 [Online Notification]
-
+上线提醒
 [All Events]
-
+所有事件
 [None]
-
+无
 [Add]
-
+添加
 [Remove]
-
+移除
 ;file \plugins\WinterSpeak\src\DialogConfigActive.cpp
 [** All contacts **]
-
+** 所有联系人 **
 [** Unknown contacts **]
-
+** 未知联系人 **
 ;file \plugins\WinterSpeak\src\DialogConfigEngine.cpp
 [testing testing 1 2 3]
 

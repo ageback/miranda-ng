@@ -21,7 +21,7 @@
 [Mark replied messages as read]
 
 [sec]
-
+秒
 [Warning text]
 
 [Time before the answer]
@@ -48,11 +48,11 @@
 
 ;file \plugins\Boltun\src\stdafx.h
 [Message sessions]
-
+消息会话
 [Mind Files]
 
 [All Files]
-
+所有文件
 [Boltun/Auto Chat]
 
 [Boltun/Not to Chat]
