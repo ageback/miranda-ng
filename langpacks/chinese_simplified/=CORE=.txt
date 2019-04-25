@@ -2206,182 +2206,182 @@ Miranda正在尝试升级您的个人资料结构。\n它无法自动将配置�
 [Miranda is unable to open '%s' because you do not have any profile plugins installed.\nYou need to install dbx_mdbx.dll]
 Miranda无法打开'%s'，因为您没有安装任何配置文件插件。\n您需要安装dbx_mdbx.dll
 [Miranda was unable to open '%s', it's in an unknown format.]
-
+Miranda 无法打开 '%s'，它是个未知格式。
 [Miranda was unable to open '%s'\nIt's inaccessible or used by other application or Miranda instance]
-
+Miranda 无法打开 '%s'\n它不可访问或被其他程序或 Miranda 实例使用
 [Miranda was unable to open '%s'\nThere is no suitable database driver installed]
-
+Miranda 无法打开 '%s'\n未安装合适的数据库驱动程序
 [No profile support installed!]
-
+未安装配置文件支持！
 [Miranda can't open that profile]
-
+Miranda 无法打开那个配置文件
 [Miranda can't understand that profile]
-
+Miranda 无法理解那个配置文件
 ;file \src\mir_app\src\db_events.cpp
 [Authorization request from %s%s: %s]
-
+授权请求来自 %s%s: %s
 [You were added by %s%s]
-
+你被 %s%s 添加了
 [Contacts: ]
-
+联系人：
 ;file \src\mir_app\src\db_ini.cpp
 [Security systems to prevent malicious changes are in place and you will be warned before every change that is made.]
-
+防止恶意更改的安全系统已经到位，您将在每次更改之前收到警告。
 [Security systems to prevent malicious changes are in place and you will be warned before changes that are known to be unsafe.]
-
+防止恶意更改的安全系统已到位，您将在已知不安全的更改之前收到警告。
 [Security systems to prevent malicious changes have been disabled. You will receive no further warnings.]
-
+已禁用防止恶意更改的安全系统。 您将不会收到任何进一步的警告。
 [This change is known to be safe.]
-
+这种变化是安全的。
 [This change is known to be potentially hazardous.]
-
+已知此变化具有潜在危险。
 [This change is not known to be safe.]
-
+不知道这种变化是安全的。
 [Invalid setting type for '%s'. The first character of every value must be b, w, d, l, s, e, u, g, h or n.]
-
+'%s'的设置类型无效。 每个值的第一个字符必须是b，w，d，l，s，e，u，g，h或n。
 ;file \src\mir_app\src\ei_defaulticons.cpp
 [Homepage]
-
+主页
 [Phone/SMS]
-
+电话/短信
 [Chat activity]
-
+聊天活动
 ;file \src\mir_app\src\ei_options.cpp
 [Extra icons]
-
+额外图标
 ;file \src\mir_app\src\ei_services.cpp
 ;file \src\mir_app\src\findadd.cpp
 [You haven't filled in the search field. Please enter a search term and try again.]
-
+您尚未填写搜索字段。 请输入搜索字词，然后重试。
 [Search]
-
+搜索
 [Ctrl+Search add contact]
-
+Ctrl+搜索添加联系人
 [Results]
-
+结果
 [There are no results to display.]
-
+没有结果显示。
 [Searching]
-
+正在搜索
 [All networks]
-
+所有网络
 [Handle]
-
+处理
 [&Find/add contacts...]
-
+查找/添加联系人(&F)...
 ;file \src\mir_app\src\FontOptions.cpp
 [Failed to create file]
-
+创建文件失败
 [<none>]
-
+<无>
 [Shadow at left]
-
+阴影在左边
 [Shadow at right]
-
+阴影在右边 
 [Outline]
-
+轮廓
 [Outline smooth]
-
+平滑轮廓
 [Smooth bump]
-
+光滑的凹凸
 [Contour thin]
-
+轮廓细
 [Contour heavy]
-
+轮廓粗
 [Configuration files]
-
+配置文件
 [Text files]
-
+文本文件
 [Error writing file]
-
+写入文件错误
 [Customize]
-
+自定义
 ;file \src\mir_app\src\FontService.cpp
 [Headers]
-
+头部
 [Generic text]
-
+通用文字
 [Small text]
-
+小文字
 ;file \src\mir_app\src\help.cpp
 [< Copyright]
-
+< 版权
 [&Help]
-
+帮助(&H)
 [&About...]
-
+关于(&A)...
 [&Support]
-
+支持(&S)
 [&Miranda NG homepage]
-
+Miranda NG 主页(&M)
 [&Report bug]
-
+报告问题(&R)
 ;file \src\mir_app\src\hotkey_opts.cpp
 [Browser: Back]
-
+浏览器：返回
 [Browser: Forward]
-
+浏览器：前进
 [Browser: Refresh]
-
+浏览器：刷新
 [Browser: Stop]
-
+浏览器：停止
 [Browser: Search]
-
+浏览器：搜索
 [Browser: Fav]
-
+浏览器：收藏
 [Browser: Home]
-
+浏览器：主页
 [Mute]
-
+静音
 [Vol-]
-
+音量-
 [Vol+]
-
+音量+
 [Media: Next Track]
-
+媒体：下一首曲目
 [Media: Prev. Track]
-
+媒体：上一首曲目
 [Media: Stop]
-
+媒体：停止
 [Media: Play/Pause]
-
+媒体：播放/暂停
 [Mail]
-
+邮件
 [Media: Select]
-
+媒体：选择
 [App 1]
-
+应用 1
 [App 2]
-
+应用 2
 [Ctrl + ]
-
+Ctrl + 
 [Alt + ]
-
+Alt + 
 [Shift + ]
-
+Shift + 
 [Win + ]
-
+Win + 
 [Remove shortcut]
-
+移除快捷键
 [Add another shortcut]
-
+添加另一个快捷键
 [Scope:]
-
+范围：
 [System]
-
+系统
 [Actions:]
-
+动作：
 [Add binding]
-
+添加绑定
 [Modify]
-
+修改
 [System scope]
-
+系统范围
 [Miranda scope]
-
+Miranda 范围
 ;file \src\mir_app\src\ignore.cpp
 [** All contacts **]
-
+** 所有联系人 **
 ;file \src\mir_app\src\keyboard.cpp
 [Show/Hide contact list]
 显示/隐藏联系人列表
@@ -2441,7 +2441,7 @@ Miranda无法打开'%s'，因为您没有安装任何配置文件插件。\n您�
 你将要移除所有关联到此中断联系人的联系人。\n这将删除该中继联系人。\n\n仍然要继续吗？
 ;file \src\mir_app\src\meta_addto.cpp
 [Either there is no metacontact in the database (in this case you should first convert a contact into one)\nor there is none that can host this contact.\nAnother solution could be to convert this contact into a new metacontact.\n\nConvert this contact into a new metacontact?]
-
+数据库中没有中继联系人（在这种情况下，您应该首先将一个联系人转换为中继联系人）\n也没有可以存放此联系人的中继联系人。\n另一种解决方案可能是将此联系人转换为新的中继联系人。\n\n转换这个联系到一个新的中继联系人吗？
 [This contact is a metacontact.\nYou can't add a metacontact to another metacontact.\n\nPlease choose another.]
 此联系人是一个中继联系人。\n你不能将一个中继联系人添加到另一个中继联系人。\n\n请选择另一个。
 [Metacontact conflict]
@@ -2629,23 +2629,23 @@ Miranda NG 选项
 [<Unknown format>]
 <未知格式>
 [Are you sure you want to remove profile "%s"?]
-
+你确定要移除配置文件 "%s" 吗？
 [&Convert]
-
+转换(&C)
 [Run]
-
+运行
 [Compact]
-
+压缩
 [Size]
-
+大小
 [Created]
-
+创建
 [Modified]
-
+修改
 [My profiles]
-
+我的配置文件
 [New profile]
-
+新配置文件
 ;file \src\mir_app\src\proto_opts.cpp
 [WARNING! The account is going to be deleted. It means that all its settings, contacts and histories will be also erased.\n\nAre you absolutely sure?]
 
@@ -2658,23 +2658,23 @@ Miranda NG 选项
 [Account is disabled. Please activate it to access options.]
 
 [New account]
-
+新帐户
 [Remove account]
-
+移除帐户
 [Configure...]
-
+配置...
 [Upgrade account]
-
+升级帐户
 [Rename]
-
+重命名
 [Configure]
-
+配置
 [Upgrade]
-
+升级
 [Account %s is being disabled]
-
+帐户 %s 被禁用了
 [Account is online. Disable account?]
-
+帐户在线。禁用帐户吗？
 [Account %s is being deleted]
 
 [You need to disable plugin to delete this account]
@@ -3313,21 +3313,21 @@ WAV 文件
 ;file \src\mir_app\src\visibility.cpp
 ;file \src\mir_core\src\bitmaps.cpp
 [Windows bitmaps]
-
+Windows 位图
 [JPEG bitmaps]
-
+JPEG 位图
 [GIF bitmaps]
-
+GIF 位图
 [PNG bitmaps]
-
+PNG位图
 ;file \src\mir_core\src\timezones.cpp
 [<unspecified>]
-
+<未指定的>
 ;file \include\m_message.h
 [Message window toolbar]
-
+消息窗口工具栏
 ;file \include\m_popup.h
 [Do nothing]
 啥都不干
 [Dismiss popup]
-
+关闭弹出窗口
