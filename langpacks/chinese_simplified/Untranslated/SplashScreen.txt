@@ -6,7 +6,6 @@
 [Show Miranda Version]
 [Enable]
 [Prefix:]
-[Appearance]
 [Display time:]
 [ms]
 [Fade in:]
@@ -15,5 +14,4 @@
 [Preview...]
 [Download more splash screens]
 [Graphic files]
-[Skins]
 [Splash Screen]

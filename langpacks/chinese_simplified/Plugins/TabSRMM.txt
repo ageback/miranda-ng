@@ -1430,7 +1430,7 @@
 [Data path]
 
 [Skins]
-
+皮肤
 [Avatars]
 头像
 [Saved TabSRMM avatars]

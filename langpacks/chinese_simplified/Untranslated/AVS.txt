@@ -40,7 +40,6 @@
 [Contact avatars]
 [Own avatars]
 [Are you sure you want to remove your avatar?]
-[Avatar]
 [Flash animations]
 [XML files]
 [Grow avatar to fit max allowed protocol size]

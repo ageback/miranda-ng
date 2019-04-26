@@ -9,7 +9,7 @@
 
 ;file \plugins\HwHotKeys\res\HwHotKeys.rc
 [Close Miranda]
-
+关闭 Miranda
 [Assign]
 
 [Clear]

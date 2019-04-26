@@ -45,9 +45,9 @@
 [Direction]
 
 [Up]
-
+上
 [Down]
-
+下
 ;file \plugins\IEHistory\src\dlgHandlers.cpp
 [System History]
 

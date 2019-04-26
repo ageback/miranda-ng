@@ -194,7 +194,7 @@
 
 ;file \plugins\MirandaG15\src\CConfig.cpp
 [Appearance]
-
+出现
 [Notifications]
 
 [Chat sessions]

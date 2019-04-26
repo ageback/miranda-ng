@@ -47,6 +47,6 @@
 [Open add contact dialog]
 
 [Main]
-
+主
 [AddContact+]
 

@@ -5,7 +5,6 @@
 [Pixels from Side]
 [Left]
 [Right]
-[Width]
 [Always start...]
 [minimized to system tray]
 [opened]

@@ -55,9 +55,9 @@
 [Edit]
 编辑
 [Up]
-
+上
 [Down]
-
+下
 [Edit Host]
 
 [Cancel]

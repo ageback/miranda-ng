@@ -116,7 +116,7 @@
 [General]
 通用
 [Skins]
-
+皮肤
 [Message Log]
 消息日志
 [Group chats]

@@ -197,7 +197,7 @@
 [Bring to front if covered]
 如果被覆盖，带到前面
 [Hide contact list after]
-隐藏联系人列表在之后
+隐藏联系人列表在此后
 [Automatically resize window to height of list]
 自动调整窗口大小为列表高度
 [maximum]
@@ -293,65 +293,65 @@ x100 毫秒
 [Disable icon blinking]
 禁止图标闪动
 [ms, delay between icon blinking]
-
+毫秒，在图标闪动间的延时
 [System tray icon]
 系统托盘图标
 [Use xStatus icon]
-
+使用 XStatus 图标
 [Icon mode]
-
+图标模式
 [For similar statuses]
-
+用于相似的状态
 [Global status]
-
+全局状态
 [Single account]
-
+单个帐户
 [Cycle icons]
-
+循环图标
 [All accounts]
-
+所有帐户
 [For different statuses]
-
+用于不同的状态
 [Cycle period, seconds]
-
+循环周期，秒
 [Additional stuff]
-
+附加的东西
 [Ignore empty extra icons places (arrange to right).]
-
+忽略空的额外图标位置（向右排列）。
 [Allow internal requesting of status message text]
-
+允许状态消息文本的内部请求
 [Remove status message if contact became offline]
-
+当联系人变成离线时移除状态消息
 [Use improved search method in contact list]
-
+在联系人列表中使用改进的搜索方式
 [Metacontacts stuff]
-
+中继联系人材料
 [Use 'Meta' protocol icons for metacontacts]
-
+为中继联系人使用'Meta'协议图标
 [Expand metacontacts]
-
+展开中继联系人
 [Avoid double click expand]
-
+避免双击展开
 [Hide all extra icons for subcontacts]
-
+为子联系人隐藏所有额外图标
 [Subcontacts indent:]
-
+子联系人缩进：
 [Show time only if it is different from current time]
-
+仅在与当前时间不同时显示时间
 [Show contact time as row item]
-
+将联系时间显示为行项目
 [Appearance]
-
+出现
 [Always on top]
 总在顶层
 [Pin to desktop]
 固定到桌面
 [Client area margins]
-
+客户区边距
 [Thin border main window]
-
+细边框主窗口
 [Borderless main window]
-
+无框架主窗口
 [Show menu bar]
 显示菜单栏
 [Show title bar]
@@ -373,47 +373,47 @@ x100 毫秒
 [Active opacity:]
 活动不的透明度：
 [Enable drop shadow (restart required)]
-
+启动投影（需要重启）
 [Frames]
 框架
 [Gaps between frames:]
-
+框架间的间距：
 [Gaps after captions:]
-
+标题后的间距：
 [Use non-layered mode]
-
+使用非层叠模式
 [Round corners]
-
+圆角
 [Non-layered mode]
-
+非层叠模式
 [Disable skin engine]
-
+禁用皮肤引擎
 [Enable Aero Glass (Vista, Win 7)]
-
+启用Aero Glass（Vista，Win 7）
 [Order of items:]
-
+项目顺序：
 [Minimum row height:]
-
+最小行高度：
 [Row border:]
-
+行边框：
 [Variable row height]
-
+可变行高
 [Align left items to left]
-
+左侧项目左对齐
 [Align right items to right]
-
+右侧项目右对齐
 [Up]
-
+上
 [Down]
-
+下
 [Left margin:]
 左边距：
 [Right margin:]
 右边距： 
 [Compact mode (show avatars and additional text on selected contacts only)]
-
+紧凑模式（仅在所选联系人上显示头像和附加文字）
 [Draw border on avatar]
-
+在头像上绘制边框
 [Show avatars]
 显示头像
 [Draw overlay icons]
@@ -423,49 +423,49 @@ x100 毫秒
 [Round corners of avatars]
 头像的圆角
 [Ignore size for row height calcs]
-
+计算行高忽略的大小
 [Border color:]
 边框颜色：
 [Custom corner size:]
-
+自定义角尺寸：
 [Normal overlay icon]
-
+普通层叠图标
 [Protocol status icon]
-
+协议状态图标
 [Contact icon]
-
+联系人图标
 [height]
-
+高度
 [width]
-
+宽度
 [Animate avatars]
-
+动画头像
 [Use old render method (fast, but has artifacts)]
-
+使用旧的渲染方法（快速，但有文物）
 [Hide icon when showing avatar]
-
+显示头像时隐藏图标
 [Draw icon in avatar space]
-
+在头像空间绘制图标
 [Hide groups icon]
-
+隐藏分组图标
 [Always show "Always visible" icon]
-
+总是显示“总是可见”图标
 [Use extra status icon instead protocol]
-
+用额外的状态图标代替协议
 [Draw normal status as overlay]
-
+将普通状态绘制为层叠
 [Right-to-left reading mode (mirror template)]
-
+右到左阅读模式（镜像模板）
 [Replace smileys in contact list]
-
+替换联系人列表中的表情
 [Use protocol smileys]
-
+使用协议表情
 [Draw smileys on first line]
-
+在第一行绘制表情
 [Resize smileys and 'Listening to' icon]
-
+调整表情和'正在听'图标大小
 [Align to right]
-
+右对齐
 [Append nick if different from custom name]
 
 [Trim long text with ellipsis]
@@ -475,7 +475,7 @@ x100 毫秒
 [Top space:]
 
 [Draw smileys on second line]
-
+在第二行绘制表情
 [Text:]
 文字：
 [Status]
@@ -491,102 +491,102 @@ x100 毫秒
 [Show status if there is no status message]
 如果没有状态消息时显示状态
 [Show listening to if there is no status message]
-
+如果没有状态消息则显示正在听
 [xStatus has priority]
-
+xStatus 有优先级
 [Use 'xStatus: xMessage']
-
+使用 'xStatus: xMessage'
 [(Variables will be replaced)]
-
+（变量将被替换）
 [Show third line]
-
+显示第三行
 [Draw smileys on third line]
-
+在第二行绘制表情
 [Preview]
 预览
 [Top/Left]
-
+顶部/左边
 [Bottom/Right]
-
+底部/右边
 [Position (vertical)]
-
+位置（垂直）
 [Align]
-
+对齐
 [Options]
 选项
 [Visible]
-
+可见
 [Show title]
-
+显示标题
 [Locked]
-
+锁定
 [Border]
 边框
 [Floating]
-
+浮动
 [Frames order]
-
+框架顺序
 [UNDER CONSTRUCTION!!!           IT DOES NOT WORK]
-
+🚧正在施工🚧！！！ 这是行不通的
 [Row template]
-
+行模板
 [Add container]
-
+添加容器
 [Remove container]
-
+移除容器
 [Vertical align:]
-
+垂直对齐：
 [Horizontal align:]
-
+水平对齐：
 [Container type:]
-
+容器类型：
 [Container width:]
-
+容器宽度：
 [Container height:]
-
+容器高度：
 [Layered]
-
+分层
 [Move up]
-
+上移
 [Move down]
-
+下移
 [OPTION PAGE IS UNDER CONSTRUCTION Please DO NOT notice about any issues here.\n Only high-level design comments are applicable.]
-
+选项页面正在建设中请不要注意此处有任何问题。\n只有高级设计意见适用。
 ;file \plugins\Clist_modern\src\cluiframes.cpp
 [&Visible]
-
+可见(&V)
 [&Show title]
-
+显示标题(&S)
 [&Locked]
-
+锁定(&L)
 [&Expanded]
-
+展开(&E)
 [&Floating mode]
-
+浮动模式(&F)
 [&Border]
-
+框架(&B)
 [&Align]
-
+对齐(&A)
 [&Top]
-
+顶部(&T)
 [&Client]
-
+客户端(&C)
 [&Bottom]
-
+底部(&B)
 [&Position]
-
+位置(&P)
 [&Up]
-
+上(&U)
 [&Down]
-
+下(&D)
 [Lock frame]
-
+锁定框架
 [Show all frames]
-
+显示所有框架
 [Show all title bars]
-
+显示所有标题栏
 [Hide all title bars]
-
+隐藏所有标题栏 
 ;file \plugins\Clist_modern\src\groupmenu.cpp
 [&Hide/show]
 隐藏/显示(&H)
@@ -601,10 +601,10 @@ x100 毫秒
 [&About]
 关于(&A)
 [&Show offline users in here]
-
+显示此处的离线联系人(&S)
 ;file \plugins\Clist_modern\src\modern_cachefuncs.cpp
 [Last seen]
-
+上次见到
 ;file \plugins\Clist_modern\src\modern_clc.cpp
 [Do you want contact '%s' to be converted to metacontact and '%s' be added to it?]
 
@@ -625,52 +625,52 @@ x100 毫秒
 [Do you want contact '%s' to be removed from metacontact '%s' and added to '%s'?]
 
 [Changing metacontacts (moving)]
-
+正在改变中继联系人(正在移动)
 [Skins]
-
+皮肤
 [Modern contact list]
-
+现代联系人列表
 [Avatar overlay]
-
+头像叠加
 [Status overlay]
-
+状态叠加
 [Contact list smileys]
-
+联系人列表表情
 [List background]
 列表背景
 [Menu background]
-
+菜单背景
 [Status bar background]
-
+状态栏背景
 [Frames title bar background]
-
+框架标题栏背景
 ;file \plugins\Clist_modern\src\modern_clcopts.cpp
 [Contact names]
 联系人名称
 [Row items]
-
+行项目
 [Frame texts]
-
+框架文字
 [Special colors]
-
+特殊颜色
 [Standard contacts]
 标准联系人
 [Away contacts]
-
+离开的联系人
 [Do not disturb contacts]
-
+勿扰的联系人
 [Not available contacts]
-
+不可用的联系人
 [Occupied contacts]
-
+忙碌的联系人
 [Free for chat contacts]
-
+有空聊天的联系人
 [Invisible contacts]
-
+隐身的联系人
 [On the phone contacts]
-
+在打电话的联系人
 [Out to lunch contacts]
-
+外出吃饭的联系人
 [Offline contacts]
 离线联系人
 [Online contacts to whom you have a different visibility]
@@ -678,43 +678,43 @@ x100 毫秒
 [Offline contacts to whom you have a different visibility]
 你有不同可见性的离线联系人
 [Contacts who are 'not on list']
-
+'不在列表上'的联系人
 [Open groups]
-
+打开的分组
 [Open group member counts]
-
+打开的分组的成员数
 [Closed groups]
-
+关闭的分组
 [Closed group member counts]
-
+关闭的分组的成员数
 [Dividers]
 分隔
 [Second line]
 第二行
 [Third line]
-
+第三行
 [Status bar text]
-
+状态栏文字
 [Event area text]
-
+事件区域文字
 [Current view mode text]
-
+当前视图模式文字
 [Background]
 背景
 [Hot text]
-
+热文字
 [Selected text]
 选择文字
 [Quick search text]
-
+快速搜索文字
 [Menu text]
-
+菜单文字
 [Selected menu text]
-
+选择的菜单文字
 [Frame title text]
-
+框架标题文字
 [3rd party frames transparent back color]
-
+第三方框架透明背景色
 [Not focused]
 未聚集的
 [Offline]
@@ -740,23 +740,23 @@ x100 毫秒
 [Name]
 名称
 [Name (use locale settings)]
-
+名称(使用本地设置)
 [Last message time]
-
+上次消息时间
 [Account name]
-
+帐户名
 [Rate]
-
+分级
 [Last online]
-
+上次在线
 [-Nothing-]
-
+- 无 -
 [Hide to tray]
-
+隐藏到托盘
 [Behind left edge]
-
+左边缘的背后
 [Behind right edge]
-
+右边缘的背后
 [General]
 通用
 [Tray]
@@ -767,14 +767,14 @@ x100 毫秒
 窗口
 ;file \plugins\Clist_modern\src\modern_clistevents.cpp
 [No events]
-
+无事件
 [Event area background]
-
+事件区域背景
 [Event area]
-
+事件区域
 ;file \plugins\Clist_modern\src\modern_clistmenus.cpp
 [&Contact rate]
-
+联系人分级
 [None]
 无
 [Low]
@@ -784,60 +784,60 @@ x100 毫秒
 [High]
 高
 [Contact rate: none]
-
+联系人分级：无
 [Contact rate: low]
-
+联系人分级：低
 [Contact rate: medium]
-
+联系人分级：中 
 [Contact rate: high]
-
+联系人分级：高 
 [Show even if offline]
-
+即使离线也显示
 ;file \plugins\Clist_modern\src\modern_clistopts.cpp
 [Avatar]
-
+头像
 [Icon]
-
+图标
 [Text]
 文字
 [Extra icons]
 额外图标
 [Left align group names]
-
+左对齐分组名称
 [Center group names]
-
+居中分组名称
 [Right align group names]
-
+右对齐分组名称 
 [Row]
-
+行
 ;file \plugins\Clist_modern\src\modern_clistsettings.cpp
 [(Unknown contact)]
 (未知联系人)
 ;file \plugins\Clist_modern\src\modern_clui.cpp
 [Show avatar]
-
+显示头像
 [Hide avatar]
-
+隐藏头像
 [Show contact &avatar]
-
+显示联系人头像(&A)
 [Hide contact &avatar]
-
+隐藏联系人头像(&A) 
 [My contacts]
-
+我的联系人
 [My Contacts]
-
+我的联系人 
 ;file \plugins\Clist_modern\src\modern_keyboard.cpp
 [Main]
-
+主
 [Close Miranda]
-
+关闭 Miranda
 [Restore last status]
-
+还原上次状态
 [Show/Hide offline users]
-
+显示/隐藏离线用户
 ;file \plugins\Clist_modern\src\modern_skinopt.cpp
 [( unknown )]
-
+（未知）
 [%s\n\n%s\n\nAuthor(s):\t %s\nContact:\t %s\nWeb:\t %s\n\nFile:\t %s]
 
 [%s\n\n%s\n\nAuthor(s): %s\nContact:\t %s\nWeb:\t %s\n\nFile:\t %s]
@@ -877,9 +877,9 @@ x100 毫秒
 [Right]
 
 [Top]
-
+顶部
 [Bottom]
-
+底部
 ;file \plugins\Clist_modern\src\modern_toolbar.cpp
 [Main menu]
 主菜单
@@ -888,13 +888,13 @@ x100 毫秒
 [Accounts]
 帐户
 [Accounts...]
-
+帐户...
 [Show/Hide offline contacts]
-
+显示/隐藏离线联系人
 [Hide offline contacts]
-
+隐藏离线联系人 
 [Show offline contacts]
-
+显示离线联系人
 [Find user]
 查找用户
 [Use/Disable groups]
@@ -910,7 +910,7 @@ x100 毫秒
 [Minimize]
 最小化
 [To view a toolbar in Clist_modern you need the TopToolBar plugin. Click Yes to download it or No to continue]
-
+要在Clist_modern中查看工具栏，您需要TopToolBar插件。单击是下载或否继续
 [Toolbar background]
 工具栏背景
 [Toolbar upgrade]

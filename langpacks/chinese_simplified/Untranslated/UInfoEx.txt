@@ -181,7 +181,6 @@
 [Upload failed]
 [Your details were not uploaded successfully.\nThey were written to database only.]
 [Check anniversaries]
-[Main]
 [IM naming]
 [Password]
 [Timezone]

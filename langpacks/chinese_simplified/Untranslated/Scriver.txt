@@ -95,7 +95,6 @@
 [abbreviated weekday name]
 [full weekday name]
 [Variables]
-[Appearance]
 [User's details]
 [User's history]
 [Send message]

@@ -343,7 +343,7 @@
 [available autoreply only]
 
 [all accounts]
-
+所有帐户
 [Closing in %d]
 在 %d 后关闭
 ;file \plugins\NewAwaySysMod\src\stdafx.h

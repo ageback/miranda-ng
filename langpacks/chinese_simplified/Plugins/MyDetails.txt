@@ -49,7 +49,7 @@
 [seconds]
 秒
 [Avatar]
-
+头像
 [Custom size:]
 
 [pixels]
@@ -59,9 +59,9 @@
 [Draw border]
 
 [Round corners]
-
+圆角
 [Custom corner size:]
-
+自定义角尺寸：
 [Use free space (under avatar) to other texts]
 
 [Frame options]

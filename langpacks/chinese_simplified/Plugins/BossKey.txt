@@ -73,6 +73,6 @@
 [Events]
 事件
 [Main]
-
+主
 [Advanced]
 高级

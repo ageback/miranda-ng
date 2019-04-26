@@ -3,7 +3,6 @@
 [Engine]
 [Voice]
 [Volume]
-[Rate]
 [Pitch]
 [Test]
 [Lexicon]

@@ -25,7 +25,7 @@
 [Transfer settings]
 
 [Appearance]
-
+出现
 [Unsent]
 
 [Sent]
@@ -97,7 +97,7 @@
 [Stop]
 
 [Main]
-
+主
 [Events]
 事件
 [File As Message...]

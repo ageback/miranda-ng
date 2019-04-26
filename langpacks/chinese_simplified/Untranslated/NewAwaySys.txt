@@ -127,7 +127,6 @@
 [Statuses]
 [for]
 [available autoreply only]
-[all accounts]
 [Miranda NG autoreply >\r\n%extratext%]
 [extended status]
 [Away System]

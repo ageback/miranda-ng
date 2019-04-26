@@ -37,6 +37,5 @@
 [All Images]
 [Style Sheet]
 [IEView]
-[Skins]
 [Today]
 [Yesterday]

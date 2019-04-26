@@ -27,7 +27,7 @@ URL
 [Use passive mode]
 
 [Account name]
-
+帐户名
 [Protocol]
 协议
 [Default FTP server]

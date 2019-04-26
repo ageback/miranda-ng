@@ -78,4 +78,3 @@
 [Automatic shutdown countdown]
 [AutoShutdown]
 [Toggle automatic shutdown]
-[Main]

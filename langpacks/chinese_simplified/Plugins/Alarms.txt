@@ -43,7 +43,7 @@
 [Alert window]
 
 [Round corners]
-
+圆角
 [Don't steal focus unless idle]
 
 [Preview]

@@ -43,9 +43,9 @@
 [Cancel]
 取消
 [Up]
-
+上
 [Down]
-
+下
 [Delete]
 删除
 [Restore defaults]
@@ -108,7 +108,7 @@
 [Services]
 
 [Main]
-
+主
 [Web page]
 
 ;file \plugins\PasteIt\src\PasteIt.cpp

@@ -39,7 +39,6 @@
 [and mark them unread after approval]
 [Reset to defaults]
 [Enable popup notifications]
-[Appearance]
 [Foreground]
 [Timeout (sec)]
 [Contact blocked]

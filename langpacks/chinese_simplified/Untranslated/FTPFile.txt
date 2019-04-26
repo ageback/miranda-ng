@@ -7,7 +7,6 @@
 [Port]
 [Command after upload]
 [Use passive mode]
-[Account name]
 [Default FTP server]
 [File download link]
 [Close dialog after upload is completed]

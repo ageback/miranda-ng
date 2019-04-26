@@ -112,7 +112,7 @@
 [Are you sure you want to remove your avatar?]
 
 [Avatar]
-
+头像
 ;file \plugins\AVS\src\services.cpp
 [All files]
 所有文件

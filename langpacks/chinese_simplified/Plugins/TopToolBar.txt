@@ -48,11 +48,11 @@
 [Show status menu]
 
 [Show/hide offline contacts]
-
+显示/隐藏离线联系人
 [Show offline contacts]
-
+显示离线联系人
 [Hide offline contacts]
-
+隐藏离线联系人 
 [Enable/disable metacontacts]
 
 [Enable metacontacts]

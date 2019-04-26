@@ -1,6 +1,5 @@
 [Floating Contacts plugin for Miranda.]
 [Hiding contacts]
-[Hide offline contacts]
 [Stick together]
 [Use fixed width]
 [Hide all contacts]
@@ -26,4 +25,3 @@
 [Floating contacts plugin won't work until you uncheck the "Disable drag and drop of items" option in Options - Contact list]
 [Floating Contacts]
 [Main Features]
-[Appearance]

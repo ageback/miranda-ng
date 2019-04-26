@@ -14,8 +14,6 @@
 [Tooltip format string:]
 [Display traffic for current]
 [Display]
-[Icon]
-[Account name]
 [Current traffic]
 [Total traffic]
 [Current online]

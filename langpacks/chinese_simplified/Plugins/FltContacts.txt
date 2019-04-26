@@ -11,7 +11,7 @@
 [Hiding contacts]
 
 [Hide offline contacts]
-
+隐藏离线联系人 
 [Stick together]
 
 [Use fixed width]
@@ -105,4 +105,4 @@
 [Main Features]
 
 [Appearance]
-
+出现

@@ -9,8 +9,6 @@
 [Attempt interval (ms)]
 ['Online' means:]
 [Filters]
-[Move down]
-[Move up]
 [Rule editor]
 [Application name]
 [Local IP:Port]

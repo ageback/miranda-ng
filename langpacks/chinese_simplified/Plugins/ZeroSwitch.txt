@@ -6,11 +6,11 @@
 ;  Authors: ZERO_BiT
 ;============================================================
 [Adds Miranda NG icon into Alt+Tab switch dialog even if Miranda's main window has style other Title bar.]
-½«Miranda NGÍ¼±êÌí¼Óµ½Alt + TabÇÐ»»¶Ô»°¿òÖÐ£¬¼´Ê¹MirandaµÄÖ÷´°¿Ú¾ßÓÐÆäËû±êÌâÀ¸µÄÑùÊ½¡£
+ï¿½ï¿½Miranda NGÍ¼ï¿½ï¿½ï¿½ï¿½Óµï¿½Alt + Tabï¿½Ð»ï¿½ï¿½Ô»ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Ê¹Mirandaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½
 ;file \plugins\ZeroSwitch\src\ZeroSwitch.cpp
 [Plugin works under Windows XP only]
-²å¼þ½öÊÊÓÃÓÚWindows XP
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Windows XP
 [ZeroSwitch plugin failed]
-ZeroSwitch ²å¼þÊ§°Ü
+ZeroSwitch ï¿½ï¿½ï¿½Ê§ï¿½ï¿½
 [Oops, we've got a big hook error here :(]
-°¥Ñ½£¬ÎÒÃÇÕâÀïÓÐÒ»¸ö´ó¹³×Ó´íÎó:(
+ï¿½ï¿½Ñ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½ï¿½:(

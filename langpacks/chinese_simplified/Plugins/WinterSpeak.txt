@@ -17,7 +17,7 @@
 [Volume]
 
 [Rate]
-
+分级
 [Pitch]
 
 [Test]

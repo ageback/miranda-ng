@@ -14,9 +14,9 @@
 [Delete]
 删除
 [Up]
-
+上
 [Down]
-
+下
 [Test]
 
 [Import]
@@ -524,7 +524,7 @@
 [Hide All Titlebars]
 
 [Show All Frames]
-
+显示所有框架
 [Show All Titlebars]
 
 [will never return the user's custom name]

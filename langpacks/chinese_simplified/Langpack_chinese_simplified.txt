@@ -2738,6 +2738,10 @@ PNG位图
 新
 [Delete]
 删除
+[Up]
+上
+[Down]
+下
 [&Yes]
 是(&)
 [&No]
@@ -2796,6 +2800,8 @@ PNG位图
 状态菜单
 [Separated]
 分居
+[Show All Frames]
+显示所有框架
 [Offline]
 离线
 [Online]
@@ -2857,6 +2863,8 @@ PNG位图
 请授权我的请求并将我添加到您的联系人列表中。
 [None]
 无
+[Main]
+主
 #muuid {4dd7762b-d612-4f84-aa86-068f17859b6d}
 ;============================================================
 ;  File: Alarms.dll
@@ -2874,6 +2882,8 @@ PNG位图
 分
 [Row height:]
 行高：
+[Round corners]
+圆角
 [Preview]
 预览
 [Cancel]
@@ -2944,6 +2954,8 @@ PNG位图
 未知
 [Alerts]
 警告
+[Main]
+主
 #muuid {dbe8c990-7aa0-458d-bab7-33eb07238e71}
 ;============================================================
 ;  File: AvatarHistory.dll
@@ -2971,10 +2983,14 @@ PNG位图
 预览
 [Avatars]
 头像
+[Avatar overlay]
+头像叠加
 [Do nothing]
 啥都不干
 [History]
 历史
+[Avatar]
+头像
 [Popups]
 弹出窗口
 #muuid {e00f1643-263c-4599-b84b-053e5c511d29}
@@ -3002,6 +3018,8 @@ PNG位图
 联系人
 [No avatar]
 无头像
+[Avatar]
+头像
 [All files]
 所有文件
 [Windows bitmaps]
@@ -3158,6 +3176,8 @@ PNG位图
 取消
 [Events]
 事件
+[Main]
+主
 [Advanced]
 高级
 #muuid {ddf8aec9-7d37-49af-9d22-bbbc920e6f05}
@@ -3550,6 +3570,12 @@ PNG位图
 多行状态栏：
 [Accounts per line]
 每行帐户
+[* To increase status bar height:\nset in Main menu -> Frames -> Status Bar -> Show title then pull appeared title of status bar up or down.]
+* 要增加状态栏高度：\n在主菜单中选择 -> 框架 -> 状态栏 -> 显示标题，然后向上或向下拉出状态栏的标题。
+[Hold [Shift] to inverse [Right Click] behavior.]
+按住[Shift]反转[右键单击]行为。
+[[Ctrl]+[Left Click] to filter only protocol. Click on empty space to show all.]
+[Ctrl] + [左键单击]仅过滤协议。 点击空白区域即可显示所有内容。
 [Set options per account]
 设置每个帐户选项
 [Enable custom account settings]
@@ -3635,7 +3661,7 @@ PNG位图
 [Bring to front if covered]
 如果被覆盖，带到前面
 [Hide contact list after]
-隐藏联系人列表在之后
+隐藏联系人列表在此后
 [Automatically resize window to height of list]
 自动调整窗口大小为列表高度
 [maximum]
@@ -3730,12 +3756,66 @@ x100 毫秒
 总是在工具提示中显示状态
 [Disable icon blinking]
 禁止图标闪动
+[ms, delay between icon blinking]
+毫秒，在图标闪动间的延时
 [System tray icon]
 系统托盘图标
+[Use xStatus icon]
+使用 XStatus 图标
+[Icon mode]
+图标模式
+[For similar statuses]
+用于相似的状态
+[Global status]
+全局状态
+[Single account]
+单个帐户
+[Cycle icons]
+循环图标
+[All accounts]
+所有帐户
+[For different statuses]
+用于不同的状态
+[Cycle period, seconds]
+循环周期，秒
+[Additional stuff]
+附加的东西
+[Ignore empty extra icons places (arrange to right).]
+忽略空的额外图标位置（向右排列）。
+[Allow internal requesting of status message text]
+允许状态消息文本的内部请求
+[Remove status message if contact became offline]
+当联系人变成离线时移除状态消息
+[Use improved search method in contact list]
+在联系人列表中使用改进的搜索方式
+[Metacontacts stuff]
+中继联系人材料
+[Use 'Meta' protocol icons for metacontacts]
+为中继联系人使用'Meta'协议图标
+[Expand metacontacts]
+展开中继联系人
+[Avoid double click expand]
+避免双击展开
+[Hide all extra icons for subcontacts]
+为子联系人隐藏所有额外图标
+[Subcontacts indent:]
+子联系人缩进：
+[Show time only if it is different from current time]
+仅在与当前时间不同时显示时间
+[Show contact time as row item]
+将联系时间显示为行项目
+[Appearance]
+出现
 [Always on top]
 总在顶层
 [Pin to desktop]
 固定到桌面
+[Client area margins]
+客户区边距
+[Thin border main window]
+细边框主窗口
+[Borderless main window]
+无框架主窗口
 [Show menu bar]
 显示菜单栏
 [Show title bar]
@@ -3756,12 +3836,48 @@ x100 毫秒
 非活动不透明度：
 [Active opacity:]
 活动不的透明度：
+[Enable drop shadow (restart required)]
+启动投影（需要重启）
 [Frames]
 框架
+[Gaps between frames:]
+框架间的间距：
+[Gaps after captions:]
+标题后的间距：
+[Use non-layered mode]
+使用非层叠模式
+[Round corners]
+圆角
+[Non-layered mode]
+非层叠模式
+[Disable skin engine]
+禁用皮肤引擎
+[Enable Aero Glass (Vista, Win 7)]
+启用Aero Glass（Vista，Win 7）
+[Order of items:]
+项目顺序：
+[Minimum row height:]
+最小行高度：
+[Row border:]
+行边框：
+[Variable row height]
+可变行高
+[Align left items to left]
+左侧项目左对齐
+[Align right items to right]
+右侧项目右对齐
+[Up]
+上
+[Down]
+下
 [Left margin:]
 左边距：
 [Right margin:]
 右边距： 
+[Compact mode (show avatars and additional text on selected contacts only)]
+紧凑模式（仅在所选联系人上显示头像和附加文字）
+[Draw border on avatar]
+在头像上绘制边框
 [Show avatars]
 显示头像
 [Draw overlay icons]
@@ -3770,8 +3886,52 @@ x100 毫秒
 最大尺寸（像素）：
 [Round corners of avatars]
 头像的圆角
+[Ignore size for row height calcs]
+计算行高忽略的大小
 [Border color:]
 边框颜色：
+[Custom corner size:]
+自定义角尺寸：
+[Normal overlay icon]
+普通层叠图标
+[Protocol status icon]
+协议状态图标
+[Contact icon]
+联系人图标
+[height]
+高度
+[width]
+宽度
+[Animate avatars]
+动画头像
+[Use old render method (fast, but has artifacts)]
+使用旧的渲染方法（快速，但有文物）
+[Hide icon when showing avatar]
+显示头像时隐藏图标
+[Draw icon in avatar space]
+在头像空间绘制图标
+[Hide groups icon]
+隐藏分组图标
+[Always show "Always visible" icon]
+总是显示“总是可见”图标
+[Use extra status icon instead protocol]
+用额外的状态图标代替协议
+[Draw normal status as overlay]
+将普通状态绘制为层叠
+[Right-to-left reading mode (mirror template)]
+右到左阅读模式（镜像模板）
+[Replace smileys in contact list]
+替换联系人列表中的表情
+[Use protocol smileys]
+使用协议表情
+[Draw smileys on first line]
+在第一行绘制表情
+[Resize smileys and 'Listening to' icon]
+调整表情和'正在听'图标大小
+[Align to right]
+右对齐
+[Draw smileys on second line]
+在第二行绘制表情
 [Text:]
 文字：
 [Status]
@@ -3786,12 +3946,102 @@ x100 毫秒
 联系时间
 [Show status if there is no status message]
 如果没有状态消息时显示状态
+[Show listening to if there is no status message]
+如果没有状态消息则显示正在听
+[xStatus has priority]
+xStatus 有优先级
+[Use 'xStatus: xMessage']
+使用 'xStatus: xMessage'
+[(Variables will be replaced)]
+（变量将被替换）
+[Show third line]
+显示第三行
+[Draw smileys on third line]
+在第二行绘制表情
 [Preview]
 预览
+[Top/Left]
+顶部/左边
+[Bottom/Right]
+底部/右边
+[Position (vertical)]
+位置（垂直）
+[Align]
+对齐
 [Options]
 选项
+[Visible]
+可见
+[Show title]
+显示标题
+[Locked]
+锁定
 [Border]
 边框
+[Floating]
+浮动
+[Frames order]
+框架顺序
+[UNDER CONSTRUCTION!!!           IT DOES NOT WORK]
+🚧正在施工🚧！！！ 这是行不通的
+[Row template]
+行模板
+[Add container]
+添加容器
+[Remove container]
+移除容器
+[Vertical align:]
+垂直对齐：
+[Horizontal align:]
+水平对齐：
+[Container type:]
+容器类型：
+[Container width:]
+容器宽度：
+[Container height:]
+容器高度：
+[Layered]
+分层
+[Move up]
+上移
+[Move down]
+下移
+[OPTION PAGE IS UNDER CONSTRUCTION Please DO NOT notice about any issues here.\n Only high-level design comments are applicable.]
+选项页面正在建设中请不要注意此处有任何问题。\n只有高级设计意见适用。
+[&Visible]
+可见(&V)
+[&Show title]
+显示标题(&S)
+[&Locked]
+锁定(&L)
+[&Expanded]
+展开(&E)
+[&Floating mode]
+浮动模式(&F)
+[&Border]
+框架(&B)
+[&Align]
+对齐(&A)
+[&Top]
+顶部(&T)
+[&Client]
+客户端(&C)
+[&Bottom]
+底部(&B)
+[&Position]
+位置(&P)
+[&Up]
+上(&U)
+[&Down]
+下(&D)
+[Lock frame]
+锁定框架
+[Show all frames]
+显示所有框架
+[Show all title bars]
+显示所有标题栏
+[Hide all title bars]
+隐藏所有标题栏 
 [&Hide/show]
 隐藏/显示(&H)
 [&Find/add contacts...]
@@ -3804,26 +4054,100 @@ x100 毫秒
 选项(&O)
 [&About]
 关于(&A)
+[&Show offline users in here]
+显示此处的离线联系人(&S)
+[Last seen]
+上次见到
+[Changing metacontacts (moving)]
+正在改变中继联系人(正在移动)
+[Skins]
+皮肤
+[Modern contact list]
+现代联系人列表
+[Avatar overlay]
+头像叠加
+[Status overlay]
+状态叠加
+[Contact list smileys]
+联系人列表表情
 [List background]
 列表背景
+[Menu background]
+菜单背景
+[Status bar background]
+状态栏背景
+[Frames title bar background]
+框架标题栏背景
 [Contact names]
 联系人名称
+[Row items]
+行项目
+[Frame texts]
+框架文字
+[Special colors]
+特殊颜色
 [Standard contacts]
 标准联系人
+[Away contacts]
+离开的联系人
+[Do not disturb contacts]
+勿扰的联系人
+[Not available contacts]
+不可用的联系人
+[Occupied contacts]
+忙碌的联系人
+[Free for chat contacts]
+有空聊天的联系人
+[Invisible contacts]
+隐身的联系人
+[On the phone contacts]
+在打电话的联系人
+[Out to lunch contacts]
+外出吃饭的联系人
 [Offline contacts]
 离线联系人
 [Online contacts to whom you have a different visibility]
 你有不同可见性的在线联系人
 [Offline contacts to whom you have a different visibility]
 你有不同可见性的离线联系人
+[Contacts who are 'not on list']
+'不在列表上'的联系人
+[Open groups]
+打开的分组
+[Open group member counts]
+打开的分组的成员数
+[Closed groups]
+关闭的分组
+[Closed group member counts]
+关闭的分组的成员数
 [Dividers]
 分隔
 [Second line]
 第二行
+[Third line]
+第三行
+[Status bar text]
+状态栏文字
+[Event area text]
+事件区域文字
+[Current view mode text]
+当前视图模式文字
 [Background]
 背景
+[Hot text]
+热文字
 [Selected text]
 选择文字
+[Quick search text]
+快速搜索文字
+[Menu text]
+菜单文字
+[Selected menu text]
+选择的菜单文字
+[Frame title text]
+框架标题文字
+[3rd party frames transparent back color]
+第三方框架透明背景色
 [Not focused]
 未聚集的
 [Offline]
@@ -3848,6 +4172,24 @@ x100 毫秒
 接电话
 [Name]
 名称
+[Name (use locale settings)]
+名称(使用本地设置)
+[Last message time]
+上次消息时间
+[Account name]
+帐户名
+[Rate]
+分级
+[Last online]
+上次在线
+[-Nothing-]
+- 无 -
+[Hide to tray]
+隐藏到托盘
+[Behind left edge]
+左边缘的背后
+[Behind right edge]
+右边缘的背后
 [General]
 通用
 [Tray]
@@ -3856,6 +4198,14 @@ x100 毫秒
 列表
 [Window]
 窗口
+[No events]
+无事件
+[Event area background]
+事件区域背景
+[Event area]
+事件区域
+[&Contact rate]
+联系人分级
 [None]
 无
 [Low]
@@ -3864,18 +4214,74 @@ x100 毫秒
 中
 [High]
 高
+[Contact rate: none]
+联系人分级：无
+[Contact rate: low]
+联系人分级：低
+[Contact rate: medium]
+联系人分级：中 
+[Contact rate: high]
+联系人分级：高 
+[Show even if offline]
+即使离线也显示
+[Avatar]
+头像
+[Icon]
+图标
 [Text]
 文字
 [Extra icons]
 额外图标
+[Left align group names]
+左对齐分组名称
+[Center group names]
+居中分组名称
+[Right align group names]
+右对齐分组名称 
+[Row]
+行
 [(Unknown contact)]
 (未知联系人)
+[Show avatar]
+显示头像
+[Hide avatar]
+隐藏头像
+[Show contact &avatar]
+显示联系人头像(&A)
+[Hide contact &avatar]
+隐藏联系人头像(&A) 
+[My contacts]
+我的联系人
+[My Contacts]
+我的联系人 
+[Main]
+主
+[Close Miranda]
+关闭 Miranda
+[Restore last status]
+还原上次状态
+[Show/Hide offline users]
+显示/隐藏离线用户
+[( unknown )]
+（未知）
+[Top]
+顶部
+[Bottom]
+底部
 [Main menu]
 主菜单
 [Status menu]
 状态菜单
 [Accounts]
 帐户
+[Accounts...]
+帐户...
+[Show/Hide offline contacts]
+显示/隐藏离线联系人
+[Hide offline contacts]
+隐藏离线联系人 
+[Show offline contacts]
+显示离线联系人
 [Find user]
 查找用户
 [Use/Disable groups]
@@ -3890,6 +4296,8 @@ x100 毫秒
 禁用声音
 [Minimize]
 最小化
+[To view a toolbar in Clist_modern you need the TopToolBar plugin. Click Yes to download it or No to continue]
+要在Clist_modern中查看工具栏，您需要TopToolBar插件。单击是下载或否继续
 [Toolbar background]
 工具栏背景
 [Toolbar upgrade]
@@ -3981,6 +4389,8 @@ x100 毫秒
 单击界面
 [Always show status in tooltip]
 总是在工具提示中显示状态
+[Event area]
+事件区域
 [System tray icon when using multiple protocols]
 使用多个协议时的系统托盘图标
 [Show]
@@ -4003,6 +4413,8 @@ x100 毫秒
 按字母顺序排序分组
 [Quick search in open groups only]
 仅在打开的分组中快速搜索
+[Minimum row height:]
+最小行高度：
 [Indent groups by:]
 缩进组按：
 [Contact list sorting]
@@ -4011,6 +4423,8 @@ x100 毫秒
 头像
 [Show avatars]
 显示头像
+[Height]
+高度
 [Icons]
 图标
 [Dim idle contacts]
@@ -4155,6 +4569,8 @@ x100 毫秒
 上个消息
 [Download more skins]
 下载更多皮肤
+[Show/Hide offline contacts]
+显示/隐藏离线联系人
 [Use/Disable groups]
 使用/禁止分组
 [Accounts]
@@ -4195,16 +4611,22 @@ x100 毫秒
 通用
 [Background]
 背景
+[Row items]
+行项目
 [Contacts]
 联系人
 [Advanced]
 高级
+[Skins]
+皮肤
 [Global]
 全局
 [Reset view mode]
 重置视图模式
 [Configure view modes]
 配置视图模式
+[My contacts]
+我的联系人
 [Default]
 默认
 [Warning]
@@ -4229,10 +4651,44 @@ x100 毫秒
 热追踪文字
 [Quicksearch text]
 快速搜索文字
+[&Visible]
+可见(&V)
+[&Locked]
+锁定(&L)
+[&Floating mode]
+浮动模式(&F)
+[&Border]
+框架(&B)
+[&Align]
+对齐(&A)
+[&Top]
+顶部(&T)
+[&Client]
+客户端(&C)
+[&Bottom]
+底部(&B)
+[&Position]
+位置(&P)
+[&Up]
+上(&U)
+[&Down]
+下(&D)
+[Lock frame]
+锁定框架
+[Visible]
+可见
 [Show title bar]
 显示标题栏
+[Floating]
+浮动
 [Frames]
 框架
+[Show all frames]
+显示所有框架
+[Show all title bars]
+显示所有标题栏
+[Hide all title bars]
+隐藏所有标题栏 
 [&Hide/show]
 隐藏/显示(&H)
 [&Find/add contacts...]
@@ -4241,6 +4697,8 @@ x100 毫秒
 主菜单(&M)
 [&Status]
 状态(&S)
+[Appearance]
+出现
 [&Options...]
 选项(&O)
 [Ungrouped contacts]
@@ -4288,6 +4746,8 @@ x100 毫秒
 ;============================================================
 [General]
 通用
+[Round corners]
+圆角
 [Text color]
 文字颜色
 [<None>]
@@ -4316,6 +4776,10 @@ x100 毫秒
 设置
 [Delete]
 删除
+[Move down]
+下移
+[Move up]
+上移
 [Add]
 添加
 [Cancel]
@@ -4661,10 +5125,14 @@ GnuPG插件 - 选择公钥
 大小：
 [bytes]
 字节
+[Appearance]
+出现
 [Sending...]
 正在发送...
 [Receiving...]
 正在接收...
+[Main]
+主
 [Events]
 事件
 #muuid {687364af-58b0-4af2-a4ee-20f40a8d9afb}
@@ -4694,6 +5162,8 @@ GnuPG插件 - 选择公钥
 ;  Version: 0.7.0.5
 ;  Authors: Iavor Vajarov, Kosh&chka, Victor Pavlychko
 ;============================================================
+[Hide offline contacts]
+隐藏离线联系人 
 [pixels]
 像素
 [seconds]
@@ -4734,6 +5204,8 @@ GnuPG插件 - 选择公钥
 “不在列表中”的联系人
 [Contact list]
 联系人列表
+[Appearance]
+出现
 #muuid {2f129563-2c7d-4a9a-b948-97dfcc0afdd7}
 ;============================================================
 ;  File: Folders.dll
@@ -4758,6 +5230,8 @@ GnuPG插件 - 选择公钥
 ;============================================================
 [URL]
 URL
+[Account name]
+帐户名
 [Protocol]
 协议
 [Menu items]
@@ -4990,6 +5464,10 @@ URL
 传出消息
 [Global]
 全局
+[Move down]
+下移
+[Move up]
+上移
 [** All contacts **]
 ** 所有联系人 **
 [Contact menu]
@@ -5033,6 +5511,8 @@ URL
 ;  Version: 1.0.0.6
 ;  Authors: Eugene f2065
 ;============================================================
+[Close Miranda]
+关闭 Miranda
 [Clear]
 清除
 [Show/Hide contact list]
@@ -5102,6 +5582,10 @@ URL
 取消
 [Text:]
 文字：
+[Up]
+上
+[Down]
+下
 [Error]
 错误
 [Time:]
@@ -5145,6 +5629,8 @@ URL
 消息会话
 [General]
 通用
+[Skins]
+皮肤
 [Message Log]
 消息日志
 [Group chats]
@@ -5248,6 +5734,8 @@ URL
 忽略
 [Nickname]
 昵称
+[Main]
+主
 [Add]
 添加
 [Apply]
@@ -5361,6 +5849,10 @@ URL
 笔记
 [Add contact]
 添加联系人
+[Move up]
+上移
+[Move down]
+下移
 [Status Message]
 状态消息
 [To]
@@ -5628,6 +6120,8 @@ URL
 隐藏离线用户
 [Do nothing]
 啥都不干
+[Appearance]
+出现
 [Contact list]
 联系人列表
 #muuid {e99a09b2-e05b-4633-aa3a-5c83ef1cbab6}
@@ -5830,8 +6324,14 @@ URL
 通用
 [seconds]
 秒
+[Avatar]
+头像
 [pixels]
 像素
+[Round corners]
+圆角
+[Custom corner size:]
+自定义角尺寸：
 [Nickname]
 昵称
 [Status]
@@ -5923,6 +6423,8 @@ URL
 关闭(&C)
 [Apply]
 应用
+[all accounts]
+所有帐户
 [Closing in %d]
 在 %d 后关闭
 [Status]
@@ -6097,6 +6599,8 @@ URL
 错误
 [Info]
 信息
+[Main]
+主
 [Messages]
 消息
 [Advanced]
@@ -6152,6 +6656,8 @@ URL
 无
 [&Close]
 关闭(&C)
+[Appearance]
+出现
 [Background Color]
 背景色
 [Reset]
@@ -6162,8 +6668,14 @@ URL
 撤销
 [&Copy]
 复制(&C)
+[&Visible]
+可见(&V)
 [Alerts]
 警告
+[Visible]
+可见
+[Top]
+顶部
 [Notes]
 笔记
 [Plugins]
@@ -6246,6 +6758,8 @@ URL
 ;============================================================
 [Open Folder]
 打开文件夹
+[Main]
+主
 #muuid {b649702c-13de-408a-b6c2-fb8fed2a2c90}
 ;============================================================
 ;  File: OpenSSL.dll
@@ -6293,8 +6807,14 @@ URL
 配置
 [Cancel]
 取消
+[Up]
+上
+[Down]
+下
 [Delete]
 删除
+[Main]
+主
 [Error]
 错误
 [Are You sure?]
@@ -6318,6 +6838,10 @@ URL
 移除
 [Edit]
 编辑
+[Up]
+上
+[Down]
+下
 [Cancel]
 取消
 [Port:]
@@ -6436,6 +6960,10 @@ URL
 ;============================================================
 [New]
 新
+[Up]
+上
+[Down]
+下
 [Delete]
 删除
 [Default]
@@ -6462,6 +6990,8 @@ URL
 关闭
 [Refresh]
 刷新
+[Show Offline contacts]
+显示离线联系人
 [Male]
 男性
 [Female]
@@ -6511,6 +7041,8 @@ URL
 ;  Version: 0.1.0.3
 ;  Authors: ValeraVi, Kildor
 ;============================================================
+[Hide offline contacts]
+隐藏离线联系人 
 [Contacts]
 联系人
 [Contact]
@@ -6813,6 +7345,8 @@ Google 翻译
 显示状态变更的弹出窗口
 [Icons to display in the tray]
 要在托盘中显示的图标
+[Appearance]
+出现
 [Default events to show in new chat rooms if the 'event filter' is enabled]
 当启用了“事件过滤器”时，要在新聊天室中显示的默认事件
 [Select folder]
@@ -7129,6 +7663,8 @@ Google 翻译
 查看用户详情
 [<unknown>]
 <未知>
+[Last seen]
+上次见到
 [minutes]
 分
 [seconds]
@@ -7364,6 +7900,8 @@ Google 翻译
 设置
 [Outgoing message]
 传出消息
+[Appearance]
+出现
 [Background]
 背景
 [Default timeout]
@@ -7402,8 +7940,12 @@ Google 翻译
 ;  Version: 0.1.2.3
 ;  Authors: nullbie, Thief
 ;============================================================
+[Appearance]
+出现
 [Sound Files]
 声音文件
+[Skins]
+皮肤
 #muuid {211f6277-6f9b-4b77-a939-84d04b26b38c}
 ;============================================================
 ;  File: StartPosition.dll
@@ -7411,6 +7953,8 @@ Google 翻译
 ;  Version: 0.3.0.4
 ;  Authors: Felipe Brahm - souFrag
 ;============================================================
+[Width]
+宽度
 [Contact list]
 联系人列表
 #muuid {7b856b6a-d48f-4f54-b8d6-c8d86d02ffc2}
@@ -7809,6 +8353,8 @@ Google 翻译
 粘贴并发送
 [contact]
 联系
+[Skins]
+皮肤
 [Avatars]
 头像
 [Typing notification]
@@ -7876,6 +8422,8 @@ Google 翻译
 侧边栏宽度：
 [Options]
 选项
+[Show title]
+显示标题
 [Round corners (avatar)]
 圆角(头像)
 [Module:]
@@ -7888,10 +8436,18 @@ Google 翻译
 添加
 [Remove]
 移除
+[Up]
+上
+[Down]
+下
 [Edit]
 编辑
 [Extra icons]
 额外图标
+[Use protocol smileys]
+使用协议表情
+[Skins]
+皮肤
 [Preview]
 预览
 [Border]
@@ -7918,6 +8474,10 @@ Google 翻译
 顶部右侧
 [Top left]
 顶部左侧
+[Top]
+顶部
+[Bottom]
+底部
 [No avatar]
 无头像
 [Left avatar]
@@ -7926,6 +8486,8 @@ Google 翻译
 右侧头像
 [None]
 无
+[Appearance]
+出现
 [Customize]
 自定义
 [%s (locked)]
@@ -8027,6 +8589,12 @@ Google 翻译
 设置
 [Find/add contacts]
 查找/添加联系人
+[Show/hide offline contacts]
+显示/隐藏离线联系人
+[Show offline contacts]
+显示离线联系人
+[Hide offline contacts]
+隐藏离线联系人 
 [Disable groups]
 禁用分组
 [Enable/disable sounds]
@@ -8085,6 +8653,10 @@ Google 翻译
 重置为默认
 [Custom]
 自定义
+[Icon]
+图标
+[Account name]
+帐户名
 [General]
 通用
 [Options]
@@ -8258,6 +8830,8 @@ Google 翻译
 正在更新
 [User &details]
 用户详情(&D)
+[Main]
+主
 [Default]
 默认
 [Fax]
@@ -8411,6 +8985,8 @@ Google 翻译
 ;============================================================
 [General]
 通用
+[Align]
+对齐
 [Other]
 其他
 [Background color]
@@ -8632,6 +9208,8 @@ Google 翻译
 ;  Version: 0.9.8.3
 ;  Authors: Ryan Winter, BlubbFish
 ;============================================================
+[Rate]
+分级
 [Status Changes]
 状态变更
 [Offline]
@@ -8806,8 +9384,22 @@ WAV 文件
 ;  Version: 0.1.0.1
 ;  Authors: bidyut, Maat
 ;============================================================
+[Adds options to automatically disable notifications when a protocol is in a certain status.]
+添加选项以在协议处于特定状态时自动禁用通知。
+[No sounds when:]
+以下时间没有声音：
+[No CList blink when:]
+以下时间无 CList 闪动：
+[No SysTray blink when:]
+以下时间无系统托盘闪动：
+[Zero Notifications]
+零通知
 [Plugins]
 插件
+[Disable &Sounds]
+禁用声音(&S)
+[Enable &Sounds]
+启用声音(&S)
 #muuid {3f1657b1-69cb-4992-9cfc-226c808a5202}
 ;============================================================
 ;  File: ZeroSwitch.dll
@@ -8815,3 +9407,11 @@ WAV 文件
 ;  Version: 1.0.0.1
 ;  Authors: ZERO_BiT
 ;============================================================
+[Adds Miranda NG icon into Alt+Tab switch dialog even if Miranda's main window has style other Title bar.]
+��Miranda NGͼ����ӵ�Alt + Tab�л��Ի����У���ʹMiranda�������ھ�����������������ʽ��
+[Plugin works under Windows XP only]
+�����������Windows XP
+[ZeroSwitch plugin failed]
+ZeroSwitch ���ʧ��
+[Oops, we've got a big hook error here :(]
+��ѽ������������һ�����Ӵ���:(

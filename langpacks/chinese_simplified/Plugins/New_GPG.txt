@@ -299,7 +299,7 @@
 [Services]
 
 [Main]
-
+主
 [GnuPG Variables]
 
 [Messages]

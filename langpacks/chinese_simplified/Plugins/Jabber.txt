@@ -793,9 +793,9 @@ URL
 [Default privacy list]
 
 [Move up]
-
+上移
 [Move down]
-
+下移
 [Allow Messages]
 
 [Allow Presences (in)]

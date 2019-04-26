@@ -26,4 +26,3 @@
 [Hide/Show Miranda]
 [BossKey]
 [get the BossKey name]
-[Main]

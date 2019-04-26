@@ -501,7 +501,7 @@
 
 ;file \plugins\UserInfoEx\src\mir_icolib.cpp
 [Main]
-
+主
 [Default]
 默认
 [IM naming]

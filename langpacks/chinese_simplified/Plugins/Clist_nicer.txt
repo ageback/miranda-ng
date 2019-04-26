@@ -61,7 +61,7 @@
 [ms]
 
 [Event area]
-
+事件区域
 [Set base visibility on the frames menu]
 
 [Auto mode]
@@ -105,7 +105,7 @@
 [Row gap]
 
 [Minimum row height:]
-
+最小行高度：
 [Group row height]
 
 [Indent groups by:]
@@ -135,7 +135,7 @@
 [Show avatars]
 显示头像
 [Height]
-
+高度
 [Draw a border around avatars]
 
 [Rounded avatars]
@@ -386,7 +386,7 @@
 [Show menu]
 
 [Show/Hide offline contacts]
-
+显示/隐藏离线联系人
 [Use/Disable groups]
 使用/禁止分组
 [Find and add contacts]
@@ -471,7 +471,7 @@
 [Background]
 背景
 [Row items]
-
+行项目
 [Contacts]
 联系人
 [Groups and layout]
@@ -479,7 +479,7 @@
 [Advanced]
 高级
 [Skins]
-
+皮肤
 ;file \plugins\Clist_nicer\src\clcpaint.cpp
 [No events...]
 
@@ -508,7 +508,7 @@
 [Setup accounts]
 
 [My contacts]
-
+我的联系人
 [Default]
 默认
 [Overlay icons]
@@ -565,51 +565,51 @@
 [&FrameTitle]
 
 [&Visible]
-
+可见(&V)
 [&Show title bar]
 
 [&Locked]
-
+锁定(&L)
 [&Collapsed]
 
 [&Floating mode]
-
+浮动模式(&F)
 [&Border]
-
+框架(&B)
 [&Skinned frame]
 
 [&Align]
-
+对齐(&A)
 [&Top]
-
+顶部(&T)
 [&Client]
-
+客户端(&C)
 [&Bottom]
-
+底部(&B)
 [&Position]
-
+位置(&P)
 [&Up]
-
+上(&U)
 [&Down]
-
+下(&D)
 [Lock frame]
-
+锁定框架
 [Visible]
-
+可见
 [Show title bar]
 显示标题栏
 [Skinned frame]
 
 [Floating]
-
+浮动
 [Frames]
 框架
 [Show all frames]
-
+显示所有框架
 [Show all title bars]
-
+显示所有标题栏
 [Hide all title bars]
-
+隐藏所有标题栏 
 ;file \plugins\Clist_nicer\src\cluiopts.cpp
 [Title bar]
 
@@ -643,7 +643,7 @@
 [&Status]
 状态(&S)
 [Appearance]
-
+出现
 [&Options...]
 选项(&O)
 ;file \plugins\Clist_nicer\src\viewmodes.cpp

@@ -11,8 +11,6 @@
 [Load items in background]
 [RTL is default text direction]
 [Direction]
-[Up]
-[Down]
 [System History]
 [Out of a total of]
 [You can't close the window now, wait for all events to load.]

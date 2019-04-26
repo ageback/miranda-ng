@@ -431,7 +431,7 @@
 
 ;file \protocols\IRCG\src\options.cpp
 [Main]
-
+主
 [Add]
 添加
 [Apply]

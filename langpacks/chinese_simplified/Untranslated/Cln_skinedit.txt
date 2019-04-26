@@ -5,7 +5,6 @@
 [Right to left]
 [Top to bottom]
 [Bottom to top]
-[Round corners]
 [Top-Left]
 [Top-Right]
 [Bottom-Right]

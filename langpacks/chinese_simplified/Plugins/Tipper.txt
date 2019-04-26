@@ -51,7 +51,7 @@
 [Options]
 选项
 [Show title]
-
+显示标题
 [Status bar tips]
 
 [Avatar border]
@@ -97,9 +97,9 @@
 [Remove]
 移除
 [Up]
-
+上
 [Down]
-
+下
 [Edit]
 编辑
 [Separator]
@@ -111,7 +111,7 @@
 [Enable SmileyAdd support]
 
 [Use protocol smileys]
-
+使用协议表情
 [Resize smileys]
 
 [Replace only isolated smileys]
@@ -133,7 +133,7 @@
 [characters]
 
 [Skins]
-
+皮肤
 [Reload skin list]
 
 [Apply skin]
@@ -249,11 +249,11 @@
 [Top left]
 顶部左侧
 [Top]
-
+顶部
 [Center]
 
 [Bottom]
-
+底部
 [Left]
 
 [Right]
@@ -273,7 +273,7 @@
 [Fade]
 
 [Appearance]
-
+出现
 [Tooltips]
 
 [Customize]

@@ -23,7 +23,7 @@
 [Bottom to top]
 
 [Round corners]
-
+圆角
 [Top-Left]
 
 [Top-Right]

@@ -96,7 +96,7 @@
 [<unknown>]
 <未知>
 [Last seen]
-
+上次见到
 ;file \plugins\SeenPlugin\src\options.cpp
 [year (4 digits)]
 

@@ -52,9 +52,9 @@
 [Display]
 
 [Icon]
-
+图标
 [Account name]
-
+帐户名
 [Current traffic]
 
 [Total traffic]

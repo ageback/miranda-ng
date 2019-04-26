@@ -16,8 +16,6 @@
 [Repeats for success/failure:]
 [Attach to contact list]
 [Use CSV format]
-[Up]
-[Down]
 [Edit Host]
 [Address:]
 [Label:]

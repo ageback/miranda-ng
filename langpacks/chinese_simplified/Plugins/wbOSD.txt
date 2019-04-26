@@ -11,7 +11,7 @@
 [General]
 通用
 [Align]
-
+对齐
 [Select font]
 
 [Shadow]

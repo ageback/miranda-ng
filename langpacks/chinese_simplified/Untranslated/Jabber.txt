@@ -340,8 +340,6 @@
 [Generic privacy list]
 [Active privacy list]
 [Default privacy list]
-[Move up]
-[Move down]
 [Allow Messages]
 [Allow Presences (in)]
 [Allow Presences (out)]

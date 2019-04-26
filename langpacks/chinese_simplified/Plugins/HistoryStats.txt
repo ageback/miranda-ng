@@ -521,9 +521,9 @@
 [Delete column]
 
 [Move down]
-
+下移
 [Move up]
-
+上移
 [Show additional column info...]
 
 [General column settings]

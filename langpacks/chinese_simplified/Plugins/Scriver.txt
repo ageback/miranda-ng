@@ -449,7 +449,7 @@ Google 翻译
 [Variables]
 
 [Appearance]
-
+出现
 [Default events to show in new chat rooms if the 'event filter' is enabled]
 当启用了“事件过滤器”时，要在新聊天室中显示的默认事件
 [Select folder]

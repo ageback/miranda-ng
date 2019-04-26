@@ -130,7 +130,7 @@
 
 ;file \plugins\AvatarHistory\src\icolib.cpp
 [Avatar overlay]
-
+头像叠加
 ;file \plugins\AvatarHistory\src\options.cpp
 [Do nothing]
 啥都不干
@@ -147,7 +147,7 @@
 [History]
 历史
 [Avatar]
-
+头像
 [Popups]
 弹出窗口
 [Avatar change]

@@ -22,9 +22,9 @@
 [New]
 新
 [Up]
-
+上
 [Down]
-
+下
 [Delete]
 删除
 [Default]
@@ -146,7 +146,7 @@
 [QuickSearch]
 
 [Show Offline contacts]
-
+显示离线联系人
 [New column]
 
 [Save Item]

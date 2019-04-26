@@ -556,7 +556,6 @@
 [Never show it at all]
 [TabSRMM]
 [Data path]
-[Skins]
 [Saved TabSRMM avatars]
 [Group chat logs root]
 [Insert [img] tag / surround selected text with [img][/img]]

@@ -37,9 +37,9 @@
 [Filters]
 
 [Move down]
-
+下移
 [Move up]
-
+上移
 [Add]
 添加
 [Rule editor]

@@ -21,7 +21,7 @@
 [Right]
 
 [Width]
-
+宽度
 [Always start...]
 
 [minimized to system tray]

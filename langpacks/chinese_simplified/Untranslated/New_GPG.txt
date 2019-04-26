@@ -132,7 +132,6 @@
 [Failed to open file]
 [There is no public or private key.]
 [Services]
-[Main]
 [GnuPG Variables]
 [New passwords do not match]
 [Old password does not match, you can continue, but GPG will reject wrong password.\nDo you want to continue?]
