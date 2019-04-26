@@ -251,13 +251,13 @@
 [Top]
 顶部
 [Center]
-
+中
 [Bottom]
 底部
 [Left]
-
+左
 [Right]
-
+右
 [No avatar]
 无头像
 [Left avatar]

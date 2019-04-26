@@ -23,9 +23,9 @@
 [Popup mouse click]
 
 [Left]
-
+左
 [Right]
-
+右
 [Sounds]
 声音
 [Play sounds when there are]

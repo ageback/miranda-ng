@@ -4,8 +4,6 @@
 [Don't show popups for subcontacts]
 [Show popup when no birthdays are near]
 [Popup mouse click]
-[Left]
-[Right]
 [Play sounds when there are]
 [days or less to birthday.]
 [Start notifying]

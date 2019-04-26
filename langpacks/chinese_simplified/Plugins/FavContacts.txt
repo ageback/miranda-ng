@@ -11,7 +11,7 @@
 [Customize]
 自定义
 [Show second line]
-
+显示第二行
 [Show avatars]
 显示头像
 [Draw avatar border]

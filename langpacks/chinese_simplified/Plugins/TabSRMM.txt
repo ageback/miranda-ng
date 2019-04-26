@@ -6,10 +6,10 @@
 ;  Authors: The Miranda developers team and contributors
 ;============================================================
 [IM and group chat module for Miranda NG.]
-
+Miranda NG 的 IM 和群聊模块。
 ;file \plugins\TabSRMM\res\chat.rc
 [Show these events]
-
+显示这些事件
 [Actions]
 动作
 [Messages]
@@ -33,7 +33,7 @@
 [Notices]
 通知
 [Popup]
-
+弹出窗口
 [Tray]
 托盘
 [Options]
@@ -41,51 +41,51 @@
 [Add new rooms to group:]
 增加新的房间到分组：
 [Log files]
-
+日志文件
 [Enable logging to disk]
 启用日志保存到磁盘
 [Log directory]
 日志目录
 [Maximum size for log files (in KB)]
-
+日志文件的最大尺寸（KB）
 [Group chat log formatting]
-
+群聊日志格式
 [Your name]
 你的名字
 [Other name]
 其他名字
 [Timestamp (window)]
-
+时间戳（窗口）
 [Timestamp (logfile)]
-
+时间戳（日志文件）
 [Maximum number of events in the message window]
-
+消息窗口中的最大事件数量
 [Group chat nick list row height (pixels)]
-
+群聊昵称列表行高（像素）
 [Open log file base folder]
-
+打开日志文件基础文件夹
 [Default settings for known event types]
-
+已知事件类型的默认设置
 [Show when filter is active]
-
+当过滤器激活时显示
 [Log to file]
-
+日志到文件
 [Show popup]
-
+显示弹出窗口
 [Notify in tray]
-
+托盘中通知
 [Suppress tray notifications for focused channel windows]
-
+抑制聚焦频道窗口的托盘通知
 [Highlight event]
-
+高亮事件
 [Line markers in the message log]
-
+消息日志中的行标记
 [Highlight user names]
-
+高亮用户名
 [Enable highlighting for user names]
-
+为用户名启用高亮
 [Also look in user IDs]
-
+同时在用户ID中查找
 [Names to highlight, wildcards like * and ? are allowed, separate multiple entries with spaces]
 
 [Highlight message text]

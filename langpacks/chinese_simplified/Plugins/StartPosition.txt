@@ -17,9 +17,9 @@
 [Pixels from Side]
 
 [Left]
-
+左
 [Right]
-
+右
 [Width]
 宽度
 [Always start...]

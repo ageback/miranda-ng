@@ -3,8 +3,6 @@
 [Pixels from Top]
 [Pixels from Bottom]
 [Pixels from Side]
-[Left]
-[Right]
 [Always start...]
 [minimized to system tray]
 [opened]

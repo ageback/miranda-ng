@@ -5166,6 +5166,8 @@ GnuPG插件 - 选择公钥
 ;============================================================
 [Customize]
 自定义
+[Show second line]
+显示第二行
 [Show avatars]
 显示头像
 [Show]
@@ -8015,6 +8017,10 @@ Google 翻译
 ;  Version: 0.3.0.4
 ;  Authors: Felipe Brahm - souFrag
 ;============================================================
+[Left]
+左
+[Right]
+右
 [Width]
 宽度
 [Contact list]
@@ -8125,6 +8131,10 @@ Google 翻译
 ;  Version: 3.5.0.13
 ;  Authors: The Miranda developers team and contributors
 ;============================================================
+[IM and group chat module for Miranda NG.]
+Miranda NG 的 IM 和群聊模块。
+[Show these events]
+显示这些事件
 [Actions]
 动作
 [Messages]
@@ -8147,20 +8157,60 @@ Google 翻译
 用户踢出
 [Notices]
 通知
+[Popup]
+弹出窗口
 [Tray]
 托盘
 [Options]
 选项
 [Add new rooms to group:]
 增加新的房间到分组：
+[Log files]
+日志文件
 [Enable logging to disk]
 启用日志保存到磁盘
 [Log directory]
 日志目录
+[Maximum size for log files (in KB)]
+日志文件的最大尺寸（KB）
+[Group chat log formatting]
+群聊日志格式
 [Your name]
 你的名字
 [Other name]
 其他名字
+[Timestamp (window)]
+时间戳（窗口）
+[Timestamp (logfile)]
+时间戳（日志文件）
+[Maximum number of events in the message window]
+消息窗口中的最大事件数量
+[Group chat nick list row height (pixels)]
+群聊昵称列表行高（像素）
+[Open log file base folder]
+打开日志文件基础文件夹
+[Default settings for known event types]
+已知事件类型的默认设置
+[Show when filter is active]
+当过滤器激活时显示
+[Log to file]
+日志到文件
+[Show popup]
+显示弹出窗口
+[Notify in tray]
+托盘中通知
+[Suppress tray notifications for focused channel windows]
+抑制聚焦频道窗口的托盘通知
+[Highlight event]
+高亮事件
+[Line markers in the message log]
+消息日志中的行标记
+[Highlight user names]
+高亮用户名
+[Enable highlighting for user names]
+为用户名启用高亮
+[Also look in user IDs]
+同时在用户ID中查找
 [&Cancel]
 取消(&C)
 [&Send]
@@ -8538,8 +8588,14 @@ Google 翻译
 顶部左侧
 [Top]
 顶部
+[Center]
+中
 [Bottom]
 底部
+[Left]
+左
+[Right]
+右
 [No avatar]
 无头像
 [Left avatar]
@@ -9210,6 +9266,10 @@ Google 翻译
 弹出窗口
 [Preview]
 预览
+[Left]
+左
+[Right]
+右
 [Sounds]
 声音
 [hours]
