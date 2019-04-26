@@ -3930,6 +3930,14 @@ x100 毫秒
 调整表情和'正在听'图标大小
 [Align to right]
 右对齐
+[Append nick if different from custom name]
+如果与自定义名称不同，则附加昵称
+[Trim long text with ellipsis]
+用省略号修剪长文本
+[Show second line]
+显示第二行
+[Top space:]
+顶部空间：
 [Draw smileys on second line]
 在第二行绘制表情
 [Text:]
@@ -4058,6 +4066,24 @@ xStatus 有优先级
 显示此处的离线联系人(&S)
 [Last seen]
 上次见到
+[Do you want contact '%s' to be converted to metacontact and '%s' be added to it?]
+你想将联系人'%s'转换为中继联系人并添加'%s'吗？
+[Converting to metacontact]
+正在转换为中继联系人
+[Do you want contact '%s' to be converted to metacontact and '%s' be added to it (remove it from '%s')?]
+你想将联系人'%s'转换为中继联系人并添加'%s'吗（从'%s'中移除）？ 
+[Converting to metacontact (moving)]
+正在转换为中继联系人（正在移动）
+[Do you want contact '%s' to be added to metacontact '%s'?]
+你想将联系人 '%s' 添加到中继联系人 '%s' 吗？
+[Adding contact to metacontact]
+正在添加联系人到中继联系人
+[Do you want contact '%s' to be default?]
+你想将联系人 '%s' 变成默认吗？
+[Set default contact]
+设置默认联系人
+[Do you want contact '%s' to be removed from metacontact '%s' and added to '%s'?]
+你想将联系人 '%s' 从中继联系人 '%s' 中移除并添加到 '%s' 中吗？ 
 [Changing metacontacts (moving)]
 正在改变中继联系人(正在移动)
 [Skins]
@@ -4264,6 +4290,42 @@ xStatus 有优先级
 显示/隐藏离线用户
 [( unknown )]
 （未知）
+[%s\n\n%s\n\nAuthor(s):\t %s\nContact:\t %s\nWeb:\t %s\n\nFile:\t %s]
+%s\n\n%s\n\n作者：\t %s\n联系人：\t %s\n网页：\t %s\n\n文件：\t %s
+[%s\n\n%s\n\nAuthor(s): %s\nContact:\t %s\nWeb:\t %s\n\nFile:\t %s]
+%s\n\n%s\n\n作者：%s\n联系人：\t %s\n网页：\t %s\n\n文件：\t %s 
+[reVista for Modern v0.5]
+reVista for Modern v0.5 
+[This is second default Modern Contact list skin in Vista Aero style]
+这是Vista Aero风格的第二个默认现代一般人列表皮肤
+[Angeli-Ka (graphics), FYR (template)]
+Angeli-Ka（绘图），FYR（模板）
+[Inside library]
+在库内
+[Skin information]
+皮肤信息
+[Preview is not available\n\n%s\n----------------------\n\n%s\n\nAUTHOR(S):\n%s\n\nCONTACT:\n%s\n\nHOMEPAGE:\n%s]
+预览不可用\n\n%s\n----------------------\n\n%s\n\n作者：\n%s\n\n联系人：\n%s\n\n主页：\n%s
+[%s\n\n%s\n\nAUTHORS:\n%s\n\nCONTACT:\n%s\n\nWEB:\n%s\n\n\n]
+%s\n\n%s\n\n作者：\n%s\n\n联系人：\n%s\n\n网页：\n%s\n\n\n
+[graphics by Angeli-Ka\ntemplate by FYR]
+由 Angeli-Ka 绘图\n由 FYR 制作模板
+[Select skin from list]
+从列表选择皮肤
+[Please select skin to apply]
+请选择要应用的皮肤
+[Default Skin]
+默认皮肤
+[%Default Skin%]
+%默认皮肤%
+[<<Global>>]
+<<全局>>
+[Left]
+左
+[Center]
+中
+[Right]
+右
 [Top]
 顶部
 [Bottom]
