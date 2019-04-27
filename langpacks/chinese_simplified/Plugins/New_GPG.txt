@@ -63,7 +63,7 @@
 [Ignore]
 忽略
 [Static]
-
+斜体
 [Key Generation dialog]
 
 [Cancel]

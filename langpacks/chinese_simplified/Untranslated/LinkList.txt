@@ -9,7 +9,6 @@
 [Mail addresses only]
 [Web addresses only]
 [Deep search]
-[Static]
 [Color select]
 [Plugin default]
 [Use Miranda settings]

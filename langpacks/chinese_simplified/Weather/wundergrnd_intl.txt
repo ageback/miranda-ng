@@ -83,7 +83,7 @@
 [East]
 
 [Elevation]
-
+海拔
 [Falling]
 
 [Feel]
@@ -355,7 +355,7 @@
 [Mostly Sunny]
 
 [N/a]
-
+N/A
 [NE]
 
 [NNE]

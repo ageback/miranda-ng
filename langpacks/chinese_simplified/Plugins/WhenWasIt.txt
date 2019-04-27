@@ -118,7 +118,7 @@
 [%S protocol]
 
 [N/A]
-
+N/A
 [Unknown]
 未知
 [Birthday list (%d)]

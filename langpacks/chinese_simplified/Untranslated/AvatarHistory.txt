@@ -2,7 +2,6 @@
 [Delete this entry]
 [Delete this entry and the bitmap file]
 [Avatar history]
-[Static]
 [Store this user's old avatars in disk]
 [Log this user's avatars changes to history]
 [Show popups for this user]

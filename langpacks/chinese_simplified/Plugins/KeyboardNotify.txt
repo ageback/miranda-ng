@@ -121,7 +121,7 @@
 [Add]
 添加
 [Update]
-
+更新
 [Delete]
 删除
 [Import/Export]

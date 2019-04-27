@@ -119,7 +119,7 @@
 [Snooze]
 
 [Static]
-
+斜体
 [&Suspend]
 
 [&Edit...]

@@ -193,7 +193,6 @@
 [Export VCard]
 [Import VCard]
 [Anniversary info bar]
-[Update]
 [Export]
 [Goto]
 [Cellular]

@@ -20,7 +20,6 @@
 [Shaking contact list options]
 [Number of moves]
 [Width of move]
-[Static]
 [Shaking Message Window Options]
 [Nudge as Default]
 [You are not allowed to send too much nudge (only 1 each %d sec, %d sec left)]

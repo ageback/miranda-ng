@@ -66,7 +66,6 @@
 [Delete on]
 [Prev]
 [Next]
-[Update]
 [Edit on]
 [BBCode]
 [BBCode link]

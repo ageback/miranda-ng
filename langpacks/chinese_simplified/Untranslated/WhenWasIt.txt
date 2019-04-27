@@ -38,7 +38,6 @@
 [Please select the module where you want the date of birth to be saved.\r\n"UserInfo" is the default location.\r\nUse "Protocol module" to make the data visible in User Details.\n"mBirthday module" uses the same module as mBirthday plugin.]
 [Set birthday for %s:]
 [%S protocol]
-[N/A]
 [Birthday list (%d)]
 [DTB]
 [Birthday]

@@ -40,7 +40,6 @@
 [Create/Edit Themes]
 [Theme]
 [Test]
-[Update]
 [Import/Export]
 [Import...]
 [Override existing]

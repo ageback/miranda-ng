@@ -6,106 +6,106 @@
 ;  Authors: Miranda NG team
 ;============================================================
 [Retrieves weather information and displays it in your contact list.]
-
+获取天气信息并将它显示在你的联系人列表中。
 ;file \protocols\Weather\res\resource.rc
 [Update]
-
+更新
 [Brief Info]
-
+简要信息
 [Webpage]
-
+网页
 [Close]
 关闭
 [Options]
 选项
 [Update weather information on startup]
-
+在启动时更新天气信息
 [Update weather information every]
-
+更新天气信息每
 [minutes]
 分
 [Consider weather info updated only when condition and temperature are changed]
-
+考虑仅在条件和温度发生变化时更新天气信息
 [Remove old data when updating]
-
+更新时移除老数据
 [Make the contact italic when weather alert is issued]
-
+发出天气警报时使联系人显示斜体
 [Modes]
-
+模式
 [Use weather condition as protocol status]
-
+使用天气情况作为协议状态
 [Avatar only mode]
-
+仅头像模式
 [Units]
-
+单位
 [Temperature]
-
+温度
 [Celsius]
-
+摄氏
 [Fahrenheit]
-
+华氏
 [Degree sign:]
-
+等级标记：
 [Wind]
-
+风
 [km/h]
-
+千米每小时
 [m/s]
-
+米每秒
 [mph]
-
+英里每小时
 [knots]
-
+节
 [Visibility]
 可见性
 [km]
-
+千米
 [miles]
-
+英里
 [Pressure]
-
+压力
 [kPa]
-
+千帕
 [mb (hPa)]
-
+毫巴(百帕)
 [inches]
-
+英寸
 [mm Hg (torr)]
-
+毫米汞柱(托)
 [Day/Month]
-
+天/月
 [No change]
-
+无改变
 [2 chars]
-
+2字符
 [3 chars]
-
+3字符
 [Elevation]
-
+海拔
 [ft]
-
+英尺
 [m]
-
+米
 [Do not append units to values]
-
+不要将单位附加到值
 [Do not display fractional values]
-
+不显示小数值
 [Frame]
-
+框架
 [Avatar size]
-
+头像大小
 [Edit Weather Station]
-
+编辑气象站
 [Weather Station]
-
+气象站
 [City name]
-
+城市名称
 [Log Information]
-
+日志信息
 [Use internal history]
-
+使用内部历史
 [Use external file]
-
+使用外部文件
 [Overwrite file upon update]
 
 [Path:]
@@ -247,16 +247,16 @@
 [Open log file]
 
 [Show user menu]
-
+显示用户菜单
 [Show user detail]
-
+显示用户详情
 [To old setting]
-
+到旧设置
 [To default]
-
+到默认
 ;file \protocols\Weather\src\stdafx.h
 [N/A]
-
+N/A
 [Invalid ID format, missing "/" (10)]
 
 [Invalid service (11)]
@@ -308,9 +308,9 @@
 [HTTP Error: Gateway timeout (504)]
 
 [%c\\nTemperature: %t\\nFeel-Like: %f\\nPressure: %p\\nWind: %i  %w\\nHumidity: %m\\nDew Point: %e\\nVisibility: %v\\n\\nSun Rise: %r\\nSun Set: %y\\n\\n5 Days Forecast:\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]]
-
+%c\\n温度： %t\\n体感： %f\\n压力： %p\\n风力：%i  %w\\n湿度：%m\\n露点：%e\\n能见度：%v\\n\\n日出：%r\\n日落：%y\\n\\n5 天预报：\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]
 [Feel-Like: %f\\nPressure: %p\\nWind: %i  %w\\nHumidity: %m\\nDew Point: %e\\nVisibility: %v\\n\\nSun Rise: %r\\nSun Set: %y\\n\\n5 Days Forecast:\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]]
-
+体感：%f\\n压力：%p\\n风力：%i  %w\\n湿度：%m\\n露点：%e\\n能见度：%v\\n\\n日出：%r\\n日落：%y\\n\\n5 天预报：\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]
 [Weather Condition for %n as of %u]
 
 [%c, %t (feel-like %f)	Wind: %i %w	Humidity: %m]
@@ -509,22 +509,22 @@
 [Remove Old Data then Update All]
 
 [Weather Notification]
-
+天气通知
 [Display in a frame]
-
+在一个框架中显示
 ;file \protocols\Weather\src\weather_update.cpp
 [Unable to retrieve weather information for %s]
-
+无法获取 %s 的天气信息
 ;file \protocols\Weather\src\weather_userinfo.cpp
 [Variable]
-
+可变
 [Information]
 信息
 [Retrieving new data, please wait...]
-
+正在接收数据，请稍候...
 [More Info]
-
+更多信息
 [Current condition for %n]
-
+%n 的当前状况
 [Last update on:   %u]
-
+上次更新于：  %u 

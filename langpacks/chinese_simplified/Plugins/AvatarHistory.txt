@@ -17,7 +17,7 @@
 [Avatar history]
 
 [Static]
-
+斜体
 [Open folder]
 打开文件夹
 [Store this user's old avatars in disk]

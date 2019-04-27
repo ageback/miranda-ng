@@ -75,7 +75,7 @@
 [Width of move]
 
 [Static]
-
+斜体
 [Shaking Message Window Options]
 
 ;file \plugins\Nudge\src\main.cpp

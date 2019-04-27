@@ -81,7 +81,7 @@
 [Close without changing custom status]
 
 [No change]
-
+无改变
 [Clear custom status (reset to None) and close]
 
 [Clear]

@@ -100,7 +100,6 @@
 [Mostly Sunny / Wind]
 [Mostly Sunny]
 [N/A%]
-[N/a]
 [NE]
 [NNE]
 [NNW]

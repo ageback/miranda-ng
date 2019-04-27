@@ -187,7 +187,7 @@
 [Next]
 
 [Update]
-
+更新
 [Edit on]
 
 [BBCode]

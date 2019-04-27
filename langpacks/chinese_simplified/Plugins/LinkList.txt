@@ -33,7 +33,7 @@
 [Deep search]
 
 [Static]
-
+斜体
 [Color select]
 
 [Incoming messages]

@@ -390,7 +390,6 @@
 [Show message history]
 [Show send menu]
 [Show protocol menu]
-[Show user menu]
 [Show user details]
 [Toggle toolbar]
 [Toggle info panel]

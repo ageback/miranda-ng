@@ -531,7 +531,7 @@
 [Anniversary info bar]
 
 [Update]
-
+更新
 [Export]
 
 [Goto]

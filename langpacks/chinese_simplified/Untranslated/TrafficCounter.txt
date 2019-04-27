@@ -1,6 +1,5 @@
 [Adding traffic and time counters.]
 [Selected totals]
-[Units]
 [Clear statistics]
 [Notification]
 [Notify me on every]
