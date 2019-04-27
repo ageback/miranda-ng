@@ -87,7 +87,6 @@
 [ users found (]
 [) Online: ]
 [deleted]
-[active]
 [Colorize]
 [QuickSearch window hotkey]
 [Column content is simple database setting.]

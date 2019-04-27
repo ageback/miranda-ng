@@ -37,7 +37,7 @@
 [Message boxes]
 
 [Errors]
-
+错误
 [Info messages]
 
 [Progress dialogs]

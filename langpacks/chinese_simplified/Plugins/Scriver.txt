@@ -43,7 +43,7 @@
 [Limit names on tabs to]
 
 [characters]
-
+字符
 [Show close button on each tab]
 
 [Switch to active tab]
@@ -69,11 +69,11 @@
 [Show progress indicator]
 
 [Enable transparency]
-
+启用透明度
 [active]
-
+活动
 [inactive]
-
+非活动
 [Min input area size]
 
 [lines]

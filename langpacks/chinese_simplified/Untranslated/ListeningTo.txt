@@ -4,7 +4,6 @@
 [Music]
 [Radio]
 [Video]
-[Others]
 [You also have to enable it per protocol in the main menu]
 [xStatus]
 [For protocols that don't support listening to but support xStatus:]

@@ -249,7 +249,7 @@
 [John Doe (1/10)]
 
 [Dialog]
-
+对话框
 [All]
 
 [None]

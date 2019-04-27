@@ -258,7 +258,6 @@
 [for last 30 days]
 [for last 90 days]
 [for all time]
-[Errors]
 [Notifications]
 [VK user activate/deactivate action]
 [User %s added as friend]

@@ -19,7 +19,7 @@
 [Video]
 
 [Others]
-
+其它
 [You also have to enable it per protocol in the main menu]
 
 [xStatus]

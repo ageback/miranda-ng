@@ -9,7 +9,7 @@
 
 ;file \plugins\IEHistory\res\IEHistory.rc
 [Dialog]
-
+对话框
 [Close]
 关闭
 [&Prev]
@@ -29,7 +29,7 @@
 [Show last page first]
 
 [Other options]
-
+其它选项
 [Load items in background]
 
 [RTL is default text direction]

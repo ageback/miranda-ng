@@ -13,7 +13,6 @@
 [By default use]
 [to save birthday data.]
 [in birthday list window]
-[Dialog]
 [Timeout:]
 [Notify for]
 [afterwards]

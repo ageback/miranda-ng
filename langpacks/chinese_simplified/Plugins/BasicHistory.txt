@@ -101,7 +101,7 @@
 [Name]
 名字
 [Active]
-
+活动
 [Action type]
 
 [Filter]

@@ -87,18 +87,18 @@ Miranda NG 的 IM 和群聊模块。
 [Also look in user IDs]
 同时在用户ID中查找
 [Names to highlight, wildcards like * and ? are allowed, separate multiple entries with spaces]
-
+要高亮的名称，允许 * 和 ? 之类的通配符，用空格分隔多个项
 [Highlight message text]
-
+高亮消息文字
 [Enable highlighting for message text]
-
+为消息文字启用高亮
 [Words to highlight, wildcards like * and ? are allowed, separate multiple entries with spaces. Leave it empty if you only want to highlight your own nickname.]
 
 [Highlight messages containing my own nickname]
-
+高亮包含我自己的昵称的消息
 ;file \plugins\TabSRMM\res\msgwindow.rc
 [&Retry]
-
+重试(&R)
 [&Cancel]
 取消(&C)
 [&Send]
@@ -109,227 +109,227 @@ Miranda NG 的 IM 和群聊模块。
 移除(&R)
 ;file \plugins\TabSRMM\res\resource.rc
 [Customize the panel]
-
+自定义面板
 [Scope of settings]
-
+设置的范围
 [Use global or private panel height]
-
+使用全局或私有面板高度
 [Set size to]
-
+设置大小为
 [Compact (1 line)]
-
+精简（1行）
 [Normal (2 lines)]
-
+普通（2行）
 [Large]
-
+大
 [Tip: To use a custom size you can always drag the bottom edge of the panel]
-
+提示：要使用自定义大小，你总是可以拖动面板底部的边缘
 [Other options]
-
+其它选项
 [Note: All settings are applied immediately]
-
+注意：所有设置会被立即应用
 [The container is using private settings. The panel height will not be shared with other containers.]
-
+容器使用私有设置。面板高度不会和其它容器共享。
 [Show picture for this contact]
-
+为这个联系人显示图片
 [Advanced tweaks]
-
+高级调整
 [Message send timeout]
-
+消息发送超时
 [seconds]
 秒
 [Input history size]
-
+输入历史大小
 [entries]
-
+入口
 [Options marked with an asterisk (*) will only take effect after Miranda has been restarted.]
 
 [More about advanced tweaks]
-
+更多关于高级调整
 [Revert to (safe) defaults]
-
+恢复为（安全）默认值
 [Event notify options]
-
+事件通知选项
 [Limit message preview to]
-
+限制消息预览为
 [characters]
-
+字符
 [Only show event notifications when my status is...]
-
+只显示事件通知当我的状态为...
 [Popup options]
-
+弹出窗口选项
 [Text]
 文字
 [Background]
 背景
 [Timeout (seconds, 0 = default, -1 = no timeout)]
-
+超时（秒，0 = 默认，-1 = 无超时）
 [Message]
 消息
 [Default colors]
-
+默认颜色
 [Others]
-
+其它
 [Preview]
 预览
 [Group chats]
 分组聊天
 [Errors]
-
+错误
 [Use the message log color theme for group chat popups]
-
+为群聊弹出窗口使用消息日志颜色主题
 [Dialog]
-
+对话框
 [Cancel]
 取消
 [All modes]
-
+所有模式
 [Choose modes]
-
+选择模式
 [Message log view mode (does not affect open windows)]
-
+消息日志视图模式（不影响打开的窗口）
 [Select how to display the message log. This setting can be ignored when one of the listed plugins is not installed.]
 
 [Send text formatting method]
-
+发送文字格式方法
 [You can override the global setting for text formatting here. Use "Force off" to never send formatting info for this contact.]
 
 [Info panel mode]
-
+信息面板模式
 [Show avatar in message window]
-
+在消息窗口中显示头像
 [Use private splitter position]
-
+使用私有分隔位置
 [Contact is a favorite contact]
-
+联系人是一个收藏的联系人
 [Ignore sending timeouts]
-
+忽略发送超时
 [Load only actual history]
-
+仅加载实际历史记录
 [Always trim message log to]
-
+始终将消息日志修剪为
 [events]
 事件
 [Only show tab bar when it's needed]
-
+仅当有需要时显示标签栏
 [Container stays on top]
-
+容器居于顶部
 [Vertical maximize]
-
+垂直最大化
 [Close or hide inactive container after]
-
+关闭或隐藏非活动容器于此后
 [sec. (0=never)]
-
+秒（0=从不）
 [Automatically size input area (*)]
-
+自动调整输入区域（*）
 [Use default setting]
-
+使用默认设置
 [Flash until focused]
-
+闪动直到获得焦点
 [Disable flashing]
-
+禁止闪动
 [Enable popups if minimized]
-
+最小化时启用弹出窗口
 [Enable popups if unfocused]
-
+未获得焦点时启用弹出窗口
 [Enable popups if focused]
-
+获得焦点时启用弹出窗口 
 [Show popups for inactive tabs in active containers]
-
+为活动容器中的非活动标签显示弹出窗口
 [Hide the status bar]
-
+隐藏状态栏
 [Hide the menu bar]
-
+隐藏菜单栏
 [User ID in status bar]
-
+用户ID在状态栏中
 [Hide the toolbar]
-
+隐藏工具栏
 [Place the toolbar at the bottom (*)]
-
+将工具栏置于底部（*）
 [Show the info panel]
-
+显示信息面板
 [Hide title bar]
-
+隐藏标题栏
 [Title bar format]
-
+标题栏格式
 [Available formats]
-
+可用格式
 [Use this to specify a private message log theme for this container. This will have no effect when using IEView or another message log viewer and should NOT be confused with skins.]
 
 [Use global container size and position]
-
+使用全局容器大小和位置
 [Save current as global]
-
+保存当前为全局
 [Enable transparency]
-
+启用透明度
 [active]
-
+活动
 [inactive]
-
+非活动
 [When checked, this container will use private settings, otherwise settings are shared among containers.]
 
 [Apply]
 应用
 [Static]
-
+斜体
 [Tab location]
-
+标签位置
 [When using the switch bar, use the following layout]
-
+当使用切换栏时，使用以下布局
 [Flash event icon on tab]
-
+在标签上闪动事件图标
 [Flash text label on tabs]
-
+在标签上闪动文字标签 
 [Single row tab control (*)]
-
+单行标签控制（*）
 [Close button on tabs]
-
+标签上的关闭按钮
 [Use button tabs (*)]
-
+使用按钮标签（*）
 [You have chosen to disable all event notifications for open message windows.]
-
+你选择了为打开的消息窗口禁用所有事件通知
 [Show contact avatars]
-
+显示联系人头像
 [Show my own avatars]
-
+显示我自己的头像
 [Show avatars on task bar (Win 7, large task bar required)]
-
+在任务栏上显示头像（Win7，需要大任务栏）
 [Enable sound effects]
-
+启用声音效果
 [Play sounds when minimized]
-
+最小化时播放声音
 [Play sounds when not focused]
-
+未聚焦时播放声音
 [Play sounds for inactive tabs in active containers]
-
+为活动容器中的非活动标签播放声音
 [Play sounds for the active tab / window]
-
+为活动的标签/窗口播放声音
 [Options marked with an asterisk (*) do not affect open message windows.]
 
 [Message window options]
-
+消息窗口选项
 [Size and scaling options for the bottom avatar display]
 
 [Maximum display height (pixels)]
-
+最大显示高度（像素）
 [(0 = no limit)]
-
+（0=无限制）
 [Try to keep original size]
-
+尽量保持原始尺寸
 [Help on this]
-
+帮助
 [Reset all hidden warnings]
-
+重置所有隐藏的警告
 [Indent values]
-
+缩进值
 [Left/Right]
-
+左/右
 [px]
-
+px
 [Template sets]
-
+模板集
 [Standard templates...]
-
+标准模板...
 [RTL templates...]
 
 [Load history events]
@@ -401,17 +401,17 @@ Miranda NG 的 IM 和群聊模块。
 [Container flashing]
 
 [Flash containers]
-
+闪动容器
 [times]
-
+次
 [Flash interval]
-
+闪动间隔
 [milliseconds]
 毫秒：
 [Help on containers]
-
+容器上的帮助
 [Windows Aero settings]
-
+Windows Areo 设置
 [Use Aero UI elements (only when not using a custom skin)]
 
 [Use Windows 7 task bar enhancements (restart required)]
@@ -1837,7 +1837,7 @@ Miranda NG 的 IM 和群聊模块。
 [On tab control]
 
 [On the button bar]
-
+在按钮栏上
 [Disable error popups on sending failures]
 
 [Show a preview of the event]
@@ -1855,15 +1855,15 @@ Miranda NG 的 IM 和群聊模块。
 [Dismiss popup]
 关闭弹出窗口
 [Open event]
-
+打开事件
 [Dismiss event]
-
+解除事件
 [Disable event notifications for instant messages]
-
+禁用即时消息的事件通知
 [Disable event notifications for group chats]
-
+禁用群聊的事件通知 
 [Disable notifications for non-message events]
-
+禁用非消息事件的事件通知 
 [Remove popups for a contact when the message window is focused]
 
 [Remove popups for a contact when I start typing a reply]

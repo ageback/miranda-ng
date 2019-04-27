@@ -42,7 +42,6 @@
 [Retrieve xStatus details if auto-retrieve is disabled]
 [Status bar and tray tooltip]
 [Limit status messages in status bar and tray tooltips to:]
-[characters]
 [Reload skin list]
 [Apply skin]
 [Get more skins]

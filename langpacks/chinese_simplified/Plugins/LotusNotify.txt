@@ -96,7 +96,7 @@
 [Connection]
 
 [Popup]
-
+弹出窗口
 [Miscellaneous]
 
 [&Check Lotus]

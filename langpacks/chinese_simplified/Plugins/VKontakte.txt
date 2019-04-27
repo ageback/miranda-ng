@@ -567,7 +567,7 @@
 [for all time]
 
 [Errors]
-
+错误
 [Notifications]
 
 [VK user activate/deactivate action]

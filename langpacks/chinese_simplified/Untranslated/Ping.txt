@@ -3,7 +3,6 @@
 [Timeout]
 [Ping timeout (secs):]
 [Logging]
-[Log to File]
 [Log Filename:]
 [Reply]
 [Block Repetitions]

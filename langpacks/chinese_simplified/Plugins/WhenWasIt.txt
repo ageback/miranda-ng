@@ -51,7 +51,7 @@
 [in birthday list window]
 
 [Dialog]
-
+对话框
 [Timeout:]
 
 [seconds]

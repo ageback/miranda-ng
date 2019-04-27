@@ -38,7 +38,6 @@
 [Display errors using popups]
 [Save errors to system history]
 [Task]
-[Active]
 [Action type]
 [Filter]
 [Events older than*]

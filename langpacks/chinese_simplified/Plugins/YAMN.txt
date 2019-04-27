@@ -73,7 +73,7 @@
 [Execute Application]
 
 [Errors]
-
+错误
 [Sound notification if failed]
 
 [Message notification if failed]
@@ -87,7 +87,7 @@
 [Cancel]
 取消
 [Choose modes]
-
+选择模式
 [Offline]
 离线
 [Online]
@@ -131,7 +131,7 @@
 [Mail Notifications]
 
 [Popup]
-
+弹出窗口
 [Single popup]
 
 [Multi popup]

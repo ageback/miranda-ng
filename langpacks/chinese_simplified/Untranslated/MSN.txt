@@ -68,7 +68,6 @@
 [Setup Live &Alerts]
 [Custom Smileys]
 [Notifications]
-[Errors]
 [MSN Protocol]
 [Protocol icon]
 [Hotmail Inbox]

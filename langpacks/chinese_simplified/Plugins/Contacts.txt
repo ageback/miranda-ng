@@ -41,7 +41,7 @@
 [Try again]
 再试一次
 [Popup]
-
+弹出窗口
 [Add to List]
 添加到列表
 [User details]

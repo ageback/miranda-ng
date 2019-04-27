@@ -17,7 +17,7 @@
 [User info tab]
 
 [Log to file]
-
+日志到文件
 [Log to history]
 
 [Maximum size]

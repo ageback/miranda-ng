@@ -174,7 +174,7 @@
 [Notifications]
 
 [Errors]
-
+错误
 [MSN Protocol]
 
 ;file \protocols\MSN\src\msn_opts.cpp

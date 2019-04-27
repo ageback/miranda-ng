@@ -107,7 +107,7 @@
 [Challenge sent]
 
 [Default colors]
-
+默认颜色
 [Windows colors]
 
 [Default timeout]

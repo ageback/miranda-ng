@@ -17,7 +17,6 @@
 [Miranda is inactive]
 [min]
 [Miranda is started]
-[Others]
 [Create a main menu item]
 [Restore hiding on startup after failure]
 [Password is not correct!\nPlease, enter correct password.]

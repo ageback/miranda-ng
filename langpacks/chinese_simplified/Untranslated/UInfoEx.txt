@@ -87,7 +87,6 @@
 [Importing...\nPlease wait!]
 [Setting/Event (20/100)]
 [John Doe (1/10)]
-[Dialog]
 [All]
 [Show menu item]
 [Cascade:]

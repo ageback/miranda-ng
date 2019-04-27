@@ -6,7 +6,6 @@
 [Add to &group:]
 [&Details]
 [Contacts send error]
-[Popup]
 [Send Message]
 [Contacts received from]
 [Incoming Contacts]

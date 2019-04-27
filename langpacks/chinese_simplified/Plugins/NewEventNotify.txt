@@ -17,13 +17,13 @@
 [Show preview of event in popup]
 
 [Popup options]
-
+弹出窗口选项
 [Message]
 消息
 [File]
 文件
 [Others]
-
+其它
 [Text]
 文字
 [Background]
@@ -37,9 +37,9 @@
 [Dismiss popup]
 关闭弹出窗口
 [Open event]
-
+打开事件
 [Dismiss event]
-
+解除事件
 [Right click actions]
 
 [Timeout actions]

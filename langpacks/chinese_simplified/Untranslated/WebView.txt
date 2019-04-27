@@ -47,7 +47,6 @@
 [Alert when string is present on web page]
 [String:]
 [Alert when specific area of web page changes]
-[Log to file]
 [Log file:]
 [Append data to file]
 [Save as raw data]

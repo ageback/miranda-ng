@@ -236,7 +236,7 @@
 [off]
 半
 [active]
-
+活动
 [Colorize]
 
 [QuickSearch window hotkey]

@@ -32,8 +32,6 @@
 [Countdown on frame]
 [Progress bar]
 [Header]
-[Active]
-[Inactive]
 [Second(s)]
 [Hour(s)]
 [Day(s)]

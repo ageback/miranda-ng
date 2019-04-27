@@ -83,7 +83,7 @@
 [Debug]
 
 [Log to File]
-
+日志到文件
 [Save Pass]
 
 [Back]

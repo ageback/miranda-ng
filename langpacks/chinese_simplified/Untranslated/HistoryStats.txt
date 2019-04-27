@@ -67,7 +67,6 @@
 [Chats (incoming)]
 [Chats (outgoing)]
 [Chats (all)]
-[Characters]
 [Chats]
 [Incoming characters]
 [Outgoing characters]

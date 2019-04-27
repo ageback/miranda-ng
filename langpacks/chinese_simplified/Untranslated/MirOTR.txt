@@ -64,7 +64,6 @@
 [Account]
 [Policy]
 [Verified]
-[Active]
 [Fingerprint]
 [Conv. HTML]
 [Generating new key for '%s'. Continue?]

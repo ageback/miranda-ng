@@ -39,7 +39,7 @@
 [The Message]
 
 [Dialog]
-
+对话框
 [Status]
 状态
 [Use Advanced Dialog]
@@ -118,7 +118,7 @@
 [Reuse this message? (0 to use it once)]
 
 [Times]
-
+次
 [Give up after... (0 to not give up)]
 
 [Days]

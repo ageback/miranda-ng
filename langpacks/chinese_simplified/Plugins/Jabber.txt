@@ -369,7 +369,7 @@ URL
 [Deny]
 
 [Dialog]
-
+对话框
 [Jabber Notebook]
 
 [Store notes on server and access them from anywhere.]
@@ -921,7 +921,7 @@ URL
 [Both]
 
 [Errors]
-
+错误
 ;file \protocols\JabberG\src\jabber_notes.cpp
 [Incoming note from %s]
 
@@ -2006,7 +2006,7 @@ URL
 [Having appointment]
 
 [Inactive]
-
+非活动
 [day off]
 
 [hanging out]

@@ -131,7 +131,7 @@
 [Limit status messages in status bar and tray tooltips to:]
 
 [characters]
-
+字符
 [Skins]
 皮肤
 [Reload skin list]

@@ -17,7 +17,7 @@
 [Logging]
 
 [Log to File]
-
+日志到文件
 [Log Filename:]
 
 [Network]

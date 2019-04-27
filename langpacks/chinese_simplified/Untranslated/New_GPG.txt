@@ -116,7 +116,6 @@
 [Failed write to clipboard with error %d]
 [Failed to open clipboard with error %d]
 [Set log file]
-[LOG files]
 [Choose gpg.exe]
 [This is not GnuPG binary!\nIt is recommended that you use GnuPG v1.x.x with this plugin.]
 [Set home directory]

@@ -9,7 +9,7 @@
 
 ;file \plugins\SendScreenshotPlus\res\resource.rc
 [Dialog]
-
+对话框
 [All]
 
 [None]

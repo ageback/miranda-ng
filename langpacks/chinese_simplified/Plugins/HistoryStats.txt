@@ -177,7 +177,7 @@
 [Chats (all)]
 
 [Characters]
-
+字符
 [Messages]
 消息
 [Chats]

@@ -41,7 +41,7 @@
 [Resize the avatar to fit max allowed protocol size]
 
 [Dialog]
-
+对话框
 [Contact picture]
 
 [Change]

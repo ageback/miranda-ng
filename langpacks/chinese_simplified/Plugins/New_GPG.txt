@@ -265,7 +265,7 @@
 [Set log file]
 
 [LOG files]
-
+日志文件
 [Choose gpg.exe]
 
 [This is not GnuPG binary!\nIt is recommended that you use GnuPG v1.x.x with this plugin.]

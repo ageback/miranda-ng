@@ -1,6 +1,5 @@
 [Notify with popup if some connection established]
 [Set popup colors]
-[Popup options]
 [Close after:]
 [sec (0 default, -1 disabled)]
 [try resolve addresses]

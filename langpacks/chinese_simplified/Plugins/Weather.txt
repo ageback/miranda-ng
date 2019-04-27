@@ -117,7 +117,7 @@
 [Weather Map]
 
 [Other Options]
-
+其它选项
 [Set as default station]
 
 [Disable automatic update for this station]
@@ -129,7 +129,7 @@
 [Cancel]
 取消
 [Popup Options]
-
+弹出窗口选项
 [Enable popups]
 启用弹出窗口
 [Popup only when condition changes]
@@ -173,7 +173,7 @@
 [Alerts]
 警告
 [Errors]
-
+错误
 [Contact List]
 联系人列表
 [Brief Info Title]
@@ -415,7 +415,7 @@
 [Weather Update]
 
 [Popup]
-
+弹出窗口
 [No Popup]
 
 [Edit Settings]

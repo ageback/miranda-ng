@@ -85,9 +85,9 @@
 [Header]
 
 [Active]
-
+活动
 [Inactive]
-
+非活动
 ;file \plugins\AutoShutdown\src\options.cpp
 [Events]
 事件

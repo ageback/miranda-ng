@@ -55,7 +55,7 @@
 [Item ignored]
 
 [Dialog]
-
+对话框
 [Not yet supported]
 
 ;file \plugins\Cln_skinedit\src\main.cpp

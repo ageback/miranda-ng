@@ -576,7 +576,7 @@
 [Right click]
 
 [Default colors]
-
+默认颜色
 [Windows colors]
 
 [Custom colors]

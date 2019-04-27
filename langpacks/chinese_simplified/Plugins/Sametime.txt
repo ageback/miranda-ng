@@ -133,7 +133,7 @@
 [Notifications]
 
 [Errors]
-
+错误
 [%s\n\nSametime error %S\n%s]
 
 ;file \protocols\Sametime\src\meanwhile\src\error.c

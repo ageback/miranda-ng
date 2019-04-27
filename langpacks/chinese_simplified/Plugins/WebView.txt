@@ -125,7 +125,7 @@
 [Alert when specific area of web page changes]
 
 [Log to file]
-
+日志到文件
 [Log file:]
 
 [Append data to file]

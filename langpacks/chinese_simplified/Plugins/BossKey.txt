@@ -51,7 +51,7 @@
 [Miranda is started]
 
 [Others]
-
+其它
 [Create a main menu item]
 
 [Restore hiding on startup after failure]

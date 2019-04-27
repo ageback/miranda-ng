@@ -34,7 +34,6 @@
 [Temp Dir:]
 [Key Assignment]
 [Debug]
-[Log to File]
 [Save Pass]
 [Back]
 [Key agreement colors]

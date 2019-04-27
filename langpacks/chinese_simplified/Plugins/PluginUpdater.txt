@@ -59,7 +59,7 @@
 [Restart]
 重启
 [Errors]
-
+错误
 [Info messages]
 
 [Back]

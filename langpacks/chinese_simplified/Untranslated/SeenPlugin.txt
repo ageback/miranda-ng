@@ -3,7 +3,6 @@
 [Last seen menu item]
 [Show icon]
 [User info tab]
-[Log to file]
 [Log to history]
 [Maximum size]
 [Variable list]

@@ -11,7 +11,7 @@
 [Set popup colors]
 
 [Popup options]
-
+弹出窗口选项
 [Background]
 背景
 [Text]
