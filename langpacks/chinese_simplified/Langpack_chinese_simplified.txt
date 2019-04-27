@@ -8325,6 +8325,8 @@ Miranda NG 的 IM 和群聊模块。
 高亮消息文字
 [Enable highlighting for message text]
 为消息文字启用高亮
+[Words to highlight, wildcards like * and ? are allowed, separate multiple entries with spaces. Leave it empty if you only want to highlight your own nickname.]
+要突出的词，允许像 * 和 ? 的通配符，用空格分隔多个条目。 如果您只想突出自己的昵称，请将其留空。
 [Highlight messages containing my own nickname]
 高亮包含我自己的昵称的消息
 [&Retry]
@@ -8371,6 +8373,8 @@ Miranda NG 的 IM 和群聊模块。
 输入历史大小
 [entries]
 入口
+[Options marked with an asterisk (*) will only take effect after Miranda has been restarted.]
+标有星号（*）的选项仅在重新启动Miranda后生效。
 [More about advanced tweaks]
 更多关于高级调整
 [Revert to (safe) defaults]
@@ -8415,8 +8419,12 @@ Miranda NG 的 IM 和群聊模块。
 选择模式
 [Message log view mode (does not affect open windows)]
 消息日志视图模式（不影响打开的窗口）
+[Select how to display the message log. This setting can be ignored when one of the listed plugins is not installed.]
+选择如何显示消息日志。如果列出的插件中的某一个没有安装，此设置会被忽略。
 [Send text formatting method]
 发送文字格式方法
+[You can override the global setting for text formatting here. Use "Force off" to never send formatting info for this contact.]
+您可以在此处覆盖文本格式的全局设置。 使用“强制关闭”永远不会发送此联系人的格式信息。
 [Info panel mode]
 信息面板模式
 [Show avatar in message window]
@@ -8563,6 +8571,10 @@ px
 删除
 [Rename]
 重命名
+[Create a new container]
+创建一个新容器
+[Create new]
+新建
 [Flash containers]
 闪动容器
 [times]
@@ -8577,6 +8589,16 @@ px
 Windows Areo 设置
 [Popups]
 弹出窗口
+[...is &typing]
+...正在输入(&T)
+[...stopped t&yping]
+...正在停止输入(&Y)
+[Back]
+退回
+[U&se Popup colors]
+使用弹出颜色(&S)
+[&Use Windows colors]
+使用 Windows 颜色(&U)
 [Custom]
 自定义
 [Close]
@@ -8613,18 +8635,104 @@ Windows Areo 设置
 默认
 [Global]
 全局
+[Send text formatting]
+发送文本格式
+[BBCode]
+BBCode 
 [Off]
-半
+关
+[This contact]
+此联系人
+[Global setting]
+全局设置
+[Force off]
+强制关闭
+[Recent sessions]
+最近的会话
+[Favorites]
+收藏
+[Show the tray icon]
+显示托盘图标
+[Disable all event notifications]
+禁用所有事件通知
+[Don't create windows automatically]
+不要自动创建窗口
+[Hide all message containers]
+隐藏所有消息容器
+[Restore all message containers]
+还原所有消息容器
+[Don't play sounds]
+不要播放声音
+[Be "super quiet"]
+“超级安静”
+[Add contact to favorites]
+添加联系人到收藏
+[Remove contact from favorites]
+从收藏移除联系人
+[Set position for this session]
+为此会话设置位置
+[Set and save for all sessions]
+为所有会话设置并保存
+[Set and save for this contact only]
+只为此联系人设置并保存
+[Revert to old position]
+还原为老位置
+[Queue manager]
+队列管理器
+[Mark selected for removal]
+选中的标记为移除
+[Reset selected]
+重置选中的
+[Hold selected]
+持有选中的
+[Resume selected]
+恢复选中的
+[Cancel all multisend jobs]
+取消所有多发送任务
 [Copy message to clipboard]
 复制消息到剪贴板
 [&File]
 文件(&F)
+[Save message log as...]
+保存消息日志为...
+[Close message session\tCtrl+W]
+关闭消息会话\tCtrl+W
+[Close container\tAlt+F4]
+关闭容器\tAlt+F4
+[&View]
+查看(&V)
 [Show menu bar]
 显示菜单栏
 [Show status bar]
 显示状态栏
+[Info panel...]
+信息面板...
 [Toolbar]
 工具栏
+[Show toolbar]
+显示工具栏
+[Place toolbar at bottom]
+工具栏置于底部 
+[Title bar]
+标题栏
+[Tabs at the bottom]
+标签置于底部
+[Window flashing]
+窗口闪动
+[Use default value]
+使用默认值
+[Show multisend contact list]
+显示多发送联系人列表
+[Stay on top]
+置于顶层
+[Message &log]
+消息日志(&L)
+[&Container]
+容器(&C)
+[Event popups]
+事件弹出窗口
+[Disable all event popups]
+禁止所有事件弹出窗口
 [View user's history]
 查看用户历史
 [%s has joined]
@@ -8729,6 +8837,8 @@ Windows Areo 设置
 信息  (10x10)
 [Message Sessions]
 消息会话
+[Selection background]
+选中的背景
 [Selected text]
 选择文字
 [Nick list background]
@@ -8781,8 +8891,68 @@ Windows Areo 设置
 来自 %s 的消息
 [Paste and send]
 粘贴并发送
+[Send a file]
+发送文件
+[Quote message]
+引用消息
+[Toggle send later]
+切换稍后发送
+[Send message]
+发送消息
+[Show message history]
+显示消息历史
+[Show send menu]
+显示发送菜单
+[Show protocol menu]
+显示协议菜单
 [Show user menu]
 显示用户菜单
+[Show user details]
+显示用户详情
+[Toggle toolbar]
+切换工具栏
+[Toggle info panel]
+切换信息面板
+[Toggle text direction]
+切换文字方向
+[Toggle multi send]
+切换多发送
+[Clear message log]
+清除消息日志
+[Toggle filter]
+切换过滤器
+[Show server window]
+显示服务器窗口
+[%s    Idle: %dh,%02dm]
+%s    空闲：%dh,%02dm
+[  Client: %s]
+  客户端：%s
+[  Client not cached yet]
+  客户端尚未缓存
+[Topic is: %s]
+主题是：%s
+[no topic set.]
+未设置主题。
+[Open user details...]
+打开用户详情...
+[Open history...]
+打开历史...
+[Messaging settings...]
+消息设置...
+[Room settings...]
+房间设置...
+[Copy to clipboard]
+复制到剪贴板
+[\\ul\\b Status message:\\ul0\\b0 \\par %s]
+\\ul\\b 状态消息：\\ul0\\b0 \\par %s
+[\\par\\par\\ul\\b Extended status information:\\ul0\\b0 \\par ]
+\\par\\par\\ul\\b 扩展状态信息：\\ul0\\b0 \\par 
+[\\par\\par\\ul\\b Listening to:\\ul0\\b0 \\par %s]
+\\par\\par\\ul\\b 正在听：\\ul0\\b0 \\par %s
+[\\par\\par\\ul\\b Client:\\ul0\\b0  %s]
+\\par\\par\\ul\\b 客户端：\\ul0\\b0  %s
+[TabSRMM information]
+TabSRMM 信息
 [contact]
 联系
 [Skins]
@@ -8843,10 +9013,24 @@ Windows Areo 设置
 当发送时最小化消息窗口
 [Close the message window on send]
 当发送时关闭消息窗口
+[...has stopped typing.]
+...已停止输入。
+[...is typing a message.]
+...正在输入消息。
 [Contact started typing]
 联系人开始输入
 [Contact stopped typing]
 联系人停止输入
+[Force default message log]
+强制默认消息日志
+[Force History++]
+强制 History++
+[Force IEView]
+强制 IEView
+[Set messaging options for %s]
+设置 %s 的消息选项
+[TabSRMM message (%s)]
+TabSRMM 消息 (%s)
 #muuid {8392df1d-9090-4f8e-9df6-2fe058edd800}
 ;============================================================
 ;  File: Tipper.dll
@@ -10024,10 +10208,10 @@ WAV 文件
 ;  Authors: ZERO_BiT
 ;============================================================
 [Adds Miranda NG icon into Alt+Tab switch dialog even if Miranda's main window has style other Title bar.]
-��Miranda NGͼ����ӵ�Alt + Tab�л��Ի����У���ʹMiranda�������ھ�����������������ʽ��
+将Miranda NG图标添加到Alt + Tab切换对话框中，即使Miranda的主窗口具有其他标题栏的样式。
 [Plugin works under Windows XP only]
-�����������Windows XP
+插件仅工作于 Windows XP
 [ZeroSwitch plugin failed]
-ZeroSwitch ���ʧ��
+ZeroSwitch 插件失败
 [Oops, we've got a big hook error here :(]
-��ѽ������������һ�����Ӵ���:(
+哎呀，我们这里有一个大钩子错误:(
