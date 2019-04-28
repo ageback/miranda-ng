@@ -13,7 +13,6 @@
 [Enter username:]
 [Show all contacts (Ctrl+A)]
 [Show all contacts]
-[Send message]
 [Send file]
 [Open user info]
 [Open history]

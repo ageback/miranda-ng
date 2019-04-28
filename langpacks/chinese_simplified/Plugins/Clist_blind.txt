@@ -137,7 +137,7 @@
 [Quick search in open groups only]
 仅在打开的分组中快速搜索
 [Templates]
-
+模板
 [Contact:]
 
 [Group:]

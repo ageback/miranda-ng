@@ -39,7 +39,7 @@
 [Always show tab bar]
 
 [Tabs at the bottom]
-
+标签置于底部
 [Limit names on tabs to]
 
 [characters]
@@ -61,7 +61,7 @@
 [Show status bar]
 显示状态栏
 [Show toolbar]
-
+显示工具栏
 [Show info bar]
 
 [Show avatars]
@@ -123,7 +123,7 @@
 [minutes]
 分
 [Typing notification options]
-
+输入通知选项
 [Send typing notifications to the following users when you are typing a message to them:]
 当你向以下用户输入消息时，给他们发送正在输入通知：
 [Show typing notification switch in the status bar]
@@ -477,7 +477,7 @@ Google 翻译
 [User's history]
 
 [Send message]
-
+发送消息
 [Smiley button]
 笑脸按钮
 [User is typing]

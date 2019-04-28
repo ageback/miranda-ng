@@ -52,8 +52,6 @@
 [Save as raw data]
 [Popup delay]
 [Delay]
-[From popup plugin]
-[Permanent]
 [Colors]
 [Use same colors as data window]
 [Left click action]

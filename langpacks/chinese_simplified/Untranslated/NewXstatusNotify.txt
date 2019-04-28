@@ -39,7 +39,6 @@
 [Show Popups when I connect]
 [Disable for extra status 'Music']
 [Truncate message length to:]
-[Templates]
 [Notify when contact changes extra status]
 [Template:]
 [Notify when contact removes extra status]

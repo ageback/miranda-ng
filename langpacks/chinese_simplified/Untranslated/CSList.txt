@@ -11,7 +11,6 @@
 [Add new item]
 [Modify item]
 [This field doesn't accept string longer than %d characters. The string will be truncated.]
-[Favorites]
 [Regular statuses]
 [Title]
 [Do you really want to delete selected item?]

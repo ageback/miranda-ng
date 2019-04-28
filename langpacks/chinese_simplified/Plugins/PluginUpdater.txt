@@ -63,7 +63,7 @@
 [Info messages]
 
 [Back]
-
+退回
 [Text]
 文字
 [Colors]

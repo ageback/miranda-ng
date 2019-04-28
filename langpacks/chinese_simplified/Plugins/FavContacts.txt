@@ -53,7 +53,7 @@
 [Regular Contact]
 
 [Favorites]
-
+收藏
 ;file \plugins\FavContacts\src\menu.cpp
 ;file \plugins\FavContacts\src\options.cpp
 [Contacts]

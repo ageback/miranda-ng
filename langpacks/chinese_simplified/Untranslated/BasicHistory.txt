@@ -74,7 +74,6 @@
 [Do you want to delete all imported messages for this contact?\nNote that next scheduler task import this messages again.]
 [Open in &new window]
 [&Open in existing window]
-[Send message]
 [Reply &quoted]
 [Filters]
 [Rich HTML]

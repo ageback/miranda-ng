@@ -47,11 +47,11 @@
 [Delay]
 
 [From popup plugin]
-
+来自弹出窗口插件
 [Custom]
 自定义
 [Permanent]
-
+永久
 [Actions]
 动作
 [On right click:]

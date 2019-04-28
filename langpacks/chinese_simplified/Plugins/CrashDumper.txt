@@ -13,7 +13,7 @@
 [Close]
 关闭
 [Copy To Clipboard]
-
+复制到剪贴板
 [To File]
 
 [Support for vi.miranda-ng.org]
@@ -58,7 +58,7 @@
 [Version Information]
 版本信息
 [Copy to clipboard]
-
+复制到剪贴板
 [Store to file]
 
 [Show]

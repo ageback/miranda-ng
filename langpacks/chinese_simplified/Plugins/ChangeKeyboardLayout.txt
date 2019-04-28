@@ -51,21 +51,21 @@
 [Custom colors]
 
 [Back]
-
+退回
 [Text]
 文字
 [Timeout]
 
 [From popup plugin]
-
+来自弹出窗口插件
 [Permanent]
-
+永久
 [Custom]
 自定义
 [On left click]
 
 [Copy to clipboard]
-
+复制到剪贴板
 [Dismiss]
 
 [On right click]

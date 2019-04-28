@@ -4,7 +4,6 @@
 [Change status to]
 [Change only if current status is Online]
 [Use default status message]
-[Show the Tray Icon]
 [When I return:]
 [Request password:]
 [Change status back]

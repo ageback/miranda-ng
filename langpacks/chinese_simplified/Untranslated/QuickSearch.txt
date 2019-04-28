@@ -99,6 +99,5 @@
 [Other info]
 [Change setting through QS]
 [Selected]
-[Stay on Top]
 [Text Editor]
 [Wrap Text]

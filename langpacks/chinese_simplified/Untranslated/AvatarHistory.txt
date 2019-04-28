@@ -11,8 +11,6 @@
 [Show popup when a contact change his avatar]
 [Colors]
 [Delay]
-[From popup plugin]
-[Permanent]
 [On right click:]
 [On left click:]
 [Track]

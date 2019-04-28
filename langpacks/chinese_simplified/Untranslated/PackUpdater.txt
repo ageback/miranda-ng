@@ -16,7 +16,6 @@
 [Every]
 [(but only once a day)]
 [Message boxes (*)]
-[Back]
 [Colors]
 [Use cus&tom colors]
 [Use &Windows colors]

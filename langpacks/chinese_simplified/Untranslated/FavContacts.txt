@@ -16,7 +16,6 @@
 [<no group>]
 [Favorite Contact]
 [Regular Contact]
-[Favorites]
 [Contact name]
 [Selected contact name (color)]
 [Selected second line (color)]

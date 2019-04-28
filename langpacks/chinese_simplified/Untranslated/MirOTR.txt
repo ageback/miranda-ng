@@ -23,7 +23,6 @@
 [View & Modify status of known fingerprints]
 [Set verified]
 [Set unknown]
-[Forget]
 [Socialist Millionaires Protocol]
 [Socialist Millionaires Protocol\r\nVerification progress]
 [Socialist Millionaires Protocol\r\nVerification]

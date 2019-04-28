@@ -14,8 +14,6 @@
 [Right Click]
 [Popup Delay]
 [Delay]
-[From popup plugin]
-[Permanent]
 [Popup Text]
 [Popup Title]
 [Variables]

@@ -87,7 +87,7 @@
 [Save Pass]
 
 [Back]
-
+退回
 [Text]
 文字
 [Key agreement colors]

@@ -105,7 +105,7 @@
 [Next]
 
 [Back]
-
+退回
 [Complete]
 完成
 [Jabber Password]
@@ -319,7 +319,7 @@ URL
 [View as list]
 
 [Favorites]
-
+收藏
 [Refresh]
 刷新
 [JID:]

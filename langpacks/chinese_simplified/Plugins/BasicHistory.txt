@@ -209,7 +209,7 @@
 [Delete]
 删除
 [Send message]
-
+发送消息
 [Reply &quoted]
 
 [Delete group]

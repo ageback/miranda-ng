@@ -21,7 +21,7 @@
 [Disable Sounds]
 禁用声音
 [Show the Tray Icon]
-
+显示托盘图标
 [When I return:]
 
 [Request password:]

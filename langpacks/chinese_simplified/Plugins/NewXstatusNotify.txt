@@ -141,7 +141,7 @@
 [characters]
 字符
 [Templates]
-
+模板
 [Notify when contact changes extra status]
 
 [Template:]

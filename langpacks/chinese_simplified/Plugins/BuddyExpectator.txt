@@ -49,7 +49,7 @@
 [Custom]
 自定义
 [Permanent]
-
+永久
 [sec]
 秒
 [Preview]

@@ -35,7 +35,6 @@
 [Key Assignment]
 [Debug]
 [Save Pass]
-[Back]
 [Key agreement colors]
 [Secure connection colors]
 [Send/Receive encrypted colors]

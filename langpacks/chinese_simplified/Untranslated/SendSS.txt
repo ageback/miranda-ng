@@ -67,7 +67,6 @@
 [Prev]
 [Next]
 [Edit on]
-[BBCode]
 [BBCode link]
 [Could not create screenshot folder (error code: %d):\n%s\nDo you have write permissions?]
 [Could not create main dialog.]

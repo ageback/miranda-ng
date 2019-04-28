@@ -47,7 +47,7 @@
 [User details]
 用户详情
 [Send Message]
-
+发送消息
 ;file \plugins\ContactsPlus\src\main.cpp
 [Contacts received from]
 

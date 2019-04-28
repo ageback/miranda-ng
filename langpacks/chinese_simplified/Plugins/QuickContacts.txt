@@ -40,7 +40,7 @@
 [Show all contacts]
 
 [Send message]
-
+发送消息
 [Send file]
 
 [Open user info]

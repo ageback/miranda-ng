@@ -11,7 +11,7 @@
 [Clist nicer exception]
 
 [Copy to clipboard]
-
+复制到剪贴板
 [Continue]
 
 [Exit Miranda]
@@ -345,7 +345,7 @@
 [Contact list skin]
 
 [Load this skin on startup]
-
+启动时加载这个皮肤
 [Apply skin now]
 
 [Unload skin]
@@ -369,7 +369,7 @@
 [Corner radius]
 
 [Skin options]
-
+皮肤选项
 [Group top padding]
 
 [Frame title bar height]
@@ -612,7 +612,7 @@
 隐藏所有标题栏 
 ;file \plugins\Clist_nicer\src\cluiopts.cpp
 [Title bar]
-
+标题栏
 [Tool Window]
 
 [Thin border]

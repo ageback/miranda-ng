@@ -255,7 +255,7 @@ Miranda NG 的 IM 和群聊模块。
 [Available formats]
 可用格式
 [Use this to specify a private message log theme for this container. This will have no effect when using IEView or another message log viewer and should NOT be confused with skins.]
-
+使用此选项为此容器指定私有消息日志主题。使用IEView或其他消息日志查看器时，这将不起作用，不应与皮肤混淆。
 [Use global container size and position]
 使用全局容器大小和位置
 [Save current as global]
@@ -267,7 +267,7 @@ Miranda NG 的 IM 和群聊模块。
 [inactive]
 非活动
 [When checked, this container will use private settings, otherwise settings are shared among containers.]
-
+选中时，此容器将使用私有设置，否则设置将在容器之间共享。
 [Apply]
 应用
 [Static]
@@ -305,11 +305,11 @@ Miranda NG 的 IM 和群聊模块。
 [Play sounds for the active tab / window]
 为活动的标签/窗口播放声音
 [Options marked with an asterisk (*) do not affect open message windows.]
-
+标有星号（*）的选项不会影响打开的消息窗口。
 [Message window options]
 消息窗口选项
 [Size and scaling options for the bottom avatar display]
-
+底部头像显示的大小和缩放选项
 [Maximum display height (pixels)]
 最大显示高度（像素）
 [(0 = no limit)]
@@ -331,7 +331,7 @@ px
 [Standard templates...]
 标准模板...
 [RTL templates...]
-
+RTL模板...
 [Load history events]
 加载历史事件
 [Load unread events only]
@@ -343,41 +343,41 @@ px
 [minutes old]
 分钟
 [Global message log display]
-
+全局消息日志显示
 [Typing notification options]
-
+输入通知选项
 [Send typing notifications to the following users when you are typing a message to them:]
 当你向以下用户输入消息时，给他们发送正在输入通知：
 [        Show typing notifications in the message window]
-
+        在消息窗口中显示输入通知
 [Flash window once on typing events (only if flashing enabled)]
-
+键入事件时闪动窗口一次（仅在启用闪动时）
 [        Show typing notifications in the contact list and tray]
-
+        在联系人列表和托盘中显示键入通知
 [Show typing notification when message dialog is open]
-
+当消息对话框打开时显示输入通知
 [Show typing notification when no message dialog is open]
 当没有打开消息对话框时显示正在输入通知
 [Show balloon tooltip in the system tray]
-
+在系统托盘显示气泡工具提示
 [        Show popups when a user is typing]
-
+        当用户正在输入时显示弹出窗口
 [More about typing notifications]
-
+更多关于输入通知
 [Tab options]
-
+标签选项
 [Miscellaneous options]
-
+其他选项
 [Setup status modes for automatic tab creation...]
-
+为自动创建标签设置状态模式...
 [Limit nicknames on tabs to]
-
+限制标签上的昵称为
 [Esc key behavior]
-
+Esc 键行为
 [Select container]
-
+选择容器
 [Available containers]
-
+可用的容器
 [Delete]
 删除
 [Rename]
@@ -387,19 +387,19 @@ px
 [Create new]
 新建
 [To set container options, please use the container settings dialog. It is available by:\n1. choosing "container settings" from the system menu of a container.\n2. right clicking the tab or the button bar in any message window.]
-
+要设置容器选项，请使用容器设置对话框。可以使用以下方式：\n1. 从容器的系统菜单中选择“容器设置”。\n2. 在任意消息容器中，右键点击标签或按钮栏。
 [Tabs should be used in the following way]
-
+标签应按以下方式使用
 [Use contact list groups for organizing tabs (one window per group)]
-
+使用联系人列表组来组织标签（每组一个窗口）
 [Tabbed interface, limit the maximum number of tabs per window to:]
-
+标签界面，将每个窗口的最大选项卡数限制为：
 [No tabs at all, each session has its own top level window]
-
+完全不使用标签，每个会话都有自己的顶级窗口
 [Default mode (tabbed interface, manual assignments)]
-
+默认模式（标签界面，手工指定）
 [Container flashing]
-
+容器闪动
 [Flash containers]
 闪动容器
 [times]
@@ -413,9 +413,9 @@ px
 [Windows Aero settings]
 Windows Areo 设置
 [Use Aero UI elements (only when not using a custom skin)]
-
+使用 Aero UI 元素（仅当未使用自定义皮肤时）
 [Use Windows 7 task bar enhancements (restart required)]
-
+使用 Windows 7 任务栏增强（需要重启）
 [Popups]
 弹出窗口
 [...is &typing]
@@ -429,145 +429,145 @@ Windows Areo 设置
 [&Use Windows colors]
 使用 Windows 颜色(&U)
 [Only &one popup for each contact]
-
+为每个联系人只弹出一个容器(&O)
 [Show &entry in the main menu]
-
+在主菜单中显示入口(&E)
 [...is typing]
-
+...正在输入
 [From popup plugin]
-
+来自弹出窗口插件
 [From protocol]
-
+来自协议
 [Permanent]
-
+永久
 [Custom]
 自定义
 [...stopped typing]
-
+...已停止输入
 [Popups timeout]
-
+弹出窗口超时
 [Templates]
-
+模板
 [Edit template]
-
+编辑模板
 [Double click a template to edit it. Select a template from the list box and click "Update preview" to show a preview message.]
-
+双击一个模板来编辑它。从列表框中选择一个模板并点击“更新预览”来显示预览消息。
 [Get more help on variables]
-
+获取更多变量的帮助
 [Define up to 5 colors which you can use with some variables]
-
+定义最多 5 个颜色，你可以在某些变量中使用它们
 [Close]
 关闭
 [Update preview]
-
+更新预览
 [Save template]
-
+保存模板
 [Forget]
-
+忘记
 [Revert to default]
-
+还原为默认
 [Reset all templates...]
-
+重置所有模板...
 [Default width for fixed (single row) tabs]
-
+固定（单行）标签的默认宽度
 [Tab text label padding vertical]
-
+标签文字标签填充垂直
 [horizontal]
-
+水平
 [Tab page padding:]
-
+标签页填充：
 [inner]
-
+内部
 [outer]
-
+外部
 [Bottom tabs vertical adjustment:]
-
+底部标签垂直调整：
 [NOTE: some settings will not affect open containers.]
-
+注意：某些设置不会影响已打开的容器。
 [Tab layout tweaks]
-
+标签而已调整
 [Selected skin]
-
+选择皮肤
 [Rescan]
 重新扫描
 [Load this skin on startup]
-
+启动时加载这个皮肤
 [Reload active skin]
-
+重新加载活动皮肤
 [Skin options]
-
+皮肤选项
 [Load fonts and colors provided by skin]
-
+加载皮肤提供的字体和颜色
 [Load templates provided by skin (use with care, will overwrite your templates)]
-
+加载皮肤提供的模板（小心使用，将覆盖你的模板）
 [Skin root folder]
-
+皮肤根目录
 [Before you can load or unload a skin, you must close all message windows.]
-
+你必须关闭所有消息窗口，才能加载或卸载皮肤。
 [Close open message windows now]
-
+立即关闭所有消息窗口
 [Theme support]
-
+主题支持
 [You can export and import all your color and font settings here. This allows you to create a Theme file which can be shared between different profiles or with your buddies.]
-
+你可以在这里导出和导入所有你的颜色和字体。
 [Export to a file...]
-
+导出到文件...
 [Import from a file...]
-
+从文件导入...
 [Download more skins]
 下载更多皮肤
 [Icons]
 图标
 [Event type icons in the message log]
-
+消息日志中的事件类型图标
 [Text symbols as event markers]
-
+文字符号作为事件标记
 [Use different icons to mark incoming and outgoing messages]
-
+使用不同的图标来标记传入和传出消息
 [Date and time]
-
+日期和时间
 [Show timestamps]
-
+显示时间戳
 [Show seconds in timestamp]
-
+在时间戳中显示秒
 [Show date in timestamps]
-
+在时间戳中显示日期
 [Use contacts local time]
-
+使用联系人本地时间
 [Format]
-
+格式
 [Indent message body]
-
+缩进消息体
 [Display grid lines]
-
+显示网格线
 [Message grouping]
-
+消息分组
 [Support BBCode]
-
+支持 BBCode
 [Misc]
-
+杂项
 [RTL is default text direction]
-
+右到左是默认文字方向
 [Log status changes (in open message windows only)]
-
+日志状态变更（仅在打开的消息窗口中）
 [Revert to global options]
-
+还原为全局选项
 [You can set private message log options for this contact here. Filled boxes are inherited from the global settings which can be found on Options -> Message sessions -> Message log]
-
+你可以在这里为此联系人设置私有消息日志选项。填充的框是从全局设置中继承的，可以在 选项 -> 消息会话 -> 消息日志 中找到
 [Use normal templates (uncheck to use simple templates)]
-
+使用普通模板（不勾选以使用简单模板）
 [Queued send jobs]
-
+引用的发送任务
 [Queued jobs]
-
+引用的任务
 [Filter by contact:]
-
+按联系人过滤：
 [Display popups for failed jobs]
-
+显示失败的任务的弹出窗口
 [Display popups for completed jobs]
-
+显示完成的任务的弹出窗口
 [Do not show this message again]
-
+不要再次显示此消息
 [Yes]
 是
 [No]
@@ -577,23 +577,23 @@ Windows Areo 设置
 [&Copy]
 复制(&C)
 [&Quote]
-
+引用(&Q)
 [Co&py all]
 复制所有(&P)
 [Select &all]
 选择所有(&A)
 [Clear log]
-
+清除日志
 [Freeze log]
-
+冻结日志
 [Open in &new window]
-
+在新窗口中打开(&N)
 [&Open in existing window]
-
+在存在的窗口中打开(&O)
 [&Copy link]
 复制链接(&C)
 [Editor]
-
+编辑器
 [Cut]
 剪切
 [Copy]
@@ -601,23 +601,23 @@ Windows Areo 设置
 [Paste]
 粘贴
 [Paste formatted text]
-
+粘贴格式化文本
 [Paste and send immediately]
-
+立即粘贴并发送
 [Copy all]
-
+复制所有
 [Select all]
 选择全部
 [Show message length indicator]
-
+显示消息长度指示器
 [Close tab]
-
+关闭标签
 [Close other tabs]
-
+关闭其它标签
 [Leave chat room]
-
+离开聊天室
 [Save tab position]
-
+保存标签位置
 [Clear saved tab position]
 
 [Attach to container...]
@@ -877,79 +877,79 @@ BBCode
 [Tabs]
 标签
 [Normal text]
-
+普通文字
 [Active text]
-
+活动文字
 [Hovered text]
-
+悬停文字
 [Unread text]
-
+未计文字
 [Normal background]
-
+普通背景
 [Active background]
-
+活动背景
 [Hovered background]
-
+悬停背景
 [Unread background]
-
+未计背景
 [>> Outgoing messages]
-
+>> 传出消息
 [>> Outgoing misc events]
-
+>> 传出杂项事件
 [<< Incoming messages]
-
+<< 传入消息
 [<< Incoming misc events]
-
+<< 传入杂项事件 
 [>> Outgoing name]
-
+>> 传出名称
 [>> Outgoing timestamp]
-
+>> 传出时间戳
 [<< Incoming name]
-
+<< 传入名称
 [<< Incoming timestamp]
-
+<< 传入时间戳 
 [>> Outgoing messages (old)]
-
+>> 传出消息（旧） 
 [>> Outgoing misc events (old)]
-
+>> 传出杂项事件（旧）
 [<< Incoming messages (old)]
-
+<< 传入消息（旧）
 [<< Incoming misc events (old)]
-
+<< 传入杂项事件（旧）
 [>> Outgoing name (old)]
-
+>> 传出名称（旧）
 [>> Outgoing timestamp (old)]
-
+>> 传出时间戳（旧）
 [<< Incoming name (old)]
-
+<< 传入名称（旧）
 [<< Incoming timestamp (old)]
-
+<< 传入时间戳（旧）
 [* Message Input Area]
-
+* 消息输入区域
 [* Status changes]
-
+* 状态变更
 [* Dividers]
-
+* 分隔
 [* Error and warning messages]
-
+* 错误和警告消息
 [* Symbols (incoming)]
-
+* 符号（传入）
 [* Symbols (outgoing)]
-
+* 符号（传入） 
 [Nickname]
 昵称
 [UIN]
-
+UIN
 [Status]
 状态
 [Protocol]
 协议
 [Contacts local time]
-
+联系人本地时间
 [Window caption (skinned mode)]
-
+窗口标题（皮肤模式）
 [Open new chat rooms in the default container]
-
+在默认容器中打开新聊天室
 [Flash window when someone speaks]
 有人说话时闪动窗口
 [Flash window when a word is highlighted]
@@ -1065,9 +1065,9 @@ BBCode
 [Channel operators]
 
 [Extended mode 1]
-
+扩展模式 1
 [Extended mode 2]
-
+扩展模式 2
 [Selection background]
 选中的背景
 [Selected text]
@@ -1735,11 +1735,11 @@ TabSRMM 信息
 [Contact]
 联系
 [Original timestamp]
-
+原始时间戳
 [Message text]
-
+消息文字
 [Last send info]
-
+上次发送信息
 [You are about to modify the state of one or more items in the\nunattended send queue. The requested action(s) will be executed at the next scheduled queue processing.\n\nThis action cannot be made undone.]
 
 ;file \plugins\TabSRMM\src\sendqueue.cpp
@@ -1975,9 +1975,9 @@ TabSRMM 信息
 ;file \plugins\TabSRMM\src\trayicon.cpp
 ;file \plugins\TabSRMM\src\typingnotify.cpp
 [Disable &typing notification]
-
+禁止输入通知(&T)
 [Enable &typing notification]
-
+启用输入通知(&T)
 [...has stopped typing.]
 ...已停止输入。
 [...is typing a message.]
@@ -1999,20 +1999,20 @@ TabSRMM 信息
 [TabSRMM message (%s)]
 TabSRMM 消息 (%s)
 [Edit user notes|You are editing the user notes. Click the button again or use the hotkey (default: Alt+N) to save the notes and return to normal messaging mode]
-
+编辑用户注释|你正在编辑用户注释。再次点击按钮或使用热键（默认：Alt+N）以保存注释并返回到普通消息模式
 [Missing component|The icon pack is missing. Please install it to the default icons folder.\n\nNo icons will be available]
-
+缺少组件|缺少图标包。请将它安装到默认图标文件夹。\n\n没有图标可用
 [Aero peek warning|You have enabled Aero Peek features and loaded a custom container window skin\n\nThis can result in minor visual anomalies in the live preview feature.]
-
+Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮肤\n\n这可能会导致实时预览功能出现轻微的视觉异常。
 [File transfer problem|Sending the image by file transfer failed.\n\nPossible reasons: File transfers not supported, either you or the target contact is offline, or you are invisible and the target contact is not on your visibility list.]
-
+文件传输问题|通过文件传输发送图像失败。\n\n可能的原因：不支持文件传输，您或目标联系人处于脱机状态，或者您隐身并且目标联系人不在您的可见列表中。
 [Settings problem|The option \\b1 History -> Imitate IEView API\\b0  is enabled and the History++ plugin is active. This can cause problems when using IEView as message log viewer.\n\nShould I correct the option (a restart is required)?]
-
+设置问题|选项 \\b1 历史 -> 模拟 IEView API\\b0 已启用并且 History++ 插件被激活。当使用 IEView 作为日志查看器时，这会引起问题。\n\n我应该更正选项吗（需要重启）？
 [Configuration issue|The unattended send feature is disabled. The \\b1 send later\\b0  and \\b1 send to multiple contacts\\b0  features depend on it.\n\nYou must enable it under \\b1Options -> Message sessions -> Advanced tweaks\\b0. Changing this option requires a restart.]
-
+配置问题|无人值守发送功能被禁用。\\b1 稍后发送\\b0 和 \\b1 发送给多联系人\\b0 功能依赖于它。\n\n你必须启用它于 \\b1选项 -> 消息会话 -> 高级调整\\b0。更改此选项需要重启。
 [Closing Window|You are about to close a window with multiple tabs open.\n\nProceed?]
-
+关闭窗口|你将要关闭一个包含多个已打开的标签的窗口。\n\n是否继续？
 [Closing options dialog|To reflect the changes done by importing a theme in the options dialog, the dialog must be closed after loading a theme \\b1 and unsaved changes might be lost\\b0 .\n\nDo you want to continue?]
-
+关闭选项对话框|要反映在选项对话框中通过导入主题所产生的变化，对话框必须在加载主题后关闭 \\b1 并且未保存的更改可能丢失\\b0 。\n\n你要继续吗？
 [Loading a theme|Loading a color and font theme can overwrite the settings defined by your skin.\n\nDo you want to continue?]
-
+加载主题|加载颜色和字体主题会覆盖你的皮肤所定义的设置。\n\n你要继续吗？

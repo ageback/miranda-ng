@@ -103,7 +103,7 @@
 [Open in new window]
 
 [Copy to clipboard]
-
+复制到剪贴板
 [Show message]
 
 ;file \plugins\HistoryLinkListPlus\src\language.h

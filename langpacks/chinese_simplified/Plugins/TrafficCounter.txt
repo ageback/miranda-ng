@@ -33,7 +33,7 @@
 [Popup timeout]
 
 [From popup plugin]
-
+来自弹出窗口插件
 [Custom]
 自定义
 [Test]

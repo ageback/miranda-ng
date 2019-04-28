@@ -155,9 +155,9 @@
 [seconds]
 秒
 [From popup plugin]
-
+来自弹出窗口插件
 [Permanent]
-
+永久
 [Popup Text]
 
 [Popup Title]
