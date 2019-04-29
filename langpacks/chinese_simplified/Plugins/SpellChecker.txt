@@ -113,7 +113,7 @@
 [Enable/disable spell checker]
 
 [Enabled]
-
+已启用
 [Disabled]
 已禁用
 [Unknown]

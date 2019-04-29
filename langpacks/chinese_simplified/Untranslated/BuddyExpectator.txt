@@ -21,7 +21,6 @@
 [Enable Miss You]
 [Notify always]
 [Tray/popup icon]
-[Enabled]
 [Hide]
 [Never hide]
 [Hiding %s (%S)]

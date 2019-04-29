@@ -73,7 +73,7 @@
 [&Admin]
 
 [&User]
-
+用户(&U)
 [Change nick...]
 
 [Enter new chatroom topic]

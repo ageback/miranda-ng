@@ -266,7 +266,7 @@
 [Disabled]
 已禁用
 [Enabled]
-
+已启用
 [Always try]
 
 [Create SecureIM connection]

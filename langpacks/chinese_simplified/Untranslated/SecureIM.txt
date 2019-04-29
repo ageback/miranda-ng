@@ -109,7 +109,6 @@
 [The new settings will become valid when you restart Miranda NG!]
 [Keyrings disabled!]
 [Native]
-[Enabled]
 [Always try]
 [Create SecureIM connection]
 [Disable SecureIM connection]

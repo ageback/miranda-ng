@@ -72,7 +72,7 @@
 [Tray/popup icon]
 
 [Enabled]
-
+已启用
 [Disabled]
 已禁用
 [Hide]

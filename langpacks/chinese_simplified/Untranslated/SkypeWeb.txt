@@ -26,7 +26,6 @@
 [Kick &user]
 [Set &role]
 [&Admin]
-[&User]
 [Change nick...]
 [Enter new chatroom topic]
 [Incoming call]

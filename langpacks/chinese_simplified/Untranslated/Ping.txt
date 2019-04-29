@@ -54,7 +54,6 @@
 [Ping Timeout]
 [%s - timeout]
 [Disable]
-[enabled]
 [double clicked]
 [Show/Hide &Ping Window]
 [Host %s requests that you reduce the amount of traffic you are sending.]

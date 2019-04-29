@@ -172,11 +172,11 @@
 [path to Miranda root folder]
 Miranda 的根目录路径
 [path to folder containing Miranda profiles]
-
+包含 Miranda 配置文件的文件夹路径
 [name of current Miranda profile (filename, without extension)]
-
+当前 Miranda 配置文件的名称（文件名，不含扩展）
 [will return parsed string %miranda_profilesdir%\\%miranda_profilename%]
-
+将返回解析的字符串 %miranda_profilesdir%\\%miranda_profilename%
 [will return parsed string %miranda_profilesdir%\\%miranda_profilename%\\AvatarCache]
 
 [will return parsed string %miranda_profilesdir%\\%miranda_profilename%\\Logs]
@@ -184,13 +184,13 @@ Miranda 的根目录路径
 [Miranda Core OS]
 
 [same as environment variable %APPDATA% for currently logged-on Windows user]
-
+和当前登录的Windows用户的 %APPDATA% 环境变量相同
 [username for currently logged-on Windows user]
-
+当前登录的Windows用户的用户名
 ["My Documents" folder for currently logged-on Windows user]
-
+当前登录的Windows用户的“我的文档”文件夹
 ["Desktop" folder for currently logged-on Windows user]
-
+当前登录的Windows用户的“桌面”文件夹 
 [Miranda Related]
 
 [translates status code x into a status description]

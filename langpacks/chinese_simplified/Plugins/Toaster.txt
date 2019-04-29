@@ -13,7 +13,7 @@
 [Add shortcut]
 
 [Enabled]
-
+已启用
 ;file \plugins\Toaster\src\main.cpp
 [This plugin requires Windows 8 or higher]
 

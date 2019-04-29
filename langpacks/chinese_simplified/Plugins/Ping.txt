@@ -156,7 +156,7 @@
 [Disable]
 
 [enabled]
-
+已启用
 [double clicked]
 
 [Show/Hide &Ping Window]

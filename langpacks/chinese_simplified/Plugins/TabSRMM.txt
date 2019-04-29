@@ -1095,33 +1095,33 @@ UIN
 [path to Miranda root folder]
 Miranda 的根目录路径
 [path to folder containing Miranda profiles]
-
+包含 Miranda 配置文件的文件夹路径
 [name of current Miranda profile (filename, without extension)]
-
+当前 Miranda 配置文件的名称（文件名，不含扩展）
 [will return parsed string %miranda_profilesdir%\\%miranda_profilename%]
-
+将返回解析的字符串 %miranda_profilesdir%\\%miranda_profilename%
 [will return parsed string %miranda_userdata%\\Logs]
-
+将返回解析的字符串 %miranda_userdata%\\Logs
 [same as environment variable %APPDATA% for currently logged-on Windows user]
-
+和当前登录的Windows用户的 %APPDATA% 环境变量相同
 [username for currently logged-on Windows user]
-
+当前登录的Windows用户的用户名
 ["My Documents" folder for currently logged-on Windows user]
-
+当前登录的Windows用户的“我的文档”文件夹
 ["Desktop" folder for currently logged-on Windows user]
-
+当前登录的Windows用户的“桌面”文件夹 
 [any environment variable defined in current Windows session (like %systemroot%, %allusersprofile%, etc.)]
-
+当前Windows会话中定义的任意环境变量（像%systemroot%，%allusersprofile%，等等）
 [day of month, 1-31]
-
+每月的日子，1-31
 [day of month, 01-31]
-
+每月的日子，01-31
 [month number, 1-12]
-
+月份数，1-12
 [month number, 01-12]
-
+月份数，01-12
 [abbreviated month name]
-
+缩写月份名称
 [full month name]
 完整月份名称
 [year without century, 01-99]
@@ -1252,20 +1252,20 @@ Miranda 的根目录路径
 [Sending typing notifications is %s.]
 正在发送的输入通知是 %s。
 [Session list.\nClick left for a list of open sessions.\nClick right to access favorites and quickly configure message window behavior]
-
+会话列表。\n单击左键查看打开的会话列表。\n单击右键以访问收藏夹并快速配置消息窗口行为
 [There are %d pending send jobs. Message length: %d bytes, message length limit: %d bytes\n\n%d messages are queued for later delivery]
-
+有%d个待处理的发送任务。消息长度：%d字节，消息长度限制：%d字节\n\n%d消息排队等待以后传送
 ;file \plugins\TabSRMM\src\eventpopups.cpp
 [One of your popup actions is set to DISMISS EVENT.\nNote that this options may have unwanted side effects as it REMOVES the event from the unread queue.\nThis may lead to events not showing up as "new". If you don't want this behavior, please review the 'Event notifications' settings page.]
-
+其中一个弹出操作设置为解除事件。\n请注意，此选项可能会产生不必要的副作用，因为它从未读队列中删除事件。\n这可能导致事件不显示为“新”。如果您不想要此行为，请查看“活动通知”设置页。
 [TabSRMM warning message]
-
+TabSRMM 警告消息
 [Incoming file]
 传入文件
 [No description given]
-
+未给出描述
 [Incoming file (invalid format)]
-
+传入文件（无效格式）
 [Unknown event]
 未知事件
 [New messages: ]
@@ -1290,7 +1290,7 @@ Miranda 的根目录路径
 [%s is typing a message]
 %s 正在输入消息
 [Auto scrolling is disabled, %d message(s) queued (press F12 to enable it)]
-
+自动滚动被禁用，%d 消息排队（按F12来启用它）
 ;file \plugins\TabSRMM\src\globals.cpp
 [Instant messages]
 即时消息
@@ -1309,30 +1309,30 @@ Miranda 的根目录路径
 [Other]
 其他
 [TabSRMM: typing]
-
+TabSRMM：输入
 [TabSRMM session list]
-
+TabSRMM 会话列表
 [TabSRMM menu]
-
+TabSRMM 菜单
 [&Messaging settings...]
-
+消息设置(&M)...
 [&Send later job list...]
-
+稍后发送任务列表(&S)...
 [Message from %s]
 来自 %s 的消息
 [signed off.]
-
+已注销。
 [signed on and is now %s.]
-
+已登录，现在是 %s。
 [changed status from %s to %s.]
-
+改变状态从 %s 到 %s。
 ;file \plugins\TabSRMM\src\hotkeyhandler.cpp
 [Most recent unread session]
-
+最近未读会话
 [Paste and send]
 粘贴并发送
 [Contact's messaging preferences]
-
+联系人的消息首选项
 [Send a file]
 发送文件
 [Quote message]
@@ -1362,7 +1362,7 @@ Miranda 的根目录路径
 [Clear message log]
 清除消息日志
 [Collapse side bar]
-
+收缩边栏
 [Toggle filter]
 切换过滤器
 [Show server window]
@@ -1399,9 +1399,9 @@ Miranda 的根目录路径
 [TabSRMM information]
 TabSRMM 信息
 [Set panel visibility for this %s]
-
+为此 %s 设置面板可见性
 [chat room]
-
+聊天室
 [contact]
 联系
 [Do not synchronize the panel height with IM windows]
@@ -1829,29 +1829,29 @@ TabSRMM 信息
 [Error feedback]
 
 [Close current tab on send]
-
+发送时关闭当前标签
 [Enable unattended send (experimental feature, required for multisend and send later) (*)]
 
 [Show client description in info panel]
-
+在信息面板中显示客户端描述
 [On tab control]
-
+在标签控件上
 [On the button bar]
 在按钮栏上
 [Disable error popups on sending failures]
-
+发送失败时禁止错误弹出窗口
 [Show a preview of the event]
-
+显示事件预览
 [Don't announce event when message dialog is open]
-
+消息对话框打开时不要公布事件
 [Don't announce events from RSS protocols]
-
+不要公布来自RSS协议的事件
 [Enable the system tray icon]
-
+启用系统托盘图标
 [Merge new events for the same contact into existing popup]
-
+将同一联系人的新事件合并到现有弹出窗口中
 [Show headers]
-
+显示头部
 [Dismiss popup]
 关闭弹出窗口
 [Open event]
@@ -1865,7 +1865,7 @@ TabSRMM 信息
 [Disable notifications for non-message events]
 禁用非消息事件的事件通知 
 [Remove popups for a contact when the message window is focused]
-
+在消息窗口聚焦时移除联系人的弹出窗口
 [Remove popups for a contact when I start typing a reply]
 
 [Remove popups for a contact when I send a reply]

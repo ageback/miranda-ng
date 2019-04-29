@@ -9,7 +9,7 @@
 
 ;file \plugins\Spamotron\res\spamotron.rc
 [Enabled]
-
+已启用
 [Learned ham messages:]
 
 [Learned spam messages:]

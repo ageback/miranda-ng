@@ -111,7 +111,7 @@
 [Icon flashing on event]
 
 [Enabled]
-
+已启用
 [Perform check on each startup]
 
 [Time of last check:]

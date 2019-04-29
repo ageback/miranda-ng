@@ -28,7 +28,6 @@
 [days before]
 [Check every]
 [Icon flashing on event]
-[Enabled]
 [Perform check on each startup]
 [Time of last check:]
 [Birthday compatibility mode:]

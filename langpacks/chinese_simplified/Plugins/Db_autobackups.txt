@@ -88,21 +88,21 @@
 [path to Miranda root folder]
 Miranda 的根目录路径
 [path to folder containing Miranda profiles]
-
+包含 Miranda 配置文件的文件夹路径
 [name of current Miranda profile (filename, without extension)]
-
+当前 Miranda 配置文件的名称（文件名，不含扩展）
 [will return parsed string %miranda_profilesdir%\\%miranda_profilename%]
-
+将返回解析的字符串 %miranda_profilesdir%\\%miranda_profilename%
 [same as environment variable %APPDATA% for currently logged-on Windows user]
-
+和当前登录的Windows用户的 %APPDATA% 环境变量相同
 [username for currently logged-on Windows user]
-
+当前登录的Windows用户的用户名
 ["My Documents" folder for currently logged-on Windows user]
-
+当前登录的Windows用户的“我的文档”文件夹
 ["Desktop" folder for currently logged-on Windows user]
-
+当前登录的Windows用户的“桌面”文件夹 
 [any environment variable defined in current Windows session (like %systemroot%, %allusersprofile%, etc.)]
-
+当前Windows会话中定义的任意环境变量（像%systemroot%，%allusersprofile%，等等）
 [Variables]
 变量
 [Error creating backup folder]
