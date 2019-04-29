@@ -163,7 +163,7 @@
 [Wildcard enabled network search]
 
 [Channel manager]
-
+频道管理器
 [Bans]
 
 [Invites]
@@ -183,7 +183,7 @@
 [User limit:]
 
 [Private]
-
+私有
 [Secret]
 
 [Topic]

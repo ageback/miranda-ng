@@ -16,7 +16,6 @@
 [Use contact notification for this account]
 [Replace nickname]
 [Disable Events]
-[Notifications]
 [New Mail]
 [Sound]
 [Keyboard Flash]

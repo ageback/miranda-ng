@@ -15,7 +15,7 @@
 [- Add your replies, one per line.]
 
 [Variables]
-
+变量
 [Hints:]
 
 [- Add "---" for separator.]

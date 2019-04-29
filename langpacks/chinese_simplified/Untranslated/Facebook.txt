@@ -60,7 +60,6 @@
 [Friend]
 [User]
 [Former]
-[Notifications]
 [%s and more (%d)]
 [Login error: %s]
 [Unknown error]

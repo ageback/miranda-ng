@@ -151,7 +151,7 @@
 [Former]
 
 [Notifications]
-
+通知
 [%s and more (%d)]
 
 ;file \protocols\FacebookRM\src\communication.cpp

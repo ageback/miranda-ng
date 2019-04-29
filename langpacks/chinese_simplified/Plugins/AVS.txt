@@ -104,7 +104,7 @@
 [Protocols]
 
 [Contact avatars]
-
+联系人头像
 [Own avatars]
 
 [No avatar]

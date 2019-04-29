@@ -67,6 +67,5 @@
 [\n; End of automatically generated Keyboard Notify Theme file\n]
 [Keyboard Notify Theme]
 [Rules]
-[Flashing]
 [Themes]
 [Keyboard Flash]

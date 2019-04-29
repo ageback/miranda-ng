@@ -17,7 +17,6 @@
 [Use last message set for this status]
 [Set the following message:]
 [Put default message in message list]
-[Variables]
 [Update variables in status messages every]
 [Do not update variables during idle]
 [Do not update variables on ICQ status message requests]

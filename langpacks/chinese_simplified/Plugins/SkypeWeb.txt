@@ -99,7 +99,7 @@
 [File]
 文件
 [Unknown event]
-
+未知事件
 ;file \protocols\SkypeWeb\src\skype_events.cpp
 [SkypeWeb error: Invalid data!]
 
@@ -178,7 +178,7 @@
 网络
 ;file \protocols\SkypeWeb\src\skype_popups.cpp
 [Notifications]
-
+通知
 [Errors]
 错误
 [Calls]

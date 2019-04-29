@@ -569,7 +569,7 @@
 [Errors]
 错误
 [Notifications]
-
+通知
 [VK user activate/deactivate action]
 
 [User %s added as friend]

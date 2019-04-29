@@ -55,7 +55,7 @@
 [Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.]
 
 [Notifications]
-
+通知
 [Restart]
 重启
 [Errors]

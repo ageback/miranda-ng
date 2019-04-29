@@ -395,7 +395,7 @@
 
 ;file \protocols\Gadu-Gadu\src\popups.cpp
 [Notifications]
-
+通知
 [Errors]
 错误
 ;file \protocols\Gadu-Gadu\src\services.cpp

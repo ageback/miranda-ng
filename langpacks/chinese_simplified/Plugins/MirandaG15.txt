@@ -196,7 +196,7 @@
 [Appearance]
 出现
 [Notifications]
-
+通知
 [Chat sessions]
 
 [Contact list]

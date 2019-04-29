@@ -440,7 +440,7 @@
 [Appearance options]
 
 [Message log options]
-
+消息日志选项
 [HTML file]
 
 [&Browse Received Files]

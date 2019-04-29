@@ -211,7 +211,6 @@
 [RTF file]
 [XML file]
 [Appearance options]
-[Message log options]
 [HTML file]
 [&Browse Received Files]
 [Include custom event type (0-65535)]

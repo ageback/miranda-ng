@@ -59,7 +59,7 @@
 [Disable Events]
 
 [Notifications]
-
+通知
 [New Mail]
 
 [Sound]

@@ -203,7 +203,7 @@
 [Rules]
 
 [Flashing]
-
+闪动
 [Themes]
 
 [Keyboard Flash]

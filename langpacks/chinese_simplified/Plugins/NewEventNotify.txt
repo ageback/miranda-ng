@@ -9,7 +9,7 @@
 
 ;file \plugins\NewEventNotify\res\resource.rc
 [General options]
-
+常规选项
 [Show entry in the Popups menu]
 
 [Temporarily disable event popups]
@@ -105,7 +105,7 @@
 [Requests your authorization]
 
 [Unknown Event]
-
+未知事件
 [Notify of new events]
 
 [Enable new event notification]

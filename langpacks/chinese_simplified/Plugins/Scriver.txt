@@ -399,15 +399,15 @@ Google 翻译
 [Icons to display in the tray]
 要在托盘中显示的图标
 [nick of current contact (if defined)]
-
+当前联系人的昵称(如果定义了)
 [protocol name of current contact (if defined). Account name is used when protocol supports multiple accounts]
-
+当前联系人的协议名称（如果定义了）。当协议支持多帐户时使用帐户名称
 [user-defined account name of current contact (if defined).]
-
+用户定义的当前联系人的帐户名称（如果定义了）。
 [user ID of current contact (if defined). It is like UIN for ICQ, JID for Jabber, etc.]
-
+当前联系人的用户ID（如果定义了）。它就像 ICQ 的 UIN，Jabber 的 JID，等等。
 [path to Miranda root folder]
-
+Miranda 的根目录路径
 [path to folder containing Miranda profiles]
 
 [name of current Miranda profile (filename, without extension)]
@@ -437,17 +437,17 @@ Google 翻译
 [abbreviated month name]
 
 [full month name]
-
+完整月份名称
 [year without century, 01-99]
-
+不带世纪的年，01-99
 [year with century, 1901-9999]
-
+带世纪的年，1901-9999
 [abbreviated weekday name]
-
+缩写星期名
 [full weekday name]
-
+完整星期名
 [Variables]
-
+变量
 [Appearance]
 出现
 [Default events to show in new chat rooms if the 'event filter' is enabled]
@@ -553,7 +553,7 @@ Google 翻译
 [Kick (10x10)]
 踢  (10x10)
 [Nickchange (10x10)]
-
+昵称变更 (10x10)
 [Topic (10x10)]
 主题  (10x10)
 [Highlight (10x10)]
@@ -561,7 +561,7 @@ Google 翻译
 [Information (10x10)]
 信息  (10x10)
 [Single Messaging]
-
+单个消息
 [Thai]
 
 [Japanese]
@@ -657,11 +657,11 @@ Google 翻译
 [Outgoing messages]
 传出消息
 [Outgoing background]
-
+传出背景
 [Incoming messages]
 传入消息
 [Incoming background]
-
+传入背景
 [Outgoing name]
 传出名称
 [Outgoing time]
@@ -677,7 +677,7 @@ Google 翻译
 [Message area]
 消息区域
 [Input area background]
-
+输入区域背景
 [Unused]
 未使用
 [Info bar contact name]

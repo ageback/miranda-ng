@@ -69,7 +69,7 @@
 [Create XML]
 
 [Notifications]
-
+通知
 [Total connection limit]
 
 [Connections per user limit]

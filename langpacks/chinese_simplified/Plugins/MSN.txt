@@ -172,7 +172,7 @@
 [Custom Smileys]
 
 [Notifications]
-
+通知
 [Errors]
 错误
 [MSN Protocol]

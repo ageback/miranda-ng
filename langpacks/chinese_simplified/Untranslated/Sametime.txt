@@ -46,7 +46,6 @@
 [Group?]
 [True]
 [False]
-[Notifications]
 [%s\n\nSametime error %S\n%s]
 [Success]
 [General failure]

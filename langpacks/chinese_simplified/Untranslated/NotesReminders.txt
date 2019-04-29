@@ -115,7 +115,6 @@
 [Select Executable]
 [The specified time is invalid due to begin of daylight saving (summer time).]
 [The specified time is invalid.]
-[Hour]
 [Day]
 [Week]
 [The specified time offset is invalid.]

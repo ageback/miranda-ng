@@ -163,7 +163,7 @@
 [Popup Title]
 
 [Variables]
-
+变量
 [Default]
 默认
 [Preview]

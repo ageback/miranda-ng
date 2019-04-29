@@ -59,7 +59,7 @@
 [E&xport]
 
 [Private]
-
+私有
 [&Export]
 
 [&Import]

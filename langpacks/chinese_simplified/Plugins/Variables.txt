@@ -67,7 +67,7 @@
 [Services]
 
 [Variables]
-
+变量
 ;file \plugins\Variables\src\parse_alias.cpp
 [Alias]
 
@@ -170,7 +170,7 @@
 [Miranda Core Global]
 
 [path to Miranda root folder]
-
+Miranda 的根目录路径
 [path to folder containing Miranda profiles]
 
 [name of current Miranda profile (filename, without extension)]

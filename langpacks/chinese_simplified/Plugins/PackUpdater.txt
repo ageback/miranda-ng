@@ -33,7 +33,7 @@
 [Go to Options -> Customize -> Hotkeys to change the hotkey]
 
 [Notifications]
-
+通知
 [Message boxes]
 
 [Errors]

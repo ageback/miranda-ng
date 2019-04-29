@@ -131,7 +131,7 @@
 
 ;file \protocols\Sametime\src\utils.cpp
 [Notifications]
-
+通知
 [Errors]
 错误
 [%s\n\nSametime error %S\n%s]

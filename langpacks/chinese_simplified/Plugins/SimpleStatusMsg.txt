@@ -51,7 +51,7 @@
 [Put default message in message list]
 
 [Variables]
-
+变量
 [Update variables in status messages every]
 
 [seconds]

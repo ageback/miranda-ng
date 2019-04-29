@@ -619,49 +619,49 @@ Windows Areo 设置
 [Save tab position]
 保存标签位置
 [Clear saved tab position]
-
+清除保存的标签位置
 [Attach to container...]
-
+附加到容器...
 [Container options...]
-
+容器选项...
 [Close container]
-
+关闭容器
 [Show contact picture]
-
+显示联系人照片
 [Default]
 默认
 [Hidden for this contact]
-
+对此联系人隐藏
 [Visible for this contact]
-
+对此联系人可见
 [Contact picture settings...]
-
+联系人照片设置...
 [Always keep the button bar at full width]
-
+问题保持按钮栏完整宽度
 [Save this picture as...]
-
+保存此照片为...
 [&Message log settings]
-
+消息日志设置(&M)
 [&Global...]
-
+全局(&G)...
 [&For this contact...]
-
+为此联系人(&F)...
 [Send &default]
-
+发送默认(&D)
 [Send to &multiple users]
-
+发送到多个用户(&M)
 [Send to &container]
-
+发送到容器(&C)
 [Send &later]
-
+稍后发送(&L)
 [Send unsafe (ignore timeouts)]
-
+发送不安全(忽略超时)
 [Splitter position]
-
+分隔位置
 [Global]
 全局
 [Private]
-
+私有
 [Send text formatting]
 发送文本格式
 [BBCode]
@@ -761,50 +761,50 @@ BBCode
 [Disable all event popups]
 禁止所有事件弹出窗口
 [Show popups if window is minimized]
-
+当窗口最小化时显示弹出窗口
 [Show popups if window is unfocused]
-
+当窗口未聚集时显示弹出窗口
 [Show popups if window is focused]
-
+当窗口聚集时显示弹出窗口
 [Show popups for all inactive sessions]
-
+为所有非活动会话显示弹出窗口
 [Save current window position as default]
-
+保存当前窗口位置为默认
 ;file \plugins\TabSRMM\src\buttonsbar.cpp
 [Protocol button]
-
+协议按钮
 [Info button]
-
+信息按钮
 [Bold text]
-
+粗体文字
 [Italic text]
-
+斜体文字
 [Underlined text]
-
+下划线文字
 [Strike-through text]
-
+删除线文字
 [Send message\nClick dropdown arrow for sending options]
-
+发送消息\n点击下拉箭头显示发送选项
 [Close session]
-
+关闭会话
 [Quote last message OR selected text]
-
+引用最后的消息或选中的文字
 [Message log options]
-
+消息日志选项
 [View user's history]
 查看用户历史
 [Edit user notes]
-
+编辑用户注释
 [Select font color]
-
+选择字体颜色
 [Change background color]
-
+更改背景色
 [Toggle nick list]
-
+切换昵称列表
 [Event filter - right click to setup, left click to activate/deactivate]
-
+事件过滤器 - 右击以设置，左键以激活/取消激活
 [Channel manager]
-
+频道管理器
 ;file \plugins\TabSRMM\src\chat_log.cpp
 [%s has joined]
 %s 已加入
@@ -837,43 +837,43 @@ BBCode
 消息会话
 ;file \plugins\TabSRMM\src\chat_options.cpp
 [Input area background]
-
+输入区域背景
 [Log background]
-
+日志背景
 [Single Messaging]
-
+单个消息
 [Outgoing background]
-
+传出背景
 [Incoming background]
-
+传入背景
 [Status background]
-
+状态背景
 [Incoming background(old)]
-
+传入背景（旧）
 [Outgoing background(old)]
-
+传出背景（旧）
 [Horizontal Grid Lines]
-
+水平网格线
 [Info Panel]
-
+信息面板
 [Panel background low]
-
+面板背景低
 [Panel background high]
-
+面板背景高
 [Common colors]
-
+通用颜色
 [Toolbar background high]
-
+工具栏背景高
 [Toolbar background low]
-
+工具栏背景低
 [Window fill color]
-
+窗口填充色
 [Text area borders]
-
+文字区域边框
 [Aero glow effect]
-
+Areo 发光效果
 [Generic text color (only when fill color is set)]
-
+通用文字颜色（仅在设置填充颜色时）
 [Tabs]
 标签
 [Normal text]
@@ -955,33 +955,33 @@ UIN
 [Flash window when a word is highlighted]
 突出显示单词时闪动窗口
 [Create tabs or windows for highlight events]
-
+为高亮事件创建标签或窗口
 [Activate chat window on highlight]
-
+高亮时激活聊天窗口
 [Show list of users in the chat room]
 显示聊天室中的用户列表
 [Colorize nicknames in member list]
-
+在成员列表中着色昵称
 [Show button menus when right clicking the buttons]
 当右键点击按钮时显示按钮菜单
 [Show topic as status message on the contact list]
-
+在联系人列表中将主题显示为状态消息
 [Do not pop up the window when joining a chat room]
 当加入聊天室时不要弹出窗口
 [Sync splitter position with standard IM sessions]
-
+同步分隔栏与标准IM会话
 [Show contact's status modes if supported by the protocol]
-
+如果协议支持，则显示联系人的状态模式
 [Display contact's status icon before user role icon]
-
+在用户角色图标之前显示联系人的状态图标
 [Use IRC style status indicators in the nick list]
-
+在昵称列表中使用IRC样式状态指示符
 [Use alternative sorting method in member list]
-
+在成员列表中使用替代排序方法
 [Prefix all events with a timestamp]
 在所有事件前加时间戳前缀
 [Timestamp only when event time differs]
-
+仅当事件时间不同时的时间戳
 [Timestamp has same color as the event]
 时间戳的颜色和事件相同
 [Indent the second line of a message]
@@ -989,25 +989,25 @@ UIN
 [Limit user names in the message log to 20 characters]
 限制消息日志中的用户名为20字符
 [Add a colon (:) to auto-completed user names]
-
+为自动填写的用户名添加冒号(:)
 [Add a comma instead of a colon to auto-completed user names]
-
+为自动填写的用户名添加逗号而不是冒号
 [Start private conversation on double click in nick list (insert nick if unchecked)]
-
+在昵称列表中双击启动私人对话（如果未选中则插入昵称）
 [Strip colors from messages in the log]
 从日志中的消息中去除颜色
 [Enable the 'event filter' for new rooms]
 为新房间启用“事件过滤器”
 [Use IRC style status indicators in the log]
-
+在日志中使用IRC样式状态指示器
 [Allow clickable user names in the message log]
-
+在消息日志中允许可点击的用户名
 [Add new line after names]
-
+在名称后面添加新行
 [Colorize user names in message log]
-
+着色消息日志中的用户名
 [Scale down icons to 10x10 pixels in the chat log]
-
+在聊天记录中将图标缩小到10x10像素
 [Window Icon]
 窗口图标
 [Icon overlay]
@@ -1045,7 +1045,7 @@ UIN
 [Notice (10x10)]
 通知  (10x10)
 [Nickchange (10x10)]
-
+昵称变更 (10x10)
 [Topic (10x10)]
 主题  (10x10)
 [Highlight (10x10)]
@@ -1055,15 +1055,15 @@ UIN
 [Message Sessions]
 消息会话
 [Group chat windows]
-
+群聊窗口
 [Group chat log]
-
+群聊日志
 [Voiced]
-
+语音
 [Half operators]
-
+半操作者
 [Channel operators]
-
+频道操作者
 [Extended mode 1]
 扩展模式 1
 [Extended mode 2]
@@ -1073,9 +1073,9 @@ UIN
 [Selected text]
 选择文字
 [Incremental search highlight]
-
+增量搜索高亮
 [Fields background]
-
+域背景
 [Nick list background]
 昵称列表背景
 [Group chat log background]
@@ -1085,15 +1085,15 @@ UIN
 [Appearance of the message log]
 消息日志的外观
 [nick of current contact (if defined)]
-
+当前联系人的昵称(如果定义了)
 [protocol name of current contact (if defined). Account name is used when protocol supports multiple accounts]
-
+当前联系人的协议名称（如果定义了）。当协议支持多帐户时使用帐户名称
 [user-defined account name of current contact (if defined).]
-
+用户定义的当前联系人的帐户名称（如果定义了）。
 [user ID of current contact (if defined). It is like UIN for ICQ, JID for Jabber, etc.]
-
+当前联系人的用户ID（如果定义了）。它就像 ICQ 的 UIN，Jabber 的 JID，等等。
 [path to Miranda root folder]
-
+Miranda 的根目录路径
 [path to folder containing Miranda profiles]
 
 [name of current Miranda profile (filename, without extension)]
@@ -1123,134 +1123,134 @@ UIN
 [abbreviated month name]
 
 [full month name]
-
+完整月份名称
 [year without century, 01-99]
-
+不带世纪的年，01-99
 [year with century, 1901-9999]
-
+带世纪的年，1901-9999
 [abbreviated weekday name]
-
+缩写星期名
 [full weekday name]
-
+完整星期名
 [Variables]
-
+变量
 [All files]
 所有文件
 [Select folder]
 选择文件夹
 [No markers]
-
+无标记
 [Show as icons]
-
+显示为图标
 [Show as text symbols]
-
+显示为文字符号
 [Settings]
 设置
 [Log formatting]
-
+日志格式
 [Events and filters]
-
+事件和过滤器
 [Highlighting]
-
+高亮
 ;file \plugins\TabSRMM\src\chat_tools.cpp
 [%s%s says:%s %s]
-
+%s%s 说：%s %s
 ;file \plugins\TabSRMM\src\chat_window.cpp
 [Expand or collapse the side bar]
-
+展开或收缩边栏
 [The filter cannot be enabled, because there are no event types selected either global or for this chat room]
-
+无法启用过滤器，因为没有为全局或此聊天室选择事件类型
 [Event filter error]
-
+事件过滤器错误
 [, %d %s, %d %s idle]
-
+, %d %s, %d %s 空闲
 [hours]
 小时
 [hour]
-
+小时
 [minutes]
 分
 [minute]
-
+分
 [, %d %s idle]
-
+, %d %s 空闲
 [%s on %s%s]
-
+%s 在 %s%s
 [%s: chat room (%u user%s)]
-
+%s：聊天室(%u 用户%s)
 [%s: chat room (%u users%s)]
-
+%s：聊天室(%u 用户%s)
 [, event filter active]
-
+, 事件过滤器激活
 [%s: message session]
 %s：消息会话
 [%s: message session (%u users)]
 %s：消息会话（%u 用户）
 ;file \plugins\TabSRMM\src\container.cpp
 [Message session...]
-
+消息会话...
 [Default container]
-
+默认容器
 [Attach to]
-
+附加到
 ;file \plugins\TabSRMM\src\containeroptions.cpp
 [General options]
-
+常规选项
 [Window layout]
-
+窗口而已
 [Tabs and switch bar]
-
+标签和切换栏
 [Choose your options for the tabbed user interface. Not all options can be applied to open windows. You may need to close and re-open them.]
-
+为你的标签用户界面选择选项。不是所有的选项都能被应用到打开的窗口。你可能需要关闭并重新打开它们。
 [Notifications]
-
+通知
 [Select, when you want to see event notifications (popups) for this window. The settings apply to all tabs within this window.]
-
+选择，当你想看见这个窗口的事件通知（弹出窗口）时。该设置应用到这个窗口的所有标签上。
 [Flashing]
-
+闪动
 [Window size and theme]
-
+窗口大小和主题
 [You can select a private theme (.tabsrmm file) for this container which will then override the default message log theme. You will have to close and re-open all message windows after changing this option.]
-
+您可以为此容器选择一个私有主题（.tabsrmm文件），然后覆盖默认的消息日志主题。 更改此选项后，您必须关闭并重新打开所有消息窗口。
 [Transparency]
-
+透明度
 [This feature may be unavailable when using a container skin.]
-
+使用容器皮肤时，此功能可能不可用。
 [Contact avatars]
-
+联系人头像
 [Sound notifications]
-
+声音通知
 [Container options]
-
+容器选项
 [Tabs at the top]
-
+标签在顶部
 [Switch bar on the left side]
-
+切换栏在左边
 [Switch bar on the right side]
-
+切换栏在右边
 [Globally on]
-
+全局开启
 [On, if present]
-
+开，如果存在
 [Globally OFF]
-
+全局关闭
 [On, if present, always in bottom display]
-
+开，如果存在，总是在底部显示
 [Don't show them]
-
+不要显示它们
 ;file \plugins\TabSRMM\src\controls.cpp
 [&User]
-
+用户(&U)
 [&Room]
-
+房间(&R)
 [Sounds are %s. Click to toggle status, hold Shift and click to set for all open containers]
-
+声音是 %s。点击切换状态，按住 Shift 并点击可以为所有打开的容器设置
 [disabled]
 已禁用
 [enabled]
-
+已启用
 [Sending typing notifications is %s.]
-
+正在发送的输入通知是 %s。
 [Session list.\nClick left for a list of open sessions.\nClick right to access favorites and quickly configure message window behavior]
 
 [There are %d pending send jobs. Message length: %d bytes, message length limit: %d bytes\n\n%d messages are queued for later delivery]
@@ -1267,26 +1267,26 @@ UIN
 [Incoming file (invalid format)]
 
 [Unknown event]
-
+未知事件
 [New messages: ]
-
+新消息：
 [Unknown module or contact]
-
+未知模块或联系人
 [Event notifications]
-
+事件通知
 ;file \plugins\TabSRMM\src\generic_msghandlers.cpp
 [Rich Edit file]
-
+富编辑文件
 [No status message]
-
+无状态消息
 [You cannot edit user notes when there are unsent messages]
-
+当存在未发送的消息时，你不能编辑用户注释
 [%s is typing a message...]
 %s 正在输入消息...
 [Last received: %s at %s]
-
+上次接收：%s %s
 [%s has entered text.]
-
+%s 已经输入文字。
 [%s is typing a message]
 %s 正在输入消息
 [Auto scrolling is disabled, %d message(s) queued (press F12 to enable it)]
@@ -1626,7 +1626,7 @@ TabSRMM 信息
 [A message delivery has failed.\nClick to open the message window.]
 
 [Message Log Options]
-
+消息日志选项
 [Image tag]
 
 [Quote text]

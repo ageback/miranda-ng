@@ -16,7 +16,6 @@
 [Delay]
 [Popup Text]
 [Popup Title]
-[Variables]
 [Updates]
 [Brief Info Title]
 [Note Text]

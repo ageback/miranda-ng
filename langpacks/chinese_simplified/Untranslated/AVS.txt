@@ -36,7 +36,6 @@
 [Reset contact picture]
 [Contact has no avatar]
 [Protocols]
-[Contact avatars]
 [Own avatars]
 [Are you sure you want to remove your avatar?]
 [Flash animations]

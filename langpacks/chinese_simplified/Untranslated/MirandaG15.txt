@@ -82,6 +82,5 @@
 [Maximized replying]
 [Close chat after]
 [When in background]
-[Notifications]
 [Chat sessions]
 [No device attached]

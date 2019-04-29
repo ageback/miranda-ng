@@ -86,7 +86,7 @@
 [minutes]
 分
 [path to Miranda root folder]
-
+Miranda 的根目录路径
 [path to folder containing Miranda profiles]
 
 [name of current Miranda profile (filename, without extension)]
@@ -104,7 +104,7 @@
 [any environment variable defined in current Windows session (like %systemroot%, %allusersprofile%, etc.)]
 
 [Variables]
-
+变量
 [Error creating backup folder]
 
 [Select backup folder]

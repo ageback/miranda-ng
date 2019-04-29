@@ -108,13 +108,13 @@
 [Restore last Session]
 
 [Close Session]
-
+关闭会话
 [Save session...]
 
 [Load session...]
 
 [Close session]
-
+关闭会话
 [Load last session]
 
 ;file \plugins\Sessions\Src\Options.cpp

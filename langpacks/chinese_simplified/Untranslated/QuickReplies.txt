@@ -2,7 +2,6 @@
 [Quick Replies]
 [Send replies immediately]
 [- Add your replies, one per line.]
-[Variables]
 [Hints:]
 [- Add "---" for separator.]
 [- Press [v] button for variable's help.]

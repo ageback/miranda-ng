@@ -270,11 +270,11 @@
 [>> Outgoing timestamp]
 >> 传出时间戳
 [Outgoing background]
-
+传出背景
 [<< Incoming timestamp]
 << 传入时间戳 
 [Incoming background]
-
+传入背景
 [>> Outgoing name]
 >> 传出名称
 [<< Incoming name]
@@ -352,9 +352,9 @@
 [Import and merge]
 
 [Minute]
-
+分
 [Hour]
-
+小时
 [At start]
 
 [At finish]

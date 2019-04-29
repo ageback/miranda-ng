@@ -67,7 +67,6 @@
 [View &Profile]
 [Setup Live &Alerts]
 [Custom Smileys]
-[Notifications]
 [MSN Protocol]
 [Protocol icon]
 [Hotmail Inbox]

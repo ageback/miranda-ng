@@ -22,7 +22,6 @@
 [Public]
 [&Copy SHA1]
 [E&xport]
-[Private]
 [&Export]
 [&Import]
 [Set &keyrings...]
