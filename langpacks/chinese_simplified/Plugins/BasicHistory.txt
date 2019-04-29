@@ -39,7 +39,7 @@
 [Show event icons]
 
 [Show timestamps]
-
+显示时间戳
 [Show names]
 显示名称
 [Show messages]
@@ -53,7 +53,7 @@
 [Limit messages to:]
 
 [Show date in timestamps]
-
+在时间戳中显示日期
 [Show seconds in timestamps]
 
 [Enable smileys]
@@ -199,9 +199,9 @@
 [Do you want to delete all imported messages for this contact?\nNote that next scheduler task import this messages again.]
 
 [Open in &new window]
-
+在新窗口中打开(&N)
 [&Open in existing window]
-
+在存在的窗口中打开(&O)
 [&Copy link]
 复制链接(&C)
 [Copy]
@@ -268,21 +268,21 @@
 [Advanced]
 高级
 [>> Outgoing timestamp]
-
+>> 传出时间戳
 [Outgoing background]
 
 [<< Incoming timestamp]
-
+<< 传入时间戳 
 [Incoming background]
 
 [>> Outgoing name]
-
+>> 传出名称
 [<< Incoming name]
-
+<< 传入名称
 [>> Outgoing messages]
-
+>> 传出消息
 [<< Incoming messages]
-
+<< 传入消息
 [Group list background]
 
 [Find window]

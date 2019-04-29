@@ -61,7 +61,7 @@
 [Paste It]
 
 [Format]
-
+格式
 [Encoding]
 
 [Recode]

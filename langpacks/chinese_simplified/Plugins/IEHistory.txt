@@ -33,7 +33,7 @@
 [Load items in background]
 
 [RTL is default text direction]
-
+右到左是默认文字方向
 [Search]
 搜索
 [&Find next]

@@ -19,7 +19,6 @@
 [User name]
 [Password]
 [Paste It]
-[Format]
 [Encoding]
 [Recode]
 [Use default codepage]

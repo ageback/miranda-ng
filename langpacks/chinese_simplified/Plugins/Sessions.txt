@@ -41,7 +41,7 @@
 [sessions]
 
 [Misc]
-
+杂项
 [Exclude hidden contacts from session on exit]
 
 [Warn, when some of LastSession contacts are hidden]

@@ -29,7 +29,6 @@
 [Weekdays]
 [Yearly]
 [i'm hiding]
-[Date and time]
 [Disable next occurrence]
 [Don't trigger on startup]
 [No reminder]

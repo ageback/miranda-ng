@@ -19,7 +19,7 @@
 [Print]
 
 [Clear Log]
-
+清除日志
 [Show source]
 
 [Options]

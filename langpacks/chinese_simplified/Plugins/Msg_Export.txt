@@ -120,7 +120,7 @@
 [Proto]
 
 [UIN]
-
+UIN
 [No contacts found to export]
 
 [Export Protocols]

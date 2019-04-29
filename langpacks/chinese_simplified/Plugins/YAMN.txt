@@ -210,7 +210,7 @@
 [Copy Selected]
 
 [Copy All]
-
+复制所有
 [Run application]
 
 [Delete selected]

@@ -12,7 +12,6 @@
 [Save Current Session]
 [Save only last]
 [sessions]
-[Misc]
 [Exclude hidden contacts from session on exit]
 [Warn, when some of LastSession contacts are hidden]
 [Show other warnings ("session already opened", etc.)]

@@ -42,7 +42,6 @@
 [You need to restart Miranda to change the history function]
 [Select Destination Directory]
 [Proto]
-[UIN]
 [No contacts found to export]
 [Export Protocols]
 [Message export]

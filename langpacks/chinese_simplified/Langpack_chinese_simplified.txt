@@ -2768,6 +2768,8 @@ PNG位图
 文字
 [Case sensitive]
 区分大小写
+[Message text]
+消息文字
 [Icons]
 图标
 [Error]
@@ -2892,6 +2894,8 @@ PNG位图
 描述：
 [Actions]
 动作
+[Date and time]
+日期和时间
 [Static]
 斜体
 [&Delete]
@@ -3055,12 +3059,16 @@ PNG位图
 消息历史
 [Settings]
 设置
+[Show timestamps]
+显示时间戳
 [Show names]
 显示名称
 [Show messages]
 显示消息
 [hours]
 小时
+[Show date in timestamps]
+在时间戳中显示日期
 [All contacts]
 所有联系人
 [Name]
@@ -3091,6 +3099,10 @@ PNG位图
 无效的消息
 [Are you sure?]
 你确定吗？
+[Open in &new window]
+在新窗口中打开(&N)
+[&Open in existing window]
+在存在的窗口中打开(&O)
 [&Copy link]
 复制链接(&C)
 [Copy]
@@ -3123,6 +3135,18 @@ PNG位图
 正在搜索
 [Advanced]
 高级
+[>> Outgoing timestamp]
+>> 传出时间戳
+[<< Incoming timestamp]
+<< 传入时间戳 
+[>> Outgoing name]
+>> 传出名称
+[<< Incoming name]
+<< 传入名称
+[>> Outgoing messages]
+>> 传出消息
+[<< Incoming messages]
+<< 传入消息
 [Contact list background]
 联系人列表背景
 [Find]
@@ -5517,6 +5541,8 @@ URL
 ;============================================================
 [&Copy Link]
 复制链接(&C)
+[Copy All]
+复制所有
 [Outgoing file]
 传出文件
 [Toolbar]
@@ -5527,6 +5553,8 @@ URL
 授权请求
 [&Reset to Default]
 重置为默认(&R)
+[Open in &new window]
+在新窗口中打开(&N)
 [Select &All]
 选择所有(&A)
 [Send &Message]
@@ -5710,6 +5738,8 @@ URL
 搜索(&S)
 [Other options]
 其它选项
+[RTL is default text direction]
+右到左是默认文字方向
 [Search]
 搜索
 [&Find next]
@@ -5743,6 +5773,8 @@ URL
 复制
 [Select All]
 选择全部
+[Clear Log]
+清除日志
 [Options]
 选项
 [Size:]
@@ -6035,6 +6067,8 @@ URL
 系统
 [Copy]
 复制
+[format]
+格式
 [Offline]
 离线
 [Male]
@@ -6184,6 +6218,8 @@ URL
 状态
 [General]
 通用
+[Format]
+格式
 #muuid {23eacc0d-bab0-49c0-8f37-5e259ece527f}
 ;============================================================
 ;  File: LotusNotify.dll
@@ -6266,6 +6302,8 @@ URL
 秒
 [Incoming messages]
 传入消息
+[Show timestamps]
+显示时间戳
 [Messages]
 消息
 [Status changes]
@@ -6409,6 +6447,8 @@ URL
 文件
 [Nick]
 昵称
+[UIN]
+UIN
 [History]
 历史
 [General]
@@ -7003,6 +7043,8 @@ URL
 下
 [Delete]
 删除
+[Format]
+格式
 [Main]
 主
 [Error]
@@ -7198,6 +7240,8 @@ URL
 女性
 [Contacts]
 联系人
+[Normal background]
+普通背景
 [&Delete]
 删除(&D)
 [&Copy]
@@ -7477,6 +7521,10 @@ Google 翻译
 删除
 [Clear]
 清除
+[Close other tabs]
+关闭其它标签
+[Close tab]
+关闭标签
 [Messaging]
 消息
 [Group chats]
@@ -7731,6 +7779,8 @@ Google 翻译
 %s 正在输入消息
 [Typing notification]
 输入通知
+[&Quote]
+引用(&Q)
 [&Add]
 添加(&A)
 [Add contact permanently to list]
@@ -7981,6 +8031,8 @@ BBCode
 编辑
 [Delete]
 删除
+[Misc]
+杂项
 [&Cancel]
 取消(&C)
 [Cancel]
@@ -9580,6 +9632,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 秒
 [Behavior]
 行为
+[Misc]
+杂项
 [Preview]
 预览
 [Translucency options]
@@ -9834,6 +9888,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 主页
 [E-mail]
 电子邮件
+[Misc]
+杂项
 [Age:]
 年龄：
 [Unspecified]
@@ -10538,6 +10594,8 @@ WAV 文件
 文字颜色
 [Nick]
 昵称
+[Copy All]
+复制所有
 [Select All]
 选择全部
 [Size]

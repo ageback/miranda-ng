@@ -285,7 +285,7 @@
 [Gender]
 
 [Misc]
-
+杂项
 [Show 'Restart' menu item]
 
 [Use zodiac as default avatar]

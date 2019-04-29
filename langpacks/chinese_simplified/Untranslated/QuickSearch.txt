@@ -63,7 +63,6 @@
 [LastEvent]
 [EventCount]
 [Script Editor]
-[Normal background]
 [Normal foreground]
 [Odd background]
 [Odd foreground]

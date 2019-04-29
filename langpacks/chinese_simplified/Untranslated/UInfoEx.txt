@@ -93,7 +93,6 @@
 [Replace the following default icons:]
 [Phone]
 [Gender]
-[Misc]
 [Show 'Restart' menu item]
 [Use zodiac as default avatar]
 [Country flags]

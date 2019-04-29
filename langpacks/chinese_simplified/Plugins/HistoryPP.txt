@@ -108,7 +108,7 @@
 [Date/Time:]
 
 [Copy All]
-
+复制所有
 [&Select All]
 
 [Other event]
@@ -660,7 +660,7 @@
 [Outgoing timestamp]
 
 [Open in &new window]
-
+在新窗口中打开(&N)
 [Open in existing &window]
 
 [Copy &Link]

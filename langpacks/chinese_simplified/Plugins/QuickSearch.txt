@@ -176,7 +176,7 @@
 [Script Editor]
 
 [Normal background]
-
+普通背景
 [Normal foreground]
 
 [Odd background]

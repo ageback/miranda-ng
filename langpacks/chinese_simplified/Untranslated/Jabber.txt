@@ -751,7 +751,6 @@
 [Logoff message]
 [Last active resource]
 [Copy only this value]
-[format]
 [Unknown format]
 [<Photo not available while offline>]
 [<No photo>]

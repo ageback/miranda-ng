@@ -334,7 +334,7 @@
 [Message title]
 
 [Message text]
-
+消息文字
 [RTL]
 
 [Right justified text]

@@ -14,7 +14,6 @@
 [Double click on tooltip]
 [Shows/Hides contact list]
 [Opens message dialog]
-[Misc]
 [Obey 'Suppress online notification' settings]
 [Auto positioning]
 [Transparent input]

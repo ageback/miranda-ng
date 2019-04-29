@@ -1682,7 +1682,7 @@ URL
 [Copy only this value]
 
 [format]
-
+格式
 [Unknown format]
 
 [<Photo not available while offline>]

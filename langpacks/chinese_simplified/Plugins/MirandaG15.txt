@@ -91,7 +91,7 @@
 [Chat session specific]
 
 [Show timestamps]
-
+显示时间戳
 [Messages]
 消息
 [User events]

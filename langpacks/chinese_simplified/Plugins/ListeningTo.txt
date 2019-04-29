@@ -145,7 +145,7 @@
 [General]
 通用
 [Format]
-
+格式
 [Players]
 
 ;file \plugins\ListeningTo\src\players\generic.cpp

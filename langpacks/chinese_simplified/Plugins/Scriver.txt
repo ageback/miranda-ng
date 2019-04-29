@@ -277,9 +277,9 @@ Google 翻译
 [Clear]
 清除
 [Close other tabs]
-
+关闭其它标签
 [Close tab]
-
+关闭标签
 ;file \plugins\Scriver\src\chat_main.cpp
 [Messaging]
 消息
@@ -738,7 +738,7 @@ Google 翻译
 [Typing notification]
 输入通知
 [&Quote]
-
+引用(&Q)
 [Quote]
 
 [&Add]

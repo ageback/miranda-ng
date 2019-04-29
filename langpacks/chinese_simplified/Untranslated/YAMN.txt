@@ -70,7 +70,6 @@
 [Header]
 [Value]
 [Copy Selected]
-[Copy All]
 [Run application]
 [Delete selected]
 [From]

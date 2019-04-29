@@ -7,7 +7,6 @@
 [events per page]
 [Show last page first]
 [Load items in background]
-[RTL is default text direction]
 [Direction]
 [System History]
 [Out of a total of]

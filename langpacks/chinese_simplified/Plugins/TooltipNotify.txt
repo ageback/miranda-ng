@@ -51,7 +51,7 @@
 [Behavior]
 行为
 [Misc]
-
+杂项
 [Obey 'Suppress online notification' settings]
 
 [Auto positioning]
