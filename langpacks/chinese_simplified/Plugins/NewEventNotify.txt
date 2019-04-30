@@ -61,7 +61,7 @@
 [Show time]
 
 [Show headers]
-
+显示头部
 [Number of begin shown messages]
 
 [Last message display first]

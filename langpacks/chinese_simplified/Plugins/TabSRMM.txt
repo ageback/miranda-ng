@@ -1405,38 +1405,38 @@ TabSRMM 信息
 [contact]
 联系
 [Do not synchronize the panel height with IM windows]
-
+不要同步面板高度和IM窗口高度
 [Do not synchronize the panel height with group chat windows]
-
+不要同步面板高度和聊天室窗口高度
 [Inherit from container setting]
-
+从容器设置继承
 [Always off]
-
+总是关闭
 [Always on]
-
+总是开启
 [Use default size]
-
+使用默认大小
 [Use private size]
-
+使用私有大小
 [Use global setting]
-
+使用全局设置
 [Show always (if present)]
-
+总是显示（如果存在）
 [Never show it at all]
-
+根本从来不显示它
 ;file \plugins\TabSRMM\src\mim.cpp
 [TabSRMM]
-
+TabSRMM 
 [Data path]
-
+数据路径
 [Skins]
 皮肤
 [Avatars]
 头像
 [Saved TabSRMM avatars]
-
+保存的 TabSRMM 头像
 [Group chat logs root]
-
+群聊日志根
 [Typing notification]
 输入通知
 ;file \plugins\TabSRMM\src\modplus.cpp
@@ -1456,13 +1456,13 @@ TabSRMM 信息
 [Click for contact menu\nClick dropdown for window settings]
 
 [Retry]
-
+重试
 [Send later]
-
+稍后发送
 [UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nRight click for metacontact control\nClick dropdown to add or remove user from your favorites.]
 
 [No UID]
-
+无UID
 [UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nClick dropdown to change this contact's favorite status.]
 
 [You are editing the user notes. Click the button again or use the hotkey (default: Alt+N) to save the notes and return to normal messaging mode]
@@ -1476,41 +1476,41 @@ TabSRMM 信息
 [Delivery failure: %s]
 
 [The message send timed out]
-
+消息发送超时
 [Contact is offline and this protocol does not support sending files to offline users.]
 
 ;file \plugins\TabSRMM\src\msgdlgutils.cpp
 [Error creating destination directory]
 
 [Save contact picture]
-
+保存联系人照片
 [Image files]
-
+图像文件
 [The file exists. Do you want to overwrite it?]
-
+文件已存在。你要覆盖它吗？
 [Set your avatar...]
-
+设置你的头像...
 [Save and close session]
-
+保存并关闭会话
 [The 'paste and send' feature is disabled. You can enable it on the 'General' options page in the 'Sending messages' section]
 
 ['(Unknown contact)']
 '(未知联系人)'
 [JPEG-compressed images]
-
+JPEG-压缩图像
 ;file \plugins\TabSRMM\src\msglog.cpp
 [Thai]
-
+泰语
 [Japanese]
-
+日语
 [Simplified Chinese]
-
+简体中文
 [Korean]
-
+韩语
 [Traditional Chinese]
-
+繁体中文
 [Central European]
-
+中欧
 [Cyrillic]
 
 [Cyrillic KOI8-R]
@@ -1532,60 +1532,60 @@ TabSRMM 信息
 [Korean (Johab)]
 
 [Sunday]
-
+星期天
 [Monday]
-
+星期一
 [Tuesday]
-
+星期二
 [Wednesday]
-
+星期三
 [Thursday]
-
+星期四
 [Friday]
-
+星期五
 [Saturday]
-
+星期六
 [January]
-
+一月
 [February]
-
+二月
 [March]
-
+三月
 [April]
-
+四月
 [May]
-
+五月
 [June]
-
+六月
 [July]
-
+七月
 [August]
-
+八月
 [September]
-
+九月
 [October]
-
+十月
 [November]
-
+十一月
 [December]
-
+十二月
 [Today]
-
+今天
 [Yesterday]
-
+昨天
 ;file \plugins\TabSRMM\src\msgoptions.cpp
 [<no skin>]
-
+<无皮肤>
 [Do you want to also read message templates from the theme?\nCaution: This will overwrite the stored template set which may affect the look of your message window significantly.\nSelect Cancel to not load anything at all.]
 
 [Load theme]
-
+加载主题
 [Internal message log]
-
+内部消息日志
 [IEView plugin]
-
+IEView 插件
 [History++ plugin]
-
+History++ 插件
 [You have chosen to use an external plugin for displaying the message history in the chat window. Most of the settings on this page are for the standard message log viewer only and will have no effect. To change the appearance of the message log, you must configure either IEView or History++.]
 
 [** New contacts **]
@@ -1593,35 +1593,35 @@ TabSRMM 信息
 [** Unknown contacts **]
 ** 未知联系人 **
 [Always]
-
+总是
 [Always, but no popup when window is focused]
-
+总是，但是当窗口获得焦点时无弹出窗口
 [Only when no message window is open]
-
+仅当没有打开的消息窗口时
 [Normal - close tab, if last tab is closed also close the window]
-
+普通 - 关闭标签，如果最后一个标签被关闭，也关闭窗口
 [Minimize the window to the task bar]
-
+最小化窗口到任务栏
 [Close or hide window, depends on the close button setting above]
-
+关闭或隐藏窗口，依赖上面的关闭按钮设置
 [Choose status modes]
-
+选择状态模式
 [General]
 通用
 [Tabs and layout]
-
+标签和布局
 [Containers]
-
+容器
 [Message log]
 消息日志
 [Typing notify]
 输入通知
 [Message window]
-
+消息窗口
 [Load and apply]
-
+加载并应用
 [Window layout tweaks]
-
+窗口布局调整
 ;file \plugins\TabSRMM\src\msgs.cpp
 [A message delivery has failed.\nClick to open the message window.]
 
@@ -1630,61 +1630,61 @@ TabSRMM 信息
 [Image tag]
 
 [Quote text]
-
+引用的文字
 [Save and close]
-
+保存并关闭
 [Smiley button]
 笑脸按钮
 [Format bold]
-
+格式化粗体
 [Format italic]
-
+格式化斜体
 [Format underline]
-
+格式化下划线
 [Font face]
-
+字型
 [Font color]
-
+字体颜色
 [Format strike-through]
-
+格式化删除线
 [Background color]
 背景色
 [Room settings]
 房间设置
 [Event filter]
-
+事件过滤器
 [Nick list]
-
+昵称列表
 [Message delivery error]
-
+消息传递失败
 [Incoming message]
 传入消息
 [Outgoing message]
 传出消息
 [Status change]
-
+状态变更
 [Static container icon]
 
 [Sounds (status bar)]
-
+声音（状态栏）
 [Pulldown Arrow]
-
+下拉箭头
 [Left Arrow]
-
+左箭头
 [Right Arrow]
-
+右箭头
 [Up Arrow]
-
+上箭头
 [Session List]
-
+会话列表
 [Frame 1]
-
+框架 1
 [Frame 2]
-
+框架 2
 [Frame 3]
-
+框架 3 
 [Frame 4]
-
+框架 14
 [Message Log]
 消息日志
 [Animated Tray]
@@ -1697,20 +1697,20 @@ TabSRMM 信息
 
 ;file \plugins\TabSRMM\src\msgs.h
 [Message windows - IM]
-
+消息窗口 - IM
 [Message windows - all]
-
+消息窗口 - 所有
 [Message windows - group chats]
-
+消息窗口 - 聊天室
 ;file \plugins\TabSRMM\src\selectcontainer.cpp
 [Select container for %s]
-
+选择 %s 的容器
 [You cannot delete the default container]
-
+你不能删除默认容器
 [Error]
 错误
 [You cannot rename the default container]
-
+你不能重命名默认容器
 [This name is already in use]
 
 ;file \plugins\TabSRMM\src\sendlater.cpp

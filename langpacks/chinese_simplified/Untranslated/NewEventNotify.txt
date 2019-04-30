@@ -14,7 +14,6 @@
 [Merge popups from one user]
 [Show date]
 [Show time]
-[Show headers]
 [Number of begin shown messages]
 [Last message display first]
 [Last message display last]
