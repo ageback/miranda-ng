@@ -73,13 +73,13 @@
 [Manage anniversaries]
 
 [Title:]
-
+称号
 [Description:]
 描述：
 [Date:]
 日期：
 [Save]
-
+保存
 [Delete]
 删除
 [Upcoming birthdays]

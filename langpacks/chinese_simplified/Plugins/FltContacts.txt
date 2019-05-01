@@ -29,7 +29,7 @@
 [Tooltips]
 
 [Miscellaneous]
-
+杂项
 [0 = Default]
 
 [*requires Tipper plugin]

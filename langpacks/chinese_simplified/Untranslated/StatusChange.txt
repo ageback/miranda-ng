@@ -2,6 +2,5 @@
 [On events...]
 [Send]
 [Receive]
-[File transfer]
 [...change status to...]
 [...if status is...]

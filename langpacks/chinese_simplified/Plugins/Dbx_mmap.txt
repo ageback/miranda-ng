@@ -21,7 +21,7 @@
 [Enter password]
 
 [Change password]
-
+更改密码：
 [Change]
 
 [Remove]

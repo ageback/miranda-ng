@@ -39,11 +39,11 @@
 [Use BBCode]
 
 [Change password]
-
+更改密码：
 [Enter password]
 
 [Save password]
-
+保存密码
 [Enter the password to continue.]
 
 ;file \protocols\SkypeWeb\src\main.cpp

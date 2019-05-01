@@ -134,7 +134,7 @@
 
 ;file \plugins\SendScreenshotPlus\src\CSendFile.cpp
 [File transfer]
-
+文件传输
 ;file \plugins\SendScreenshotPlus\src\CSendFTPFile.cpp
 [FTPFile transfer]
 
@@ -185,7 +185,7 @@
 [Prev]
 
 [Next]
-
+下一个
 [Update]
 更新
 [Edit on]
@@ -239,7 +239,7 @@ BBCode
 [<Only save>]
 
 [File Transfer]
-
+文件传输
 [E-mail]
 电子邮件
 [FTP File]

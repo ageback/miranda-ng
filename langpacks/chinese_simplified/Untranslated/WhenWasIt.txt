@@ -20,8 +20,6 @@
 [Show all contacts]
 [Set birthday:]
 [Manage anniversaries]
-[Title:]
-[Save]
 [Upcoming birthdays]
 [Upcoming age]
 [Current age]

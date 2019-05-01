@@ -6,144 +6,144 @@
 ;  Authors: George Hazan, Maxim Mluhov, Victor Pavlychko, Artem Shpynov, Michael Stepura
 ;============================================================
 [Jabber (XMPP) protocol support for Miranda NG.]
-
+Miranda NG 的 Jabber (XMPP) 协议支持。
 ;file \protocols\JabberG\res\jabber.rc
 [Edit Note]
-
+编辑注释
 [Tags:]
-
+标签：
 [Cancel]
 取消
 [Type:]
 类型：
 [User:]
-
+用户：
 [Domain/Server:]
-
+域/服务器：
 [Password:]
 密码：
 [Save password]
-
+保存密码
 [Resource:]
-
+资源：
 [Register new user]
-
+注册新用户
 [Use custom connection host and port:]
-
+使用自定义连接主机和端口：
 [Use Domain Login]
-
+使用域登录
 [Go]
-
+去
 [Search service]
-
+搜索服务
 [Roster Editor]
-
+名单编辑器
 [View and modify your server-side contact list.]
-
+查看和编辑你的服务器端联系人列表。
 [Download]
-
+下载
 [Upload]
-
+上传
 [Import from file]
-
+从文件导入
 [Export to file]
-
+导出到文件
 [Username:]
 用户名：
 [Change password]
-
+更改密码：
 [Priority:]
-
+优先级：
 [Use hostname as resource]
-
+使用主机名作为资源
 [List of public servers]
-
+公开的服务器列表
 [Port:]
 端口
 [Use SSL]
-
+使用 SSL
 [Use TLS]
-
+使用 TLS
 [Unregister]
-
+未注册
 [Expert]
-
+专家
 [Manually specify connection host]
-
+手动指定连接主机
 [Host:]
 主机：
 [Keep connection alive]
-
+保持连接活动
 [Automatically delete contacts not in my roster]
-
+自动删除不在我的名单中的联系人
 [User directory:]
-
+用户目录：
 [Language for human-readable resources:]
-
+人类可读资源的语言：
 [File Transfer]
-
+文件传输
 [Allow file sending through direct peer-to-peer connection]
-
+允许通过直接的点对点连接发送文件
 [Specify external address:]
-
+指定外部地址：
 [Allow file sending through bytestream proxy server:]
-
+允许通过字节流代理服务器发送文件：
 [Miscellaneous]
-
+杂项
 [Hint:]
-
+提示：
 [Try to uncheck all checkmarks above if you're experiencing troubles with sending files. But it can cause problems with transfer of large files.]
 
 [Jabber account registration]
-
+Jabber 帐户注册
 [Jabber Form]
-
+Jabber 表单
 [Instruction:]
-
+指令：
 [Submit]
-
+提交
 [Next]
-
+下一个
 [Back]
 退回
 [Complete]
 完成
 [Jabber Password]
-
+Jabber 密码
 [Remember password for this session]
-
+记住这个会话的密码
 [Save password permanently]
-
+永久保存密码
 [Address1:]
-
+地址1：
 [Address2:]
-
+地址2：
 [City:]
 城市：
 [State:]
 州：
 [ZIP:]
-
+邮编
 [Country:]
 国家：
 [Full name:]
-
+全名：
 [Nickname:]
 昵称：
 [First name:]
 名字：
 [Middle:]
-
+中间名
 [Last name:]
 姓：
 [Date of birth:]
 生日：
 [YYYY-MM-DD]
-
+YYYY-MM-DD
 [Gender:]
 性别：
 [Occupation:]
-
+职业：
 [Homepage:]
 主页：
 [Company:]
@@ -151,95 +151,95 @@
 [Department:]
 部门：
 [Title:]
-
+称号
 [E-mail:]
 电子邮件：
 [Phone:]
 电话：
 [Jabber vCard: Add Email Address]
-
+Jabber vCard：添加电子邮件地址
 [Email address:]
-
+电子邮件地址：
 [Home]
-
+家
 [Work]
 工作
 [Internet]
-
+因特网
 [Jabber vCard: Add Phone Number]
-
+Jabber vCard：添加电话号码
 [Phone number:]
-
+电话号码：
 [Voice]
-
+语音
 [Fax]
 传真
 [Pager]
-
+传呼机
 [Text/Messaging]
-
+文字/消息
 [Cellular]
-
+移动电话
 [Video]
-
+视频
 [Modem]
-
+调制解调器
 [Load]
-
+加载
 [Save]
-
+保存
 [Delete]
 删除
 [Description:]
 描述：
 [Change Password]
-
+更改密码
 [Current Password:]
-
+当前密码：
 [New Password:]
-
+新密码：
 [Confirm New Password:]
-
+确认新密码：
 [Jabber Multi-User Conference]
-
+Jabber 多用户会议
 [Create or join existing conference room.]
-
+创建或加入已有的会议室
 [Conference server:]
-
+会议服务器：
 [Room:]
-
+房间：
 [Recently visited chatrooms:]
-
+最近访问的聊天室：
 [Bookmarks]
-
+书签
 [JID List]
-
+JID 列表
 [Apply Filter]
-
+应用过滤器
 [Reset Filter]
-
+重置过滤器
 [Send group chat invitation]
-
+发送群聊邀请
 [Other JID:]
-
+其他 JID：
 [Add]
 添加
 [Invitation reason:]
-
+邀请理由：
 [&Invite]
-
+邀请(&I)
 [Incoming group chat invitation]
-
+传入的群聊邀请
 [You are invited to conference room by]
-
+你被邀请到会议室，由
 [with following reason:]
-
+通过以下理由：
 [&Accept]
-
+接受(&A)
 [Server side bookmarks]
-
+服务器端书签
 [Store conference rooms and web links on server.]
-
+在服务器上存储会议室和网页链接。
 [Remove]
 移除
 [Edit]
@@ -247,23 +247,23 @@
 [Close]
 关闭
 [Bookmark Details]
-
+书签详情
 [Bookmark Type]
-
+书签类型
 [Conference]
-
+会议
 [Transport]
-
+传输
 [URL]
 URL
 [Auto-join (Automatically join Bookmarks must be enabled in Miranda options)]
-
+自动加入（自动加入书签必须在 Miranda 选项中启用）
 [Room JID/ URL:]
-
+房间 JID/ URL：
 [Bookmark Name:]
-
+书签名：
 [Privacy Lists]
-
+隐私列表
 [Flexible way to configure visibility and more.]
 
 [Lists:]
@@ -735,7 +735,7 @@ URL
 [Status icons]
 状态图标
 [transport]
-
+传输
 [Notes]
 笔记
 [Multi-User Conference]
@@ -769,9 +769,9 @@ URL
 [Discovery in progress]
 
 [Apply filter]
-
+应用过滤器
 [Reset filter]
-
+重置过滤器
 [Navigate home]
 
 [Refresh node]
@@ -887,7 +887,7 @@ URL
 [Create/Join group chat]
 
 [Roster editor]
-
+名单编辑器
 [Resource priority]
 
 [Increase priority by %d]
@@ -901,7 +901,7 @@ URL
 [Open bookmarks]
 
 [Privacy lists]
-
+隐私列表
 [Service discovery]
 
 [Last active (%s)]

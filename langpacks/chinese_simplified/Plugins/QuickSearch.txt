@@ -46,7 +46,7 @@
 [Settings]
 设置
 [Title:]
-
+称号
 [Account]
 
 [Gender]
@@ -136,7 +136,7 @@
 [Free memory]
 
 [Save]
-
+保存
 [All]
 
 [Close]

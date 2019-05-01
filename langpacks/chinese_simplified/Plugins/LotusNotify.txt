@@ -98,7 +98,7 @@
 [Popup]
 弹出窗口
 [Miscellaneous]
-
+杂项
 [&Check Lotus]
 
 [Lotus Notify]

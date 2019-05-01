@@ -37,7 +37,6 @@
 [Now checking Lotus, try again later]
 [Attachments: %d bytes]
 [Connection]
-[Miscellaneous]
 [&Check Lotus]
 [Lotus Notify]
 [New Lotus document detected]

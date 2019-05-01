@@ -71,7 +71,7 @@
 [&Save]
 
 [Title:]
-
+称号
 [Use this message as default for]
 
 [New message]
@@ -251,7 +251,7 @@
 [Add]
 添加
 [Save]
-
+保存
 [Settings]
 设置
 [Set %s message for the contact]

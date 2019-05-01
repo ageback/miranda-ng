@@ -179,9 +179,9 @@
 [Bots challenge test]
 
 [Instruction:]
-
+指令：
 [Submit]
-
+提交
 [Cancel]
 取消
 [Open in browser]
@@ -310,7 +310,7 @@
 [Audio]
 
 [Video]
-
+视频
 [Link]
 
 [Document]

@@ -21,7 +21,7 @@
 [Remove account]
 移除帐户
 [Change password]
-
+更改密码：
 [Retrieve password]
 
 [Options]
@@ -51,7 +51,7 @@
 [Advanced Configuration]
 
 [Keep connection alive]
-
+保持连接活动
 [Show connection errors]
 
 [Automatically reconnect after unintentional disconnection]
@@ -65,7 +65,7 @@
 [Use SSL secure connection]
 
 [File Transfer]
-
+文件传输
 [Use direct connections]
 
 [Port:]
@@ -107,7 +107,7 @@
 [This will create new Gadu-Gadu account]
 
 [New password:]
-
+新密码：
 [Confirm password:]
 
 [New e-mail:]

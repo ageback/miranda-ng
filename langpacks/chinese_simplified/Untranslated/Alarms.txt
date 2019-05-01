@@ -13,7 +13,6 @@
 [Alert window]
 [Don't steal focus unless idle]
 [Alarm]
-[Title:]
 [Popup window]
 [Sound:]
 [Run command:]

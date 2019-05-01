@@ -17,7 +17,7 @@
 [Add]
 添加
 [Save]
-
+保存
 [Delete]
 删除
 [Configuration]

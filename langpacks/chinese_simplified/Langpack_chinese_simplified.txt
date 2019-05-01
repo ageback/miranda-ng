@@ -2892,6 +2892,8 @@ PNG位图
 预览
 [Cancel]
 取消
+[Title:]
+称号
 [Description:]
 描述：
 [Actions]
@@ -2935,6 +2937,8 @@ PNG位图
 ;  Version: 0.2.1.1
 ;  Authors: H. Herkenrath
 ;============================================================
+[Miscellaneous]
+杂项
 [Unknown]
 未知
 #muuid {dace7d41-dfa9-4772-89ae-a59a6153e6b2}
@@ -3147,6 +3151,8 @@ PNG位图
 错误
 [Message]
 消息
+[File transfer]
+文件传输
 [Authorization request]
 授权请求
 [You were added]
@@ -5063,6 +5069,8 @@ Angeli-Ka（绘图），FYR（模板）
 复制到剪贴板
 [Show]
 显示
+[Upload]
+上传
 #muuid {3613F2D9-C040-4361-A44F-DF7B5AAACF6E}
 ;============================================================
 ;  File: CryptoPP.dll
@@ -5157,6 +5165,8 @@ GnuPG插件 - 选择公钥
 重命名(&R)
 [All Files]
 所有文件
+[Export to file]
+导出到文件
 [Contact]
 联系
 [Settings]
@@ -5180,6 +5190,8 @@ GnuPG插件 - 选择公钥
 ;============================================================
 [Cancel]
 取消
+[Change password]
+更改密码：
 [Remove]
 移除
 [Database]
@@ -5297,6 +5309,10 @@ Miranda 的根目录路径
 联系人
 [Advanced]
 高级
+[Instruction:]
+指令：
+[Submit]
+提交
 [Messages]
 消息
 [User &details]
@@ -5392,6 +5408,8 @@ Miranda 的根目录路径
 隐藏离线联系人 
 [pixels]
 像素
+[Miscellaneous]
+杂项
 [seconds]
 秒
 [Single click interface]
@@ -5521,8 +5539,14 @@ URL
 创建新帐户
 [Remove account]
 移除帐户
+[Change password]
+更改密码：
 [Options]
 选项
+[Keep connection alive]
+保持连接活动
+[File Transfer]
+文件传输
 [Port:]
 端口
 [Host:]
@@ -5541,6 +5565,8 @@ URL
 描述：
 [Cancel]
 取消
+[New password:]
+新密码：
 [&Create]
 创建(&C)
 [Remove]
@@ -5598,6 +5624,8 @@ URL
 密码：
 [Add]
 添加
+[Save]
+保存
 [Delete]
 删除
 [minutes]
@@ -5708,6 +5736,8 @@ URL
 上移
 [** All contacts **]
 ** 所有联系人 **
+[Miscellaneous]
+杂项
 [Contact menu]
 联系人菜单
 [Configure...]
@@ -5954,6 +5984,8 @@ URL
 系统
 [Other]
 其他
+[Keep connection alive]
+保持连接活动
 [Version]
 版本
 [Time]
@@ -5986,6 +6018,8 @@ URL
 密码：
 [Owner]
 所有者
+[Voice]
+语音
 [Unknown]
 未知
 [Ignore]
@@ -6047,66 +6081,262 @@ URL
 ;  Version: 0.11.0.5
 ;  Authors: George Hazan, Maxim Mluhov, Victor Pavlychko, Artem Shpynov, Michael Stepura
 ;============================================================
+[Jabber (XMPP) protocol support for Miranda NG.]
+Miranda NG 的 Jabber (XMPP) 协议支持。
+[Edit Note]
+编辑注释
+[Tags:]
+标签：
 [Cancel]
 取消
 [Type:]
 类型：
+[User:]
+用户：
+[Domain/Server:]
+域/服务器：
 [Password:]
 密码：
+[Save password]
+保存密码
+[Resource:]
+资源：
+[Register new user]
+注册新用户
+[Use custom connection host and port:]
+使用自定义连接主机和端口：
+[Use Domain Login]
+使用域登录
+[Go]
+去
+[Search service]
+搜索服务
+[Roster Editor]
+名单编辑器
+[View and modify your server-side contact list.]
+查看和编辑你的服务器端联系人列表。
+[Download]
+下载
+[Upload]
+上传
+[Import from file]
+从文件导入
+[Export to file]
+导出到文件
 [Username:]
 用户名：
+[Change password]
+更改密码：
+[Priority:]
+优先级：
+[Use hostname as resource]
+使用主机名作为资源
+[List of public servers]
+公开的服务器列表
 [Port:]
 端口
+[Use SSL]
+使用 SSL
+[Use TLS]
+使用 TLS
+[Unregister]
+未注册
+[Expert]
+专家
+[Manually specify connection host]
+手动指定连接主机
 [Host:]
 主机：
+[Keep connection alive]
+保持连接活动
+[Automatically delete contacts not in my roster]
+自动删除不在我的名单中的联系人
+[User directory:]
+用户目录：
+[Language for human-readable resources:]
+人类可读资源的语言：
+[File Transfer]
+文件传输
+[Allow file sending through direct peer-to-peer connection]
+允许通过直接的点对点连接发送文件
+[Specify external address:]
+指定外部地址：
+[Allow file sending through bytestream proxy server:]
+允许通过字节流代理服务器发送文件：
+[Miscellaneous]
+杂项
+[Hint:]
+提示：
+[Jabber account registration]
+Jabber 帐户注册
+[Jabber Form]
+Jabber 表单
+[Instruction:]
+指令：
+[Submit]
+提交
+[Next]
+下一个
 [Back]
 退回
 [Complete]
 完成
+[Jabber Password]
+Jabber 密码
+[Remember password for this session]
+记住这个会话的密码
+[Save password permanently]
+永久保存密码
+[Address1:]
+地址1：
+[Address2:]
+地址2：
 [City:]
 城市：
 [State:]
 州：
+[ZIP:]
+邮编
 [Country:]
 国家：
+[Full name:]
+全名：
 [Nickname:]
 昵称：
 [First name:]
 名字：
+[Middle:]
+中间名
 [Last name:]
 姓：
 [Date of birth:]
 生日：
+[YYYY-MM-DD]
+YYYY-MM-DD
 [Gender:]
 性别：
+[Occupation:]
+职业：
 [Homepage:]
 主页：
 [Company:]
 公司：
 [Department:]
 部门：
+[Title:]
+称号
 [E-mail:]
 电子邮件：
 [Phone:]
 电话：
+[Jabber vCard: Add Email Address]
+Jabber vCard：添加电子邮件地址
+[Email address:]
+电子邮件地址：
+[Home]
+家
 [Work]
 工作
+[Internet]
+因特网
+[Jabber vCard: Add Phone Number]
+Jabber vCard：添加电话号码
+[Phone number:]
+电话号码：
+[Voice]
+语音
 [Fax]
 传真
+[Pager]
+传呼机
+[Text/Messaging]
+文字/消息
+[Cellular]
+移动电话
+[Video]
+视频
+[Modem]
+调制解调器
+[Load]
+加载
+[Save]
+保存
 [Delete]
 删除
 [Description:]
 描述：
+[Change Password]
+更改密码
+[Current Password:]
+当前密码：
+[New Password:]
+新密码：
+[Confirm New Password:]
+确认新密码：
+[Jabber Multi-User Conference]
+Jabber 多用户会议
+[Create or join existing conference room.]
+创建或加入已有的会议室
+[Conference server:]
+会议服务器：
+[Room:]
+房间：
+[Recently visited chatrooms:]
+最近访问的聊天室：
+[Bookmarks]
+书签
+[JID List]
+JID 列表
+[Apply Filter]
+应用过滤器
+[Reset Filter]
+重置过滤器
+[Send group chat invitation]
+发送群聊邀请
+[Other JID:]
+其他 JID：
 [Add]
 添加
+[Invitation reason:]
+邀请理由：
+[&Invite]
+邀请(&I)
+[Incoming group chat invitation]
+传入的群聊邀请
+[You are invited to conference room by]
+你被邀请到会议室，由
+[with following reason:]
+通过以下理由：
+[&Accept]
+接受(&A)
+[Server side bookmarks]
+服务器端书签
+[Store conference rooms and web links on server.]
+在服务器上存储会议室和网页链接。
 [Remove]
 移除
 [Edit]
 编辑
 [Close]
 关闭
+[Bookmark Details]
+书签详情
+[Bookmark Type]
+书签类型
+[Conference]
+会议
+[Transport]
+传输
 [URL]
 URL
+[Auto-join (Automatically join Bookmarks must be enabled in Miranda options)]
+自动加入（自动加入书签必须在 Miranda 选项中启用）
+[Room JID/ URL:]
+房间 JID/ URL：
+[Bookmark Name:]
+书签名：
+[Privacy Lists]
+隐私列表
 [Messages]
 消息
 [Favorites]
@@ -6139,14 +6369,24 @@ URL
 错误
 [Status icons]
 状态图标
+[transport]
+传输
 [Notes]
 笔记
 [Add contact]
 添加联系人
+[Apply filter]
+应用过滤器
+[Reset filter]
+重置过滤器
 [Move up]
 上移
 [Move down]
 下移
+[Roster editor]
+名单编辑器
+[Privacy lists]
+隐私列表
 [Status Message]
 状态消息
 [To]
@@ -6338,6 +6578,8 @@ URL
 ;  Version: 0.4.0.1
 ;  Authors: Ricardo Pescuma Domenecci
 ;============================================================
+[Video]
+视频
 [Others]
 其它
 [Do nothing]
@@ -6348,6 +6590,8 @@ URL
 秒
 [Listening to]
 正在听
+[Title:]
+称号
 [<Unknown>]
 <未知>
 [Status]
@@ -6375,6 +6619,8 @@ URL
 插件
 [Popup]
 弹出窗口
+[Miscellaneous]
+杂项
 #muuid {b1902a52-9114-4d7e-ac2e-b3a52e01d574}
 ;============================================================
 ;  File: MenuEx.dll
@@ -6622,6 +6868,8 @@ UIN
 密码：
 [Nickname:]
 昵称：
+[Expert]
+专家
 [Reset]
 重置
 [Refresh]
@@ -6701,6 +6949,8 @@ UIN
 ;============================================================
 [&Delete]
 删除(&D)
+[Title:]
+称号
 [Delete]
 删除
 [seconds]
@@ -6759,6 +7009,8 @@ UIN
 忽略
 [Add]
 添加
+[Save]
+保存
 [Settings]
 设置
 [Re&ad %s message]
@@ -6955,6 +7207,8 @@ URL
 ;  Version: 0.1.0.1
 ;  Authors: sss
 ;============================================================
+[Change password]
+更改密码：
 [Ignore]
 忽略
 [Static]
@@ -6963,6 +7217,8 @@ URL
 取消
 [Password:]
 密码：
+[Current password:]
+当前密码：
 [Warning]
 警告
 [Contact]
@@ -7321,6 +7577,8 @@ URL
 秒
 [Popups]
 弹出窗口
+[Download]
+下载
 [Plugins]
 插件
 [Icons]
@@ -7414,6 +7672,8 @@ URL
 默认
 [Settings]
 设置
+[Title:]
+称号
 [Nickname]
 昵称
 [Group]
@@ -7430,6 +7690,8 @@ URL
 模块：
 [Service:]
 服务：
+[Save]
+保存
 [Close]
 关闭
 [Refresh]
@@ -8338,6 +8600,8 @@ Miranda 的根目录路径
 错误
 [An unknown error has occurred.]
 发生了未知的错误。
+[File transfer]
+文件传输
 [Retry]
 重试
 [Yes]
@@ -8350,6 +8614,8 @@ Miranda 的根目录路径
 帮助
 [Open Folder]
 打开文件夹
+[Next]
+下一个
 [Update]
 更新
 [BBCode]
@@ -8360,6 +8626,8 @@ BBCode
 窗口
 [File]
 文件
+[File Transfer]
+文件传输
 [E-mail]
 电子邮件
 #muuid {60558872-2aab-45aa-888d-097691c9b683}
@@ -8375,6 +8643,8 @@ BBCode
 编辑
 [Delete]
 删除
+[Save]
+保存
 [Misc]
 杂项
 [&Cancel]
@@ -8504,6 +8774,10 @@ BBCode
 密码：
 [Others]
 其它
+[Change password]
+更改密码：
+[Save password]
+保存密码
 [Warning]
 警告
 [&User]
@@ -8655,6 +8929,8 @@ BBCode
 外出吃饭
 [Message]
 消息
+[File transfer]
+文件传输
 [Status Change]
 状态变更
 [Status]
@@ -8676,6 +8952,8 @@ BBCode
 消息会话
 [Cancel]
 取消
+[Save password]
+保存密码
 [Name]
 名字
 [Network]
@@ -10984,12 +11262,16 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 名称：
 [Password:]
 密码：
+[Change password]
+更改密码：
 [Cancel]
 取消
 [Add]
 添加
 [Update]
 更新
+[New password:]
+新密码：
 [All files]
 所有文件
 [Error]
@@ -11094,6 +11376,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 应用
 [Nick:]
 昵称：
+[Title:]
+称号
 [First name:]
 名字：
 [Last name:]
@@ -11120,6 +11404,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 部门：
 [Position:]
 职位：
+[Occupation:]
+职业：
 [Add phone number]
 添加电话号码
 [Enter country, area code and phone number:]
@@ -11208,6 +11494,10 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 配置文件
 [Notes]
 笔记
+[Export to file]
+导出到文件
+[Import from file]
+从文件导入
 [Owner]
 所有者
 [View personal user details and more]
@@ -11224,6 +11514,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 更新
 [Fax]
 传真
+[Cellular]
+移动电话
 [Down arrow]
 向下箭头
 [Add]
@@ -11238,6 +11530,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 我的笔记：
 [About:]
 关于：
+[home]
+家
 [Contacts]
 联系人
 [Advanced]
@@ -11260,6 +11554,10 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 土耳其
 [Vietnamese]
 越南语
+[Home]
+家
+[Internet]
+因特网
 [Single]
 单身
 [Close relationships]
@@ -11357,10 +11655,16 @@ Miranda 的根目录路径
 高级
 [Group chats]
 分组聊天
+[Instruction:]
+指令：
+[Submit]
+提交
 [Cancel]
 取消
 [Error]
 错误
+[Video]
+视频
 [(Unknown contact)]
 (未知联系人)
 [Unknown]
@@ -11756,10 +12060,14 @@ N/A
 在后台
 [Close]
 关闭
+[Title:]
+称号
 [Description:]
 描述：
 [Date:]
 日期：
+[Save]
+保存
 [Delete]
 删除
 [Message window]
@@ -11808,6 +12116,8 @@ N/A
 ;  Version: 0.9.8.3
 ;  Authors: Ryan Winter, BlubbFish
 ;============================================================
+[Voice]
+语音
 [Rate]
 分级
 [Status Changes]

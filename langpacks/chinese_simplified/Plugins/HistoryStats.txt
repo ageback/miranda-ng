@@ -587,7 +587,7 @@
 [Prefer HTML output over PNG output if available]
 
 [Miscellaneous]
-
+杂项
 [Generate statistics in background thread with low priority]
 
 [Path to browser (leave blank for system default)]

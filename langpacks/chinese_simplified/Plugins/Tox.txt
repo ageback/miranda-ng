@@ -49,7 +49,7 @@
 [Remove password]
 
 [Change password]
-
+更改密码：
 [Set password]
 
 [If this field contains Tox address (76 hex characters), you will be prompted to add it in your friend list. Otherwise, Miranda will search this query via toxme.io.]
@@ -77,7 +77,7 @@
 [Old password:]
 
 [New password:]
-
+新密码：
 [Confirm password:]
 
 ;file \protocols\Tox\src\main.cpp

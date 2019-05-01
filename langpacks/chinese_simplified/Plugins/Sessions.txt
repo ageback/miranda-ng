@@ -29,7 +29,7 @@
 [Delete]
 删除
 [Save]
-
+保存
 [Action on Exit]
 
 [Ask]

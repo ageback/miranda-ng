@@ -99,7 +99,7 @@
 [Here is the complete list of missing Miranda NG components. Check components that you want to download.\n\nClick on info icon to view component info page.]
 
 [Download]
-
+下载
 ;file \plugins\PluginUpdater\src\DlgListNew.cpp
 [Downloading...]
 

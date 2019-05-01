@@ -11,7 +11,7 @@
 [Registered associations for Miranda NG:]
 
 [Miscellaneous]
-
+杂项
 [&Start Miranda NG automatically when the computer starts (using current profile)]
 
 [Only associate with Miranda NG while it is &running]

@@ -61,7 +61,7 @@
 [Show server window on startup]
 
 [Keep connection alive]
-
+保持连接活动
 [Automatically join on invite]
 
 ['Old style' mode changes]
@@ -319,7 +319,7 @@
 [Halfop]
 
 [Voice]
-
+语音
 [Downloading list (%u%%) - %u channels]
 
 [Downloading list - %u channels]

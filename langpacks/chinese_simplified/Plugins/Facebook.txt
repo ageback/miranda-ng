@@ -95,9 +95,9 @@
 [Bots challenge test]
 
 [Instruction:]
-
+指令：
 [Submit]
-
+提交
 [Messages]
 消息
 [Keep messages as unread on server (don't send "seen" info)]

@@ -41,7 +41,7 @@
 [Enter password]
 
 [Save password]
-
+保存密码
 [Enter the password to continue.]
 
 [Security code]

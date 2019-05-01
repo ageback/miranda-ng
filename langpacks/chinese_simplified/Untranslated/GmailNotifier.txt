@@ -1,6 +1,5 @@
 [Check your Gmail inboxes locally.]
 [Gmail account]
-[Save]
 [Configuration]
 [Check Gmail inbox every]
 [Notify using:]

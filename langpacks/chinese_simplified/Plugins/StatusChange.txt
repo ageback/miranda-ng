@@ -37,7 +37,7 @@
 [Message]
 消息
 [File transfer]
-
+文件传输
 [...change status to...]
 
 [...if status is...]

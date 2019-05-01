@@ -250,7 +250,7 @@
 [Message]
 消息
 [File transfer]
-
+文件传输
 [Authorization request]
 授权请求
 [You were added]

@@ -220,7 +220,7 @@
 [All Files]
 所有文件
 [Export to file]
-
+导出到文件
 [Couldn't open file for writing]
 
 [Import to "%s"]

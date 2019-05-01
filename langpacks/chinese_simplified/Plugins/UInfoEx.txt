@@ -27,7 +27,7 @@
 [Display name:]
 
 [Title:]
-
+称号
 [First name:]
 名字：
 [Second name:]
@@ -73,7 +73,7 @@
 [Position:]
 职位：
 [Occupation:]
-
+职业：
 [Superior:]
 
 [Assistant:]
@@ -477,9 +477,9 @@
 [Notes]
 笔记
 [Export to file]
-
+导出到文件
 [Import from file]
-
+从文件导入
 [Owner]
 所有者
 [edit contact information]
@@ -539,7 +539,7 @@
 [Fax]
 传真
 [Cellular]
-
+移动电话
 [Custom phone]
 
 [Down arrow]
@@ -650,7 +650,7 @@
 
 ;file \plugins\UserInfoEx\src\psp_contact.cpp
 [home]
-
+家
 [Open in browser]
 
 [Primary e-mail]
@@ -879,7 +879,7 @@
 [High School Student]
 
 [Home]
-
+家
 [ICQ - Providing Help]
 
 [Law]
@@ -929,7 +929,7 @@
 [Hobbies]
 
 [Internet]
-
+因特网
 [Lifestyle]
 
 [Movies/TV]

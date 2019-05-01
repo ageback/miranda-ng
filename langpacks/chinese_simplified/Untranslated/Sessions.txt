@@ -6,7 +6,6 @@
 [Startup delay]
 [ms]
 [User Sessions Management]
-[Save]
 [Action on Exit]
 [Ask]
 [Save Current Session]

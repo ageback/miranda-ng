@@ -17,7 +17,7 @@
 [Radio]
 
 [Video]
-
+视频
 [Others]
 其它
 [You also have to enable it per protocol in the main menu]
@@ -81,7 +81,7 @@
 [When variable not found, use:]
 
 [Title:]
-
+称号
 [Message:]
 
 [Other Variables:]
