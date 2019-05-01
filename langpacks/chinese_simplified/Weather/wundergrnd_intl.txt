@@ -173,7 +173,7 @@
 [Freezing Rain]
 
 [Friday]
-
+星期五
 [Full Moon]
 
 [Haze]
@@ -341,7 +341,7 @@
 [Mist]
 
 [Monday]
-
+星期一
 [Moon]
 
 [Moonrise]
@@ -423,7 +423,7 @@ N/A
 [S]
 
 [Saturday]
-
+星期六
 [Scattered Clouds]
 
 [Shallow Fog]
@@ -509,7 +509,7 @@ N/A
 [Steady]
 
 [Sunday]
-
+星期天
 [T-Storms 100% Chance Of Precipitation]
 
 [T-Storms 30% Chance Of Precipitation]
@@ -533,9 +533,9 @@ N/A
 [Thunderstorms And Rain]
 
 [Thursday]
-
+星期四
 [Tuesday]
-
+星期二
 [UV Index]
 
 [Var]
@@ -557,7 +557,7 @@ N/A
 [Waxing Gibbous]
 
 [Wednesday]
-
+星期三
 [West]
 
 [Wind Direction DEG]

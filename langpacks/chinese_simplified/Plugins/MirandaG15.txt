@@ -33,7 +33,7 @@
 [Use the VolumeWheel to scroll up and down (might affect system performance)]
 
 [Show seconds in timestamps]
-
+在时间戳中显示秒
 [Use transition effects when changing screens]
 
 [Credits]

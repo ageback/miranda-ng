@@ -563,35 +563,35 @@ Miranda 的根目录路径
 [Single Messaging]
 单个消息
 [Thai]
-
+泰语
 [Japanese]
-
+日语
 [Simplified Chinese]
-
+简体中文
 [Korean]
-
+韩语
 [Traditional Chinese]
-
+繁体中文
 [Central European]
-
+中欧
 [Cyrillic]
-
+西里尔
 [Latin I]
-
+拉丁文 I
 [Greek]
-
+希腊语
 [Turkish]
-
+土耳其
 [Hebrew]
-
+希伯来语
 [Arabic]
-
+阿拉伯语
 [Baltic]
-
+波罗的海
 [Vietnamese]
-
+越南语
 [Korean (Johab)]
-
+韩语 (Johab) 
 ;file \plugins\Scriver\src\input.cpp
 [Navigate: Previous tab]
 
@@ -646,9 +646,9 @@ Miranda 的根目录路径
 [consectetur adipisicing elit]
 
 [Today]
-
+今天
 [Yesterday]
-
+昨天
 [File sent]
 文件已发送
 [File received]

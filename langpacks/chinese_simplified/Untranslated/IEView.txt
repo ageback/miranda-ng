@@ -15,7 +15,6 @@
 [Use Templates]
 [Background image]
 [Template Options]
-[Use message grouping]
 [Show nicknames]
 [Show time]
 [Show date]
@@ -36,5 +35,3 @@
 [All Images]
 [Style Sheet]
 [IEView]
-[Today]
-[Yesterday]

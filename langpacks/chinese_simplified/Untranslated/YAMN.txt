@@ -122,7 +122,6 @@
 [Executables]
 [Select executable used for notification]
 [Dialog box error]
-[Failed]
 [Do you really want to delete this account?]
 [Delete account confirmation]
 [Please wait while no account is in use.]

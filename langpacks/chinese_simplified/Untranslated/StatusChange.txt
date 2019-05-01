@@ -5,4 +5,3 @@
 [File transfer]
 [...change status to...]
 [...if status is...]
-[Status Change]

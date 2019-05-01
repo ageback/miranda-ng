@@ -44,6 +44,6 @@
 
 ;file \plugins\StatusChange\src\main.cpp
 [Status Change]
-
+状态变更
 [Status]
 状态

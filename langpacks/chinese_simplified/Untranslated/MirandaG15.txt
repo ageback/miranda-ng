@@ -11,7 +11,6 @@
 [Turn off backlights]
 [If the applet is active:]
 [Use the VolumeWheel to scroll up and down (might affect system performance)]
-[Show seconds in timestamps]
 [Use transition effects when changing screens]
 [Credits]
 [About]

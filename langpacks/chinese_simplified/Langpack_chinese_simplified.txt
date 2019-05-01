@@ -2764,6 +2764,8 @@ PNG位图
 服务：
 [File]
 文件
+[Message window]
+消息窗口
 [Text]
 文字
 [Case sensitive]
@@ -2908,6 +2910,20 @@ PNG位图
 窗口
 [Frames]
 框架
+[Sunday]
+星期天
+[Monday]
+星期一
+[Tuesday]
+星期二
+[Wednesday]
+星期三
+[Thursday]
+星期四
+[Friday]
+星期五
+[Saturday]
+星期六
 [Error]
 错误
 [Events]
@@ -3071,6 +3087,8 @@ PNG位图
 小时
 [Show date in timestamps]
 在时间戳中显示日期
+[Show seconds in timestamps]
+在时间戳中显示秒
 [All contacts]
 所有联系人
 [Name]
@@ -3087,6 +3105,8 @@ PNG位图
 传入消息
 [Outgoing message]
 传出消息
+[Status change]
+状态变更
 [History]
 历史
 [All events]
@@ -3161,6 +3181,20 @@ PNG位图
 分
 [Hour]
 小时
+[Monday]
+星期一
+[Tuesday]
+星期二
+[Wednesday]
+星期三
+[Thursday]
+星期四
+[Friday]
+星期五
+[Saturday]
+星期六
+[Sunday]
+星期天
 [Contacts]
 联系人
 [Search]
@@ -3310,6 +3344,8 @@ PNG位图
 次
 [Days]
 天
+[Retry]
+重试
 [Message sessions]
 消息会话
 #muuid {c5ef53a8-80d4-4ce9-b341-ec90d3ec9156}
@@ -4749,6 +4785,8 @@ Angeli-Ka（绘图），FYR（模板）
 名字
 [Status]
 状态
+[Always]
+总是
 [General]
 通用
 [Background]
@@ -4833,6 +4871,8 @@ Angeli-Ka（绘图），FYR（模板）
 隐藏所有标题栏 
 [Title bar]
 标题栏
+[Load and apply]
+加载并应用
 [&Hide/show]
 隐藏/显示(&H)
 [&Find/add contacts...]
@@ -5821,6 +5861,8 @@ URL
 大小：
 [Scroll with text]
 与文字一起滚动
+[Use message grouping]
+使用消息分组
 [Show seconds]
 显示秒
 [Incoming File Transfer]
@@ -5845,6 +5887,10 @@ URL
 分组聊天
 [History]
 历史
+[Today]
+今天
+[Yesterday]
+昨天
 [File sent]
 文件已发送
 [File received]
@@ -5958,6 +6004,36 @@ URL
 编辑
 [Cancel]
 取消
+[Server window]
+服务器窗口
+[Thai]
+泰语
+[Japanese]
+日语
+[Simplified Chinese]
+简体中文
+[Korean]
+韩语
+[Traditional Chinese]
+繁体中文
+[Central European]
+中欧
+[Latin I]
+拉丁文 I
+[Greek]
+希腊语
+[Turkish]
+土耳其
+[Hebrew]
+希伯来语
+[Arabic]
+阿拉伯语
+[Baltic]
+波罗的海
+[Vietnamese]
+越南语
+[Korean (Johab)]
+韩语 (Johab) 
 [ALL NETWORKS]
 所有网络
 [Advanced]
@@ -6079,6 +6155,20 @@ URL
 错误
 [Are you sure?]
 你确定吗？
+[Arabic]
+阿拉伯语
+[Hebrew]
+希伯来语
+[Japanese]
+日语
+[Korean]
+韩语
+[Thai]
+泰语
+[Turkish]
+土耳其
+[Vietnamese]
+越南语
 [Messaging]
 消息
 [Other]
@@ -6342,6 +6432,8 @@ URL
 ;  Version: 0.1.2.1
 ;  Authors: Martin Kleinhans
 ;============================================================
+[Show seconds in timestamps]
+在时间戳中显示秒
 [events]
 事件
 [seconds]
@@ -6392,6 +6484,8 @@ URL
 ;============================================================
 [General]
 通用
+[Failed]
+失败
 #muuid {12d8faad-78ab-4e3c-9854-320e9ea5cc9f}
 ;============================================================
 ;  File: MirOTR.dll
@@ -6399,6 +6493,8 @@ URL
 ;  Version: 0.14.2.1
 ;  Authors: ProgAndy & CHEF-KOCH
 ;============================================================
+[Always]
+总是
 [Forget]
 忘记
 [&Cancel]
@@ -6818,12 +6914,16 @@ URL
 变量
 [Reset]
 重置
+[Disable notifications]
+禁用通知
 [Cancel]
 取消
 [General]
 通用
 [Accounts]
 帐户
+[Log status changes]
+日志状态变更
 [Sound files]
 声音文件
 [All files]
@@ -6838,6 +6938,8 @@ URL
 <未知>
 [connecting]
 正在连接
+[Status change]
+状态变更
 [All Files]
 所有文件
 [Log]
@@ -7107,6 +7209,38 @@ URL
 删除
 [Format]
 格式
+[Thai]
+泰语
+[Japanese]
+日语
+[Simplified Chinese]
+简体中文
+[Korean]
+韩语
+[Traditional Chinese]
+繁体中文
+[Central European]
+中欧
+[Cyrillic]
+西里尔
+[Cyrillic KOI8-R]
+西里尔 KOI8-R
+[Latin I]
+拉丁文 I
+[Greek]
+希腊语
+[Turkish]
+土耳其
+[Hebrew]
+希伯来语
+[Arabic]
+阿拉伯语
+[Baltic]
+波罗的海
+[Vietnamese]
+越南语
+[Korean (Johab)]
+韩语 (Johab) 
 [Main]
 主
 [Error]
@@ -7831,6 +7965,36 @@ Miranda 的根目录路径
 信息  (10x10)
 [Single Messaging]
 单个消息
+[Thai]
+泰语
+[Japanese]
+日语
+[Simplified Chinese]
+简体中文
+[Korean]
+韩语
+[Traditional Chinese]
+繁体中文
+[Central European]
+中欧
+[Cyrillic]
+西里尔
+[Latin I]
+拉丁文 I
+[Greek]
+希腊语
+[Turkish]
+土耳其
+[Hebrew]
+希伯来语
+[Arabic]
+阿拉伯语
+[Baltic]
+波罗的海
+[Vietnamese]
+越南语
+[Korean (Johab)]
+韩语 (Johab) 
 [%s is typing a message...]
 %s 正在输入消息...
 [Last message received on %s at %s.]
@@ -7841,6 +8005,10 @@ Miranda 的根目录路径
 没有查找单词
 [Me]
 我
+[Today]
+今天
+[Yesterday]
+昨天
 [File sent]
 文件已发送
 [File received]
@@ -8030,6 +8198,8 @@ Miranda 的根目录路径
 联系人列表
 [Contact Menu]
 联系人菜单
+[Message Window]
+消息窗口
 [Popups]
 弹出窗口
 [Icons]
@@ -8097,6 +8267,44 @@ Miranda 的根目录路径
 联系人
 [Popups]
 弹出窗口
+[Sunday]
+星期天
+[Monday]
+星期一
+[Tuesday]
+星期二
+[Wednesday]
+星期三
+[Thursday]
+星期四
+[Friday]
+星期五
+[Saturday]
+星期六
+[January]
+一月
+[February]
+二月
+[March]
+三月
+[April]
+四月
+[May]
+五月
+[June]
+六月
+[July]
+七月
+[August]
+八月
+[September]
+九月
+[October]
+十月
+[November]
+十一月
+[December]
+十二月
 [Idle]
 空闲
 [Unknown]
@@ -8130,6 +8338,8 @@ Miranda 的根目录路径
 错误
 [An unknown error has occurred.]
 发生了未知的错误。
+[Retry]
+重试
 [Yes]
 是
 [No]
@@ -8169,6 +8379,8 @@ BBCode
 杂项
 [&Cancel]
 取消(&C)
+[Save and Close]
+保存并关闭
 [Cancel]
 取消
 [Close Session]
@@ -8443,6 +8655,8 @@ BBCode
 外出吃饭
 [Message]
 消息
+[Status Change]
+状态变更
 [Status]
 状态
 #muuid {68f5a030-ba32-48ec-9507-5c2fbdea5217}
@@ -9925,14 +10139,46 @@ TabSRMM
 群聊日志根
 [Typing notification]
 输入通知
+[Insert [img] tag / surround selected text with [img][/img]]
+插入 [img] 标签 / 用 [img][/img]包围选中的文字
+[Add this contact permanently to your contact list]
+永久添加此联系人到你的联系人列表
+[Do not add this contact permanently]
+不要永久添加此联系人
+[Contact not on list. You may add it...]
+联系人不在列表上。你可以添加他...
+[A message failed to send successfully.]
+消息未发送成功。
+[Auto scrolling is disabled (press F12 to enable it)]
+自动滚动被禁用（按F12来启用它）
+[Click for contact menu\nClick dropdown for window settings]
+点击显示联系人菜单\n点击下拉显示窗口设置
 [Retry]
 重试
 [Send later]
 稍后发送
+[UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nRight click for metacontact control\nClick dropdown to add or remove user from your favorites.]
+UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n右键点击显示中继联系人控件\n点击下拉可以添加或从收藏夹中移除用户。
 [No UID]
 无UID
+[UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nClick dropdown to change this contact's favorite status.]
+UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n点击下拉以改变此联系人的收藏状态。
+[You are editing the user notes. Click the button again or use the hotkey (default: Alt+N) to save the notes and return to normal messaging mode]
+你正在编辑用户注释。再次点击按钮或使用热键（默认：Alt+N）来保存注释并返回到普通消息模式
+[Selection copied to clipboard]
+选择复制到剪贴板
+[WARNING: The message you are trying to paste exceeds the message size limit for the active protocol. It will be sent in chunks of max %d characters]
+警告：你正在尝试粘贴的消息超过了活动协议的消息大小限制。它将以最大 %d 字符的块发送
+[The message you are trying to paste exceeds the message size limit for the active protocol. Only the first %d characters will be sent.]
+您试图粘贴的消息超过了活动协议的消息大小限制。只发送前%d个字符。
+[Delivery failure: %s]
+传递失败：%s
 [The message send timed out]
 消息发送超时
+[Contact is offline and this protocol does not support sending files to offline users.]
+联系人离线并且此协议不支持发送文件给离线用户。
+[Error creating destination directory]
+创建目标目录失败
 [Save contact picture]
 保存联系人照片
 [Image files]
@@ -9943,6 +10189,8 @@ TabSRMM
 设置你的头像...
 [Save and close session]
 保存并关闭会话
+[The 'paste and send' feature is disabled. You can enable it on the 'General' options page in the 'Sending messages' section]
+“粘贴和发送”功能已被禁用。您可以在“发送消息”部分的“常规”选项页面上启用它
 ['(Unknown contact)']
 '(未知联系人)'
 [JPEG-compressed images]
@@ -9959,6 +10207,26 @@ JPEG-压缩图像
 繁体中文
 [Central European]
 中欧
+[Cyrillic]
+西里尔
+[Cyrillic KOI8-R]
+西里尔 KOI8-R
+[Latin I]
+拉丁文 I
+[Greek]
+希腊语
+[Turkish]
+土耳其
+[Hebrew]
+希伯来语
+[Arabic]
+阿拉伯语
+[Baltic]
+波罗的海
+[Vietnamese]
+越南语
+[Korean (Johab)]
+韩语 (Johab) 
 [Sunday]
 星期天
 [Monday]
@@ -10003,6 +10271,8 @@ JPEG-压缩图像
 昨天
 [<no skin>]
 <无皮肤>
+[Do you want to also read message templates from the theme?\nCaution: This will overwrite the stored template set which may affect the look of your message window significantly.\nSelect Cancel to not load anything at all.]
+您是否还想从主题中读取消息模板？\n小心：这将覆盖存储的模板集，此模板集可能显著影响消息窗口的外观。\n选择取消则不加载任何内容。
 [Load theme]
 加载主题
 [Internal message log]
@@ -10011,6 +10281,8 @@ JPEG-压缩图像
 IEView 插件
 [History++ plugin]
 History++ 插件
+[You have chosen to use an external plugin for displaying the message history in the chat window. Most of the settings on this page are for the standard message log viewer only and will have no effect. To change the appearance of the message log, you must configure either IEView or History++.]
+您已选择使用外部插件在聊天窗口中显示消息历史记录。此页面上的大多数设置仅适用于标准消息日志查看器，不会起作用。要更改消息日志的外观，必须配置IEView 或 History++。
 [** New contacts **]
 ** 新联系人 **
 [** Unknown contacts **]
@@ -10045,8 +10317,12 @@ History++ 插件
 加载并应用
 [Window layout tweaks]
 窗口布局调整
+[A message delivery has failed.\nClick to open the message window.]
+消息传递失败。\n点击以打开消息窗口。
 [Message Log Options]
 消息日志选项
+[Image tag]
+图像标签
 [Quote text]
 引用的文字
 [Save and close]
@@ -10081,6 +10357,8 @@ History++ 插件
 传出消息
 [Status change]
 状态变更
+[Static container icon]
+静态容器图标
 [Sounds (status bar)]
 声音（状态栏）
 [Pulldown Arrow]
@@ -10103,6 +10381,14 @@ History++ 插件
 框架 14
 [Message Log]
 消息日志
+[Animated Tray]
+动画托盘
+[Clock symbol (for the info panel clock)]
+时钟符号（用于信息面板时钟）
+[Feature disabled (used as overlay)]
+功能禁用（作为层叠使用）
+[Feature enabled (used as overlay)]
+功能启用（作为层叠使用）
 [Message windows - IM]
 消息窗口 - IM
 [Message windows - all]
@@ -10117,6 +10403,26 @@ History++ 插件
 错误
 [You cannot rename the default container]
 你不能重命名默认容器
+[This name is already in use]
+这个名称已经被使用
+[A send later job completed successfully.\nThe original message: %s]
+一个稍后发送任务成功完成。\n原始消息：%s
+[A send later job failed to complete.\nThe original message: %s]
+一个稍后发送任务未能完成。\n原始消息：%s
+[<All contacts>]
+<所有联系人>
+[Removed]
+移除
+[Failed]
+失败
+[Sent OK]
+发送成功
+[Deferred]
+延期
+[Suspended]
+暂停
+[Pending]
+待定
 [Contact]
 联系
 [Original timestamp]
@@ -10125,8 +10431,90 @@ History++ 插件
 消息文字
 [Last send info]
 上次发送信息
+[You are about to modify the state of one or more items in the\nunattended send queue. The requested action(s) will be executed at the next scheduled queue processing.\n\nThis action cannot be made undone.]
+您将要修改无人值守发送队列中的一个或多个项目的状态。\n请求的操作将在下一个计划的队列处理中执行。\n\n此操作无法撤消。
+[The message cannot be sent delayed or to multiple contacts, because it exceeds the maximum allowed message length of %d bytes]
+消息无法延迟发送或发送给多个联系人，因为它超过了允许的最大消息长度 %d 字节
+[A message delivery has failed after the contacts chat window was closed. You may want to resend the last message]
+联系人聊天窗口关闭后，消息传递失败。你可能想重新发送最后一条消息
+[There are unsent messages waiting for confirmation.\nIf you close the window now, Miranda will try to send them but may be unable to inform you about possible delivery errors.\nDo you really want to close the window(s)?]
+有未发送的消息等待确认。\n如果您现在关闭窗口，Miranda 将尝试发送它们但可能无法通知您可能的传递错误。\n您真的要关闭窗口吗？
+[Message window warning]
+消息窗口警告
+[Message successfully queued for later delivery.\nIt will be sent as soon as possible and a popup will inform you about the result.]
+消息已成功添加到稍后发送队列。\n它将会被尽快发送，并弹出一个窗口通知你发送结果。
+[The send later feature is not available on this protocol.]
+稍后发送功能在这个协议上无法使用。
+[\n(Sent delayed. Original timestamp %s)]
+\n（发送延迟。原始时间戳 %s）
+[Like tabs, vertical text orientation]
+像标签，垂直文字方向
+[Compact layout, horizontal buttons]
+精简模式，水平按钮
+[Advanced layout with avatars]
+带头像的高级布局
+[Advanced with avatars, vertical orientation]
+带头像的高级布局，垂直方向
+[This version of TabSRMM requires Windows 2000 or later.]
+此版本的 TabSRMM 需要 Windows 2000 或更新版本。
+[Previews not available when using History++ plugin for message log display.]
+当使用 History++ 插件显示消息日志时，无法预览。
+[%d unread]
+%d 未计
+[Chat room %s]
+聊天室 %s
+[%d user(s)]
+%d 用户
+[Server window]
+服务器窗口
+[Message In]
+消息进
+[Message Out]
+消息出
+[Group In (Start)]
+分组进（开始）
+[Group Out (Start)]
+分组出（开始）
+[Group In (Inner)]
+分组进（内部）
+[Group Out (Inner)]
+分组出（内部）
+[Error message]
+错误消息
+[Template set editor]
+模板集编辑器
+[This will reset the template set to the default built-in templates. Are you sure you want to do this?]
+这会将模板集重置为默认的内置模板。你确定你要这么做吗？
+[Template set was successfully reset, please close and reopen all message windows. This template editor window will now close.]
+模板集已成功重置，请关闭并重新打开所有消息窗口。此模板编辑器窗口现在将关闭。
+[TabSRMM themes]
+TabSRMM 主题
+[No effect]
+无效果
+[Milky Glass]
+乳白玻璃
+[Carbon]
+碳
+[Semi transparent, custom colors]
+半透明，自定义颜色
+[Silver shadow]
+银影
+[Custom (use own gradient colors)]
+自定义（使用自己的渐变颜色）
+[All message containers need to close before the skin can be changed\nProceed?]
+在更改皮肤之前，需要关闭所有消息容器\n继续吗？
+[Change skin]
+改变皮肤
+[Message window tweaks]
+消息窗口调整
+[Display metacontact icons]
+显示中继联系人图标
+[Error feedback]
+错误反馈
 [Close current tab on send]
 发送时关闭当前标签
+[Enable unattended send (experimental feature, required for multisend and send later) (*)]
+启用无人值守发送（实验性功能，多发送和稍后发送需要此功能）（*）
 [Show client description in info panel]
 在信息面板中显示客户端描述
 [On tab control]
@@ -10161,8 +10549,30 @@ History++ 插件
 禁用非消息事件的事件通知 
 [Remove popups for a contact when the message window is focused]
 在消息窗口聚焦时移除联系人的弹出窗口
+[Remove popups for a contact when I start typing a reply]
+当我开始输入回复时移除联系人的弹出窗口
+[Remove popups for a contact when I send a reply]
+当我发送回复时移除联系人的弹出窗口
+[Disable notifications]
+禁用通知
 [System tray icon]
 系统托盘图标
+[Left click actions (popups only)]
+左键点击动作（仅弹出窗口）
+[Right click actions (popups only)]
+右键点击动作（仅弹出窗口）
+[Timeout actions (popups only)]
+超时点击动作（仅弹出窗口）
+[Combine notifications for the same contact]
+合并同一个联系人的通知 
+[Remove popups under following conditions]
+在以下情况时移除弹出窗口
+[Message window behavior]
+消息窗口行为
+[Sending messages]
+发送消息
+[Send on Shift+Enter]
+Shift+Enter 时发送
 [Send message on 'Enter']
 按“回车”时发送消息
 [Send message on double 'Enter']
@@ -10171,6 +10581,80 @@ History++ 插件
 当发送时最小化消息窗口
 [Close the message window on send]
 当发送时关闭消息窗口
+[Always flash contact list and tray icon for new messages]
+总是为新消息闪动联系人列表和托盘图标
+[Delete temporary contacts on close]
+关闭时删除临时联系人
+[Enable "Paste and send" feature]
+启用“粘贴并发送”功能
+[Allow BBCode formatting in outgoing messages]
+允许传入消息中的 BBCode 格式
+[Automatically split long messages (experimental, use with care)]
+自动分割长消息（试验性，小心使用）
+[Log status changes]
+日志状态变更
+[Automatically copy selected text]
+自动复制选择的文字
+[Message log appearance]
+消息日志外观
+[Support for external plugins]
+支持外部插件
+[Timestamp settings (note: timestamps also depend on your templates)]
+时间戳设置（注意：时间戳也依赖于你的模板）
+[Message log icons]
+消息日志图标
+[Show dates in timestamps]
+在时间戳中显示日期
+[Show seconds in timestamps]
+在时间戳中显示秒
+[Use contacts local time (if timezone info available)]
+使用联系人的本地时间（如果时区信息不可用）
+[Draw grid lines]
+绘制网格线
+[Use incoming/outgoing icons]
+使用传入/传出图标
+[Use message grouping]
+使用消息分组
+[Simple text formatting (*bold*, etc.)]
+简单文字格式化（*粗体*，等等）
+[Support BBCode formatting]
+支持 BBCode 格式化
+[Place a separator in the log after a window lost its foreground status]
+窗口丢失其前台状态后，在日志中放置分隔符
+[Only place a separator when an incoming event is announced with a popup]
+仅在使用弹出窗口宣布传入事件时放置分隔符
+[Show events at the new line (IEView Compatibility Mode)]
+在新行显示事件（IEView兼容模式）
+[Underline timestamp/nickname (IEView Compatibility Mode)]
+下划线时间戳/昵称（IEView兼容模式）
+[Show timestamp after nickname (IEView Compatibility Mode)]
+显示昵称后的时间戳（IEView兼容模式）
+[Use normal templates (uncheck to use simple templates if your template set supports them)]
+使用普通模板（如果模板集支持，则取消选中使用简单模板）
+[How to create tabs and windows for incoming messages]
+如何为传入消息创建标签和窗口
+[Show status text on tabs]
+在标签上显示状态文字
+[Prefer xStatus icons when available]
+当 xStatus 图标可用时优先使用它
+[Detailed tooltip on tabs (requires Tipper plugin)]
+在标签上显示详细工具提示（需要 Tipper 插件）
+[ALWAYS activate new message sessions (has PRIORITY over the options below)]
+总是激活新的消息会话（优先于以下选项）
+[Automatically create new message sessions without activating them]
+自动创建新的消息会话而不激活它们
+[New windows are minimized (the option above MUST be active)]
+新窗口最小化（上面的选项必须是激活的）
+[Activate a minimized window when a new tab is created inside it]
+在其中创建新选项卡时激活最小化窗口
+[Automatically switch existing tabs in minimized windows on incoming messages (ignored when using Aero Peek task bar features)]
+当传入消息时自动切换最小化窗口中的存在的标签（当使用 Aero Peek 任务栏功能时忽略）
+[Close button only hides message windows]
+关闭按钮仅隐藏消息窗口
+[Allow Tab key in typing area (this will disable focus selection by Tab key)]
+劲旅输入区域中的 Tab 键（这将禁止通过 Tab 键焦点选择）
+[Add offline contacts to multisend list]
+添加离线联系人到多发送列表
 [Disable &typing notification]
 禁止输入通知(&T)
 [Enable &typing notification]
@@ -10340,6 +10824,60 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 侧栏
 [Apply]
 应用
+[Arabic]
+阿拉伯语
+[Greek]
+希腊语
+[Hebrew]
+希伯来语
+[Japanese]
+日语
+[Korean]
+韩语
+[Thai]
+泰语
+[Turkish]
+土耳其
+[Vietnamese]
+越南语
+[Sunday]
+星期天
+[Monday]
+星期一
+[Tuesday]
+星期二
+[Wednesday]
+星期三
+[Thursday]
+星期四
+[Friday]
+星期五
+[Saturday]
+星期六
+[January]
+一月
+[February]
+二月
+[March]
+三月
+[April]
+四月
+[May]
+五月
+[June]
+六月
+[July]
+七月
+[August]
+八月
+[September]
+九月
+[October]
+十月
+[November]
+十一月
+[December]
+十二月
 [Female]
 女性
 [Male]
@@ -10652,6 +11190,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 联系
 [All contacts]
 所有联系人
+[Retry]
+重试
 [Yes]
 是
 [No]
@@ -10704,6 +11244,22 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 高级
 [Popups]
 弹出窗口
+[Arabic]
+阿拉伯语
+[Greek]
+希腊语
+[Hebrew]
+希伯来语
+[Japanese]
+日语
+[Korean]
+韩语
+[Thai]
+泰语
+[Turkish]
+土耳其
+[Vietnamese]
+越南语
 [Single]
 单身
 [Close relationships]
@@ -11092,8 +11648,22 @@ N/A
 清除
 [Elevation]
 海拔
+[Friday]
+星期五
+[Monday]
+星期一
 [N/a]
 N/A
+[Saturday]
+星期六
+[Sunday]
+星期天
+[Thursday]
+星期四
+[Tuesday]
+星期二
+[Wednesday]
+星期三
 ;============================================================
 ;  File: yweather.ini
 ;  Plugin: Weather
@@ -11192,6 +11762,8 @@ N/A
 日期：
 [Delete]
 删除
+[Message window]
+消息窗口
 [All contacts]
 所有联系人
 [N/A]
@@ -11388,6 +11960,8 @@ WAV 文件
 新帐户
 [All Files]
 所有文件
+[Failed]
+失败
 #muuid {01202e6a-c1b3-42e5-838a-3e497b31f38e}
 ;============================================================
 ;  File: YARelay.dll

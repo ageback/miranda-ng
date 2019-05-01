@@ -956,7 +956,7 @@ URL
 [Amharic]
 
 [Arabic]
-
+阿拉伯语
 [Aragonese]
 
 [Armenian]
@@ -1064,7 +1064,7 @@ URL
 [Hausa]
 
 [Hebrew]
-
+希伯来语
 [Herero]
 
 [Hindi]
@@ -1096,7 +1096,7 @@ URL
 [Javanese]
 
 [Japanese]
-
+日语
 [Kalaallisut; Greenlandic]
 
 [Kannada]
@@ -1120,7 +1120,7 @@ URL
 [Kongo]
 
 [Korean]
-
+韩语
 [Kuanyama; Kwanyama]
 
 [Kurdish]
@@ -1266,7 +1266,7 @@ URL
 [Tagalog]
 
 [Thai]
-
+泰语
 [Tibetan]
 
 [Tigrinya]
@@ -1280,7 +1280,7 @@ URL
 [Turkmen]
 
 [Turkish]
-
+土耳其
 [Twi]
 
 [Uighur; Uyghur]
@@ -1294,7 +1294,7 @@ URL
 [Venda]
 
 [Vietnamese]
-
+越南语
 [Volapuk]
 
 [Welsh]

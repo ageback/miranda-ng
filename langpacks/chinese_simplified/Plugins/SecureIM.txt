@@ -341,7 +341,7 @@
 [Establish Secure Connection]
 
 [Message Window]
-
+消息窗口
 [Popups]
 弹出窗口
 [Secure Connection Disabled]

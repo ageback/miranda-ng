@@ -55,7 +55,7 @@
 [Show date in timestamps]
 在时间戳中显示日期
 [Show seconds in timestamps]
-
+在时间戳中显示秒
 [Enable smileys]
 
 [Search forward in list group]
@@ -152,7 +152,7 @@
 [Outgoing message]
 传出消息
 [Status change]
-
+状态变更
 [Show contacts]
 
 [Hide contacts]
@@ -370,19 +370,19 @@
 [Delta time (hours)]
 
 [Monday]
-
+星期一
 [Tuesday]
-
+星期二
 [Wednesday]
-
+星期三
 [Thursday]
-
+星期四
 [Friday]
-
+星期五
 [Saturday]
-
+星期六
 [Sunday]
-
+星期天
 [Invalid '%s' value.]
 
 [Events older than]

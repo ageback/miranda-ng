@@ -28,7 +28,7 @@
 [Loaded]
 
 [Failed]
-
+失败
 [Open]
 
 [Reload]

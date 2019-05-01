@@ -282,7 +282,7 @@
 [UTF16+sign]
 
 [Message window]
-
+消息窗口
 [Autosend]
 
 [Jump]

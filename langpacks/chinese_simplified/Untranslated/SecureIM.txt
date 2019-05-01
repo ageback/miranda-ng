@@ -143,7 +143,6 @@
 [Connection Established]
 [Disable Secure Connection]
 [Establish Secure Connection]
-[Message Window]
 [Secure Connection Disabled]
 [Secure Connection Established]
 [Secure Connection In Process]

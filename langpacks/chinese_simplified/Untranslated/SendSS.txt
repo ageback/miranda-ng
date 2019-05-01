@@ -55,7 +55,6 @@
 [HTTPServer transfer]
 [Could not start the HTTP Server plugin.]
 [%s (%i):\nCould not add a share to the HTTP Server plugin.]
-[Retry]
 [Abort]
 [Main Icon]
 [Target Cursor]

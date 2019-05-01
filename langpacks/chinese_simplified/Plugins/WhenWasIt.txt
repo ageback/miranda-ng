@@ -100,7 +100,7 @@
 [Dismiss]
 
 [Message window]
-
+消息窗口
 [All contacts]
 所有联系人
 [All contacts except hidden ones]

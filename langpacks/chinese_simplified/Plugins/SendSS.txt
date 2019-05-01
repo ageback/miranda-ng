@@ -154,7 +154,7 @@
 
 ;file \plugins\SendScreenshotPlus\src\dlg_msgbox.cpp
 [Retry]
-
+重试
 [Yes]
 是
 [No]

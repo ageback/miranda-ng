@@ -157,7 +157,7 @@
 [Reset]
 重置
 [Disable notifications]
-
+禁用通知
 [Disable globally]
 
 [Disable when my status is:]
@@ -197,7 +197,7 @@
 [Notify when contact removes status message]
 
 [Log status changes]
-
+日志状态变更
 [Log status changes to file]
 
 [Log status changes to history]
@@ -358,7 +358,7 @@
 [New Status Notify]
 
 [Status change]
-
+状态变更
 ;file \plugins\NewXstatusNotify\src\options.cpp
 [All Files]
 所有文件

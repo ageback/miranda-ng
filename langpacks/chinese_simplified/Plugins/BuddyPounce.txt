@@ -130,7 +130,7 @@
 [Pounce being sent to %s in %d seconds]
 
 [Retry]
-
+重试
 [Message successfully sent to %s]
 
 [Message failed to send to %s]

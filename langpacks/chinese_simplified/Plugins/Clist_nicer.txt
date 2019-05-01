@@ -447,7 +447,7 @@
 [Never]
 
 [Always]
-
+总是
 [For RTL only]
 
 [RTL TEXT only]
@@ -626,7 +626,7 @@
 
 ;file \plugins\Clist_nicer\src\extBackg.cpp
 [Load and apply]
-
+加载并应用
 ;file \plugins\Clist_nicer\src\groupmenu.cpp
 [Show metacontact protocol icons]
 

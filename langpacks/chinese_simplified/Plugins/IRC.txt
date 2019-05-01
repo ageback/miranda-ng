@@ -447,7 +447,7 @@
 [Quick connect]
 
 [Server window]
-
+服务器窗口
 [Show channel]
 
 [WhoIs]
@@ -457,37 +457,37 @@
 [Logo (48x48)]
 
 [Thai]
-
+泰语
 [Japanese]
-
+日语
 [Simplified Chinese]
-
+简体中文
 [Korean]
-
+韩语
 [Traditional Chinese]
-
+繁体中文
 [Central European]
-
+中欧
 [Cyrillic (Windows)]
 
 [Cyrillic (KOI8R)]
 
 [Latin I]
-
+拉丁文 I
 [Greek]
-
+希腊语
 [Turkish]
-
+土耳其
 [Hebrew]
-
+希伯来语
 [Arabic]
-
+阿拉伯语
 [Baltic]
-
+波罗的海
 [Vietnamese]
-
+越南语
 [Korean (Johab)]
-
+韩语 (Johab) 
 [Please complete all fields]
 
 [Add a new network]

@@ -434,7 +434,7 @@
 
 ;file \plugins\UserInfoEx\src\dlg_msgbox.cpp
 [Retry]
-
+重试
 [Yes]
 是
 [No]
@@ -717,7 +717,7 @@
 [Albanian]
 
 [Arabic]
-
+阿拉伯语
 [Armenian]
 
 [Azerbaijani]
@@ -765,11 +765,11 @@
 [German]
 
 [Greek]
-
+希腊语
 [Gujarati]
 
 [Hebrew]
-
+希伯来语
 [Hindi]
 
 [Hungarian]
@@ -781,11 +781,11 @@
 [Italian]
 
 [Japanese]
-
+日语
 [Khmer]
 
 [Korean]
-
+韩语
 [Kurdish]
 
 [Lao]
@@ -841,15 +841,15 @@
 [Tatar]
 
 [Thai]
-
+泰语
 [Turkish]
-
+土耳其
 [Ukrainian]
 
 [Urdu]
 
 [Vietnamese]
-
+越南语
 [Welsh]
 
 [Yiddish]

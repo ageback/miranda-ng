@@ -487,7 +487,7 @@
 [Albanian]
 
 [Arabic]
-
+阿拉伯语
 [Armenian]
 
 [Azerbaijani]
@@ -535,11 +535,11 @@
 [German]
 
 [Greek]
-
+希腊语
 [Gujarati]
 
 [Hebrew]
-
+希伯来语
 [Hindi]
 
 [Hungarian]
@@ -551,11 +551,11 @@
 [Italian]
 
 [Japanese]
-
+日语
 [Khmer]
 
 [Korean]
-
+韩语
 [Kurdish]
 
 [Lao]
@@ -611,15 +611,15 @@
 [Tatar]
 
 [Thai]
-
+泰语
 [Turkish]
-
+土耳其
 [Ukrainian]
 
 [Urdu]
 
 [Vietnamese]
-
+越南语
 [Welsh]
 
 [Yiddish]
@@ -627,43 +627,43 @@
 [Yoruba]
 
 [Sunday]
-
+星期天
 [Monday]
-
+星期一
 [Tuesday]
-
+星期二
 [Wednesday]
-
+星期三
 [Thursday]
-
+星期四
 [Friday]
-
+星期五
 [Saturday]
-
+星期六
 [January]
-
+一月
 [February]
-
+二月
 [March]
-
+三月
 [April]
-
+四月
 [May]
-
+五月
 [June]
-
+六月
 [July]
-
+七月
 [August]
-
+八月
 [September]
-
+九月
 [October]
-
+十月
 [November]
-
+十一月
 [December]
-
+十二月
 [Female]
 女性
 [Male]

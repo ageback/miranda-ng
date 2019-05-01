@@ -120,7 +120,6 @@
 [Append]
 [UTF8+sign]
 [UTF16+sign]
-[Message window]
 [Autosend]
 [Jump]
 [Condition]

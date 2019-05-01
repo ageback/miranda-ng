@@ -340,7 +340,7 @@
 [Dialog box error]
 
 [Failed]
-
+失败
 [Do you really want to delete this account?]
 
 [Delete account confirmation]

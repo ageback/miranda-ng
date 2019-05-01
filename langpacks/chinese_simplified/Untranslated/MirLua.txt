@@ -7,7 +7,6 @@
 [Evaluate]
 [Script]
 [Loaded]
-[Failed]
 [Open]
 [Reload]
 [Compile]

@@ -70,37 +70,37 @@
 [Use default codepage]
 
 [Thai]
-
+泰语
 [Japanese]
-
+日语
 [Simplified Chinese]
-
+简体中文
 [Korean]
-
+韩语
 [Traditional Chinese]
-
+繁体中文
 [Central European]
-
+中欧
 [Cyrillic]
-
+西里尔
 [Cyrillic KOI8-R]
-
+西里尔 KOI8-R
 [Latin I]
-
+拉丁文 I
 [Greek]
-
+希腊语
 [Turkish]
-
+土耳其
 [Hebrew]
-
+希伯来语
 [Arabic]
-
+阿拉伯语
 [Baltic]
-
+波罗的海
 [Vietnamese]
-
+越南语
 [Korean (Johab)]
-
+韩语 (Johab) 
 [You've entered invalid codepage. Select codepage from combo box or enter correct number.]
 
 [Invalid codepage]

@@ -67,7 +67,7 @@
 [Enter session name:]
 
 [Save and Close]
-
+保存并关闭
 [adv.]
 
 [Sessions Manager]
