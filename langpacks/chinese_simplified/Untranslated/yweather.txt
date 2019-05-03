@@ -36,7 +36,6 @@
 [Southeast]
 [Southwest]
 [Sun]
-[Sunny]
 [Thu]
 [Tue]
 [WNW]

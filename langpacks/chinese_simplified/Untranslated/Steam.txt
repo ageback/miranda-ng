@@ -27,7 +27,6 @@
 [Unblock]
 [Join to game]
 [Unknown error]
-[Protocols]
 [Protocol icon]
 [Gaming icon]
 [%s connection]

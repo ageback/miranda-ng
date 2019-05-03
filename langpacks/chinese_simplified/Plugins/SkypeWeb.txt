@@ -63,15 +63,15 @@
 [&Invite user...]
 
 [&Leave chat session]
-
+离开聊天会话(&L)
 [&Change topic...]
 
 [Kick &user]
 
 [Set &role]
-
+设置角色(&R)
 [&Admin]
-
+管理员(&A)
 [&User]
 用户(&U)
 [Change nick...]
@@ -141,7 +141,7 @@
 [Action icon]
 
 [Protocols]
-
+协议
 ;file \protocols\SkypeWeb\src\skype_login.cpp
 [Authentication failed. Invalid username.]
 

@@ -57,7 +57,6 @@
 [OTR encrypted session with '%s' is now using a VERIFIED fingerprint]
 [OTR encrypted session with '%s' is now using a NOT VERIFIED fingerprint]
 [Generating new private key for protocol '%s'.\nPlease Wait...]
-[Protocols]
 [Fingerprints]
 [Account]
 [Policy]

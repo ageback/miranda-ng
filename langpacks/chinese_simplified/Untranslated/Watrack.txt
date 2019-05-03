@@ -77,7 +77,6 @@
 [Player name letters]
 [Players list]
 [Popup Title / Text]
-[Frame Text]
 [Export Text]
 [Postfix]
 [Refresh time, sec]

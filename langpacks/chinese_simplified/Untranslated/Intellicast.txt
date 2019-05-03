@@ -7,7 +7,6 @@
 [Sat]
 [Sun]
 [Full]
-[Sunny]
 [Waning Crescent]
 [Waning Gibbous]
 [Waxing Crescent]

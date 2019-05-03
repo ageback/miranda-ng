@@ -99,7 +99,7 @@
 [Auth]
 
 [Server]
-
+服务器
 [User]
 
 [Away Info]
@@ -233,7 +233,7 @@
 [CTCP Chat Request]
 
 [&Accept]
-
+接受(&A)
 [&Deny]
 拒绝(&D)
 [Enable (*)]
@@ -251,7 +251,7 @@
 [(*) Queries from users on your contact list are never ignored]
 
 [Queries]
-
+队列
 [Messages]
 消息
 [Notices]
@@ -699,7 +699,7 @@
 [Send &notice]
 
 [&Slap]
-
+击掌(&S)
 [Nickserv info]
 
 [Nickserv kill ghost]
@@ -727,7 +727,7 @@
 [Take V&oice]
 
 [&Kick]
-
+踢(&K)
 [Ki&ck (reason)]
 
 [&Ban]
@@ -762,7 +762,7 @@
 
 ;file \protocols\IRCG\src\windows.cpp
 [Please wait...]
-
+请等待...
 [Channel]
 
 [Mode]

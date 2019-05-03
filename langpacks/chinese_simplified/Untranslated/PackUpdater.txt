@@ -3,7 +3,6 @@
 [View info]
 [PackUpdater has detected updated versions\nof the following Miranda components:]
 [Description]
-[Downloading...]
 [Pack update options]
 [On startup]
 [Remind about not installed pack update]

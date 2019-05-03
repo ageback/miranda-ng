@@ -10,7 +10,6 @@
 [Blink icon in the system tray]
 [Also when extra status or status message changes]
 [Use status icon]
-[Open]
 [Change]
 [Status Notify]
 [Individual sounds are disabled.\n\nTo enable them, go to Options -> Status -> Status Notify, enable\n"Use individual sounds" checkbox, and then reopen this dialog.]

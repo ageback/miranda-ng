@@ -35,7 +35,6 @@
 [Delete picture file from disk (may be necessary to force a reload, but will delete local pictures)?]
 [Reset contact picture]
 [Contact has no avatar]
-[Protocols]
 [Own avatars]
 [Are you sure you want to remove your avatar?]
 [Flash animations]

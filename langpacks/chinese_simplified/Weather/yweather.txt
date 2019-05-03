@@ -79,7 +79,7 @@
 [Sun]
 
 [Sunny]
-
+晴朗
 [Thu]
 
 [Tue]

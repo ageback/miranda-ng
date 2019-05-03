@@ -27,7 +27,7 @@
 [Typing]
 正在输入
 [Protocols]
-
+协议
 [Suppress notifications upon connection for]
 
 [sec]

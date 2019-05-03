@@ -30,7 +30,7 @@
 [Failed]
 失败
 [Open]
-
+打开
 [Reload]
 
 [Compile]

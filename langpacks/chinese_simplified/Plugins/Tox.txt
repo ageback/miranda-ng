@@ -93,7 +93,7 @@
 [Correction icon]
 
 [Protocols]
-
+协议
 ;file \protocols\Tox\src\tox_menus.cpp
 [Password]
 

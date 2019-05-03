@@ -102,7 +102,7 @@
 [Contacts]
 联系人
 [Protocols]
-
+协议
 [Contact avatars]
 联系人头像
 [Own avatars]

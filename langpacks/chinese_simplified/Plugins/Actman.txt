@@ -788,7 +788,7 @@
 [Eating]
 
 [Watching TV]
-
+在看电视
 [Meeting]
 
 [Coffee]
@@ -804,7 +804,7 @@
 [Gaming]
 
 [Studying]
-
+正在学习
 [Shopping]
 
 [Feeling sick]
@@ -816,7 +816,7 @@
 [Browsing]
 
 [Working]
-
+在工作
 [Typing]
 正在输入
 [Picnic]
@@ -840,7 +840,7 @@
 [Display xStatus detail]
 
 [Undefined]
-
+未定义
 [Action group list was changed: some was added or deleted]
 
 [contact list]

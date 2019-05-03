@@ -31,7 +31,6 @@
 [&Mail addresses only]
 [&Clear search results]
 [link]
-[Open]
 [Open in new window]
 [Show message]
 [History Linklist]

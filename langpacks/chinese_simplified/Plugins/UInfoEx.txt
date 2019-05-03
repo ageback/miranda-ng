@@ -606,7 +606,7 @@
 [Extended user info]
 
 [Dialogs]
-
+对话框
 [Buttons]
 
 ;file \plugins\UserInfoEx\src\mir_menuitems.cpp
@@ -739,7 +739,7 @@
 [Chamorro]
 
 [Chinese]
-
+中国
 [Croatian]
 
 [Czech]

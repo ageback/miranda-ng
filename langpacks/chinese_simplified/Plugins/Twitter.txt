@@ -21,7 +21,7 @@
 [Send Tweet]
 
 [Send]
-
+发送
 [Cancel]
 取消
 [Miscellaneous options]

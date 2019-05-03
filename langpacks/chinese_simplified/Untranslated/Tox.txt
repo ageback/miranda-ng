@@ -33,7 +33,6 @@
 [Protocol icon]
 [Action icon]
 [Correction icon]
-[Protocols]
 [Password]
 [Create password]
 [Action]

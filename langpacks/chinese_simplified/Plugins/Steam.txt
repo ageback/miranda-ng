@@ -88,7 +88,7 @@
 网络
 ;file \protocols\Steam\src\steam_proto.cpp
 [Protocols]
-
+协议
 [Protocol icon]
 
 [Gaming icon]

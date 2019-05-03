@@ -132,7 +132,6 @@
 [Import from]
 [** Use <date> to insert date, <ext> to insert extension, <contact> to insert contact name]
 [History log]
-[Filter:]
 [Conversation started at %s]
 [Menu]
 [Open all]

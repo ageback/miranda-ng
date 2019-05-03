@@ -25,7 +25,6 @@
 [Left:]
 [Right:]
 [Set my status message for all status]
-[Status message:]
 [&Offline]
 [On&line]
 [&Away]

@@ -11,7 +11,7 @@
 [Confirm Pounce send]
 
 [Send]
-
+发送
 [Cancel]
 取消
 [Pounce being sent to]

@@ -4,7 +4,6 @@
 [Allow tooltip notifications for the following users:]
 [Notify upon the following events]
 [All other]
-[Protocols]
 [Suppress notifications upon connection for]
 [Prefix protocol name]
 [Duration]

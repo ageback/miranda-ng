@@ -105,7 +105,7 @@
 [Live ID]
 
 [&Invite]
-
+邀请(&I)
 [&Cancel]
 取消(&C)
 [Add]
@@ -120,7 +120,7 @@
 [&Invite user...]
 
 [&Leave chat session]
-
+离开聊天会话(&L)
 [User &details]
 用户详情(&D)
 [User &history]

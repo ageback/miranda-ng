@@ -31,7 +31,7 @@
 [On events...]
 
 [Send]
-
+发送
 [Receive]
 
 [Message]

@@ -21,7 +21,7 @@
 [Description]
 
 [Downloading...]
-
+正在下载...
 [Pack update options]
 
 [On startup]

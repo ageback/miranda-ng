@@ -1,6 +1,5 @@
 [Allows you to send a message to contacts if they change status.]
 [Confirm Pounce send]
-[Send]
 [Pounce being sent to]
 [Buddy Pounce]
 [The Message:]

@@ -77,7 +77,7 @@
 [Set my status message for all status]
 
 [Status message:]
-
+状态消息：
 [&Offline]
 
 [On&line]

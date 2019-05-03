@@ -57,7 +57,7 @@
 [Log to file]
 日志到文件
 [Open]
-
+打开
 [Change]
 
 [Preview]

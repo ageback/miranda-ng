@@ -177,7 +177,7 @@
 [Server-side delivery confirmation]
 
 [Bots challenge test]
-
+机器人挑战测试
 [Instruction:]
 指令：
 [Submit]
@@ -230,7 +230,7 @@
 [Mark messages as read icon]
 
 [Protocols]
-
+协议
 [VKontakte]
 
 [Access denied! Data will not be sent or received.]
@@ -383,13 +383,13 @@
 [View/change &title]
 
 [&Destroy room]
-
+销毁房间(&D)
 [&User details]
-
+用户详情(&U)
 [Change nick]
 
 [&Kick]
-
+踢(&K)
 [%s is typing a message...]
 %s 正在输入消息...
 ;file \protocols\VKontakte\src\vk_dialogs.cpp
@@ -598,7 +598,7 @@
 [Interests]
 
 [Activities]
-
+活动
 [Music]
 
 [Movies]

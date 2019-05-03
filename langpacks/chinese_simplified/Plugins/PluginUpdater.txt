@@ -102,7 +102,7 @@
 下载
 ;file \plugins\PluginUpdater\src\DlgListNew.cpp
 [Downloading...]
-
+正在下载...
 [Succeeded.]
 
 [Failed!]

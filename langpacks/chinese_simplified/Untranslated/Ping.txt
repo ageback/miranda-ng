@@ -23,7 +23,6 @@
 [Set my status to:]
 [On success, if my status is:]
 [Execute the following command on double-click:]
-[Protocols]
 [(Optional) Command Parameters:]
 [Menu]
 [Graph]

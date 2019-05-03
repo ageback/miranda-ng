@@ -3,73 +3,73 @@
 ;  Plugin: Weather
 ;============================================================
 [AM Rain]
-
+上午雨
 [Am Clouds / Pm Sun]
-
+上午多云 / 下午太阳
 [Am Light Rain]
-
+上午小雨
 [Am Rain / Snow Showers]
-
+上午雨 / 阵雪
 [Am Rain / Snow]
-
+上午雨 / 雪
 [Am Rain]
-
+上午雨
 [Am Showers / Wind]
-
+上午阵雨 / 风
 [Am Showers]
-
+上午阵雨
 [Am Snow Showers / Wind]
-
+上午阵雪 / 风
 [Am Snow Showers]
-
+上午阵雪
 [Am Snow]
-
+上午雪
 [Am T-Storms]
-
+上午雷雨
 [Clear / Wind]
-
+晴朗 / 风
 [Clouds Early / Clearing Late]
-
+早多云 / 晚转晴 
 [Cloudy / Wind]
-
+多云 / 风
 [Cloudy / Windy]
-
+多云 / 有风
 [Cloudy And Windy]
-
+多云并有风
 [Cloudy]
-
+多云
 [Drifting Snow]
-
+飘雪
 [ENE]
-
+东北偏东
 [ESE]
-
+东南偏东
 [E]
-
+东
 [Fair / Windy]
-
+晴朗 / 有风
 [Fair And Windy]
-
+晴朗并有风
 [Fair]
-
+晴朗
 [Feel]
-
+体感
 [Few Showers / Wind]
-
+短时阵雨 / 风
 [Few Showers]
-
+短时阵雨
 [Few Snow Showers]
-
+短时阵雪
 [First Quarter]
-
+第一季度
 [Fog / Windy]
-
+雾 / 有风
 [Fog And Windy]
-
+雾并且有风
 [Fog Late]
-
+后有雾
 [Fog]
-
+雾
 [Forecast Day 0]
 
 [Forecast Day 1]
@@ -93,149 +93,149 @@
 [Forecast Update VAR]
 
 [Forecast Update]
-
+天气预报更新
 [Freezing Drizzle / Windy]
-
+冻结细雨/刮风
 [Freezing Rain / Windy]
-
+冻雨/刮风
 [Full Moon]
-
+满月
 [Haze]
-
+霾
 [Heat Index]
-
+热度指数
 [Heavy Rain / Wind]
-
+大雨 / 风
 [Heavy Rain]
-
+大雨
 [Heavy Snow And Windy]
-
+大雪并有风
 [Heavy Snow Shower]
-
+大阵雪
 [Heavy Snow]
-
+大雪
 [Heavy T-Storm]
-
+大雷雨
 [Heavy T-Storms]
-
+大雷雨 
 [Ice Crystals]
-
+冰晶
 [Isolated T-Storms / Wind]
-
+局部雷雨 / 风
 [Isolated T-Storms]
-
+局部雷雨
 [Jun]
-
+六月
 [Last Quarter]
-
+上个季度
 [Latitude]
-
+纬度
 [Light Drizzle And Fog]
-
+细雨和雾
 [Light Drizzle And Windy]
-
+细雨并有风
 [Light Drizzle]
-
+细雨
 [Light Freezing Rain / Fog]
-
+小冻雨 / 雾
 [Light Freezing Rain / Windy]
-
+小冻雨 / 有风
 [Light Rain / Fog]
-
+小雨 / 雾
 [Light Rain / Freezing Rain]
-
+小雨 / 冻雨
 [Light Rain / Wind Early]
-
+小雨 / 早有风
 [Light Rain / Wind]
-
+小雨 / 风
 [Light Rain / Windy]
-
+小雨 / 有风
 [Light Rain And Windy]
-
+小雨并有风
 [Light Rain Early]
-
+早有小雨
 [Light Rain Late]
-
+稍晚小雨
 [Light Rain Shower And Windy]
-
+小阵雨并有风
 [Light Rain Shower]
-
+小阵雨
 [Light Rain With Thunder]
-
+小雨并有雷电
 [Light Rain]
-
+小雨
 [Light Showers Rain]
-
+小阵雨
 [Light Snow / Fog]
-
+小雪 / 雾
 [Light Snow And Windy]
-
+小雪并有风
 [Light Snow Early]
-
+早有小雪
 [Light Snow Late]
-
+稍晚小雪
 [Light Snow Shower And Windy]
-
+小阵雪并有风
 [Light Snow Shower]
-
+小阵雪
 [Light Snow]
-
+小雪
 [Light Thunderstorm Rain]
-
+小雷雨
 [Local Time]
-
+本地时间
 [Longitude]
-
+经度
 [Mist]
-
+薄雾
 [Moderate]
-
+中等
 [Moon]
-
+月亮
 [Mostly Clear]
-
+大部晴朗
 [Mostly Cloudy / Wind]
-
+大部多云 / 风
 [Mostly Cloudy And Windy]
-
+大部多云并有风 
 [Mostly Cloudy]
-
+大部多云
 [Mostly Sunny / Wind]
-
+大部晴朗 / 风
 [Mostly Sunny]
-
+大部晴朗
 [N/A%]
-
+N/A%
 [N/a]
 N/A
 [NE]
-
+东北
 [NNE]
-
+东北偏北
 [NNW]
-
+西北偏北
 [NW]
-
+西北
 [N]
-
+北
 [New Moon]
-
+新月
 [Night]
-
+夜晚
 [Observatory]
-
+天文台
 [Overcast]
-
+阴天
 [Partly Cloudy / Wind]
-
+局部多云 / 风
 [Partly Cloudy / Windy]
-
+局部多云 / 有风
 [Partly Cloudy And Windy]
-
+局部多云并有风
 [Partly Cloudy]
-
+局部多云
 [Partly Sunny]
-
+局部晴朗
 [Pm Light Rain]
 
 [Pm Rain / Snow]
@@ -367,7 +367,7 @@ N/A
 [Sunny / Windy]
 
 [Sunny]
-
+阳光明媚
 [T-Showers Early]
 
 [T-Showers]

@@ -87,7 +87,7 @@ URL
 [User info]
 
 [UPLOADING...]
-
+正在上传...
 [Open in Browser]
 
 [FTP File Manager]

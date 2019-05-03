@@ -77,7 +77,7 @@
 退出
 ;file \plugins\TopToolBar\src\main.cpp
 [Execute]
-
+执行
 [Separator]
 
 ;file \plugins\TopToolBar\src\toolbar.cpp

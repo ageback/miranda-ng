@@ -65,7 +65,7 @@ Miranda NG 的 Jabber (XMPP) 协议支持。
 [Use TLS]
 使用 TLS
 [Unregister]
-未注册
+取消注册
 [Expert]
 专家
 [Manually specify connection host]
@@ -93,7 +93,7 @@ Miranda NG 的 Jabber (XMPP) 协议支持。
 [Hint:]
 提示：
 [Try to uncheck all checkmarks above if you're experiencing troubles with sending files. But it can cause problems with transfer of large files.]
-
+如果您遇到发送文件的麻烦，请尝试取消选中上面的所有复选标记。 但它可能会导致大文件传输出现问题。
 [Jabber account registration]
 Jabber 帐户注册
 [Jabber Form]
@@ -265,185 +265,185 @@ URL
 [Privacy Lists]
 隐私列表
 [Flexible way to configure visibility and more.]
-
+灵活的方式来配置可见性和更多。
 [Lists:]
-
+列表：
 [Rules:]
-
+规则：
 [Simple Mode]
-
+简单模式
 [Advanced Mode]
-
+高级模式
 [Add list... (Ins)]
-
+添加列表... (Ins)
 [Activate (Space)]
-
+激活 (空格)
 [Set as default (Ctrl+Space)]
-
+设为默认(Ctrl+空格)
 [Remove list (Del)]
-
+移除列表(Del)
 [Add rule (Ins)]
-
+添加规则(Ins)
 [Edit rule... (F2)]
-
+编辑规则...(F2)
 [Move rule up (Alt+Up)]
-
+上移规则(Alt+上)
 [Move rule down (Alt+Down)]
-
+下移规则(Alt+下)
 [Remove rule (Del)]
-
+移除规则(Del)
 [Privacy rule]
-
+隐私规则
 [If:]
-
+如果：
 [Then:]
-
+然后：
 [following stanza types:]
 
 [Messages]
 消息
 [Queries]
-
+队列
 [Incoming presence]
-
+传入存在
 [Outgoing presence]
-
+传出存在
 [New privacy list name:]
-
+新的隐私列表名称：
 [Enter the name of the new list:]
-
+输入新列表的名称：
 [Service Discovery]
-
+服务发现
 [View as tree]
-
+以树视图
 [View as list]
-
+以列表视图
 [Favorites]
 收藏
 [Refresh]
 刷新
 [JID:]
-
+JID：
 [Node:]
-
+节点：
 [Filter:]
-
+过滤器：
 [Member Information]
-
+成员信息
 [Role:]
-
+角色：
 [Set role]
-
+设置角色
 [Affiliation:]
-
+联系：
 [Set affiliation]
-
+设置联系
 [Status message:]
-
+状态消息：
 [Chat options]
-
+聊天选项
 [Alternate nick:]
-
+备用昵称：
 [Custom messages]
-
+自定义消息
 [Quit:]
-
+退出：
 [Slap:]
-
+击掌：
 [Authorization request]
 授权请求
 [Accept or reject incoming request]
-
+接受或拒绝传入请求
 [Someone (maybe you) has requested the following file:]
-
+某人（可能是你）请求了以下文件：
 [Request was sent from JID:]
-
+发送的请求来自 JID：
 [The transaction identifier is:]
-
+交易标识符为：
 [Request method is:]
-
+请求方式为：
 [If you wish to confirm this request, please click authorize. Otherwise, press deny to reject it.]
-
+如果你希望确认此请求，请点击授权。否则，点击拒绝。
 [Authorize]
-
+授权
 [Deny]
-
+拒绝
 [Dialog]
 对话框
 [Jabber Notebook]
-
+Jabber 笔记本
 [Store notes on server and access them from anywhere.]
-
+在服务器上存储笔记并从任意位置访问它们。
 [Bots Challenge Test]
-
+机器人挑战测试
 [XML Console]
-
+XML 控制台
 [Reset log]
-
+重置日志
 [Send]
-
+发送
 ;file \protocols\JabberG\src\jabber.cpp
 [Jabber Link Protocol]
-
+Jabber 链接协议
 [Frame title]
-
+框架标题
 [Frame text]
-
+框架文字
 [Jabber Activity]
-
+Jabber 活动
 [Jabber Mood]
-
+Jabber 表情
 ;file \protocols\JabberG\src\jabber_adhoc.cpp
 [Done]
-
+完成
 [Execute]
-
+执行
 ;file \protocols\JabberG\src\jabber_agent.cpp
 [Jabber Agent Registration]
-
+Jabber 代理注册
 [No message]
-
+无消息
 [Register]
-
+注册
 [Please wait...]
-
+请等待...
 ;file \protocols\JabberG\src\jabber_bookmarks.cpp
 [Bookmark Name]
-
+书签名称
 [Address (JID or URL)]
-
+地址（JID或URL）
 [Nickname]
 昵称
 [Conferences]
-
+会议
 [Links]
-
+链接
 ;file \protocols\JabberG\src\jabber_byte.cpp
 [Bytestream Proxy not available]
-
+字节流代理不可用
 ;file \protocols\JabberG\src\jabber_caps.cpp
 [Supports Service Discovery info]
-
+支持服务发现信息
 [Supports Service Discovery items list]
-
+支持服务发现项目列表
 [Can inform about its Jabber capabilities]
-
+可以告知其Jabber功能
 [Supports stream initiation (e.g., for filetransfers)]
-
+支持流启动（例如，用于文件传输）
 [Supports stream initiation for file transfers]
-
+支持文件传输的流启动
 [Supports file transfers via SOCKS5 Bytestreams]
-
+支持通过SOCKS5 Bytestreams进行文件传输
 [Supports file transfers via In-Band Bytestreams]
-
+支持通过带内字节流传输文件
 [Supports file transfers via Out-of-Band Bytestreams]
-
+通过带外字节流支持文件传输
 [Supports execution of Ad-Hoc commands]
-
+支持执行Ad-Hoc命令
 [Supports in-band registration]
-
+支持带内注册
 [Supports multi-user chat]
-
+支持多用户聊天
 [Can report chat state in a chat session]
 
 [Can report information about the last activity of the user]
@@ -459,13 +459,13 @@ URL
 [Can request and respond to events relating to the delivery, display, and composition of messages]
 
 [Supports vCard]
-
+支持 vCard
 [Supports iq-based avatars]
-
+支持基于 iq 的头像
 [Supports XHTML formatting of chat messages]
-
+支持聊天消息的 XHTML 格式
 [Supports Jabber Browsing]
-
+支持 Jabber 浏览
 [Can negotiate options for specific features]
 
 [Can request advanced processing of message stanzas]
@@ -473,7 +473,7 @@ URL
 [Can report information about user moods]
 
 [Receives information about user moods]
-
+接收有关用户心情的信息
 [Supports generic publish-subscribe functionality]
 
 [Supports SecureIM plugin for Miranda NG]
@@ -527,7 +527,7 @@ URL
 [Owner]
 所有者
 [Visitor]
-
+访问者
 [Participant]
 
 [Moderator]
@@ -553,33 +553,33 @@ URL
 [&Moderator list]
 
 [&Affiliations]
-
+联系(&A)
 [&Member list]
-
+成员列表(&M)
 [&Admin list]
-
+管理员列表(&A)
 [&Owner list]
-
+拥有者列表(&O)
 [Outcast list (&ban)]
-
+抛弃列表(禁止)(&B)
 [&Room options]
-
+房间选项(&R)
 [View/change &topic]
-
+查看/更改主题(&T)
 [Add to &bookmarks]
-
+添加到书签(&B)
 [&Configure...]
-
+配置(&C)...
 [&Destroy room]
-
+销毁房间(&D)
 [Lin&ks]
-
+链接(&K)
 [Copy room &JID]
-
+复制房间 &JID
 [Copy room topic]
-
+复制房间主题
 [&Send presence]
-
+发送出席(&S)
 [Online]
 在线
 [Away]
@@ -591,146 +591,146 @@ URL
 [Free for chat]
 有空聊天
 [&Leave chat session]
-
+离开聊天会话(&L)
 [&Slap]
-
+击掌(&S)
 [&User details]
-
+用户详情(&U)
 [Member &info]
-
+成员信息(&I)
 [User &details]
 用户详情(&D)
 [&Add to roster]
-
+添加到名单(&A)
 [&Copy to clipboard]
-
+复制到剪贴板(&C)
 [Invite to room]
-
+邀请到房间
 [Set &role]
-
+设置角色(&R)
 [&Visitor]
-
+访问者(&V)
 [&Participant]
-
+参加者(&P)
 [&Moderator]
-
+主持人(&M)
 [Set &affiliation]
-
+设置联系(&A)
 [&None]
-
+无(&N)
 [&Member]
-
+成员(&M)
 [&Admin]
-
+管理员(&A)
 [&Owner]
-
+拥有者(&O)
 [Outcast (&ban)]
-
+抛弃(禁止)(&B)
 [&Kick]
-
+踢(&K)
 [Copy &nickname]
-
+复制昵称(&N)
 [Copy real &JID]
-
+复制真实的 &JID
 [Copy in-room JID]
-
+复制房间内 JID
 [Real &JID: %s]
-
+真实的 &JID：%s
 [Invite Users to\n%s]
-
+邀请用户到\n%s
 [%s (not on roster)]
-
+%s (不在名单上)
 [Reason to kick %s]
-
+踢 %s 的原因
 [Reason to ban %s]
-
+禁止 %s 的原因
 [Invite %s to %s]
-
+邀请 %s 到 %s
 [Set topic for %s]
-
+设置 %s 的主题
 [Change nickname in %s]
-
+更改 %s 中的昵称
 [Reason to destroy %s]
-
+销毁 %s 的原因
 ;file \protocols\JabberG\src\jabber_console.cpp
 [Can't send data while you are offline.]
-
+当你离线时不能发送数据。
 [Jabber Error]
-
+Jabber 错误
 [Outgoing XML parsing error]
-
+传出 XML 解析错误
 ;file \protocols\JabberG\src\jabber_disco.cpp
 [request timeout.]
-
+请求超时
 [Node hierarchy]
-
+节点层次
 [Node]
-
+节点
 [Navigate]
-
+导航
 [Browse all favorites]
-
+浏览所有收藏
 [Remove all favorites]
-
+移除所有收藏
 [Registered transports]
-
+注册的传输
 [Browse local transports]
-
+浏览本地传输
 [Browse chatrooms]
-
+浏览聊天室
 [Contact Menu...]
-
+联系人菜单...
 [View vCard]
-
+查看 vCard
 [Join chatroom]
-
+加入聊天室
 [Refresh Info]
-
+刷新信息
 [Refresh Children]
-
+刷新孩子
 [Add to favorites]
-
+添加到收藏
 [Add to roster]
-
+添加到名单
 [Bookmark chatroom]
-
+书签聊天室
 [Add search directory]
-
+添加搜索目录
 [Use this proxy]
-
+使用这个代理
 [Commands...]
-
+命令...
 [Logon]
-
+登录
 [Logoff]
-
+登出
 [Copy JID]
-
+复制 JID
 [Copy node name]
-
+复制节点名称
 [Copy node information]
-
+复制节点信息
 ;file \protocols\JabberG\src\jabber_groupchat.cpp
 [Failed to retrieve room list from server.]
-
+从服务器接收房间列表失败。
 [No rooms available on server.]
-
+服务器上没有房间可用。
 [Room list request timed out.]
-
+房间列表请求超时。
 [Loading...]
-
+正在加载...
 [Please wait for room list to download.]
-
+请等待房间列表下载。
 [Please specify group chat directory first.]
-
+请首先指定分组聊天目录
 [Bookmarks...]
-
+书签...
 [Change nickname in <%s>]
-
+更改 <%s> 中的昵称
 [Error]
 错误
 [Group chat invitation to\n%s]
-
+分组聊天邀请给\n%s
 ;file \protocols\JabberG\src\jabber_icolib.cpp
 [Status icons]
 状态图标
@@ -739,21 +739,21 @@ URL
 [Notes]
 笔记
 [Multi-User Conference]
-
+多用户会议
 [Agents list]
-
+代理列表
 [Transports]
 
 [Personal vCard]
-
+个人 vCard
 [Convert to room]
-
+转换到房间
 [Login/logout]
-
+登录/登出
 [Resolve nicks]
-
+解析昵称
 [Send note]
-
+发送笔记
 [AdHoc Command]
 
 [OpenID Request]
@@ -761,11 +761,11 @@ URL
 [Add contact]
 添加联系人
 [Open]
-
+打开
 [Discovery succeeded]
-
+发现成功
 [Discovery failed]
-
+发现失败
 [Discovery in progress]
 
 [Apply filter]
@@ -775,17 +775,17 @@ URL
 [Navigate home]
 
 [Refresh node]
-
+刷新节点
 [Browse node]
-
+浏览节点
 [RSS service]
-
+RSS 服务
 [Server]
-
+服务器
 [Storage service]
-
+存储服务
 [Weather service]
-
+天气服务
 [Generic privacy list]
 
 [Active privacy list]
@@ -797,83 +797,83 @@ URL
 [Move down]
 下移
 [Allow Messages]
-
+允许消息
 [Allow Presences (in)]
 
 [Allow Presences (out)]
 
 [Allow Queries]
-
+允许查询
 [Deny Messages]
-
+拒绝消息
 [Deny Presences (in)]
 
 [Deny Presences (out)]
 
 [Deny Queries]
-
+拒绝查询
 [Protocols]
-
+协议
 [Dialogs]
-
+对话框
 [Discovery]
-
+发现
 [Privacy]
-
+隐私
 ;file \protocols\JabberG\src\jabber_iqid.cpp
 [Authentication failed for %s.]
 
 [Authentication]
 
 [Registration successful]
-
+注册成功
 [Password is successfully changed. Don't forget to update your password in the Jabber protocol option.]
-
+密码更改成功。不要忘记在 Jabber 协议选项中更新你的密码。
 [Password cannot be changed.]
-
+不能更改密码。
 [Jabber Bookmarks Error]
-
+Jabber 书签错误
 ;file \protocols\JabberG\src\jabber_iqid_muc.cpp
 [%s, %d items (%s)]
 
 [Reason to ban]
-
+禁止的原因
 [Removing %s?]
-
+移除 %s？
 [Voice List]
-
+语音列表
 [Member List]
-
+成员列表
 [Moderator List]
 
 [Ban List]
-
+禁止列表
 [Admin List]
-
+管理员列表
 [Owner List]
-
+拥有者列表
 ;file \protocols\JabberG\src\jabber_iq_handlers.cpp
 [Http authentication request received]
-
+收到 Http 认证请求
 ;file \protocols\JabberG\src\jabber_menu.cpp
 [Jabber account chooser]
-
+Jabber 帐户选择器
 [Convert]
-
+转换
 [Add to Bookmarks]
-
+添加到书签
 [Commands]
-
+命令
 [Send Note]
-
+发送笔记
 [Send Presence]
-
+发送出席
 [Jabber Resource]
-
+Jabber 资源
 [Last Active]
-
+上次活跃
 [Server's Choice]
-
+服务器的选择
 [&Convert to Contact]
 
 [&Convert to Chat Room]
@@ -881,7 +881,7 @@ URL
 [Services...]
 
 [Registered Transports]
-
+注册的传输
 [Local Server Transports]
 
 [Create/Join group chat]
@@ -903,7 +903,7 @@ URL
 [Privacy lists]
 隐私列表
 [Service discovery]
-
+服务发现
 [Last active (%s)]
 
 [No activity yet, use server's choice]
@@ -1000,7 +1000,7 @@ URL
 [Chechen]
 
 [Chinese]
-
+中国
 [Church Slavic; Old Slavonic]
 
 [Chuvash]
@@ -1324,17 +1324,17 @@ URL
 [You can change your password only when you are online]
 
 [You must be online]
-
+你必须在线
 [Messaging]
 消息
 [Send messages slower, but with full acknowledgment]
-
+发送消息较慢，但完全确认
 [Enable avatars]
-
+启用头像
 [Log chat state changes]
-
+记录聊天状态更改
 [Log presence subscription state changes]
-
+记录在线订阅状态更改
 [Log presence errors]
 
 [Enable user moods receiving]
@@ -1492,55 +1492,55 @@ URL
 [outgoing presences]
 
 [queries]
-
+队列
 [Else ]
 
 [If Jabber ID is ']
 
 [ (nickname: ]
-
+（昵称：）
 [If group is ']
-
+如果分组是 '
 [If subscription is ']
-
+如果订阅是 '
 [then ]
-
+那么
 [ (act., def.)]
 
 [ (active)]
-
+（活动）
 [ (default)]
-
+（默认）
 [Ready.]
-
+就绪。
 [Privacy lists are not saved, discard any changes and exit?]
-
+隐私列表未保存，放弃所有更改并退出吗？
 [Simple mode]
-
+简单模式
 [Advanced mode]
-
+高级模式
 [Add JID]
-
+添加 JID
 [Activate]
-
+激活
 [Set default]
-
+设置默认
 [Edit rule]
-
+编辑规则
 [Add rule]
-
+添加规则
 [Delete rule]
-
+删除规则
 [Move rule up]
-
+上移规则
 [Move rule down]
-
+下移规则
 [Add list...]
-
+添加列表...
 [Remove list]
-
+移除列表
 [** Default **]
-
+** 默认 **
 [** Subscription: both **]
 
 [** Subscription: to **]
@@ -1562,35 +1562,35 @@ URL
 [Please save list before activating]
 
 [First, save the list]
-
+首先，保存列表
 [Please save list before you make it the default list]
-
+在你将列表设为默认列表之前，请先保存它
 [No list selected]
-
+未选择列表
 [Can't remove active or default list]
 
 [Sorry]
-
+抱歉
 [Unable to save list because you are currently offline.]
-
+由于你现在离线，无法保存列表。
 [List Editor...]
-
+列表编辑器...
 ;file \protocols\JabberG\src\jabber_proto.cpp
 [No compatible file transfer mechanism exists]
 
 [Protocol is offline or no JID]
-
+协议离线或没有 JID
 [No valid OMEMO session exists]
 
 ;file \protocols\JabberG\src\jabber_roster.cpp
 [Group]
 分组
 [Subscription]
-
+订阅
 [Uploading...]
-
+正在上传...
 [Downloading...]
-
+正在下载...
 [Connecting...]
 正在连接...
 [XML for MS Excel (UTF-8 encoded)]
@@ -1892,19 +1892,19 @@ URL
 [Restless]
 
 [Sad]
-
+悲伤
 [Sarcastic]
 
 [Satisfied]
-
+满足
 [Serious]
 
 [Shocked]
 
 [Shy]
-
+害羞
 [Sick]
-
+生病
 [Sleepy]
 
 [Spontaneous]
@@ -1912,31 +1912,31 @@ URL
 [Stressed]
 
 [Strong]
-
+强壮
 [Surprised]
-
+惊讶
 [Thankful]
 
 [Thirsty]
-
+口渴
 [Tired]
 
 [Undefined]
-
+未定义
 [Weak]
-
+虚弱
 [Worried]
-
+担心
 [Set Mood]
-
+设置心情
 [Mood: %s]
-
+心情：%s
 [Doing chores]
 
 [buying groceries]
 
 [cleaning]
-
+清理
 [cooking]
 
 [doing maintenance]
@@ -2046,57 +2046,57 @@ URL
 [sunbathing]
 
 [watching TV]
-
+在看电视
 [watching a movie]
-
+在看电影
 [Talking]
-
+在谈话
 [in real life]
-
+在真实生活中
 [on the phone]
 在打电话
 [on video phone]
-
+在视频电话
 [Traveling]
-
+在旅行
 [commuting]
 
 [driving]
-
+在开车
 [in a car]
-
+在汽车上
 [on a bus]
-
+在公交车上
 [on a plane]
-
+在飞机上
 [on a train]
-
+在火车上
 [on a trip]
-
+在途中
 [walking]
-
+在散步
 [Working]
-
+在工作
 [coding]
-
+在编程
 [in a meeting]
-
+在开会
 [studying]
-
+正在学习
 [writing]
-
+正在写作
 [Set Activity]
-
+设置活动
 [Activity: %s]
-
+活动：%s
 [Listening To]
 正在听
 [Moods]
-
+心情
 [Activities]
-
+活动
 ;file \protocols\JabberG\src\stdafx.h
 [I'm happy Miranda NG user. Get it at https://miranda-ng.org/.]
-
+我是个高兴Miranda NG用户。在https://miranda-ng.org/获取。
 [/me slaps %s around a bit with a large trout]
 

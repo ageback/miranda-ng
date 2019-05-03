@@ -406,7 +406,6 @@
 [Postcollecting column data]
 [Transforming data]
 [Creating HTML]
-[Done]
 [Already existing file]
 [HistoryStats is already generating statistics. Please wait for the already running process to be finished or cancel it and try again.]
 [month3:Jan]

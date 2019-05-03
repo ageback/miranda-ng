@@ -406,7 +406,7 @@
 [History log]
 
 [Filter:]
-
+过滤器：
 [Conversation started at %s]
 
 ;file \plugins\BasicHistory\src\RichHtmlExport.cpp

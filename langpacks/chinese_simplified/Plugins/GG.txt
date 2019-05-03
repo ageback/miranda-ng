@@ -37,7 +37,7 @@
 [Show links from unknown contacts]
 
 [Enable avatars]
-
+启用头像
 [These changes will take effect the next time you connect to the GG network.]
 
 [Conference policy]
@@ -57,7 +57,7 @@
 [Automatically reconnect after unintentional disconnection]
 
 [Send messages slower, but with full acknowledgment]
-
+发送消息较慢，但完全确认
 [Manually specify connection servers' hosts]
 
 [* new line is separator\n** hostname:port format]
@@ -145,7 +145,7 @@
 [Select conference participants]
 
 [Open]
-
+打开
 [Concurrent %s Login Sessions]
 
 [View information on active concurrent sessions]
@@ -236,7 +236,7 @@
 [General]
 通用
 [Conference]
-
+会议
 [Advanced]
 高级
 ;file \protocols\Gadu-Gadu\src\filetransfer.cpp

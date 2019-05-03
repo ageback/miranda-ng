@@ -35,7 +35,7 @@
 [Receiving text]
 
 [Privacy]
-
+隐私
 [Allow sending* one nudge to the same contact every:]
 
 [Allow receiving one nudge from the same contact every:]

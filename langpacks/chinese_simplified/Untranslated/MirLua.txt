@@ -7,7 +7,6 @@
 [Evaluate]
 [Script]
 [Loaded]
-[Open]
 [Reload]
 [Compile]
 [Common scripts]

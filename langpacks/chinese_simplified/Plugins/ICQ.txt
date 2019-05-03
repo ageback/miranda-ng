@@ -27,9 +27,9 @@
 [After that, set this status to a contact and move it offline after specified timeout in seconds (0 - disabled)]
 
 [Send group chat invitation]
-
+发送群聊邀请
 [&Invite]
-
+邀请(&I)
 [Cancel]
 取消
 [Account registration]

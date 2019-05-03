@@ -13,7 +13,6 @@
 [Key Exchange Timeout:]
 [Offline Key Timeout:]
 [Reset All]
-[Protocols]
 [Split Messages]
 [Online:]
 [Offline:]

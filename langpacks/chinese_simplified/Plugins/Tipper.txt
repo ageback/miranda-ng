@@ -219,7 +219,7 @@
 [Contact list event]
 
 [Jabber activity]
-
+Jabber 活动
 [Gender]
 
 [Country flag]
@@ -296,7 +296,7 @@
 [Status:]
 
 [Status message:]
-
+状态消息：
 [Mood:]
 
 [xStatus:]
@@ -509,7 +509,7 @@
 [Chamorro]
 
 [Chinese]
-
+中国
 [Croatian]
 
 [Czech]

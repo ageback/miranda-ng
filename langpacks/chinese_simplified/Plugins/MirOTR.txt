@@ -145,7 +145,7 @@
 [General]
 通用
 [Protocols]
-
+协议
 [Contacts]
 联系人
 [Fingerprints]

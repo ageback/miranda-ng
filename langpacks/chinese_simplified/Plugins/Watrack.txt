@@ -166,7 +166,7 @@
 [Popup Title / Text]
 
 [Frame Text]
-
+框架文字
 [Export Text]
 
 [Postfix]
