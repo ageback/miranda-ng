@@ -299,7 +299,7 @@ URL
 [Then:]
 然后：
 [following stanza types:]
-
+以下节类型：
 [Messages]
 消息
 [Queries]
@@ -445,19 +445,19 @@ Jabber 代理注册
 [Supports multi-user chat]
 支持多用户聊天
 [Can report chat state in a chat session]
-
+可以在一个聊天会议中报告聊天状态
 [Can report information about the last activity of the user]
-
+可以报告关于用户的最后活动的信息
 [Can report own version information]
-
+可以报告自己版本信息
 [Can report local time of the user]
-
+可以报告用户的本地时间
 [Can send and receive ping requests]
-
+可以发送和接收ping请求
 [Supports data forms]
-
+支持数据表单
 [Can request and respond to events relating to the delivery, display, and composition of messages]
-
+可以请求与回复与消息的传递，显示，和组成相关的事件
 [Supports vCard]
 支持 vCard
 [Supports iq-based avatars]
@@ -467,91 +467,91 @@ Jabber 代理注册
 [Supports Jabber Browsing]
 支持 Jabber 浏览
 [Can negotiate options for specific features]
-
+可以协商特定功能的选项
 [Can request advanced processing of message stanzas]
-
+可以请求消息节的高级处理
 [Can report information about user moods]
-
+可以报告关于用户心情的信息
 [Receives information about user moods]
 接收有关用户心情的信息
 [Supports generic publish-subscribe functionality]
-
+支持通用发布 - 订阅功能
 [Supports SecureIM plugin for Miranda NG]
-
+支持Miranda NG的SecureIM插件
 [Supports OTR (Off-the-Record Messaging)]
-
+支持OTR（非录制消息）
 [Supports New_GPG plugin for Miranda NG]
-
+支持Miranda NG的New_GPG插件
 [Blocks packets from other users/group chats using Privacy lists]
-
+使用隐私列表阻止来自其他用户/组聊天的数据包
 [Supports Message Receipts]
-
+支持消息回执
 [Can report information about the music to which a user is listening]
-
+可以报告有关用户正在收听的音乐的信息
 [Receives information about the music to which a user is listening]
-
+接收有关用户正在收听的音乐的信息
 [Supports private XML Storage (for bookmarks and other)]
-
+支持私有XML存储（用于书签和其他）
 [Supports attention requests ('nudge')]
-
+支持注意力要求（'轻推'）
 [Supports chat history retrieving]
-
+支持聊天记录检索
 [Supports chat history management]
-
+支持聊天记录管理
 [Can report information about user activity]
-
+可以报告有关用户活动的信息
 [Receives information about user activity]
-
+接收有关用户活动的信息
 [Supports Miranda NG notes extension]
-
+支持Miranda NG注释扩展
 [Supports Jingle]
-
+支持Jingle
 [Supports Roster Exchange]
-
+支持名单交换 
 [Supports direct chat invitations (XEP-0249)]
-
+支持直接聊天邀请（XEP-0249）
 [Receives information about OMEMO devices]
-
+接收有关OMEMO设备的信息
 [Supports message carbons (XEP-0280)]
-
+支持消息碳（XEP-0280）
 ;file \protocols\JabberG\src\jabber_captcha.cpp
 [Enter the text you see]
-
+输入你看到的文字
 ;file \protocols\JabberG\src\jabber_chat.cpp
 [None]
 无
 [Member]
-
+成员
 [Admin]
-
+管理员
 [Owner]
-所有者
+拥有者
 [Visitor]
 访问者
 [Participant]
-
+参加者
 [Moderator]
-
+主持人
 [Owners]
-
+拥有者
 [Moderators]
-
+主持人
 [Participants]
-
+参加者
 [Visitors]
-
+访问者
 [Role of %s was changed to '%s'.]
-
+%s 的角色变成了 '%s'。
 [Change &nickname]
-
+更改昵称(&N)
 [&Invite a user]
-
+邀请一个用户(&I)
 [&Roles]
-
+角色(&R)
 [&Participant list]
-
+参加者列表(&P)
 [&Moderator list]
-
+主持人列表(&M)
 [&Affiliations]
 联系(&A)
 [&Member list]
@@ -743,7 +743,7 @@ Jabber 错误
 [Agents list]
 代理列表
 [Transports]
-
+传输
 [Personal vCard]
 个人 vCard
 [Convert to room]
@@ -755,9 +755,9 @@ Jabber 错误
 [Send note]
 发送笔记
 [AdHoc Command]
-
+AdHoc 命令
 [OpenID Request]
-
+OpenID 请求
 [Add contact]
 添加联系人
 [Open]
@@ -767,13 +767,13 @@ Jabber 错误
 [Discovery failed]
 发现失败
 [Discovery in progress]
-
+发现进行中
 [Apply filter]
 应用过滤器
 [Reset filter]
 重置过滤器
 [Navigate home]
-
+导航回家
 [Refresh node]
 刷新节点
 [Browse node]
@@ -787,11 +787,11 @@ RSS 服务
 [Weather service]
 天气服务
 [Generic privacy list]
-
+通用隐私列表
 [Active privacy list]
-
+活动隐私列表
 [Default privacy list]
-
+默认隐私列表
 [Move up]
 上移
 [Move down]
@@ -799,17 +799,17 @@ RSS 服务
 [Allow Messages]
 允许消息
 [Allow Presences (in)]
-
+允许出席(入)
 [Allow Presences (out)]
-
+允许出席(出)
 [Allow Queries]
 允许查询
 [Deny Messages]
 拒绝消息
 [Deny Presences (in)]
-
+拒绝出席(入)
 [Deny Presences (out)]
-
+拒绝出席(出) 
 [Deny Queries]
 拒绝查询
 [Protocols]
@@ -822,9 +822,9 @@ RSS 服务
 隐私
 ;file \protocols\JabberG\src\jabber_iqid.cpp
 [Authentication failed for %s.]
-
+%s 认证失败。
 [Authentication]
-
+认证
 [Registration successful]
 注册成功
 [Password is successfully changed. Don't forget to update your password in the Jabber protocol option.]
@@ -835,7 +835,7 @@ RSS 服务
 Jabber 书签错误
 ;file \protocols\JabberG\src\jabber_iqid_muc.cpp
 [%s, %d items (%s)]
-
+%s，%d 项目(%s)
 [Reason to ban]
 禁止的原因
 [Removing %s?]
@@ -845,7 +845,7 @@ Jabber 书签错误
 [Member List]
 成员列表
 [Moderator List]
-
+主持人列表
 [Ban List]
 禁止列表
 [Admin List]
@@ -875,41 +875,41 @@ Jabber 资源
 [Server's Choice]
 服务器的选择
 [&Convert to Contact]
-
+转换为联系人(&C)
 [&Convert to Chat Room]
-
+转换为聊天室(&C)
 [Services...]
-
+服务...
 [Registered Transports]
 注册的传输
 [Local Server Transports]
-
+本地服务器传输
 [Create/Join group chat]
-
+创建/加入群聊
 [Roster editor]
 名单编辑器
 [Resource priority]
-
+资源优先级
 [Increase priority by %d]
-
+按%d增加优先级
 [Decrease priority by %d]
-
+按%d减少优先级
 [Resource priority [%d]]
-
+资源优先级[%d]
 [Join conference]
-
+加入会议
 [Open bookmarks]
-
+打开书签
 [Privacy lists]
 隐私列表
 [Service discovery]
 服务发现
 [Last active (%s)]
-
+上次活动（%s）
 [No activity yet, use server's choice]
-
+还没有活动，使用服务器的选择
 [Highest priority (server's choice)]
-
+高优先级（服务器的选择）
 [Status Message]
 状态消息
 ;file \protocols\JabberG\src\jabber_message_handlers.cpp
@@ -917,31 +917,31 @@ Jabber 资源
 [To]
 到
 [From]
-
+从
 [Both]
-
+两个都
 [Errors]
 错误
 ;file \protocols\JabberG\src\jabber_notes.cpp
 [Incoming note from %s]
-
+来自 %s 的传入注释
 [Send note to %s]
-
+发送注释给 %s
 [From: %s]
-
+从：%s
 [All tags]
-
+所有标签
 [Notes are not saved, close this window without uploading data to server?]
-
+注释没有保存，关闭此窗口并且不上传数据到服务器吗？
 [Are you sure?]
 你确定吗？
 [Incoming note]
-
+传入注释
 ;file \protocols\JabberG\src\jabber_omemo.cpp
 [Do you want to create OMEMO session with new device:]
-
+你想用新设备创建OMEMO会话吗：
 [OMEMO: New session]
-
+OMEMO：新会话
 ;file \protocols\JabberG\src\jabber_opt.cpp
 [Afar]
 
@@ -1128,9 +1128,9 @@ Jabber 资源
 [Lao]
 
 [Latin]
-
+拉丁文
 [Latvian]
-
+拉脱维亚语
 [Limburgan; Limburger; Limburgish]
 
 [Lingala]
@@ -1312,17 +1312,17 @@ Jabber 资源
 [Zhuang; Chuang]
 
 [Zulu]
-
+祖鲁
 [These changes will take effect the next time you connect to the Jabber network.]
-
+这些更改将在您下次连接到Jabber网络时生效。
 [Jabber Protocol Option]
-
+Jabber 协议选项
 [This operation will kill your account, roster and all other information stored at the server. Are you ready to do that?]
-
+此操作将终止您的帐户，名单和存储在服务器上的所有其他信息。你准备好了吗？
 [Account removal warning]
-
+帐户删除警告
 [You can change your password only when you are online]
-
+只有在线时才能更改密码
 [You must be online]
 你必须在线
 [Messaging]
@@ -1336,19 +1336,19 @@ Jabber 资源
 [Log presence subscription state changes]
 记录在线订阅状态更改
 [Log presence errors]
-
+记录出席错误
 [Enable user moods receiving]
-
+启用用户心情接收
 [Enable user tunes receiving]
-
+启用用户歌曲接收
 [Enable user activity receiving]
-
+启用用户活动接收
 [Receive notes]
-
+接收注释
 [Automatically save received notes]
-
+自动保存接收的注释
 [Enable server-side history (XEP-0136)]
-
+启用服务器端历史（XEP-0136）
 [Receive conversations from other devices (XEP-0280)]
 
 [Use Stream Management (XEP-0198) if possible (Testing)]

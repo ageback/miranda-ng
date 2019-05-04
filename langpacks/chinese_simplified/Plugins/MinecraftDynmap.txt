@@ -14,7 +14,7 @@
 
 ;file \protocols\MinecraftDynmap\src\chat.cpp
 [Admin]
-
+管理员
 [Normal]
 
 [You]

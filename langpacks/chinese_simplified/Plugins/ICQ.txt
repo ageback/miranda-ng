@@ -56,7 +56,7 @@
 
 ;file \protocols\ICQ-WIM\src\groupchats.cpp
 [&Invite a user]
-
+邀请一个用户(&I)
 [&Leave/destroy chat]
 
 ;file \protocols\ICQ-WIM\src\ignore.cpp
@@ -100,9 +100,9 @@
 [Connection failed.\nUnknown error during sign on: %d]
 
 [admin]
-
+管理员
 [member]
-
+成员
 [Unknown sticker]
 
 [User sent a sticker:]

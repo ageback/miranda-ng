@@ -237,35 +237,35 @@ N/A
 [Partly Sunny]
 局部晴朗
 [Pm Light Rain]
-
+下午小雨
 [Pm Rain / Snow]
-
+下午雨 / 雪
 [Pm Rain / Wind]
-
+下午雨 / 风
 [Pm Rain]
-
+下午雨
 [Pm Showers / Wind]
-
+下午阵雨 / 风
 [Pm Showers]
-
+下午阵雨
 [Pm Snow Showers]
-
+下午阵雪
 [Pm Snow]
-
+下午雪
 [Pm T-Storms]
-
+下午雷雨
 [Pressure Tendency]
-
+压力趋势
 [Rain / Freezing Rain / Wind]
-
+雨 / 冻雨 / 风
 [Rain / Freezing Rain]
-
+雨 / 冻雨
 [Rain / Snow / Wind]
-
+雨 / 雪 / 风
 [Rain / Snow Early]
-
+雨 / 早有雪
 [Rain / Snow Late]
-
+雨 / 晚有雪
 [Rain / Snow Showers Early]
 
 [Rain / Snow Showers Late]

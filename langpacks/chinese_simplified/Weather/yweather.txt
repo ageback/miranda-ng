@@ -3,15 +3,15 @@
 ;  Plugin: Weather
 ;============================================================
 [ENE]
-
+东北偏东
 [ESE]
-
+东南偏东
 [E]
-
+东
 [East]
 
 [Feel]
-
+体感
 [Forecast Day 1 Condition]
 
 [Forecast Day 1 Date]
@@ -27,25 +27,25 @@
 [Fri]
 
 [Heat Index]
-
+热度指数
 [Mon]
 
 [Mostly Clear]
-
+大部晴朗
 [Mostly Cloudy]
-
+大部多云
 [Mostly Sunny]
-
+大部晴朗
 [NE]
-
+东北
 [NNE]
-
+东北偏北
 [NNW]
-
+西北偏北
 [NW]
-
+西北
 [N]
-
+北
 [North]
 
 [Northeast]
@@ -53,9 +53,9 @@
 [Northwest]
 
 [Partly Cloudy]
-
+局部多云
 [Partly Sunny]
-
+局部晴朗
 [SE]
 
 [SSE]

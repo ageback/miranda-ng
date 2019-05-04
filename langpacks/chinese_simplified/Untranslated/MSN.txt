@@ -39,7 +39,6 @@
 [Block Contact]
 [Invite Contact To Chat]
 [Live ID]
-[Admin]
 [User]
 [Chat #]
 [&Invite user...]

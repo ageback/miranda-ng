@@ -7,7 +7,6 @@
 [Title]
 [Check every]
 [Check Feed]
-[Authentication]
 [Use &authentication]
 [Login]
 [Password]

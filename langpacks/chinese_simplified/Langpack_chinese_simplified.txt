@@ -5333,6 +5333,8 @@ Miranda 的根目录路径
 提交
 [Messages]
 消息
+[Enter the text you see]
+输入你看到的文字
 [User &details]
 用户详情(&D)
 [Notifications]
@@ -5353,6 +5355,8 @@ Miranda 的根目录路径
 其他事件
 [Sad]
 悲伤
+[Services...]
+服务...
 #muuid {ce2c0401-f9e0-40d7-8e95-1a4197d7ab04}
 ;============================================================
 ;  File: FavContacts.dll
@@ -5629,6 +5633,8 @@ URL
 高级
 [Contact list]
 联系人列表
+[Participants]
+参加者
 [Text files]
 文本文件
 [All Files]
@@ -5842,6 +5848,8 @@ URL
 取消
 [Nick:]
 昵称：
+[&Invite a user]
+邀请一个用户(&I)
 [Ignore]
 忽略
 [Network]
@@ -5850,6 +5858,10 @@ URL
 通用
 [Advanced]
 高级
+[admin]
+管理员
+[member]
+成员
 ;#muuid for ICQCorp not found, please specify manually!
 ;============================================================
 ;  File: ICQCorp.dll
@@ -6060,6 +6072,8 @@ URL
 密码：
 [Owner]
 所有者
+[Admin]
+管理员
 [Voice]
 语音
 [Unknown]
@@ -6421,6 +6435,8 @@ URL
 如果：
 [Then:]
 然后：
+[following stanza types:]
+以下节类型：
 [Messages]
 消息
 [Queries]
@@ -6559,6 +6575,20 @@ Jabber 代理注册
 支持带内注册
 [Supports multi-user chat]
 支持多用户聊天
+[Can report chat state in a chat session]
+可以在一个聊天会议中报告聊天状态
+[Can report information about the last activity of the user]
+可以报告关于用户的最后活动的信息
+[Can report own version information]
+可以报告自己版本信息
+[Can report local time of the user]
+可以报告用户的本地时间
+[Can send and receive ping requests]
+可以发送和接收ping请求
+[Supports data forms]
+支持数据表单
+[Can request and respond to events relating to the delivery, display, and composition of messages]
+可以请求与回复与消息的传递，显示，和组成相关的事件
 [Supports vCard]
 支持 vCard
 [Supports iq-based avatars]
@@ -6567,14 +6597,90 @@ Jabber 代理注册
 支持聊天消息的 XHTML 格式
 [Supports Jabber Browsing]
 支持 Jabber 浏览
+[Can negotiate options for specific features]
+可以协商特定功能的选项
+[Can request advanced processing of message stanzas]
+可以请求消息节的高级处理
+[Can report information about user moods]
+可以报告关于用户心情的信息
 [Receives information about user moods]
 接收有关用户心情的信息
+[Supports generic publish-subscribe functionality]
+支持通用发布 - 订阅功能
+[Supports SecureIM plugin for Miranda NG]
+支持Miranda NG的SecureIM插件
+[Supports OTR (Off-the-Record Messaging)]
+支持OTR（非录制消息）
+[Supports New_GPG plugin for Miranda NG]
+支持Miranda NG的New_GPG插件
+[Blocks packets from other users/group chats using Privacy lists]
+使用隐私列表阻止来自其他用户/组聊天的数据包
+[Supports Message Receipts]
+支持消息回执
+[Can report information about the music to which a user is listening]
+可以报告有关用户正在收听的音乐的信息
+[Receives information about the music to which a user is listening]
+接收有关用户正在收听的音乐的信息
+[Supports private XML Storage (for bookmarks and other)]
+支持私有XML存储（用于书签和其他）
+[Supports attention requests ('nudge')]
+支持注意力要求（'轻推'）
+[Supports chat history retrieving]
+支持聊天记录检索
+[Supports chat history management]
+支持聊天记录管理
+[Can report information about user activity]
+可以报告有关用户活动的信息
+[Receives information about user activity]
+接收有关用户活动的信息
+[Supports Miranda NG notes extension]
+支持Miranda NG注释扩展
+[Supports Jingle]
+支持Jingle
+[Supports Roster Exchange]
+支持名单交换 
+[Supports direct chat invitations (XEP-0249)]
+支持直接聊天邀请（XEP-0249）
+[Receives information about OMEMO devices]
+接收有关OMEMO设备的信息
+[Supports message carbons (XEP-0280)]
+支持消息碳（XEP-0280）
+[Enter the text you see]
+输入你看到的文字
 [None]
 无
+[Member]
+成员
+[Admin]
+管理员
 [Owner]
-所有者
+拥有者
 [Visitor]
 访问者
+[Participant]
+参加者
+[Moderator]
+主持人
+[Owners]
+拥有者
+[Moderators]
+主持人
+[Participants]
+参加者
+[Visitors]
+访问者
+[Role of %s was changed to '%s'.]
+%s 的角色变成了 '%s'。
+[Change &nickname]
+更改昵称(&N)
+[&Invite a user]
+邀请一个用户(&I)
+[&Roles]
+角色(&R)
+[&Participant list]
+参加者列表(&P)
+[&Moderator list]
+主持人列表(&M)
 [&Affiliations]
 联系(&A)
 [&Member list]
@@ -6761,6 +6867,8 @@ Jabber 错误
 多用户会议
 [Agents list]
 代理列表
+[Transports]
+传输
 [Personal vCard]
 个人 vCard
 [Convert to room]
@@ -6771,6 +6879,10 @@ Jabber 错误
 解析昵称
 [Send note]
 发送笔记
+[AdHoc Command]
+AdHoc 命令
+[OpenID Request]
+OpenID 请求
 [Add contact]
 添加联系人
 [Open]
@@ -6779,10 +6891,14 @@ Jabber 错误
 发现成功
 [Discovery failed]
 发现失败
+[Discovery in progress]
+发现进行中
 [Apply filter]
 应用过滤器
 [Reset filter]
 重置过滤器
+[Navigate home]
+导航回家
 [Refresh node]
 刷新节点
 [Browse node]
@@ -6795,16 +6911,30 @@ RSS 服务
 存储服务
 [Weather service]
 天气服务
+[Generic privacy list]
+通用隐私列表
+[Active privacy list]
+活动隐私列表
+[Default privacy list]
+默认隐私列表
 [Move up]
 上移
 [Move down]
 下移
 [Allow Messages]
 允许消息
+[Allow Presences (in)]
+允许出席(入)
+[Allow Presences (out)]
+允许出席(出)
 [Allow Queries]
 允许查询
 [Deny Messages]
 拒绝消息
+[Deny Presences (in)]
+拒绝出席(入)
+[Deny Presences (out)]
+拒绝出席(出) 
 [Deny Queries]
 拒绝查询
 [Protocols]
@@ -6815,6 +6945,10 @@ RSS 服务
 发现
 [Privacy]
 隐私
+[Authentication failed for %s.]
+%s 认证失败。
+[Authentication]
+认证
 [Registration successful]
 注册成功
 [Password is successfully changed. Don't forget to update your password in the Jabber protocol option.]
@@ -6823,6 +6957,8 @@ RSS 服务
 不能更改密码。
 [Jabber Bookmarks Error]
 Jabber 书签错误
+[%s, %d items (%s)]
+%s，%d 项目(%s)
 [Reason to ban]
 禁止的原因
 [Removing %s?]
@@ -6831,6 +6967,8 @@ Jabber 书签错误
 语音列表
 [Member List]
 成员列表
+[Moderator List]
+主持人列表
 [Ban List]
 禁止列表
 [Admin List]
@@ -6857,22 +6995,70 @@ Jabber 资源
 上次活跃
 [Server's Choice]
 服务器的选择
+[&Convert to Contact]
+转换为联系人(&C)
+[&Convert to Chat Room]
+转换为聊天室(&C)
+[Services...]
+服务...
 [Registered Transports]
 注册的传输
+[Local Server Transports]
+本地服务器传输
+[Create/Join group chat]
+创建/加入群聊
 [Roster editor]
 名单编辑器
+[Resource priority]
+资源优先级
+[Increase priority by %d]
+按%d增加优先级
+[Decrease priority by %d]
+按%d减少优先级
+[Resource priority [%d]]
+资源优先级[%d]
+[Join conference]
+加入会议
+[Open bookmarks]
+打开书签
 [Privacy lists]
 隐私列表
 [Service discovery]
 服务发现
+[Last active (%s)]
+上次活动（%s）
+[No activity yet, use server's choice]
+还没有活动，使用服务器的选择
+[Highest priority (server's choice)]
+高优先级（服务器的选择）
 [Status Message]
 状态消息
 [To]
 到
+[From]
+从
+[Both]
+两个都
 [Errors]
 错误
+[Incoming note from %s]
+来自 %s 的传入注释
+[Send note to %s]
+发送注释给 %s
+[From: %s]
+从：%s
+[All tags]
+所有标签
+[Notes are not saved, close this window without uploading data to server?]
+注释没有保存，关闭此窗口并且不上传数据到服务器吗？
 [Are you sure?]
 你确定吗？
+[Incoming note]
+传入注释
+[Do you want to create OMEMO session with new device:]
+你想用新设备创建OMEMO会话吗：
+[OMEMO: New session]
+OMEMO：新会话
 [Arabic]
 阿拉伯语
 [Chinese]
@@ -6883,12 +7069,28 @@ Jabber 资源
 日语
 [Korean]
 韩语
+[Latin]
+拉丁文
+[Latvian]
+拉脱维亚语
 [Thai]
 泰语
 [Turkish]
 土耳其
 [Vietnamese]
 越南语
+[Zulu]
+祖鲁
+[These changes will take effect the next time you connect to the Jabber network.]
+这些更改将在您下次连接到Jabber网络时生效。
+[Jabber Protocol Option]
+Jabber 协议选项
+[This operation will kill your account, roster and all other information stored at the server. Are you ready to do that?]
+此操作将终止您的帐户，名单和存储在服务器上的所有其他信息。你准备好了吗？
+[Account removal warning]
+帐户删除警告
+[You can change your password only when you are online]
+只有在线时才能更改密码
 [You must be online]
 你必须在线
 [Messaging]
@@ -6901,6 +7103,20 @@ Jabber 资源
 记录聊天状态更改
 [Log presence subscription state changes]
 记录在线订阅状态更改
+[Log presence errors]
+记录出席错误
+[Enable user moods receiving]
+启用用户心情接收
+[Enable user tunes receiving]
+启用用户歌曲接收
+[Enable user activity receiving]
+启用用户活动接收
+[Receive notes]
+接收注释
+[Automatically save received notes]
+自动保存接收的注释
+[Enable server-side history (XEP-0136)]
+启用服务器端历史（XEP-0136）
 [Other]
 其他
 [General]
@@ -7299,6 +7515,8 @@ Jabber 资源
 ;  Version: 0.0.0.2
 ;  Authors: Robert Pösel
 ;============================================================
+[Admin]
+管理员
 #muuid {798221e1-e47a-4dc8-9077-1e576f9c4307}
 ;============================================================
 ;  File: MirandaG15.dll
@@ -7518,6 +7736,8 @@ UIN
 取消(&C)
 [Add]
 添加
+[Admin]
+管理员
 [&Leave chat session]
 离开聊天会话(&L)
 [User &details]
@@ -7725,6 +7945,8 @@ UIN
 URL
 [minutes]
 分
+[Authentication]
+认证
 [Reset]
 重置
 [Username]
@@ -8031,6 +8253,8 @@ URL
 ;============================================================
 [Server]
 服务器
+[Admin]
+管理员
 [Connecting...]
 正在连接...
 [Network]
@@ -9430,6 +9654,8 @@ BBCode
 更改密码：
 [Save password]
 保存密码
+[Admin]
+管理员
 [Warning]
 警告
 [&Leave chat session]
@@ -12353,12 +12579,18 @@ Miranda 的根目录路径
 视频
 [(Unknown contact)]
 (未知联系人)
+[Participants]
+参加者
+[Owners]
+拥有者
 [Unknown]
 未知
 [Warning]
 警告
 [Chat]
 聊天
+[&Invite a user]
+邀请一个用户(&I)
 [&Destroy room]
 销毁房间(&D)
 [&User details]
@@ -12367,6 +12599,8 @@ Miranda 的根目录路径
 踢(&K)
 [%s is typing a message...]
 %s 正在输入消息...
+[Enter the text you see]
+输入你看到的文字
 [Network]
 网络
 [Errors]
@@ -12636,6 +12870,42 @@ N/A
 ;============================================================
 [Sunny]
 晴朗
+[Last Quarter]
+上个季度
+[First Quarter]
+第一季度
+[Partly Sunny]
+局部晴朗
+[Mostly Sunny]
+大部晴朗
+[Partly Cloudy]
+局部多云
+[Mostly Cloudy]
+大部多云
+[Mostly Clear]
+大部晴朗
+[Feel]
+体感
+[Heat Index]
+热度指数
+[Moon]
+月亮
+[N]
+北
+[E]
+东
+[NW]
+西北
+[NE]
+东北
+[NNW]
+西北偏北
+[NNE]
+东北偏北
+[ENE]
+东北偏东
+[ESE]
+东南偏东
 ;============================================================
 ;  File: weatherxml.ini
 ;  Plugin: Weather
@@ -12852,6 +13122,36 @@ N/A
 局部多云
 [Partly Sunny]
 局部晴朗
+[Pm Light Rain]
+下午小雨
+[Pm Rain / Snow]
+下午雨 / 雪
+[Pm Rain / Wind]
+下午雨 / 风
+[Pm Rain]
+下午雨
+[Pm Showers / Wind]
+下午阵雨 / 风
+[Pm Showers]
+下午阵雨
+[Pm Snow Showers]
+下午阵雪
+[Pm Snow]
+下午雪
+[Pm T-Storms]
+下午雷雨
+[Pressure Tendency]
+压力趋势
+[Rain / Freezing Rain / Wind]
+雨 / 冻雨 / 风
+[Rain / Freezing Rain]
+雨 / 冻雨
+[Rain / Snow / Wind]
+雨 / 雪 / 风
+[Rain / Snow Early]
+雨 / 早有雪
+[Rain / Snow Late]
+雨 / 晚有雪
 [Sunny]
 阳光明媚
 ;============================================================
@@ -12860,14 +13160,82 @@ N/A
 ;============================================================
 [Clear]
 清除
+[Cloudy]
+多云
+[ENE]
+东北偏东
+[ESE]
+东南偏东
+[E]
+东
 [Elevation]
 海拔
+[Feel]
+体感
+[First Quarter]
+第一季度
+[Fog]
+雾
 [Friday]
 星期五
+[Full Moon]
+满月
+[Haze]
+霾
+[Heat Index]
+热度指数
+[Heavy Snow]
+大雪
+[Last Quarter]
+上个季度
+[Latitude]
+纬度
+[Light Drizzle]
+细雨
+[Light Rain]
+小雨
+[Light Showers Rain]
+小阵雨
+[Light Snow]
+小雪
+[Light Thunderstorm Rain]
+小雷雨
+[Local Time]
+本地时间
+[Longitude]
+经度
+[Mist]
+薄雾
 [Monday]
 星期一
+[Moon]
+月亮
+[Mostly Clear]
+大部晴朗
+[Mostly Cloudy]
+大部多云
+[Mostly Sunny]
+大部晴朗
 [N/a]
 N/A
+[NE]
+东北
+[NNE]
+东北偏北
+[NNW]
+西北偏北
+[NW]
+西北
+[N]
+北
+[New Moon]
+新月
+[Overcast]
+阴天
+[Partly Cloudy]
+局部多云
+[Partly Sunny]
+局部晴朗
 [Saturday]
 星期六
 [Sunday]
@@ -12882,6 +13250,36 @@ N/A
 ;  File: yweather.ini
 ;  Plugin: Weather
 ;============================================================
+[ENE]
+东北偏东
+[ESE]
+东南偏东
+[E]
+东
+[Feel]
+体感
+[Heat Index]
+热度指数
+[Mostly Clear]
+大部晴朗
+[Mostly Cloudy]
+大部多云
+[Mostly Sunny]
+大部晴朗
+[NE]
+东北
+[NNE]
+东北偏北
+[NNW]
+西北偏北
+[NW]
+西北
+[N]
+北
+[Partly Cloudy]
+局部多云
+[Partly Sunny]
+局部晴朗
 [Sunny]
 晴朗
 #muuid {cd5427fb-5320-4f65-b4bf-86b7cf7b5087}

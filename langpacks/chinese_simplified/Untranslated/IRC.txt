@@ -125,7 +125,6 @@
 [%u seconds]
 [CTCP PING reply from %s: %u sec(s)]
 [CTCP %s reply from %s: %s]
-[Admin]
 [Op]
 [Halfop]
 [Downloading list (%u%%) - %u channels]

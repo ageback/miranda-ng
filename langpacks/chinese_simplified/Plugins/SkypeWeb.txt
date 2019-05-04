@@ -51,7 +51,7 @@
 
 ;file \protocols\SkypeWeb\src\skype_chatrooms.cpp
 [Admin]
-
+管理员
 [User]
 
 [Enter new nickname]

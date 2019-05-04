@@ -63,7 +63,7 @@
 [Clear]
 清除
 [Cloudy]
-
+多云
 [Day Length Diff]
 
 [Day Length]
@@ -75,11 +75,11 @@
 [Drizzle]
 
 [ENE]
-
+东北偏东
 [ESE]
-
+东南偏东
 [E]
-
+东
 [East]
 
 [Elevation]
@@ -87,11 +87,11 @@
 [Falling]
 
 [Feel]
-
+体感
 [First Quarter]
-
+第一季度
 [Fog]
-
+雾
 [Forecast Day 1 Condition]
 
 [Forecast Day 1 Day]
@@ -175,11 +175,11 @@
 [Friday]
 星期五
 [Full Moon]
-
+满月
 [Haze]
-
+霾
 [Heat Index]
-
+热度指数
 [Heavy Blowing Snow]
 
 [Heavy Fog]
@@ -197,7 +197,7 @@
 [Heavy Snow Showers]
 
 [Heavy Snow]
-
+大雪
 [Heavy Thunderstorm Rain]
 
 [Ice Crystals Mist]
@@ -219,9 +219,9 @@
 [Ice Pellets]
 
 [Last Quarter]
-
+上个季度
 [Latitude]
-
+纬度
 [Light Blowing Snow]
 
 [Light Drizzle Fog]
@@ -231,7 +231,7 @@
 [Light Drizzle Mist]
 
 [Light Drizzle]
-
+细雨
 [Light Fog]
 
 [Light Freezing Drizzle Light Snow Grains Mist]
@@ -271,7 +271,7 @@
 [Light Rain Snow]
 
 [Light Rain]
-
+小雨
 [Light Showers Rain Mist]
 
 [Light Showers Rain Snow Mist]
@@ -279,7 +279,7 @@
 [Light Showers Rain Snow]
 
 [Light Showers Rain]
-
+小阵雨
 [Light Showers Showers Rain]
 
 [Light Showers Snow Blowing Snow]
@@ -321,15 +321,15 @@
 [Light Snow Showers]
 
 [Light Snow]
-
+小雪
 [Light Thunderstorm Rain]
-
+小雷雨
 [Light Thunderstorm]
 
 [Local Time]
-
+本地时间
 [Longitude]
-
+经度
 [Low Drifting Snow Mist]
 
 [Low Drifting Snow]
@@ -339,35 +339,35 @@
 [Min]
 
 [Mist]
-
+薄雾
 [Monday]
 星期一
 [Moon]
-
+月亮
 [Moonrise]
 
 [Moonset]
 
 [Mostly Clear]
-
+大部晴朗
 [Mostly Cloudy]
-
+大部多云
 [Mostly Sunny]
-
+大部晴朗
 [N/a]
 N/A
 [NE]
-
+东北
 [NNE]
-
+东北偏北
 [NNW]
-
+西北偏北
 [NW]
-
+西北
 [N]
-
+北
 [New Moon]
-
+新月
 [North]
 
 [Northeast]
@@ -375,13 +375,13 @@ N/A
 [Northwest]
 
 [Overcast]
-
+阴天
 [Partial Fog]
 
 [Partly Cloudy]
-
+局部多云
 [Partly Sunny]
-
+局部晴朗
 [Patches Fog Mist]
 
 [Patches Fog]

@@ -339,9 +339,9 @@
 
 ;file \protocols\VKontakte\src\vk_chats.cpp
 [Participants]
-
+参加者
 [Owners]
-
+拥有者
 [Message link]
 
 [create chat]
@@ -379,7 +379,7 @@
 [Chat]
 聊天
 [&Invite a user]
-
+邀请一个用户(&I)
 [View/change &title]
 
 [&Destroy room]
@@ -394,7 +394,7 @@
 %s 正在输入消息...
 ;file \protocols\VKontakte\src\vk_dialogs.cpp
 [Enter the text you see]
-
+输入你看到的文字
 [Wall message for %s]
 
 [You delete %s from the contact list.\nWhat needs to be done additionally?]

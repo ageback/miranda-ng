@@ -126,7 +126,7 @@
 
 ;file \protocols\FacebookRM\src\captcha.cpp
 [Enter the text you see]
-
+输入你看到的文字
 ;file \protocols\FacebookRM\src\chat.cpp
 [&Invite user...]
 
@@ -406,7 +406,7 @@
 [Deny friendship request]
 
 [Services...]
-
+服务...
 [Check friendship requests]
 
 [Check newsfeeds]

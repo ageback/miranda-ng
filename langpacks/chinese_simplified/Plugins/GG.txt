@@ -282,7 +282,7 @@
 [This is my own conference.]
 
 [Participants]
-
+参加者
 ['Unknown']
 
 [You have to be connected to open new conference.]

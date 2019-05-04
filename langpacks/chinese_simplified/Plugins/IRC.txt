@@ -313,7 +313,7 @@
 [Owner]
 所有者
 [Admin]
-
+管理员
 [Op]
 
 [Halfop]

@@ -112,7 +112,7 @@
 添加
 ;file \protocols\MSN\src\msn_chat.cpp
 [Admin]
-
+管理员
 [User]
 
 [Chat #]

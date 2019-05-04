@@ -31,23 +31,23 @@
 [Waxing Gibbous]
 
 [Last Quarter]
-
+上个季度
 [First Quarter]
-
+第一季度
 [Partly Sunny]
-
+局部晴朗
 [Mostly Sunny]
-
+大部晴朗
 [Partly Cloudy]
-
+局部多云
 [Mostly Cloudy]
-
+大部多云
 [Mostly Clear]
-
+大部晴朗
 [Scattered Thunderstorms]
 
 [Feel]
-
+体感
 [Forecast Day 1]
 
 [Forecast Day 2]
@@ -71,9 +71,9 @@
 [Forecast today]
 
 [Heat Index]
-
+热度指数
 [Moon]
-
+月亮
 [MoonRise]
 
 [MoonSet]
@@ -89,37 +89,37 @@
 [Wind Speed]
 
 [N]
-
+北
 [W]
 
 [S]
 
 [E]
-
+东
 [NW]
-
+西北
 [NE]
-
+东北
 [SW]
 
 [SE]
 
 [NNW]
-
+西北偏北
 [NNE]
-
+东北偏北
 [SSW]
 
 [SSE]
 
 [ENE]
-
+东北偏东
 [WSW]
 
 [WNW]
 
 [ESE]
-
+东南偏东
 [WindDir1]
 
 [WindDir2]

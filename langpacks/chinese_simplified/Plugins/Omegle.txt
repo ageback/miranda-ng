@@ -56,7 +56,7 @@
 [You can't send messages in question mode.]
 
 [Admin]
-
+管理员
 [Normal]
 
 [Omegle is a great way of meeting new friends!]
