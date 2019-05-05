@@ -5,7 +5,6 @@
 [User Name:]
 [Codepage:]
 [Disable STLS]
-[Status:]
 [Check this account]
 [Startup check]
 [Check interval [min]:]

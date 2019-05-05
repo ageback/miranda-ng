@@ -501,21 +501,21 @@
 [Account language]
 
 [English]
-
+英语
 [Russian]
-
+俄语
 [Belarusian]
-
+白俄罗斯语
 [Ukrainian]
-
+乌克兰语
 [Spanish]
 
 [Finnish]
-
+荷兰语
 [German]
-
+德语
 [Italian]
-
+意大利语
 [automatically]
 
 [for last 1 day]

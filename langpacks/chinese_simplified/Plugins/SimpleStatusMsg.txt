@@ -107,7 +107,7 @@
 [Protocol:]
 
 [Status:]
-
+状态：
 [Independent setting for each protocol]
 
 [Pop up dialog asking for status message]

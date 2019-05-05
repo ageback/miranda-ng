@@ -383,7 +383,7 @@
 
 ;file \protocols\Gadu-Gadu\src\options.cpp
 [Allow]
-
+允许
 [Ask]
 
 [Ignore]

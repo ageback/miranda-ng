@@ -28,4 +28,3 @@
 [Protocol icon]
 [Gaming icon]
 [You cannot send messages when you are offline.]
-[closed chat session]

@@ -822,7 +822,7 @@
 [Picnic]
 
 [Cooking]
-
+烹饪
 [Smoking]
 在抽烟
 [I'm high]

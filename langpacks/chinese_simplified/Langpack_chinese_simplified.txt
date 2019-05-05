@@ -2709,6 +2709,8 @@ WAV 文件
 未指定
 [China]
 中国
+[Nauru]
+瑙鲁文
 [Windows bitmaps]
 Windows 位图
 [JPEG bitmaps]
@@ -2862,6 +2864,8 @@ PNG位图
 在工作
 [Typing]
 正在输入
+[Cooking]
+烹饪
 [Smoking]
 在抽烟
 [Undefined]
@@ -5875,6 +5879,8 @@ URL
 所有文件
 [contacts]
 联系人
+[Allow]
+允许
 [Ignore]
 忽略
 [Notifications]
@@ -7789,6 +7795,22 @@ Jabber 协议选项
 Google Talk!
 [Hipchat]
 Hipchat
+[LiveJournal Talk]
+LiveJournal Talk
+[League Of Legends (EU Nordic)]
+英雄联盟（欧盟北欧）
+[League Of Legends (EU West)]
+英雄联盟（欧盟西部）
+[League Of Legends (Oceania)]
+英雄联盟（大洋洲）
+[League Of Legends (US)]
+英雄联盟（美国）
+[Odnoklassniki]
+同班同学
+[S.ms]
+S.ms
+[Some changes will take effect the next time you connect to the Jabber network.]
+某些更改将在您下次连接到Jabber网络时生效。
 [New password does not match.]
 新密码不匹配。
 [Current password is incorrect.]
@@ -7803,6 +7825,20 @@ Hipchat
 隐私列表保存成功
 [Privacy list %s set as active]
 隐私列表 %s 被设为活动
+[Active privacy list successfully declined]
+主动隐私列表成功拒绝
+[Error occurred while setting active list]
+设置活动列表时出错
+[Privacy list %s set as default]
+隐私列表%s设置为默认值
+[Default privacy list successfully declined]
+默认隐私列表成功拒绝
+[Error occurred while setting default list]
+设置默认列表时出错
+[Allow]
+允许
+[List has no rules, empty lists will be deleted then changes applied]
+列表没有规则，将删除空列表然后应用更改
 [allow ]
 允许
 [deny ]
@@ -7831,6 +7867,8 @@ Hipchat
 如果订阅是 '
 [then ]
 那么
+[ (act., def.)]
+（活动，默认）
 [ (active)]
 （活动）
 [ (default)]
@@ -7921,8 +7959,46 @@ Hipchat
 错误：收到未知回复\n\n请选择另一个服务器
 [Search error]
 搜索错误
+[Select/type search service URL above and press <Go>]
+选择/输入上面的搜索服务URL并按<Go>
+[Please wait...\r\nConnecting search server...]
+请等待...\r\n正在连接搜索服务器...
+[You have to be connected to server]
+你必须连接到服务器
+[closed chat session]
+关闭聊天会话
+[sent subscription request]
+发送订阅请求
+[approved subscription request]
+已批准的订阅请求
+[declined subscription]
+已拒绝的订阅
+[sent error presence]
+发送了错误的出席
+[sent unknown presence type]
+发送了未知的出席类型
+[Outcast]
+弃儿
 [Nick:]
 昵称：
+[Status:]
+状态：
+[Real JID:]
+真实JID：
+[Enter password for %s]
+输入 %s 的密码
+[Error: Not enough memory]
+错误：内存不足
+[Error: Cannot connect to the server]
+错误：无法连接到服务器
+[Error: Connection lost]
+错误：连接丢失
+[Requesting registration instruction...]
+请求注册指令...
+[Registration canceled]
+注册取消
+[Sending registration information...]
+发送注册信息...
 [<not specified>]
 <未指定>
 [Resource]
@@ -7947,8 +8023,12 @@ Miranda 核心版本
 心情
 [Activity]
 活动
+[Tune]
+歌曲
 [Last logoff time]
 上次登出时间
+[Uptime]
+运行时间
 [Logoff message]
 登出消息
 [Last active resource]
@@ -7969,8 +8049,14 @@ Miranda 核心版本
 照片
 [Redirect]
 重定向
+[Bad request]
+错误的请求
 [Unauthorized]
 未授权
+[Payment required]
+需付款
+[Forbidden]
+禁止
 [Not found]
 未找到
 [Not allowed]
@@ -8029,56 +8115,160 @@ Jabber vCard：编辑电话号码
 害怕
 [Amazed]
 震惊
+[Amorous]
+恋爱
 [Angry]
 生气
+[Annoyed]
+懊恼
+[Anxious]
+焦急
+[Aroused]
+激昂
+[Ashamed]
+羞愧
+[Bored]
+无聊
 [Brave]
 勇敢
 [Calm]
 冷静
+[Cautious]
+谨慎
 [Cold]
 冷
+[Confident]
+信心
+[Confused]
+困惑
+[Contemplative]
+沉思
+[Contented]
+满足
+[Cranky]
+胡思乱想
+[Crazy]
+疯狂
+[Creative]
+创作
+[Curious]
+好奇
+[Dejected]
+垂头丧气
+[Depressed]
+郁闷
 [Disappointed]
 失望
+[Disgusted]
+厌恶
+[Dismayed]
+沮丧
+[Distracted]
+分心
+[Embarrassed]
+尴尬
+[Envious]
+羡慕
 [Excited]
 兴奋
+[Flirtatious]
+娇媚
+[Frustrated]
+失意
+[Grateful]
+感激
+[Grieving]
+悲痛
+[Grumpy]
+暴躁
+[Guilty]
+有罪
 [Happy]
 高兴
+[Hopeful]
+乐观
 [Hot]
 热
+[Humbled]
+自愧不如
+[Humiliated]
+羞辱
 [Hungry]
 饿
 [Hurt]
 受伤
+[Impressed]
+印象深刻
+[In awe]
+敬畏
 [In love]
 恋爱
+[Indignant]
+愤怒
 [Interested]
 感兴趣的
+[Intoxicated]
+酣
+[Invincible]
+天下无敌
+[Jealous]
+妒忌
 [Lonely]
 孤独
 [Lost]
 迷失
 [Lucky]
 幸运
+[Mean]
+卑鄙
+[Moody]
+易怒
+[Nervous]
+紧张
+[Neutral]
+中立
+[Offended]
+生气
+[Outraged]
+愤怒
+[Playful]
+调皮
 [Proud]
 骄傲
 [Relaxed]
 放松
+[Relieved]
+安心
+[Remorseful]
+愧恨
+[Restless]
+不安
 [Sad]
 悲伤
+[Sarcastic]
+讽刺
 [Satisfied]
 满足
 [Serious]
 认真
+[Shocked]
+吃惊
 [Shy]
 害羞
 [Sick]
 生病
 [Sleepy]
 犯困
+[Spontaneous]
+自发
+[Stressed]
+强调
 [Strong]
 强壮
 [Surprised]
 惊讶
+[Thankful]
+感谢
 [Thirsty]
 口渴
 [Tired]
@@ -8093,8 +8283,24 @@ Jabber vCard：编辑电话号码
 设置心情
 [Mood: %s]
 心情：%s
+[Doing chores]
+干杂活
+[buying groceries]
+买杂货
 [cleaning]
 清理
+[cooking]
+烹饪
+[doing maintenance]
+做维护
+[doing the dishes]
+做菜
+[doing the laundry]
+洗衣服
+[gardening]
+园艺
+[running an errand]
+跑一个差事
 [walking the dog]
 在遛狗
 [Drinking]
@@ -8107,22 +8313,58 @@ Jabber vCard：编辑电话号码
 在喝茶
 [Eating]
 在吃
+[having a snack]
+吃零食
 [having breakfast]
 在吃晚饭
+[having dinner]
+吃晚饭
+[having lunch]
+在吃午餐
+[Exercising]
+锻炼
+[cycling]
+循环
 [dancing]
 在跳舞
+[hiking]
+徒步旅行
+[jogging]
+跑步
 [playing sports]
 在运动
 [running]
 在跑步
+[skiing]
+滑雪
 [swimming]
 在游泳
+[working out]
+锻炼身体
+[Grooming]
+美容
 [at the spa]
 在做SPA
+[brushing teeth]
+刷牙
+[getting a haircut]
+理发
+[shaving]
+刮
 [taking a bath]
 在洗澡
+[taking a shower]
+沐浴
+[Having appointment]
+预约
 [Inactive]
 非活动
+[day off]
+休假
+[hanging out]
+闲逛
+[hiding]
+藏匿
 [on vacation]
 在度假
 [praying]
@@ -8133,18 +8375,28 @@ Jabber vCard：编辑电话号码
 在睡觉
 [thinking]
 在思考
+[Relaxing]
+放松
 [fishing]
 在钓鱼
 [gaming]
 在游戏
 [going out]
 外出
+[partying]
+派对
 [reading]
 在阅读
+[rehearsing]
+排练
 [shopping]
 在购物
 [smoking]
 在抽烟
+[socializing]
+社交
+[sunbathing]
+日光浴
 [watching TV]
 在看电视
 [watching a movie]
@@ -8159,6 +8411,8 @@ Jabber vCard：编辑电话号码
 在视频电话
 [Traveling]
 在旅行
+[commuting]
+上下班
 [driving]
 在开车
 [in a car]
@@ -8195,6 +8449,8 @@ Jabber vCard：编辑电话号码
 活动
 [I'm happy Miranda NG user. Get it at https://miranda-ng.org/.]
 我是个高兴Miranda NG用户。在https://miranda-ng.org/获取。
+[/me slaps %s around a bit with a large trout]
+/me 用大鳟鱼拍了一下 %s
 #muuid {119d7288-2050-448d-9900-d86ac70426bf}
 ;============================================================
 ;  File: KeyboardNotify.dll
@@ -10758,6 +11014,8 @@ BBCode
 其他
 [milliseconds]
 毫秒：
+[Status:]
+状态：
 [Cut]
 剪切
 [Copy]
@@ -11038,6 +11296,8 @@ BBCode
 协议
 [%s connection]
 %s 连接
+[closed chat session]
+关闭聊天会话
 #muuid {553811ee-deb6-48b8-8902-a8a00c1fd679}
 ;============================================================
 ;  File: StopSpam.dll
@@ -13156,6 +13416,8 @@ Jabber 活动
 自定义
 [%s (locked)]
 %s(锁定)
+[Status:]
+状态：
 [Status message:]
 状态消息：
 [Other]
@@ -13188,26 +13450,124 @@ Jabber 活动
 侧栏
 [Apply]
 应用
+[Afrikaans]
+南非荷兰语
+[Albanian]
+阿尔巴尼亚文
 [Arabic]
 阿拉伯语
+[Armenian]
+亚美尼亚语
+[Azerbaijani]
+阿塞拜疆语
+[Bosnian]
+波斯尼亚语
+[Bulgarian]
+保加利亚语
+[Burmese]
+缅甸语
+[Chamorro]
+查莫洛
 [Chinese]
 中国
+[Croatian]
+克罗地亚语
+[Czech]
+捷克文
+[Danish]
+丹麦语
+[English]
+英语
+[Esperanto]
+世界语
+[Estonian]
+爱沙尼亚语
+[Finnish]
+荷兰语
+[French]
+法语
+[German]
+德语
 [Greek]
 希腊语
+[Gujarati]
+古吉拉特语
 [Hebrew]
 希伯来语
+[Hindi]
+印地语
+[Hungarian]
+匈牙利语
+[Icelandic]
+冰岛语
+[Indonesian]
+印度尼西亚语
+[Italian]
+意大利语
 [Japanese]
 日语
 [Korean]
 韩语
+[Kurdish]
+库尔德语
+[Lao]
+老挝
 [Latvian]
 拉脱维亚语
+[Lithuanian]
+立陶宛语
+[Macedonian]
+马其顿语
+[Malay]
+马来语
+[Mongolian]
+蒙古语
+[Norwegian]
+挪威语
+[Persian]
+波斯语
+[Polish]
+波兰语
+[Portuguese]
+葡萄牙语
+[Romanian]
+罗马尼亚语
+[Russian]
+俄语
+[Sindhi]
+信德语
+[Slovak]
+斯洛伐克语
+[Slovenian]
+斯洛文尼亚语
+[Somali]
+索马里
+[Swahili]
+斯瓦希里语
+[Swedish]
+瑞典语
+[Tagalog]
+塔加路语
+[Tamil]
+泰米尔语
+[Tatar]
+塔塔尔语
 [Thai]
 泰语
 [Turkish]
 土耳其
+[Ukrainian]
+乌克兰语
+[Urdu]
+乌尔都语
 [Vietnamese]
 越南语
+[Welsh]
+威尔士语
+[Yiddish]
+依地文
+[Yoruba]
+约鲁巴语
 [Sunday]
 星期天
 [Monday]
@@ -13662,26 +14022,124 @@ Jabber 活动
 高级
 [Popups]
 弹出窗口
+[Afrikaans]
+南非荷兰语
+[Albanian]
+阿尔巴尼亚文
 [Arabic]
 阿拉伯语
+[Armenian]
+亚美尼亚语
+[Azerbaijani]
+阿塞拜疆语
+[Bosnian]
+波斯尼亚语
+[Bulgarian]
+保加利亚语
+[Burmese]
+缅甸语
+[Chamorro]
+查莫洛
 [Chinese]
 中国
+[Croatian]
+克罗地亚语
+[Czech]
+捷克文
+[Danish]
+丹麦语
+[English]
+英语
+[Esperanto]
+世界语
+[Estonian]
+爱沙尼亚语
+[Finnish]
+荷兰语
+[French]
+法语
+[German]
+德语
 [Greek]
 希腊语
+[Gujarati]
+古吉拉特语
 [Hebrew]
 希伯来语
+[Hindi]
+印地语
+[Hungarian]
+匈牙利语
+[Icelandic]
+冰岛语
+[Indonesian]
+印度尼西亚语
+[Italian]
+意大利语
 [Japanese]
 日语
 [Korean]
 韩语
+[Kurdish]
+库尔德语
+[Lao]
+老挝
 [Latvian]
 拉脱维亚语
+[Lithuanian]
+立陶宛语
+[Macedonian]
+马其顿语
+[Malay]
+马来语
+[Mongolian]
+蒙古语
+[Norwegian]
+挪威语
+[Persian]
+波斯语
+[Polish]
+波兰语
+[Portuguese]
+葡萄牙语
+[Romanian]
+罗马尼亚语
+[Russian]
+俄语
+[Sindhi]
+信德语
+[Slovak]
+斯洛伐克语
+[Slovenian]
+斯洛文尼亚语
+[Somali]
+索马里
+[Swahili]
+斯瓦希里语
+[Swedish]
+瑞典语
+[Tagalog]
+塔加路语
+[Tamil]
+泰米尔语
+[Tatar]
+塔塔尔语
 [Thai]
 泰语
 [Turkish]
 土耳其
+[Ukrainian]
+乌克兰语
+[Urdu]
+乌尔都语
 [Vietnamese]
 越南语
+[Welsh]
+威尔士语
+[Yiddish]
+依地文
+[Yoruba]
+约鲁巴语
 [Home]
 家
 [Internet]
@@ -13835,6 +14293,20 @@ Miranda 的根目录路径
 帐户
 [View]
 查看
+[English]
+英语
+[Russian]
+俄语
+[Belarusian]
+白俄罗斯语
+[Ukrainian]
+乌克兰语
+[Finnish]
+荷兰语
+[German]
+德语
+[Italian]
+意大利语
 [Errors]
 错误
 [Notifications]
@@ -14762,6 +15234,8 @@ WAV 文件
 密码：
 [Default]
 默认
+[Status:]
+状态：
 [Options]
 选项
 [Notifications]

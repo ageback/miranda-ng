@@ -341,7 +341,6 @@
 [Surfing]
 [Browsing]
 [Picnic]
-[Cooking]
 [I'm high]
 [On WC]
 [To be or not to be]

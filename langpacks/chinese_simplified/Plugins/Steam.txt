@@ -99,5 +99,5 @@
 
 ;file \protocols\Steam\src\steam_utils.cpp
 [closed chat session]
-
+关闭聊天会话
 ;file \protocols\Steam\src\steam_xstatus.cpp

@@ -40,7 +40,6 @@
 [Status on startup]
 [Set status after]
 [Protocol:]
-[Status:]
 [Independent setting for each protocol]
 [Pop up dialog asking for status message]
 [Fortune]

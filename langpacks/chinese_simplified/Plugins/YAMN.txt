@@ -37,7 +37,7 @@
 [Disable STLS]
 
 [Status:]
-
+状态：
 [Options]
 选项
 [Check this account]
