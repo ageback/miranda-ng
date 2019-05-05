@@ -572,9 +572,9 @@
 [Use popup action buttons]
 
 [Left click]
-
+左键点击
 [Right click]
-
+右键点击
 [Default colors]
 默认颜色
 [Windows colors]

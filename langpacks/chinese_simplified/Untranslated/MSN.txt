@@ -64,7 +64,6 @@
 [Setup Live &Alerts]
 [Custom Smileys]
 [MSN Protocol]
-[Protocol icon]
 [Hotmail Inbox]
 [MSN Services]
 [Block user]

@@ -277,8 +277,6 @@
 [Hide when no player]
 [Hide when no music]
 [Use popup action buttons]
-[Left click]
-[Right click]
 [Windows colors]
 [Custom colors]
 [artist]

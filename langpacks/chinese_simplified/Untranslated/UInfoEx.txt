@@ -33,7 +33,6 @@
 [Play sound]
 [Use ignore list]
 [Birthday popup colors]
-[Delay]
 [Show reminder messages as popups (if reminder is enabled)]
 [Anniversary popup colors]
 [Replace progress dialogs with popups]

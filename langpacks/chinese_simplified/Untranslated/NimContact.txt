@@ -15,7 +15,6 @@
 [Program parameters:]
 [O&pen File]
 [O&pen Folder]
-[Link Settings]
 [Contact list settings]
 [Status Icon]
 [Group\\Sub-Group]

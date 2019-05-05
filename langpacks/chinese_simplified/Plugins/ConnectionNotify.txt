@@ -25,7 +25,7 @@
 [try resolve addresses]
 
 [Version:]
-
+版本：
 [Show notification if no filter defined]
 
 [Attempt interval (ms)]

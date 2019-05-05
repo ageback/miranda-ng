@@ -186,7 +186,7 @@
 [Play]
 
 [Frame background]
-
+框架背景
 [OFF]
 半
 [Volume]

@@ -404,14 +404,14 @@
 ;file \plugins\BasicHistory\src\Options.h
 ;file \plugins\BasicHistory\src\PlainHtmlExport.cpp
 [History log]
-
+历史记录
 [Filter:]
 过滤器：
 [Conversation started at %s]
 
 ;file \plugins\BasicHistory\src\RichHtmlExport.cpp
 [Menu]
-
+菜单
 [Open all]
 
 [Close all]

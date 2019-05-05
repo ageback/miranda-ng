@@ -10,7 +10,6 @@
 [Counters format string:]
 [Tooltip format string:]
 [Display traffic for current]
-[Display]
 [Current traffic]
 [Total traffic]
 [Current online]

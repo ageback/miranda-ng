@@ -43,7 +43,7 @@ URL
 [O&pen Folder]
 
 [Link Settings]
-
+链接设置
 [Contact list settings]
 
 [Group:]

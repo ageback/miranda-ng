@@ -23,7 +23,7 @@
 [Change password]
 更改密码：
 [Change]
-
+更改
 [Remove]
 移除
 [Old password]

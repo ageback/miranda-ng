@@ -11,7 +11,7 @@
 [Installed plugins]
 
 [Version:]
-
+版本：
 [Description:]
 描述：
 [Copyright:]

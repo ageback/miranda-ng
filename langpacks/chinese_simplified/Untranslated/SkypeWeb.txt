@@ -38,7 +38,6 @@
 [Call ended (%s)]
 [File transfer:\n\tFile name: %s \n\tSize: %lld bytes \n]
 [Unknown event, please send this text for developer: "%s"]
-[Protocol icon]
 [Create new chat icon]
 [Sync history icon]
 [Block user icon]

@@ -33,7 +33,7 @@
 [Name:]
 名称：
 [Path:]
-
+路径：
 [Set]
 设置
 ;file \plugins\TopToolBar\src\InternalButtons.cpp

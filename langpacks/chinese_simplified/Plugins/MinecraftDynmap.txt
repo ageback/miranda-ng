@@ -26,7 +26,7 @@
 
 ;file \protocols\MinecraftDynmap\src\dialogs.cpp
 [Protocol icon]
-
+协议图标
 ;file \protocols\MinecraftDynmap\src\proto.cpp
 [%s server connection]
 

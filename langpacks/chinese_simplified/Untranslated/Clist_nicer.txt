@@ -111,7 +111,6 @@
 [Overlay icons]
 [%s connecting]
 [Connecting icons]
-[Menu]
 [Open main menu]
 [Set status modes]
 [The requested action requires a valid contact selection. Please select a contact from the contact list and repeat.]

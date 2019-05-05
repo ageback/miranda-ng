@@ -252,7 +252,7 @@
 [Notes]
 笔记
 [Note text]
-
+注意文字
 [Date/Title]
 
 [Are you sure you want to delete all notes?]

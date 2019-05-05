@@ -85,7 +85,6 @@
 [Mute with Miranda]
 [Stop]
 [Play]
-[Frame background]
 [Volume]
 [Device list]
 [Equalizer]

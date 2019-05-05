@@ -60,7 +60,7 @@
 [Enable sounds]
 启用声音
 [Frame background]
-
+框架背景
 [BASS Interface]
 
 [Bass Interface]

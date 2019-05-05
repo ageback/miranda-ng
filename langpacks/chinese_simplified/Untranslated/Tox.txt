@@ -30,7 +30,6 @@
 [Confirm password:]
 [Profiles folder]
 [Tox link protocol]
-[Protocol icon]
 [Action icon]
 [Correction icon]
 [Create password]

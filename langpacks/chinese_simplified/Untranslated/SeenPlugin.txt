@@ -5,7 +5,6 @@
 [User info tab]
 [Log to history]
 [Maximum size]
-[Variable list]
 [Enable Idle support]
 [Ignore contacts going offline]
 [Enable 'Missed Ones' feature]

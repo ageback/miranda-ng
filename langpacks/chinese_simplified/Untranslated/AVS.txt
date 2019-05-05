@@ -16,7 +16,6 @@
 [Make the avatar square]
 [Resize the avatar to fit max allowed protocol size]
 [Contact picture]
-[Change]
 [Picture options]
 [Protect the picture]
 [Set as hidden]

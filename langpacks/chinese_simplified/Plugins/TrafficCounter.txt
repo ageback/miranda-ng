@@ -50,7 +50,7 @@
 
 ;file \plugins\TrafficCounter\src\options.cpp
 [Display]
-
+显示
 [Icon]
 图标
 [Account name]

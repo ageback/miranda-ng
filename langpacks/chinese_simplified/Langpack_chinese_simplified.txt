@@ -3055,6 +3055,8 @@ PNG位图
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
+[Delay]
+延时
 [From popup plugin]
 来自弹出窗口插件
 [Custom]
@@ -3088,6 +3090,8 @@ PNG位图
 ;============================================================
 [Dialog]
 对话框
+[Change]
+更改
 [Delete]
 删除
 [Reset]
@@ -3255,8 +3259,12 @@ PNG位图
 星期六
 [Sunday]
 星期天
+[History log]
+历史记录
 [Filter:]
 过滤器：
+[Menu]
+菜单
 [Contacts]
 联系人
 [Unknown error]
@@ -3298,6 +3306,8 @@ PNG位图
 禁用声音
 [Enable sounds]
 启用声音
+[Frame background]
+框架背景
 #muuid {488c5c84-56da-434f-96f1-b18900def760}
 ;============================================================
 ;  File: Boltun.dll
@@ -3353,6 +3363,8 @@ PNG位图
 文字
 [Use Windows colors]
 使用 Windows 颜色
+[Delay]
+延时
 [Default]
 默认
 [Custom]
@@ -3476,6 +3488,8 @@ PNG位图
 左键点击时
 [On right click]
 右键点击时
+[Delay]
+延时
 [Sec]
 秒
 [0 = Default]
@@ -4905,6 +4919,8 @@ Angeli-Ka（绘图），FYR（模板）
 我的联系人
 [Default]
 默认
+[Menu]
+菜单
 [Warning]
 警告
 [Standard contacts]
@@ -5058,6 +5074,8 @@ Angeli-Ka（绘图），FYR（模板）
 文字
 [Settings]
 设置
+[Version:]
+版本：
 [Delete]
 删除
 [Move down]
@@ -5358,6 +5376,8 @@ GnuPG插件 - 选择公钥
 取消
 [Change password]
 更改密码：
+[Change]
+更改
 [Remove]
 移除
 [Password]
@@ -5873,6 +5893,8 @@ URL
 %s 连接
 [Participants]
 参加者
+[Protocol icon]
+协议图标
 [Text files]
 文本文件
 [All Files]
@@ -8693,6 +8715,8 @@ MessageState 未读附加图标
 ;============================================================
 [Admin]
 管理员
+[Protocol icon]
+协议图标
 #muuid {798221e1-e47a-4dc8-9077-1e576f9c4307}
 ;============================================================
 ;  File: MirandaG15.dll
@@ -8825,6 +8849,8 @@ MessageState 未读附加图标
 静音
 [Advanced]
 高级
+[Frame background]
+框架背景
 [OFF]
 半
 [New]
@@ -8936,6 +8962,8 @@ UIN
 通知
 [Errors]
 错误
+[Protocol icon]
+协议图标
 [Profile]
 配置文件
 [Contact list]
@@ -9133,6 +9161,8 @@ UIN
 ;============================================================
 [Add]
 添加
+[Change]
+更改
 [Remove]
 移除
 [Cancel]
@@ -9153,12 +9183,20 @@ URL
 关闭(&C)
 [Error]
 错误
+[Protocol icon]
+协议图标
+[Auto Update Enabled]
+自动更新启用
+[Auto Update Disabled]
+自动更新禁用
 [Are you sure?]
 你确定吗？
 [Network]
 网络
 [Avatars]
 头像
+[Enable/disable auto update]
+启用/禁用自动更新
 #muuid {ebf19652-e434-4d79-9897-91a0ff226f51}
 ;============================================================
 ;  File: NewXstatusNotify.dll
@@ -9194,6 +9232,8 @@ URL
 日志到文件
 [Open]
 打开
+[Change]
+更改
 [Preview]
 预览
 [Delete]
@@ -9218,6 +9258,8 @@ URL
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
+[Popup text]
+弹出窗口文字
 [Timeout]
 超时
 [Sec]
@@ -9338,6 +9380,8 @@ URL
 ;============================================================
 [URL]
 URL
+[Link Settings]
+链接设置
 [Group:]
 分组：
 [&Exit]
@@ -9398,6 +9442,8 @@ URL
 顶部
 [Notes]
 笔记
+[Note text]
+注意文字
 [Plugins]
 插件
 [Minutes]
@@ -9668,6 +9714,8 @@ URL
 网络
 [Popups]
 弹出窗口
+[View Log]
+查看日志
 [Browse...]
 浏览...
 [Row height:]
@@ -9690,8 +9738,12 @@ URL
 联系
 [Protocols]
 协议
+[Menu]
+菜单
 [All Files]
 所有文件
+[Open log file]
+打开日志文件
 [<none>]
 <无>
 [Settings]
@@ -10094,6 +10146,8 @@ Miranda NG 核心
 选择全部
 [Network]
 网络
+[Protocol icon]
+协议图标
 [Error]
 错误
 [%s connection]
@@ -10783,6 +10837,8 @@ Miranda 的根目录路径
 ;============================================================
 [Log to file]
 日志到文件
+[Variable list]
+变量列表
 [Text]
 文字
 [Online]
@@ -11112,6 +11168,8 @@ BBCode
 文件
 [Unknown event]
 未知事件
+[Protocol icon]
+协议图标
 [Protocols]
 协议
 [%s connection]
@@ -11131,8 +11189,14 @@ BBCode
 ;============================================================
 [Name:]
 名称：
+[Author:]
+作者：
+[Version:]
+版本：
 [Preview]
 预览
+[Display]
+显示
 [Background color]
 背景色
 [All files]
@@ -11294,6 +11358,8 @@ BBCode
 网络
 [Protocols]
 协议
+[Protocol icon]
+协议图标
 [%s connection]
 %s 连接
 [closed chat session]
@@ -13677,6 +13743,8 @@ Jabber 活动
 ;============================================================
 [Name:]
 名称：
+[Path:]
+路径：
 [Set]
 设置
 [Find/add contacts]
@@ -13726,6 +13794,8 @@ Jabber 活动
 更新
 [New password:]
 新密码：
+[Protocol icon]
+协议图标
 [Protocols]
 协议
 [Password]
@@ -13771,6 +13841,8 @@ Jabber 活动
 自定义
 [Test]
 测试
+[Display]
+显示
 [Icon]
 图标
 [Account name]
@@ -13900,6 +13972,8 @@ Jabber 活动
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
+[Delay]
+延时
 [From popup plugin]
 来自弹出窗口插件
 [Custom]
@@ -14293,6 +14367,8 @@ Miranda 的根目录路径
 帐户
 [View]
 查看
+[Menu]
+菜单
 [English]
 英语
 [Russian]
@@ -14328,6 +14404,10 @@ Miranda 的根目录路径
 第二行
 [Context menu]
 上下文菜单
+[Left click]
+左键点击
+[Right click]
+右键点击
 [Default colors]
 默认颜色
 [none]
@@ -14474,14 +14554,34 @@ Miranda 的根目录路径
 使用内部历史
 [Use external file]
 使用外部文件
+[Overwrite file upon update]
+更新时覆盖文件
+[Path:]
+路径：
+[Link Settings]
+链接设置
+[More Info URL]
+更多信息 URL
+[Weather Map]
+天气地图
 [Other Options]
 其它选项
+[Set as default station]
+设置为默认气象站
+[Disable automatic update for this station]
+禁止此气象站的自动更新
+[Disable Popup for this station]
+禁止此气象站的弹出窗口
+[Change]
+更改
 [Cancel]
 取消
 [Popup Options]
 弹出窗口选项
 [Enable popups]
 启用弹出窗口
+[Popup only when condition changes]
+仅当天气情况改变时弹出窗口
 [Colors]
 颜色
 [Background color]
@@ -14490,32 +14590,110 @@ Miranda 的根目录路径
 文字颜色
 [Use Windows colors]
 使用 Windows 颜色
+[Popup Actions]
+弹出窗口动作
+[Left Click]
+左键点击
+[Right Click]
+右键点击
+[Popup Delay]
+弹出窗口延时
+[Delay]
+延时
 [seconds]
 秒
 [From popup plugin]
 来自弹出窗口插件
 [Permanent]
 永久
+[Popup Text]
+弹出窗口文字
+[Popup Title]
+弹出窗口标题
 [Variables]
 变量
 [Default]
 默认
 [Preview]
 预览
+[Updates]
+更新
 [Alerts]
 警告
 [Errors]
 错误
 [Contact List]
 联系人列表
+[Brief Info Title]
+简要信息标题
+[Note Text]
+注意文字
+[Extra Text]
+额外文字
+[External Log]
+外部日志
+[History Log]
+历史记录
+[Variable List]
+变量列表
+[More Variables]
+更多变量
 [Reset]
 重置
 [Status Message]
 状态消息
+[Sunset]
+日落
+[Feel-like]
+体感
+[Today's Low]
+今日低
+[Today's High]
+今日高
+[Sunrise]
+日出
+[Dew point]
+露点
+[Humidity]
+湿度
+[More...]
+更多...
+[Weather Protocol INI Setup]
+天气协议 INI 设置
+[Install and load your weather ini file here]
+在此处安装并加载您的天气 ini 文件
+[Weather Protocol cannot find any weather INI file stored in your computer. To setup weather INI and add weather stations, please follow the steps:]
+天气协议无法找到存储在您计算机中的任何天气INI文件。要设置天气INI并添加气象站，请按照以下步骤操作：
+[Click here to download a weather ini file from Miranda file listing]
+点击这里从Miranda文件列表下载天气 ini 文件
+[Extract the weather ini file from archive to this directory]
+将天气ini文件从存档中提取到此目录
+[Click here to load the data from the new ini file into memory]
+点击此处将新的ini文件中的数据加载到内存中
+[Add new weather station and close this dialog]
+添加新气象站并关闭此对话框
+[Total INI files]
+总INI文件
+[Total memory used]
+使用的总内存
+[Reload INI]
+重新加载 INI
 [City:]
 城市：
+[Menu]
+菜单
 [Dismiss Popup]
 关闭弹出窗口
+[Open brief information]
+打开简要信息
+[Open complete forecast]
+打开完整预测
+[Open weather map]
+打开天气地图
+[View history]
+查看历史
+[Open log file]
+打开日志文件
 [Show user menu]
 显示用户菜单
 [Show user detail]
@@ -14526,34 +14704,190 @@ Miranda 的根目录路径
 到默认
 [N/A]
 N/A
+[Invalid ID format, missing "/" (10)]
+无效的 ID 格式，缺少 "/"（10）
+[Invalid service (11)]
+无效的服务（11）
+[Invalid station (12)]
+无效的气象站（12）
+[Weather service ini for this station is not found (20)]
+找不到本站的天气服务ini（20）
+[Netlib error - check your internet connection (30)]
+Netlib错误 - 检查您的网络连接（30）
+[Empty data is retrieved (40)]
+获取到空数据（40）
+[Document not found (42)]
+未找到文档（42）
+[Document too short to contain any weather data (43)]
+文件太短，无法包含任何天气数据（43）
+[Unknown error (99)]
+未知错误（99）
+[HTTP Error: No content (204)]
+HTTP错误：无内容（204）
+[HTTP Error: Data moved (301)]
+HTTP错误：数据移动（301）
+[HTTP Error: Use proxy (305)]
+HTTP错误：使用代理（305）
+[HTTP Error: Temporary redirect (307)]
+HTTP错误：临时重定向（307）
+[HTTP Error: Bad request (400)]
+HTTP错误：错误请求（400）
+[HTTP Error: Unauthorized (401)]
+HTTP错误：未授权（401）
+[HTTP Error: Payment required (402)]
+HTTP错误：需要付费（402）
+[HTTP Error: Forbidden (403)]
+HTTP错误：禁止（403）
+[HTTP Error: Not found (404)]
+HTTP错误：未找到（404）
+[HTTP Error: Method not allowed (405)]
+HTTP错误：不允许的方法（405）
+[HTTP Error: Proxy authentication required (407)]
+HTTP错误：代理需要认证（407）
+[HTTP Error: Gone (410)]
+HTTP错误：已失效（410）
+[HTTP Error: Internal server error (500)]
+HTTP错误：内部服务器错误（500）
+[HTTP Error: Bad gateway (502)]
+HTTP错误：错误的网关（502）
+[HTTP Error: Service unavailable (503)]
+HTTP错误：服务不可用（503）
+[HTTP Error: Gateway timeout (504)]
+HTTP错误：网关超时（504）
 [%c\\nTemperature: %t\\nFeel-Like: %f\\nPressure: %p\\nWind: %i  %w\\nHumidity: %m\\nDew Point: %e\\nVisibility: %v\\n\\nSun Rise: %r\\nSun Set: %y\\n\\n5 Days Forecast:\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]]
 %c\\n温度： %t\\n体感： %f\\n压力： %p\\n风力：%i  %w\\n湿度：%m\\n露点：%e\\n能见度：%v\\n\\n日出：%r\\n日落：%y\\n\\n5 天预报：\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]
 [Feel-Like: %f\\nPressure: %p\\nWind: %i  %w\\nHumidity: %m\\nDew Point: %e\\nVisibility: %v\\n\\nSun Rise: %r\\nSun Set: %y\\n\\n5 Days Forecast:\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]]
 体感：%f\\n压力：%p\\n风力：%i  %w\\n湿度：%m\\n露点：%e\\n能见度：%v\\n\\n日出：%r\\n日落：%y\\n\\n5 天预报：\\n%[Forecast Day 1]\\n%[Forecast Day 2]\\n%[Forecast Day 3]\\n%[Forecast Day 4]\\n%[Forecast Day 5]
+[Weather Condition for %n as of %u]
+%n 的天气状况作为 %u
+[%c, %t (feel-like %f)	Wind: %i %w	Humidity: %m]
+%c, %t (体感 %f)	风：%i %w	湿度：%m
+[%n at %u:	%c, %t (feel-like %f)	Wind: %i %w	Humidity: %m]
+%n 在 %u:	%c, %t (体感 %f)	风：%i %w	温度：%m
+[%n   (%u)]
+%n   (%u)
+[%c, %t\\nToday:  High %h, Low %l]
+%c, %t\\n今天：  高 %h, 低 %l
+[Temperature: %[Temperature]]
+温度的：%[Temperature]
+[%[..]\tcustom variables]
+%[..]\t自定义变量
+[Enable/disable auto update]
+启用/禁用自动更新
+[Auto Update Enabled]
+自动更新启用
+[Auto Update Disabled]
+自动更新禁用
 [Reset to default]
 重置为默认
 [Text Files]
 文本文件
 [All Files]
 所有文件
+[Weather HTTP connections]
+天气 HTTP 连接
+[Protocol icon]
+协议图标
+[Update Disabled]
+更新被禁止
+[View Log]
+查看日志
+[Update with Clear]
+更新并清除
+[View Brief]
+查看简要
+[View Complete]
+查看完整
+[Weather Update]
+天气更新
 [Popup]
 弹出窗口
+[No Popup]
+无弹出窗口
+[Edit Settings]
+编辑设置
 [Name]
 名字
+[Author]
+作者
+[File Version]
+文件版本
+[INI Version]
+INI 版本
 [Items]
 项
+[Display Name]
+显示名称
+[File Name]
+文件名
+[The corresponding INI file for "%s" is not found.]
+找不到“％s”的相应INI文件。
+[Weather INI information for "%s":]
+"%s" 的天气 INI 信息：
 [Name:]
 名称：
+[Internal Name:]
+内部名称
+[Author:]
+作者：
+[Version:]
+版本：
+[INI Version:]
+INI 版本：
+[File Name:]
+文件名：
+[Item Count:]
+项目数：
+[Memory Used:]
+使用内存：
 [bytes]
 字节
 [Description:]
 描述：
+[All update data has been reloaded.]
+所有更新数据已重新载入。
+[Invalid ini format for: %s]
+无效的 ini 格式：%s
+[No update data file is found. Please check your Plugins\\Weather directory.]
+未找到更新数据文件。请检查您的 Plugins\\Weather 目录。
+[Frame Font]
+框架字体
+[Frame Title Font]
+框架标题字体
+[Frame Background]
+框架背景
+[Weather Protocol Text Preview]
+天气协议文字预览
 [Network]
 网络
 [General]
 通用
+[Display]
+显示
 [Popups]
 弹出窗口
+[Station ID]
+气象站 ID
+[Disable &weather notification]
+禁止天气通知(&W)
+[Enable &weather notification]
+启用天气通知(&W) 
+[Update Weather]
+更新天气
+[Remove Old Data then Update]
+移除旧数据然后更新
+[Brief Information]
+简要信息
+[Read Complete Forecast]
+阅读完整预报
+[Weather]
+天气
+[Enable/Disable Weather Update]
+启用/禁用天气更新
+[Update All Weather]
+更新所有天气
+[Remove Old Data then Update All]
+移除旧数据然后更新所有
 [Weather Notification]
 天气通知
 [Display in a frame]
@@ -14561,7 +14895,7 @@ N/A
 [Unable to retrieve weather information for %s]
 无法获取 %s 的天气信息
 [Variable]
-可变
+变量
 [Information]
 信息
 [Retrieving new data, please wait...]
@@ -15007,6 +15341,8 @@ N/A
 文字颜色：
 [Bold]
 粗体
+[Display]
+显示
 [Cancel]
 取消
 [Apply]
@@ -15019,6 +15355,10 @@ N/A
 查找什么：
 [Log to file]
 日志到文件
+[Popup delay]
+弹出窗口延时
+[Delay]
+延时
 [From popup plugin]
 来自弹出窗口插件
 [Permanent]
@@ -15045,6 +15385,10 @@ N/A
 删除(&D)
 [Co&py all]
 复制所有(&P)
+[Auto update disabled]
+自动更新禁用
+[Auto update enabled]
+自动更新启用
 [Network]
 网络
 [Popups]
@@ -15218,6 +15562,8 @@ WAV 文件
 ;  Version: 0.1.2.6
 ;  Authors: y_b, tweety, majvan
 ;============================================================
+[Version:]
+版本：
 [Description:]
 描述：
 [Copyright:]

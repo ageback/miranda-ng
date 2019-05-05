@@ -92,7 +92,7 @@
 网络
 ;file \protocols\Sametime\src\sametime.cpp
 [Protocol icon]
-
+协议图标
 [Announce]
 
 [Notification]

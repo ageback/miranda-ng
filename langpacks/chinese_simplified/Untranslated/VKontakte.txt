@@ -207,7 +207,6 @@
 [Loading messages for %s is completed.]
 [\nOriginal message:\n]
 [News and notifications]
-[Menu]
 [Account language]
 [Spanish]
 [automatically]

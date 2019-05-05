@@ -87,7 +87,7 @@
 
 ;file \protocols\Tox\src\tox_icons.cpp
 [Protocol icon]
-
+协议图标
 [Action icon]
 
 [Correction icon]

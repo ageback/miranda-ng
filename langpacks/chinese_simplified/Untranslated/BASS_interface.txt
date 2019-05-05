@@ -10,7 +10,6 @@
 [Play only if]
 [Un4seen's BASS version: %d.%d.%d.%d]
 [--default device--]
-[Frame background]
 [BASS Interface]
 [Bass Interface]
 [Bass library]

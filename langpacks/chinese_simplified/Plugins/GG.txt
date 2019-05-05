@@ -293,7 +293,7 @@
 
 ;file \protocols\Gadu-Gadu\src\icolib.cpp
 [Protocol icon]
-
+协议图标
 [Import list from server]
 
 [Import list from text file]

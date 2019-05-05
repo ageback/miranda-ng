@@ -65,7 +65,7 @@
 [URL:]
 
 [Display]
-
+显示
 [Between start and end strings]
 
 [Whole web page]
@@ -133,9 +133,9 @@
 [Save as raw data]
 
 [Popup delay]
-
+弹出窗口延时
 [Delay]
-
+延时
 [From popup plugin]
 来自弹出窗口插件
 [Permanent]
@@ -184,9 +184,9 @@
 [Alert event]
 
 [Auto update disabled]
-
+自动更新禁用
 [Auto update enabled]
-
+自动更新启用
 [Update all Webview sites]
 
 [Mark all Webview sites as read]

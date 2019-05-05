@@ -518,7 +518,7 @@
 [Connecting icons]
 
 [Menu]
-
+菜单
 [Open main menu]
 
 [Set status modes]

@@ -105,7 +105,6 @@
 [Aqua]
 [White]
 [Are you sure you want to delete this note?]
-[Note text]
 [Date/Title]
 [Are you sure you want to delete all notes?]
 [Sticky Note Caption]

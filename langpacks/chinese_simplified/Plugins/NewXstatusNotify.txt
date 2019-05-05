@@ -59,7 +59,7 @@
 [Open]
 打开
 [Change]
-
+更改
 [Preview]
 预览
 [Delete]
@@ -103,7 +103,7 @@
 [Use default colors]
 使用默认颜色
 [Popup text]
-
+弹出窗口文字
 [Show contact group name]
 
 [Show status description]

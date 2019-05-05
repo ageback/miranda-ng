@@ -23,7 +23,7 @@
 [Maximum size]
 
 [Variable list]
-
+变量列表
 [Enable Idle support]
 
 [Ignore contacts going offline]

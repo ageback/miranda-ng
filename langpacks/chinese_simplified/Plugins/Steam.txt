@@ -90,7 +90,7 @@
 [Protocols]
 协议
 [Protocol icon]
-
+协议图标
 [Gaming icon]
 
 [%s connection]

@@ -15,15 +15,15 @@
 [Name:]
 名称：
 [Author:]
-
+作者：
 [Version:]
-
+版本：
 [Preview]
 预览
 [Use per protocol global smiley packs]
 
 [Display]
-
+显示
 [Replace only smileys surrounded by spaces]
 
 [Scale smiley to text height]

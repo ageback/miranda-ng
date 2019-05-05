@@ -11,7 +11,7 @@
 [Add]
 添加
 [Change]
-
+更改
 [Remove]
 移除
 [Import]
@@ -90,7 +90,7 @@ URL
 
 ;file \protocols\NewsAggregator\Src\Icons.cpp
 [Protocol icon]
-
+协议图标
 [Check All Feeds]
 
 [Add Feed]
@@ -100,9 +100,9 @@ URL
 [Export Feeds]
 
 [Auto Update Enabled]
-
+自动更新启用
 [Auto Update Disabled]
-
+自动更新禁用
 ;file \protocols\NewsAggregator\Src\Menus.cpp
 [Check feed]
 
@@ -158,7 +158,7 @@ URL
 [Avatars]
 头像
 [Enable/disable auto update]
-
+启用/禁用自动更新
 ;file \protocols\NewsAggregator\Src\Utils.cpp
 [NewsAggregator HTTP connections]
 

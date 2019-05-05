@@ -123,7 +123,7 @@
 
 ;file \protocols\SkypeWeb\src\skype_icons.cpp
 [Protocol icon]
-
+协议图标
 [Create new chat icon]
 
 [Sync history icon]

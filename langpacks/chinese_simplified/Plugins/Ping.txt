@@ -29,7 +29,7 @@
 [Block Repetitions]
 
 [View Log]
-
+查看日志
 [Browse...]
 浏览...
 [Interface]
@@ -85,7 +85,7 @@
 [(Optional) Command Parameters:]
 
 [Menu]
-
+菜单
 [Graph]
 
 [Enable]
@@ -107,7 +107,7 @@
 [All Files]
 所有文件
 [Open log file]
-
+打开日志文件
 [<none>]
 <无>
 [<all>]

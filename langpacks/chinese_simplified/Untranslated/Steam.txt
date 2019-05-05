@@ -25,6 +25,5 @@
 [Steam menu chooser]
 [Unblock]
 [Join to game]
-[Protocol icon]
 [Gaming icon]
 [You cannot send messages when you are offline.]

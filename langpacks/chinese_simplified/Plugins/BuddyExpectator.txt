@@ -43,7 +43,7 @@
 [Use Windows colors]
 使用 Windows 颜色
 [Delay]
-
+延时
 [Default]
 默认
 [Custom]

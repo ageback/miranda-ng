@@ -10,7 +10,6 @@
 [Add separator]
 [Add launch]
 [Delete separator/launch button]
-[Path:]
 [Show main menu]
 [Show options page]
 [Show accounts manager]

@@ -179,7 +179,7 @@
 
 ;file \protocols\MSN\src\msn_opts.cpp
 [Protocol icon]
-
+协议图标
 [Hotmail Inbox]
 
 [Profile]

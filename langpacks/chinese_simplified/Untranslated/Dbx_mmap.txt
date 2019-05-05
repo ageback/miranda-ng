@@ -4,7 +4,6 @@
 [New password]
 [Please enter your new password]
 [Enter password]
-[Change]
 [Old password]
 [Database encryption mode]
 [Standard]

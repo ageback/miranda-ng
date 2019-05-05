@@ -497,7 +497,7 @@
 [View]
 查看
 [Menu]
-
+菜单
 [Account language]
 
 [English]

@@ -135,7 +135,7 @@
 [Use default colors]
 使用默认颜色
 [Delay]
-
+延时
 [From popup plugin]
 来自弹出窗口插件
 [Custom]
