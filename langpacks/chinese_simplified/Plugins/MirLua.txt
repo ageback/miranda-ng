@@ -40,7 +40,7 @@
 
 ;file \plugins\MirLua\src\plugin.cpp
 [Services]
-
+服务
 [C libs folder]
 
 [Scripts folder]

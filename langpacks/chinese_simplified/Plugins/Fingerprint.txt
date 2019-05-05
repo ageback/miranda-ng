@@ -69,11 +69,11 @@
 [Overlays]
 
 [Resource]
-
+资源
 [Platform]
 
 [Security]
-
+安全
 [Protocol]
 协议
 ;file \plugins\FingerprintNG\src\masks.cpp

@@ -48,7 +48,7 @@
 [Title:]
 称号
 [Account]
-
+帐户
 [Gender]
 
 [UserID]

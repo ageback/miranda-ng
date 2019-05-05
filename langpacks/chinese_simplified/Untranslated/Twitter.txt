@@ -11,7 +11,6 @@
 [These changes will take effect the next time you connect to the Twitter network.]
 [Treat tweets as messages]
 [Enable popup notifications for tweets]
-[Colors]
 [Use Popup colors]
 [Timeouts]
 [Use default]

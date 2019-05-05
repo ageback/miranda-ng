@@ -42,7 +42,6 @@
 [external IP]
 [internal IP]
 [client info]
-[account]
 [tabulator]
 [line break]
 [-- Date --]

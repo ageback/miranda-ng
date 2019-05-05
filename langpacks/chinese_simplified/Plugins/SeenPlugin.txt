@@ -147,7 +147,7 @@
 [protocol]
 协议
 [account]
-
+帐户
 [tabulator]
 
 [line break]

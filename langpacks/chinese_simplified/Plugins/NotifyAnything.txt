@@ -9,7 +9,7 @@
 
 ;file \plugins\NotifyAnything\res\NotifyAnything.rc
 [Security]
-
+安全
 [Only listen to localhost]
 
 [Port:]

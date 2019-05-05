@@ -2,7 +2,6 @@
 [Show entry in the Popups menu]
 [Temporarily disable event popups]
 [Show preview of event in popup]
-[Timeout]
 [Notify me of...]
 [Left click actions]
 [Right click actions]

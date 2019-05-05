@@ -101,7 +101,7 @@
 错误
 ;file \protocols\Sametime\src\sametime_proto.cpp
 [%s connection]
-
+%s 连接
 ;file \protocols\Sametime\src\sametime_session.cpp
 [Sametime administrator message]
 
@@ -158,9 +158,9 @@
 [Invalid data]
 
 [Not implemented]
-
+未实现
 [Unknown error]
-
+未知错误
 [Not enough resources]
 
 [Requested channel is not supported]

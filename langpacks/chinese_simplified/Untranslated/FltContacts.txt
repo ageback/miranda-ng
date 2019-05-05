@@ -7,7 +7,6 @@
 [Show tooltips*]
 [ms]
 [Tooltips]
-[0 = Default]
 [*requires Tipper plugin]
 [Bring to front]
 [Bring to front every]

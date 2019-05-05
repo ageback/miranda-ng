@@ -31,7 +31,7 @@
 [Miscellaneous]
 杂项
 [0 = Default]
-
+0 = 默认
 [*requires Tipper plugin]
 
 [Bring to front]

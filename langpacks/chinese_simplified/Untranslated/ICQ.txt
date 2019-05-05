@@ -1,7 +1,6 @@
 [ICQ protocol support for Miranda NG.]
 [UIN/e-mail:]
 [Sign in/sign up using phone]
-[Do not open chat windows on creation]
 [Use tray icon notifications]
 [Launch mailbox in a browser on click]
 [If a contact goes Offline, set this status instead and cache it for given timeout in seconds (0 - disabled)]

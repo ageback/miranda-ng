@@ -265,7 +265,7 @@
 联系人列表
 ;file \protocols\Gadu-Gadu\src\gg_proto.cpp
 [%s connection]
-
+%s 连接
 [Images]
 
 [Gadu-Gadu Number]

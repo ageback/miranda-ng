@@ -15,7 +15,7 @@
 [Sign in/sign up using phone]
 
 [Do not open chat windows on creation]
-
+不要在创建时打开聊天窗口
 [Use tray icon notifications]
 
 [E-mail]

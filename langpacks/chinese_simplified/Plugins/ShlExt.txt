@@ -44,7 +44,7 @@
 [Disable/Remove shlext]
 
 [Services]
-
+服务
 ;file \plugins\ShellExt\src\shlcom.cpp
 [Recently]
 

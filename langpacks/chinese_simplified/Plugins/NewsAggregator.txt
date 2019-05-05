@@ -41,7 +41,7 @@ URL
 [Login]
 
 [Password]
-
+密码
 [Visualization]
 
 [Display news using the following format:]

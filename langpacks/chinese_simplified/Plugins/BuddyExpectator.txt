@@ -33,7 +33,7 @@
 [Enable "Miss you" feature]
 
 [Colors]
-
+颜色
 [Background]
 背景
 [Text]
@@ -133,6 +133,6 @@
 [not detected]
 
 [not found]
-
+未找到
 [This contact has been absent for an extended period of time.]
 

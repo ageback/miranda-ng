@@ -153,7 +153,7 @@
 [Contact]
 联系
 [Account]
-
+帐户
 [Policy]
 
 [Verified]
@@ -193,7 +193,7 @@
 [Question]
 
 [Password]
-
+密码
 [Authentication successful.]
 
 [Your contact authenticated you successfully. You can send your own request to authenticate him.]
@@ -241,7 +241,7 @@
 [Private Data]
 
 [Services]
-
+服务
 ;file \plugins\MirOTR\src\otr.cpp
 [\nusing older protocol version %i]
 

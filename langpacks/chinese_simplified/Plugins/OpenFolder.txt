@@ -6,7 +6,7 @@
 ;  Authors: jarvis, Kreisquadratur
 ;============================================================
 [Adds a menu/toolbar item which opens the main Miranda NG folder.]
-
+添加菜单/工具栏项，打开Miranda NG主文件夹。
 ;file \plugins\OpenFolder\src\openFolder.cpp
 [Open Folder]
 打开文件夹

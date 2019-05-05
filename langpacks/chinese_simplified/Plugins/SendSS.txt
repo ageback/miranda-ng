@@ -131,7 +131,7 @@
 [The user canceled one of the dialog boxes]
 
 [Unknown Error]
-
+未知错误
 ;file \plugins\SendScreenshotPlus\src\CSendFile.cpp
 [File transfer]
 文件传输

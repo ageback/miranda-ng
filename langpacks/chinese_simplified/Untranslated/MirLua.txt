@@ -10,6 +10,5 @@
 [Reload]
 [Compile]
 [Common scripts]
-[Services]
 [C libs folder]
 [Scripts folder]

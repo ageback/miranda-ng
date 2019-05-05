@@ -43,5 +43,4 @@
 [Save session...]
 [Load session...]
 [Load last session]
-[View]
 [Session Before Last Crash]

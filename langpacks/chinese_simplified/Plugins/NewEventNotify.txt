@@ -29,7 +29,7 @@
 [Background]
 背景
 [Timeout]
-
+超时
 [Notify me of...]
 
 [Left click actions]

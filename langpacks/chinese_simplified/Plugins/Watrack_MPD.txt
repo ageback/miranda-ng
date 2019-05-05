@@ -13,7 +13,7 @@
 [Port]
 
 [Password]
-
+密码
 ;file \plugins\Watrack_MPD\src\init.cpp
 [Watrack MPD connection]
 

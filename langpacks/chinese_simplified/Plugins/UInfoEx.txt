@@ -185,7 +185,7 @@
 [average age:]
 
 [View]
-
+查看
 [Show &during the next]
 
 [day(s)]
@@ -231,7 +231,7 @@
 [Info of a metacontact's subcontact]
 
 [Colors]
-
+颜色
 [Common]
 
 [Change my ICQ details with UserInfoEx (disabled if ICQ doesn't support it)]
@@ -303,7 +303,7 @@
 [Zodiac:]
 
 [not found]
-
+未找到
 [Use global reminder settings]
 
 [Don't remind me of this anniversary]
@@ -507,7 +507,7 @@
 [IM naming]
 
 [Password]
-
+密码
 [Timezone]
 
 [Marital status]
@@ -791,7 +791,7 @@
 [Lao]
 
 [Latvian]
-
+拉脱维亚语
 [Lithuanian]
 
 [Macedonian]

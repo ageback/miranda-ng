@@ -95,7 +95,7 @@
 [Text]
 文字
 [Colors]
-
+颜色
 [Use custom colors]
 使用自定义颜色
 [Use Windows colors]
@@ -115,21 +115,21 @@
 [Read status message]
 
 [Timeout]
-
+超时
 [Sec]
 秒
 [Connection timeout]
 
 [0 = Default]
-
+0 = 默认
 [-1 = Infinite]
-
+-1 = 无限
 [Click action]
-
+点击动作
 [On left click]
-
+左键点击时
 [On right click]
-
+右键点击时
 [Notification]
 
 [Show Popups when I connect]
@@ -377,7 +377,7 @@
 [Reset templates]
 
 [Account]
-
+帐户
 [Status logging]
 
 [Filtering]
@@ -388,7 +388,7 @@
 [Open message window]
 
 [Close popup]
-
+关闭弹出窗口
 [Open contact details window]
 
 [Open contact menu]
@@ -404,9 +404,9 @@
 
 ;file \plugins\NewXstatusNotify\src\xstatus.cpp
 [Mood]
-
+心情
 [Activity]
-
+活动
 [xStatus]
 
 [<no title>]

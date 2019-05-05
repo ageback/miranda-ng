@@ -21,7 +21,7 @@
 [Pitch]
 
 [Test]
-
+测试
 [Lexicon]
 
 [Welcome Message]

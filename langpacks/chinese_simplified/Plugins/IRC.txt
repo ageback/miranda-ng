@@ -19,7 +19,7 @@
 [Port range]
 
 [Password]
-
+密码
 [&Add]
 添加(&A)
 [&Edit]
@@ -549,7 +549,7 @@
 [Edit ignore]
 
 [Account]
-
+帐户
 [DCC and CTCP]
 
 [Advanced]

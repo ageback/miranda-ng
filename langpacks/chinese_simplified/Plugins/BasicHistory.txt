@@ -123,7 +123,7 @@
 [Compress output files]
 
 [Password]
-
+密码
 [Upload to FTP (WinSCP requred)]
 
 [Session name]
@@ -436,7 +436,7 @@
 [FTP path cannot contain <date> in import task.]
 
 [Unknown error]
-
+未知错误
 [Cannot get FTP file(s).]
 
 [Cannot unzip file(s).]

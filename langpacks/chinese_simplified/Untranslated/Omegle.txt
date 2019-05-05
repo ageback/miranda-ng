@@ -52,5 +52,4 @@
 [Changing stranger]
 [Receive message]
 [Visible name]
-[Account]
 [Omegle Icon]

@@ -119,7 +119,7 @@
 [Advanced]
 高级
 [Do not open chat windows on creation]
-
+不要在创建时打开聊天窗口
 [Sync read message status from server]
 
 [Always notify as unread for all incoming message]
@@ -208,7 +208,7 @@
 [Notification icon]
 
 [Read message icon]
-
+已读消息图标
 [Visit profile icon]
 
 [Load server history icon]
@@ -304,7 +304,7 @@
 [shared your video]
 
 [Photo]
-
+照片
 [Attachments:]
 
 [Audio]
@@ -491,11 +491,11 @@
 [Network]
 网络
 [Account]
-
+帐户
 [News and notifications]
 
 [View]
-
+查看
 [Menu]
 
 [Account language]

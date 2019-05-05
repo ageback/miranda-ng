@@ -25,7 +25,7 @@
 [Default group:]
 
 [Account]
-
+帐户
 [Others]
 其它
 [Automatic messages synchronization]
@@ -172,7 +172,7 @@
 
 ;file \protocols\SkypeWeb\src\skype_network.cpp
 [%s connection]
-
+%s 连接
 ;file \protocols\SkypeWeb\src\skype_options.cpp
 [Network]
 网络

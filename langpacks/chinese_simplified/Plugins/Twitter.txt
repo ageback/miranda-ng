@@ -43,7 +43,7 @@
 [Enable popup notifications for tweets]
 
 [Colors]
-
+颜色
 [Use Windows colors]
 使用 Windows 颜色
 [Use Popup colors]

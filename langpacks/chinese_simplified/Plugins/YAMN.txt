@@ -19,7 +19,7 @@
 [Homepage:]
 主页：
 [Account]
-
+帐户
 [Name:]
 名称：
 [Server:]
@@ -187,7 +187,7 @@
 [An error occurred. Error code: %d]
 
 [Unknown error]
-
+未知错误
 [ - connection error]
 
 ;file \protocols\YAMN\src\browser\mailbrowser.cpp
@@ -218,7 +218,7 @@
 [Select All]
 选择全部
 [From]
-
+从
 [Subject]
 
 [Size]
@@ -236,7 +236,7 @@
 
 ;file \protocols\YAMN\src\proto\netlib.cpp
 [%s connection]
-
+%s 连接
 ;file \protocols\YAMN\src\proto\pop3\pop3comm.cpp
 [Disconnected]
 

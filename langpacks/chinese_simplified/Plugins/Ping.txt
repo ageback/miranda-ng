@@ -11,7 +11,7 @@
 [Delay between pings (secs):]
 
 [Timeout]
-
+超时
 [Ping timeout (secs):]
 
 [Logging]
@@ -31,7 +31,7 @@
 [View Log]
 
 [Browse...]
-
+浏览...
 [Interface]
 
 [Do not change icon when testing]

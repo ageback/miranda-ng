@@ -128,7 +128,7 @@
 [Network]
 网络
 [Account]
-
+帐户
 ;file \protocols\Omegle\src\theme.cpp
 [Omegle Icon]
 

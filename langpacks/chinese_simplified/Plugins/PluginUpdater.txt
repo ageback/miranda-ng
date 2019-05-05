@@ -6,54 +6,54 @@
 ;  Authors: Mataes, George Hazan
 ;============================================================
 [Installs and updates plugins and other Miranda NG components.]
-
+安装和更新插件，以及其它的 Miranda NG 组件。
 ;file \plugins\PluginUpdater\res\Resource.rc
 [Updates found!]
-
+发现更新！
 [PluginUpdater has detected updated versions of some Miranda components. Click on Details button to view more information.]
-
+PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮以查看更多信息。
 [Update]
 更新
 [Details >>]
-
+详细 >> 
 [Cancel]
 取消
 [Select &all]
 选择所有(&A)
 [Select &none]
-
+全不选(&N)
 [Hotkey]
-
+热键
 [Go to Options -> Customize -> Hotkeys to change the hotkey]
-
+转到选项 -> 自定义 -> 热键以更改热键
 [Update options]
-
+更新选项
 [On startup]
-
+在启动时
 [(but only once a day)]
-
+(但是一天仅一次)
 [Every]
-
+每
 [Silent mode]
-
+安静模式
 [Backup database before update (requires Db_autobackups plugin)]
-
+更新之前备份数据库(需要 Db_autobackups 插件)
 [Files source]
-
+文件源
 [Stable version]
-
+稳定版
 [Stable version with debug symbols]
-
+带有调试符号的稳定版
 [Development version (less stable)]
-
+开发版(不太稳定)
 [Development version with debug symbols]
-
+带有调试符号的开发版
 [Custom version]
-
+自定义版本
 [Change platform to 32-bit]
-
+更改平台为 32位
 [Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.]
-
+一些组件被更新。\n你需要重启你的 Miranda 来应用安装的更新。
 [Notifications]
 通知
 [Restart]
@@ -61,64 +61,64 @@
 [Errors]
 错误
 [Info messages]
-
+信息消息
 [Back]
 退回
 [Text]
 文字
 [Colors]
-
+颜色
 [Use cus&tom colors]
-
+使用自定义颜色(&T)
 [Use &Windows colors]
-
+使用 &Windows 颜色
 [Use defa&ult colors]
-
+使用默认颜色(&U)
 [Preview]
 预览
 [Click action]
-
+点击动作
 [On left click]
-
+左键点击时
 [On right click]
-
+右键点击时
 [Timeout]
-
+超时
 [0 = Default]
-
+0 = 默认
 [-1 = Infinite]
-
+-1 = 无限
 [Sec]
 秒
 [For "Restart" popup setting is always infinity]
-
+对于"重启"弹出窗口设置总是无限
 [Popups]
 弹出窗口
 [Component list]
-
+组件列表
 [Here is the complete list of missing Miranda NG components. Check components that you want to download.\n\nClick on info icon to view component info page.]
-
+以下是Miranda NG组件缺失的完整列表。检查要下载的组件。\n\n点击信息图标查看组件信息页面。
 [Download]
 下载
 ;file \plugins\PluginUpdater\src\DlgListNew.cpp
 [Downloading...]
 正在下载...
 [Succeeded.]
-
+成功。
 [Failed!]
-
+失败！
 [Skipped.]
-
+跳过。
 [Plugin Updater]
-
+插件更新器
 [Download complete]
-
+下载完成
 [Download complete. Do you want to go to plugins option page?]
-
+下载完成。你要转到插件选项页吗？
 [Component Name]
-
+组件名称
 [State]
-
+状态
 [Plugins]
 插件
 [Icons]
@@ -128,60 +128,60 @@
 [Other]
 其他
 [List is empty.]
-
+列表为空。
 [List loading already started!]
-
+列表加载已经开始了！
 ;file \plugins\PluginUpdater\src\DlgUpdate.cpp
 [Will be deleted!]
-
+将被删除！
 [Update complete. Press Yes to restart Miranda now or No to postpone a restart until the exit.]
-
+更新完成。点击是立即重启 Miranda 或否推迟重启直到退出。
 [Miranda NG Core]
-
+Miranda NG 核心
 [Deprecated!]
-
+已过时！
 [Update found!]
-
+发现更新！
 [<< Details]
-
+<< 详细
 [Update failed! One of the components wasn't downloaded correctly. Try it again later.]
-
+更新失败！其中一个组件未正确下载。稍后再试一次。
 [%d component(s) was updated]
-
+%d 个组件被更新了
 [You need to restart your Miranda to apply installed updates.]
-
+您需要重新启动Miranda才能应用已安装的更新。
 [Would you like to restart it now?]
-
+你想现在重启吗？
 [Checking for new updates...]
-
+检查新更新...
 [No updates found.]
-
+未找到更新。
 [Update checking already started!]
-
+更新检查已经开始！
 ;file \plugins\PluginUpdater\src\Events.cpp
 [Plugin updater URI scheme]
-
+插件更新程序URI方案
 ;file \plugins\PluginUpdater\src\Notifications.cpp
 ;file \plugins\PluginUpdater\src\Notifications.h
 [Close popup]
-
+关闭弹出窗口
 [Do nothing]
 啥都不干
 ;file \plugins\PluginUpdater\src\Options.cpp
 [Backup database before update]
-
+更新前备份数据库
 [Stable version (incompatible with current development version)]
-
+稳定版本（与当前开发版本不兼容）
 [hours]
 小时
 [days]
 天
 [Change platform to 64-bit]
-
+将平台更改为64位
 [Test]
-
+测试
 [Services]
-
+服务
 ;file \plugins\PluginUpdater\src\PluginUpdater.cpp
 [Check for updates]
 检查更新
@@ -195,7 +195,7 @@
 [Plugin info]
 插件信息
 [Plugin Updater HTTP connections]
-
+插件更新程序HTTP连接
 [An error occurred while checking for new updates.]
-
+检查新更新时发生错误。
 ;file \plugins\PluginUpdater\src\Compat\compat.h

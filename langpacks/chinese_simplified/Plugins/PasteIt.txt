@@ -57,7 +57,7 @@
 [User name]
 
 [Password]
-
+密码
 [Paste It]
 
 [Format]
@@ -106,7 +106,7 @@
 [Invalid codepage]
 
 [Services]
-
+服务
 [Main]
 主
 [Web page]

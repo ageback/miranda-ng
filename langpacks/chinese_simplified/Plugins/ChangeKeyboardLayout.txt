@@ -43,7 +43,7 @@
 [Change active keyboard layout in system]
 
 [Colors]
-
+颜色
 [Use default colors]
 使用默认颜色
 [Windows colors]
@@ -55,7 +55,7 @@
 [Text]
 文字
 [Timeout]
-
+超时
 [From popup plugin]
 来自弹出窗口插件
 [Permanent]
@@ -63,13 +63,13 @@
 [Custom]
 自定义
 [On left click]
-
+左键点击时
 [Copy to clipboard]
 复制到剪贴板
 [Dismiss]
 
 [On right click]
-
+右键点击时
 [Preview]
 预览
 ;file \plugins\ChangeKeyboardLayout\src\hook_events.cpp

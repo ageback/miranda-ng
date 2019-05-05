@@ -8,7 +8,6 @@
 [Disable Popup for this station]
 [Change]
 [Popup only when condition changes]
-[Colors]
 [Popup Actions]
 [Left Click]
 [Right Click]

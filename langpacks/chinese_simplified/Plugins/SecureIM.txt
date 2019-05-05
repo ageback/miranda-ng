@@ -399,7 +399,7 @@
 [Load Public Key File]
 
 [Services]
-
+服务
 ;file \plugins\SecureIM\src\popupOptions.cpp
 [Key Popup]
 

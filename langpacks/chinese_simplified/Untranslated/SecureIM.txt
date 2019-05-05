@@ -165,7 +165,6 @@
 [Save Public Key File]
 [Load Private Key File]
 [Load Public Key File]
-[Services]
 [Key Popup]
 [Secure Popup]
 [Message Popup]

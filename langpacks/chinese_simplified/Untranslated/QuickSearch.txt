@@ -12,7 +12,6 @@
 [Auto Close mode]
 [Sort by Status]
 [Show Client Icons]
-[Account]
 [Gender]
 [UserID]
 [First name]

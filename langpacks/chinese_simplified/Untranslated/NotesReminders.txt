@@ -119,7 +119,6 @@
 [Week]
 [The specified time offset is invalid.]
 [&Update Reminder]
-[Every]
 [Never]
 [Alternative 1]
 [Alternative 2]

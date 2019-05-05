@@ -82,7 +82,6 @@
 [Disable]
 [IP info available only after login]
 [MSN Protocol requires message timeout to be not less then 60 sec. Correct the timeout value.]
-[Account]
 [Connection]
 [Server list]
 [Live Mail]

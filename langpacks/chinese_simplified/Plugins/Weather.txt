@@ -135,7 +135,7 @@
 [Popup only when condition changes]
 
 [Colors]
-
+颜色
 [Background color]
 背景色
 [Text color]

@@ -22,7 +22,6 @@
 [Input]
 [Variables Help]
 [Open String Formatting Help]
-[Services]
 [Alias]
 [user defined]
 [stores y as alias named x]

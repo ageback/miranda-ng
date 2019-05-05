@@ -18,7 +18,7 @@
 [Down]
 下
 [Test]
-
+测试
 [Import]
 
 [Action "$" exists, do you want to rewrite it?]
@@ -774,19 +774,19 @@
 [None]
 无
 [Angry]
-
+生气
 [Taking a bath]
-
+在洗澡
 [Tired]
-
+疲劳
 [Birthday]
 
 [Drinking beer]
 
 [Thinking]
-
+在思考
 [Eating]
-
+在吃
 [Watching TV]
 在看电视
 [Meeting]
@@ -802,15 +802,15 @@
 [Having fun]
 
 [Gaming]
-
+在游戏
 [Studying]
 正在学习
 [Shopping]
-
+在购物
 [Feeling sick]
 
 [Sleeping]
-
+在睡觉
 [Surfing]
 
 [Browsing]
@@ -824,7 +824,7 @@
 [Cooking]
 
 [Smoking]
-
+在抽烟
 [I'm high]
 
 [On WC]

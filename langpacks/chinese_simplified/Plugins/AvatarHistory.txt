@@ -35,7 +35,7 @@
 [Show popup when a contact change his avatar]
 
 [Colors]
-
+颜色
 [Background color]
 背景色
 [Text color]
@@ -135,7 +135,7 @@
 [Do nothing]
 啥都不干
 [Close popup]
-
+关闭弹出窗口
 [Show avatar history]
 
 [Show contact history]

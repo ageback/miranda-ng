@@ -3,7 +3,6 @@
 [ERROR style]
 [EXCLAMATION style]
 [QUESTION style]
-[Timeout]
 [Special values of the "Timeout":\n -1 - infinity, 0 - use default timeout value]
 [Emit a sound]
 [MessagePopup]

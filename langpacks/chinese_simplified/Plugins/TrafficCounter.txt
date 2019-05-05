@@ -37,7 +37,7 @@
 [Custom]
 自定义
 [Test]
-
+测试
 [Show now]
 
 [Space between lines:]
@@ -88,7 +88,7 @@
 [Year]
 
 [Services]
-
+服务
 [Options]
 选项
 [Traffic counter]

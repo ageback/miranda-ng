@@ -168,7 +168,7 @@ UIN
 [City]
 
 [State]
-
+状态
 [Phone]
 
 [Homepage]

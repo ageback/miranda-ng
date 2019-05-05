@@ -65,7 +65,7 @@
 
 ;file \plugins\Variables\src\options.cpp
 [Services]
-
+服务
 [Variables]
 变量
 ;file \plugins\Variables\src\parse_alias.cpp

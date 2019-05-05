@@ -6,30 +6,30 @@
 ;  Authors: MikalaiR
 ;============================================================
 [Displays icons in message window showing whether your last outgoing message was read / is still unread.]
-
+在消息窗口显示图标，显示你上次发出的消息是否已经被阅读/仍然未读。
 ;file \plugins\MessageState\src\clist_extra.cpp
 [MessageState unread extra icon]
-
+MessageState 未读附加图标
 ;file \plugins\MessageState\src\messagestate.cpp
 [Unread message icon]
-
+未读消息图标
 [Read message icon]
-
+已读消息图标
 [Failed sending icon]
-
+发送失败图标
 [Sending message icon]
-
+正在发送消息图标
 [Unread clist extra icon]
-
+未读 clist 附加图标
 [Last message is not read]
-
+上次的消息未读
 [Last message read]
-
+上次的消息已读
 [Last message was not sent]
-
+上次的消息未发送
 [Sending...]
 正在发送...
 [Last message read at %X %x]
-
+上次的消息阅读于 %X %x
 [Last message read (unknown time)]
-
+上次的消息已读（未知时间）

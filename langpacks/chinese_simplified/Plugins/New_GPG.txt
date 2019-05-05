@@ -297,7 +297,7 @@
 [There is no public or private key.]
 
 [Services]
-
+服务
 [Main]
 主
 [GnuPG Variables]

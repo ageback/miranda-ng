@@ -39,7 +39,7 @@
 [...status message]
 
 [Account]
-
+帐户
 [Show account name]
 
 [Show account cycle button]

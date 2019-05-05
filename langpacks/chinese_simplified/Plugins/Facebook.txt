@@ -109,7 +109,7 @@
 [Enable multi user chats support]
 
 [Do not open chat windows on creation]
-
+不要在创建时打开聊天窗口
 [Automatically join active chats that exist in contact list]
 
 [History synchronization]
@@ -158,7 +158,7 @@
 [Login error: %s]
 
 [Unknown error]
-
+未知错误
 [Login error: Invalid request.]
 
 [You entered too many invalid verification codes. Plugin will disconnect.]
@@ -319,7 +319,7 @@
 [Network]
 网络
 [Account]
-
+帐户
 [Events]
 事件
 [Messaging]
@@ -384,7 +384,7 @@
 [Captcha form icon]
 
 [Angry]
-
+生气
 [Haha]
 
 [Like]

@@ -53,7 +53,7 @@
 [%ExternalIP% variable]
 
 [Test]
-
+测试
 [Transfer limit (Kb/s)]
 
 [No control when Away or Not available]

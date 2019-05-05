@@ -62,7 +62,7 @@
 [Miranda Console]
 
 [Services]
-
+服务
 [Text]
 文字
 [Background]

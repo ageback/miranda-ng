@@ -2742,6 +2742,8 @@ PNG位图
 上
 [Down]
 下
+[Test]
+测试
 [&Yes]
 是(&)
 [&No]
@@ -2836,14 +2838,32 @@ PNG位图
 文字
 [None]
 无
+[Angry]
+生气
+[Taking a bath]
+在洗澡
+[Tired]
+疲劳
+[Thinking]
+在思考
+[Eating]
+在吃
 [Watching TV]
 在看电视
+[Gaming]
+在游戏
 [Studying]
 正在学习
+[Shopping]
+在购物
+[Sleeping]
+在睡觉
 [Working]
 在工作
 [Typing]
 正在输入
+[Smoking]
+在抽烟
 [Undefined]
 未定义
 [contact list]
@@ -2949,6 +2969,8 @@ PNG位图
 杂项
 [Unknown]
 未知
+[Services]
+服务
 #muuid {dace7d41-dfa9-4772-89ae-a59a6153e6b2}
 ;============================================================
 ;  File: AuthState.dll
@@ -2965,6 +2987,16 @@ PNG位图
 ;  Version: 0.1.0.1
 ;  Authors: Sergey V. Gershovich a.k.a. Jazzy$ (fixed by Wolfram3D)
 ;============================================================
+[This plugin is a simple way to enable/disable to launch Miranda NG with system startup.]
+此插件是启用/禁用系统启动时启动Miranda NG的简单方法。
+[Autorun]
+自动运行
+[Launch Miranda NG at system startup]
+在系统启动时运行 Miranda NG
+[Note: At startup Miranda NG will use current profile]
+注意：Miranda NG 在启动时将会使用当前配置文件
+[Services]
+服务
 #muuid {9de24579-5c5c-49aa-80e8-4d38e4344e63}
 ;============================================================
 ;  File: AutoShutdown.dll
@@ -3009,6 +3041,8 @@ PNG位图
 打开文件夹
 [Protocols]
 协议
+[Colors]
+颜色
 [Background color]
 背景色
 [Text color]
@@ -3033,6 +3067,8 @@ PNG位图
 头像叠加
 [Do nothing]
 啥都不干
+[Close popup]
+关闭弹出窗口
 [History]
 历史
 [Avatar]
@@ -3113,6 +3149,8 @@ PNG位图
 活动
 [Time]
 时间
+[Password]
+密码
 [Cancel]
 取消
 [View &history]
@@ -3217,6 +3255,8 @@ PNG位图
 过滤器：
 [Contacts]
 联系人
+[Unknown error]
+未知错误
 [Search]
 搜索
 #muuid {2f07ea05-05b5-4ff0-875d-c590da2ddac1}
@@ -3274,10 +3314,14 @@ PNG位图
 ;  Version: 0.5.0.3
 ;  Authors: Goblineye Entertainment, Billy_Bons
 ;============================================================
+[Go to Options -> Customize -> Hotkeys to change the hotkey]
+转到选项 -> 自定义 -> 热键以更改热键
 [Disable Sounds]
 禁用声音
 [Show the Tray Icon]
 显示托盘图标
+[Hotkey]
+热键
 [Password:]
 密码：
 [Cancel]
@@ -3297,6 +3341,8 @@ PNG位图
 ;  Version: 0.1.2.3
 ;  Authors: Anar Ibragimoff, sje, Thief
 ;============================================================
+[Colors]
+颜色
 [Background]
 背景
 [Text]
@@ -3325,6 +3371,8 @@ PNG位图
 联系人
 [Popups]
 弹出窗口
+[not found]
+未找到
 #muuid {a9e9c114-84b9-434b-a3d5-89921d39ddff}
 ;============================================================
 ;  File: BuddyPounce.dll
@@ -3383,20 +3431,28 @@ PNG位图
 选项
 [Default]
 默认
+[Colors]
+颜色
 [Use default colors]
 使用默认颜色
 [Back]
 退回
 [Text]
 文字
+[Timeout]
+超时
 [From popup plugin]
 来自弹出窗口插件
 [Permanent]
 永久
 [Custom]
 自定义
+[On left click]
+左键点击时
 [Copy to clipboard]
 复制到剪贴板
+[On right click]
+右键点击时
 [Preview]
 预览
 [Message sessions]
@@ -3410,8 +3466,20 @@ PNG位图
 ;  Version: 0.1.1.4
 ;  Authors: Deathdemon
 ;============================================================
+[Click action]
+点击动作
+[On left click]
+左键点击时
+[On right click]
+右键点击时
 [Sec]
 秒
+[0 = Default]
+0 = 默认
+[-1 = Infinite]
+-1 = 无限
+[Colors]
+颜色
 [Background]
 背景
 [Text]
@@ -3420,6 +3488,8 @@ PNG位图
 预览
 [Popups]
 弹出窗口
+[Close popup]
+关闭弹出窗口
 [Do nothing]
 啥都不干
 #muuid {53e095a3-2695-490a-9dad-d20479093831}
@@ -5007,6 +5077,8 @@ Angeli-Ka（绘图），FYR（模板）
 ;  Version: 0.0.7.4
 ;  Authors: Bio
 ;============================================================
+[Services]
+服务
 [Text]
 文字
 [Background]
@@ -5067,26 +5139,100 @@ Angeli-Ka（绘图），FYR（模板）
 ;  Version: 0.1.0.3
 ;  Authors: borkra
 ;============================================================
+[Crash Dumper and Version Information for Miranda NG.]
+Miranda NG 的崩溃转储和版本信息。
+[View Version Information]
+查看版本信息
 [Close]
 关闭
 [Copy To Clipboard]
 复制到剪贴板
+[To File]
+到文件
+[Support for vi.miranda-ng.org]
+对 vi.miranda-ng.org 的支持
 [Username]
 用户名
+[Password]
+密码
+[Upload automatically when changed]
+当改变时自动上传
+[Crash reports]
+崩溃报告
+[Generate crash reports]
+生成崩溃报告
+[Create reports in subfolders naming as current date]
+在以当前日期命名的子文件夹中创建报告
+[Use classic dates]
+使用经典日期
+[* You need to restart Miranda NG to apply changes]
+* 你需要重启 Miranda NG 来应用变更
+[View]
+查看
 [&Copy]
 复制(&C)
 [Co&py All]
 复制所有(&P)
 [Select &All]
 选择所有(&A)
+[Version Info stored into file %s]
+版本信息存储到文件 %s
+[Version Info file %s is inaccessible]
+版本信息文件 %s 不可访问
+[Version Information To Clipboard]
+版本信息到剪贴板
+[Version Information To File]
+版本信息到文件
+[Show Version Information]
+显示版本信息
+[Upload Version Information]
+上传版本信息
 [Version Information]
 版本信息
 [Copy to clipboard]
 复制到剪贴板
+[Store to file]
+存储到文件
 [Show]
 显示
+[Show with DLLs]
+与DLL一起显示
 [Upload]
 上传
+[Copy link to clipboard]
+复制链接到剪贴板
+[Open crash report directory]
+打开崩溃报告目录
+[Open online Version Info]
+打开在线版本信息
+[Copy Version Info to clipboard]
+复制版本信息到剪贴板
+[Show Version Info]
+显示版本信息
+[Crash Dumper]
+崩溃转储
+[Crash Report write location is not available]
+崩溃报告写入位置不可用
+[Miranda crashed. Crash report stored in the folder:\n %s\n\n Would you like store it in the clipboard as well?]
+Miranda 崩溃了。崩溃报告存储在文件夹：\n %s\n\n 你想同时将它存储到剪贴板吗？
+[View Version Information (with DLLs)]
+查看版本信息（和DLL一起）
+[Services]
+服务
+[Version Info upload successful.]
+版本信息上传成功。
+[Cannot upload Version Info. Incorrect username or password]
+无法上传版本信息。错误的用户名或密码
+[Cannot upload Version Info. User is banned]
+无法上传版本信息。用户被禁止
+[Cannot upload Version Info. Daily upload limit exceeded]
+无法上传版本信息。超过每日上传限制
+[Cannot upload Version Info. Unknown error]
+无法上传版本信息。未知错误
+[Cannot upload Version Info. Host unreachable.]
+无法上传版本信息。主机无法到达
+[Crash Dumper HTTP connections]
+崩溃转储 HTTP 连接
 #muuid {3613F2D9-C040-4361-A44F-DF7B5AAACF6E}
 ;============================================================
 ;  File: CryptoPP.dll
@@ -5210,6 +5356,8 @@ GnuPG插件 - 选择公钥
 更改密码：
 [Remove]
 移除
+[Password]
+密码
 [Database]
 数据库
 #muuid {81c220a6-0226-4ad6-bfca-217b17a16053}
@@ -5219,18 +5367,76 @@ GnuPG插件 - 选择公钥
 ;  Version: 0.1.0.3
 ;  Authors: chaos.persei, sje, Kildor, Billy_Bons
 ;============================================================
+[Database autobackuper plugin.]
+数据库自动备份插件。
+[Automatic backups]
+自动备份
 [Disabled]
 已禁用
+[When Miranda starts]
+当 Miranda 启动时
+[When Miranda exits]
+当 Miranda 退出时
+[Every:]
+每：
+[Number of backups to keep:]
+要保留的备份数：
+[Backup to folder:]
+备份到文件夹：
+[Browse...]
+浏览...
+[Go to the "Options -> Customize -> Folders" to change settings]
+转到“选项 -> 自定义 -> 文件夹”来更改设置
+[Backup file mask:]
+备份文件掩码：
+[Compress backup to zip-archive]
+压缩备份为zip归档文件
+[Backup profile folder]
+备份配置文件文件夹
+[Disable progress bar]
+禁止进度栏
+[Use CloudFile]
+使用云文件
+[Backup NOW]
+立即备份
+[Backup progress]
+备份进度
 [Cancel]
 取消
+[Backup in progress]
+正在进行备份
+[Copying database file...]
+正在复制数据库文件...
+[Uploading to cloud failed]
+上传到云失败
 [Error]
 错误
+[Database backed up]
+数据库已备份
+[Database back up in process...]
+数据库备份正在进行...
+[Enable &AutoBackups notification]
+启用自动备份通知(&A)
+[Disable &AutoBackups notification]
+启用自动备份通知(&A)
+[Miranda NG databases]
+Miranda NG 数据库
+[Compressed Miranda NG databases]
+压缩 Miranda NG 数据库
 [All files]
 所有文件
 [Database]
 数据库
+[Backup profile]
+备份配置文件
+[Save profile as...]
+保存配置文件为...
 [Popups]
 弹出窗口
+[Database backups]
+数据库备份
+[Backup folder]
+备份文件夹
 [days]
 天
 [hours]
@@ -5257,6 +5463,12 @@ Miranda 的根目录路径
 当前Windows会话中定义的任意环境变量（像%systemroot%，%allusersprofile%，等等）
 [Variables]
 变量
+[Error creating backup folder]
+创建备份文件夹出错
+[Select backup folder]
+选择备份文件夹
+[Miranda NG [%s] database backup]
+Miranda NG [%s] 数据库备份
 #muuid {2a1081d1-aee3-4091-b70d-ae46d09f9a7f}
 ;============================================================
 ;  File: Dummy.dll
@@ -5333,12 +5545,16 @@ Miranda 的根目录路径
 提交
 [Messages]
 消息
+[Do not open chat windows on creation]
+不要在创建时打开聊天窗口
 [Enter the text you see]
 输入你看到的文字
 [User &details]
 用户详情(&D)
 [Notifications]
 通知
+[Unknown error]
+未知错误
 [Default]
 默认
 [files]
@@ -5347,12 +5563,16 @@ Miranda 的根目录路径
 %s 正在输入消息...
 [Network]
 网络
+[Account]
+帐户
 [Events]
 事件
 [Messaging]
 消息
 [Other events]
 其他事件
+[Angry]
+生气
 [Sad]
 悲伤
 [Services...]
@@ -5408,6 +5628,10 @@ Miranda 的根目录路径
 ;  Version: 0.2.0.1
 ;  Authors: faith_healer, ghazan, Mataes
 ;============================================================
+[Resource]
+资源
+[Security]
+安全
 [Protocol]
 协议
 [Icons]
@@ -5434,6 +5658,8 @@ Miranda 的根目录路径
 像素
 [Miscellaneous]
 杂项
+[0 = Default]
+0 = 默认
 [seconds]
 秒
 [Single click interface]
@@ -5496,6 +5722,8 @@ Miranda 的根目录路径
 ;  Version: 0.6.0.5
 ;  Authors: yaho
 ;============================================================
+[Password]
+密码
 [URL]
 URL
 [Account name]
@@ -5528,6 +5756,8 @@ URL
 覆盖
 [Disabled]
 已禁用
+[Copy Link to Clipboard]
+复制链接到剪贴板
 [Resume]
 恢复
 [CANCELED]
@@ -5546,6 +5776,8 @@ URL
 小时
 [days]
 天
+[Services]
+服务
 [Accounts]
 帐户
 [Advanced]
@@ -5633,6 +5865,8 @@ URL
 高级
 [Contact list]
 联系人列表
+[%s connection]
+%s 连接
 [Participants]
 参加者
 [Text files]
@@ -5804,6 +6038,8 @@ URL
 ;============================================================
 [Set to default]
 设为默认
+[Test]
+测试
 [Notifications]
 通知
 [&Copy link]
@@ -5838,6 +6074,8 @@ URL
 ;============================================================
 [Password:]
 密码：
+[Do not open chat windows on creation]
+不要在创建时打开聊天窗口
 [E-mail]
 电子邮件
 [Send group chat invitation]
@@ -6022,6 +6260,8 @@ URL
 ;  Version: 0.95.10.1
 ;  Authors: Miranda team
 ;============================================================
+[Password]
+密码
 [&Add]
 添加(&A)
 [&Edit]
@@ -6126,6 +6366,8 @@ URL
 韩语 (Johab) 
 [ALL NETWORKS]
 所有网络
+[Account]
+帐户
 [Advanced]
 高级
 [&Slap]
@@ -7059,26 +7301,374 @@ Jabber 资源
 你想用新设备创建OMEMO会话吗：
 [OMEMO: New session]
 OMEMO：新会话
+[Afar]
+梵音
+[Abkhazian]
+阿布哈西亚文
+[Afrikaans]
+南非荷兰语
+[Akan]
+阿坎语
+[Albanian]
+阿尔巴尼亚文
+[Amharic]
+阿姆哈拉语
 [Arabic]
 阿拉伯语
+[Aragonese]
+阿拉贡语
+[Armenian]
+亚美尼亚语
+[Assamese]
+阿萨姆语
+[Avaric]
+阿瓦尔语
+[Avestan]
+阿维斯陀语
+[Aymara]
+艾马拉语
+[Azerbaijani]
+阿塞拜疆语
+[Bashkir]
+巴什客尔文
+[Bambara]
+班巴拉语
+[Basque]
+巴斯克
+[Belarusian]
+白俄罗斯语
+[Bengali]
+孟加拉
+[Bihari]
+比哈里
+[Bislama]
+比斯拉马语
+[Bosnian]
+波斯尼亚语
+[Breton]
+布列塔尼
+[Bulgarian]
+保加利亚语
+[Burmese]
+缅甸语
+[Catalan; Valencian]
+加泰罗尼亚语;瓦伦西亚语
+[Chamorro]
+查莫洛
+[Chechen]
+车臣语
 [Chinese]
-中国
+中文
+[Church Slavic; Old Slavonic]
+教会斯拉夫语; 老斯拉夫语
+[Chuvash]
+楚瓦什文
+[Cornish]
+凯尔特文
+[Corsican]
+科西嘉
+[Cree]
+克里
+[Czech]
+捷克文
+[Danish]
+丹麦语
+[Divehi; Dhivehi; Maldivian]
+迪维希文;迪维希语;马尔代夫
+[Dutch; Flemish]
+荷兰语;佛兰芒语
+[Dzongkha]
+不丹文
+[English]
+英语
+[Esperanto]
+世界语
+[Estonian]
+爱沙尼亚语
+[Ewe]
+母羊
+[Faroese]
+法罗文
+[Fijian]
+斐济文
+[Finnish]
+荷兰语
+[French]
+法语
+[Western Frisian]
+西弗里西亚语
+[Fulah]
+夫拉文
+[Georgian]
+格鲁吉亚语
+[German]
+德语
+[Gaelic; Scottish Gaelic]
+盖尔语; 苏格兰盖尔语
+[Irish]
+爱尔兰语
+[Galician]
+加利西亚语
+[Manx]
+马恩岛
+[Greek, Modern (1453-)]
+希腊，现代（1453-）
+[Guarani]
+瓜拉尼语
+[Gujarati]
+古吉拉特语
+[Haitian; Haitian Creole]
+海地; 海地克里奥尔语
+[Hausa]
+豪萨语
 [Hebrew]
 希伯来语
+[Herero]
+赫雷罗语
+[Hindi]
+印地语
+[Hiri Motu]
+希里摩图语
+[Hungarian]
+匈牙利语
+[Igbo]
+伊格博文
+[Icelandic]
+冰岛语
+[Ido]
+伊多
+[Sichuan Yi]
+四川彝族
+[Inuktitut]
+因纽特语
+[Interlingue]
+国际语
+[Interlingua (International Auxiliary Language Association)]
+国际语（国际辅助语言协会）
+[Indonesian]
+印度尼西亚语
+[Inupiaq]
+依奴皮维克文
+[Italian]
+意大利语
+[Javanese]
+爪哇语
 [Japanese]
 日语
+[Kalaallisut; Greenlandic]
+格陵兰语;格陵兰语
+[Kannada]
+卡纳达语
+[Kashmiri]
+克什米尔文
+[Kanuri]
+卡努里文
+[Kazakh]
+哈萨克文
+[Central Khmer]
+中央高棉
+[Kikuyu; Gikuyu]
+基库尤语;基库尤
+[Kinyarwanda]
+卢旺达语
+[Kirghiz; Kyrgyz]
+柯尔克孜;吉尔吉斯
+[Komi]
+科米文
+[Kongo]
+刚果文
 [Korean]
 韩语
+[Kuanyama; Kwanyama]
+Kuanyama;Kwanyama
+[Kurdish]
+库尔德语
+[Lao]
+老挝
 [Latin]
 拉丁文
 [Latvian]
 拉脱维亚语
+[Limburgan; Limburger; Limburgish]
+Limburgan;林堡;林堡
+[Lingala]
+林加拉语
+[Lithuanian]
+立陶宛语
+[Luxembourgish; Letzeburgesch]
+卢森堡;Letzeburgesch
+[Luba-Katanga]
+卢巴 - 加丹加
+[Ganda]
+甘达
+[Macedonian]
+马其顿语
+[Marshallese]
+马绍尔语
+[Malayalam]
+马拉雅拉姆语
+[Maori]
+毛利语
+[Marathi]
+马拉地语
+[Malay]
+马来语
+[Malagasy]
+马尔加什语
+[Maltese]
+马耳他语
+[Moldavian]
+摩尔多瓦
+[Mongolian]
+蒙古语
+[Nauru]
+瑙鲁文
+[Navajo; Navaho]
+纳瓦霍语;纳瓦霍
+[Ndebele, South; South Ndebele]
+恩德贝勒语，南; 南恩德贝勒
+[Ndebele, North; North Ndebele]
+恩德贝勒语，北; 北恩德贝勒
+[Ndonga]
+Ndonga
+[Nepali]
+尼泊尔语
+[Norwegian Nynorsk; Nynorsk, Norwegian]
+挪威尼诺斯克; 尼诺斯克，挪威语
+[Bokmaal, Norwegian; Norwegian Bokmaal]
+Bokmaal，挪威语; 挪威Bokmaal
+[Norwegian]
+挪威语
+[Chichewa; Chewa; Nyanja]
+奇切瓦;Chewa;尼扬贾文
+[Occitan (post 1500); Provencal]
+奥克西坦（1500后）;普罗旺斯
+[Ojibwa]
+奥吉布瓦语
+[Oriya]
+奥里亚语
+[Oromo]
+奥罗莫语
+[Ossetian; Ossetic]
+南奥塞梯;奥塞梯语
+[Panjabi; Punjabi]
+旁遮普语;旁遮普
+[Persian]
+波斯语
+[Pali]
+巴利语
+[Polish]
+波兰语
+[Portuguese]
+葡萄牙语
+[Pushto]
+普什图语
+[Quechua]
+克丘亚语
+[Romansh]
+罗曼斯语
+[Romanian]
+罗马尼亚语
+[Rundi]
+隆迪语
+[Russian]
+俄语
+[Sango]
+桑戈语
+[Sanskrit]
+梵语
+[Serbian]
+塞尔维亚语
+[Croatian]
+克罗地亚语
+[Sinhala; Sinhalese]
+僧伽罗语;僧伽罗语
+[Slovak]
+斯洛伐克语
+[Slovenian]
+斯洛文尼亚语
+[Northern Sami]
+北萨米
+[Samoan]
+萨摩亚
+[Shona]
+绍纳语
+[Sindhi]
+信德语
+[Somali]
+索马里
+[Sotho, Southern]
+索托语，南
+[Spanish; Castilian]
+西班牙语;卡斯蒂利亚
+[Sardinian]
+撒丁岛语
+[Swati]
+斯瓦蒂语
+[Sundanese]
+巽他语
+[Swahili]
+斯瓦希里语
+[Swedish]
+瑞典语
+[Tahitian]
+大溪地语
+[Tamil]
+泰米尔语
+[Tatar]
+塔塔尔语
+[Telugu]
+泰卢固语
+[Tajik]
+塔吉克
+[Tagalog]
+塔加路语
 [Thai]
 泰语
+[Tibetan]
+藏语
+[Tigrinya]
+提格雷语
+[Tonga (Tonga Islands)]
+汤加（汤加群岛）
+[Tswana]
+茨瓦纳语
+[Tsonga]
+特松加
+[Turkmen]
+土库曼语
 [Turkish]
 土耳其
+[Twi]
+契维语
+[Uighur; Uyghur]
+维吾尔族;维吾尔语
+[Ukrainian]
+乌克兰语
+[Urdu]
+乌尔都语
+[Uzbek]
+乌兹别克语
+[Venda]
+文达语
 [Vietnamese]
 越南语
+[Volapuk]
+沃拉普克语
+[Welsh]
+威尔士语
+[Walloon]
+瓦隆语
+[Wolof]
+沃洛夫语
+[Xhosa]
+科萨语
+[Yiddish]
+依地文
+[Yoruba]
+约鲁巴语
+[Zhuang; Chuang]
+壮族;壮
 [Zulu]
 祖鲁
 [These changes will take effect the next time you connect to the Jabber network.]
@@ -7117,20 +7707,122 @@ Jabber 协议选项
 自动保存接收的注释
 [Enable server-side history (XEP-0136)]
 启用服务器端历史（XEP-0136）
+[Receive conversations from other devices (XEP-0280)]
+接收来自其他设备的对话（XEP-0280）
+[Use Stream Management (XEP-0198) if possible (Testing)]
+尽可能使用流管理（XEP-0198）（测试）
+[Server options]
+服务器选项
+[Disable SASL authentication (for old servers)]
+禁用SASL身份验证（适用于旧服务器）
+[Enable stream compression (if possible)]
+启用流压缩（如果可能）
 [Other]
 其他
+[Enable remote controlling (from another resource of same JID only)]
+启用远程控制（仅来自同一JID的其他资源）
+[Show transport agents on contact list]
+在联系人列表上显示传输代理
+[Automatically add contact when accept authorization]
+接受授权时自动添加联系人
+[Automatically accept authorization requests]
+自动接受授权请求
+[Fix incorrect timestamps in incoming messages]
+修复传入消息中的错误时间戳
+[Disable frame]
+禁用框架
+[Enable XMPP link processing (requires AssocMgr)]
+启用XMPP链接处理（需要AssocMgr）
+[Keep contacts assigned to local groups (ignore roster group)]
+保持联系人分配到本地组（忽略名单组）
+[Security]
+安全
+[Allow servers to request version (XEP-0092)]
+允许服务器请求版本（XEP-0092）
+[Show information about operating system in version replies]
+在版本回复中显示有关操作系统的信息
+[Accept only in band incoming filetransfers (don't disclose own IP)]
+仅接受带内传入的文件传输（不要透露自己的IP）
+[Accept HTTP Authentication requests (XEP-0070)]
+接受HTTP身份验证请求（XEP-0070）
+[Use OMEMO encryption for messages if possible (XEP-0384) (Basic support without GUI)]
+尽可能使用OMEMO加密消息（XEP-0384）（不带GUI的基本支持）
 [General]
 通用
+[Autoaccept multiuser chat invitations]
+自动接受多用户聊天邀请
+[Automatically join bookmarks on login]
+登录时自动加入书签
+[Automatically join conferences on login]
+登录时自动加入会议
+[Do not open chat windows on creation]
+不要在创建时打开聊天窗口
+[Do not show multiuser chat invitations]
+不显示多用户聊天邀请
+[Log events]
+记录事件
+[Ban notifications]
+禁止通知
+[Room configuration changes]
+房间配置变化
+[Affiliation changes]
+隶属变化
+[Role changes]
+角色变更
 [Status changes]
 状态变更
+[Don't notify history messages]
+不要通知历史消息
 [Network]
 网络
+[Account]
+帐户
 [Advanced]
 高级
+[Public XMPP Network]
+公共 XMPP 网络
+[Secure XMPP Network]
+安全的 XMPP 网络
+[Secure XMPP Network (old style)]
+安全的 XMPP 网络（旧样式）
+[Google Talk!]
+Google Talk!
+[Hipchat]
+Hipchat
+[New password does not match.]
+新密码不匹配。
+[Current password is incorrect.]
+当前密码不正确。
+[Sending request, please wait...]
+正在发送请求，请等待...
+[Warning: privacy lists were changed on server.]
+警告：服务器上的隐私列表被改变。
+[Error occurred while applying changes]
+当应用改变时发生错误
+[Privacy lists successfully saved]
+隐私列表保存成功
+[Privacy list %s set as active]
+隐私列表 %s 被设为活动
+[allow ]
+允许
+[deny ]
+拒绝
+[all.]
+所有。
 [messages]
 消息
+[ and ]
+ 和 
+[incoming presences]
+传入出席
+[outgoing presences]
+传出出席
 [queries]
 队列
+[Else ]
+否则 
+[If Jabber ID is ']
+如果 Jabber ID 是 '
 [ (nickname: ]
 （昵称：）
 [If group is ']
@@ -7173,24 +7865,46 @@ Jabber 协议选项
 移除列表
 [** Default **]
 ** 默认 **
+[** Subscription: both **]
+** 订阅：两个都 **
+[** Subscription: to **]
+** 订阅：到 **
+[** Subscription: from **]
+** 订阅：来自 **
+[** Subscription: none **]
+** 订阅：无 **
 [<none>]
 <无>
 [Message]
 消息
+[Presence (in)]
+出席（入）
+[Presence (out)]
+出席（出）
+[Query]
+查询
+[Please save list before activating]
+在激活列表前请先保存
 [First, save the list]
 首先，保存列表
 [Please save list before you make it the default list]
 在你将列表设为默认列表之前，请先保存它
 [No list selected]
 未选择列表
+[Can't remove active or default list]
+不能移除活动或默认列表
 [Sorry]
 抱歉
 [Unable to save list because you are currently offline.]
 由于你现在离线，无法保存列表。
 [List Editor...]
 列表编辑器...
+[No compatible file transfer mechanism exists]
+不存在兼容的文件传输机制
 [Protocol is offline or no JID]
 协议离线或没有 JID
+[No valid OMEMO session exists]
+不存在可用的 OMEMO 会话
 [Group]
 分组
 [Subscription]
@@ -7201,42 +7915,174 @@ Jabber 协议选项
 正在下载...
 [Connecting...]
 正在连接...
+[XML for MS Excel (UTF-8 encoded)]
+用于MS Excel的XML（UTF-8编码）
+[Error: unknown reply received\r\nPlease select other server]
+错误：收到未知回复\n\n请选择另一个服务器
+[Search error]
+搜索错误
 [Nick:]
 昵称：
 [<not specified>]
 <未指定>
+[Resource]
+资源
+[Software]
+软件
 [Version]
 版本
 [System]
 系统
+[Last activity]
+上次活动
+[Operating system]
+操作系统
+[Operating system version]
+操作系统版本
+[Software version]
+软件版本
+[Miranda core version]
+Miranda 核心版本
+[Mood]
+心情
+[Activity]
+活动
+[Last logoff time]
+上次登出时间
+[Logoff message]
+登出消息
+[Last active resource]
+上次活动资源
 [Copy]
 复制
+[Copy only this value]
+只复制这个值
 [format]
 格式
+[Unknown format]
+未知格式
+[<Photo not available while offline>]
+<离线时照片不可用>
+[<No photo>]
+<无照片>
+[Photo]
+照片
+[Redirect]
+重定向
+[Unauthorized]
+未授权
+[Not found]
+未找到
+[Not allowed]
+不允许
+[Not acceptable]
+不可接受
+[Registration required]
+需要注册
+[Request timeout]
+请求超时
+[Conflict]
+冲突
+[Internal server error]
+内部服务器错误
+[Not implemented]
+未实现
+[Remote server error]
+远程服务器错误
+[Service unavailable]
+服务不可用
+[Remote server timeout]
+远程服务器超时
+[Unknown error]
+未知错误
+[Unknown error message]
+未知错误消息 
 [Offline]
 离线
+[Advanced Status]
+高级状态
+[Set mood...]
+设置心情...
+[Set activity...]
+设置活动...
 [Male]
 男性
 [Female]
 女性
+[Only JPG, GIF, and BMP image files smaller than 40 KB are supported.]
+只支持小于 40KB 的 JPG、GIF 和 BMP 图像文件。
+[Jabber vCard]
+Jabber vCard
+[Jabber vCard: Edit Email Address]
+Jabber vCard：编辑电子邮件地址
+[Jabber vCard: Edit Phone Number]
+Jabber vCard：编辑电话号码
 [Contacts]
 联系人
+[Note]
+注释
+[%s connection]
+%s 连接
+[<advanced status slot>]
+<高级状态插槽>
+[Afraid]
+害怕
+[Amazed]
+震惊
+[Angry]
+生气
+[Brave]
+勇敢
+[Calm]
+冷静
+[Cold]
+冷
+[Disappointed]
+失望
+[Excited]
+兴奋
+[Happy]
+高兴
+[Hot]
+热
+[Hungry]
+饿
+[Hurt]
+受伤
 [In love]
 恋爱
+[Interested]
+感兴趣的
+[Lonely]
+孤独
+[Lost]
+迷失
+[Lucky]
+幸运
+[Proud]
+骄傲
+[Relaxed]
+放松
 [Sad]
 悲伤
 [Satisfied]
 满足
+[Serious]
+认真
 [Shy]
 害羞
 [Sick]
 生病
+[Sleepy]
+犯困
 [Strong]
 强壮
 [Surprised]
 惊讶
 [Thirsty]
 口渴
+[Tired]
+疲劳
 [Undefined]
 未定义
 [Weak]
@@ -7249,8 +8095,56 @@ Jabber 协议选项
 心情：%s
 [cleaning]
 清理
+[walking the dog]
+在遛狗
+[Drinking]
+在喝酒
+[having a beer]
+在喝啤酒
+[having coffee]
+在喝咖啡
+[having tea]
+在喝茶
+[Eating]
+在吃
+[having breakfast]
+在吃晚饭
+[dancing]
+在跳舞
+[playing sports]
+在运动
+[running]
+在跑步
+[swimming]
+在游泳
+[at the spa]
+在做SPA
+[taking a bath]
+在洗澡
 [Inactive]
 非活动
+[on vacation]
+在度假
+[praying]
+在祈祷
+[scheduled holiday]
+计划的假期
+[sleeping]
+在睡觉
+[thinking]
+在思考
+[fishing]
+在钓鱼
+[gaming]
+在游戏
+[going out]
+外出
+[reading]
+在阅读
+[shopping]
+在购物
+[smoking]
+在抽烟
 [watching TV]
 在看电视
 [watching a movie]
@@ -7336,6 +8230,8 @@ Jabber 协议选项
 离线
 [&Preview]
 预览(&P)
+[Test]
+测试
 [Add]
 添加
 [Update]
@@ -7499,8 +8395,32 @@ Jabber 协议选项
 ;  Version: 0.0.1.0
 ;  Authors: MikalaiR
 ;============================================================
+[Displays icons in message window showing whether your last outgoing message was read / is still unread.]
+在消息窗口显示图标，显示你上次发出的消息是否已经被阅读/仍然未读。
+[MessageState unread extra icon]
+MessageState 未读附加图标
+[Unread message icon]
+未读消息图标
+[Read message icon]
+已读消息图标
+[Failed sending icon]
+发送失败图标
+[Sending message icon]
+正在发送消息图标
+[Unread clist extra icon]
+未读 clist 附加图标
+[Last message is not read]
+上次的消息未读
+[Last message read]
+上次的消息已读
+[Last message was not sent]
+上次的消息未发送
 [Sending...]
 正在发送...
+[Last message read at %X %x]
+上次的消息阅读于 %X %x
+[Last message read (unknown time)]
+上次的消息已读（未知时间）
 ;#muuid for MimCmd not found, please specify manually!
 ;============================================================
 ;  File: MimCmd.exe
@@ -7561,6 +8481,8 @@ Jabber 协议选项
 ** 所有联系人 **
 [Protocol]
 协议
+[Services]
+服务
 [Options]
 选项
 [Contacts]
@@ -7580,6 +8502,8 @@ Jabber 协议选项
 失败
 [Open]
 打开
+[Services]
+服务
 #muuid {12d8faad-78ab-4e3c-9854-320e9ea5cc9f}
 ;============================================================
 ;  File: MirOTR.dll
@@ -7611,10 +8535,16 @@ Jabber 协议选项
 联系人
 [Contact]
 联系
+[Account]
+帐户
 [Active]
 活动
 [Default]
 默认
+[Password]
+密码
+[Services]
+服务
 #muuid {f0ba32d0-cd07-4a9c-926b-5a1ff21c3c10}
 ;============================================================
 ;  File: MobileState.dll
@@ -7656,6 +8586,8 @@ Jabber 协议选项
 文字颜色
 [Preview]
 预览
+[Timeout]
+超时
 [Popups]
 弹出窗口
 #muuid {46102b07-c215-4162-9c83-d377881da7cc}
@@ -7703,6 +8635,8 @@ UIN
 姓
 [e-mail]
 电子邮件
+[State]
+状态
 [Homepage]
 主页
 [Protocol]
@@ -7752,6 +8686,8 @@ UIN
 联系人列表
 [Network]
 网络
+[Account]
+帐户
 #muuid {69b9443b-dc58-4876-ad39-e3f418a133c5}
 ;============================================================
 ;  File: mTextControl.dll
@@ -7774,6 +8710,8 @@ UIN
 取消
 [General]
 通用
+[Account]
+帐户
 [seconds]
 秒
 [Avatar]
@@ -7910,6 +8848,8 @@ UIN
 文字
 [Background]
 背景
+[Timeout]
+超时
 [Dismiss popup]
 关闭弹出窗口
 [Open event]
@@ -7947,6 +8887,8 @@ URL
 分
 [Authentication]
 认证
+[Password]
+密码
 [Reset]
 重置
 [Username]
@@ -8012,14 +8954,28 @@ URL
 背景
 [Text]
 文字
+[Colors]
+颜色
 [Use custom colors]
 使用自定义颜色
 [Use Windows colors]
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
+[Timeout]
+超时
 [Sec]
 秒
+[0 = Default]
+0 = 默认
+[-1 = Infinite]
+-1 = 无限
+[Click action]
+点击动作
+[On left click]
+左键点击时
+[On right click]
+右键点击时
 [characters]
 字符
 [Templates]
@@ -8058,10 +9014,18 @@ URL
 所有文件
 [Log]
 日志
+[Account]
+帐户
 [Filtering]
 过滤
+[Close popup]
+关闭弹出窗口
 [Do nothing]
 啥都不干
+[Mood]
+心情
+[Activity]
+活动
 #muuid {4227c050-8d97-48d2-91ec-6a952b3dab94}
 ;============================================================
 ;  File: New_GPG.dll
@@ -8097,6 +9061,8 @@ URL
 日志文件
 [Info]
 信息
+[Services]
+服务
 [Main]
 主
 [Messages]
@@ -8186,6 +9152,8 @@ URL
 小时
 [Days]
 天
+[Every]
+每
 [Seconds]
 秒
 [Default]
@@ -8197,6 +9165,8 @@ URL
 ;  Version: 0.0.2.8
 ;  Authors: Daniel Wesslen, Korney San
 ;============================================================
+[Security]
+安全
 [Port:]
 端口
 [Password:]
@@ -8259,6 +9229,8 @@ URL
 正在连接...
 [Network]
 网络
+[Account]
+帐户
 #muuid {10896143-7249-4b36-a408-6501a6b6035a}
 ;============================================================
 ;  File: OpenFolder.dll
@@ -8266,6 +9238,8 @@ URL
 ;  Version: 1.1.0.0
 ;  Authors: jarvis, Kreisquadratur
 ;============================================================
+[Adds a menu/toolbar item which opens the main Miranda NG folder.]
+添加菜单/工具栏项，打开Miranda NG主文件夹。
 [Open Folder]
 打开文件夹
 [Main]
@@ -8288,32 +9262,78 @@ URL
 ;  Version: 0.1.0.1
 ;  Authors: Mataes, ZERO_BiT
 ;============================================================
+[Updates found!]
+发现更新！
 [Update]
 更新
 [Cancel]
 取消
 [Downloading...]
 正在下载...
+[On startup]
+在启动时
+[Hotkey]
+热键
+[Go to Options -> Customize -> Hotkeys to change the hotkey]
+转到选项 -> 自定义 -> 热键以更改热键
 [Notifications]
 通知
 [Errors]
 错误
+[Info messages]
+信息消息
+[Every]
+每
+[(but only once a day)]
+(但是一天仅一次)
 [Back]
 退回
 [Text]
 文字
+[Colors]
+颜色
+[Use cus&tom colors]
+使用自定义颜色(&T)
+[Use &Windows colors]
+使用 &Windows 颜色
+[Use defa&ult colors]
+使用默认颜色(&U)
 [Preview]
 预览
+[Click action]
+点击动作
+[On left click]
+左键点击时
+[On right click]
+右键点击时
+[Timeout]
+超时
+[0 = Default]
+0 = 默认
+[-1 = Infinite]
+-1 = 无限
 [Sec]
 秒
 [Popups]
 弹出窗口
+[Component Name]
+组件名称
+[Close popup]
+关闭弹出窗口
 [Do nothing]
 啥都不干
 [hours]
 小时
 [days]
 天
+[Test]
+测试
+[Services]
+服务
+[No updates found.]
+未找到更新。
+[Update checking already started!]
+更新检查已经开始！
 #muuid {1aac15e8-dcec-4050-b66f-2aa0e6120c22}
 ;============================================================
 ;  File: PasteIt.dll
@@ -8333,6 +9353,8 @@ URL
 下
 [Delete]
 删除
+[Password]
+密码
 [Format]
 格式
 [Thai]
@@ -8367,6 +9389,8 @@ URL
 越南语
 [Korean (Johab)]
 韩语 (Johab) 
+[Services]
+服务
 [Main]
 主
 [Error]
@@ -8380,12 +9404,16 @@ URL
 ;  Version: 0.9.1.1
 ;  Authors: Scott Ellis
 ;============================================================
+[Timeout]
+超时
 [Log to File]
 日志到文件
 [Network]
 网络
 [Popups]
 弹出窗口
+[Browse...]
+浏览...
 [Row height:]
 行高：
 [Add]
@@ -8427,32 +9455,118 @@ URL
 ;  Version: 0.2.0.3
 ;  Authors: Mataes, George Hazan
 ;============================================================
+[Installs and updates plugins and other Miranda NG components.]
+安装和更新插件，以及其它的 Miranda NG 组件。
+[Updates found!]
+发现更新！
+[PluginUpdater has detected updated versions of some Miranda components. Click on Details button to view more information.]
+PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮以查看更多信息。
 [Update]
 更新
+[Details >>]
+详细 >> 
 [Cancel]
 取消
 [Select &all]
 选择所有(&A)
+[Select &none]
+全不选(&N)
+[Hotkey]
+热键
+[Go to Options -> Customize -> Hotkeys to change the hotkey]
+转到选项 -> 自定义 -> 热键以更改热键
+[Update options]
+更新选项
+[On startup]
+在启动时
+[(but only once a day)]
+(但是一天仅一次)
+[Every]
+每
+[Silent mode]
+安静模式
+[Backup database before update (requires Db_autobackups plugin)]
+更新之前备份数据库(需要 Db_autobackups 插件)
+[Files source]
+文件源
+[Stable version]
+稳定版
+[Stable version with debug symbols]
+带有调试符号的稳定版
+[Development version (less stable)]
+开发版(不太稳定)
+[Development version with debug symbols]
+带有调试符号的开发版
+[Custom version]
+自定义版本
+[Change platform to 32-bit]
+更改平台为 32位
+[Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.]
+一些组件被更新。\n你需要重启你的 Miranda 来应用安装的更新。
 [Notifications]
 通知
 [Restart]
 重启
 [Errors]
 错误
+[Info messages]
+信息消息
 [Back]
 退回
 [Text]
 文字
+[Colors]
+颜色
+[Use cus&tom colors]
+使用自定义颜色(&T)
+[Use &Windows colors]
+使用 &Windows 颜色
+[Use defa&ult colors]
+使用默认颜色(&U)
 [Preview]
 预览
+[Click action]
+点击动作
+[On left click]
+左键点击时
+[On right click]
+右键点击时
+[Timeout]
+超时
+[0 = Default]
+0 = 默认
+[-1 = Infinite]
+-1 = 无限
 [Sec]
 秒
+[For "Restart" popup setting is always infinity]
+对于"重启"弹出窗口设置总是无限
 [Popups]
 弹出窗口
+[Component list]
+组件列表
+[Here is the complete list of missing Miranda NG components. Check components that you want to download.\n\nClick on info icon to view component info page.]
+以下是Miranda NG组件缺失的完整列表。检查要下载的组件。\n\n点击信息图标查看组件信息页面。
 [Download]
 下载
 [Downloading...]
 正在下载...
+[Succeeded.]
+成功。
+[Failed!]
+失败！
+[Skipped.]
+跳过。
+[Plugin Updater]
+插件更新器
+[Download complete]
+下载完成
+[Download complete. Do you want to go to plugins option page?]
+下载完成。你要转到插件选项页吗？
+[Component Name]
+组件名称
+[State]
+状态
 [Plugins]
 插件
 [Icons]
@@ -8461,12 +9575,56 @@ URL
 语言
 [Other]
 其他
+[List is empty.]
+列表为空。
+[List loading already started!]
+列表加载已经开始了！
+[Will be deleted!]
+将被删除！
+[Update complete. Press Yes to restart Miranda now or No to postpone a restart until the exit.]
+更新完成。点击是立即重启 Miranda 或否推迟重启直到退出。
+[Miranda NG Core]
+Miranda NG 核心
+[Deprecated!]
+已过时！
+[Update found!]
+发现更新！
+[<< Details]
+<< 详细
+[Update failed! One of the components wasn't downloaded correctly. Try it again later.]
+更新失败！其中一个组件未正确下载。稍后再试一次。
+[%d component(s) was updated]
+%d 个组件被更新了
+[You need to restart your Miranda to apply installed updates.]
+您需要重新启动Miranda才能应用已安装的更新。
+[Would you like to restart it now?]
+你想现在重启吗？
+[Checking for new updates...]
+检查新更新...
+[No updates found.]
+未找到更新。
+[Update checking already started!]
+更新检查已经开始！
+[Plugin updater URI scheme]
+插件更新程序URI方案
+[Close popup]
+关闭弹出窗口
 [Do nothing]
 啥都不干
+[Backup database before update]
+更新前备份数据库
+[Stable version (incompatible with current development version)]
+稳定版本（与当前开发版本不兼容）
 [hours]
 小时
 [days]
 天
+[Change platform to 64-bit]
+将平台更改为64位
+[Test]
+测试
+[Services]
+服务
 [Check for updates]
 检查更新
 [Available components list]
@@ -8477,6 +9635,10 @@ URL
 更新失败
 [Plugin info]
 插件信息
+[Plugin Updater HTTP connections]
+插件更新程序HTTP连接
+[An error occurred while checking for new updates.]
+检查新更新时发生错误。
 #muuid {7eeeb55e-9d83-4e1a-a12f-8f13f1a124fb}
 ;============================================================
 ;  File: PManagerEx.dll
@@ -8548,6 +9710,8 @@ URL
 设置
 [Title:]
 称号
+[Account]
+帐户
 [Nickname]
 昵称
 [Group]
@@ -8676,12 +9840,18 @@ URL
 网络
 [Error]
 错误
+[%s connection]
+%s 连接
 [Name]
 名字
 [Notifications]
 通知
 [Errors]
 错误
+[Not implemented]
+未实现
+[Unknown error]
+未知错误
 #muuid {84636f78-2057-4302-8a65-23a16d46844c}
 ;============================================================
 ;  File: Scriver.dll
@@ -9346,6 +10516,8 @@ Miranda 的根目录路径
 可执行文件
 [All files]
 所有文件
+[Services]
+服务
 #muuid {2d506d46-c94e-4ef8-8537-f11233a80381}
 ;============================================================
 ;  File: SeenPlugin.dll
@@ -9401,6 +10573,8 @@ Miranda 的根目录路径
 状态消息
 [protocol]
 协议
+[account]
+帐户
 [Contacts]
 联系人
 [Popups]
@@ -9476,6 +10650,8 @@ Miranda 的根目录路径
 错误
 [An unknown error has occurred.]
 发生了未知的错误。
+[Unknown Error]
+未知错误
 [File transfer]
 文件传输
 [Retry]
@@ -9533,6 +10709,8 @@ BBCode
 关闭会话
 [Close session]
 关闭会话
+[View]
+查看
 [Message sessions]
 消息会话
 #muuid {7993ab24-1fda-428c-a89b-be377a10be3a}
@@ -9546,6 +10724,8 @@ BBCode
 菜单
 [Remove]
 移除
+[Services]
+服务
 #muuid {46bf191f-8dfb-4656-88b2-4c20be4cfa44}
 ;============================================================
 ;  File: SimpleAR.dll
@@ -9648,6 +10828,8 @@ BBCode
 取消
 [Password:]
 密码：
+[Account]
+帐户
 [Others]
 其它
 [Change password]
@@ -9674,6 +10856,8 @@ BBCode
 未知事件
 [Protocols]
 协议
+[%s connection]
+%s 连接
 [Network]
 网络
 [Notifications]
@@ -9834,6 +11018,8 @@ BBCode
 用户名：
 [Password:]
 密码：
+[Account]
+帐户
 [Contacts]
 联系人
 [Message sessions]
@@ -9842,12 +11028,16 @@ BBCode
 取消
 [Save password]
 保存密码
+[Unknown error]
+未知错误
 [Name]
 名字
 [Network]
 网络
 [Protocols]
 协议
+[%s connection]
+%s 连接
 #muuid {553811ee-deb6-48b8-8902-a8a00c1fd679}
 ;============================================================
 ;  File: StopSpam.dll
@@ -11970,6 +13160,8 @@ Jabber 活动
 状态消息：
 [Other]
 其他
+[Account]
+帐户
 [Gender:]
 性别：
 [Homepage]
@@ -12008,6 +13200,8 @@ Jabber 活动
 日语
 [Korean]
 韩语
+[Latvian]
+拉脱维亚语
 [Thai]
 泰语
 [Turkish]
@@ -12174,6 +13368,10 @@ Jabber 活动
 新密码：
 [Protocols]
 协议
+[Password]
+密码
+[%s connection]
+%s 连接
 [All files]
 所有文件
 [Error]
@@ -12182,6 +13380,12 @@ Jabber 活动
 你确定吗？
 [Network]
 网络
+[Account]
+帐户
+[Query]
+查询
+[Unknown error]
+未知错误
 #muuid {82181510-5dfa-49d7-b469-33871e2ae8b5}
 ;============================================================
 ;  File: TrafficCounter.dll
@@ -12205,12 +13409,16 @@ Jabber 活动
 来自弹出窗口插件
 [Custom]
 自定义
+[Test]
+测试
 [Icon]
 图标
 [Account name]
 帐户名
 [General]
 通用
+[Services]
+服务
 [Options]
 选项
 [Popups]
@@ -12247,6 +13455,8 @@ Jabber 活动
 其他选项
 [sec]
 秒
+[Colors]
+颜色
 [Use Windows colors]
 使用 Windows 颜色
 [Use custom colors]
@@ -12342,10 +13552,14 @@ Jabber 活动
 主页：
 [Delete]
 删除
+[View]
+查看
 [Icons]
 图标
 [Metacontacts]
 中继联系人
+[Colors]
+颜色
 [Dialog]
 对话框
 [None]
@@ -12370,6 +13584,8 @@ Jabber 活动
 杂项
 [Age:]
 年龄：
+[not found]
+未找到
 [Unspecified]
 未指定
 [Edit phone number]
@@ -12414,6 +13630,8 @@ Jabber 活动
 主
 [Default]
 默认
+[Password]
+密码
 [Update]
 更新
 [Fax]
@@ -12456,6 +13674,8 @@ Jabber 活动
 日语
 [Korean]
 韩语
+[Latvian]
+拉脱维亚语
 [Thai]
 泰语
 [Turkish]
@@ -12522,6 +13742,8 @@ Jabber 活动
 取消
 [Help]
 帮助
+[Services]
+服务
 [Variables]
 变量
 [Metacontacts]
@@ -12561,6 +13783,8 @@ Miranda 的根目录路径
 密码：
 [Advanced]
 高级
+[Do not open chat windows on creation]
+不要在创建时打开聊天窗口
 [Group chats]
 分组聊天
 [Bots challenge test]
@@ -12571,10 +13795,14 @@ Miranda 的根目录路径
 提交
 [Cancel]
 取消
+[Read message icon]
+已读消息图标
 [Protocols]
 协议
 [Error]
 错误
+[Photo]
+照片
 [Video]
 视频
 [(Unknown contact)]
@@ -12603,6 +13831,10 @@ Miranda 的根目录路径
 输入你看到的文字
 [Network]
 网络
+[Account]
+帐户
+[View]
+查看
 [Errors]
 错误
 [Notifications]
@@ -12636,6 +13868,8 @@ Miranda 的根目录路径
 ;  Version: 0.0.0.4
 ;  Authors: sss
 ;============================================================
+[Password]
+密码
 [Plugins]
 插件
 #muuid {fc718bc7-abc8-43cd-aad9-761614617738}
@@ -12776,6 +14010,8 @@ Miranda 的根目录路径
 弹出窗口选项
 [Enable popups]
 启用弹出窗口
+[Colors]
+颜色
 [Background color]
 背景色
 [Text color]
@@ -13317,6 +14553,8 @@ N/A
 永久
 [Preview]
 预览
+[Colors]
+颜色
 [Use custom colors]
 使用自定义颜色
 [Use Windows colors]
@@ -13415,6 +14653,8 @@ N/A
 使用 Windows 颜色
 [Error]
 错误
+[Services]
+服务
 [File]
 文件
 [Popups]
@@ -13430,6 +14670,8 @@ N/A
 语音
 [Rate]
 分级
+[Test]
+测试
 [Status Changes]
 状态变更
 [Offline]
@@ -13510,6 +14752,8 @@ WAV 文件
 版权：
 [Homepage:]
 主页：
+[Account]
+帐户
 [Name:]
 名称：
 [Port:]
@@ -13560,12 +14804,18 @@ WAV 文件
 文字颜色
 [Nick]
 昵称
+[Unknown error]
+未知错误
 [Copy All]
 复制所有
 [Select All]
 选择全部
+[From]
+从
 [Size]
 大小
+[%s connection]
+%s 连接
 [Network]
 网络
 [Accounts]

@@ -11,7 +11,6 @@
 [...nickname]
 [...status]
 [...status message]
-[Account]
 [Show account name]
 [Show account cycle button]
 [Cycle through accounts every:]

@@ -119,7 +119,7 @@
 
 ;file \plugins\Sessions\Src\Options.cpp
 [View]
-
+查看
 [Message sessions]
 消息会话
 ;file \plugins\Sessions\Src\Utils.cpp

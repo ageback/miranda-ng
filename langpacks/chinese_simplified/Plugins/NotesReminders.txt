@@ -292,7 +292,7 @@
 [&Update Reminder]
 
 [Every]
-
+每
 [Seconds]
 秒
 [Never]

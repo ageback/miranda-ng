@@ -6,36 +6,36 @@
 ;  Authors: borkra
 ;============================================================
 [Crash Dumper and Version Information for Miranda NG.]
-
+Miranda NG 的崩溃转储和版本信息。
 ;file \plugins\CrashDumper\res\crshdmp.rc
 [View Version Information]
-
+查看版本信息
 [Close]
 关闭
 [Copy To Clipboard]
 复制到剪贴板
 [To File]
-
+到文件
 [Support for vi.miranda-ng.org]
-
+对 vi.miranda-ng.org 的支持
 [Username]
 用户名
 [Password]
-
+密码
 [Upload automatically when changed]
-
+当改变时自动上传
 [Crash reports]
-
+崩溃报告
 [Generate crash reports]
-
+生成崩溃报告
 [Create reports in subfolders naming as current date]
-
+在以当前日期命名的子文件夹中创建报告
 [Use classic dates]
-
+使用经典日期
 [* You need to restart Miranda NG to apply changes]
-
+* 你需要重启 Miranda NG 来应用变更
 [View]
-
+查看
 [&Copy]
 复制(&C)
 [Co&py All]
@@ -44,64 +44,64 @@
 选择所有(&A)
 ;file \plugins\CrashDumper\src\crshdmp.cpp
 [Version Info stored into file %s]
-
+版本信息存储到文件 %s
 [Version Info file %s is inaccessible]
-
+版本信息文件 %s 不可访问
 [Version Information To Clipboard]
-
+版本信息到剪贴板
 [Version Information To File]
-
+版本信息到文件
 [Show Version Information]
-
+显示版本信息
 [Upload Version Information]
-
+上传版本信息
 [Version Information]
 版本信息
 [Copy to clipboard]
 复制到剪贴板
 [Store to file]
-
+存储到文件
 [Show]
 显示
 [Show with DLLs]
-
+与DLL一起显示
 [Upload]
 上传
 [Copy link to clipboard]
-
+复制链接到剪贴板
 [Open crash report directory]
-
+打开崩溃报告目录
 [Open online Version Info]
-
+打开在线版本信息
 [Copy Version Info to clipboard]
-
+复制版本信息到剪贴板
 [Show Version Info]
-
+显示版本信息
 ;file \plugins\CrashDumper\src\crshdmp_icons.cpp
 [Crash Dumper]
-
+崩溃转储
 ;file \plugins\CrashDumper\src\exhndlr.cpp
 [Crash Report write location is not available]
-
+崩溃报告写入位置不可用
 [Miranda crashed. Crash report stored in the folder:\n %s\n\n Would you like store it in the clipboard as well?]
-
+Miranda 崩溃了。崩溃报告存储在文件夹：\n %s\n\n 你想同时将它存储到剪贴板吗？
 ;file \plugins\CrashDumper\src\ui.cpp
 [View Version Information (with DLLs)]
-
+查看版本信息（和DLL一起）
 [Services]
-
+服务
 ;file \plugins\CrashDumper\src\upload.cpp
 [Version Info upload successful.]
-
+版本信息上传成功。
 [Cannot upload Version Info. Incorrect username or password]
-
+无法上传版本信息。错误的用户名或密码
 [Cannot upload Version Info. User is banned]
-
+无法上传版本信息。用户被禁止
 [Cannot upload Version Info. Daily upload limit exceeded]
-
+无法上传版本信息。超过每日上传限制
 [Cannot upload Version Info. Unknown error]
-
+无法上传版本信息。未知错误
 [Cannot upload Version Info. Host unreachable.]
-
+无法上传版本信息。主机无法到达
 [Crash Dumper HTTP connections]
-
+崩溃转储 HTTP 连接

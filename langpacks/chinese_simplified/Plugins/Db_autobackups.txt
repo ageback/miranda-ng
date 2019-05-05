@@ -6,78 +6,78 @@
 ;  Authors: chaos.persei, sje, Kildor, Billy_Bons
 ;============================================================
 [Database autobackuper plugin.]
-
+数据库自动备份插件。
 ;file \plugins\Db_autobackups\res\db_autobackups.rc
 [Automatic backups]
-
+自动备份
 [Disabled]
 已禁用
 [When Miranda starts]
-
+当 Miranda 启动时
 [When Miranda exits]
-
+当 Miranda 退出时
 [Every:]
-
+每：
 [Number of backups to keep:]
-
+要保留的备份数：
 [Backup to folder:]
-
+备份到文件夹：
 [Browse...]
-
+浏览...
 [Go to the "Options -> Customize -> Folders" to change settings]
-
+转到“选项 -> 自定义 -> 文件夹”来更改设置
 [Backup file mask:]
-
+备份文件掩码：
 [Compress backup to zip-archive]
-
+压缩备份为zip归档文件
 [Backup profile folder]
-
+备份配置文件文件夹
 [Disable progress bar]
-
+禁止进度栏
 [Use CloudFile]
-
+使用云文件
 [Backup NOW]
-
+立即备份
 [Backup progress]
-
+备份进度
 [Cancel]
 取消
 ;file \plugins\Db_autobackups\src\backup.cpp
 [Backup in progress]
-
+正在进行备份
 [Copying database file...]
-
+正在复制数据库文件...
 [Uploading to cloud failed]
-
+上传到云失败
 [Error]
 错误
 [Database backed up]
-
+数据库已备份
 [Database back up in process...]
-
+数据库备份正在进行...
 ;file \plugins\Db_autobackups\src\main.cpp
 [Enable &AutoBackups notification]
-
+启用自动备份通知(&A)
 [Disable &AutoBackups notification]
-
+启用自动备份通知(&A)
 [Miranda NG databases]
-
+Miranda NG 数据库
 [Compressed Miranda NG databases]
-
+压缩 Miranda NG 数据库
 [All files]
 所有文件
 [Database]
 数据库
 [Backup profile]
-
+备份配置文件
 [Save profile as...]
-
+保存配置文件为...
 [Popups]
 弹出窗口
 [Database backups]
-
+数据库备份
 [Backup folder]
-
+备份文件夹
 ;file \plugins\Db_autobackups\src\options.cpp
 [days]
 天
@@ -106,10 +106,10 @@ Miranda 的根目录路径
 [Variables]
 变量
 [Error creating backup folder]
-
+创建备份文件夹出错
 [Select backup folder]
-
+选择备份文件夹
 ;file \plugins\Db_autobackups\src\stdafx.h
 ;file \plugins\Db_autobackups\src\zip.cpp
 [Miranda NG [%s] database backup]
-
+Miranda NG [%s] 数据库备份

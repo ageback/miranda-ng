@@ -9,7 +9,6 @@
 [Check Feed]
 [Use &authentication]
 [Login]
-[Password]
 [Visualization]
 [Display news using the following format:]
 [All item's tags are valid. Put them between #. Example: #<author>#]

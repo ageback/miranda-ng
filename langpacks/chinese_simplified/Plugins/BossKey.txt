@@ -9,7 +9,7 @@
 
 ;file \plugins\BossKeyPlus\res\BossKey.rc
 [Go to Options -> Customize -> Hotkeys to change the hotkey]
-
+转到选项 -> 自定义 -> 热键以更改热键
 [When I press the hotkey:]
 
 [Change status to]
@@ -29,7 +29,7 @@
 [Change status back]
 
 [Hotkey]
-
+热键
 [Miranda NG is locked.\nEnter password to unlock it.]
 
 [Password:]

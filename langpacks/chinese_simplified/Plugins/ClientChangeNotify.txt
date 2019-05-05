@@ -27,21 +27,21 @@
 [Don't notify for contacts with disabled status notification]
 
 [Click action]
-
+点击动作
 [On left click]
-
+左键点击时
 [On right click]
-
+右键点击时
 [Delay]
 
 [Sec]
 秒
 [0 = Default]
-
+0 = 默认
 [-1 = Infinite]
-
+-1 = 无限
 [Colors]
-
+颜色
 [Background]
 背景
 [Use default]
@@ -80,7 +80,7 @@
 [Open message window]
 
 [Close popup]
-
+关闭弹出窗口
 [Open contact details window]
 
 [Open contact menu]

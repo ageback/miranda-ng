@@ -11,7 +11,6 @@
 [There was an error writing to the registry to modify the file/url associations.\nReason: %s]
 [Autostart error]
 [There was an error writing to the registry to modify the autostart list.\n\nReason: %s]
-[Services]
 [Associations]
 [Miranda NG database]
 [Miranda NG could not open file]
