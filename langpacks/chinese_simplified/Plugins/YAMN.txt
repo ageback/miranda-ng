@@ -214,7 +214,7 @@
 [Run application]
 
 [Delete selected]
-
+删除选中
 [Select All]
 选择全部
 [From]

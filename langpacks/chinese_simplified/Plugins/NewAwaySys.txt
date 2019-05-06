@@ -117,7 +117,7 @@
 [Don't show the message dialog for]
 
 [%s message for %s]
-
+%s 消息用于 %s
 [Retrieving %s message...]
 正在接收 %s 消息...
 [&Cancel]

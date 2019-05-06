@@ -16,7 +16,7 @@
 [This operation will PERMANENTLY REMOVE all history for this contact.\nAre you sure you want to do this?]
 
 [Clear History]
-
+清除历史
 [Enable History]
 
 [Disable History]

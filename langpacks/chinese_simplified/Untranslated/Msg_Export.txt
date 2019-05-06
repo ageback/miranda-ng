@@ -1,6 +1,5 @@
 [Exports every message, URL or file you receive to a text file.]
 [Export directory]
-[Browse]
 [Default file]
 [File viewer]
 [Use internal viewer]

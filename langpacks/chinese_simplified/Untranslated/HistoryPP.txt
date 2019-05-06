@@ -99,7 +99,6 @@
 [Searching...]
 [Deleting...]
 [Do you really want to delete selected items (%.0f)?]
-[Delete Selected]
 [Do you really want to delete selected item?]
 [%s - History++]
 [History is empty]

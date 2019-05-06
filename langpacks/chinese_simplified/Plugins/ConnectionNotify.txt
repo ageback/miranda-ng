@@ -60,7 +60,7 @@
 [Show]
 显示
 [Hide]
-
+隐藏
 [Always show popup]
 
 [Never show popup]

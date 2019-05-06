@@ -76,7 +76,7 @@
 [Disabled]
 已禁用
 [Hide]
-
+隐藏
 [Never hide]
 
 [Hiding %s (%S)]

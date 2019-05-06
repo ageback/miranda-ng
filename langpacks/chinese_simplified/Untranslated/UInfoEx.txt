@@ -98,7 +98,6 @@
 [Don't remind me of this anniversary]
 [Refresh contact details]
 [Preparing...]
-[Hide]
 [What do you want to export?]
 [Contact information]
 [Contact history]

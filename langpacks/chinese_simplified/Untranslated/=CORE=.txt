@@ -1,5 +1,4 @@
 [for]
-[%s message for %s]
 [Afghanistan]
 [Aland Islands]
 [Albania]

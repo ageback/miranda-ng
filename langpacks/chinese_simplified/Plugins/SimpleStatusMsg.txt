@@ -6,54 +6,54 @@
 ;  Authors: Bartosz 'Dezeath' Białek, Harven
 ;============================================================
 [Provides a simple way to set status and away messages.]
-
+提供一种设置状态和离开消息的简单方法。
 ;file \plugins\SimpleStatusMsg\res\resource.rc
 [%s message for %s]
-
+%s 消息用于 %s
 [&Cancel]
 取消(&C)
 [Retrieving %s message...]
 正在接收 %s 消息...
 [Co&py to clipboard]
-
+复制到剪贴板(&P)
 [%s message (%s)]
-
+%s 消息（%s）
 [Retrieving status message for %s...]
-
+正在获取 %s 的状态消息...
 [Behavior on status change]
-
+状态变更时的行为
 [Apply to all]
-
+应用到全部
 [Max length:]
-
+最大长度：
 [Pop up dialog box]
-
+弹出对话框
 [Do not change status message]
-
+不要改变状态消息
 [Always set the same message]
-
+总是设置相同的消息
 [Do not set status message]
-
+不要设置状态消息
 [Status messages]
 状态消息
 [Pop up dialog asking for new message]
-
+弹出对话框询问新消息
 [Set an empty message]
-
+设置一个空消息
 [Use default message]
-
+使用默认消息
 [Use last message]
-
+使用上次的消息
 [Use last message set for this status]
-
+为这个状态使用上次的消息设置
 [Set the following message:]
-
+设置以下消息：
 [Put default message in message list]
-
+在消息列表中放置默认消息
 [Variables]
 变量
 [Update variables in status messages every]
-
+更新状态消息中的变量，每隔
 [seconds]
 秒
 [Do not update variables during idle]
@@ -93,7 +93,7 @@
 [Show 'Status message...' item in status menu]
 
 [Clear History]
-
+清除历史
 [Clear Predefined]
 
 [* This feature is available only when using StatusManager plugin.]
@@ -162,80 +162,80 @@
 选择全部
 ;file \plugins\SimpleStatusMsg\src\awaymsg.cpp
 [Failed to retrieve %s message.]
-
+接收 %s 消息失败。
 [&Close]
 关闭(&C)
 [Re&ad %s message]
 阅读 %s 消息(&A)
 [Copy %s message]
-
+复制 %s 消息
 [&Go to URL in %s message]
-
+转到 %s 消息中的URL
 [Re&ad Away message]
-
+阅读离开消息(&A)
 [Copy Away message]
-
+复制离开消息
 [&Go to URL in Away message]
-
+转到离开消息中的URL
 ;file \plugins\SimpleStatusMsg\src\main.cpp
 [Change status message]
-
+更改状态消息
 [Open status message dialog]
-
+打开状态消息对话框
 [Status message]
 状态消息
 [Status message...]
-
+状态消息...
 [%s (locked)]
 %s(锁定)
 [External Applications]
-
+外部应用程序
 [retrieves song name of the song currently playing in Winamp (Simple Status Message compatible)]
 
 [Miranda Related]
-
+Miranda 相关
 [get the date (Simple Status Message compatible)]
-
+得到日期（简单状态消息兼容）
 ;file \plugins\SimpleStatusMsg\src\msgbox.cpp
 [<startup>]
-
+<启动>
 [<current>]
-
+<当前>
 [Clear history]
-
+清除历史
 [Add to predefined]
-
+添加到预定义
 [Delete selected]
-
+删除选中
 [global]
 全局
 [Closing in %d]
 在 %d 后关闭
 [Are you sure you want to clear status message history?]
-
+您确定要清除状态消息历史记录吗？
 [Confirm clearing history]
-
+确认清除历史
 ;file \plugins\SimpleStatusMsg\src\options.cpp
 [Global status change]
-
+全局状态变更
 [Open string formatting help]
-
+打开字符串格式帮助
 [Hide]
-
+隐藏
 [Show next to cancel button]
-
+在取消按钮旁边显示
 [Flat, next to cancel button]
-
+平坦，在取消按钮旁边
 [Show in message list]
-
+在消息列表中显示
 [Are you sure you want to clear predefined status messages?]
-
+你确定你想清除预定义状态消息吗？
 [Confirm clearing predefined]
-
+确认清除预定义
 [<last status>]
-
+<上次状态>
 [Startup status]
-
+<启动状态>
 [Status]
 状态
 [General]
@@ -244,13 +244,13 @@
 高级
 ;file \plugins\SimpleStatusMsg\src\utils.cpp
 [Recent message]
-
+最近的消息
 [Predefined message]
-
+预定义的消息
 [Go to URL in Away message]
-
+转到离开消息中的URL
 [Simple Status Message]
-
+简单状态消息
 [I've been away since %time%.]
 从 %time% 起我已经离开了。
 [Give it up, I'm not in!]

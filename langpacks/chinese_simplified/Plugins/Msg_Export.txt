@@ -11,7 +11,7 @@
 [Export directory]
 
 [Browse]
-
+浏览
 [Default file]
 
 [File viewer]

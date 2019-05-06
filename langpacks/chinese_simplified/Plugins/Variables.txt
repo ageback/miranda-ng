@@ -62,7 +62,7 @@
 [Variables Help]
 
 [Open String Formatting Help]
-
+打开字符串格式帮助
 ;file \plugins\Variables\src\options.cpp
 [Services]
 服务
@@ -81,7 +81,7 @@
 [Paused]
 
 [External Applications]
-
+外部应用程序
 [retrieves song name of the song currently playing in Winamp]
 
 [retrieves current Winamp state (Playing/Paused/Stopped)]
@@ -192,7 +192,7 @@ Miranda 的根目录路径
 ["Desktop" folder for currently logged-on Windows user]
 当前登录的Windows用户的“桌面”文件夹 
 [Miranda Related]
-
+Miranda 相关
 [translates status code x into a status description]
 
 [zth contact with property y described by x, example: (unregistered,nick) (z is optional)]

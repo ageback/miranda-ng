@@ -19,7 +19,6 @@
 [Enable Miss You]
 [Notify always]
 [Tray/popup icon]
-[Hide]
 [Never hide]
 [Hiding %s (%S)]
 [%d days since last message]

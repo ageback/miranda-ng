@@ -51,7 +51,7 @@
 [GnuPG binary:]
 
 [Browse]
-
+浏览
 [Turn on key autoexchange]
 
 [The new public key was received]

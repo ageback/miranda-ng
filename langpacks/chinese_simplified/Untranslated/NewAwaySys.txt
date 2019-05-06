@@ -49,7 +49,6 @@
 [Use protocol specific nick for %nas_mynick%]
 [Update status messages for non-ICQ protocols every]
 [Don't show the message dialog for]
-[%s message for %s]
 [Notify of requests]
 [Don't notify of requests]
 [Autoreply on]

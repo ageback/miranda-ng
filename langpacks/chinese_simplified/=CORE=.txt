@@ -30,7 +30,7 @@
 空闲时禁用声音
 ;file \src\core\stdaway\res\resource.rc
 [%s message for %s]
-
+%s 消息用于 %s
 [&Cancel]
 取消(&C)
 [Retrieving %s message...]

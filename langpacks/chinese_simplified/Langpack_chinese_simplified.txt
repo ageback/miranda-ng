@@ -31,6 +31,8 @@ Last-Modified-Using: Miranda NG 0.95.11
 应用程序全屏时变为空闲状态
 [Disable sounds on idle]
 空闲时禁用声音
+[%s message for %s]
+%s 消息用于 %s
 [&Cancel]
 取消(&C)
 [Retrieving %s message...]
@@ -3342,6 +3344,8 @@ PNG位图
 取消
 [Others]
 其它
+[Hide]
+隐藏
 [Events]
 事件
 [Main]
@@ -3381,6 +3385,8 @@ PNG位图
 已启用
 [Disabled]
 已禁用
+[Hide]
+隐藏
 [Do nothing]
 啥都不干
 [Contacts]
@@ -5088,6 +5094,8 @@ Angeli-Ka（绘图），FYR（模板）
 取消
 [Show]
 显示
+[Hide]
+隐藏
 [Status]
 状态
 [Plugins]
@@ -5877,6 +5885,8 @@ URL
 女性
 [<not specified>]
 <未指定>
+[<Last Status>]
+<上次状态>
 [System tray icon]
 系统托盘图标
 [Network]
@@ -5945,6 +5955,8 @@ URL
 复制链接(&C)
 [Copy All]
 复制所有
+[Delete Selected]
+删除选中
 [Outgoing file]
 传出文件
 [Toolbar]
@@ -8879,6 +8891,8 @@ MessageState 未读附加图标
 ;  Version: 3.1.2.3
 ;  Authors: Kennet Nielsen, mod by ring0
 ;============================================================
+[Browse]
+浏览
 [Clear all]
 清除所有
 [Help]
@@ -9035,6 +9049,8 @@ UIN
 删除
 [seconds]
 秒
+[%s message for %s]
+%s 消息用于 %s
 [Retrieving %s message...]
 正在接收 %s 消息...
 [&Cancel]
@@ -9333,6 +9349,8 @@ URL
 ;============================================================
 [Change password]
 更改密码：
+[Browse]
+浏览
 [Ignore]
 忽略
 [Static]
@@ -9401,6 +9419,8 @@ URL
 ;  Version: 0.2.3.0
 ;  Authors: Scott Ellis, NightFox
 ;============================================================
+[Clear History]
+清除历史
 [Clear]
 清除
 [** All contacts **]
@@ -11054,20 +11074,62 @@ BBCode
 ;  Version: 1.9.0.8
 ;  Authors: Bartosz 'Dezeath' Białek, Harven
 ;============================================================
+[Provides a simple way to set status and away messages.]
+提供一种设置状态和离开消息的简单方法。
+[%s message for %s]
+%s 消息用于 %s
 [&Cancel]
 取消(&C)
 [Retrieving %s message...]
 正在接收 %s 消息...
+[Co&py to clipboard]
+复制到剪贴板(&P)
+[%s message (%s)]
+%s 消息（%s）
+[Retrieving status message for %s...]
+正在获取 %s 的状态消息...
+[Behavior on status change]
+状态变更时的行为
+[Apply to all]
+应用到全部
+[Max length:]
+最大长度：
+[Pop up dialog box]
+弹出对话框
+[Do not change status message]
+不要改变状态消息
+[Always set the same message]
+总是设置相同的消息
+[Do not set status message]
+不要设置状态消息
 [Status messages]
 状态消息
+[Pop up dialog asking for new message]
+弹出对话框询问新消息
+[Set an empty message]
+设置一个空消息
+[Use default message]
+使用默认消息
+[Use last message]
+使用上次的消息
+[Use last message set for this status]
+为这个状态使用上次的消息设置
+[Set the following message:]
+设置以下消息：
+[Put default message in message list]
+在消息列表中放置默认消息
 [Variables]
 变量
+[Update variables in status messages every]
+更新状态消息中的变量，每隔
 [seconds]
 秒
 [Layout]
 布局
 [Other]
 其他
+[Clear History]
+清除历史
 [milliseconds]
 毫秒：
 [Status:]
@@ -11082,24 +11144,90 @@ BBCode
 删除
 [Select all]
 选择全部
+[Failed to retrieve %s message.]
+接收 %s 消息失败。
 [&Close]
 关闭(&C)
 [Re&ad %s message]
 阅读 %s 消息(&A)
+[Copy %s message]
+复制 %s 消息
+[&Go to URL in %s message]
+转到 %s 消息中的URL
+[Re&ad Away message]
+阅读离开消息(&A)
+[Copy Away message]
+复制离开消息
+[&Go to URL in Away message]
+转到离开消息中的URL
+[Change status message]
+更改状态消息
+[Open status message dialog]
+打开状态消息对话框
 [Status message]
 状态消息
+[Status message...]
+状态消息...
 [%s (locked)]
 %s(锁定)
+[External Applications]
+外部应用程序
+[Miranda Related]
+Miranda 相关
+[get the date (Simple Status Message compatible)]
+得到日期（简单状态消息兼容）
+[<startup>]
+<启动>
+[<current>]
+<当前>
+[Clear history]
+清除历史
+[Add to predefined]
+添加到预定义
+[Delete selected]
+删除选中
 [global]
 全局
 [Closing in %d]
 在 %d 后关闭
+[Are you sure you want to clear status message history?]
+您确定要清除状态消息历史记录吗？
+[Confirm clearing history]
+确认清除历史
+[Global status change]
+全局状态变更
+[Open string formatting help]
+打开字符串格式帮助
+[Hide]
+隐藏
+[Show next to cancel button]
+在取消按钮旁边显示
+[Flat, next to cancel button]
+平坦，在取消按钮旁边
+[Show in message list]
+在消息列表中显示
+[Are you sure you want to clear predefined status messages?]
+你确定你想清除预定义状态消息吗？
+[Confirm clearing predefined]
+确认清除预定义
+[<last status>]
+<上次状态>
+[Startup status]
+<启动状态>
 [Status]
 状态
 [General]
 通用
 [Advanced]
 高级
+[Recent message]
+最近的消息
+[Predefined message]
+预定义的消息
+[Go to URL in Away message]
+转到离开消息中的URL
+[Simple Status Message]
+简单状态消息
 [I've been away since %time%.]
 从 %time% 起我已经离开了。
 [Give it up, I'm not in!]
@@ -14020,6 +14148,8 @@ Jabber 活动
 年龄：
 [not found]
 未找到
+[Hide]
+隐藏
 [Unspecified]
 未指定
 [Edit phone number]
@@ -14274,10 +14404,14 @@ Jabber 活动
 取消
 [Help]
 帮助
+[Open String Formatting Help]
+打开字符串格式帮助
 [Services]
 服务
 [Variables]
 变量
+[External Applications]
+外部应用程序
 [Metacontacts]
 中继联系人
 [path to Miranda root folder]
@@ -14296,6 +14430,8 @@ Miranda 的根目录路径
 当前登录的Windows用户的“我的文档”文件夹
 ["Desktop" folder for currently logged-on Windows user]
 当前登录的Windows用户的“桌面”文件夹 
+[Miranda Related]
+Miranda 相关
 #muuid {32579908-724b-467f-adad-22b6359a749a}
 ;============================================================
 ;  File: VKontakte.dll
@@ -14770,20 +14906,74 @@ HTTP错误：网关超时（504）
 %c, %t\\n今天：  高 %h, 低 %l
 [Temperature: %[Temperature]]
 温度的：%[Temperature]
+[%c\tcurrent condition\n%d\tcurrent date\n%e\tdewpoint\n%f\tfeel-like temperature\n%h\ttoday's high\n%i\twind direction\n%l\ttoday's low\n%m\thumidity\n%n\tstation name\n%p\tpressure\n%r\tsunrise time\n%s\tstation ID\n%t\ttemperature\n%u\tupdate time\n%v\tvisibility\n%w\twind speed\n%y\tsun set]
+%c\t当前天气状况\n%d\t当前日期\n%e\t露点\n%f\t体感温度\n%h\t今天最高\n%i\t风向\n%l\t今天最低\n%m\t湿度\n%n\t气象站名称\n%p\t压力\n%r\t日出时间\n%s\t气象站 ID\n%t\t温度\n%u\t更新时间\n%v\t能见度\n%w\t风速\n%y\t日落
+[%c\tcurrent condition\n%d\tcurrent date\n%e\tdewpoint\n%f\tfeel-like temp\n%h\ttoday's high\n%i\twind direction\n%l\ttoday's low\n%m\thumidity\n%n\tstation name\n%p\tpressure\n%r\tsunrise time\n%s\tstation ID\n%t\ttemperature\n%u\tupdate time\n%v\tvisibility\n%w\twind speed\n%y\tsun set\n----------\n\\n\tnew line]
+%c\t当前天气状况\n%d\t当前日期\n%e\t露点\n%f\t体感温度\n%h\t今天最高\n%i\t风向\n%l\t今天最低\n%m\t湿度\n%n\t气象站名称\n%p\t压力\n%r\t日出时间\n%s\t气象站 ID\n%t\t温度\n%u\t更新时间\n%v\t能见度\n%w\t风速\n%y\t日落\n----------\n\\n\t新行
+[No information available.\r\nPlease update weather condition first.]
+无资料。\r\n请先更新天气状况。
 [%[..]\tcustom variables]
 %[..]\t自定义变量
+[Here is a list of custom variables that are currently available]
+以下是当前可用的自定义变量列表
+[The URL for complete forecast has not been set. You can set it from the Edit Settings dialog.]
+尚未设置完整预报的网址。您可以从“编辑设置”对话框中进行设置。
+[The URL for weather map has not been set. You can set it from the Edit Settings dialog.]
+尚未设置天气地图的URL。您可以从“编辑设置”对话框中进行设置。
 [Enable/disable auto update]
 启用/禁用自动更新
 [Auto Update Enabled]
 自动更新启用
 [Auto Update Disabled]
 自动更新禁用
+[Condition Changed]
+天气状况变更
+[Alert Issued]
+发出警报
+[Current weather information for %s.]
+%s的当前天气信息。
+[%s is now the default weather station]
+%s现在是默认气象站
+[Weather Protocol]
+天气协议
+[Please try again after weather update is completed.]
+天气更新完成后请再试一次。
+[<Enter station name here>]
+在这里输入气象站名称
+[<Enter station ID here>]
+在这里输入气象站ID
+[Weather condition was not logged.]
+天气状况未被记录。
+[Get city name from ID]
+从ID获取城市名称
+[Weather INI information]
+天气 INI 信息
+[Browse]
+浏览
+[View webpage]
+查看网页
 [Reset to default]
 重置为默认
 [Text Files]
 文本文件
 [All Files]
 所有文件
+[mb]
+毫巴
+[in]
+in
+[mm]
+毫米
+[<unknown time>]
+<未知时间>
+[<Error>]
+<错误>
+[HTTP Error %i]
+HTTP 错误 %i
+[<Enter city name here>]
+<在这里输入城市名称>
+[Error when obtaining data: %s]
+获取数据时出错：%s
 [Weather HTTP connections]
 天气 HTTP 连接
 [Protocol icon]
@@ -15628,6 +15818,8 @@ WAV 文件
 未知错误
 [Copy All]
 复制所有
+[Delete selected]
+删除选中
 [Select All]
 选择全部
 [From]

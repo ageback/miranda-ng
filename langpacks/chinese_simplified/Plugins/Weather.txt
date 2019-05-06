@@ -324,19 +324,19 @@ HTTP错误：网关超时（504）
 [Temperature: %[Temperature]]
 温度的：%[Temperature]
 [%c\tcurrent condition\n%d\tcurrent date\n%e\tdewpoint\n%f\tfeel-like temperature\n%h\ttoday's high\n%i\twind direction\n%l\ttoday's low\n%m\thumidity\n%n\tstation name\n%p\tpressure\n%r\tsunrise time\n%s\tstation ID\n%t\ttemperature\n%u\tupdate time\n%v\tvisibility\n%w\twind speed\n%y\tsun set]
-
+%c\t当前天气状况\n%d\t当前日期\n%e\t露点\n%f\t体感温度\n%h\t今天最高\n%i\t风向\n%l\t今天最低\n%m\t湿度\n%n\t气象站名称\n%p\t压力\n%r\t日出时间\n%s\t气象站 ID\n%t\t温度\n%u\t更新时间\n%v\t能见度\n%w\t风速\n%y\t日落
 [%c\tcurrent condition\n%d\tcurrent date\n%e\tdewpoint\n%f\tfeel-like temp\n%h\ttoday's high\n%i\twind direction\n%l\ttoday's low\n%m\thumidity\n%n\tstation name\n%p\tpressure\n%r\tsunrise time\n%s\tstation ID\n%t\ttemperature\n%u\tupdate time\n%v\tvisibility\n%w\twind speed\n%y\tsun set\n----------\n\\n\tnew line]
-
+%c\t当前天气状况\n%d\t当前日期\n%e\t露点\n%f\t体感温度\n%h\t今天最高\n%i\t风向\n%l\t今天最低\n%m\t湿度\n%n\t气象站名称\n%p\t压力\n%r\t日出时间\n%s\t气象站 ID\n%t\t温度\n%u\t更新时间\n%v\t能见度\n%w\t风速\n%y\t日落\n----------\n\\n\t新行
 [No information available.\r\nPlease update weather condition first.]
-
+无资料。\r\n请先更新天气状况。
 [%[..]\tcustom variables]
 %[..]\t自定义变量
 [Here is a list of custom variables that are currently available]
-
+以下是当前可用的自定义变量列表
 [The URL for complete forecast has not been set. You can set it from the Edit Settings dialog.]
-
+尚未设置完整预报的网址。您可以从“编辑设置”对话框中进行设置。
 [The URL for weather map has not been set. You can set it from the Edit Settings dialog.]
-
+尚未设置天气地图的URL。您可以从“编辑设置”对话框中进行设置。
 ;file \protocols\Weather\src\weather.cpp
 [Enable/disable auto update]
 启用/禁用自动更新
@@ -345,33 +345,33 @@ HTTP错误：网关超时（504）
 [Auto Update Disabled]
 自动更新禁用
 [Condition Changed]
-
+天气状况变更
 [Alert Issued]
-
+发出警报
 ;file \protocols\Weather\src\weather_addstn.cpp
 [Current weather information for %s.]
-
+%s的当前天气信息。
 [%s is now the default weather station]
-
+%s现在是默认气象站
 [Weather Protocol]
-
+天气协议
 [Please try again after weather update is completed.]
-
+天气更新完成后请再试一次。
 [<Enter station name here>]
-
+在这里输入气象站名称
 [<Enter station ID here>]
-
+在这里输入气象站ID
 ;file \protocols\Weather\src\weather_contacts.cpp
 [Weather condition was not logged.]
-
+天气状况未被记录。
 [Get city name from ID]
-
+从ID获取城市名称
 [Weather INI information]
-
+天气 INI 信息
 [Browse]
-
+浏览
 [View webpage]
-
+查看网页
 [Reset to default]
 重置为默认
 [Text Files]
@@ -380,22 +380,22 @@ HTTP错误：网关超时（504）
 所有文件
 ;file \protocols\Weather\src\weather_conv.cpp
 [mb]
-
+毫巴
 [in]
-
+in
 [mm]
-
+毫米
 [<unknown time>]
-
+<未知时间>
 [<Error>]
-
+<错误>
 [HTTP Error %i]
-
+HTTP 错误 %i
 ;file \protocols\Weather\src\weather_data.cpp
 [<Enter city name here>]
-
+<在这里输入城市名称>
 [Error when obtaining data: %s]
-
+获取数据时出错：%s
 ;file \protocols\Weather\src\weather_http.cpp
 [Weather HTTP connections]
 天气 HTTP 连接

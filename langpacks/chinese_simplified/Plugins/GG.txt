@@ -214,7 +214,7 @@
 [<not specified>]
 <未指定>
 [<Last Status>]
-
+<上次状态>
 [System tray icon]
 系统托盘图标
 [Popup window]

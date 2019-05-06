@@ -19,7 +19,6 @@
 [Continue]
 [Home directory:]
 [GnuPG binary:]
-[Browse]
 [Turn on key autoexchange]
 [The new public key was received]
 [Import key]

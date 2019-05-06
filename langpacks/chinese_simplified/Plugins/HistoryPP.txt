@@ -212,7 +212,7 @@
 [Do you really want to delete selected items (%.0f)?]
 
 [Delete Selected]
-
+删除选中
 [Do you really want to delete selected item?]
 
 [%s - History++]

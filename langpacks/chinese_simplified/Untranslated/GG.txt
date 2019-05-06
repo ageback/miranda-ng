@@ -68,7 +68,6 @@
 [You have logged in at another location]
 [You are logged in at another location]
 [Incoming image]
-[<Last Status>]
 [Popup window]
 [Message with [img] BBCode]
 [You need to specify your registration e-mail first.]

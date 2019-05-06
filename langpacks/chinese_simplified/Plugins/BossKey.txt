@@ -62,7 +62,7 @@
 [Hide Miranda NG]
 
 [Hide]
-
+隐藏
 [Hide/Show Miranda]
 
 [BossKey]
