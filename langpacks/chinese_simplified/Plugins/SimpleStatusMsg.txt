@@ -57,63 +57,63 @@
 [seconds]
 秒
 [Do not update variables during idle]
-
+空闲期间不要更新变量
 [Do not update variables on ICQ status message requests]
-
+收到ICQ状态消息请求时不要更新变量
 [Leave last played track's title after exiting the player]
-
+退出播放器后留下上次播放曲目的标题
 [Enable status messages parsing by Variables plugin]
-
+启用Variables插件解析状态消息
 [Exclude %date% token from parsing (restart required)]
-
+从解析中排除%date%令牌（需要重新启动）
 [Layout]
 布局
 [Show status list]
-
+显示状态列表
 [Show status profiles in status list]
-
+在状态列表中显示状态配置文件
 [Show icons in status list]
-
+在状态列表中显示图标
 [Buttons:]
-
+按钮：
 [Show icons in message list]
-
+在消息列表中显示图标
 [Other]
 其他
 [Store up to]
-
+最多存储
 [recent messages (0 = disable)]
-
+最近的消息（0 = 禁止）
 [Automatically close dialog window after]
-
+自动关闭对话框窗口，于此后
 [Remember last dialog window position]
-
+记住上次的对话框窗口位置
 [Remove Carriage Return (CR = '\\r' = #0D) chars from status messages]
-
+从状态消息中删除回车符（CR = '\\r' = #0D）字符
 [Show 'Status message...' item in status menu]
-
+在状态菜单中显示“状态信息...”项目
 [Clear History]
 清除历史
 [Clear Predefined]
-
+清除预定义
 [* This feature is available only when using StatusManager plugin.]
-
+* 此功能仅在使用StatusManager插件时可用。
 [Status on startup]
-
+启动时的状态
 [Set status after]
-
+设置状态于此后
 [milliseconds]
 毫秒：
 [Protocol:]
-
+协议：
 [Status:]
 状态：
 [Independent setting for each protocol]
-
+每个协议的独立设置
 [Pop up dialog asking for status message]
-
+弹出对话框询问状态信息
 [Fortune]
-
+运气
 [?cinfo(contact,property)]
 
 [?contact(string,property)]
@@ -149,7 +149,7 @@
 [?scroll(string,numchars,numchars)]
 
 [More variables...]
-
+更多变量...
 [Cut]
 剪切
 [Copy]
@@ -191,7 +191,7 @@
 [External Applications]
 外部应用程序
 [retrieves song name of the song currently playing in Winamp (Simple Status Message compatible)]
-
+检索当前在Winamp中播放的歌曲的歌曲名称（兼容简单状态消息）
 [Miranda Related]
 Miranda 相关
 [get the date (Simple Status Message compatible)]

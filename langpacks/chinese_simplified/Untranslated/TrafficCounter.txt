@@ -28,7 +28,6 @@
 [Traffic counter]
 [Statistics]
 [KB]
-[MB]
 [Adaptive]
 [Hourly]
 [Daily]

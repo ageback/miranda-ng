@@ -409,7 +409,7 @@
 
 ;file \plugins\Clist_nicer\src\clcopts.cpp
 [Not focused]
-未聚集的
+未聚焦的
 [Offline]
 离线
 [Online]

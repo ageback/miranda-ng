@@ -373,19 +373,19 @@ N/A
 [T-Showers]
 
 [T-Storm]
-
+雷雨
 [T-Storms Early]
 
 [T-Storms Late]
-
+稍晚雷雨
 [T-Storms]
-
+雷雨
 [Thunder In The Vicinity]
 
 [Thunderstorm Rain]
-
+雷雨
 [Thunderstorm]
-
+雷雨
 [UV Index]
 
 [UVI]
