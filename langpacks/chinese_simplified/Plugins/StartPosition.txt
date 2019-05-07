@@ -6,16 +6,16 @@
 ;  Authors: Felipe Brahm - souFrag
 ;============================================================
 [Plugin supports starting position of Contact List relative to the taskbar and screen side.]
-
+插件支持联系人列表相对于任务栏和屏幕边缘的起始位置。
 ;file \plugins\StartPosition\res\resource.rc
 [Contact list window start position]
-
+联系人列表窗口开始位置
 [Pixels from Top]
-
+从顶部的像素
 [Pixels from Bottom]
-
+从底部的像素
 [Pixels from Side]
-
+从边缘的像素
 [Left]
 左
 [Right]
@@ -23,13 +23,13 @@
 [Width]
 宽度
 [Always start...]
-
+始终启动...
 [minimized to system tray]
-
+最小化到系统托盘
 [opened]
-
+打开
 ;file \plugins\StartPosition\src\startposition.cpp
 [Contact list]
 联系人列表
 [Start position]
-
+开始的位置

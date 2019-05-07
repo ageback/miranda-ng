@@ -13,7 +13,7 @@
 [Button Left-Click menu]
 
 [Buttons]
-
+按钮
 [Menu entry value:]
 
 [Misc.]

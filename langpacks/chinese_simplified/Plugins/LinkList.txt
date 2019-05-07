@@ -97,7 +97,7 @@
 [&Search]
 搜索(&S)
 [link]
-
+链接
 [Open]
 打开
 [Open in new window]

@@ -1,7 +1,6 @@
 [Plugin for quick insert pre-defined messages in message input area.]
 [Button Right-Click value]
 [Button Left-Click menu]
-[Buttons]
 [Menu entry value:]
 [Misc.]
 [Auto-send on Left-Click]

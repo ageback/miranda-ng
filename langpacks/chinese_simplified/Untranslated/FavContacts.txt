@@ -12,7 +12,6 @@
 [Configure fonts and colors...]
 [Align to the right]
 [Dim idle contact icons]
-[recent contacts]
 [<no group>]
 [Favorite Contact]
 [Regular Contact]

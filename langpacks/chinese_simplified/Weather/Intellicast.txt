@@ -49,23 +49,23 @@
 [Feel]
 体感
 [Forecast Day 1]
-
+天气预报第1天 
 [Forecast Day 2]
-
+天气预报第2天
 [Forecast Day 3]
-
+天气预报第3天
 [Forecast Day 4]
-
+天气预报第4天
 [Forecast Day 5]
-
+天气预报第5天
 [Forecast Day 6]
-
+天气预报第6天
 [Forecast Day 7]
-
+天气预报第7天
 [Forecast Day 8]
-
+天气预报第8天
 [Forecast Day 9]
-
+天气预报第9天
 [Forecast Day 10]
 
 [Forecast today]
@@ -85,15 +85,15 @@
 [Wind Chill]
 
 [Wind Direction]
-
+风向
 [Wind Speed]
-
+风速
 [N]
 北
 [W]
-
+西
 [S]
-
+南
 [E]
 东
 [NW]
@@ -101,23 +101,23 @@
 [NE]
 东北
 [SW]
-
+西南
 [SE]
-
+东南
 [NNW]
 西北偏北
 [NNE]
 东北偏北
 [SSW]
-
+西南偏南
 [SSE]
-
+东南偏南
 [ENE]
 东北偏东
 [WSW]
-
+西南偏南
 [WNW]
-
+西北偏北
 [ESE]
 东南偏东
 [WindDir1]

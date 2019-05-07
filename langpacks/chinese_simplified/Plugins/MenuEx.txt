@@ -66,7 +66,7 @@
 [Copy xStatus Message]
 
 [All]
-
+所有
 [Messages]
 消息
 [Files]

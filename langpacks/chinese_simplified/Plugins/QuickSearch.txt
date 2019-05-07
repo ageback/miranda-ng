@@ -130,7 +130,7 @@
 [parameter]
 
 [Result]
-
+结果
 [Result type]
 
 [Free memory]
@@ -138,7 +138,7 @@
 [Save]
 保存
 [All]
-
+所有
 [Close]
 关闭
 [Refresh]

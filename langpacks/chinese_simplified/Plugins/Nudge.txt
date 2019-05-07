@@ -25,7 +25,7 @@
 [Auto resend nudge after]
 
 [s]
-
+南
 [Enable popup notification]
 
 [Respect ignore settings (status changes)]

@@ -6,130 +6,130 @@
 ;  Authors: Merlin
 ;============================================================
 [Take a screenshot and send it to a contact.]
-
+截取屏幕截图并将其发送给联系人。
 ;file \plugins\SendScreenshotPlus\res\resource.rc
 [Dialog]
 对话框
 [All]
-
+所有
 [None]
 无
 [Cancel]
 取消
 [Send screenshot to <unknown>]
-
+发送截屏给 <未知>
 [Take a screenshot and send it to a contact]
-
+截取屏幕截图并发送给一个联系人
 [Ti&med capture]
-
+定时捕获(&M)
 [Time (secs):]
-
+时间（秒）：
 [&Format:]
-
+格式(&F)：
 [Send b&y:]
-
+发送通过(&Y)：
 [E&xplore]
-
+浏览(&X)
 [&Fill description textbox.]
-
+填充描述文本框。(&F)
 [Delete &after send]
-
+发送后删除(&A)
 [Open editor before sending]
-
+发送前打开编辑器
 [Open again]
-
+再次打开
 [&Capture]
-
+捕获(&C)
 [About]
-
+关于
 [Copyright]
-
+版权
 [&Close]
 关闭(&C)
 [Edit]
 编辑
 [Caption:]
-
+标题：
 [Size (HxW):]
-
+大小(高x宽)：
 [C&lient area]
-
+客户区(&L)
 [Indirect capture]
-
+间接捕获
 [Target tool]
-
+目标工具
 [File:]
-
+文件：
 [Description:]
 描述：
 [Result]
-
+结果
 [Thumbnail]
-
+缩略图
 [&Copy]
 复制(&C)
 [Close]
 关闭
 ;file \plugins\SendScreenshotPlus\src\CSend.cpp
 [Resulting URL from\n]
-
+产生的URL来自\n
 [Copy]
 复制
 [Copy BBCode]
-
+复制 BBCode
 [Copy BBCode w/ link]
-
+复制 BBCode 带链接
 [%s requires a valid contact!]
-
+%s 要求一个有效的联系人！
 [Error]
 错误
 [GCHAT error]
-
+GCHAT 错误
 [An unknown error has occurred.]
 发生了未知的错误。
 ;file \plugins\SendScreenshotPlus\src\CSend.h
 [Unable to initiate %s.]
-
+无法初始化 %s。
 [MAPI error (%i):\n%s.]
-
+MAPI 错误（%i）:\n%s。
 [Unknown response from %s (%i)]
-
+来自 %s（%i）的未知回复
 [Got no response from %s (%i)]
-
+%s（%i）没有回复
 ;file \plugins\SendScreenshotPlus\src\CSendCloudFile.cpp
 [CloudFile transfer]
-
+云文件传输
 [%s (%i):\nCould not add a share to the CloudFile plugin.]
-
+%s（%i）：\n无法向云文件插件添加共享。
 ;file \plugins\SendScreenshotPlus\src\CSendEmail.cpp
 [Email transfer]
-
+电子邮件传输
 [A recipient matched more than one of the recipient descriptor structures and MAPI_DIALOG was not set]
-
+收件人匹配多个收件人描述符结构且未设置MAPI_DIALOG
 [The specified attachment was not found]
-
+未找到指定的附件
 [The specified attachment could not be opened]
-
+无法打开指定的附件
 [The type of a recipient was not MAPI_TO, MAPI_CC, or MAPI_BCC]
-
+收件人的类型不是MAPI_TO，MAPI_CC或MAPI_BCC
 [One or more unspecified errors occurred]
-
+发生了一个或多个未指定的错误
 [There was insufficient memory to proceed]
-
+没有足够的内存以继续
 [One or more recipients were invalid or did not resolve to any address]
-
+一个或多个收件人无效或未解析任何地址
 [There was no default logon, and the user failed to log on successfully when the logon dialog box was displayed]
-
+没有默认登录，并且显示登录对话框时用户无法成功登录
 [The text in the message was too large]
-
+邮件中的文字太长了
 [There were too many file attachments]
-
+文件附件太多了
 [There were too many recipients]
-
+收件人太多了
 [A recipient did not appear in the address list]
-
+收件人未出现在地址列表中
 [The user canceled one of the dialog boxes]
-
+用户取消了其中一个对话框
 [Unknown Error]
 未知错误
 ;file \plugins\SendScreenshotPlus\src\CSendFile.cpp
@@ -137,21 +137,21 @@
 文件传输
 ;file \plugins\SendScreenshotPlus\src\CSendFTPFile.cpp
 [FTPFile transfer]
-
+FTP文件传输
 [%s (%i):\nCould not add a share to the FTP File plugin.]
-
+%s（%i）：\n无法向FTP文件插件添加共享。
 ;file \plugins\SendScreenshotPlus\src\CSendHost_ImageShack.cpp
 [Image upload]
-
+图像上传
 ;file \plugins\SendScreenshotPlus\src\CSendHost_imgur.cpp
 ;file \plugins\SendScreenshotPlus\src\CSendHost_uploadpie.cpp
 ;file \plugins\SendScreenshotPlus\src\CSendHTTPServer.cpp
 [HTTPServer transfer]
-
+HTTP服务器传输
 [Could not start the HTTP Server plugin.]
-
+无法启动 HTTP 服务器插件。
 [%s (%i):\nCould not add a share to the HTTP Server plugin.]
-
+%s（%i）：\n无法向HTTP 服务器插件添加共享。
 ;file \plugins\SendScreenshotPlus\src\dlg_msgbox.cpp
 [Retry]
 重试
@@ -160,113 +160,113 @@
 [No]
 否
 [Abort]
-
+中断
 [Ignore]
 忽略
 ;file \plugins\SendScreenshotPlus\src\Main.cpp
 [Main Icon]
-
+主图标
 [Target Cursor]
-
+目标光标
 [Target Desktop]
-
+目标桌面
 [Help]
 帮助
 [Open Folder]
 打开文件夹
 [Description off]
-
+描述关闭
 [Description on]
-
+描述打开
 [Delete off]
-
+删除关闭
 [Delete on]
-
+删除打开
 [Prev]
-
+上一个
 [Next]
 下一个
 [Update]
 更新
 [Edit on]
-
+编辑
 [BBCode]
 BBCode 
 [BBCode link]
-
+BBCode 链接
 [Down arrow]
 向下箭头
 [Could not create screenshot folder (error code: %d):\n%s\nDo you have write permissions?]
-
+无法创建屏幕截图文件夹（错误码：%d）：\n%s\n你有写权限吗？
 [Could not create main dialog.]
-
+无法创建主对话框。
 [SendSS HTTP connections]
-
+SendSS HTTP 连接
 [SendSS]
-
+SendSS
 [Screenshots]
-
+屏幕截图
 [Buttons]
-
+按钮
 [Take a screenshot]
-
+截取屏幕截图
 [Send screenshot]
-
+发送屏幕截图
 [Send desktop screenshot]
-
+发送桌面截图
 [Open SendSS+]
-
+打开 SendSS+
 ;file \plugins\SendScreenshotPlus\src\stdafx.h
 [SendScreenshot - Error]
-
+SendScreenshot - 错误
 ;file \plugins\SendScreenshotPlus\src\UMainForm.cpp
 [Drag&Drop the target on the desired window.]
-
+将目标拖放到所需窗口上。
 [Send screenshot to %s]
-
+发送屏幕截图给 %s
 [Window]
 窗口
 [Desktop]
-
+桌面
 [<Entire Desktop>]
-
+<整个桌面>
 [Monitor]
-
+显示器
 [ (primary)]
-
+（主要）
 [File]
 文件
 [<Only save>]
-
+<仅保存>
 [File Transfer]
 文件传输
 [E-mail]
 电子邮件
 [FTP File]
-
+FTP 文件
 [Upload Pie (30m)]
-
+Upload Pie（30分钟）
 [Upload Pie (1d)]
-
+Upload Pie（1天）
 [Upload Pie (1w)]
-
+Upload Pie（1星期） 
 [Fill description textbox.]
-
+填充描述文本框。
 [Delete after send]
-
+发送后删除
 [Capture]
-
+捕获
 [Couldn't take a screenshot]
-
+无法截取屏幕
 [Select a file]
-
+选择一个文件
 [Select a target window.]
-
+选择一个目标窗口。
 [Screenshot of "%s"]
-
+“%s”的屏幕截图
 [Screenshot for client area of "%s" window]
-
+“％s”窗口的客户区域的屏幕截图
 [Screenshot of "%s" window]
-
+“％s”窗口的屏幕截图
 [Send screenshot?]
-
+发送截图吗?

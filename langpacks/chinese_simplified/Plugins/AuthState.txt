@@ -13,7 +13,7 @@
 [Show Grant icon]
 
 [Plugin settings]
-
+插件设置
 [Enable menu item]
 
 [Show icons only for recently added contacts]

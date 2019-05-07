@@ -2762,6 +2762,8 @@ PNG位图
 名字
 [Plugin]
 插件
+[Result]
+结果
 [Contact]
 联系
 [Refresh]
@@ -2786,6 +2788,8 @@ PNG位图
 警告
 [Info]
 信息
+[Buttons]
+按钮
 [Database]
 数据库
 [Settings]
@@ -2834,6 +2838,8 @@ PNG位图
 外出吃饭
 [System]
 系统
+[Ignore Contact]
+忽略联系人
 [Protocol]
 协议
 [Check for updates]
@@ -2984,6 +2990,8 @@ PNG位图
 ;  Version: 0.0.2.1
 ;  Authors: Thief, idea by snwbrdr
 ;============================================================
+[Plugin settings]
+插件设置
 [Icons]
 图标
 #muuid {eb0465e2-ceee-11db-83ef-c1bf55d89593}
@@ -5305,6 +5313,8 @@ GnuPG插件 - 选择公钥
 消息
 [Main Menu]
 主菜单
+[Main Icon]
+主图标
 [Remove]
 移除
 [Undo changes]
@@ -5359,8 +5369,12 @@ GnuPG插件 - 选择公钥
 所有文件
 [Export to file]
 导出到文件
+[Result]
+结果
 [Contact]
 联系
+[Main icon]
+主图标
 [Settings]
 设置
 [Handle]
@@ -5624,6 +5638,8 @@ Miranda NG [%s] 数据库备份
 显示头像
 [Show]
 显示
+[recent contacts]
+最近的联系人
 [Favorites]
 收藏
 [Contacts]
@@ -5649,6 +5665,8 @@ Miranda NG [%s] 数据库备份
 正在发送...
 [Receiving...]
 正在接收...
+[Select a file]
+选择一个文件
 [Main]
 主
 [Events]
@@ -5766,6 +5784,8 @@ URL
 菜单项
 [Other]
 其他
+[File:]
+文件：
 [Summary]
 摘要
 [To:]
@@ -5792,6 +5812,8 @@ URL
 复制链接到剪贴板
 [Resume]
 恢复
+[FTP File]
+FTP 文件
 [CANCELED]
 已取消
 [CONNECTING...]
@@ -5985,6 +6007,8 @@ URL
 查看历史(&H)
 [User Menu]
 用户菜单
+[Prev]
+上一个
 [Unused]
 未使用
 #muuid {f184f5a0-c198-4454-a9b4-f6e2fd534133}
@@ -6258,6 +6282,10 @@ URL
 ;  Version: 0.0.3.0
 ;  Authors: Kildor
 ;============================================================
+[Plugin settings]
+插件设置
+[All]
+所有
 [Messages]
 消息
 [Files]
@@ -8587,6 +8615,8 @@ Jabber vCard：编辑电话号码
 选项(&O)
 [&Search]
 搜索(&S)
+[link]
+链接
 [Open]
 打开
 [Copy to clipboard]
@@ -8668,6 +8698,8 @@ Jabber vCard：编辑电话号码
 正在听
 [Always visible]
 总是可见
+[All]
+所有
 [Messages]
 消息
 [Files]
@@ -8738,6 +8770,8 @@ MessageState 未读附加图标
 ;============================================================
 [Show seconds in timestamps]
 在时间戳中显示秒
+[About]
+关于
 [events]
 事件
 [seconds]
@@ -8935,6 +8969,8 @@ UIN
 状态
 [Homepage]
 主页
+[About]
+关于
 [Protocol]
 协议
 #muuid {97724af9-f3fb-47d3-a3bf-eaa935c74e6d}
@@ -9396,22 +9432,164 @@ URL
 ;  Version: 0.6.0.3
 ;  Authors: Jonathan Gordon
 ;============================================================
+[Non-IM Contact allows you to add 'contacts' that can act as shortcuts to other programs, or links to web pages.\r\nThe contacts name can be read from a text file (includes any ASCII file).\r\nThis plugin is a combination of Favorites and Text Reader plugins both made by me)]
+Non-IM 联系人允许你添加可以作为其他程序快捷方式，或链接到网页的“联系人”。\r\n联系人的名称可以从一个文本文件中读取（包括任何 ASCII 文件）。\r\n这个插件是由我制作的 Favorites 和 Text Reader 插件的组合
+[View/Edit Files]
+查看/编辑文件
+[Add File]
+添加文件
+[Add URL]
+添加 URL
+[Remove Selected File]
+移除选中的文件
+[file(#)]
+文件(#)
 [URL]
 URL
+[Update URL every]
+更新 URL 每隔
+[Intervals]
+间隔
+[If the protocol timer is disabled, web pages won't be updated]
+如果协议定时器被禁用，网页将不会更新
+[contact display info]
+联系人显示信息
+[Contacts display name]
+联系人显示名称
+[Contacts Tooltip]
+联系人工具提示
+[other settings]
+其他设置
+[Link]
+链接
+[Program parameters:]
+程序参数：
+[O&pen File]
+打开文件(&P)
+[O&pen Folder]
+打开文件夹(&P)
 [Link Settings]
 链接设置
+[Contact list settings]
+联系人列表设置
 [Group:]
 分组：
+[Status Icon]
+状态图标
+[Group\\Sub-Group]
+分组\\子分组
+[Timer Settings]
+定时器设置
+[Use Timer]
+使用定时器
+[Contact is always visible]
+联系人总是可见
+[Unless Non-IM Contacts protocol is OFFLINE]
+除非 Non-IM 联系人协议离线
+[Timer Intervals.  ]
+定时器间隔。 
+[Away as another status]
+离开作为另一种状态
+[Disable timer]
+禁用定时器
+[Timer interval (in seconds)]
+定时器间隔（以秒为单位）
+[This will take affect after Non-IM Contacts' status is changed]
+这将在 Non-IM 联系人状态更改后生效
+[Timer Options]
+定时器选项
+[String Maker]
+字符串制作器
+[&Test String]
+测试字符串(&T)
 [&Exit]
 退出(&E)
+[String to test]
+要测试的字符串
+[Returns....]
+返回....
+[line()]
+line()
+[start()]
+start()
+[end()]
+end()
+[wholeline()]
+wholeline()
+[csv()]
+csv()
+[file()]
+file()
+[filename()]
+filename()
 [Help]
 帮助
+[Copy / Export contact]
+复制 / 导出联系人
+[&Export Non-IM Contact]
+导出 Non-IM 联系人(&E)
+[Co&py Non-IM Contact]
+复制 Non-IM 联系人(&P)
+[Type one replace string per line in the format "original text,new text"]
+以 "原始文本,新文本" 格式为每行键入一个替换字符串
+[EXAMPLE: %fn1,%fn2]
+例如：%fn1,%fn2
 [Select Folder]
 选择文件夹
+[Non-IM Contact protocol timer is Disabled]
+Non-IM 联系人协议定时器被禁用
+[Timer intervals... Non-IM Contact Protocol timer is %d seconds]
+定时器间隔... Non-IM 协议定时器为 %d 秒
+[New Non-IM Contact]
+新 Non-IM 联系人
+[String replacing variables...\r\nThe following are all the valid variables that can be used. Refer to the wiki.miranda-ng.org for a proper explanation.\r\n\r\nfile(X)\t\t<- specifies the file to read from. MUST be followed by either start() or end() or wholeline()\r\nfilename(X)\t<- copies the filename of file X.\r\nstart(...)\t\t<- specifies where to start copying from.\r\nend(...)\t\t<- specifies where to stop copying.\r\nwholeline(line(...))\t<- specifies a whole line to copy\r\n\r\nstart() and end() explained\r\n.........................\r\nMUST start with line() followed by a number or a string inside " marks, OR csv(separatorX) variable. The number specifies which character in the line to start/end copying. The string specifies a string in the line to start/end copying.\r\n\r\ncsv(seperatorX) explained...\r\nSeperator is either "tab" or "space" or any SINGLE character. X is the Xth separator to pass before copying, (or to stop before).\r\n\r\nLastly the line(...) variable...\r\nInside the brackets must be either a number (to specify the line number), or a string inside " marks (to use the line with that string), or lastline(X). The X in lastline is the Xth line above the last line, i.e., lastline(1) will use the 2nd last line of the file. If searching for a line with "some words" you may put a + or - X after the closing ), i.e., line("some words")+3 to go 3 lines after the line with "some words".\r\n\r\nSome examples...\r\nfilename(0)    <- will display the filename of the 0th file\r\nfile(0)wholeline(line(0)))    <- will display the whole first line of the 0th file\r\nfile(0)wholeline(line("hello")-1)))    <- the wholeline above the first occurrence of "hello" in the file\r\nfile(0)start(line(lastline(1))csv(tab2))end(line(lastline())csv(tab4)))    <- starts at the 2nd last line of the file, from the 2nd tab variable, until the 4th tab variable in the last line (in the 0th file)\r\nfile(0)start(line("hello")+1"zzzz")end(line(6)17))    <- starts from the first occurrence of zzzz in the line after the first occurrence of hello, until the 17th character in the 6th line (starting from line 0) of the 0th file.\r\n]
+字符串替换变量...\r\n以下是可以使用的所有有效变量。有关正确的解释，请参阅wiki.miranda-ng.org。\r\n\r\nfile(X)\t\t<- 指定要读取的文件。 必须后跟 start() 或 end() 或 wholeline()\r\nfilename(X)\t<- 复制文件 X 的文件名。\r\nstart(...)\t\t<- 指定从哪里开始复制。\r\nend(...)\t\t<- 指定停止复制的位置。\r\nwholeline(line(...))\t<- 指定要复制的整行\r\n\r\nstart() 和 end() 解释\r\n.........................\r\n必须以 line() 开头，后面跟包含在"标记中的一个数字或一个字符串，或者 csv（separatorX）变量。该数字指定开始/结束复制行中的哪个字符。该字符串指定要开始/结束复制的行中的字符串。\r\n\r\ncsv(seperatorX) 解释...\r\n分隔符是 "制表符" 或 "空格" 或任何单个字符。X 是在复制之前传递（或在它之前停止）的第 X 个分隔符。\r\n\r\n最后是 line(...) 变量...\r\n在括号内部必须是一个数字（用于指定行号），或者一个 " 标记内部的字符串（和行一起使用的字符串），或者 lastline(X)。lastline 中的 X 是最后一行上方的第 X 行，例如：lastline(1) 将使用文件的倒数第二行。如果要搜索含有 "某些单词" 的行，你可以在右括号 ) 后面放一个 + 或 - X，例如：line("某些单词")+3 转到含有 "某些单词" 的行的之后第3行。\r\n\r\n一些例子...\r\nfilename(0)    <- 将显示第 0 个文件的文件名\r\nfile(0)wholeline(line(0)))    <- 将显示第 0 个文件的整个第一行\r\nfile(0)wholeline(line("hello")-1)))    <- 文件中第一次出现 "hello" 上方的整行\r\nfile(0)start(line(lastline(1))csv(tab2))end(line(lastline())csv(tab4)))    <- 开始于文件的倒数第2行，从第2个 tab 变量，直到最后一行（在第0个文件中）中的第4个 tab 变量\r\nfile(0)start(line("hello")+1"zzzz")end(line(6)17))    <- 从第1次出现 hello 之后的行中第1次出现 zzzz，直到第0个文件中的第6行（从第0行开始）中的第17个字符。\r\n
+[Contacts Display Info]
+联系人显示信息
+[Link and Contact list Settings]
+链接和联系人列表设置
+[Copy Contact]
+复制联系人
 [Files]
 文件
+[Edit Non-IM Contact "%s"]
+编辑 Non-IM 联系人 "%s"
+[Do you want to overwrite the contents of the file?\r\n\r\nPressing No will append these contacts to the end of the file.]
+你要覆盖文件的内容吗？\r\n\r\n点击否将追加这些联系人到文件的末尾。
+[File couldn't be opened]
+无法打开文件
+[File couldn't be opened,2]
+无法打开文件,2
+[line(%-3d) = | %s]
+line(%-3d) = | %s
+[Non-IM Contacts]
+Non-IM 联系人
 [Plugins]
 插件
+[Main Icon]
+主图标
+[Non-IM Contact]
+Non-IM 联系人
+[&Non-IM Contact]
+Non-IM 联系人(&N)
+[&Add Non-IM Contact]
+添加 Non-IM 联系人(&A)
+[&View/Edit Files]
+查看/编辑文件(&V)
+[&Export all Non-IM Contacts]
+导出所有Non-IM 联系人(&E)
+[&Import Non-IM Contacts]
+导入所有Non-IM 联系人(&I)
+[&String Maker]
+字符串制作器(&S)
+[E&dit Contact Settings]
+编辑联系人设置(&D)
+[%s - ERROR: no line specified or line not found (in %s)]
+%s - 错误：未指定行或未找到行（在%s中）
+[%s - ERROR: file couldn't be opened (in %s)]
+%s - 错误：无法打开文件（在%s中）
+[%s - ERROR: no file specified in settings (in %s)]
+%s - 错误：没有在设置中指定文件（在%s中）
 #muuid {b25e8c7b-292b-495a-9fb8-a4c3d4eeb04b}
 ;============================================================
 ;  File: NoHistory.dll
@@ -9506,6 +9684,8 @@ URL
 ;  Version: 0.2.0.2
 ;  Authors: Tweety/GouZ, FREAK_THEMIGHTY
 ;============================================================
+[s]
+南
 [Privacy]
 隐私
 [Preview]
@@ -10004,6 +10184,8 @@ Miranda NG 核心
 ;  Version: 0.0.4.2
 ;  Authors: MaD_CLuSTeR
 ;============================================================
+[Buttons]
+按钮
 [Message sessions]
 消息会话
 #muuid {a6a031b6-d32f-4842-98c6-ec716c576b77}
@@ -10056,8 +10238,12 @@ Miranda NG 核心
 模块：
 [Service:]
 服务：
+[Result]
+结果
 [Save]
 保存
+[All]
+所有
 [Close]
 关闭
 [Refresh]
@@ -10119,12 +10305,34 @@ Miranda NG 核心
 ;  Version: 0.1.0.3
 ;  Authors: ValeraVi, Kildor
 ;============================================================
+[Adds a menu item in main menu, which open the window with list of last used contacts names, sorted in order from most recent to least.]
+在主菜单中添加一个菜单项，该菜单项打开窗口，其中包含最近使用的联系人姓名列表，按从最近到最少的顺序排序。
+[Recent Contacts]
+最近的联系人
+[Plugin settings]
+插件设置
+[Number of shown contacts:\n (0 to show all)]
+显示的联系人数量：\n（0表示全部）
+[Format of date and time\n(Look to readme for placeholders help)]
+日期和时间格式\n（寻找占位符帮助的自述文件）
 [Hide offline contacts]
 隐藏离线联系人 
+[Resize window according to contact list]
+根据联系人列表调整窗口大小
 [Contacts]
 联系人
+[Main icon]
+主图标
 [Contact]
 联系
+[Toggle Ignore]
+切换忽略
+[Ignore Contact]
+忽略联系人
+[Show Contact]
+显示联系人
+[Show Recent Contacts]
+显示最近的联系人
 #muuid {60e94b84-a799-4021-9449-5b838fc06a7c}
 ;============================================================
 ;  File: RemovePersonalSettings.dll
@@ -10960,60 +11168,256 @@ Miranda 的根目录路径
 ;  Version: 0.9.0.2
 ;  Authors: Merlin
 ;============================================================
+[Take a screenshot and send it to a contact.]
+截取屏幕截图并将其发送给联系人。
 [Dialog]
 对话框
+[All]
+所有
 [None]
 无
 [Cancel]
 取消
+[Send screenshot to <unknown>]
+发送截屏给 <未知>
+[Take a screenshot and send it to a contact]
+截取屏幕截图并发送给一个联系人
+[Ti&med capture]
+定时捕获(&M)
+[Time (secs):]
+时间（秒）：
+[&Format:]
+格式(&F)：
+[Send b&y:]
+发送通过(&Y)：
+[E&xplore]
+浏览(&X)
+[&Fill description textbox.]
+填充描述文本框。(&F)
+[Delete &after send]
+发送后删除(&A)
+[Open editor before sending]
+发送前打开编辑器
+[Open again]
+再次打开
+[&Capture]
+捕获(&C)
+[About]
+关于
+[Copyright]
+版权
 [&Close]
 关闭(&C)
 [Edit]
 编辑
+[Caption:]
+标题：
+[Size (HxW):]
+大小(高x宽)：
+[C&lient area]
+客户区(&L)
+[Indirect capture]
+间接捕获
+[Target tool]
+目标工具
+[File:]
+文件：
 [Description:]
 描述：
+[Result]
+结果
+[Thumbnail]
+缩略图
 [&Copy]
 复制(&C)
 [Close]
 关闭
+[Resulting URL from\n]
+产生的URL来自\n
 [Copy]
 复制
+[Copy BBCode]
+复制 BBCode
+[Copy BBCode w/ link]
+复制 BBCode 带链接
+[%s requires a valid contact!]
+%s 要求一个有效的联系人！
 [Error]
 错误
+[GCHAT error]
+GCHAT 错误
 [An unknown error has occurred.]
 发生了未知的错误。
+[Unable to initiate %s.]
+无法初始化 %s。
+[MAPI error (%i):\n%s.]
+MAPI 错误（%i）:\n%s。
+[Unknown response from %s (%i)]
+来自 %s（%i）的未知回复
+[Got no response from %s (%i)]
+%s（%i）没有回复
+[CloudFile transfer]
+云文件传输
+[%s (%i):\nCould not add a share to the CloudFile plugin.]
+%s（%i）：\n无法向云文件插件添加共享。
+[Email transfer]
+电子邮件传输
+[A recipient matched more than one of the recipient descriptor structures and MAPI_DIALOG was not set]
+收件人匹配多个收件人描述符结构且未设置MAPI_DIALOG
+[The specified attachment was not found]
+未找到指定的附件
+[The specified attachment could not be opened]
+无法打开指定的附件
+[The type of a recipient was not MAPI_TO, MAPI_CC, or MAPI_BCC]
+收件人的类型不是MAPI_TO，MAPI_CC或MAPI_BCC
+[One or more unspecified errors occurred]
+发生了一个或多个未指定的错误
+[There was insufficient memory to proceed]
+没有足够的内存以继续
+[One or more recipients were invalid or did not resolve to any address]
+一个或多个收件人无效或未解析任何地址
+[There was no default logon, and the user failed to log on successfully when the logon dialog box was displayed]
+没有默认登录，并且显示登录对话框时用户无法成功登录
+[The text in the message was too large]
+邮件中的文字太长了
+[There were too many file attachments]
+文件附件太多了
+[There were too many recipients]
+收件人太多了
+[A recipient did not appear in the address list]
+收件人未出现在地址列表中
+[The user canceled one of the dialog boxes]
+用户取消了其中一个对话框
 [Unknown Error]
 未知错误
 [File transfer]
 文件传输
+[FTPFile transfer]
+FTP文件传输
+[%s (%i):\nCould not add a share to the FTP File plugin.]
+%s（%i）：\n无法向FTP文件插件添加共享。
+[Image upload]
+图像上传
+[HTTPServer transfer]
+HTTP服务器传输
+[Could not start the HTTP Server plugin.]
+无法启动 HTTP 服务器插件。
+[%s (%i):\nCould not add a share to the HTTP Server plugin.]
+%s（%i）：\n无法向HTTP 服务器插件添加共享。
 [Retry]
 重试
 [Yes]
 是
 [No]
 否
+[Abort]
+中断
 [Ignore]
 忽略
+[Main Icon]
+主图标
+[Target Cursor]
+目标光标
+[Target Desktop]
+目标桌面
 [Help]
 帮助
 [Open Folder]
 打开文件夹
+[Description off]
+描述关闭
+[Description on]
+描述打开
+[Delete off]
+删除关闭
+[Delete on]
+删除打开
+[Prev]
+上一个
 [Next]
 下一个
 [Update]
 更新
+[Edit on]
+编辑
 [BBCode]
 BBCode 
+[BBCode link]
+BBCode 链接
 [Down arrow]
 向下箭头
+[Could not create screenshot folder (error code: %d):\n%s\nDo you have write permissions?]
+无法创建屏幕截图文件夹（错误码：%d）：\n%s\n你有写权限吗？
+[Could not create main dialog.]
+无法创建主对话框。
+[SendSS HTTP connections]
+SendSS HTTP 连接
+[SendSS]
+SendSS
+[Screenshots]
+屏幕截图
+[Buttons]
+按钮
+[Take a screenshot]
+截取屏幕截图
+[Send screenshot]
+发送屏幕截图
+[Send desktop screenshot]
+发送桌面截图
+[Open SendSS+]
+打开 SendSS+
+[SendScreenshot - Error]
+SendScreenshot - 错误
+[Drag&Drop the target on the desired window.]
+将目标拖放到所需窗口上。
+[Send screenshot to %s]
+发送屏幕截图给 %s
 [Window]
 窗口
+[Desktop]
+桌面
+[<Entire Desktop>]
+<整个桌面>
+[Monitor]
+显示器
+[ (primary)]
+（主要）
 [File]
 文件
+[<Only save>]
+<仅保存>
 [File Transfer]
 文件传输
 [E-mail]
 电子邮件
+[FTP File]
+FTP 文件
+[Upload Pie (30m)]
+Upload Pie（30分钟）
+[Upload Pie (1d)]
+Upload Pie（1天）
+[Upload Pie (1w)]
+Upload Pie（1星期） 
+[Fill description textbox.]
+填充描述文本框。
+[Delete after send]
+发送后删除
+[Capture]
+捕获
+[Couldn't take a screenshot]
+无法截取屏幕
+[Select a file]
+选择一个文件
+[Select a target window.]
+选择一个目标窗口。
+[Screenshot of "%s"]
+“%s”的屏幕截图
+[Screenshot for client area of "%s" window]
+“％s”窗口的客户区域的屏幕截图
+[Screenshot of "%s" window]
+“％s”窗口的屏幕截图
+[Send screenshot?]
+发送截图吗?
 #muuid {60558872-2aab-45aa-888d-097691c9b683}
 ;============================================================
 ;  File: Sessions.dll
@@ -11453,14 +11857,32 @@ Miranda 相关
 ;  Version: 0.3.0.4
 ;  Authors: Felipe Brahm - souFrag
 ;============================================================
+[Plugin supports starting position of Contact List relative to the taskbar and screen side.]
+插件支持联系人列表相对于任务栏和屏幕边缘的起始位置。
+[Contact list window start position]
+联系人列表窗口开始位置
+[Pixels from Top]
+从顶部的像素
+[Pixels from Bottom]
+从底部的像素
+[Pixels from Side]
+从边缘的像素
 [Left]
 左
 [Right]
 右
 [Width]
 宽度
+[Always start...]
+始终启动...
+[minimized to system tray]
+最小化到系统托盘
+[opened]
+打开
 [Contact list]
 联系人列表
+[Start position]
+开始的位置
 #muuid {7b856b6a-d48f-4f54-b8d6-c8d86d02ffc2}
 ;============================================================
 ;  File: StartupSilence.dll
@@ -11479,6 +11901,8 @@ Miranda 相关
 ;  Version: 1.3.0.0
 ;  Authors: Angelo Luiz Tartari
 ;============================================================
+[Change status when you send/receive an event.]
+当你发送/接收事件时更改状态。
 [Offline]
 离线
 [Online]
@@ -11499,12 +11923,20 @@ Miranda 相关
 在打电话
 [Out to lunch]
 外出吃饭
+[On events...]
+在事件...
 [Send]
 发送
+[Receive]
+接收
 [Message]
 消息
 [File transfer]
 文件传输
+[...change status to...]
+...更改状态为...
+[...if status is...]
+...如果状态是...
 [Status Change]
 状态变更
 [Status]
@@ -14178,6 +14610,8 @@ Jabber 活动
 颜色
 [Dialog]
 对话框
+[All]
+所有
 [None]
 无
 [Main menu]
@@ -14220,6 +14654,8 @@ Jabber 活动
 是
 [No]
 否
+[Abort]
+中断
 [Ignore]
 忽略
 [Error]
@@ -14228,6 +14664,8 @@ Jabber 活动
 通用
 [Work]
 工作
+[About]
+关于
 [Profile]
 配置文件
 [Notes]
@@ -14266,6 +14704,8 @@ Jabber 活动
 搜索
 [Dialogs]
 对话框
+[Buttons]
+按钮
 [View/change my &details...]
 查看/更改我的详细信息(&D)...
 [My notes:]
@@ -14519,6 +14959,8 @@ Miranda 相关
 取消
 [Read message icon]
 已读消息图标
+[Status icon]
+状态图标
 [Protocols]
 协议
 [Error]
@@ -14527,6 +14969,8 @@ Miranda 相关
 照片
 [Video]
 视频
+[Link]
+链接
 [(Unknown contact)]
 (未知联系人)
 [Participants]
@@ -15172,24 +15616,62 @@ INI 版本：
 大部晴朗
 [Feel]
 体感
+[Forecast Day 1]
+天气预报第1天 
+[Forecast Day 2]
+天气预报第2天
+[Forecast Day 3]
+天气预报第3天
+[Forecast Day 4]
+天气预报第4天
+[Forecast Day 5]
+天气预报第5天
+[Forecast Day 6]
+天气预报第6天
+[Forecast Day 7]
+天气预报第7天
+[Forecast Day 8]
+天气预报第8天
+[Forecast Day 9]
+天气预报第9天
 [Heat Index]
 热度指数
 [Moon]
 月亮
+[Wind Direction]
+风向
+[Wind Speed]
+风速
 [N]
 北
+[W]
+西
+[S]
+南
 [E]
 东
 [NW]
 西北
 [NE]
 东北
+[SW]
+西南
+[SE]
+东南
 [NNW]
 西北偏北
 [NNE]
 东北偏北
+[SSW]
+西南偏南
+[SSE]
+东南偏南
 [ENE]
 东北偏东
+[WSW]
+西南偏南
+[WNW]
+西北偏北
 [ESE]
 东南偏东
 ;============================================================
@@ -15264,6 +15746,28 @@ INI 版本：
 后有雾
 [Fog]
 雾
+[Forecast Day 0]
+天气预报第0天
+[Forecast Day 1]
+天气预报第1天 
+[Forecast Day 2]
+天气预报第2天
+[Forecast Day 3]
+天气预报第3天
+[Forecast Day 4]
+天气预报第4天
+[Forecast Day 5]
+天气预报第5天
+[Forecast Day 6]
+天气预报第6天
+[Forecast Day 7]
+天气预报第7天
+[Forecast Day 8]
+天气预报第8天
+[Forecast Day 9]
+天气预报第9天
+[Forecast Update VAR]
+天气预报更新变量
 [Forecast Update]
 天气预报更新
 [Freezing Drizzle / Windy]
@@ -15438,10 +15942,92 @@ N/A
 雨 / 早有雪
 [Rain / Snow Late]
 雨 / 晚有雪
+[Rain / Snow Showers Early]
+雨 / 早有阵雪
+[Rain / Snow Showers Late]
+雨 / 晚有阵雪
+[Rain / Snow Showers]
+雨 / 阵雪
+[Rain / Snow]
+雨 / 雪
+[Rain / Thunder]
+雨 / 雷电
+[Rain / Wind Early]
+雨 / 早有风
+[Rain / Wind]
+雨 / 风
+[Rain And Snow]
+雨和雪
+[Rain Early]
+早有雨
+[Rain Late]
+晚有雨
+[Rain Shower]
+阵雨
+[Rain To Snow]
+雨转雪
+[Rain]
+雨
+[SE]
+东南
+[SSE]
+东南偏南
+[SSW]
+西南偏南
+[SW]
+西南
+[S]
+南
+[Sand]
+沙
+[Showers / Wind Late]
+阵雨 / 晚有风
+[Showers / Wind]
+阵雨 / 风
+[Showers Early]
+早有阵雨
+[Showers Late]
+晚有阵雨
+[Showers Rain]
+阵雨
+[Showers]
+阵雨
+[Snow / Wind Early]
+雪 / 早有风
+[Snow / Wind]
+雪 / 风
+[Snow / Windy]
+雪 / 有风
+[Snow Early]
+早有雪
+[Snow Shower / Wind]
+阵雪 / 风
+[Snow Shower And Windy]
+阵雪并有风
+[Snow Shower]
+阵雪
+[Snow Showers / Wind Early]
+阵雪 / 早有风
+[Snow Showers Early]
+早有阵雪
+[Snow Showers Late]
+晚有阵雪
+[Snow To Rain]
+雪转雨
+[Snow]
+雪
+[Sunny / Wind]
+晴朗 / 风
 [Sunny]
 阳光明媚
+[T-Showers Early]
+早有雷阵雨
+[T-Showers]
+雷阵雨
 [T-Storm]
 雷雨
+[T-Storms Early]
+早有雷雨
 [T-Storms Late]
 稍晚雷雨
 [T-Storms]
@@ -15450,6 +16036,22 @@ N/A
 雷雨
 [Thunderstorm]
 雷雨
+[Update VAR]
+更新变量
+[WNW]
+西北偏北
+[WSW]
+西南偏南
+[W]
+西
+[Wind Direction]
+风向
+[Wind Speed]
+风速
+[falling]
+落下
+[rising]
+升起
 ;============================================================
 ;  File: wundergrnd_intl.ini
 ;  Plugin: Weather
@@ -15466,12 +16068,24 @@ N/A
 东
 [Elevation]
 海拔
+[Falling]
+落下
 [Feel]
 体感
 [First Quarter]
 第一季度
 [Fog]
 雾
+[Forecast Day 1]
+天气预报第1天 
+[Forecast Day 2]
+天气预报第2天
+[Forecast Day 3]
+天气预报第3天
+[Forecast Day 4]
+天气预报第4天
+[Forecast Day 5]
+天气预报第5天
 [Friday]
 星期五
 [Full Moon]
@@ -15532,16 +16146,48 @@ N/A
 局部多云
 [Partly Sunny]
 局部晴朗
+[Rain]
+雨
+[Rising]
+升起
+[SE]
+东南
+[SSE]
+东南偏南
+[SSW]
+西南偏南
+[SW]
+西南
+[S]
+南
 [Saturday]
 星期六
+[Showers Rain]
+阵雨
+[Snow]
+雪
 [Sunday]
 星期天
+[Thunderstorm Rain]
+雷雨
+[Thunderstorm]
+雷雨
 [Thursday]
 星期四
 [Tuesday]
 星期二
+[WNW]
+西北偏北
+[WSW]
+西南偏南
+[W]
+西
 [Wednesday]
 星期三
+[Wind Direction]
+风向
+[Wind Speed]
+风速
 ;============================================================
 ;  File: yweather.ini
 ;  Plugin: Weather
@@ -15554,6 +16200,8 @@ N/A
 东
 [Feel]
 体感
+[Forecast Day 1]
+天气预报第1天 
 [Heat Index]
 热度指数
 [Mostly Clear]
@@ -15576,8 +16224,28 @@ N/A
 局部多云
 [Partly Sunny]
 局部晴朗
+[SE]
+东南
+[SSE]
+东南偏南
+[SSW]
+西南偏南
+[SW]
+西南
+[S]
+南
 [Sunny]
 晴朗
+[WNW]
+西北偏北
+[WSW]
+西南偏南
+[W]
+西
+[Wind Direction]
+风向
+[Wind Speed]
+风速
 #muuid {cd5427fb-5320-4f65-b4bf-86b7cf7b5087}
 ;============================================================
 ;  File: Webview.dll

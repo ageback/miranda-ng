@@ -59,7 +59,7 @@ URL
 [Upload File Manager]
 
 [File:]
-
+文件：
 [Completed:]
 
 [Speed:]
@@ -155,7 +155,7 @@ URL
 [Resume]
 恢复
 [FTP File]
-
+FTP 文件
 [FTP Server %d]
 
 [Upload file(s)]

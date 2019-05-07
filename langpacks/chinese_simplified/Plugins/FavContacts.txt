@@ -43,7 +43,7 @@
 [Show]
 显示
 [recent contacts]
-
+最近的联系人
 ;file \plugins\FavContacts\src\favlist.h
 [<no group>]
 

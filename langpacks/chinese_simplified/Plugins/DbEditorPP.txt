@@ -229,7 +229,7 @@
 
 ;file \plugins\DbEditorPP\src\findwindow.cpp
 [Result]
-
+结果
 [Contact]
 联系
 [Module]
@@ -252,7 +252,7 @@
 
 ;file \plugins\DbEditorPP\src\icons.cpp
 [Main icon]
-
+主图标
 [Closed module]
 
 [Open module]

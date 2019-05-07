@@ -78,7 +78,7 @@
 [Synchronizing...]
 
 [Select a file]
-
+选择一个文件
 [Save as]
 
 [Can't get a file size]

@@ -224,7 +224,7 @@
 [Broadcast icon]
 
 [Status icon]
-
+状态图标
 [Wall message icon]
 
 [Mark messages as read icon]
@@ -312,7 +312,7 @@
 [Video]
 视频
 [Link]
-
+链接
 [Document]
 
 [Wall post]

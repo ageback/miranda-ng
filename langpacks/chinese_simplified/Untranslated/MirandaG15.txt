@@ -13,7 +13,6 @@
 [Use the VolumeWheel to scroll up and down (might affect system performance)]
 [Use transition effects when changing screens]
 [Credits]
-[About]
 [Device:]
 [If the screensaver is active:]
 [Lock the screen]

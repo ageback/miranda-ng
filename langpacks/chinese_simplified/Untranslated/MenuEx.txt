@@ -22,7 +22,6 @@
 [Never visible]
 [Copy to Account]
 [Copy xStatus Message]
-[All]
 [Authorization]
 [Open ignore settings]
 [MenuItemEx]

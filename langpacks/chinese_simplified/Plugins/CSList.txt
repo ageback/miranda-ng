@@ -57,7 +57,7 @@
 [Main Menu]
 主菜单
 [Main Icon]
-
+主图标
 [Modify selected item]
 
 [Delete selected item]

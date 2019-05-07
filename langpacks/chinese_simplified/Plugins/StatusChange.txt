@@ -6,7 +6,7 @@
 ;  Authors: Angelo Luiz Tartari
 ;============================================================
 [Change status when you send/receive an event.]
-
+当你发送/接收事件时更改状态。
 ;file \plugins\StatusChange\res\resource.rc
 [Offline]
 离线
@@ -29,19 +29,19 @@
 [Out to lunch]
 外出吃饭
 [On events...]
-
+在事件...
 [Send]
 发送
 [Receive]
-
+接收
 [Message]
 消息
 [File transfer]
 文件传输
 [...change status to...]
-
+...更改状态为...
 [...if status is...]
-
+...如果状态是...
 ;file \plugins\StatusChange\src\main.cpp
 [Status Change]
 状态变更

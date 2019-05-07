@@ -39,7 +39,7 @@
 [Credits]
 
 [About]
-
+关于
 [Device:]
 
 [If the screensaver is active:]

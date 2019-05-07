@@ -28,7 +28,6 @@
 [Failed on file initialization]
 [Paused...]
 [Synchronizing...]
-[Select a file]
 [Save as]
 [Can't get a file size]
 [Canceled by user]

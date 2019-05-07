@@ -9,14 +9,14 @@
 
 ;file \plugins\IgnoreState\res\ignore.rc
 [Plugin settings]
-
+插件设置
 [Filtered events:]
 
 [Use Miranda ignore settings for All Contacts]
 
 ;file \plugins\IgnoreState\src\main.cpp
 [All]
-
+所有
 [Messages]
 消息
 [Files]

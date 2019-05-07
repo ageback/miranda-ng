@@ -251,7 +251,7 @@
 [Dialog]
 对话框
 [All]
-
+所有
 [None]
 无
 [Show menu item]
@@ -440,7 +440,7 @@
 [No]
 否
 [Abort]
-
+中断
 [Ignore]
 忽略
 [Error]
@@ -471,7 +471,7 @@
 [Contact (work)]
 
 [About]
-
+关于
 [Profile]
 配置文件
 [Notes]
@@ -608,7 +608,7 @@
 [Dialogs]
 对话框
 [Buttons]
-
+按钮
 ;file \plugins\UserInfoEx\src\mir_menuitems.cpp
 [Export/import contact]
 

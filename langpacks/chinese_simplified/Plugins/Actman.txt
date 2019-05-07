@@ -188,7 +188,7 @@
 [&Change]
 
 [Result]
-
+结果
 [Result type]
 
 [Free memory]
@@ -350,7 +350,7 @@
 [Info]
 信息
 [Buttons]
-
+按钮
 [OK, Cancel]
 
 [Abort, Retry, Ignore]
@@ -628,7 +628,7 @@
 [Ignore 'You were added']
 
 [Ignore Contact]
-
+忽略联系人
 [Unignore Contact]
 
 [restart in default profile or profile manager]

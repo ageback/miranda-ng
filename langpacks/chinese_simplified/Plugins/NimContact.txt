@@ -6,167 +6,167 @@
 ;  Authors: Jonathan Gordon
 ;============================================================
 [Non-IM Contact allows you to add 'contacts' that can act as shortcuts to other programs, or links to web pages.\r\nThe contacts name can be read from a text file (includes any ASCII file).\r\nThis plugin is a combination of Favorites and Text Reader plugins both made by me)]
-
+Non-IM 联系人允许你添加可以作为其他程序快捷方式，或链接到网页的“联系人”。\r\n联系人的名称可以从一个文本文件中读取（包括任何 ASCII 文件）。\r\n这个插件是由我制作的 Favorites 和 Text Reader 插件的组合
 ;file \protocols\Non-IM Contact\res\resource.rc
 [View/Edit Files]
-
+查看/编辑文件
 [Add File]
-
+添加文件
 [Add URL]
-
+添加 URL
 [Remove Selected File]
-
+移除选中的文件
 [file(#)]
-
+文件(#)
 [URL]
 URL
 [Update URL every]
-
+更新 URL 每隔
 [Intervals]
-
+间隔
 [If the protocol timer is disabled, web pages won't be updated]
-
+如果协议定时器被禁用，网页将不会更新
 [contact display info]
-
+联系人显示信息
 [Contacts display name]
-
+联系人显示名称
 [Contacts Tooltip]
-
+联系人工具提示
 [other settings]
-
+其他设置
 [Link]
-
+链接
 [Program parameters:]
-
+程序参数：
 [O&pen File]
-
+打开文件(&P)
 [O&pen Folder]
-
+打开文件夹(&P)
 [Link Settings]
 链接设置
 [Contact list settings]
-
+联系人列表设置
 [Group:]
 分组：
 [Status Icon]
-
+状态图标
 [Group\\Sub-Group]
-
+分组\\子分组
 [Timer Settings]
-
+定时器设置
 [Use Timer]
-
+使用定时器
 [Contact is always visible]
-
+联系人总是可见
 [Unless Non-IM Contacts protocol is OFFLINE]
-
+除非 Non-IM 联系人协议离线
 [Timer Intervals.  ]
-
+定时器间隔。 
 [Away as another status]
-
+离开作为另一种状态
 [Disable timer]
-
+禁用定时器
 [Timer interval (in seconds)]
-
+定时器间隔（以秒为单位）
 [This will take affect after Non-IM Contacts' status is changed]
-
+这将在 Non-IM 联系人状态更改后生效
 [Timer Options]
-
+定时器选项
 [String Maker]
-
+字符串制作器
 [&Test String]
-
+测试字符串(&T)
 [&Exit]
 退出(&E)
 [String to test]
-
+要测试的字符串
 [Returns....]
-
+返回....
 [line()]
-
+line()
 [start()]
-
+start()
 [end()]
-
+end()
 [wholeline()]
-
+wholeline()
 [csv()]
-
+csv()
 [file()]
-
+file()
 [filename()]
-
+filename()
 [Help]
 帮助
 [Copy / Export contact]
-
+复制 / 导出联系人
 [&Export Non-IM Contact]
-
+导出 Non-IM 联系人(&E)
 [Co&py Non-IM Contact]
-
+复制 Non-IM 联系人(&P)
 [Type one replace string per line in the format "original text,new text"]
-
+以 "原始文本,新文本" 格式为每行键入一个替换字符串
 [EXAMPLE: %fn1,%fn2]
-
+例如：%fn1,%fn2
 ;file \protocols\Non-IM Contact\src\contactinfo.cpp
 [Select Folder]
 选择文件夹
 [Non-IM Contact protocol timer is Disabled]
-
+Non-IM 联系人协议定时器被禁用
 [Timer intervals... Non-IM Contact Protocol timer is %d seconds]
-
+定时器间隔... Non-IM 协议定时器为 %d 秒
 [New Non-IM Contact]
-
+新 Non-IM 联系人
 ;file \protocols\Non-IM Contact\src\dialog.cpp
 [String replacing variables...\r\nThe following are all the valid variables that can be used. Refer to the wiki.miranda-ng.org for a proper explanation.\r\n\r\nfile(X)\t\t<- specifies the file to read from. MUST be followed by either start() or end() or wholeline()\r\nfilename(X)\t<- copies the filename of file X.\r\nstart(...)\t\t<- specifies where to start copying from.\r\nend(...)\t\t<- specifies where to stop copying.\r\nwholeline(line(...))\t<- specifies a whole line to copy\r\n\r\nstart() and end() explained\r\n.........................\r\nMUST start with line() followed by a number or a string inside " marks, OR csv(separatorX) variable. The number specifies which character in the line to start/end copying. The string specifies a string in the line to start/end copying.\r\n\r\ncsv(seperatorX) explained...\r\nSeperator is either "tab" or "space" or any SINGLE character. X is the Xth separator to pass before copying, (or to stop before).\r\n\r\nLastly the line(...) variable...\r\nInside the brackets must be either a number (to specify the line number), or a string inside " marks (to use the line with that string), or lastline(X). The X in lastline is the Xth line above the last line, i.e., lastline(1) will use the 2nd last line of the file. If searching for a line with "some words" you may put a + or - X after the closing ), i.e., line("some words")+3 to go 3 lines after the line with "some words".\r\n\r\nSome examples...\r\nfilename(0)    <- will display the filename of the 0th file\r\nfile(0)wholeline(line(0)))    <- will display the whole first line of the 0th file\r\nfile(0)wholeline(line("hello")-1)))    <- the wholeline above the first occurrence of "hello" in the file\r\nfile(0)start(line(lastline(1))csv(tab2))end(line(lastline())csv(tab4)))    <- starts at the 2nd last line of the file, from the 2nd tab variable, until the 4th tab variable in the last line (in the 0th file)\r\nfile(0)start(line("hello")+1"zzzz")end(line(6)17))    <- starts from the first occurrence of zzzz in the line after the first occurrence of hello, until the 17th character in the 6th line (starting from line 0) of the 0th file.\r\n]
-
+字符串替换变量...\r\n以下是可以使用的所有有效变量。有关正确的解释，请参阅wiki.miranda-ng.org。\r\n\r\nfile(X)\t\t<- 指定要读取的文件。 必须后跟 start() 或 end() 或 wholeline()\r\nfilename(X)\t<- 复制文件 X 的文件名。\r\nstart(...)\t\t<- 指定从哪里开始复制。\r\nend(...)\t\t<- 指定停止复制的位置。\r\nwholeline(line(...))\t<- 指定要复制的整行\r\n\r\nstart() 和 end() 解释\r\n.........................\r\n必须以 line() 开头，后面跟包含在"标记中的一个数字或一个字符串，或者 csv（separatorX）变量。该数字指定开始/结束复制行中的哪个字符。该字符串指定要开始/结束复制的行中的字符串。\r\n\r\ncsv(seperatorX) 解释...\r\n分隔符是 "制表符" 或 "空格" 或任何单个字符。X 是在复制之前传递（或在它之前停止）的第 X 个分隔符。\r\n\r\n最后是 line(...) 变量...\r\n在括号内部必须是一个数字（用于指定行号），或者一个 " 标记内部的字符串（和行一起使用的字符串），或者 lastline(X)。lastline 中的 X 是最后一行上方的第 X 行，例如：lastline(1) 将使用文件的倒数第二行。如果要搜索含有 "某些单词" 的行，你可以在右括号 ) 后面放一个 + 或 - X，例如：line("某些单词")+3 转到含有 "某些单词" 的行的之后第3行。\r\n\r\n一些例子...\r\nfilename(0)    <- 将显示第 0 个文件的文件名\r\nfile(0)wholeline(line(0)))    <- 将显示第 0 个文件的整个第一行\r\nfile(0)wholeline(line("hello")-1)))    <- 文件中第一次出现 "hello" 上方的整行\r\nfile(0)start(line(lastline(1))csv(tab2))end(line(lastline())csv(tab4)))    <- 开始于文件的倒数第2行，从第2个 tab 变量，直到最后一行（在第0个文件中）中的第4个 tab 变量\r\nfile(0)start(line("hello")+1"zzzz")end(line(6)17))    <- 从第1次出现 hello 之后的行中第1次出现 zzzz，直到第0个文件中的第6行（从第0行开始）中的第17个字符。\r\n
 [Contacts Display Info]
-
+联系人显示信息
 [Link and Contact list Settings]
-
+链接和联系人列表设置
 [Copy Contact]
-
+复制联系人
 [Files]
 文件
 [Edit Non-IM Contact "%s"]
-
+编辑 Non-IM 联系人 "%s"
 ;file \protocols\Non-IM Contact\src\files.cpp
 [Do you want to overwrite the contents of the file?\r\n\r\nPressing No will append these contacts to the end of the file.]
-
+你要覆盖文件的内容吗？\r\n\r\n点击否将追加这些联系人到文件的末尾。
 [File couldn't be opened]
-
+无法打开文件
 [File couldn't be opened,2]
-
+无法打开文件,2
 [line(%-3d) = | %s]
-
+line(%-3d) = | %s
 ;file \protocols\Non-IM Contact\src\http.cpp
 [Non-IM Contacts]
-
+Non-IM 联系人
 ;file \protocols\Non-IM Contact\src\main.cpp
 [Plugins]
 插件
 [Main Icon]
-
+主图标
 [Non-IM Contact]
-
+Non-IM 联系人
 [&Non-IM Contact]
-
+Non-IM 联系人(&N)
 [&Add Non-IM Contact]
-
+添加 Non-IM 联系人(&A)
 [&View/Edit Files]
-
+查看/编辑文件(&V)
 [&Export all Non-IM Contacts]
-
+导出所有Non-IM 联系人(&E)
 [&Import Non-IM Contacts]
-
+导入所有Non-IM 联系人(&I)
 [&String Maker]
-
+字符串制作器(&S)
 [E&dit Contact Settings]
-
+编辑联系人设置(&D)
 ;file \protocols\Non-IM Contact\src\namereplacing.cpp
 [%s - ERROR: no line specified or line not found (in %s)]
-
+%s - 错误：未指定行或未找到行（在%s中）
 [%s - ERROR: file couldn't be opened (in %s)]
-
+%s - 错误：无法打开文件（在%s中）
 [%s - ERROR: no file specified in settings (in %s)]
-
+%s - 错误：没有在设置中指定文件（在%s中）

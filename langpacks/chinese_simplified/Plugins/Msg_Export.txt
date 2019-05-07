@@ -174,7 +174,7 @@ UIN
 [Homepage]
 主页
 [About]
-
+关于
 [      History for]
 
 [User]

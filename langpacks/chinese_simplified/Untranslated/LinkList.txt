@@ -30,7 +30,6 @@
 [&Web addresses only]
 [&Mail addresses only]
 [&Clear search results]
-[link]
 [Open in new window]
 [Show message]
 [History Linklist]

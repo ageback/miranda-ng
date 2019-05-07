@@ -6,33 +6,33 @@
 ;  Authors: ValeraVi, Kildor
 ;============================================================
 [Adds a menu item in main menu, which open the window with list of last used contacts names, sorted in order from most recent to least.]
-
+在主菜单中添加一个菜单项，该菜单项打开窗口，其中包含最近使用的联系人姓名列表，按从最近到最少的顺序排序。
 ;file \plugins\RecentContacts\res\resource.rc
 [Recent Contacts]
-
+最近的联系人
 [Plugin settings]
-
+插件设置
 [Number of shown contacts:\n (0 to show all)]
-
+显示的联系人数量：\n（0表示全部）
 [Format of date and time\n(Look to readme for placeholders help)]
-
+日期和时间格式\n（寻找占位符帮助的自述文件）
 [Hide offline contacts]
 隐藏离线联系人 
 [Resize window according to contact list]
-
+根据联系人列表调整窗口大小
 ;file \plugins\RecentContacts\src\options.cpp
 [Contacts]
 联系人
 ;file \plugins\RecentContacts\src\RecentContacts.cpp
 [Main icon]
-
+主图标
 [Contact]
 联系
 [Toggle Ignore]
-
+切换忽略
 [Ignore Contact]
-
+忽略联系人
 [Show Contact]
-
+显示联系人
 [Show Recent Contacts]
-
+显示最近的联系人
