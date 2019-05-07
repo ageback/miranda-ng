@@ -83,7 +83,6 @@
 [Play/Pause]
 [Oops! BASS error]
 [Mute with Miranda]
-[Stop]
 [Play]
 [Volume]
 [Device list]

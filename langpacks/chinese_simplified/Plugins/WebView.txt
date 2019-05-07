@@ -177,7 +177,7 @@
 [Co&py all]
 复制所有(&P)
 [&Select all]
-
+选择所有(&S)
 [C&lear all]
 
 ;file \protocols\WebView\src\main.cpp

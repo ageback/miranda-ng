@@ -26,7 +26,6 @@
 [Custom schema: you can choose what to import.]
 [Check duplicates]
 [New contacts && groups]
-[System history]
 [Select items to import:]
 [Only since:]
 [Choose appropriate accounts for import]

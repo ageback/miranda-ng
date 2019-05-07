@@ -95,7 +95,7 @@
 [Revive]
 
 [Stop]
-
+停止
 [Main]
 主
 [Events]

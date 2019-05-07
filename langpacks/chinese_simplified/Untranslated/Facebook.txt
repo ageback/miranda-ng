@@ -144,7 +144,6 @@
 [Show 'Share status' window]
 [Notification]
 [Newsfeed event]
-[Other event]
 [Friendship event]
 [Ticker event]
 [Message read: %s by %s]

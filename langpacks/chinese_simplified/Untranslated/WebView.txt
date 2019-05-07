@@ -56,7 +56,6 @@
 [Right click action]
 [C&ut]
 [&Paste]
-[&Select all]
 [C&lear all]
 [Alert event]
 [Update all Webview sites]

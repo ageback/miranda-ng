@@ -65,7 +65,7 @@
 [New contacts && groups]
 
 [System history]
-
+系统历史
 [Select items to import:]
 
 [Incoming]

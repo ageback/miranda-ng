@@ -357,7 +357,7 @@
 [Newsfeed event]
 
 [Other event]
-
+其他事件
 [Friendship event]
 
 [Ticker event]

@@ -50,7 +50,7 @@
 [Message]
 消息
 [Do you really want to delete selected item?]
-
+你真的要删除选中的项吗？
 [Do you want old database entries to be deleted after Import?]
 
 ;file \plugins\CSList\src\stdafx.h

@@ -182,7 +182,7 @@
 [Advanced]
 高级
 [Stop]
-
+停止
 [Play]
 
 [Frame background]

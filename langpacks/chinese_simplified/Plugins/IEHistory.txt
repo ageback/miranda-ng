@@ -50,7 +50,7 @@
 下
 ;file \plugins\IEHistory\src\dlgHandlers.cpp
 [System History]
-
+系统历史
 [Out of a total of]
 
 [You can't close the window now, wait for all events to load.]
@@ -73,4 +73,4 @@
 [View &history]
 查看历史(&H)
 [&System History]
-
+系统历史(&S)

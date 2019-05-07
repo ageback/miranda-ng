@@ -31,7 +31,6 @@
 [Substitutions]
 [Separator]
 [Smileys support]
-[Enable SmileyAdd support]
 [Resize smileys]
 [Replace only isolated smileys]
 [Advanced options]

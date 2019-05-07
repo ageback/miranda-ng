@@ -37,7 +37,7 @@
 [New messages on top]
 
 [Show event icons]
-
+显示事件图标
 [Show timestamps]
 显示时间戳
 [Show names]
@@ -322,9 +322,9 @@
 [Invalid event number]
 
 [Incoming events]
-
+传入事件
 [Outgoing events]
-
+传出事件
 [File does not exist. Enter correct file path.]
 
 [Invalid file]
@@ -467,5 +467,5 @@
 [You have reached the end of the group.]
 
 [You have reached the end of the history.]
-
+你已到达了历史的结尾。
 ;file \plugins\BasicHistory\src\TxtExport.cpp

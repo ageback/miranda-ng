@@ -25,7 +25,7 @@
 [Cancel]
 取消
 [&Select All]
-
+选择所有(&S)
 [Received contacts]
 
 [Add to &group:]

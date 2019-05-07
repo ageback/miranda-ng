@@ -109,7 +109,7 @@
 [Smileys support]
 
 [Enable SmileyAdd support]
-
+启用 SmileyAdd 支持
 [Use protocol smileys]
 使用协议表情
 [Resize smileys]

@@ -13,7 +13,6 @@
 [This field doesn't accept string longer than %d characters. The string will be truncated.]
 [Regular statuses]
 [Title]
-[Do you really want to delete selected item?]
 [Do you want old database entries to be deleted after Import?]
 [Modify selected item]
 [Delete selected item]

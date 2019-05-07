@@ -11,7 +11,7 @@
 [Search and replace]
 
 [Search for]
-
+搜索
 [Exact match]
 
 [&Search]
@@ -239,7 +239,7 @@
 [Enter a string to search the database for]
 
 [Stop]
-
+停止
 [Replaced]
 
 [Deleted]
@@ -247,7 +247,7 @@
 [Found]
 
 [Searching...]
-
+正在搜索...
 [Finished. Items found: %d / replaced: %d / deleted: %d]
 
 ;file \plugins\DbEditorPP\src\icons.cpp

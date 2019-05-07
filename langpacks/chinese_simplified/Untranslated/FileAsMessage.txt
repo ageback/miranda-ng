@@ -35,6 +35,5 @@
 [Play]
 [Pause]
 [Revive]
-[Stop]
 [File As Message...]
 [File As Message]
