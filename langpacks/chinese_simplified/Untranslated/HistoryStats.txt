@@ -72,8 +72,6 @@
 [Outgoing characters]
 [Incoming chats]
 [Outgoing chats]
-[day]
-[week]
 [month]
 [#{data} per #{unit}]
 [In/out]

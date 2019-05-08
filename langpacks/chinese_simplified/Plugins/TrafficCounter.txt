@@ -80,9 +80,9 @@
 [Hide now]
 
 [Day]
-
+天
 [Week]
-
+星期
 [Month]
 
 [Year]
@@ -109,11 +109,11 @@
 [Hourly]
 
 [Daily]
-
+每天
 [Weekly]
-
+每周
 [Monthly]
-
+每月
 [Yearly]
 
 [Period]
@@ -134,7 +134,7 @@
 
 ;file \plugins\TrafficCounter\src\TrafficCounter.cpp
 [Font]
-
+字体
 [Show/Hide frame]
 
 [Hide traffic window]

@@ -30,7 +30,6 @@
 [month]
 [name of month]
 [short name of month]
-[day]
 [weekday (full)]
 [weekday (abbreviated)]
 [hours (24)]

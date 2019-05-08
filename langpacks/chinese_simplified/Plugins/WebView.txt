@@ -169,11 +169,11 @@
 [&Copy]
 复制(&C)
 [C&ut]
-
+剪切(&U)
 [&Delete]
 删除(&D)
 [&Paste]
-
+粘贴(&P)
 [Co&py all]
 复制所有(&P)
 [&Select all]

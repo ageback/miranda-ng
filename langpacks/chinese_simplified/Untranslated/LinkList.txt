@@ -18,7 +18,6 @@
 [Show whole message on 'mouse over' event]
 [Save window position individually for each contact]
 [Show...]
-[Date]
 [Parting line]
 [Direction]
 [Type]

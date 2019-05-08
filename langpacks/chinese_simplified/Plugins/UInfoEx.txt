@@ -191,7 +191,7 @@
 [day(s)]
 
 [Reminder]
-
+提醒
 [Popup this dialog on a contact's anniversary]
 
 [Icons]
@@ -373,7 +373,7 @@
 [Show Items:]
 
 [Reset to defaults]
-
+重置为默认
 ;file \plugins\UserInfoEx\src\classPsTreeItem.cpp
 [Creating unique name for a page failed with %d and error code %d]
 
@@ -421,7 +421,7 @@
 [Anniversary]
 
 [Date]
-
+日期
 [All contacts]
 所有联系人
 [Birthdays only]
@@ -1148,7 +1148,7 @@
 [Backing up and syncing all birthdays complete!]
 
 [Reminders]
-
+提醒
 [Birthday reminder]
 
 [Birthday reminder: it's coming]

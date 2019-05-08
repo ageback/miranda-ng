@@ -117,7 +117,7 @@
 [Day of week]
 
 [Day]
-
+天
 [Export to]
 
 [Compress output files]
@@ -360,11 +360,11 @@
 [At finish]
 
 [Daily]
-
+每天
 [Weekly]
-
+每周
 [Monthly]
-
+每月
 [Delta time (minutes)]
 
 [Delta time (hours)]

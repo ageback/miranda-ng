@@ -6,245 +6,245 @@
 ;  Authors: Joe Kucera, Lubomir Kolev Ivanov, Georg Fischer
 ;============================================================
 [Sticky Notes & Reminders Implementation for Miranda NG.]
-
+Miranda NG 的固定便签和提醒实现。
 ;file \plugins\NotesAndReminders\res\resource.rc
 [Default Note Size]
-
+默认笔记大小
 [Width (Pixels)]
-
+宽（像素）
 [Height (Pixels)]
-
+高（像素） 
 [Notes Appearance]
-
+笔记外观
 [Show Scrollbars]
-
+显示滚动条
 [Show Buttons]
-
+显示按钮
 [Title Date]
-
+标题日期
 [Title Time]
-
+标题时间
 [Startup options]
-
+启动选项
 [Hide notes at startup]
-
+启动时隐藏笔记
 [Add Contact list menu items]
-
+添加联系人列表菜单项
 [(Requires Miranda restart)]
-
+（需要重启 Miranda）
 [Reminder options]
-
+提醒选项
 [Add Reminder closes dialog]
-
+添加提醒后关闭对话框
 [Use MCI to play alert sounds]
-
+使用 MCI 播放警报声音
 [Note transparency]
-
+笔记透明度
 [Send Reminders through E-mail/SMS:]
-
+通过电子邮件/短信发送提醒：
 [Open links with this program instead:]
-
+改为使用此程序打开链接：
 [Reset to defaults]
-
+重置为默认
 [(Using MCI allows different sounds to be played simultaneously, may not be needed or desired when a custom sound plugin is installed.)]
-
+（使用MCI允许同时播放不同的声音，安装自定义声音插件时可能不需要。）
 [Add Reminder]
-
+添加提醒
 [Date]
-
+日期
 [Time]
 时间
 [Repeat each day]
-
+每天重复
 [Reminder Note:]
-
+提醒笔记：
 [None]
 无
 [Daily]
-
+每天
 [Weekly]
-
+每周
 [Monthly]
-
+每月
 [Repeat Alert Sound]
-
+重复警报声音
 [Use Sound]
-
+使用声音
 [&Add Reminder]
-
+添加提醒(&A)
 [&Close]
 关闭(&C)
 [&View Reminders]
-
+查看提醒(&V)
 [Reminder]
-
+提醒
 [After:]
-
+此后：
 [On Time && Date:]
-
+在时间 && 日期：
 [&Remind Again]
-
+再次提醒(&)
 [&Create Note]
-
+创建笔记(&C)
 [&Dismiss]
-
+解除(&D)
 [Reminders]
-
+提醒
 [Add New]
-
+新增
 [Edi&t Reminder]
-
+编辑提醒(&T)
 [New &Reminder]
-
+新提醒(&R)
 [&Delete Reminder]
-
+删除提醒(&D)
 [D&elete All Reminders]
-
+删除所有提醒(&E)
 [&Hide Note]
-
+隐藏笔记(&H)
 [&Always On Top]
-
+总在顶层(&A)
 [&New Note]
-
+新笔记(&N)
 [&Delete Note]
-
+删除笔记(&D)
 [Appearance]
-出现
+外观
 [Background Color]
 背景色
 [Custom...]
-
+自定义...
 [Reset]
 重置
 [Text Color]
 文字颜色
 [Font]
-
+字体
 [Paste Title]
-
+粘贴标题
 [Reset Title]
-
+重置标题
 [Undo]
 撤销
 [&Copy]
 复制(&C)
 [&Paste]
-
+粘贴(&P)
 [C&ut]
-
+剪切(&U)
 [C&lear]
-
+清除(&L)
 [&View Notes]
-
+查看笔记(&V)
 [&Bring All To Front]
-
+全部带到前面
 [Edi&t Note]
-
+编辑笔记(&T)
 [&Visible]
 可见(&V)
 [Always &On Top]
-
+总在顶层(&O)
 [Delete &All Notes]
-
+删除所有笔记(&A)
 [&Show / Hide Notes]
-
+显示 / 隐藏笔记(&S)
 ;file \plugins\NotesAndReminders\src\hotkeys.cpp
 [New Note]
-
+新笔记
 [Toggle Notes Visibility]
-
+切换笔记可见性
 [Bring All Notes to Front]
-
+所有笔记带到前面
 [New Reminder]
-
+新提醒
 ;file \plugins\NotesAndReminders\src\main.cpp
 [Delete All Notes]
-
+删除所有笔记
 [Show/Hide Notes]
-
+显示/隐藏笔记
 [On Top Caption Icon]
-
+在顶层标题图标上
 [Delete All Reminders]
-
+删除所有提醒
 [View Reminders]
-
+查看提醒
 [Not on Top Caption Icon]
-
+不在顶层标题图标上
 [Hide Note Icon]
-
+隐藏笔记图标
 [Remove Note Icon]
-
+移除笔记图标
 [Reminder Icon]
-
+提醒图标
 [Bring All to Front]
-
+全部带到前面
 [Play Sound Icon]
-
+播放声音图标
 [View Notes]
-
+查看笔记
 [Sticky Notes]
-
+固定笔记
 [Add New Note]
-
+添加新笔记
 [Add New Reminder]
-
+添加新提醒
 [Notes && Reminders]
-
+笔记 && 提醒
 [New &Note]
-
+新笔记(&N)
 [Vie&w Notes]
-
+查看笔记(&W)
 [&Delete All Notes]
-
+删除所有笔记(&D)
 [&Bring All to Front]
-
+全部带到前面(&B)
 [Miranda could not load the Notes & Reminders plugin, Msftedit.dll is missing. If you are using WINE, please make sure you have Msftedit.dll installed. Press 'Yes' to continue loading Miranda.]
-
+Miranda无法加载 Notes & Reminders 插件，缺少Msftedit.dll。如果您使用的是WINE，请确保安装了Msftedit.dll。按'是'继续加载 Miranda。
 [Alerts]
 警告
 [Reminder triggered]
-
+提醒触发器
 [Reminder triggered (Alternative 1)]
-
+提醒触发器（备选方案1）
 [Reminder triggered (Alternative 2)]
-
+提醒触发器（备选方案2） 
 ;file \plugins\NotesAndReminders\src\notes.cpp
 [Black]
-
+黑色
 [Maroon]
-
+栗色
 [Green]
-
+绿色
 [Olive]
-
+黄褐色
 [Navy]
-
+深蓝色
 [Purple]
-
+Purple
 [Teal]
-
+深青色
 [Gray]
-
+灰色
 [Silver]
-
+银色
 [Red]
-
+红色
 [Orange]
-
+橙色
 [Lime]
-
+绿黄色
 [Yellow]
-
+黄色
 [Blue]
-
+蓝色
 [Fuchsia]
-
+紫红色
 [Aqua]
-
+水色
 [White]
-
+白色
 [Are you sure you want to delete this note?]
-
+你确定要删除这个笔记吗?
 [Visible]
 可见
 [Top]
@@ -252,22 +252,22 @@
 [Notes]
 笔记
 [Note text]
-注意文字
+笔记文字
 [Date/Title]
-
+日期/标题
 [Are you sure you want to delete all notes?]
-
+你确定你要删除所有笔记吗?
 ;file \plugins\NotesAndReminders\src\options.cpp
 [Sticky Note Caption]
-
+固定笔记标题
 [Sticky Note Background Color]
-
+固定笔记背景色
 [Sticky Note Body]
-
+固定笔记体
 [Executable Files\0*.exe\0All Files\0*.*\0\0]
-
+可执行文件\0*.exe\0所有文件\0*.*\0\0
 [Select Executable]
-
+选择可执行文件
 [Plugins]
 插件
 ;file \plugins\NotesAndReminders\src\reminders.cpp
@@ -276,41 +276,41 @@
 [Hours]
 小时
 [The specified time is invalid due to begin of daylight saving (summer time).]
-
+由于夏令时开始（夏令时），指定的时间无效。
 [The specified time is invalid.]
-
+指定的时间无效。
 [Hour]
 小时
 [Day]
-
+天
 [Days]
 天
 [Week]
-
+星期
 [The specified time offset is invalid.]
-
+指定的时间偏移无效。
 [&Update Reminder]
-
+更新提醒(&U)
 [Every]
 每
 [Seconds]
 秒
 [Never]
-
+从不
 [Default]
 默认
 [Alternative 1]
-
+备选方案1
 [Alternative 2]
-
+备选方案2 
 [Reminder text]
-
+提醒文字
 [Date of activation]
-
+激活日期
 [Are you sure you want to delete all reminders?]
-
+你确定你要删除所有提醒吗？
 [Are you sure you want to delete this reminder?]
-
+你确定你要删除这个提醒吗？ 
 ;file \plugins\NotesAndReminders\src\stdafx.h
 [Notes & Reminders]
 笔记 & 提醒

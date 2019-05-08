@@ -21,7 +21,7 @@
 [Manual]
 
 [Never]
-
+从不
 [End sessions on window close]
 
 [End sessions when contacts go offline]

@@ -191,9 +191,9 @@
 [Outgoing chats]
 
 [day]
-
+天
 [week]
-
+星期
 [month]
 
 [#{data} per #{unit}]

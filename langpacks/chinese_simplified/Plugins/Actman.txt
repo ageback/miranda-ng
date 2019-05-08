@@ -446,7 +446,7 @@
 [Time]
 时间
 [Date]
-
+日期
 [Repeat]
 
 [Repeat, times]

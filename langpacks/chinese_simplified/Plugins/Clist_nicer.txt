@@ -445,7 +445,7 @@
 [Message frequency]
 
 [Never]
-
+从不
 [Always]
 总是
 [For RTL only]

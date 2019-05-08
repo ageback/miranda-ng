@@ -185,7 +185,6 @@
 [Starting after]
 [Starting from]
 [Start immediately]
-[Date]
 [Repeat]
 [Repeat, times]
 [Interval]

@@ -89,7 +89,7 @@
 [and mark them unread after approval]
 
 [Reset to defaults]
-
+重置为默认
 [Enable popup notifications]
 
 [Appearance]

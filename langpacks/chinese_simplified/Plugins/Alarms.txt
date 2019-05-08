@@ -79,9 +79,9 @@
 [Once]
 
 [Weekly]
-
+每周
 [Daily]
-
+每天
 [Weekdays]
 
 [Yearly]
@@ -113,7 +113,7 @@
 [Sun]
 
 [Monthly]
-
+每月
 [Dismiss]
 
 [Snooze]

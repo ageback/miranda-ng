@@ -54,8 +54,6 @@
 [Open data display window]
 [Open web page]
 [Right click action]
-[C&ut]
-[&Paste]
 [C&lear all]
 [Alert event]
 [Update all Webview sites]

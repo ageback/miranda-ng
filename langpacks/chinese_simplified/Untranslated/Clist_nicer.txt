@@ -88,7 +88,6 @@
 [Automatic (RTL)]
 [Nothing]
 [Message frequency]
-[Never]
 [For RTL only]
 [RTL TEXT only]
 [When space allows it]

@@ -224,7 +224,7 @@
 [Size]
 大小
 [Date]
-
+日期
 [Do you really want to delete %d selected mails?]
 
 [Delete confirmation]

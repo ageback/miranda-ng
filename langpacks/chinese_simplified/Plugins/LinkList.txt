@@ -63,7 +63,7 @@
 [Show...]
 
 [Date]
-
+日期
 [Parting line]
 
 [Timestamp]

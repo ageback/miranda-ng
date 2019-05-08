@@ -36,7 +36,6 @@
 [Send challenge on authorization request:]
 [Keep blocked messages in contact history]
 [and mark them unread after approval]
-[Reset to defaults]
 [Enable popup notifications]
 [Foreground]
 [Timeout (sec)]

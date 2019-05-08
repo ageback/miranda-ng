@@ -109,7 +109,7 @@
 [short name of month]
 
 [day]
-
+天
 [weekday (full)]
 
 [weekday (abbreviated)]

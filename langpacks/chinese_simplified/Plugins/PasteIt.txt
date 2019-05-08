@@ -151,7 +151,7 @@
 [Paste expire date]
 
 [Never]
-
+从不
 [10 minutes]
 
 [1 hour]

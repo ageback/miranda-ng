@@ -4,7 +4,6 @@
 [Default Policy]
 [Opportunistic]
 [Manual]
-[Never]
 [End sessions on window close]
 [End sessions when contacts go offline]
 [Prefix encrypted IMs:]
