@@ -26,7 +26,6 @@
 [Month]
 [Year]
 [Traffic counter]
-[Statistics]
 [KB]
 [Adaptive]
 [Hourly]

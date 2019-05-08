@@ -18,5 +18,4 @@
 [Contact name]
 [Selected contact name (color)]
 [Selected second line (color)]
-[Selected background]
 [Show favorite contacts]

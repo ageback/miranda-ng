@@ -70,6 +70,6 @@
 [Background]
 背景
 [Selected background]
-
+选中的背景
 [Show favorite contacts]
 

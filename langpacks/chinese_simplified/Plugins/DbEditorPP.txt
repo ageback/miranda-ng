@@ -109,7 +109,7 @@
 [&View all]
 
 [&Delete all]
-
+删除所有(&D)
 [&Export]
 
 [Entire &database]

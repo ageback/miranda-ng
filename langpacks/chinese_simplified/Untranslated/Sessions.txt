@@ -23,7 +23,6 @@
 [&Save Session]
 [Enter session name:]
 [adv.]
-[Sessions Manager]
 [Save your current session?]
 [Sessions]
 [Favorite Session]

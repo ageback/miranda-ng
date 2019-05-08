@@ -604,7 +604,7 @@
 
 ;file \plugins\UserInfoEx\src\mir_icolib.h
 [Extended user info]
-
+扩展用户信息
 [Dialogs]
 对话框
 [Buttons]

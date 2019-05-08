@@ -3211,6 +3211,8 @@ PNG位图
 删除分组
 [Options]
 选项
+[Filters]
+过滤器
 [Fonts and colors]
 字体和颜色
 [Icons]
@@ -5102,6 +5104,8 @@ Angeli-Ka（绘图），FYR（模板）
 版本：
 [Delete]
 删除
+[Filters]
+过滤器
 [Move down]
 下移
 [Move up]
@@ -5125,6 +5129,12 @@ Angeli-Ka（绘图），FYR（模板）
 ;  Version: 0.0.7.4
 ;  Authors: Bio
 ;============================================================
+[Show/Hide Console]
+显示/隐藏控制台
+[Hide Console]
+隐藏控制台
+[Show Console]
+显示控制台
 [Services]
 服务
 [Text]
@@ -5174,6 +5184,8 @@ Angeli-Ka（绘图），FYR（模板）
 事件
 [Incoming Contacts]
 传入联系人
+[Outgoing Contacts]
+传出联系人
 [Nick]
 昵称
 [Add Contact Permanently to List]
@@ -5371,6 +5383,8 @@ GnuPG插件 - 选择公钥
 名字
 [E&xit]
 退出(&X)
+[&Delete all]
+删除所有(&D)
 [&Options]
 选项(&O)
 [&Edit]
@@ -5672,6 +5686,8 @@ Miranda NG [%s] 数据库备份
 第二行
 [Background]
 背景
+[Selected background]
+选中的背景
 #muuid {34b5a402-1b79-4246-b041-43d0b590ae2c}
 ;============================================================
 ;  File: FileAsMessage.dll
@@ -6744,6 +6760,10 @@ History++ 警告
 传出消息
 [Global]
 全局
+[Create statistics]
+创建统计
+[Show statistics]
+显示统计
 [Move down]
 下移
 [Move up]
@@ -6754,8 +6774,12 @@ History++ 警告
 杂项
 [Contact menu]
 联系人菜单
+[Statistics]
+统计
 [Configure...]
 配置...
+[Configure statistics...]
+配置统计...
 [History]
 历史
 [(Unknown)]
@@ -7009,6 +7033,8 @@ History++ 警告
 复制
 [New account]
 新帐户
+[&Import...]
+导入(&I)...
 [All Files]
 所有文件
 #muuid {92382b4d-5572-48a0-b0b9-1336a601d689}
@@ -10354,6 +10380,8 @@ Non-IM 联系人(&N)
 秒
 [Default]
 默认
+[Notes & Reminders]
+笔记 & 提醒
 #muuid {e92874ec-594a-4a2f-bded-c0be8b5a45d1}
 ;============================================================
 ;  File: NotifyAnything.dll
@@ -12135,6 +12163,8 @@ Upload Pie（1星期）
 取消(&C)
 [Save and Close]
 保存并关闭
+[Sessions Manager]
+会话管理器
 [Cancel]
 取消
 [Close Session]
@@ -15163,6 +15193,8 @@ Jabber 活动
 服务
 [Options]
 选项
+[Statistics]
+统计
 [Popups]
 弹出窗口
 [Bytes]
@@ -15402,6 +15434,8 @@ Jabber 活动
 编辑
 [Search]
 搜索
+[Extended user info]
+扩展用户信息
 [Dialogs]
 对话框
 [Buttons]

@@ -94,7 +94,7 @@
 [Traffic counter]
 
 [Statistics]
-
+统计
 [Popups]
 弹出窗口
 ;file \plugins\TrafficCounter\src\statistics.cpp

@@ -64,7 +64,6 @@
 [Added %d contacts, %d groups and %d events.]
 [Skipped %d contacts.]
 [Skipped %d duplicates and %d filtered events.]
-[&Import...]
 [The given file does not exist. Please check that you have entered the name correctly.]
 [Miranda Import]
 [Miranda NG database]

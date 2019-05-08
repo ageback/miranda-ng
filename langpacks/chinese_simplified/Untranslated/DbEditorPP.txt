@@ -41,7 +41,6 @@
 [&Delete module]
 [&Watches]
 [&View all]
-[&Delete all]
 [&Export]
 [Entire &database]
 [All &settings]

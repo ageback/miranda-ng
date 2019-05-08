@@ -71,7 +71,7 @@
 [adv.]
 
 [Sessions Manager]
-
+会话管理器
 [Cancel]
 取消
 [Save your current session?]

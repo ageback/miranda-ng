@@ -217,7 +217,7 @@
 [Options]
 选项
 [Filters]
-
+过滤器
 [Fonts and colors]
 字体和颜色
 [Icons]

@@ -58,7 +58,7 @@
 [Incoming Contacts]
 传入联系人
 [Outgoing Contacts]
-
+传出联系人
 ;file \plugins\ContactsPlus\src\receive.cpp
 [Nick]
 昵称

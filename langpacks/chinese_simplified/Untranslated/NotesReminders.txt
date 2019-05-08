@@ -125,4 +125,3 @@
 [Date of activation]
 [Are you sure you want to delete all reminders?]
 [Are you sure you want to delete this reminder?]
-[Notes & Reminders]

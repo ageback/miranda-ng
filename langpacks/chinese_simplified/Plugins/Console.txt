@@ -28,11 +28,11 @@
 
 ;file \plugins\Console\src\Console.cpp
 [Show/Hide Console]
-
+显示/隐藏控制台
 [Hide Console]
-
+隐藏控制台
 [Show Console]
-
+显示控制台
 [Scrolling (Ctrl+Q)]
 
 [Pause logging (Ctrl+P)]

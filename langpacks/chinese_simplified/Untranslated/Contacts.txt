@@ -6,7 +6,6 @@
 [&Details]
 [Contacts send error]
 [Contacts received from]
-[Outgoing Contacts]
 [First Name]
 [Last Name]
 [Contacts from]

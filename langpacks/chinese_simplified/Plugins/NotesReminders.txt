@@ -313,4 +313,4 @@
 
 ;file \plugins\NotesAndReminders\src\stdafx.h
 [Notes & Reminders]
-
+笔记 & 提醒
