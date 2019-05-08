@@ -59,7 +59,7 @@
 [Default Action]
 
 [Delete All]
-
+删除全部
 [*** Default Action ***]
 
 [*** System History ***]

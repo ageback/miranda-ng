@@ -149,7 +149,7 @@
 [No messages found!\nPlease change current filter options.]
 
 [RTF file]
-
+RTF 文件
 [All files]
 所有文件
 [Save RTF File]

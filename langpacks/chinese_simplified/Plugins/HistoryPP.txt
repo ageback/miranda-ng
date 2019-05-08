@@ -174,21 +174,21 @@ History++ 导出
 [Preparing search...]
 正在准备搜索...
 [Searching... %.0n items in %d contacts found]
-
+正在搜索... 在 %d 个联系人中找到了 %.0n 项
 [Enter the history password to search.]
-
+输入历史密码进行搜索。
 [Please wait while closing the window...]
-
+正在关闭窗口，请等待...
 [Partial History [%s] - [%s]]
-
+部分历史 [%s] - [%s]
 [Delete &Bookmark]
-
+删除书签(&B)
 [Remove &Bookmark]
-
+移除书签(&B)
 [Ready to search]
-
+搜索就绪
 [Click Search button to start]
-
+点击"搜索"按钮来开始
 [From %s]
 从 %s
 [To %s]
@@ -242,427 +242,427 @@ History++ 搜索
 [Disable &Processing]
 禁止处理(&P)
 [Export as &HTML...]
-
+导出为 &HTML...
 [Export as &XML...]
-
+导出为 &XML...
 [Export as &RTF...]
-
+导出为 &RTF...
 [Export as &mContacts...]
-
+导出为 &mContacts...
 [Export as &Text...]
-
+导出为文本(&T)...
 [Empty history...]
-
+清空历史...
 [Text direction]
-
+文字方向
 [ANSI Encoding]
-
+ANSI 编码
 [Password protection...]
-
+密码保护...
 [&Customize...]
-
+自定义(&C)...
 [Save...]
-
+保存...
 [%.0n items in history]
-
+历史中有 %.0n 项
 [Full History [%s] - [%s]]
-
+完整历史 [%s] - [%s]
 [Phrase not found]
-
+未找到短语
 [Continued from the top]
 从顶部继续
 [Continued from the bottom]
 从底部继续
 [Search: %s (F3 to find next)]
-
+搜索：%s（F3 查找下一个）
 [%d event]
 %d 事件
 [%0.n events (%s)]
-
+%0.n 事件（%s）
 [Enable &Processing]
-
+启用处理(&P)
 [Do you really want to delete ALL items (%.0f) for this contact?]
-
+你真的想要删除关于此联系人的所有项目（%.0f）吗？
 [Note: It can take several minutes for large history.]
-
+注意：对于大的历史可能需要几分钟。
 [Empty History]
 空历史
 [Search Up (Ctrl+Up)]
-
+向上搜索（Ctrl+上）
 [Search Down (Ctrl+Down)]
-
+向下搜索（Ctrl+下） 
 [HTML file (*.html; *.htm)|*.html;*.htm]
-
+HTML 文件 (*.html; *.htm)|*.html;*.htm
 [XML file (*.xml)|*.xml]
-
+XML 文件 (*.xml)|*.xml
 [RTF file (*.rtf)|*.rtf]
-
+RTF 文件 (*.rtf)|*.rtf
 [Unicode text file (*.txt)|*.txt]
-
+Unicode 文本文件 (*.txt)|*.txt
 [Text file (*.txt)|*.txt]
-
+文本文件 (*.txt)|*.txt
 [All files (*.*)|*.*]
-
+所有文件 (*.*)|*.*
 [Conversation started at %s]
-
+对话开始于 %s
 [Remove bookmark]
-
+移除书签
 [Bookmark]
-
+书签
 [Remove Bookmark]
-
+移除书签 
 [Set Bookmark]
-
+设置书签
 [Hide headers]
-
+隐藏头部
 [Outgoing file transfer: %s]
-
+传出文件传输：%s
 [Incoming file transfer: %s]
-
+传入文件传输：%s
 [Authorization request by %s (%s%d): %s]
-
+%s的授权请求（%s%d）：%s
 [You were added by %s (%s%d)]
-
+你被%s（%s%d）添加了
 [Outgoing contacts: %s]
-
+传出联系人：%s
 [Incoming contacts: %s]
-
+传入联系人：%s 
 [Status change: %s]
-
+状态变更：%s
 [Authorization request granted by %s (%d): %s]
-
+%s（%d）授予了授权请求：%s
 [Authorization request denied by %s (%d): %s]
-
+%s（%d）拒绝了授权请求：%s 
 [User %s (%d) removed himself from your contact list: %s]
-
+用户 %s（%d）从你的联系人列表中移除了他自己：%s
 [Authorization future request by %s (%d): %s]
-
+%s（%d）请求了未来授权：%s 
 [Broadcast message from %s (%s): %s]
-
+来自 %s（%s）的广播消息：%s
 [All except status]
-
+除状态以外的全部
 [Show all events]
-
+显示所有事件
 [Avatar changes]
-
+头像更改
 [All except changes]
-
+除更改以外的全部
 [All except system]
-
+除系统以外的全部
 [Other events (unknown)]
-
+其他事件（未知）
 [Grid options]
-
+网格选项
 [Recent events on top]
-
+最近的事件在顶部
 [Use RTL by default]
-
+默认使用右到左
 [Additional processing support]
-
+附加处理支持
 [Enable BBCodes]
-
+启用 BBCodes
 [Open event details by Enter]
-
+回车打开事件详情
 [Search panel]
-
+搜索面板
 [History search]
 历史搜索
 [Search All Results]
-
+搜索所有结果
 [Bookmark enabled]
-
+书签启用
 [Bookmark disabled]
-
+书签禁用
 [Conversation divider]
-
+对话分隔
 [Conversation icon]
-
+对话图标
 [Conversation summer]
-
+对话夏天
 [Conversation autumn]
-
+对话秋天
 [Conversation winter]
-
+对话冬天 
 [Conversation spring]
-
+对话春天 
 [Conversation year]
-
+对话年
 [Conversation hide]
-
+对话隐藏
 [Save All]
-
+保存全部
 [Delete All]
-
+删除全部
 [Events filter]
-
+事件过滤器
 [In-place filter wait]
-
+就地过滤器等待
 [Search Up]
-
+向上搜索
 [Search Down]
-
+向下搜索 
 [End of page]
-
+页结束
 [Clear in-place filter]
-
+清除就地过滤器
 [Conversation header]
-
+对话头部
 [Divider]
-
+分隔器
 [Incoming url]
-
+传入 Url
 [Outgoing contacts]
-
+传出联系人
 [Outgoing file]
 传出文件
 [Selected background]
-
+选中的背景
 [SMTP Simple]
-
+SMTP 简单
 [Show sender information]
-
+显示发送人信息
 [Show receiver information]
-
+显示接收人信息
 [Toggle &Processing]
-
+切换处理(&P)
 [Toolbar]
 工具栏
 [Link URLs]
-
+链接 URL
 [History++]
-
+History++
 [Unicode text file]
-
+Unicode 文本文件
 [RTF file]
-
+RTF 文件
 [XML file]
-
+XML 文件
 [Appearance options]
-
+外观选项
 [Message log options]
 消息日志选项
 [HTML file]
-
+HTML 文件
 [&Browse Received Files]
-
+浏览接收的文件(&B)
 [Include custom event type (0-65535)]
-
+包括自定义事件类型（0-65535）
 [&Open file folder]
-
+打开文件的文件夹(&O)
 [&Copy Filename]
-
+复制文件名(&C)
 [Limit event types]
-
+限制事件类型
 [Search messages matched to]
-
+搜索消息匹配为
 [Limit Event Types]
-
+限制事件类型
 [Hide Menu]
-
+隐藏菜单
 [&File Actions]
-
+文件动作(&F)
 [Unknown codepage %u]
-
+未知代码页 %u
 [History++ module could not be loaded, riched20.dll is missing. Press Yes to continue loading Miranda.]
-
+无法加载History++模块，缺少riched20.dll。按是以继续加载Miranda。
 [User %s (%d) changed ICQ client: %s]
-
+用户%s（%d）更改了ICQ客户端：%s
 [Status request by %s (%d):%s]
-
+%s的状态请求（%d）：%s
 [Ignored status request by %s (%d):%s]
-
+忽略 %s（%d）的状态请求：%s
 [Artist: %s\\r\\nTitle: %s\\r\\nAlbum: %s]
-
+艺术家：%s\\r\\n标题：%s\\r\\n专辑：%s
 [No "%s" items]
-
+没有 "%s" 项
 [Cannot load icon pack (%s) from:\\r\\n%s\\r\\nThis can cause no icons will be shown.]
-
+无法加载图标包（%s）来自：\\r\\n%s\\r\\n这可能导致没有图标显示。
 [You are using old icon pack from:\\r\\n%s\\r\\nThis can cause missing icons, so update the icon pack.]
-
+你正在使用旧图标包来自：\\r\\n%s\\r\\n这可能导致缺少图标，因此请更新图标包。
 [Next message]
-
+下一个消息
 [History++ module could not be loaded, richedit 2.0+ module is missing.\\nPress OK to continue loading Miranda.]
-
+无法加载History++模块，缺少richedit 2.0+模块。\\n按"确定"继续加载Miranda。
 [&Empty System History]
 清空系统历史(&E)
 [&Empty History]
 清空历史(&E)
 [Do you really want to delete ALL items for this contact?]
-
+你真的想要删除这个联系人的所有项目吗？
 [Note: It can take several minutes for large histories]
-
+注意：对于大历史可能需要几分钟
 [Previous message]
-
+上一个消息
 [Running version of AniSmiley is not supported]
-
+不支持AniSmiley的运行版本
 [Running version of SmileyAdd is not supported]
-
+不支持SmileyAdd的运行版本
 [Running version of Emoticons is not supported]
-
+不支持Emoticons的运行版本 
 [%.0f items in history]
-
+%.0f 项在历史中
 [%s (to %s)]
-
+%s（到 %s）
 [%s Header]
-
+%s 头部
 [&Additional]
-
+附加(&A)
 [&Delete All]
-
+删除所有(&D)
 [&Password Protection...]
-
+密码保护(&P)...
 [(time and date)]
-
+（时间和日期）
 [All Items]
-
+所有项
 [and]
 和
 [Authorization Request by %s (%s%s%d): %s]
-
+%s（%s%s%d）的授权请求：%s
 [Authorization Request Sample]
-
+授权请求例子
 [Change nick and date font for %s.]
-
+改变 %s 的昵称和日期字体。
 [Customize %s]
-
+自定义 %s
 [Customize the look of %s Event. Select it's font, font color and background color.]
-
+自定义 %s 事件的外观。选择它的字体、字体颜色和背景颜色。
 [Date Font Color]
-
+日期字体颜色
 [Date Font]
-
+日期字体
 [Event Icons]
-
+事件图标
 [Forward &Message]
-
+转发消息(&M)
 [History++ Options]
-
+History++ 选项
 [History++ [%s]]
-
+History++ [%s]
 [HTML file (*.htm)|*.htm;*.html|All files (*.*)|*.*]
-
+HTML 文件 (*.htm)|*.htm;*.html|所有文件 (*.*)|*.*
 [HTML file (*.htm; *.html)|*.htm;*.html]
-
+HTML 文件 (*.htm; *.html)|*.htm;*.html
 [Incoming File Transfer Sample]
-
+传入文件传输例子
 [Incoming File Transfer:]
-
+传入文件传输：
 [Incoming Message Sample]
-
+传入消息例子
 [Incoming URL Sample]
-
+传入 URL 例子
 [Incoming Url]
-
+传入 Url
 [Make sure you have CAPS LOCK turned off.]
-
+确保关闭了CAPS LOCK。
 [Miranda's settings used]
-
+使用了 Miranda 的设置
 [Nick Font Color]
-
+昵称字体颜色
 [Nick Font]
-
+昵称字体
 [Nothing selected. Select item from the left and change it's properties below.]
-
+没有选择。从左侧选择项目并在下面更改它的属性。
 [Nothing Selected]
-
+没有选择
 [Outgoing File Transfer Sample]
-
+传出文件传输例子
 [Outgoing File Transfer:]
-
+传出文件传输：
 [Outgoing Message Sample]
-
+传出消息例子
 [Outgoing URL Sample]
-
+传出 URL 例子
 [Outgoing Url]
-
+传出 Url 
 [Recent at bottom]
-
+最近的在底部
 [Recent on top]
-
+最近的在顶底部
 [Save All as &HTML...]
-
+全部保存为 &HTML...
 [Save All as &Text...]
-
+全部保存为文本(&T)...  
 [Save All as &XML...]
-
+全部保存为 &XML...  
 [Select search mode:]
-
+选择搜索模式：
 [Selected file and contact file folder not found]
-
+选中的文件和联系人文件的文件夹未找到
 [Some Contact]
-
+某个联系人
 [System History (%s)]
-
+系统历史（%s）
 [System Message Sample]
-
+系统消息例子
 [Use Miranda default settings]
-
+使用 Miranda 默认设置
 [You were added by %s (%s%s%d)]
-
+你被 %s 添加了（%s%s%d）
 [You Were Added Message Sample]
-
+你被添加了的消息例子
 [Authorization request]
 授权请求
 [Your were added message]
-
+你被添加了的例子
 [Show events count in menu]
-
+在菜单中显示事件数量
 [Group messages]
-
+分组消息
 [Disable border]
-
+禁用边框
 [Disable scroll bar]
-
+禁用滚动栏
 [History view options]
-
+历史视图选项
 [Visit Wiki page for more options]
-
+访问Wiki页面了解更多选项
 [&Code Editor...]
-
+代码编辑器(&C)...
 [&Load...]
-
+加载(&L)...
 [&Save...]
-
+保存(&S)...
 [&User Name:]
-
+用户名(&U)：
 [(Unknown Contact)']
-
+（未知联系人）的
 [0 lines]
-
+0行
 [Other (unknown)]
-
+其他（未知）
 [Database:]
-
+数据库：
 [Fast history plugin with filter capability\\nBased on improved code of History+ plugin]
-
+具有过滤功能的快速历史插件\\基于 History+ 插件的改进代码
 [History++ Error]
-
+History++ 错误
 [History++ Warning]
-
+History++ 警告
 [%0.1n h]
-
+%0.1n 小时
 [%d min]
-
+%d 分钟
 [&Reset to Default]
 重置为默认(&R)
 [Contact history]
-
+联系人历史
 [Incoming nick]
-
+传入昵称
 [Outgoing nick]
-
+传出昵称
 [Incoming contacts]
-
+传入联系人
 [System message]
-
+系统消息
 [Incoming timestamp]
-
+传入时间戳
 [Outgoing timestamp]
-
+传出时间戳 
 [Open in &new window]
 在新窗口中打开(&N)
 [Open in existing &window]
-
+在已有窗口中打开(&W)
 [Copy &Link]
 复制链接(&L)
 [Co&py]

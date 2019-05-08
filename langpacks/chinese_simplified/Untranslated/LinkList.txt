@@ -47,5 +47,4 @@
 [Matches for searchtext]
 [Processing list...]
 [No messages found!\nPlease change current filter options.]
-[RTF file]
 [Save RTF File]

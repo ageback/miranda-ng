@@ -408,7 +408,7 @@
 [Filter:]
 过滤器：
 [Conversation started at %s]
-
+对话开始于 %s
 ;file \plugins\BasicHistory\src\RichHtmlExport.cpp
 [Menu]
 菜单

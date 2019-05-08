@@ -3,7 +3,6 @@
 [Save Image As...]
 [Print]
 [Show source]
-[Enable BBCodes]
 [Currently the following BBCodes are supported: [b][i][u][s][img][size][color][url]]
 [Enable support for Flash files in smileys and BBCodes]
 [Replace smileys in user names]

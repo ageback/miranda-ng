@@ -15,7 +15,7 @@
 [Secondary server:]
 
 [Database:]
-
+数据库：
 [Password:]
 密码：
 [try detect]

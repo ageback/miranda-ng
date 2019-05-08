@@ -23,6 +23,5 @@
 [Keep 20 last events]
 [Keep 50 last events]
 [Default Action]
-[Delete All]
 [*** Default Action ***]
 [*** System History ***]

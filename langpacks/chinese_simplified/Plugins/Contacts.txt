@@ -56,7 +56,7 @@
 [Events]
 事件
 [Incoming Contacts]
-
+传入联系人
 [Outgoing Contacts]
 
 ;file \plugins\ContactsPlus\src\receive.cpp

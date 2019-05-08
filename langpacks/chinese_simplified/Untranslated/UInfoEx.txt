@@ -99,7 +99,6 @@
 [Preparing...]
 [What do you want to export?]
 [Contact information]
-[Contact history]
 [Select modules]
 [Check the modules on the list which you want to export for the contact. To add the file as a new list entry later you need to export at least the protocol module.]
 [Check all]

@@ -2,7 +2,6 @@
 [Lotus connection settings]
 [Primary server:]
 [Secondary server:]
-[Database:]
 [try detect]
 [autoregister]
 [Check interval:]

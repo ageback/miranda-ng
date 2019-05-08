@@ -127,7 +127,6 @@
 [Download from FTP (WinSCP requred)]
 [Import from]
 [** Use <date> to insert date, <ext> to insert extension, <contact> to insert contact name]
-[Conversation started at %s]
 [Open all]
 [Close all]
 [History task]
