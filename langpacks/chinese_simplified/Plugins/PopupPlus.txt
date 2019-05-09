@@ -6,213 +6,406 @@
 ;  Authors: MPK, Merlin_de (Luca Santarelli, Victor Pavlychko)
 ;============================================================
 [Provides popup notification services for different plugins.]
+
 ;file \plugins\Popup\res\resource.rc
 [Content and Style]
+
 [Go to Customize -> Fonts and Colors for fonts and colors options]
+
 [Miscellaneous]
+杂项
 [Effects]
+
 [Live Preview]
+
 [Size && Position]
+
 [History]
+历史
 [Enable popup history]
+
 [Store last]
+
 [events]
+事件
 [Use History++ to render log]
+
 [Avatars]
+头像
 [Draw avatar borders]
+
 [Draw borders for semitransparent avatars too]
+
 [Round corners by]
+
 [pixels]
+像素
 [Avatar size:]
+头像大小：
 [Enable avatar updates]
+
 [Multimonitor]
+
 [Start the popups in the monitor with]
+
 [Miranda's window]
+
 [the active window]
+
 [Transparency]
+透明度
 [Use transparency]
+
 [opacity:]
+不透明度:
 [Opaque popups under cursor]
+
 [Slide popup]
+
 [Effect:]
+效果:
 [Time (in):]
+
 [ms]
+
 [Time (out):]
+
 [Limit window amount to:]
+
 [Skins]
+皮肤
 [* - built-in skins]
+
 [Skin options]
+皮肤选项
 [Preview]
+预览
 [Download more skins]
+下载更多皮肤
 [Popup history]
+弹出历史
 [Desktop]
+桌面
 [Popup area]
+
 [pixel(s)]
+
 [Distance between popups]
+
 [Configure popup area]
+
 [Close]
+关闭
 [General]
+通用
 [Enable popup actions]
+
 [Popup actions are those tiny buttons below notification text.]
+
 [Common actions]
+
 [Please choose in what cases default actions should be added:]
+
 [Add info && menu for IM contacts only]
+
 [Add default actions for contacts only]
+
 [Don't close popups on default actions]
+
 [Size and position]
+
 [Use large icons]
+
 [Popup actions will be displayed as:]
+
 [Icons and labels below text]
+
 [Icons on the left]
+
 [Icons aligned to the right]
+
 [Show actions: (requires apply)]
+
 [Mouse actions overwrite]
+
 [Left button]
+
 [Middle button]
+
 [Right button]
+
 [Notifications]
+通知
 [General options]
+常规选项
 [Enable this notification]
+
 [Popup timeout:]
+
 [Left click action:]
+
 [Right click action:]
+
 [Disable when global status is...]
+
 [Disable when relevant protocol's status is...]
+
 [Colors can be configured in\r\nCustomize -> Fonts and colors]
+
 [More...]
+更多...
 [Disable if message window is open]
+
 [Sec]
+秒
 [0 = Default]
+0 = 默认
 [-1 = Infinite]
+-1 = 无限
 [Per-contact settings]
+
 [Show always]
+
 [Ignore fullscreen]
+
 [Never show]
+
 [Show default]
+
 [Default timeout]
+默认超时
 [Infinite popup delay]
+
 [Popup delay:]
+
 [seconds]
+秒
 [Do not close hovered popups]
+
 [Dynamically resize the popups]
+
 [Minimum width]
+
 [Maximum width]
+
 [Position:]
+职位：
 [Layout:]
+
 [Reorder popups]
+
 [Disable when:]
+
 [Always (has priority)]
+
 [Fullscreen mode]
+
 [Debug]
+
 ;file \plugins\Popup\src\actions.cpp
 [Quick reply]
+
 [Send message]
+发送消息
 [User details]
+用户详情
 [Contact menu]
+联系人菜单
 [Add permanently]
+
 [Pin popup]
+
 [Dismiss popup]
+关闭弹出窗口
 [Copy to clipboard]
+复制到剪贴板
 [No overwrite]
+
 [Action]
+
 ;file \plugins\Popup\src\config.cpp
 [The Jabberwocky]
+
 [`Twas brillig, and the slithy toves\r\nDid gyre and gimble in the wabe:\r\nAll mimsy were the borogoves,\r\nAnd the mome raths outgrabe.\r\n\t[b][i]Lewis Carroll, 1855[/i][/b]]
+
 [Test preview for the popup plugin settings. This is supposed to be long enough not to fit in one line...]
+
 [This is a special test preview for the popup plugin settings. The text and title are quite long so you can tweak your skin and plugin settings to best fit your needs :)]
+
 [This is a notification message]
+
 [This is a warning message]
+
 [This is an error message]
+
 ;file \plugins\Popup\src\effects.cpp
 [Square fading]
+
 ;file \plugins\Popup\src\font.h
 [Popups]
+弹出窗口
 [Title]
+
 [Clock]
+
 [Text]
+文字
 [Hovered action]
+
 [Background]
+背景
 [Border]
+边框
 [Sidebar]
+侧栏
 [Title underline]
+标题下划线
 [Avatar border]
+
 ;file \plugins\Popup\src\history.cpp
 [Popup history is disabled]
+
 [Popup history message]
+
 ;file \plugins\Popup\src\icons.cpp
 [With "favorite" overlay]
+
 [With "fullscreen" overlay]
+
 [Information]
+信息
 [Warning]
+警告
 [Error]
+错误
 [Refresh skin list]
+
 [Popup placement]
+
 [Cancel]
+取消
 [Popup group]
+
 [Favorite contact]
+
 [Show in fullscreen]
+
 [Blocked contact]
+
 [Pinned popup]
+
 [Add contact permanently]
+
 ;file \plugins\Popup\src\main.cpp
 [Classes]
+分类
 [Actions]
+动作
 [Contacts]
+联系人
 [Advanced]
+高级
 [Toggle popups]
+切换弹出窗口
 [Enable popups]
+启用弹出窗口
 [Disable popups]
+禁用弹出窗口
 [Popup Plus]
+
 [Error: I could not register the Popup Window class.\r\nThe plugin will not operate.]
+
 ;file \plugins\Popup\src\opt_adv.cpp
 [No effect]
+无效果
 [Fade in/out]
+
 ;file \plugins\Popup\src\opt_class.cpp
 [CLASS Plugins]
+
 [Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!]
+
 ;file \plugins\Popup\src\opt_gen.cpp
 [Offline]
+离线
 [Online]
+在线
 [Invisible]
+隐身
 [Away]
+离开
 [Not available]
+不可用
 [Occupied]
+忙碌
 [Do not disturb]
+勿扰
 [Free for chat]
+有空聊天
 [Out to lunch]
+外出吃饭
 [On the phone]
+在打电话
 [Width]
+宽度
 [Upper left corner]
+
 [Lower left corner]
+
 [Lower right corner]
+
 [Upper right corner]
+
 [Horizontal]
+水平
 [Vertical]
+
 [Global Status]
+全局状态
 [Protocol Status]
+
 [You cannot specify a value lower than %d and higher than %d.]
+
 ['Reorder popups' option is currently disabled.\r\nThis may cause misaligned popups when used with\r\navatars and text replacement (mainly NewXstatusNotify).\r\n\r\nDo you want to enable popup reordering now?\r\n]
+
 [Popup plus warning]
+
 ;file \plugins\Popup\src\opt_skins.cpp
 [Skin preview]
+皮肤预览
 [Just take a look at this skin... ;)]
+
 [Show clock]
+
 [Drop shadow effect]
+
 [non rectangular]
+
 [Enable Aero Glass (Vista+)]
+
 [Use Windows colors]
+使用 Windows 颜色
 [Use advanced text render]
+
 [Global settings]
+
 [Refresh List]
+
 ;file \plugins\Popup\src\services.cpp
 [Notify]
+
 ;file \plugins\Popup\src\srmm_menu.cpp
 [Auto]
-[Favorite]
-[Block]
-[Popup Mode: Auto]
-[Popup Mode: Favorite]
-[Popup Mode: Ignore fullscreen]
-[Popup Mode: Block contact]
 
+[Favorite]
+
+[Block]
+
+[Popup Mode: Auto]
+
+[Popup Mode: Favorite]
+
+[Popup Mode: Ignore fullscreen]
+
+[Popup Mode: Block contact]
 
