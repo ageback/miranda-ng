@@ -81,7 +81,7 @@
 [Key Assignment]
 
 [Debug]
-
+调试
 [Log to File]
 日志到文件
 [Save Pass]

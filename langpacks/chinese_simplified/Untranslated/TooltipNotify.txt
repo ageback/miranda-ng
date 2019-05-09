@@ -8,7 +8,6 @@
 [Prefix protocol name]
 [Duration]
 [Show tooltip for]
-[ms]
 [Duration x2 upon online event]
 [Double click on tooltip]
 [Shows/Hides contact list]

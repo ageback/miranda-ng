@@ -58,7 +58,7 @@
 [Help]
 帮助
 [Action]
-
+动作
 [Notes]
 笔记
 [INI]

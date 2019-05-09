@@ -413,7 +413,7 @@
 [Login Time]
 
 [Action]
-
+动作
 [sign out]
 
 [There are no active concurrent sessions for this account.]

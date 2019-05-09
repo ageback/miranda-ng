@@ -145,7 +145,7 @@
 [No preview]
 
 [Effects]
-
+效果
 [Animation speed:]
 
 [Shadow]
@@ -177,7 +177,7 @@
 [Expand to second level after:]
 
 [ms]
-
+毫秒
 [First level tooltip]
 
 [Second level tooltip]

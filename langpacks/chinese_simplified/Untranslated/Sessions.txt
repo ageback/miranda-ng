@@ -4,7 +4,6 @@
 [Restore Last Session]
 [Only if last session present]
 [Startup delay]
-[ms]
 [User Sessions Management]
 [Action on Exit]
 [Ask]

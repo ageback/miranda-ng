@@ -5,7 +5,6 @@
 [Sound]
 [Play sounds]
 [Use internal speaker]
-[Debug]
 [Message debugging]
 [Notify Anything]
 [NotifyAnything: Failed to format error message]

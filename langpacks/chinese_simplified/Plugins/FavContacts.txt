@@ -17,7 +17,7 @@
 [Draw avatar border]
 
 [Round corners by]
-
+圆角
 [px.]
 
 [Hide for transparent avatars]

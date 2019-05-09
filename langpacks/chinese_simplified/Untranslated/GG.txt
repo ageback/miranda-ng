@@ -144,7 +144,6 @@
 [Client Name]
 [IP Address]
 [Login Time]
-[Action]
 [sign out]
 [There are no active concurrent sessions for this account.]
 [You have to be logged in to view concurrent sessions.]

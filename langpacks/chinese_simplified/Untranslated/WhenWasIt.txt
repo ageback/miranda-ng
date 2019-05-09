@@ -1,6 +1,5 @@
 [Notifies you of upcoming birthdays.]
 [Notify of birthdays:]
-[Popup timeout:]
 [Don't show popups for subcontacts]
 [Show popup when no birthdays are near]
 [Popup mouse click]

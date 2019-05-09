@@ -14,7 +14,6 @@
 [No description]
 [Reload]
 [Append data to file?]
-[Action]
 [INI]
 [Read]
 [Write]

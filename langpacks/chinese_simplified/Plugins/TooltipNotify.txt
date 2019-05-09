@@ -39,7 +39,7 @@
 [Show tooltip for]
 
 [ms]
-
+毫秒
 [Duration x2 upon online event]
 
 [Double click on tooltip]

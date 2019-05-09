@@ -33,7 +33,6 @@
 [Action icon]
 [Correction icon]
 [Create password]
-[Action]
 [You cannot send when you are offline.]
 [Tox profile]
 [Select Tox profile]

@@ -31,7 +31,6 @@
 [Home Directory:]
 [Temp Dir:]
 [Key Assignment]
-[Debug]
 [Save Pass]
 [Key agreement colors]
 [Secure connection colors]

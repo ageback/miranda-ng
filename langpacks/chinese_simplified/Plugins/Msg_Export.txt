@@ -67,7 +67,7 @@
 [Delete file]
 
 [Debug]
-
+调试
 [User &details]
 用户详情(&D)
 [Export selected]

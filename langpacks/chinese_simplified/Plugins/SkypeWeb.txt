@@ -87,7 +87,7 @@
 [Edited message]
 
 [Action]
-
+动作
 [Call information]
 
 [File transfer information]

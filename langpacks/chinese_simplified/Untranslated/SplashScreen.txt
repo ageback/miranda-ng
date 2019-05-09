@@ -7,7 +7,6 @@
 [Enable]
 [Prefix:]
 [Display time:]
-[ms]
 [Fade in:]
 [steps]
 [Fade out:]

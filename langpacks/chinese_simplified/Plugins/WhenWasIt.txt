@@ -13,7 +13,7 @@
 [Popups]
 弹出窗口
 [Popup timeout:]
-
+弹出窗口超时：
 [Preview]
 预览
 [Don't show popups for subcontacts]

@@ -22,7 +22,6 @@
 [Rename file]
 [When user is deleted]
 [Delete file]
-[Debug]
 [Export selected]
 [Set to default filename]
 [Miranda database contains %d events]

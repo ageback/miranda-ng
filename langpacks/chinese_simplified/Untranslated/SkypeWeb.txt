@@ -23,7 +23,6 @@
 [Enter new chatroom topic]
 [Incoming call]
 [Edited message]
-[Action]
 [Call information]
 [File transfer information]
 [URI object]

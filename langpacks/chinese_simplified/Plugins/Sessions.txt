@@ -21,7 +21,7 @@
 [Startup delay]
 
 [ms]
-
+毫秒
 [User Sessions Management]
 
 [Edit]

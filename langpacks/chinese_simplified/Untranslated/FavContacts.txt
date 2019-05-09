@@ -1,6 +1,5 @@
 [Favorite contacts menu.]
 [Draw avatar border]
-[Round corners by]
 [px.]
 [Hide for transparent avatars]
 [Use system colors and fonts]

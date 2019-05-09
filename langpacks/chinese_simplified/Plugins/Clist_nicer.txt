@@ -59,7 +59,7 @@
 [Always show status in tooltip]
 总是在工具提示中显示状态
 [ms]
-
+毫秒
 [Event area]
 事件区域
 [Set base visibility on the frames menu]

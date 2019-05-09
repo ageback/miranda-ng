@@ -74,7 +74,7 @@
 [External socket]
 
 [Action]
-
+动作
 [Plugins]
 插件
 [New Connection Notification]

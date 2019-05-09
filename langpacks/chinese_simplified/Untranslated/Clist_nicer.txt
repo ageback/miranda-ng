@@ -7,7 +7,6 @@
 [Contact list layout]
 [Show menu and status buttons]
 [Draw sunken edge]
-[ms]
 [Set base visibility on the frames menu]
 [Auto mode]
 [Do not show system tray icon tooltips on mouse over]

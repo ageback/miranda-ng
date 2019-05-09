@@ -17,6 +17,5 @@
 [Application]
 [Internal socket]
 [External socket]
-[Action]
 [New Connection Notification]
 [First close options window]

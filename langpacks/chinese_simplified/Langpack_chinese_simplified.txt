@@ -2756,6 +2756,8 @@ PNG位图
 动作
 [Help]
 帮助
+[Action]
+动作
 [Notes]
 笔记
 [Name]
@@ -4715,6 +4717,8 @@ Angeli-Ka（绘图），FYR（模板）
 单击界面
 [Always show status in tooltip]
 总是在工具提示中显示状态
+[ms]
+毫秒
 [Event area]
 事件区域
 [System tray icon when using multiple protocols]
@@ -5138,6 +5142,8 @@ Angeli-Ka（绘图），FYR（模板）
 隐藏
 [Status]
 状态
+[Action]
+动作
 [Plugins]
 插件
 #muuid {23d4f302-d513-45b7-9027-445f29557311}
@@ -5692,6 +5698,8 @@ Miranda NG [%s] 数据库备份
 显示第二行
 [Show avatars]
 显示头像
+[Round corners by]
+圆角
 [Show]
 显示
 [recent contacts]
@@ -5715,6 +5723,8 @@ Miranda NG [%s] 数据库备份
 ;============================================================
 [Size:]
 大小：
+[ms]
+毫秒
 [bytes]
 字节
 [Appearance]
@@ -5766,6 +5776,8 @@ Miranda NG [%s] 数据库备份
 隐藏离线联系人 
 [pixels]
 像素
+[ms]
+毫秒
 [Miscellaneous]
 杂项
 [0 = Default]
@@ -6001,6 +6013,8 @@ FTP 文件
 通知
 [Errors]
 错误
+[Action]
+动作
 #muuid {243955e0-75d9-4cc3-9b28-6f9c5af4532d}
 ;============================================================
 ;  File: GmailNotifier.dll
@@ -9704,6 +9718,8 @@ MessageState 未读附加图标
 关闭(&C)
 [Do nothing]
 啥都不干
+[Debug]
+调试
 [User &details]
 用户详情(&D)
 [Copy]
@@ -10694,6 +10710,8 @@ Purple
 端口
 [Password:]
 密码：
+[Debug]
+调试
 [Log to file]
 日志到文件
 [Error]
@@ -11198,26 +11216,76 @@ Miranda NG 核心
 ;  Version: 2.1.1.15
 ;  Authors: MPK, Merlin_de (Luca Santarelli, Victor Pavlychko)
 ;============================================================
+[Provides popup notification services for different plugins.]
+为不同的插件提供弹出通知服务。
+[Content and Style]
+内容和样式
+[Go to Customize -> Fonts and Colors for fonts and colors options]
+转到 自定义 -> 字体和颜色 设置字体和颜色选项
 [Miscellaneous]
 杂项
+[Effects]
+效果
+[Live Preview]
+实时预览
+[Size && Position]
+大小 && 位置
 [History]
 历史
+[Enable popup history]
+启用弹出历史
+[Store last]
+存储最后
 [events]
 事件
+[Use History++ to render log]
+使用 History++ 来渲染日志
 [Avatars]
 头像
+[Draw avatar borders]
+绘制头像边框
+[Draw borders for semitransparent avatars too]
+也为半透明头像绘制边框
+[Round corners by]
+圆角
 [pixels]
 像素
 [Avatar size:]
 头像大小：
+[Enable avatar updates]
+启用头像更新
+[Multimonitor]
+多显示器
+[Start the popups in the monitor with]
+启动弹出窗口在显示器中与
+[Miranda's window]
+Miranda的窗口
+[the active window]
+活动窗口
 [Transparency]
 透明度
+[Use transparency]
+使用透明度
 [opacity:]
 不透明度:
+[Opaque popups under cursor]
+光标下的不透明弹出窗口
+[Slide popup]
+幻灯片弹出
 [Effect:]
 效果:
+[Time (in):]
+时间（进）：
+[ms]
+毫秒
+[Time (out):]
+时间（出）：
+[Limit window amount to:]
+限制窗口数量为：
 [Skins]
 皮肤
+[* - built-in skins]
+* - 内建皮肤
 [Skin options]
 皮肤选项
 [Preview]
@@ -11228,42 +11296,168 @@ Miranda NG 核心
 弹出历史
 [Desktop]
 桌面
+[Popup area]
+弹出区域
+[pixel(s)]
+像素
+[Distance between popups]
+弹出窗口间的距离
+[Configure popup area]
+配置弹出窗口区域
 [Close]
 关闭
 [General]
 通用
+[Enable popup actions]
+启用弹出窗口动作
+[Popup actions are those tiny buttons below notification text.]
+弹出窗口动作是那些在通知文字下面的小按钮。
+[Common actions]
+通用动作
+[Please choose in what cases default actions should be added:]
+请选择应在何种情况下添加默认操作：
+[Add info && menu for IM contacts only]
+仅为IM联系人添加信息 && 菜单
+[Add default actions for contacts only]
+仅为联系人添加默认动作
+[Don't close popups on default actions]
+不要关闭默认操作的弹出窗口
+[Size and position]
+大小和位置
+[Use large icons]
+使用大图标
+[Popup actions will be displayed as:]
+弹出窗口动作将被显示为：
+[Icons and labels below text]
+文字下面的图标和标签
+[Icons on the left]
+图标在左侧
+[Icons aligned to the right]
+图标对齐到右侧
+[Show actions: (requires apply)]
+显示动作：（需要应用）
+[Mouse actions overwrite]
+鼠标动作覆盖
+[Left button]
+左键
+[Middle button]
+中键
+[Right button]
+右键
 [Notifications]
 通知
 [General options]
 常规选项
+[Enable this notification]
+启用此通知
+[Popup timeout:]
+弹出窗口超时：
+[Left click action:]
+左键点击动作：
+[Right click action:]
+左键点击动作：
+[Disable when global status is...]
+禁用当全局状态为...
+[Disable when relevant protocol's status is...]
+禁用当相关协议的状态为...
+[Colors can be configured in\r\nCustomize -> Fonts and colors]
+可以在 自定义 -> 字体和颜色 中配置颜色
 [More...]
 更多...
+[Disable if message window is open]
+当消息窗口打开时禁用
 [Sec]
 秒
 [0 = Default]
 0 = 默认
 [-1 = Infinite]
 -1 = 无限
+[Per-contact settings]
+每个联系人设置
+[Show always]
+总是显示
+[Ignore fullscreen]
+忽略全屏
+[Never show]
+从不显示
+[Show default]
+显示默认
 [Default timeout]
 默认超时
+[Infinite popup delay]
+无限弹出窗口延时
+[Popup delay:]
+弹出窗口延时：
 [seconds]
 秒
+[Do not close hovered popups]
+不要关闭悬停的弹出窗口
+[Dynamically resize the popups]
+动态调整弹出窗口的大小
+[Minimum width]
+最小宽度
+[Maximum width]
+最大宽度
 [Position:]
-职位：
+位置：
+[Layout:]
+布局：
+[Reorder popups]
+重新排序弹出窗口
+[Disable when:]
+禁用当：
+[Always (has priority)]
+总是（具有优先级）
+[Fullscreen mode]
+全屏模式
+[Debug]
+调试
+[Quick reply]
+快速回复
 [Send message]
 发送消息
 [User details]
 用户详情
 [Contact menu]
 联系人菜单
+[Add permanently]
+永久添加
+[Pin popup]
+固定弹出窗口
 [Dismiss popup]
 关闭弹出窗口
 [Copy to clipboard]
 复制到剪贴板
+[No overwrite]
+无覆盖
+[Action]
+动作
+[The Jabberwocky]
+Jabberwocky
+[`Twas brillig, and the slithy toves\r\nDid gyre and gimble in the wabe:\r\nAll mimsy were the borogoves,\r\nAnd the mome raths outgrabe.\r\n\t[b][i]Lewis Carroll, 1855[/i][/b]]
+`Twas brillig, and the slithy toves\r\nDid gyre and gimble in the wabe:\r\nAll mimsy were the borogoves,\r\nAnd the mome raths outgrabe.\r\n\t[b][i]Lewis Carroll, 1855[/i][/b]
+[Test preview for the popup plugin settings. This is supposed to be long enough not to fit in one line...]
+弹出插件设置的测试预览。 这应该足够长，不适合一行...
+[This is a special test preview for the popup plugin settings. The text and title are quite long so you can tweak your skin and plugin settings to best fit your needs :)]
+这是弹出插件设置的特殊测试预览。 文字和标题很长，所以你可以调整你的皮肤和插件设置，以最好地满足你的需求:)
+[This is a notification message]
+这是一个通知消息
+[This is a warning message]
+这是一个警告消息
+[This is an error message]
+这是一个错误消息
+[Square fading]
+方块褪色
 [Popups]
 弹出窗口
+[Title]
+标题
+[Clock]
+时钟
 [Text]
 文字
+[Hovered action]
+悬停动作
 [Background]
 背景
 [Border]
@@ -11272,14 +11466,40 @@ Miranda NG 核心
 侧栏
 [Title underline]
 标题下划线
+[Avatar border]
+头像边框
+[Popup history is disabled]
+弹出窗口历史被禁用
+[Popup history message]
+弹出窗口历史消息
+[With "favorite" overlay]
+与“最喜欢的”叠加
+[With "fullscreen" overlay]
+与“全屏”叠加
 [Information]
 信息
 [Warning]
 警告
 [Error]
 错误
+[Refresh skin list]
+刷新皮肤列表
+[Popup placement]
+弹出窗口放置
 [Cancel]
 取消
+[Popup group]
+弹出窗口组
+[Favorite contact]
+收藏联系人
+[Show in fullscreen]
+以全屏显示
+[Blocked contact]
+阻止的联系人
+[Pinned popup]
+固定的弹出窗口
+[Add contact permanently]
+永久添加联系人
 [Classes]
 分类
 [Actions]
@@ -11294,8 +11514,18 @@ Miranda NG 核心
 启用弹出窗口
 [Disable popups]
 禁用弹出窗口
+[Popup Plus]
+Popup Plus
+[Error: I could not register the Popup Window class.\r\nThe plugin will not operate.]
+错误：我无法注册 Popup Window 类。\r\n插件将无法操作。
 [No effect]
 无效果
+[Fade in/out]
+淡入/出
+[CLASS Plugins]
+CLASS 插件
+[Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!]
+Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!
 [Offline]
 离线
 [Online]
@@ -11318,14 +11548,64 @@ Miranda NG 核心
 在打电话
 [Width]
 宽度
+[Upper left corner]
+左上角
+[Lower left corner]
+左下角
+[Lower right corner]
+右下角
+[Upper right corner]
+右上角
 [Horizontal]
 水平
+[Vertical]
+垂直
 [Global Status]
 全局状态
+[Protocol Status]
+协议状态
+[You cannot specify a value lower than %d and higher than %d.]
+您不能指定低于%d且高于%d的值。
+['Reorder popups' option is currently disabled.\r\nThis may cause misaligned popups when used with\r\navatars and text replacement (mainly NewXstatusNotify).\r\n\r\nDo you want to enable popup reordering now?\r\n]
+“重新排序弹出窗口”选项目前被禁用。\r\n当与头像和文字替换（主要是 NewXstatusNotify）一起使用时，\r\n这可能引起弹出窗口错位。\r\n\r\n您想立即启用弹出窗口重新排序吗？\r\n
+[Popup plus warning]
+Popup plus 警告
 [Skin preview]
 皮肤预览
+[Just take a look at this skin... ;)]
+看看这个皮肤... ;)
+[Show clock]
+显示时钟
+[Drop shadow effect]
+阴影效果
+[non rectangular]
+无长方形
+[Enable Aero Glass (Vista+)]
+启用Aero Glass（Vista +）
 [Use Windows colors]
 使用 Windows 颜色
+[Use advanced text render]
+使用高级文字渲染
+[Global settings]
+全局设置
+[Refresh List]
+刷新列表
+[Notify]
+通知
+[Auto]
+自动
+[Favorite]
+收藏
+[Block]
+阻止
+[Popup Mode: Auto]
+弹出窗口模式：自动
+[Popup Mode: Favorite]
+弹出窗口模式：收藏
+[Popup Mode: Ignore fullscreen]
+弹出窗口模式：全屏
+[Popup Mode: Block contact]
+弹出窗口模式：阻止联系人
 #muuid {f93ba59c-4f48-4f2e-8a91-77a2801527a3}
 ;============================================================
 ;  File: QuickContacts.dll
@@ -12168,6 +12448,8 @@ Miranda 的根目录路径
 协议
 [Private]
 私有
+[Debug]
+调试
 [Log to File]
 日志到文件
 [Back]
@@ -12589,6 +12871,8 @@ Upload Pie（1星期）
 ;============================================================
 [Do nothing]
 啥都不干
+[ms]
+毫秒
 [Edit]
 编辑
 [Delete]
@@ -12912,6 +13196,8 @@ Miranda 相关
 用户(&U)
 [Are you sure?]
 你确定吗？
+[Action]
+动作
 [File]
 文件
 [Unknown event]
@@ -13012,6 +13298,8 @@ Miranda 相关
 ;============================================================
 [Appearance]
 出现
+[ms]
+毫秒
 [Sound Files]
 声音文件
 [Skins]
@@ -15210,6 +15498,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 皮肤
 [Preview]
 预览
+[Effects]
+效果
 [Border]
 边框
 [Round corners (window)]
@@ -15218,6 +15508,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 透明度
 [Opacity (%):]
 不透明度(%)：
+[ms]
+毫秒
 [Status]
 状态
 [Status message]
@@ -15492,6 +15784,8 @@ Jabber 活动
 协议
 [sec]
 秒
+[ms]
+毫秒
 [Behavior]
 行为
 [Misc]
@@ -15580,6 +15874,8 @@ Jabber 活动
 协议
 [Password]
 密码
+[Action]
+动作
 [%s connection]
 %s 连接
 [All files]
@@ -17526,6 +17822,8 @@ N/A
 ;============================================================
 [Popups]
 弹出窗口
+[Popup timeout:]
+弹出窗口超时：
 [Preview]
 预览
 [Left]
