@@ -10603,7 +10603,7 @@ Purple
 [Notes]
 笔记
 [Note text]
-注意文字
+笔记文字
 [Date/Title]
 日期/标题
 [Are you sure you want to delete all notes?]
