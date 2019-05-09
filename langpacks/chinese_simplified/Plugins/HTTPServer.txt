@@ -45,7 +45,7 @@
 [Open log]
 
 [Show popups]
-
+显示弹出窗口
 [Page keyword]
 
 [URL address]

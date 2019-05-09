@@ -322,7 +322,7 @@ HTTP错误：网关超时（504）
 [%c, %t\\nToday:  High %h, Low %l]
 %c, %t\\n今天：  高 %h, 低 %l
 [Temperature: %[Temperature]]
-温度的：%[Temperature]
+温度：%[Temperature]
 [%c\tcurrent condition\n%d\tcurrent date\n%e\tdewpoint\n%f\tfeel-like temperature\n%h\ttoday's high\n%i\twind direction\n%l\ttoday's low\n%m\thumidity\n%n\tstation name\n%p\tpressure\n%r\tsunrise time\n%s\tstation ID\n%t\ttemperature\n%u\tupdate time\n%v\tvisibility\n%w\twind speed\n%y\tsun set]
 %c\t当前天气状况\n%d\t当前日期\n%e\t露点\n%f\t体感温度\n%h\t今天最高\n%i\t风向\n%l\t今天最低\n%m\t湿度\n%n\t气象站名称\n%p\t压力\n%r\t日出时间\n%s\t气象站 ID\n%t\t温度\n%u\t更新时间\n%v\t能见度\n%w\t风速\n%y\t日落
 [%c\tcurrent condition\n%d\tcurrent date\n%e\tdewpoint\n%f\tfeel-like temp\n%h\ttoday's high\n%i\twind direction\n%l\ttoday's low\n%m\thumidity\n%n\tstation name\n%p\tpressure\n%r\tsunrise time\n%s\tstation ID\n%t\ttemperature\n%u\tupdate time\n%v\tvisibility\n%w\twind speed\n%y\tsun set\n----------\n\\n\tnew line]

@@ -2,7 +2,6 @@
 [Replacements]
 [Enable auto-replacements]
 [Language:]
-[Add...]
 [Edit...]
 [Add auto-replace word]
 [Wrong word:]

@@ -37,7 +37,7 @@
 [Go to email domain]
 
 [Block]
-
+阻止
 [Enter password]
 
 [Save password]

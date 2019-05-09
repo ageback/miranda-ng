@@ -72,7 +72,7 @@
 
 ;file \protocols\Twitter\src\chat.cpp
 [Normal]
-
+普通
 ;file \protocols\Twitter\src\connection.cpp
 [OAuth variables are out of sequence, they have been reset. Please reconnect and reauthorize Miranda to Twitter.com (do the PIN stuff again)]
 

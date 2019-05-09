@@ -55,7 +55,7 @@
 [Status bar tips]
 
 [Avatar border]
-
+头像边框
 [Round corners (avatar)]
 圆角(头像)
 [Keep original avatar size]
@@ -325,7 +325,7 @@ Jabber 活动
 [Account]
 帐户
 [Account:]
-
+帐户：
 [Birthday]
 
 [Birthday:]
@@ -462,7 +462,7 @@ Jabber 活动
 [Sidebar]
 侧栏
 [Title]
-
+标题
 [Labels]
 
 [Values]

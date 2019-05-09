@@ -13,7 +13,7 @@
 [Add a contact to your contact list]
 
 [Account:]
-
+帐户：
 [Contact ID:]
 
 [Custom name:]

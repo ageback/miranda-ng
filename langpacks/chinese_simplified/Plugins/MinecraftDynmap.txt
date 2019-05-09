@@ -16,7 +16,7 @@
 [Admin]
 管理员
 [Normal]
-
+普通
 [You]
 
 ;file \protocols\MinecraftDynmap\src\communication.cpp

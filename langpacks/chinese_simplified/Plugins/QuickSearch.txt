@@ -12,7 +12,7 @@
 [Quick search]
 
 [Title]
-
+标题
 [Module/InfoType]
 
 [Setting]

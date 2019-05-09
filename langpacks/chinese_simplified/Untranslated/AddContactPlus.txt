@@ -1,6 +1,5 @@
 [Provides the ability to quickly add new contacts.]
 [Add a contact to your contact list]
-[Account:]
 [Contact ID:]
 [Add temporarily]
 [The contact cannot be added to your contact list. Please make sure the contact ID is entered correctly.]

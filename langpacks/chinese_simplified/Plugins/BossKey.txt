@@ -53,7 +53,7 @@
 [Others]
 其它
 [Create a main menu item]
-
+创建一个主菜单项
 [Restore hiding on startup after failure]
 
 ;file \plugins\BossKeyPlus\src\BossKey.cpp

@@ -682,7 +682,7 @@
 [Enables or disables popup windows]
 
 [Notify]
-
+通知
 [StdPopup or Popup plus]
 
 [Popup window]
@@ -768,7 +768,7 @@
 [text]
 文字
 [Set status message]
-
+设置状态消息
 [Set protocol status]
 
 [None]

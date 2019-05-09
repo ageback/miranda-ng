@@ -70,7 +70,7 @@
 [Please join this meeting.]
 
 [Normal]
-
+普通
 [%s's conference]
 
 [Leave conference]

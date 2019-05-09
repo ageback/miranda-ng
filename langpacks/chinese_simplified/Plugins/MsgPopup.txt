@@ -6,39 +6,39 @@
 ;  Authors: StDenis
 ;============================================================
 [Plugin replaces message boxes (those having only OK button) with popups.]
-
+插件用弹出窗替换消息框（只有OK按钮）。
 ;file \plugins\MsgPopup\res\MsgPopup.rc
 [ASTERISK style]
-
+星号样式
 [Background color]
 背景色
 [Text color]
 文字颜色
 [ERROR style]
-
+错误样式
 [EXCLAMATION style]
-
+感叹样式
 [QUESTION style]
-
+问题样式
 [Preview]
 预览
 [Timeout]
 超时
 [Special values of the "Timeout":\n -1 - infinity, 0 - use default timeout value]
-
+“超时”的特殊值：\n -1 - 无限，0 - 使用默认超时值
 [Emit a sound]
-
+发出声音
 ;file \plugins\MsgPopup\src\main.cpp
 [MessagePopup]
-
+消息弹出窗口
 [Popups]
 弹出窗口
 ;file \plugins\MsgPopup\src\options.cpp
 [Message with question]
-
+有问题的消息
 [Message with exclamation]
-
+带惊叹号的消息
 [Message with error]
-
+有错误的消息
 [Message with asterisk]
-
+带星号的消息

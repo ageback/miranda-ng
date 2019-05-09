@@ -46,7 +46,7 @@
 [Regular statuses]
 
 [Title]
-
+标题
 [Message]
 消息
 [Do you really want to delete selected item?]
@@ -67,7 +67,7 @@
 [Set/unset current item as favorite]
 
 [Favorite]
-
+收藏
 [Undo changes]
 撤销更改
 [Import statuses from database]

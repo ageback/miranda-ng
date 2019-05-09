@@ -31,7 +31,7 @@
 [Enable StopSpam-StopSpam infinite talk protection]
 
 [Add contact permanently]
-
+永久添加联系人
 [Enable auth. requests blocking]
 
 [Hide unanswered contacts and spammers from contact list]

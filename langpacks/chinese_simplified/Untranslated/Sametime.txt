@@ -23,7 +23,6 @@
 [Invitation rejected - already present.]
 [Your invitation has been rejected.]
 [Please join this meeting.]
-[Normal]
 [%s's conference]
 [Leave conference]
 [Start conference]

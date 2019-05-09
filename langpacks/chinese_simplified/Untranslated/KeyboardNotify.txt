@@ -1,5 +1,4 @@
 [Flashes your keyboard LEDs when a message has arrived.]
-[Accounts to check]
 [Events to react on]
 [Incoming files]
 [Everything else]
@@ -65,6 +64,5 @@
 [\n; Automatically generated Keyboard Notify Theme file\n\n\n]
 [\n; End of automatically generated Keyboard Notify Theme file\n]
 [Keyboard Notify Theme]
-[Rules]
 [Themes]
 [Keyboard Flash]

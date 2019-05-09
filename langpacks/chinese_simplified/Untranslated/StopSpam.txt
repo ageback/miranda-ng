@@ -10,7 +10,6 @@
 [Do not send more than]
 [questions to one contact (0 - for no limit)]
 [Enable StopSpam-StopSpam infinite talk protection]
-[Add contact permanently]
 [Enable auth. requests blocking]
 [Answer is not case sensitive]
 [Remove all temporary contacts after restart]

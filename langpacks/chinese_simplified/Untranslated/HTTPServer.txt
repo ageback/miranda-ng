@@ -16,7 +16,6 @@
 [Enable HTTP server]
 [Main menu items]
 [Open log]
-[Show popups]
 [Page keyword]
 [URL address]
 [%ExternalIP% variable]

@@ -51,7 +51,7 @@
 [Allowed (active) contact]
 
 [Blocked contact]
-
+阻止的联系人
 [Somebody included you in his/her server list]
 
 [Refresh]

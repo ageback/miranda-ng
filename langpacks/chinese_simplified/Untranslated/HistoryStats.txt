@@ -194,7 +194,6 @@
 [Filter messages starting with]
 [Filter messages ending with]
 [The selected set is in use by at least one other column. If you remove it, it won't be available to all other columns that use it. Are you sure you want to remove the set?]
-[Global settings]
 [Exclude]
 [Exclude contacts]
 [Input]

@@ -37,7 +37,7 @@
 [Use popups]
 
 [Title]
-
+标题
 [Text]
 文字
 [Popup Colors]

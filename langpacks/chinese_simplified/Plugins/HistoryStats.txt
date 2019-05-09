@@ -480,7 +480,7 @@
 [Global]
 全局
 [Global settings]
-
+全局设置
 [Exclude]
 
 [Exclude contacts]

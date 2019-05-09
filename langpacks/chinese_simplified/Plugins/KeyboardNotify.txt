@@ -9,7 +9,7 @@
 
 ;file \plugins\KeyboardNotify\res\resources.rc
 [Accounts to check]
-
+要检查的帐户
 [Events to react on]
 
 [Incoming messages]
@@ -201,7 +201,7 @@
 [Accounts]
 帐户
 [Rules]
-
+规则
 [Flashing]
 闪动
 [Themes]

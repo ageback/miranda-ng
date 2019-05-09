@@ -44,7 +44,6 @@
 [Don't cycle through accounts]
 [<no status name>]
 [My details]
-[Avatar border]
 [Show my details]
 [Enable listening to for %s]
 [Set my avatar for %s...]

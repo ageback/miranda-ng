@@ -247,7 +247,7 @@
 [Indefinite]
 
 [Set status message]
-
+设置状态消息
 [Add]
 添加
 [Save]

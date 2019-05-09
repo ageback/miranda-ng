@@ -16,7 +16,6 @@
 [Contact is on your local list]
 [Contact is included into your server list]
 [Allowed (active) contact]
-[Blocked contact]
 [Somebody included you in his/her server list]
 [Enable Popup notifications]
 [Enable Contact List notifications]

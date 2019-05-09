@@ -12,7 +12,6 @@
 [Align to the right]
 [Dim idle contact icons]
 [<no group>]
-[Favorite Contact]
 [Regular Contact]
 [Contact name]
 [Selected contact name (color)]

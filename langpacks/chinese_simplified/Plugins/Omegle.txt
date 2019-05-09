@@ -58,7 +58,7 @@
 [Admin]
 管理员
 [Normal]
-
+普通
 [Omegle is a great way of meeting new friends!]
 
 [You]

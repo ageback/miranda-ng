@@ -9,7 +9,7 @@
 
 ;file \plugins\XSoundNotify\res\XSoundNotify.rc
 [Account:]
-
+帐户：
 [Nick:]
 昵称：
 [Sound:]

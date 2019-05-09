@@ -6,192 +6,369 @@
 ;  Authors: P Boon
 ;============================================================
 [A connection checker and auto away module. Also allows you to define the status Miranda should set on startup, configurable per protocol.]
+连接检查器和自动离开模块。 还允许您定义Miranda应在启动时设置的状态，可根据协议进行配置。
 ;file \plugins\StatusManager\res\resource.rc
 [Available modules]
+可用的模块
 [Keep status]
+保持状态
 [Automatically reconnects your accounts after protocol error or internet drop.]
+协议错误或互联网丢失后自动重新连接您的帐户。
 [Startup status]
+<启动状态>
 [Allows you to define the status Miranda should set on startup, configurable per account.]
+允许您定义Miranda应在启动时设置的状态，可根据帐户进行配置。
 [Advanced auto away]
+高级自动离开
 [Improved auto away module with some more options than the built in, configurable per account.]
+改进的自动离开模块，具有比内置更多的选项，每个帐户可配置。
 [Note: Miranda NG will have to be restarted for changes to take effect.]
+注意：必须重新启动Miranda NG才能使更改生效。
 [General]
+通用
 [Show popups]
+显示弹出窗口
 [Account connection]
+帐户连接
 [Check connection]
+检查连接
 [Maximum retries (0 - infinite)]
+最大重试（0 - 无限）
 [Delay between retries (secs)]
+重试间隔（秒）
 [Accounts to check]
+要检查的帐户
 [Dial-up]
+拨号
 [Don't reconnect if no internet connection seems available]
+如果没有可用的互联网连接，请不要重新连接
 [Continuously check for internet connection]
+持续检查互联网连接
 [Do so by pinging host]
+通过ping主机这么做
 [Confirm status]
+确认状态
 [Close]
+关闭
 [Cancel]
+取消
 [Profile]
+配置文件
 [Message]
+消息
 [Account:]
+帐户：
 [Away mode]
+离开模式
 [Set]
+设置
 [when full-screen mode is active]
+当全屏模式被激活时
 [when screen saver engages]
+当屏幕保护程序参与时
 [when workstation is locked]
+当工作站被锁定时
 [when terminal session is disconnected]
+当终端会话断开连接时
 [after]
+此后
 [minutes of inactivity]
+分钟不活动
 [After away]
+此后离开
 [minutes of level 1 mode]
+1级模式的分钟
 [only set when inactive]
+仅在不活动时设置
 [Monitor Miranda's activity only]
+仅监控 Miranda 的活动
 [Reset status on return]
+返回时重置状态
 [Confirm resetting status]
+确认重置状态
 [Enter idle mode]
+输入空闲模式
 [Only set if current status is]
+仅在当前状态为以下状态时设置
 [Command line]
+命令行
 [Copy to clipboard]
+复制到剪贴板
 [Command line:]
+命令行：
 [Create shortcut]
+创建快捷方式
 [Add new profile]
+添加新配置文件
 [Profile name]
+配置文件名称
 [Set window state]
+设置窗口状态
 [Show dialog]
+显示对话框
 [Set status to offline before exit]
+退出前设置状态为离线
 [Show CMDL]
+显示命令行
 [Activate status profile]
+激活状态配置文件
 [Set docked]
+设置停靠
 [Other]
+其他
 [Status on startup]
+启动时的状态
 [ms]
+ms
 [Set after]
+设置于此后
 [Timeout]
+超时
 [s]
+秒
 [Set window location]
+设置窗口位置
 [Left]
+左
 [Top]
+顶部
 [Set window size]
+设置窗口大小
 [Width]
+宽度
 [Height]
+高度
 [Allow override]
+允许覆盖
 [Note: status profiles can be created in the 'Status profiles' options screen]
+注意：状态配置文件可以在“状态配置文件”选项屏中创建
 [Window on startup]
+启动时的窗口
 [Automatically dial on startup]
+启动时自动拨号
 [Automatically hang up on exit]
+退出时自动挂起
 [Dial-up (experimental)]
+拨号（实验性）
 [Background color]
+背景色
 [Text color]
+文字颜色
 [Use Windows colors]
+使用 Windows 颜色
 [Use default colors]
+使用默认颜色
 [Delay]
+延时
 [On left click]
+左键点击时
 [On right click]
+右键点击时
 [Do nothing]
+啥都不干
 [Close popup]
+关闭弹出窗口
 [Cancel reconnecting]
+取消重新连接
 [Colors]
+颜色
 [Preview]
+预览
 [Events]
+事件
 [Show when connection is lost]
+当连接丢失时显示
 [Show when a connection attempt is made]
+当尝试连接时显示
 [Show when reconnection has finished]
+当完成重新连接时显示
 [Show other messages]
+显示其他消息
 [From popup plugin]
+来自弹出窗口插件
 [Custom]
+自定义
 [Permanent]
+永久
 [Show additional information in popups]
+在弹出窗口中显示附加信息
 [Use Miranda's message setting]
+显示 Miranda 的消息设置
 [Use this message:]
+使用此消息：
 [Use %time% for the current time, %date% for the current date]
+使用 %time% 作为当前时间，%date% 作为当前日期 
 [Variables...]
+变量...
 [Specify settings for each account]
+为每个帐户指定设置
 [Use same settings for all accounts]
+为所有帐户使用相同设置
 [Ignore Caps Lock, Num Lock and Scroll Lock keys]
+忽略大写锁定，Num Lock和Scroll Lock键
 [Check interval (secs)]
+检查间隔（秒）
 [Confirm dialog timeout (secs)]
+确认对话框超时（秒）
 [Monitor keyboard activity]
+监控键盘活动
 [Monitor mouse activity]
+监控鼠标活动
 [Ignore Ctrl, Alt, Shift, Tab, Esc and Windows keys]
+忽略Ctrl，Alt，Shift，Tab，Esc和Windows键
 [Ignore any key combination with above keys]
+忽略与上述键的任何组合键
 [Accounts]
+帐户
 [Enable checking]
+启用检查
 [Disable checking]
+禁用检查
 [Set status message]
+设置状态消息
 [Account]
+帐户
 [Status]
+状态
 [Add...]
+添加...
 [Delete]
+删除
 [Create a TopToolBar button]
+创建一个顶部工具栏按钮
 [Show confirm dialog when loading]
+当加载时显示确认对话框
 [Create a main menu item]
+创建一个主菜单项
 [Status profiles]
+状态配置文件
 [Hotkey]
+热键
 [In submenu]
+在子菜单中
 [Timers]
+定时器
 [Maximum delay (secs)]
+最大延时（秒）
 [Maximum account connecting time (secs)]
+最大帐户连接时间（秒）
 [Reconnecting]
+重新连接
 [Ignore locked status of accounts]
+忽略帐户的锁定状态
 [Increase delay exponential]
+增加延迟指数
 [Set account offline before a connection attempt]
+在尝试连接之前将帐户设置为离线
 [Cancel all if an account connects from another location]
+如果帐户从其他位置连接，则全部取消
 [Reconnect on APM resume]
+APM 恢复时重新连接
 [React on login errors]
+登录错误时重新连接
 [Stop trying to reconnect]
+停止尝试重新连接
 [Set delay to]
+设置延时为
 [seconds]
+秒
 [Consider connection lost after]
+认为连接丢失在此后
 [failed pings]
+失败的 ping
 [Continuously check interval (secs)]
+持续的检查间隔（秒）
 ;file \plugins\StatusManager\src\aaa_options.cpp
 [minutes of %s mode]
+%s 模式的分钟
 [Auto away]
+自动离开
 [Rules]
+规则
 [Status messages]
+状态消息
 ;file \plugins\StatusManager\src\confirmdialog.cpp
 [Set %s message for %s.]
+设置 %s 消息为 %s。
 [<last>]
+<上次>
 [<current>]
+<当前>
 [<n/a>]
+<n/a>
 [Protocol]
+协议
 [Closing in %d]
+在 %d 后关闭
 ;file \plugins\StatusManager\src\keepstatus.cpp
 [%s connected from another location]
+%s 从另一个位置连接了
 [%s login error, cancel reconnecting]
+%s 登录错误，取消重新连接
 [%s login error (next retry (%d) in %d s)]
+%s 登录错误（下次重试（%d）在%d秒后）
 [%s status error (next retry (%d) in %d s)]
+%s 状态错误（下次重试（%d）在%d秒后） 
 [Status error (next retry (%d) in %d s)]
+状态错误（下次重试（%d）在%d秒后） 
 [Resetting status... (last try (%d))]
+正在重置状态... （上次重试（%d））
 [Resetting status... (next retry (%d) in %d s)]
+正在重置状态... （下次重试（%d）在%d秒后） 
 [%s\t(will be set to %s)\r\n]
+%s\t（将被设为 %s）\r\n
 [No internet connection seems available... (last try (%d))]
+似乎没有可用的因特网连接... （上次重试（%d））
 [No internet connection seems available... (next retry (%d) in %d s)]
+似乎没有可用的因特网连接... （下次重试（%d）在%d秒后） 
 [Status was set ok]
+状态设置成功
 [Giving up]
+放弃
 ;file \plugins\StatusManager\src\ks_options.cpp
 [You broke the Internet!]
+你断开了因特网！
 [Basic]
+基本
 [Advanced]
+高级
 [Popups]
+弹出窗口
 ;file \plugins\StatusManager\src\options.cpp
 [Status manager]
+状态管理器
 ;file \plugins\StatusManager\src\ss_options.cpp
 [<unknown>]
+<未知>
 [default]
+默认
 [Hidden]
+隐藏
 [Minimized]
+最小化
 [Normal]
+普通
 [Right]
+右
 [None]
+无
 [size: %d x %d]
+大小：%d x %d
 [loc: %d x %d]
+位置：%d x %d
 [Create a status menu item]
+创建一个状态菜单项
 [unknown]
+未知
 [At least one profile must exist]
+必须存在至少一个配置文件
 [Your default profile will be changed]
+你的默认配置文件将被更改
 ;file \plugins\StatusManager\src\ss_profiles.cpp
 ;file \plugins\StatusManager\src\ss_toolbars.cpp
 [Pressed toolbar icon]
+按下的工具栏图标
 [Released toolbar icon]
+释放的工具栏图标
 [Toolbar]
-
-
+工具栏

@@ -131,7 +131,7 @@
 [Background]
 背景
 [Avatar border]
-
+头像边框
 [Show my details]
 
 [Enable listening to for %s]

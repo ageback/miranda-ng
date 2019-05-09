@@ -131,7 +131,7 @@
 [Add server]
 
 [Auto]
-
+自动
 [On]
 开
 [Off]
@@ -199,7 +199,7 @@
 [Strip colors]
 
 [Normal]
-
+普通
 [Send-ahead]
 
 [Attempt reverse DCC (good if firewalled)]

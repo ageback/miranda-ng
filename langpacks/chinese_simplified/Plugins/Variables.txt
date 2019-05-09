@@ -47,7 +47,7 @@
 [Notes]
 笔记
 [Variables...]
-
+变量...
 ;file \plugins\Variables\src\help.cpp
 [Token]
 

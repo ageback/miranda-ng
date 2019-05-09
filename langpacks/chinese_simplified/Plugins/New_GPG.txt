@@ -33,7 +33,7 @@
 [Generate and use random key]
 
 [Account:]
-
+帐户：
 [Key ID:]
 
 [Copy public key]
