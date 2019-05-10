@@ -94,7 +94,7 @@
 [Network]
 网络
 [Basic]
-
+基本
 [Popups]
 弹出窗口
 [%s Protocol]

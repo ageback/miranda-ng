@@ -124,7 +124,7 @@
 [connecting]
 正在连接
 [aborting]
-
+中止
 [Can't initialize device]
 
 [Can't connect to net. Please, clear 'Work offline' option in Internet settings]

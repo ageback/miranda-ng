@@ -17,7 +17,7 @@
 [Clear statistics]
 
 [Notification]
-
+通知
 [Notify me on every]
 
 [kilobytes]

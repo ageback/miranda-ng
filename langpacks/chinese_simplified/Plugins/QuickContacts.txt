@@ -48,7 +48,7 @@
 [Open history]
 
 [Open contact menu]
-
+打开联系人菜单
 ;file \plugins\QuickContacts\src\options.cpp
 [Quick Contacts]
 

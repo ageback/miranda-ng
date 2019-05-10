@@ -96,7 +96,7 @@
 [Announce]
 
 [Notification]
-
+通知
 [Error]
 错误
 ;file \protocols\Sametime\src\sametime_proto.cpp

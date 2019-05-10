@@ -353,7 +353,7 @@
 [Show 'Share status' window]
 
 [Notification]
-
+通知
 [Newsfeed event]
 
 [Other event]

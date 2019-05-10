@@ -1,7 +1,6 @@
 [Adding traffic and time counters.]
 [Selected totals]
 [Clear statistics]
-[Notification]
 [Notify me on every]
 [kilobytes]
 [Popup timeout]

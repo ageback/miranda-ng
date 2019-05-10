@@ -17,7 +17,7 @@
 [Enable contact list shaking]
 
 [Open message window]
-
+打开消息窗口
 [Enable message window shaking]
 
 [Show as status change]

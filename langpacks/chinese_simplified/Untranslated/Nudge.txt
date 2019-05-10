@@ -3,7 +3,6 @@
 [Specify options for each protocol]
 [Open contact list]
 [Enable contact list shaking]
-[Open message window]
 [Enable message window shaking]
 [Show as status change]
 [Auto resend nudge after]

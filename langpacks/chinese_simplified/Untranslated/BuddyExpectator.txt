@@ -5,7 +5,6 @@
 [Add an event (flashing icon) to the contact]
 [On event action (double click) or popup click:]
 [Open User Details]
-[Open message window]
 [Return notification]
 [Long time no see]
 [When a contact is absent for]

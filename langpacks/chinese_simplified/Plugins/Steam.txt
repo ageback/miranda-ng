@@ -61,7 +61,7 @@
 [ on server %s]
 
 [Playing]
-
+正在播放
 [%s is back in your contact list]
 
 [%s has been removed from your contact list]

@@ -293,7 +293,7 @@
 [%d seconds]
 
 [Read status message]
-
+阅读状态消息
 [On]
 开
 [Off]

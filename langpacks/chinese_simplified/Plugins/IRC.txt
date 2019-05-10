@@ -159,7 +159,7 @@
 [Online detection mode]
 
 [Basic]
-
+基本
 [Wildcard enabled network search]
 
 [Channel manager]
@@ -193,7 +193,7 @@
 [Channel modes]
 
 [Hidden]
-
+隐藏
 [Use the options to set modes for this channel. You are usually required to be op. or higher to modify.]
 
 [Strip colors]

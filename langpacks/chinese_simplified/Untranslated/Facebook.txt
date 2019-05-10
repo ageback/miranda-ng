@@ -142,7 +142,6 @@
 [Visit profile]
 [Visit notifications]
 [Show 'Share status' window]
-[Notification]
 [Newsfeed event]
 [Friendship event]
 [Ticker event]

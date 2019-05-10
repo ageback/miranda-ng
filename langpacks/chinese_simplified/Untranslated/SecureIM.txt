@@ -26,7 +26,6 @@
 [Set &keyrings...]
 [Disable keyrings use]
 [Load &Private key]
-[Basic]
 [Executable:]
 [Home Directory:]
 [Temp Dir:]

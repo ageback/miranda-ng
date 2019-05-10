@@ -45,7 +45,7 @@
 [Show messages]
 显示消息
 [Truncate message length to:]
-
+截断消息长度为：
 [Delta time to group messages:]
 
 [hours]

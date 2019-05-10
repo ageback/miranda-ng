@@ -21,7 +21,7 @@
 [Open User Details]
 
 [Open message window]
-
+打开消息窗口
 [Return notification]
 
 [Long time no see]

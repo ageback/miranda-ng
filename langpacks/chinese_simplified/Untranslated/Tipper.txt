@@ -67,7 +67,6 @@
 [Protocol lock status]
 [Logon time]
 [Unread emails]
-[Extra status]
 [Miranda uptime]
 [Contact list event]
 [Gender]

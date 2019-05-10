@@ -211,7 +211,7 @@
 [Status message]
 状态消息
 [Extra status]
-
+额外状态
 [Listening to]
 正在听
 [Miranda uptime]

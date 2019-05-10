@@ -6,10 +6,10 @@
 ;  Authors: Luca Santarelli, Vasilich, yaho
 ;============================================================
 [Notifies you when a contact changes his/her (X)status or status message.]
-
+当一个联系人改变他/她的(X)status或状态消息时通知你。
 ;file \plugins\NewXstatusNotify\res\resource.rc
 [Notify when contact changes to one of these statuses]
-
+当联系人改变为这些状态之一时通知
 [Online]
 离线
 [Offline]
@@ -31,31 +31,31 @@
 [On the phone]
 接电话
 [Always when changing from offline]
-
+当从离线改变时总是
 [Notify when contact changes]
-
+当联系人改变时通知
 [Extra status]
-
+额外状态
 [Status message]
 状态消息
 [Plugin activation]
-
+插件激活
 [Automatically turn off Popups and Sounds on status change]
-
+当状态改变时自动关闭弹出窗口和声音
 [Configure]
 配置
 [Notify me for people not on my contact list]
-
+通知我不在我的联系人列表中的人
 [Use individual sounds]
-
+使用单个声音
 [Blink icon in the system tray]
-
+在系统托盘闪烁图标
 [Also when extra status or status message changes]
-
+当额外状态或状态消息发生变化时
 [Use status icon]
-
+使用状态图标
 [Log to file]
-日志到文件
+记录到文件
 [Open]
 打开
 [Change]
@@ -69,27 +69,27 @@
 [Enable popups]
 启用弹出窗口
 [Status Notify]
-
+状态通知
 [Individual sounds are disabled.\n\nTo enable them, go to Options -> Status -> Status Notify, enable\n"Use individual sounds" checkbox, and then reopen this dialog.]
-
+单独声音被禁用。\n\n要启用它们，转到 选项 -> 状态 -> 状态通知,启用\n“使用单独声音”复选框，然后重新打开此对话框。
 [Sounds]
 声音
 [Popups]
 弹出窗口
 [Extra status notify]
-
+额外状态通知
 [Extra status logging]
-
+额外状态日志
 [Disable all]
-
+禁用所有
 [Enable all]
-
+启用所有
 [Status message notify]
-
+状态消息通知
 [Status message logging]
-
+状态消息日志
 [Popups when status changes to:]
-
+弹出窗口当状态变更为：
 [Background]
 背景
 [Text]
@@ -105,21 +105,21 @@
 [Popup text]
 弹出窗口文字
 [Show contact group name]
-
+显示联系人分组名称
 [Show status description]
-
+显示状态描述
 [Use alternative descriptions]
-
+使用备用描述
 [Show previous status too]
-
+也显示上一个状态
 [Read status message]
-
+阅读状态消息
 [Timeout]
 超时
 [Sec]
 秒
 [Connection timeout]
-
+连接超时
 [0 = Default]
 0 = 默认
 [-1 = Infinite]
@@ -131,27 +131,27 @@
 [On right click]
 右键点击时
 [Notification]
-
+通知
 [Show Popups when I connect]
-
+当我连接时显示弹出窗口
 [Disable for extra status 'Music']
-
+禁用额外状态“音乐”
 [Truncate message length to:]
-
+截断消息长度为：
 [characters]
 字符
 [Templates]
 模板
 [Notify when contact changes extra status]
-
+当联系人改变额外状态时通知
 [Template:]
-
+模板：
 [Notify when contact removes extra status]
-
+当联系人移除额外状态时通知
 [Notify when contact changes extra status message]
-
+当联系人改变额外状态消息时通知
 [Notify when contact removes extra status message]
-
+当联系人移除额外状态消息时通知
 [Variables]
 变量
 [Reset]
@@ -159,204 +159,204 @@
 [Disable notifications]
 禁用通知
 [Disable globally]
-
+全局禁用
 [Disable when my status is:]
-
+当我为以下状态时禁用：
 [Disable only if I change global status]
-
+仅当我改变全局状态时禁用
 [Cancel]
 取消
 [Log extra status changes]
-
+记录额外状态变更
 [Log extra status changes to file]
-
+记录额外状态变更到文件 
 [Log extra status changes to history]
-
+记录额外状态变更到历史 
 [Only when message window is open]
-
+仅当消息窗口打开时
 [Remove events from history when closing message window]
-
+当关闭消息窗口时从历史中移除事件
 [Log when contact changes extra status]
-
+当联系人改变额外状态时记录
 [Log when contact removes extra status]
-
+当联系人移除额外状态时记录
 [Log when contact changes extra status message]
-
+当联系人改变额外状态消息时记录
 [Log when contact removes extra status message]
-
+当联系人移除额外状态消息时记录
 [Log extra status when opening message window]
-
+当打开消息窗口时记录额外状态
 [General]
 通用
 [Accounts]
 帐户
 [Enable/Disable accounts which you don't wish to be notified for:]
-
+启用/禁用你不想收到通知的帐户：
 [Notify when contact changes status message]
-
+当联系人改变状态消息时通知
 [Notify when contact removes status message]
-
+当联系人移除状态消息时通知
 [Log status changes]
 日志状态变更
 [Log status changes to file]
-
+记录状态变更到文件
 [Log status changes to history]
-
+记录状态变更到历史
 [Log previous status too]
-
+也记录上一个状态
 [Log status message changes]
-
+记录状态消息变更
 [Log status message changes to file]
-
+记录状态消息变更到文件
 [Log status message changes to history]
-
+记录状态消息变更到历史
 [Log when contact changes status message]
-
+当联系人改变状态消息时记录
 [Log when contact removes status message]
-
+当联系人移除状态消息时记录
 [Log status message when opening message window]
-
+当打开消息窗口时记录状态消息
 ;file \plugins\NewXstatusNotify\src\indsnd.cpp
 [Sound files]
 声音文件
 [All files]
 所有文件
 [Wave files]
-
+波形文件
 [Status]
 状态
 [Sound file]
-
+声音文件
 [** All contacts **]
 ** 所有联系人 **
 ;file \plugins\NewXstatusNotify\src\indsnd.h
 [(default sound)]
-
+（默认声音）
 ;file \plugins\NewXstatusNotify\src\main.cpp
 [Notification enabled]
-
+通知已启用
 [Notification disabled]
-
+通知已禁用
 [<no status message>]
-
+<无状态消息>
 [Contact]
 联系
 [<unknown>]
 <未知>
 [%s is now %s]
-
+%s 现在是 %s
 [%s, %s. %s changed status to %s (was %s)\r\n]
-
+%s, %s. %s 更改状态为 %s (原来是 %s)\r\n
 [connecting]
 正在连接
 [aborting]
-
+中止
 [playing]
-
+正在播放
 [%s changed status message to %s]
-
+%s 更改状态消息为 %s
 [(M) is back online!]
-
+（M）重新上线！
 [(F) is back online!]
-
+（F）重新上线！
 [(U) is back online!]
-
+（U）重新上线！
 [User: Online]
-
+用户：在线
 [(M) went offline! :(]
-
+（M）离线了！:(
 [(F) went offline! :(]
-
+（F）离线了！:(
 [(U) went offline! :(]
-
+（U）离线了！:(
 [User: Offline]
-
+用户：离线
 [(M) hides in shadows...]
-
+（M）隐藏在阴影中...
 [(F) hides in shadows...]
-
+（F）隐藏在阴影中...
 [(U) hides in shadows...]
-
+（U）隐藏在阴影中...
 [User: Invisible]
-
+用户：隐身
 [(M) feels talkative!]
-
+（M）感觉健谈！
 [(F) feels talkative!]
-
+（F）感觉健谈！ 
 [(U) feels talkative!]
-
+（U）感觉健谈！ 
 [User: Free for chat]
-
+用户：有空聊天
 [(M) went away]
-
+（M）离开了
 [(F) went away]
-
+（F）离开了
 [(U) went away]
-
+（U）离开了
 [User: Away]
-
+用户：离开
 [(M) isn't there anymore!]
-
+（M）不在了！
 [(F) isn't there anymore!]
-
+（F）不在了！
 [(U) isn't there anymore!]
-
+（U）不在了！
 [User: Not available]
-
+用户：不可用
 [(M) has something else to do]
-
+（M）有别的事情要做
 [(F) has something else to do]
-
+（F）有别的事情要做
 [(U) has something else to do]
-
+（U）有别的事情要做
 [User: Occupied]
-
+用户：忙碌
 [(M) doesn't want to be disturbed!]
-
+（M）不想被打扰！
 [(F) doesn't want to be disturbed!]
-
+（F）不想被打扰！
 [(U) doesn't want to be disturbed!]
-
+（U）不想被打扰！
 [User: Do not disturb]
-
+用户：勿扰
 [(M) is eating something]
-
+（M）正在吃东西
 [(F) is eating something]
-
+（F）正在吃东西
 [(U) is eating something]
-
+（U）正在吃东西
 [User: Out to lunch]
-
+用户：外出用餐
 [(M) had to answer the phone]
-
+（M）不得不接电话
 [(F) had to answer the phone]
-
+（F）不得不接电话
 [(U) had to answer the phone]
-
+（U）不得不接电话
 [User: On the phone]
-
+用户：在接电话
 [User: from offline (has priority!)]
-
+用户：从离线（具有优先权！）
 [Status message removed]
-
+状态消息移除
 [Status message changed]
-
+状态消息改变
 [Extra status removed]
-
+额外状态移除
 [Extra status message changed]
-
+额外状态消息改变
 [Extra status changed]
-
+额外状态改变
 [Extra status message removed]
-
+额外状态消息移除
 [Enable status notification]
-
+启用状态通知
 [Disable status notification]
-
+禁用状态通知
 [Toggle status notification]
-
+切换状态通知
 [New Status Notify]
-
+新状态通知
 [Status change]
 状态变更
 ;file \plugins\NewXstatusNotify\src\options.cpp
@@ -365,78 +365,78 @@
 [Log]
 日志
 [This is status message]
-
+这是状态消息
 [This is extra status]
-
+这是额外状态
 [Show available variables]
-
+显示可用的变量
 [Reset all templates to default]
-
+重置所有模板为默认
 [Do you want to reset all templates to default?]
-
+你要重置所有模板为默认吗？
 [Reset templates]
-
+重置模板
 [Account]
 帐户
 [Status logging]
-
+状态日志
 [Filtering]
 过滤
 ;file \plugins\NewXstatusNotify\src\popup.h
 [(was %s)]
-
+(原为%s)
 [Open message window]
-
+打开消息窗口
 [Close popup]
 关闭弹出窗口
 [Open contact details window]
-
+打开联系人详情窗口
 [Open contact menu]
-
+打开联系人菜单
 [Open contact history]
-
+打开联系人历史
 [Do nothing]
 啥都不干
 ;file \plugins\NewXstatusNotify\src\utils.cpp
 [Can't open the log file!]
-
+无法打开日志文件！
 [NewXstatusNotify]
-
+NewXstatusNotify
 ;file \plugins\NewXstatusNotify\src\xstatus.cpp
 [Mood]
 心情
 [Activity]
 活动
 [xStatus]
-
+xStatus
 [<no title>]
-
+<无标题>
 [%s changed %s]
-
+%s 改变了 %s
 ;file \plugins\NewXstatusNotify\src\xstatus.h
 [changed %n to: %t]
-
+改变 %n 为：%t
 [removed %n]
-
+移除了 %n
 [changed %n message to: %m]
-
+改变了 %n 消息为：%m
 [removed %n message]
-
+移除了 %n 消息
 [changed status message to: %n]
-
+更改状态消息为：%n
 [removed status message]
-
+移除了状态消息
 [changed %n @ %t: %m]
-
+改变了 %n @ %t：%m
 [changed %n message @ %m]
-
+改变了 %n 消息 @ %m
 [has %n @ %t: %m]
-
+有 %n @ %t：%m
 [changed status message @ %n]
-
+更改状态消息 @ %n
 [is %s and has status message @ %n]
-
+是 %s 并且有状态消息 @ %n
 [These variables are available:\r\n\r\n%n\textra status name (xStatus, Mood, Activity)\r\n%t\textra status title\r\n%m\textra status message\r\n%c\tcustom nickname\r\n\\n\tline break\r\n\\t\ttab stop]
-
+这些变量可用：\r\n\r\n%n\t额外状态名称（xStatus，心情，活动）\r\n%t\t额外状态标题\r\n%m\t额外状态消息\r\n%c\t自定义昵称\r\n\\n\t换行\r\n\\t\t制表位
 [These variables are available:\r\n\r\n%n\tnew status message\r\n%o\told status message\r\n%c\tcustom nickname\r\n%s\tcurrent status\r\n\\n\tline break\r\n\\t\ttab stop]
-
+这些变量可用：\r\n\r\n%n\t新状态消息\r\n%o\t旧状态消息\r\n%c\t自定义昵称\r\n%s\t当前状态\r\n\\n\t换行\r\n\\t\t制表位

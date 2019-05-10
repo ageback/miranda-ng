@@ -16,7 +16,6 @@
 [Send file]
 [Open user info]
 [Open history]
-[Open contact menu]
 [Quick Contacts]
 [Open dialog]
 [Quick Contacts...]

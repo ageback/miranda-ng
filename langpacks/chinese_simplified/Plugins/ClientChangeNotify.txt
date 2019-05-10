@@ -78,15 +78,15 @@
 [(you can use regular expressions here)]
 
 [Open message window]
-
+打开消息窗口
 [Close popup]
 关闭弹出窗口
 [Open contact details window]
-
+打开联系人详情窗口
 [Open contact menu]
-
+打开联系人菜单
 [Open contact history]
-
+打开联系人历史
 [Do nothing]
 啥都不干
 [ClientChangeNotify]

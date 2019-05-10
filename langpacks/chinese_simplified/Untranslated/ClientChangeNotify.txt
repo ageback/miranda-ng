@@ -20,8 +20,4 @@
 [Error #%d]
 [Can't open log file ]
 [(you can use regular expressions here)]
-[Open message window]
-[Open contact details window]
-[Open contact menu]
-[Open contact history]
 [ClientChangeNotify]

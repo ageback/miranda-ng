@@ -71,7 +71,7 @@
 [Load &Private key]
 
 [Basic]
-
+基本
 [Executable:]
 
 [Home Directory:]
