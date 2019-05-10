@@ -221,7 +221,7 @@
 [Jabber activity]
 Jabber 活动
 [Gender]
-
+性别
 [Country flag]
 
 [Client]
@@ -327,7 +327,7 @@ Jabber 活动
 [Account:]
 帐户：
 [Birthday]
-
+生日
 [Birthday:]
 
 [Client:]

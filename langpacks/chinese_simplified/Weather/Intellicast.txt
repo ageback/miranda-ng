@@ -23,13 +23,13 @@
 [Sunny]
 晴朗
 [Waning Crescent]
-
+残月
 [Waning Gibbous]
-
+亏凸月
 [Waxing Crescent]
-
+眉月
 [Waxing Gibbous]
-
+盈凸月
 [Last Quarter]
 上个季度
 [First Quarter]

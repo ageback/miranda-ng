@@ -31,7 +31,6 @@
 [First Name]
 [Last Name]
 [Anniversary]
-[Birthday]
 [Place:]
 [MSN Delete Contact]
 [Remove from Hotmail Address book]

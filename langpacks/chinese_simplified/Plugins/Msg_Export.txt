@@ -164,13 +164,13 @@ UIN
 [Age]
 
 [Gender]
-
+性别
 [City]
 
 [State]
 状态
 [Phone]
-
+电话
 [Homepage]
 主页
 [About]

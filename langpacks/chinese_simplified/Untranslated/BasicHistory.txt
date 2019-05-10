@@ -58,7 +58,6 @@
 [Minus in export]
 [Default history events]
 [%s files (*.%s)]
-[Import]
 [Export]
 [File does not contain selected contact]
 [File is corrupted]

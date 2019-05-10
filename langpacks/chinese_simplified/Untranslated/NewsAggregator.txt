@@ -1,5 +1,4 @@
 [RSS/Atom news aggregator.]
-[Import]
 [Export]
 [Retrieve news at startup]
 [General Settings]
@@ -14,7 +13,6 @@
 [This feed seems to need authentication. Please fill username and password fields:]
 [Available feeds:]
 [Feeds to be exported:]
-[&Export]
 [Import from:]
 [Feeds to be imported:]
 [&Import]

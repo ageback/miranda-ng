@@ -89,7 +89,7 @@
 [Anniversary]
 
 [Birthday]
-
+生日
 [Nickname]
 昵称
 [Place:]

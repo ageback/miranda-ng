@@ -2748,6 +2748,8 @@ PNG位图
 下
 [Test]
 测试
+[Import]
+导入
 [&Yes]
 是(&)
 [&No]
@@ -2816,6 +2818,8 @@ PNG位图
 协议菜单
 [Status menu]
 状态菜单
+[Common]
+通用
 [Separated]
 分居
 [Show All Frames]
@@ -2862,6 +2866,8 @@ PNG位图
 在洗澡
 [Tired]
 疲劳
+[Birthday]
+生日
 [Thinking]
 在思考
 [Eating]
@@ -3217,6 +3223,8 @@ PNG位图
 我
 [Invalid message]
 无效的消息
+[Import]
+导入
 [Are you sure?]
 你确定吗？
 [Open in &new window]
@@ -5399,6 +5407,8 @@ GnuPG插件 - 选择公钥
 收藏
 [Undo changes]
 撤销更改
+[Import]
+导入
 [No change]
 无改变
 [Clear]
@@ -5433,10 +5443,14 @@ GnuPG插件 - 选择公钥
 取消
 [Name]
 名字
+[Import]
+导入
 [E&xit]
 退出(&X)
 [&Delete all]
 删除所有(&D)
+[&Export]
+导出(&E)
 [&Options]
 选项(&O)
 [&Edit]
@@ -5797,6 +5811,10 @@ Miranda NG [%s] 数据库备份
 ;  Version: 0.1.0.4
 ;  Authors: H. Herkenrath
 ;============================================================
+[Country Flags]
+国旗
+[Show country flag as &status icon on message window]
+在消息窗口中将国旗显示为状态图标(&S)
 [Icons]
 图标
 #muuid {53c715a8-eb01-4136-a73c-441868610074}
@@ -7118,6 +7136,8 @@ History++ 警告
 ;  Version: 0.95.10.1
 ;  Authors: Miranda team
 ;============================================================
+[Enable]
+启用
 [Password]
 密码
 [&Add]
@@ -9830,8 +9850,12 @@ UIN
 姓
 [e-mail]
 电子邮件
+[Gender]
+性别
 [State]
 状态
+[Phone]
+电话
 [Homepage]
 主页
 [About]
@@ -9861,6 +9885,8 @@ UIN
 其他
 [Cancel]
 取消
+[Birthday]
+生日
 [Nickname]
 昵称
 [&Invite]
@@ -10090,6 +10116,8 @@ UIN
 更改
 [Remove]
 移除
+[Import]
+导入
 [Cancel]
 取消
 [Title]
@@ -10108,6 +10136,8 @@ URL
 重置
 [Username]
 用户名
+[&Export]
+导出(&E)
 [&Close]
 关闭(&C)
 [Error]
@@ -10580,6 +10610,8 @@ xStatus
 取消
 [Password:]
 密码：
+[Import]
+导入
 [Current password:]
 当前密码：
 [Warning]
@@ -10784,6 +10816,8 @@ Non-IM 联系人(&N)
 ;============================================================
 [Clear History]
 清除历史
+[Enable]
+启用
 [Clear]
 清除
 [** All contacts **]
@@ -11389,6 +11423,8 @@ Purple
 协议
 [Menu]
 菜单
+[Enable]
+启用
 [All Files]
 所有文件
 [Open log file]
@@ -12072,6 +12108,8 @@ Popup plus 警告
 称号
 [Account]
 帐户
+[Gender]
+性别
 [Nickname]
 昵称
 [Group]
@@ -12862,6 +12900,8 @@ Miranda 的根目录路径
 协议
 [Private]
 私有
+[&Export]
+导出(&E)
 [Basic]
 基本
 [Debug]
@@ -13716,18 +13756,46 @@ Miranda 相关
 ;  Version: 0.1.2.3
 ;  Authors: nullbie, Thief
 ;============================================================
+[Shows a splash at Miranda startup.]
+在 Miranda 启动时显示一个闪屏。
+[Splash Options]
+闪屏选项
+[Show splash]
+显示闪屏
+[Show random splash]
+显示随机闪屏
 [Play sound]
 播放声音
+[Show Miranda Version]
+显示 Miranda 版本
+[Enable]
+启用
 [Prefix:]
 前缀：
 [Appearance]
 出现
+[Display time:]
+显示时间：
 [ms]
 毫秒
+[Fade in:]
+淡入：
+[steps]
+步骤
+[Fade out:]
+淡出：
+[Preview...]
+预览...
+[Download more splash screens]
+下载更多闪屏
+[Graphic files]
+图像文件
 [Sound Files]
 声音文件
 [Skins]
 皮肤
+[Splash Screen]
+闪屏
 #muuid {211f6277-6f9b-4b77-a939-84d04b26b38c}
 ;============================================================
 ;  File: StartPosition.dll
@@ -16319,6 +16387,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 正在听
 [Jabber activity]
 Jabber 活动
+[Gender]
+性别
 [Icon on left]
 图标在左侧
 [Icon on right]
@@ -16365,6 +16435,8 @@ Jabber 活动
 帐户
 [Account:]
 帐户：
+[Birthday]
+生日
 [Gender:]
 性别：
 [Homepage]
@@ -16659,6 +16731,8 @@ Jabber 活动
 ;  Version: 0.11.3.2
 ;  Authors: Miranda NG team
 ;============================================================
+[Import]
+导入
 [Name:]
 名称：
 [Password:]
@@ -17183,18 +17257,58 @@ John Doe（1/10）
 显示项目：
 [Reset to defaults]
 重置为默认
+[Creating unique name for a page failed with %d and error code %d]
+为%d创建页面的唯一名称失败，错误代码为%d
+[Creating the label for a page failed with %d and error code %d]
+为%d创建页面标签失败，错误代码为%d
+[The dialog template type is no longer supported]
+对话框模板类型不再受支持
+[Add a new anniversary]
+添加一个新的周年纪念日
+[Delete an existing anniversary]
+删除一个已有的周年纪念日
 [Unspecified]
 未指定
+[Edit e-mail]
+编辑电子邮件
 [Edit phone number]
 编辑电话号码
+[The phone number should start with a + and consist of\nnumbers, spaces, brackets and hyphens only.]
+电话号码应以 + 开头，仅包含\n数字，空格，括号和连字符。
+[Choose the item to display]
+选择要显示的项目
+[Edit the currently displayed item]
+编辑当前显示的项目
+[Add a new custom item]
+添加一个新的自定义项目
+[Delete the selected item]
+删除选中的项目
+[CRITICAL: Unable to edit current entry!\nThis should not happen!]
+关键：无法编辑当前条目！\n这不应该发生！
+[Do you really want to delete the current selected item?\n\t%s\n\t%s]
+你真的想删除当前选中的项吗？\n\t%s\n\t%s
 [Other]
 其他
+[ETA]
+及其
 [Contact]
 联系
+[Proto]
+因此
+[Anniversary]
+周年纪念日
 [Date]
 日期
 [All contacts]
 所有联系人
+[Birthdays only]
+仅生日
+[Anniversaries only]
+仅周年纪念日
+[Disabled reminder]
+禁用的提醒
+[Popup anniversary list]
+弹出周年纪念日列表
 [Retry]
 重试
 [Yes]
@@ -17207,10 +17321,22 @@ John Doe（1/10）
 忽略
 [Error]
 错误
+[Upload details]
+上传详情
+[Protocol '%s' is offline]
+协议‘%s’离线
+[Creating the image list failed!]
+创建图像列表失败！
 [General]
 通用
+[Contact (private)]
+联系人（私有）
+[Anniversaries]
+周年纪念日
 [Work]
 工作
+[Contact (work)]
+联系人（工作）
 [About]
 关于
 [Profile]
@@ -17227,22 +17353,56 @@ John Doe（1/10）
 编辑联系人信息
 [View personal user details and more]
 查看个人用户详情和更多
+[Upload ICQ details]
+上传 ICQ 详情
+[Upload failed]
+上传失败
 [updating]
 正在更新
 [User &details]
 用户详情(&D)
+[Check anniversaries]
+检查周年纪念日
 [Main]
 主
 [Default]
 默认
 [Password]
 密码
+[Timezone]
+时区
+[Marital status]
+婚姻状况
+[Address]
+地址
+[Export: modules]
+导出：模块
+[Export: folder]
+导出：文件夹
+[Details info bar]
+详情信息栏
+[Phone info bar]
+电话信息栏
+[E-mail info bar]
+电子邮件信息栏
+[Export VCard]
+导出 VCard
+[Import VCard]
+导入 VCard
+[Anniversary info bar]
+周年纪念日信息栏
 [Update]
 更新
+[Export]
+导出
+[Goto]
+转到
 [Fax]
 传真
 [Cellular]
 移动电话
+[Custom phone]
+自定义电话
 [Down arrow]
 向下箭头
 [Add]
@@ -17251,26 +17411,150 @@ John Doe（1/10）
 编辑
 [Search]
 搜索
+[Export/import]
+导出/导入
+[Backup birthday]
+备份生日
+[Birthday today]
+生日今天
+[Birthday tomorrow]
+生日明天
+[Birthday in 2 days]
+生日在2天后
+[Birthday in 3 days]
+生日在3天后
+[Birthday in 4 days]
+生日在4天后
+[Birthday in 5 days]
+生日在5天后
+[Birthday in 6 days]
+生日在6天后
+[Birthday in 7 days]
+生日在7天后
+[Birthday in 8 days]
+生日在8天后
+[Birthday in 9 days]
+生日在9天后
+[Birthday later]
+生日在以后
+[Anniversary today]
+周年纪念日今天
+[Anniversary tomorrow]
+周年纪念日明天
+[Anniversary in 2 days]
+周年纪念日在2天后
+[Anniversary in 3 days]
+周年纪念日在3天后
+[Anniversary in 4 days]
+周年纪念日在4天后
+[Anniversary in 5 days]
+周年纪念日在5天后
+[Anniversary in 6 days]
+周年纪念日在6天后
+[Anniversary in 7 days]
+周年纪念日在7天后
+[Anniversary in 8 days]
+周年纪念日在8天后
+[Anniversary in 9 days]
+周年纪念日在9天后
+[Anniversary later]
+周年纪念日在以后
 [Extended user info]
 扩展用户信息
 [Dialogs]
 对话框
 [Buttons]
 按钮
+[Export/import contact]
+导出/导入联系人
+[&Export user details]
+导出用户详情(&E)
+[&Import]
+导入(&I)
+[&Import user details]
+导入用户详情(&I)
 [View/change my &details...]
 查看/更改我的详细信息(&D)...
+[Export all contacts]
+导出所有联系人
+[Import all contacts]
+导入所有联系人
+[Backup birthdays]
+备份生日
+[Export/import group]
+导出/导入分组
+[&Export group]
+导出分组(&E)
+[&Import group]
+导入分组(&I)
+[&Export xml]
+导出xml(&E)
+[&Import xml]
+导入xml(&I)
 [My notes:]
 我的笔记：
 [About:]
 关于：
+[Please enter a valid description first!]
+请先输入一个有效的描述!
+[No valid date selected for editing!]
+没有选择有效的日期来编辑！
+[Do you really want to delete the %s?]
+你真的想要删除 %s 吗？
 [home]
 家
+[Open in browser]
+在浏览器中打开
+[Primary e-mail]
+主电子邮件
+[Secondary e-mail]
+第二电子邮件
+[Tertiary e-mail]
+第三电子邮件
+[Address and contact]
+地址和联系人
+[company]
+公司
+[Question]
+问题
+[Ready]
+就绪
+[Everything is done!]
+一切都完成了！
+[Reminder disabled]
+提醒被禁用
+[Everything]
+任何事情
+[mBirthday]
+mBirthday
+[UserInfo (default)]
+用户信息（默认）
+[This is the reminder message]
+这是提醒消息
 [Contacts]
 联系人
 [Advanced]
 高级
+[Details dialog]
+详情对话框
 [Popups]
 弹出窗口
+[Past]
+过去
+[Affiliation]
+隶属关系
+[Interest]
+兴趣
+[<empty>]
+<空>
+[Edit category]
+编辑分类
+[Edit value]
+编辑值
+[Delete an entry]
+删除一个条目
+[Do you really want to delete this entry?]
+你真的想要删除这个条目吗？
 [Afrikaans]
 南非荷兰语
 [Albanian]
@@ -17281,12 +17565,20 @@ John Doe（1/10）
 亚美尼亚语
 [Azerbaijani]
 阿塞拜疆语
+[Belorussian]
+白俄罗斯语
+[Bhojpuri]
+博杰普尔文
 [Bosnian]
 波斯尼亚语
 [Bulgarian]
 保加利亚语
 [Burmese]
 缅甸语
+[Cantonese]
+广东话
+[Catalan]
+加泰罗尼亚语
 [Chamorro]
 查莫洛
 [Chinese]
@@ -17297,16 +17589,22 @@ John Doe（1/10）
 捷克文
 [Danish]
 丹麦语
+[Dutch]
+荷兰语
 [English]
 英语
 [Esperanto]
 世界语
 [Estonian]
 爱沙尼亚语
+[Farsi]
+波斯语
 [Finnish]
 荷兰语
 [French]
 法语
+[Gaelic]
+盖尔语
 [German]
 德语
 [Greek]
@@ -17327,6 +17625,8 @@ John Doe（1/10）
 意大利语
 [Japanese]
 日语
+[Khmer]
+高棉语
 [Korean]
 韩语
 [Kurdish]
@@ -17341,6 +17641,8 @@ John Doe（1/10）
 马其顿语
 [Malay]
 马来语
+[Mandarin]
+普通话
 [Mongolian]
 蒙古语
 [Norwegian]
@@ -17351,10 +17653,14 @@ John Doe（1/10）
 波兰语
 [Portuguese]
 葡萄牙语
+[Punjabi]
+旁遮普语
 [Romanian]
 罗马尼亚语
 [Russian]
 俄语
+[Serbo-Croatian]
+塞尔维亚 - 克罗地亚语
 [Sindhi]
 信德语
 [Slovak]
@@ -17363,12 +17669,16 @@ John Doe（1/10）
 斯洛文尼亚语
 [Somali]
 索马里
+[Spanish]
+西班牙语
 [Swahili]
 斯瓦希里语
 [Swedish]
 瑞典语
 [Tagalog]
 塔加路语
+[Taiwanese]
+台语
 [Tamil]
 泰米尔语
 [Tatar]
@@ -17389,8 +17699,34 @@ John Doe（1/10）
 依地文
 [Yoruba]
 约鲁巴语
+[Academic]
+学者
+[Administrative]
+行政
+[Art/Entertainment]
+艺术/娱乐
+[College Student]
+大学生
+[Computers]
+计算机
+[Community & Social]
+社区与社会
+[Education]
+教育
+[Engineering]
+工程
+[Financial Services]
+金融服务
+[Government]
+政府
+[High School Student]
+高中学生
 [Home]
 家
+[ICQ - Providing Help]
+ICQ - 提供帮助
+[Law]
+法律
 [Internet]
 因特网
 [Single]
@@ -18155,6 +18491,14 @@ INI 版本：
 ;============================================================
 [Sunny]
 晴朗
+[Waning Crescent]
+残月
+[Waning Gibbous]
+亏凸月
+[Waxing Crescent]
+眉月
+[Waxing Gibbous]
+盈凸月
 [Last Quarter]
 上个季度
 [First Quarter]
@@ -18535,24 +18879,44 @@ N/A
 南
 [Sand]
 沙
+[Scattered Showers]
+零星阵雨
+[Scattered Snow Showers]
+零星阵雪
+[Scattered T-Storms / Wind]
+零星雷雨 / 风
+[Scattered T-Storms]
+零星雷雨
+[Shallow Fog]
+浅雾
 [Showers / Wind Late]
 阵雨 / 晚有风
 [Showers / Wind]
 阵雨 / 风
 [Showers Early]
 早有阵雨
+[Showers In The Vicinity]
+附近有阵雨
 [Showers Late]
 晚有阵雨
 [Showers Rain]
 阵雨
 [Showers]
 阵雨
+[Sleet And Windy]
+雨夹雪并有风
+[Sleet]
+雨雪
+[Smoke]
+烟雾
 [Snow / Wind Early]
 雪 / 早有风
 [Snow / Wind]
 雪 / 风
 [Snow / Windy]
 雪 / 有风
+[Snow And Sleet]
+雪和雨夹雪
 [Snow Early]
 早有雪
 [Snow Shower / Wind]
@@ -18569,10 +18933,14 @@ N/A
 晚有阵雪
 [Snow To Rain]
 雪转雨
+[Snow To Wintry Mix]
+雪转雨夹雪
 [Snow]
 雪
 [Sunny / Wind]
 晴朗 / 风
+[Sunny / Windy]
+晴朗 / 有风
 [Sunny]
 阳光明媚
 [T-Showers Early]
@@ -18587,10 +18955,18 @@ N/A
 稍晚雷雨
 [T-Storms]
 雷雨
+[Thunder In The Vicinity]
+附近有雷雨
 [Thunderstorm Rain]
 雷雨
 [Thunderstorm]
 雷雨
+[UV Index]
+紫外线指数
+[UVI]
+紫外线指数 
+[UV]
+紫外线
 [Update VAR]
 更新变量
 [WNW]
@@ -18599,14 +18975,30 @@ N/A
 西南偏南
 [W]
 西
+[Waning Crescent]
+残月
+[Waning Gibbous]
+亏凸月
+[Waxing Crescent]
+眉月
+[Waxing Gibbous]
+盈凸月
+[Wind Direction DEG]
+风向DEG
 [Wind Direction]
 风向
 [Wind Speed]
 风速
+[WindDir]
+风向
+[Wintry Mix / Wind]
+寒冬混合/风
 [falling]
 落下
 [rising]
 升起
+[steady]
+平稳
 ;============================================================
 ;  File: wundergrnd_intl.ini
 ;  Plugin: Weather
@@ -18717,10 +19109,16 @@ N/A
 南
 [Saturday]
 星期六
+[Shallow Fog]
+浅雾
 [Showers Rain]
 阵雨
+[Smoke]
+烟雾
 [Snow]
 雪
+[Steady]
+平稳
 [Sunday]
 星期天
 [Thunderstorm Rain]
@@ -18731,14 +19129,26 @@ N/A
 星期四
 [Tuesday]
 星期二
+[UV Index]
+紫外线指数
 [WNW]
 西北偏北
 [WSW]
 西南偏南
 [W]
 西
+[Waning Crescent]
+残月
+[Waning Gibbous]
+亏凸月
+[Waxing Crescent]
+眉月
+[Waxing Gibbous]
+盈凸月
 [Wednesday]
 星期三
+[Wind Direction DEG]
+风向DEG
 [Wind Direction]
 风向
 [Wind Speed]
@@ -18933,6 +19343,8 @@ N/A
 协议
 [Contact]
 联系
+[Birthday]
+生日
 [Contacts]
 联系人
 [All Files]

@@ -15,7 +15,7 @@
 [Remove]
 移除
 [Import]
-
+导入
 [Export]
 
 [Retrieve news at startup]
@@ -63,7 +63,7 @@ URL
 [Feeds to be exported:]
 
 [&Export]
-
+导出(&E)
 [&Close]
 关闭(&C)
 [Import from:]

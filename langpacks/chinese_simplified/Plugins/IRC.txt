@@ -11,7 +11,7 @@
 [Default network]
 
 [Enable]
-
+启用
 [Server name]
 
 [Internet address]

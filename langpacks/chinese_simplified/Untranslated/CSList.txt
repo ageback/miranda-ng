@@ -17,7 +17,6 @@
 [Delete selected item]
 [Set/unset current item as favorite]
 [Import statuses from database]
-[Import]
 [Filter list]
 [Filter]
 [Close without changing custom status]

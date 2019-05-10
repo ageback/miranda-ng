@@ -6,44 +6,44 @@
 ;  Authors: nullbie, Thief
 ;============================================================
 [Shows a splash at Miranda startup.]
-
+在 Miranda 启动时显示一个闪屏。
 ;file \plugins\SplashScreen\res\splash.rc
 [Splash Options]
-
+闪屏选项
 [Show splash]
-
+显示闪屏
 [Show random splash]
-
+显示随机闪屏
 [Play sound]
 播放声音
 [Show Miranda Version]
-
+显示 Miranda 版本
 [Enable]
-
+启用
 [Prefix:]
 前缀：
 [Appearance]
 出现
 [Display time:]
-
+显示时间：
 [ms]
 毫秒
 [Fade in:]
-
+淡入：
 [steps]
-
+步骤
 [Fade out:]
-
+淡出：
 [Preview...]
-
+预览...
 [Download more splash screens]
-
+下载更多闪屏
 ;file \plugins\SplashScreen\src\options.cpp
 [Graphic files]
-
+图像文件
 [Sound Files]
 声音文件
 [Skins]
 皮肤
 [Splash Screen]
-
+闪屏

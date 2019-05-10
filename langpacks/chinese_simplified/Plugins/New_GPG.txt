@@ -99,7 +99,7 @@
 [Default password]
 
 [Import]
-
+导入
 [Select keyserver for key search:]
 
 [Received encrypted file]

@@ -376,62 +376,62 @@ John Doe（1/10）
 重置为默认
 ;file \plugins\UserInfoEx\src\classPsTreeItem.cpp
 [Creating unique name for a page failed with %d and error code %d]
-
+为%d创建页面的唯一名称失败，错误代码为%d
 [Creating the label for a page failed with %d and error code %d]
-
+为%d创建页面标签失败，错误代码为%d
 [The dialog template type is no longer supported]
-
+对话框模板类型不再受支持
 ;file \plugins\UserInfoEx\src\ctrl_annivedit.cpp
 [Add a new anniversary]
-
+添加一个新的周年纪念日
 [Delete an existing anniversary]
-
+删除一个已有的周年纪念日
 [Unspecified]
 未指定
 ;file \plugins\UserInfoEx\src\ctrl_contact.cpp
 [Edit e-mail]
-
+编辑电子邮件
 [Edit phone number]
 编辑电话号码
 [The phone number should start with a + and consist of\nnumbers, spaces, brackets and hyphens only.]
-
+电话号码应以 + 开头，仅包含\n数字，空格，括号和连字符。
 [Choose the item to display]
-
+选择要显示的项目
 [Edit the currently displayed item]
-
+编辑当前显示的项目
 [Add a new custom item]
-
+添加一个新的自定义项目
 [Delete the selected item]
-
+删除选中的项目
 [CRITICAL: Unable to edit current entry!\nThis should not happen!]
-
+关键：无法编辑当前条目！\n这不应该发生！
 [Do you really want to delete the current selected item?\n\t%s\n\t%s]
-
+你真的想删除当前选中的项吗？\n\t%s\n\t%s
 [Other]
 其他
 ;file \plugins\UserInfoEx\src\dlg_anniversarylist.cpp
 [ETA]
-
+及其
 [Contact]
 联系
 [Proto]
-
+因此
 [Age/Nr.]
 
 [Anniversary]
-
+周年纪念日
 [Date]
 日期
 [All contacts]
 所有联系人
 [Birthdays only]
-
+仅生日
 [Anniversaries only]
-
+仅周年纪念日
 [Disabled reminder]
-
+禁用的提醒
 [Popup anniversary list]
-
+弹出周年纪念日列表
 ;file \plugins\UserInfoEx\src\dlg_msgbox.cpp
 [Retry]
 重试
@@ -447,13 +447,13 @@ John Doe（1/10）
 错误
 ;file \plugins\UserInfoEx\src\dlg_propsheet.cpp
 [Upload details]
-
+上传详情
 [Protocol '%s' is offline]
-
+协议‘%s’离线
 [You are not currently connected to the ICQ network.\nYou must be online in order to update your information on the server.\n\nYour changes will be saved to database only.]
 
 [Creating the image list failed!]
-
+创建图像列表失败！
 [Could not find contact's protocol. Maybe it is not active!]
 
 [No pages have been added. Canceling dialog creation!]
@@ -463,13 +463,13 @@ John Doe（1/10）
 [General]
 通用
 [Contact (private)]
-
+联系人（私有）
 [Anniversaries]
-
+周年纪念日
 [Work]
 工作
 [Contact (work)]
-
+联系人（工作）
 [About]
 关于
 [Profile]
@@ -487,9 +487,9 @@ John Doe（1/10）
 [View personal user details and more]
 查看个人用户详情和更多
 [Upload ICQ details]
-
+上传 ICQ 详情
 [Upload failed]
-
+上传失败
 [Your details were not uploaded successfully.\nThey were written to database only.]
 
 [updating]
@@ -498,7 +498,7 @@ John Doe（1/10）
 [User &details]
 用户详情(&D)
 [Check anniversaries]
-
+检查周年纪念日
 ;file \plugins\UserInfoEx\src\mir_icolib.cpp
 [Main]
 主
@@ -509,39 +509,39 @@ John Doe（1/10）
 [Password]
 密码
 [Timezone]
-
+时区
 [Marital status]
-
+婚姻状况
 [Address]
-
+地址
 [Export: modules]
-
+导出：模块
 [Export: folder]
-
+导出：文件夹
 [Details info bar]
-
+详情信息栏
 [Phone info bar]
-
+电话信息栏
 [E-mail info bar]
-
+电子邮件信息栏
 [Export VCard]
-
+导出 VCard
 [Import VCard]
-
+导入 VCard
 [Anniversary info bar]
-
+周年纪念日信息栏
 [Update]
 更新
 [Export]
-
+导出
 [Goto]
-
+转到
 [Fax]
 传真
 [Cellular]
 移动电话
 [Custom phone]
-
+自定义电话
 [Down arrow]
 向下箭头
 [Add]
@@ -551,53 +551,53 @@ John Doe（1/10）
 [Search]
 搜索
 [Export/import]
-
+导出/导入
 [Backup birthday]
-
+备份生日
 [Birthday today]
-
+生日今天
 [Birthday tomorrow]
-
+生日明天
 [Birthday in 2 days]
-
+生日在2天后
 [Birthday in 3 days]
-
+生日在3天后
 [Birthday in 4 days]
-
+生日在4天后
 [Birthday in 5 days]
-
+生日在5天后
 [Birthday in 6 days]
-
+生日在6天后
 [Birthday in 7 days]
-
+生日在7天后
 [Birthday in 8 days]
-
+生日在8天后
 [Birthday in 9 days]
-
+生日在9天后
 [Birthday later]
-
+生日在以后
 [Anniversary today]
-
+周年纪念日今天
 [Anniversary tomorrow]
-
+周年纪念日明天
 [Anniversary in 2 days]
-
+周年纪念日在2天后
 [Anniversary in 3 days]
-
+周年纪念日在3天后
 [Anniversary in 4 days]
-
+周年纪念日在4天后
 [Anniversary in 5 days]
-
+周年纪念日在5天后
 [Anniversary in 6 days]
-
+周年纪念日在6天后
 [Anniversary in 7 days]
-
+周年纪念日在7天后
 [Anniversary in 8 days]
-
+周年纪念日在8天后
 [Anniversary in 9 days]
-
+周年纪念日在9天后
 [Anniversary later]
-
+周年纪念日在以后
 [Warning: Your current IconPack's version differs from the one UserInfoEx is designed for.\nSome icons may not be displayed correctly]
 
 [Warning: No IconPack found in one of the following directories: 'customize\\icons', 'icons' or 'plugins'!]
@@ -611,31 +611,31 @@ John Doe（1/10）
 按钮
 ;file \plugins\UserInfoEx\src\mir_menuitems.cpp
 [Export/import contact]
-
+导出/导入联系人
 [&Export user details]
-
+导出用户详情(&E)
 [&Import]
-
+导入(&I)
 [&Import user details]
-
+导入用户详情(&I)
 [View/change my &details...]
 查看/更改我的详细信息(&D)...
 [Export all contacts]
-
+导出所有联系人
 [Import all contacts]
-
+导入所有联系人
 [Backup birthdays]
-
+备份生日
 [Export/import group]
-
+导出/导入分组
 [&Export group]
-
+导出分组(&E)
 [&Import group]
-
+导入分组(&I)
 [&Export xml]
-
+导出xml(&E)
 [&Import xml]
-
+导入xml(&I)
 ;file \plugins\UserInfoEx\src\psp_about.cpp
 [My notes:]
 我的笔记：
@@ -643,74 +643,74 @@ John Doe（1/10）
 关于：
 ;file \plugins\UserInfoEx\src\psp_anniversary.cpp
 [Please enter a valid description first!]
-
+请先输入一个有效的描述!
 [No valid date selected for editing!]
-
+没有选择有效的日期来编辑！
 [Do you really want to delete the %s?]
-
+你真的想要删除 %s 吗？
 ;file \plugins\UserInfoEx\src\psp_contact.cpp
 [home]
 家
 [Open in browser]
-
+在浏览器中打开
 [Primary e-mail]
-
+主电子邮件
 [Secondary e-mail]
-
+第二电子邮件
 [Tertiary e-mail]
-
+第三电子邮件
 [Address and contact]
-
+地址和联系人
 [company]
-
+公司
 ;file \plugins\UserInfoEx\src\psp_options.cpp
 [Question]
-
+问题
 [This will delete all settings, you've made!\nAll TreeView settings, window positions and any other settings!\n\nAre you sure to proceed?]
 
 [Ready]
-
+就绪
 [Everything is done!]
-
+一切都完成了！
 [All settings are reset to default values now!]
 
 [Reminder disabled]
-
+提醒被禁用
 [Everything]
-
+任何事情
 [mBirthday]
-
+mBirthday
 [UserInfo (default)]
-
+用户信息（默认）
 [This is the reminder message]
-
+这是提醒消息
 [Contacts]
 联系人
 [Advanced]
 高级
 [Details dialog]
-
+详情对话框
 [Popups]
 弹出窗口
 ;file \plugins\UserInfoEx\src\psp_profile.cpp
 [Past]
-
+过去
 [Affiliation]
-
+隶属关系
 [Interest]
-
+兴趣
 [Sorry, but there is a problem with adding a new item of type "%s"]
 
 [<empty>]
-
+<空>
 [Edit category]
-
+编辑分类
 [Edit value]
-
+编辑值
 [Delete an entry]
-
+删除一个条目
 [Do you really want to delete this entry?]
-
+你真的想要删除这个条目吗？
 ;file \plugins\UserInfoEx\src\svc_constants.cpp
 [Afrikaans]
 南非荷兰语
@@ -723,9 +723,9 @@ John Doe（1/10）
 [Azerbaijani]
 阿塞拜疆语
 [Belorussian]
-
+白俄罗斯语
 [Bhojpuri]
-
+博杰普尔文
 [Bosnian]
 波斯尼亚语
 [Bulgarian]
@@ -733,9 +733,9 @@ John Doe（1/10）
 [Burmese]
 缅甸语
 [Cantonese]
-
+广东话
 [Catalan]
-
+加泰罗尼亚语
 [Chamorro]
 查莫洛
 [Chinese]
@@ -747,7 +747,7 @@ John Doe（1/10）
 [Danish]
 丹麦语
 [Dutch]
-
+荷兰语
 [English]
 英语
 [Esperanto]
@@ -755,13 +755,13 @@ John Doe（1/10）
 [Estonian]
 爱沙尼亚语
 [Farsi]
-
+波斯语
 [Finnish]
 荷兰语
 [French]
 法语
 [Gaelic]
-
+盖尔语
 [German]
 德语
 [Greek]
@@ -783,7 +783,7 @@ John Doe（1/10）
 [Japanese]
 日语
 [Khmer]
-
+高棉语
 [Korean]
 韩语
 [Kurdish]
@@ -799,7 +799,7 @@ John Doe（1/10）
 [Malay]
 马来语
 [Mandarin]
-
+普通话
 [Mongolian]
 蒙古语
 [Norwegian]
@@ -811,13 +811,13 @@ John Doe（1/10）
 [Portuguese]
 葡萄牙语
 [Punjabi]
-
+旁遮普语
 [Romanian]
 罗马尼亚语
 [Russian]
 俄语
 [Serbo-Croatian]
-
+塞尔维亚 - 克罗地亚语
 [Sindhi]
 信德语
 [Slovak]
@@ -827,7 +827,7 @@ John Doe（1/10）
 [Somali]
 索马里
 [Spanish]
-
+西班牙语
 [Swahili]
 斯瓦希里语
 [Swedish]
@@ -835,7 +835,7 @@ John Doe（1/10）
 [Tagalog]
 塔加路语
 [Taiwanese]
-
+台语
 [Tamil]
 泰米尔语
 [Tatar]
@@ -857,33 +857,33 @@ John Doe（1/10）
 [Yoruba]
 约鲁巴语
 [Academic]
-
+学者
 [Administrative]
-
+行政
 [Art/Entertainment]
-
+艺术/娱乐
 [College Student]
-
+大学生
 [Computers]
-
+计算机
 [Community & Social]
-
+社区与社会
 [Education]
-
+教育
 [Engineering]
-
+工程
 [Financial Services]
-
+金融服务
 [Government]
-
+政府
 [High School Student]
-
+高中学生
 [Home]
 家
 [ICQ - Providing Help]
-
+ICQ - 提供帮助
 [Law]
-
+法律
 [Managerial]
 
 [Manufacturing]

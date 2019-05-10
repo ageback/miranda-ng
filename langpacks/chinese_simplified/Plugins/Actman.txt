@@ -20,7 +20,7 @@
 [Test]
 测试
 [Import]
-
+导入
 [Action "$" exists, do you want to rewrite it?]
 
 [Choose action]
@@ -492,7 +492,7 @@
 [Status menu]
 状态菜单
 [Common]
-
+通用
 [2 state button/item]
 
 [Save button/item state]
@@ -780,7 +780,7 @@
 [Tired]
 疲劳
 [Birthday]
-
+生日
 [Drinking beer]
 
 [Thinking]

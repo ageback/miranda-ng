@@ -305,15 +305,15 @@ N/A
 [Sand]
 沙
 [Scattered Showers]
-
+零星阵雨
 [Scattered Snow Showers]
-
+零星阵雪
 [Scattered T-Storms / Wind]
-
+零星雷雨 / 风
 [Scattered T-Storms]
-
+零星雷雨
 [Shallow Fog]
-
+浅雾
 [Showers / Wind Late]
 阵雨 / 晚有风
 [Showers / Wind]
@@ -321,7 +321,7 @@ N/A
 [Showers Early]
 早有阵雨
 [Showers In The Vicinity]
-
+附近有阵雨
 [Showers Late]
 晚有阵雨
 [Showers Rain]
@@ -329,11 +329,11 @@ N/A
 [Showers]
 阵雨
 [Sleet And Windy]
-
+雨夹雪并有风
 [Sleet]
-
+雨雪
 [Smoke]
-
+烟雾
 [Snow / Wind Early]
 雪 / 早有风
 [Snow / Wind]
@@ -341,7 +341,7 @@ N/A
 [Snow / Windy]
 雪 / 有风
 [Snow And Sleet]
-
+雪和雨夹雪
 [Snow Early]
 早有雪
 [Snow Shower / Wind]
@@ -359,13 +359,13 @@ N/A
 [Snow To Rain]
 雪转雨
 [Snow To Wintry Mix]
-
+雪转雨夹雪
 [Snow]
 雪
 [Sunny / Wind]
 晴朗 / 风
 [Sunny / Windy]
-
+晴朗 / 有风
 [Sunny]
 阳光明媚
 [T-Showers Early]
@@ -381,17 +381,17 @@ N/A
 [T-Storms]
 雷雨
 [Thunder In The Vicinity]
-
+附近有雷雨
 [Thunderstorm Rain]
 雷雨
 [Thunderstorm]
 雷雨
 [UV Index]
-
+紫外线指数
 [UVI]
-
+紫外线指数 
 [UV]
-
+紫外线
 [Update VAR]
 更新变量
 [WNW]
@@ -401,26 +401,26 @@ N/A
 [W]
 西
 [Waning Crescent]
-
+残月
 [Waning Gibbous]
-
+亏凸月
 [Waxing Crescent]
-
+眉月
 [Waxing Gibbous]
-
+盈凸月
 [Wind Direction DEG]
-
+风向DEG
 [Wind Direction]
 风向
 [Wind Speed]
 风速
 [WindDir]
-
+风向
 [Wintry Mix / Wind]
-
+寒冬混合/风
 [falling]
 落下
 [rising]
 升起
 [steady]
-
+平稳

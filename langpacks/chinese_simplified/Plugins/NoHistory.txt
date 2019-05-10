@@ -29,7 +29,7 @@
 [Disable]
 
 [Enable]
-
+启用
 [Clear]
 清除
 [No History]

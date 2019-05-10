@@ -83,7 +83,7 @@
 [Copy to all contacts (including Settings)]
 
 [Import]
-
+导入
 [Paste the settings to import here:]
 
 [Database Editor++]
@@ -111,7 +111,7 @@
 [&Delete all]
 删除所有(&D)
 [&Export]
-
+导出(&E)
 [Entire &database]
 
 [All &settings]

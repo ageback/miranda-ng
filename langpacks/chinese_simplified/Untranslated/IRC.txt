@@ -1,6 +1,5 @@
 [Internet Relay Chat (IRC) protocol support for Miranda NG.]
 [Default network]
-[Enable]
 [Server name]
 [Internet address]
 [Port range]

@@ -184,7 +184,7 @@
 [%s files (*.%s)]
 
 [Import]
-
+导入
 [Export]
 
 [File does not contain selected contact]

@@ -130,7 +130,7 @@ N/A
 [DTB]
 
 [Birthday]
-
+生日
 [Age]
 
 [Module]

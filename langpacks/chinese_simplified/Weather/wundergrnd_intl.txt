@@ -427,7 +427,7 @@ N/A
 [Scattered Clouds]
 
 [Shallow Fog]
-
+浅雾
 [Showers Rain Snow]
 
 [Showers Rain]
@@ -447,7 +447,7 @@ N/A
 [Showers Snow]
 
 [Smoke]
-
+烟雾
 [Snow 100% Chance Of Precipitation]
 
 [Snow 20% Chance Of Precipitation]
@@ -507,7 +507,7 @@ N/A
 [Stable]
 
 [Steady]
-
+平稳
 [Sunday]
 星期天
 [T-Storms 100% Chance Of Precipitation]
@@ -537,7 +537,7 @@ N/A
 [Tuesday]
 星期二
 [UV Index]
-
+紫外线指数
 [Var]
 
 [Visible Light Length]
@@ -549,19 +549,19 @@ N/A
 [W]
 西
 [Waning Crescent]
-
+残月
 [Waning Gibbous]
-
+亏凸月
 [Waxing Crescent]
-
+眉月
 [Waxing Gibbous]
-
+盈凸月
 [Wednesday]
 星期三
 [West]
 
 [Wind Direction DEG]
-
+风向DEG
 [Wind Direction]
 风向
 [Wind Gust]

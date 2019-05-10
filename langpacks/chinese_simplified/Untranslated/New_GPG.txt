@@ -37,7 +37,6 @@
 [Enter password for your secret key]
 [Save password to database]
 [Default password]
-[Import]
 [Select keyserver for key search:]
 [Received encrypted file]
 [Decrypt]

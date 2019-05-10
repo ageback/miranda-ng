@@ -61,7 +61,7 @@
 [Private]
 私有
 [&Export]
-
+导出(&E)
 [&Import]
 
 [Set &keyrings...]

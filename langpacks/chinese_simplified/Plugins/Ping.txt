@@ -89,7 +89,7 @@
 [Graph]
 
 [Enable]
-
+启用
 [Disable all pings]
 
 [Enable all pings]

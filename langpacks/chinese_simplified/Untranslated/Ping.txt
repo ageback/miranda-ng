@@ -22,7 +22,6 @@
 [Execute the following command on double-click:]
 [(Optional) Command Parameters:]
 [Graph]
-[Enable]
 [Disable all pings]
 [Enable all pings]
 [Options...]

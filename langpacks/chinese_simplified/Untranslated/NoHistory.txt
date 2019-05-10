@@ -7,6 +7,5 @@
 [History Enabled]
 [History Disabled]
 [Disable]
-[Enable]
 [No History]
 [Logging]
