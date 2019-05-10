@@ -37,7 +37,7 @@
 [days in advance and]
 
 [Check every]
-
+检查每
 [hours]
 小时
 [Only notify once per day.]

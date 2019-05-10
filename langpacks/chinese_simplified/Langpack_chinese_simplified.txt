@@ -3052,6 +3052,8 @@ PNG位图
 事件
 [Minute(s)]
 分钟
+[Day(s)]
+天
 [Unknown]
 未知
 [Alerts]
@@ -5642,6 +5644,8 @@ Miranda NG [%s] 数据库备份
 用户名：
 [Password:]
 密码：
+[Check every]
+检查每
 [seconds]
 秒
 [minutes]
@@ -10092,6 +10096,8 @@ UIN
 标题
 [URL]
 URL
+[Check every]
+检查每
 [minutes]
 分
 [Authentication]
@@ -13710,6 +13716,10 @@ Miranda 相关
 ;  Version: 0.1.2.3
 ;  Authors: nullbie, Thief
 ;============================================================
+[Play sound]
+播放声音
+[Prefix:]
+前缀：
 [Appearance]
 出现
 [ms]
@@ -16807,6 +16817,16 @@ Jabber 活动
 ;  Version: 0.8.5.2
 ;  Authors: DeathAxe, Yasnovidyashii, Merlin, K. Romanov, Kreol
 ;============================================================
+[Extended UserInfo module for Miranda NG. Provides interface to edit all contact information.]
+Miranda NG 的扩展用户信息模块。提供界面来编辑所有联系人信息。
+[Edit contact information]
+编辑联系人信息
+[This list gives you some overview about all your contact's anniversaries.]
+此列表为您提供有关所有联系人纪念日的概述。
+[Origin]
+原始
+[&Update]
+更新(&U)
 [Updating]
 正在更新
 [Cancel]
@@ -16815,48 +16835,108 @@ Jabber 活动
 应用
 [Nick:]
 昵称：
+[Display name:]
+显示名称：
 [Title:]
 称号
 [First name:]
 名字：
+[Second name:]
+第二名称：
 [Last name:]
 姓：
+[Prefix:]
+前缀：
 [Female]
 女性
 [Male]
 男性
 [Marital status:]
 婚姻状况：
+[Partner:]
+伙伴：
+[Language skills]
+语言技能
 [Street:]
 街道：
 [Postal code:]
 邮政编码：
 [City:]
 城市：
+[County/State:]
+郡/州：
 [Country:]
 国家：
+[Contact added to contact list:]
+联系人被添加到联系人列表：
+[Just from the beginning.]
+只从开始。
+[Your contact's local time is:]
+你的联系人的本地时间是：
 [Timezone:]
 时区：
 [Company:]
 公司：
 [Department:]
 部门：
+[Office:]
+办公室：
 [Position:]
 职位：
 [Occupation:]
 职业：
+[Superior:]
+上司：
+[Assistant:]
+助理：
 [Add phone number]
 添加电话号码
+[Enter your phone number\nand don't worry about formatting.]
+输入你的电话号码\n并且不用担心会忘记。
+[Enter a category for this number:]
+为这个号码输入分类：
 [Enter country, area code and phone number:]
 输入国家，区号和电话号码：
 [Or enter a full international number:]
 或输入完整的国际号码：
 [Phone can receive SMS text messages]
 电话可以接收短信
+[Add e-mail]
+添加电子邮件
+[Enter your full e-mail address.\n(e.g., john.doe@provider.com)]
+输入你的完整电子邮件地址。\n（例如：john.doe@provider.com）
+[Enter a representative name for the e-mail address here:]
+在此处输入电子邮件地址的代表名称：
+[Enter the e-mail address here:]
+在此处输入电子邮件地址：
+[Show menu items]
+显示菜单项
+[Remind me]
+提醒我
+[days before]
+天之前
+[Check every]
+检查每
 [hours]
 小时
+[Icon flashing on event]
+有事件时闪动图标
 [Enabled]
 已启用
+[Perform check on each startup]
+每次启动时执行检查
+[Time of last check:]
+上次检查的时间：
+[Birthday compatibility mode:]
+生日兼容模式：
+[Automatically backup and keep protocol based birthdays up to date]
+自动备份并保持基于协议的生日为最新
+[Play sound]
+播放声音
+[Use ignore list]
+使用忽略列表
+[Birthday popup colors]
+生日弹出窗口颜色
 [Background color]
 背景色
 [Text color]
@@ -16873,54 +16953,234 @@ Jabber 活动
 自定义
 [Permanent]
 永久
+[Show reminder messages as popups (if reminder is enabled)]
+提醒消息显示为弹出窗口（如果启用了提醒）
+[Anniversary popup colors]
+周年纪念弹出颜色
+[Replace progress dialogs with popups]
+用弹出窗口代替进度对话框
+[Replace message boxes with popups]
+用弹出窗口代替消息框
 [Preview]
 预览
 [Homepage:]
 主页：
+[Add affiliation]
+添加隶属关系
+[Add past]
+添加过去
+[Add interest]
+添加兴趣
 [Delete]
 删除
+[Anniversary editor]
+周年纪念编辑器
+[Add/Edit your anniversary here.]
+在这里添加/编辑你的周年纪念
+[Enter a name for the anniversary here please:]
+请在这里输入周年纪念的名称：
+[Anniversary list]
+周年纪念列表
+[Upcoming anniversaries\nThis list gives you some overview about all your contact's anniversaries.]
+即将到来的纪念日\n此列表为您提供所有联系人的纪念日的一些概述。
+[Statistics:]
+统计：
+[with birthday:]
+带有生日：
+[female:]
+女性：
+[male:]
+男性：
+[number of contacts:]
+联系人数量：
+[average age:]
+平均年龄：
 [View]
 查看
+[Show &during the next]
+显示在接下来的
+[day(s)]
+天
 [Reminder]
 提醒
+[Popup this dialog on a contact's anniversary]
+在联系人的周年纪念日时弹出这个对话框
 [Icons]
 图标
+[Check file version of default IconPack to prevent wrong icon display]
+检查默认 IconPack 的文件版本以防止错误的图标显示
+[Display icons on each dialog button]
+在每个对话框按钮上显示图标
 [Metacontacts]
 中继联系人
+[Scan subcontacts for missing information]
+扫描子联系人查找缺失的信息
+[Enable extended 'send/receive e-mail' service (*)]
+启用扩展“发送/接收电子邮件”服务（*）
+[Use Windows timezone]
+使用 Windows 时区
+[(*) Requires Miranda to be restarted.]
+（*）需要重启 Miranda
+[Reset factory defaults]
+重置出厂默认
+[Protocol's information]
+协议的信息
+[Custom information]
+自定义信息
+[Overwritten information]
+覆盖信息
+[Changed information]
+更改的信息
+[Enable colors to give information about information's status.]
+启用颜色以提供有关信息的状态的信息。
+[Make protocol based contact information read only]
+使基于协议的联系人信息只读
+[Enable groups in details dialog's treeview]
+在详情对话框的树视图中启用分组
+[Sort all tree items alphabetically]
+按字母顺序排列所有树项目
+[Info of a metacontact's subcontact]
+中继联系人的子联系人的信息
 [Colors]
 颜色
+[Common]
+通用
+[Change my ICQ details with UserInfoEx (disabled if ICQ doesn't support it)]
+和UserInfoEx一起改变我的 ICQ 详情（如果 ICQ 不支持它则禁用）
+[Treeview]
+树视图
+[Adapt propertysheet pages to Aero mode]
+将属性表页面调整为Aero模式
+[Import]
+导入
+[Importing...\nPlease wait!]
+正在导入...\n请等待！
+[Setting/Event (20/100)]
+设置/事件（20/100）
+[John Doe (1/10)]
+John Doe（1/10）
 [Dialog]
 对话框
 [All]
 所有
 [None]
 无
+[Show menu item]
+显示菜单项
 [Main menu]
 主菜单
+[Cascade:]
+级联：
 [Off]
 半
+[Export/import items]
+导出/导入项目
 [Contact menu]
 联系人菜单
 [Group menu]
 分组菜单
 [Subgroup menu]
 子分组菜单
+[Account menu]
+帐户菜单
 [Extra icons]
 额外图标
+[Replace the following default icons:]
+替换以下默认图标：
 [Homepage]
 主页
+[Phone]
+电话
 [E-mail]
 电子邮件
+[Gender]
+性别
 [Misc]
 杂项
+[Show 'Restart' menu item]
+显示“重新启动”菜单项
+[Use zodiac as default avatar]
+使用生肖作为默认头像
+[Country flags]
+国旗
+[Use &unknown flag if country cannot be determined]
+如果无法确定国家，请使用未知旗标(&U)
+[Show country flag as &status icon on message window]
+在消息窗口中将国旗显示为状态图标(&S)
+[Birthday]
+生日
 [Age:]
 年龄：
+[Zodiac:]
+生肖：
 [not found]
 未找到
+[Use global reminder settings]
+使用全局提醒设置
+[Don't remind me of this anniversary]
+不要提醒我这个周年纪念日
+[Refresh contact details]
+刷新联系人详情
+[Preparing...]
+正在准备...
 [Hide]
 隐藏
+[What do you want to export?]
+你要导出什么？
+[Contact information]
+联系人信息
 [Contact history]
 联系人历史
+[Select modules]
+选择模块
+[Check the modules on the list which you want to export for the contact. To add the file as a new list entry later you need to export at least the protocol module.]
+勾选列表中要为联系人导出的模块。要将文件添加为新的列表条目，您需要至少导出协议模块。
+[Check all]
+勾选所有
+[Uncheck all]
+取消所有
+[&Export]
+导出(&E)
+[Aries]
+白羊座
+[Taurus]
+金牛座
+[Gemini]
+双子座
+[Cancer]
+癌症
+[Leo]
+狮子座
+[Virgo]
+处女座
+[Libra]
+书籍
+[Scorpio]
+天蝎座
+[Sagittarius]
+射手座
+[Capricorn]
+摩羯座
+[Aquarius]
+水瓶座
+[Pisces]
+双鱼座
+[%s provides a new birthday via protocol.\nIt is %s. The old one was %s.\n\nDo you want to use this as the new birthday for this contact?]
+%s通过协议提供新的生日。\n它是%s。旧的是%s。\n\n你想用它作为这个联系人的新生日吗？
+[Update custom birthday]
+更新自定义生日
+[Keeps your custom birthday up to date.]
+使您的自定义生日保持最新。
+[Due to a parameter error, one of the treeitems can't be added!]
+由于参数错误，无法添加其中一个树项目！
+[A fatal error occurred on adding a property sheet page!\nDialog creation aborted!]
+添加属性表页面时发生致命错误！\n已中止创建对话框！
+[Rename Item]
+重命名项目
+[Hide Item]
+隐藏项目
+[Show Items:]
+显示项目：
 [Reset to defaults]
 重置为默认
 [Unspecified]
@@ -16963,6 +17223,8 @@ Jabber 活动
 从文件导入
 [Owner]
 所有者
+[edit contact information]
+编辑联系人信息
 [View personal user details and more]
 查看个人用户详情和更多
 [updating]
@@ -18635,6 +18897,8 @@ N/A
 右
 [Sounds]
 声音
+[Check every]
+检查每
 [hours]
 小时
 [Show]

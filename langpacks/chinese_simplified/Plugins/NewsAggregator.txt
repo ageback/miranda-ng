@@ -29,7 +29,7 @@
 [URL]
 URL
 [Check every]
-
+检查每
 [minutes]
 分
 [Check Feed]

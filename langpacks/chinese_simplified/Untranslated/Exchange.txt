@@ -4,7 +4,6 @@
 [Connection]
 [Server:]
 [Preferences]
-[Check every]
 [Force reconnect every]
 [Check server before trying to connect]
 [Try to connect]

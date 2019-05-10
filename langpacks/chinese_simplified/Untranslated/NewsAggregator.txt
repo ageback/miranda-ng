@@ -3,7 +3,6 @@
 [Export]
 [Retrieve news at startup]
 [General Settings]
-[Check every]
 [Check Feed]
 [Use &authentication]
 [Login]

@@ -34,7 +34,6 @@
 [Header]
 [Second(s)]
 [Hour(s)]
-[Day(s)]
 [Week(s)]
 [Month(s)]
 [(current: %u%%)]

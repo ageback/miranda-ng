@@ -15,13 +15,13 @@
 [Show random splash]
 
 [Play sound]
-
+播放声音
 [Show Miranda Version]
 
 [Enable]
 
 [Prefix:]
-
+前缀：
 [Appearance]
 出现
 [Display time:]
