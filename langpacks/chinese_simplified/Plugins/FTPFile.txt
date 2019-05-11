@@ -89,7 +89,7 @@ URL
 [UPLOADING...]
 正在上传...
 [Open in Browser]
-
+在浏览器中打开
 [FTP File Manager]
 
 [Select All]

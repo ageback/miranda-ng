@@ -162,7 +162,7 @@ N/A
 [Export birthdays]
 
 [Birthday today]
-
+生日今天
 [1 day to birthday]
 
 [%d days to birthday]
@@ -175,11 +175,11 @@ N/A
 [No upcoming birthdays.]
 
 [%s has birthday in %d days.]
-
+%s %d 天后有生日。
 [%s has birthday tomorrow.]
-
+%s 明天有生日。
 [%s has birthday today.]
-
+%s 今天有生日。
 [%s had birthday %d days ago.]
 
 [%s had birthday yesterday.]

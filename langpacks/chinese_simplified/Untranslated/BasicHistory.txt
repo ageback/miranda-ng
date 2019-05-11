@@ -58,7 +58,6 @@
 [Minus in export]
 [Default history events]
 [%s files (*.%s)]
-[Export]
 [File does not contain selected contact]
 [File is corrupted]
 [This operation will PERMANENTLY REMOVE all history for this contact.\nAre you sure you want to do this?]

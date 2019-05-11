@@ -119,7 +119,7 @@
 [All &contacts]
 
 [&Import]
-
+导入(&I)
 [From a &file]
 
 [From pasted &text]

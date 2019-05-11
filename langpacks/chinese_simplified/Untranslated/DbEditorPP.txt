@@ -43,7 +43,6 @@
 [Entire &database]
 [All &settings]
 [All &contacts]
-[&Import]
 [From a &file]
 [From pasted &text]
 [&Sort by protocol]

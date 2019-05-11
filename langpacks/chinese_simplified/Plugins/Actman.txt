@@ -36,7 +36,7 @@
 [N&o to All]
 
 [Export]
-
+导出
 [Reload/Refresh]
 
 [Registered actions]
@@ -344,7 +344,7 @@
 [Error]
 错误
 [Question]
-
+问题
 [Warning]
 警告
 [Info]

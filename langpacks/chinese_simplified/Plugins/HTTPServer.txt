@@ -15,7 +15,7 @@
 [Max downloads]
 
 [Address]
-
+地址
 [Mask]
 
 [Share name]

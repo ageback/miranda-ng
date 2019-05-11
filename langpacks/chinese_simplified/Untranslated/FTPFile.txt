@@ -26,7 +26,6 @@
 [File Manager]
 [Server:]
 [User info]
-[Open in Browser]
 [FTP File Manager]
 [Deselect All]
 [Delete from list]

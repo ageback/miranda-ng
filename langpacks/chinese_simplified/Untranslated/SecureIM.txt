@@ -21,7 +21,6 @@
 [Public]
 [&Copy SHA1]
 [E&xport]
-[&Import]
 [Set &keyrings...]
 [Disable keyrings use]
 [Load &Private key]

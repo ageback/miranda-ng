@@ -185,7 +185,7 @@
 [Cancel]
 取消
 [Open in browser]
-
+在浏览器中打开
 [Invite user to chat]
 
 [Choose one of your contacts to be invited:]
@@ -509,7 +509,7 @@
 [Ukrainian]
 乌克兰语
 [Spanish]
-
+西班牙语
 [Finnish]
 荷兰语
 [German]
@@ -600,7 +600,7 @@
 [Activities]
 活动
 [Music]
-
+音乐
 [Movies]
 
 [TV]
@@ -608,7 +608,7 @@
 [Books]
 
 [Games]
-
+游戏
 [Quotes]
 
 [Please authorize me to add you to my friend list.]

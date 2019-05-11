@@ -493,9 +493,9 @@ Jabber 活动
 [Azerbaijani]
 阿塞拜疆语
 [Belorussian]
-
+白俄罗斯语
 [Bhojpuri]
-
+博杰普尔文
 [Bosnian]
 波斯尼亚语
 [Bulgarian]
@@ -503,9 +503,9 @@ Jabber 活动
 [Burmese]
 缅甸语
 [Cantonese]
-
+广东话
 [Catalan]
-
+加泰罗尼亚语
 [Chamorro]
 查莫洛
 [Chinese]
@@ -517,7 +517,7 @@ Jabber 活动
 [Danish]
 丹麦语
 [Dutch]
-
+荷兰语
 [English]
 英语
 [Esperanto]
@@ -525,13 +525,13 @@ Jabber 活动
 [Estonian]
 爱沙尼亚语
 [Farsi]
-
+波斯语
 [Finnish]
 荷兰语
 [French]
 法语
 [Gaelic]
-
+盖尔语
 [German]
 德语
 [Greek]
@@ -553,7 +553,7 @@ Jabber 活动
 [Japanese]
 日语
 [Khmer]
-
+高棉语
 [Korean]
 韩语
 [Kurdish]
@@ -569,7 +569,7 @@ Jabber 活动
 [Malay]
 马来语
 [Mandarin]
-
+普通话
 [Mongolian]
 蒙古语
 [Norwegian]
@@ -581,13 +581,13 @@ Jabber 活动
 [Portuguese]
 葡萄牙语
 [Punjabi]
-
+旁遮普语
 [Romanian]
 罗马尼亚语
 [Russian]
 俄语
 [Serbo-Croatian]
-
+塞尔维亚 - 克罗地亚语
 [Sindhi]
 信德语
 [Slovak]
@@ -597,7 +597,7 @@ Jabber 活动
 [Somali]
 索马里
 [Spanish]
-
+西班牙语
 [Swahili]
 斯瓦希里语
 [Swedish]
@@ -605,7 +605,7 @@ Jabber 活动
 [Tagalog]
 塔加路语
 [Taiwanese]
-
+台语
 [Tamil]
 泰米尔语
 [Tatar]

@@ -1,5 +1,4 @@
 [RSS/Atom news aggregator.]
-[Export]
 [Retrieve news at startup]
 [General Settings]
 [Check Feed]
@@ -15,7 +14,6 @@
 [Feeds to be exported:]
 [Import from:]
 [Feeds to be imported:]
-[&Import]
 [Enter your username]
 [Enter your password]
 [%s\nis a valid feed's address.]

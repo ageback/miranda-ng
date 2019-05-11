@@ -73,7 +73,6 @@
 [Known Password]
 [Manual fingerprint comparison]
 [Secret Answer]
-[Question]
 [Authentication successful.]
 [Your contact authenticated you successfully. You can send your own request to authenticate him.]
 [Error during authentication.]

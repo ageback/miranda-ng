@@ -17,7 +17,7 @@
 [Import]
 导入
 [Export]
-
+导出
 [Retrieve news at startup]
 
 [Cancel]
@@ -71,7 +71,7 @@ URL
 [Feeds to be imported:]
 
 [&Import]
-
+导入(&I)
 ;file \protocols\NewsAggregator\Src\Authentication.cpp
 [Enter your username]
 

@@ -2754,6 +2754,8 @@ PNG位图
 是(&)
 [&No]
 否(&N)
+[Export]
+导出
 [Actions]
 动作
 [Help]
@@ -2788,6 +2790,8 @@ PNG位图
 图标
 [Error]
 错误
+[Question]
+问题
 [Warning]
 警告
 [Info]
@@ -3225,6 +3229,8 @@ PNG位图
 无效的消息
 [Import]
 导入
+[Export]
+导出
 [Are you sure?]
 你确定吗？
 [Open in &new window]
@@ -4593,7 +4599,7 @@ xStatus 有优先级
 [reVista for Modern v0.5]
 reVista for Modern v0.5 
 [This is second default Modern Contact list skin in Vista Aero style]
-这是Vista Aero风格的第二个默认现代一般人列表皮肤
+这是Vista Aero风格的第二个默认现代联系人列表皮肤
 [Angeli-Ka (graphics), FYR (template)]
 Angeli-Ka（绘图），FYR（模板）
 [Inside library]
@@ -5451,6 +5457,8 @@ GnuPG插件 - 选择公钥
 删除所有(&D)
 [&Export]
 导出(&E)
+[&Import]
+导入(&I)
 [&Options]
 选项(&O)
 [&Edit]
@@ -5922,6 +5930,8 @@ URL
 选项
 [UPLOADING...]
 正在上传...
+[Open in Browser]
+在浏览器中打开
 [Select All]
 选择全部
 [Cancel]
@@ -6896,6 +6906,8 @@ History++ 警告
 ;  Version: 0.1.2.3
 ;  Authors: Kennet Nielsen, modified by Vampik, Houdini
 ;============================================================
+[Address]
+地址
 [Set to default]
 设为默认
 [Show popups]
@@ -7160,8 +7172,12 @@ History++ 警告
 关闭(&C)
 [Name]
 名字
+[Address]
+地址
 [Server]
 服务器
+[Question]
+问题
 [&Cancel]
 取消(&C)
 [Auto]
@@ -9464,6 +9480,8 @@ RTF 文件
 ;  Version: 0.4.0.1
 ;  Authors: Ricardo Pescuma Domenecci
 ;============================================================
+[Music]
+音乐
 [Video]
 视频
 [Others]
@@ -9722,6 +9740,8 @@ MessageState 未读附加图标
 活动
 [Default]
 默认
+[Question]
+问题
 [Password]
 密码
 [Services]
@@ -9834,6 +9854,8 @@ MessageState 未读附加图标
 文件
 [Nick]
 昵称
+[Proto]
+因此
 [UIN]
 UIN
 [History]
@@ -9885,6 +9907,8 @@ UIN
 其他
 [Cancel]
 取消
+[Anniversary]
+周年纪念日
 [Birthday]
 生日
 [Nickname]
@@ -10118,6 +10142,8 @@ UIN
 移除
 [Import]
 导入
+[Export]
+导出
 [Cancel]
 取消
 [Title]
@@ -10140,6 +10166,8 @@ URL
 导出(&E)
 [&Close]
 关闭(&C)
+[&Import]
+导入(&I)
 [Error]
 错误
 [Protocol icon]
@@ -12902,6 +12930,8 @@ Miranda 的根目录路径
 私有
 [&Export]
 导出(&E)
+[&Import]
+导入(&I)
 [Basic]
 基本
 [Debug]
@@ -16475,12 +16505,20 @@ Jabber 活动
 亚美尼亚语
 [Azerbaijani]
 阿塞拜疆语
+[Belorussian]
+白俄罗斯语
+[Bhojpuri]
+博杰普尔文
 [Bosnian]
 波斯尼亚语
 [Bulgarian]
 保加利亚语
 [Burmese]
 缅甸语
+[Cantonese]
+广东话
+[Catalan]
+加泰罗尼亚语
 [Chamorro]
 查莫洛
 [Chinese]
@@ -16491,16 +16529,22 @@ Jabber 活动
 捷克文
 [Danish]
 丹麦语
+[Dutch]
+荷兰语
 [English]
 英语
 [Esperanto]
 世界语
 [Estonian]
 爱沙尼亚语
+[Farsi]
+波斯语
 [Finnish]
 荷兰语
 [French]
 法语
+[Gaelic]
+盖尔语
 [German]
 德语
 [Greek]
@@ -16521,6 +16565,8 @@ Jabber 活动
 意大利语
 [Japanese]
 日语
+[Khmer]
+高棉语
 [Korean]
 韩语
 [Kurdish]
@@ -16535,6 +16581,8 @@ Jabber 活动
 马其顿语
 [Malay]
 马来语
+[Mandarin]
+普通话
 [Mongolian]
 蒙古语
 [Norwegian]
@@ -16545,10 +16593,14 @@ Jabber 活动
 波兰语
 [Portuguese]
 葡萄牙语
+[Punjabi]
+旁遮普语
 [Romanian]
 罗马尼亚语
 [Russian]
 俄语
+[Serbo-Croatian]
+塞尔维亚 - 克罗地亚语
 [Sindhi]
 信德语
 [Slovak]
@@ -16557,12 +16609,16 @@ Jabber 活动
 斯洛文尼亚语
 [Somali]
 索马里
+[Spanish]
+西班牙语
 [Swahili]
 斯瓦希里语
 [Swedish]
 瑞典语
 [Tagalog]
 塔加路语
+[Taiwanese]
+台语
 [Tamil]
 泰米尔语
 [Tatar]
@@ -16733,6 +16789,8 @@ Jabber 活动
 ;============================================================
 [Import]
 导入
+[Export]
+导出
 [Name:]
 名称：
 [Password:]
@@ -17174,7 +17232,7 @@ John Doe（1/10）
 [Show 'Restart' menu item]
 显示“重新启动”菜单项
 [Use zodiac as default avatar]
-使用生肖作为默认头像
+使用星座作为默认头像
 [Country flags]
 国旗
 [Use &unknown flag if country cannot be determined]
@@ -17186,7 +17244,7 @@ John Doe（1/10）
 [Age:]
 年龄：
 [Zodiac:]
-生肖：
+星座：
 [not found]
 未找到
 [Use global reminder settings]
@@ -17294,7 +17352,9 @@ John Doe（1/10）
 [Contact]
 联系
 [Proto]
-因此
+协议
+[Age/Nr.]
+年龄/Nr.
 [Anniversary]
 周年纪念日
 [Date]
@@ -17325,8 +17385,16 @@ John Doe（1/10）
 上传详情
 [Protocol '%s' is offline]
 协议‘%s’离线
+[You are not currently connected to the ICQ network.\nYou must be online in order to update your information on the server.\n\nYour changes will be saved to database only.]
+你现在没有连接到 ICQ 网络。\n你必须在线才能更新你在服务器上的信息。\n\n你的更改将只保存到数据库。
 [Creating the image list failed!]
 创建图像列表失败！
+[Could not find contact's protocol. Maybe it is not active!]
+无法找到联系人的协议。可能它没有激活！
+[No pages have been added. Canceling dialog creation!]
+没有添加页面。取消对话框创建！
+[Details dialog failed to be created. Returning error is %d.]
+创建详情对话框失败。返回错误为 %d
 [General]
 通用
 [Contact (private)]
@@ -17357,6 +17425,8 @@ John Doe（1/10）
 上传 ICQ 详情
 [Upload failed]
 上传失败
+[Your details were not uploaded successfully.\nThey were written to database only.]
+你的详细信息没有成功上传。\n它们只被写到数据库。
 [updating]
 正在更新
 [User &details]
@@ -17367,6 +17437,8 @@ John Doe（1/10）
 主
 [Default]
 默认
+[IM naming]
+IM 命名
 [Password]
 密码
 [Timezone]
@@ -17459,6 +17531,10 @@ John Doe（1/10）
 周年纪念日在9天后
 [Anniversary later]
 周年纪念日在以后
+[Warning: Your current IconPack's version differs from the one UserInfoEx is designed for.\nSome icons may not be displayed correctly]
+警告：您当前的IconPack版本与UserInfoEx的设计的版本不同。\n某些图标可能无法正确显示
+[Warning: No IconPack found in one of the following directories: 'customize\\icons', 'icons' or 'plugins'!]
+警告：在以下所有目录中找不到IconPack：'customize\\icons'，'icons'或'plugins'！
 [Extended user info]
 扩展用户信息
 [Dialogs]
@@ -17517,10 +17593,14 @@ John Doe（1/10）
 公司
 [Question]
 问题
+[This will delete all settings, you've made!\nAll TreeView settings, window positions and any other settings!\n\nAre you sure to proceed?]
+这将删除所有设置，你所做的！\n所有树视图设置，窗口位置和所有其他设置！
 [Ready]
 就绪
 [Everything is done!]
 一切都完成了！
+[All settings are reset to default values now!]
+现在所有设置都被重置为默认值！
 [Reminder disabled]
 提醒被禁用
 [Everything]
@@ -17545,6 +17625,8 @@ mBirthday
 隶属关系
 [Interest]
 兴趣
+[Sorry, but there is a problem with adding a new item of type "%s"]
+抱歉，添加“%s”类型的新项目时出现问题
 [<empty>]
 <空>
 [Edit category]
@@ -17727,8 +17809,178 @@ mBirthday
 ICQ - 提供帮助
 [Law]
 法律
+[Managerial]
+管理的
+[Manufacturing]
+制造业
+[Medical/Health]
+医疗/保健
+[Military]
+军事
+[Non-Government Organization]
+非政府组织
+[Professional]
+专业
+[Retail]
+零售
+[Retired]
+退休
+[Science & Research]
+科学与研究
+[Sports]
+运动
+[Technical]
+技术
+[University Student]
+大学生
+[Web Building]
+网站建设
+[Other Services]
+其他服务
+[Art]
+艺术
+[Cars]
+汽车
+[Celebrity Fans]
+名人粉丝
+[Collections]
+收藏
+[Culture & Literature]
+文化与文学
+[Fitness]
+健美
+[Games]
+游戏
+[Hobbies]
+爱好
 [Internet]
 因特网
+[Lifestyle]
+生活方式
+[Movies/TV]
+电视/电视
+[Music]
+音乐
+[Outdoor Activities]
+户外活动
+[Parenting]
+育儿
+[Pets/Animals]
+宠物/动物
+[Religion]
+宗教
+[Science/Technology]
+科学/技术
+[Skills]
+技能
+[Web Design]
+网页设计
+[Nature and Environment]
+自然与环境
+[News & Media]
+新闻 & 媒体
+[Business & Economy]
+商业 & 经济
+[Mystics]
+神秘主义
+[Travel]
+旅游
+[Astronomy]
+天文学
+[Space]
+空间
+[Clothing]
+服装
+[Parties]
+派对
+[Women]
+女人
+[Social science]
+社会科学
+[60's]
+60年代
+[70's]
+70年代
+[80's]
+80年代
+[50's]
+50年代
+[Finance and corporate]
+金融和企业
+[Entertainment]
+娱乐
+[Consumer electronics]
+消费类电子产品
+[Retail stores]
+零售商店
+[Health and beauty]
+健康与美容
+[Media]
+媒体
+[Household products]
+家庭用品
+[Mail order catalog]
+邮购目录
+[Business services]
+商业服务
+[Audio and visual]
+音频和视频
+[Sporting and athletic]
+体育和竞技
+[Publishing]
+出版
+[Home automation]
+家庭自动化
+[Alumni Org.]
+校友组织
+[Charity Org.]
+慈善组织
+[Club/Social Org.]
+俱乐部/社会组织
+[Community Org.]
+社区组织
+[Cultural Org.]
+文化组织
+[Fan Clubs]
+粉丝俱乐部
+[Fraternity/Sorority]
+互助会/联谊会
+[Hobbyists Org.]
+爱好者组织
+[International Org.]
+国际组织
+[Nature and Environment Org.]
+自然与环境组织
+[Professional Org.]
+专业组织
+[Scientific/Technical Org.]
+科学/技术组织
+[Self Improvement Group]
+自我改进组
+[Spiritual/Religious Org.]
+精神/宗教组织
+[Sports Org.]
+体育组织
+[Support Org.]
+支持组织
+[Trade and Business Org.]
+贸易和商业组织
+[Union]
+联盟
+[Volunteer Org.]
+志愿者组织
+[Elementary School]
+小学
+[High School]
+高中
+[College]
+学院
+[University]
+大学
+[Past Work Place]
+过去的工作地点
+[Past Organization]
+过去的组织
 [Single]
 单身
 [Close relationships]
@@ -17753,14 +18005,140 @@ ICQ - 提供帮助
 在民间联盟
 [Send e-mail]
 发送电子邮件
+[Memory allocation error!]
+内存分配错误！
+[E-mail (UInfoEx)]
+电子邮件（UInfoEx）
+[Gender (UInfoEx)]
+性别（UInfoEx）
+[User has no valid homepage]
+用户没有有效的主页
+[View Homepage]
+查看主页
+[&Homepage]
+主页(&H)
+[Homepage (UInfoEx)]
+主页（UInfoEx）
+[Phone (UInfoEx)]
+电话（UInfoEx）
+[[b]%s (%S)...[/b]\n%d Contacts remaining]
+[b]%s (%S)...[/b]\n%d 联系人重命名
+[Abort Refreshing Contact Details]
+中止刷新联系人详情
+[Miranda must be online for refreshing contact information!]
+Miranda 必须在线才能刷新联系人信息！
+[Do you want to cancel the current refresh procedure?]
+你要取消当前的刷新过程吗？
+[%s has %s today.]
+今天 %s 有 %s。
+[an anniversary]
+一个周年纪念日
+[He/she has the following anniversaries:]
+他/她有以下周年纪念日：
+[He has the following anniversaries:]
+他有以下周年纪念日：
+[She has the following anniversaries:]
+她有以下周年纪念日：
+[%d. %s today]
+%d. %s 今天
+[%d. %s tomorrow]
+%d. %s 明天
+[%d. %s in %d days]
+%d. %s 在 %d 天后
+[%s has birthday today.]
+%s 今天有生日。
+[%s has birthday tomorrow.]
+%s 明天有生日。
+[%s has birthday in %d days.]
+%s %d 天后有生日。
+[\nHe/she becomes %d years old.]
+\n他/她变成 %d 岁了。
+[\nHe becomes %d years old.]
+\n他变成 %d 岁了。
+[\nShe becomes %d years old.]
+\n她变成 %d 岁了。
+[No anniversaries to remind of]
+没有要提醒的周年纪念日
+[Backing up and syncing all birthdays complete!]
+备份和同步所有生日完成！
 [Reminders]
 提醒
+[Birthday reminder]
+生日提醒
+[Birthday reminder: it's coming]
+生日提醒：它即将到来
+[Anniversary reminder]
+周年纪念日提醒
+[Reminder (UInfoEx)]
+提醒（UInfoEx）
+[contact identification]
+联系人标识
+[The contact %s(%s) has no unique ID in the vCard,\nbut there is a contact in your contact list with the same nick and protocol.\nDo you wish to use this contact?]
+联系人%s（%s）在vCard中没有唯一ID，\n但是联系人列表中有一个联系人，具有相同的昵称和协议。\n您是否希望使用此联系人？
+[Importing a new contact was aborted!]
+导入新联系人已中止！
+[You aborted import of a new contact.\nSome information may be missing for this contact.\n\nDo you want to delete the incomplete contact?]
+您中止了新联系人的导入。\n此联系人可能缺少某些信息。\n\n您要删除不完整的联系人吗？
+[Importing a new meta subcontact failed!]
+导入新的中继子联系人失败！
+[The newly created meta subcontact '%s'\ncould not be added to metacontact '%s'!\n\nDo you want to delete this contact?]
+新创建的中继子联系人‘%s’\n无法添加到中继联系人‘%s’！\n\n你要删除这个联系人吗？
+[Settings: %S]
+设置：%S
+[Events: %S]
+事件：%S
 [All Contacts]
 所有联系人
+[Required modules]
+需要的模块
+[Optional modules]
+可选的模块
+[Shows Miranda's installation directory.]
+显示 Miranda 的安装目录。
+[Shows the directory with all your Miranda's profiles.]
+显示包含所有 Miranda 配置文件的目录。
+[The OpenFileDialog returned an error: %d!]
+OpenFileDialog返回错误：％d！
+[The SaveFileDialog returned an error: %d!]
+SaveFileDialog返回错误：％d！
+[The ini-file "%s"\nfor saving contact information could not be opened.]
+无法打开用来保存\n联系人信息的 ini 文件“%s”。
+[None of the %d contacts, stored in the ini-file, match the selected contact!\nNothing will be imported]
+保存在 ini 文件中的 %d 个联系人，没有一个匹配选中的联系人！\n什么都不会被导入
+[Import complete]
+导入完成
+[Some basic statistics]
+一些基本统计
+[Added %d of %d contacts stored in the ini-file.]
+添加了存储在 ini 文件中的 %d 分之 %d 联系人
+[The ini-file "%s"\nfor reading contact information could not be opened.]
+无法打开用来读取\n联系人信息的 ini 文件“%s”
 [all Contacts]
 所有联系人
+[Select a destination file...]
+选择一个目标文件...
+[Import User Details from VCard]
+从 VCard 导入用户详情
+[Can't create xml file!\n%S]
+无法创建 xml 文件！\n%S
+[Contact: %s (%S)]
+联系人：%s（%S）
+[Parser is unable to load XMLCard "%s"\nError: %d\nDescription: %s]
+解析器无法加载 XMLCard “%s”\n错误：%d\n描述：%s
+[The selected file is no valid XMLCard]
+选中的文件不是有效的 XMLCard
+[The version of the XMLCard is not supported by UserInfoEx]
+UserInfoEx 不支持这个版本的 XMLCard
 [Complete]
 完成
+[Owner contact successfully imported.]
+所有者联系人已成功导入。
+[Selected XMLCard does not contain an owner contact!]
+选定的XMLCard不包含所有者联系人！
+[added contacts: %u / %u\nadded settings: %u / %u\nadded events %u / %u\nduplicated events: %u]
+添加了联系人：%u / %u\n添加了设置：%u / %u\n添加了事件 %u / %u\n重复事件：%u
+[Flags (UInfoEx)]
+旗（UInfoEx）
 #muuid {297ec1e7-41b7-41f9-bb91-efa95028f16c}
 ;============================================================
 ;  File: UserGuide.dll
@@ -17848,6 +18226,8 @@ Miranda 相关
 提交
 [Cancel]
 取消
+[Open in browser]
+在浏览器中打开
 [Read message icon]
 已读消息图标
 [Status icon]
@@ -17902,6 +18282,8 @@ Miranda 相关
 白俄罗斯语
 [Ukrainian]
 乌克兰语
+[Spanish]
+西班牙语
 [Finnish]
 荷兰语
 [German]
@@ -17914,6 +18296,10 @@ Miranda 相关
 通知
 [Activities]
 活动
+[Music]
+音乐
+[Games]
+游戏
 #muuid {fc6c81f4-837e-4430-9601-a0aa43177ae3}
 ;============================================================
 ;  File: Watrack.dll
@@ -19347,6 +19733,14 @@ N/A
 生日
 [Contacts]
 联系人
+[Birthday today]
+生日今天
+[%s has birthday in %d days.]
+%s %d 天后有生日。
+[%s has birthday tomorrow.]
+%s 明天有生日。
+[%s has birthday today.]
+%s 今天有生日。
 [All Files]
 所有文件
 [Error]

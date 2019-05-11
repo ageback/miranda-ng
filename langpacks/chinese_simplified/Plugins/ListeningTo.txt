@@ -13,7 +13,7 @@
 [Enable sending listening information to contacts:]
 
 [Music]
-
+音乐
 [Radio]
 
 [Video]

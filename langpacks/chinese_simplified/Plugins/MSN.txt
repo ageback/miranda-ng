@@ -87,7 +87,7 @@
 [Last Name]
 
 [Anniversary]
-
+周年纪念日
 [Birthday]
 生日
 [Nickname]

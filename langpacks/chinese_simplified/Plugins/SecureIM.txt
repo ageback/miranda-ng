@@ -63,7 +63,7 @@
 [&Export]
 导出(&E)
 [&Import]
-
+导入(&I)
 [Set &keyrings...]
 
 [Disable keyrings use]

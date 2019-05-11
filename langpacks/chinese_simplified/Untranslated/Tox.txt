@@ -2,7 +2,6 @@
 [Tox ID:]
 [Create]
 [Copy ID]
-[Export]
 [Default group:]
 [Create Tox profile]
 [Import Tox profile]

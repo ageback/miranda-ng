@@ -30,7 +30,6 @@
 [Middle Name]
 [First Name]
 [Last Name]
-[Anniversary]
 [Place:]
 [MSN Delete Contact]
 [Remove from Hotmail Address book]
