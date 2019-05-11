@@ -12,7 +12,6 @@
 [Item colors]
 [First color]
 [Second color]
-[Transparent]
 [Alpha (percent)]
 [Item margins]
 [Item borders]

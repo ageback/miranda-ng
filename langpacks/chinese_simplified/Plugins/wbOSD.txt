@@ -31,7 +31,7 @@
 [Background color]
 背景色
 [Transparent]
-
+透明
 [Alpha:]
 
 [Timeout (ms):]

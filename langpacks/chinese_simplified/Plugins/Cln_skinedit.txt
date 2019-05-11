@@ -41,7 +41,7 @@
 [Second color]
 
 [Transparent]
-
+透明
 [Alpha (percent)]
 
 [Item margins]

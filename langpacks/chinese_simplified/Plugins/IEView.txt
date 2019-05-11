@@ -6,113 +6,113 @@
 ;  Authors: Piotr Piastucki, Francois Mean
 ;============================================================
 [IE Based Chat Log.]
-
+基于 IE 的聊天日志。
 ;file \plugins\IEView\res\ieview.rc
 [Copy]
 复制
 [Copy Link]
-
+复制链接
 [Select All]
 选择全部
 [Save Image As...]
-
+保存图像为...
 [Print]
-
+打印
 [Clear Log]
 清除日志
 [Show source]
-
+显示源
 [Options]
 选项
 [Enable BBCodes]
 启用 BBCodes
 [Currently the following BBCodes are supported: [b][i][u][s][img][size][color][url]]
-
+当前支持以下 BBCodes：[b][i][u][s][img][size][color][url]
 [Enable support for Flash files in smileys and BBCodes]
-
+启用在表情和BBCodes中支持 Flash 文件
 [Replace smileys in user names]
-
+替换用户名中的表情
 [Hide window border]
-
+隐藏窗口边框
 [Embed YouTube videos]
-
+嵌入 YouTube 视频
 [Size:]
 大小：
 [Mode]
-
+模式
 [Compatibility Mode]
-
+兼容模式
 [Use External CSS]
-
+使用外部 CSS
 [Use Templates]
-
+使用模板
 [Background image]
-
+背景图像
 [Scroll with text]
 与文字一起滚动
 [Template Options]
-
+模板选项
 [Use message grouping]
 使用消息分组
 [Show nicknames]
-
+显示昵称
 [Show time]
-
+显示时间
 [Show seconds]
 显示秒
 [Show date]
-
+显示日期
 [Use long date format]
-
+使用长日期格式
 [Use relative timestamp]
-
+使用相关时间戳
 [Download more templates]
-
+下载更多模板
 ;file \plugins\IEView\src\HistoryHTMLBuilder.cpp
 [Outgoing File Transfer]
-
+传出文件传输
 [Incoming File Transfer]
 传入文件传输
 ;file \plugins\IEView\src\HTMLBuilder.cpp
 [(Unknown Contact)]
 (未知联系人)
 [ requested authorization]
-
+ 请求的授权
 [ was added.]
-
+ 被添加了。
 ;file \plugins\IEView\src\ieview_main.cpp
 [RTL On]
-
+右到左开启
 [RTL Off]
-
+右到左关闭
 [Group On]
-
+分组开启
 [Group Off]
-
+分组关闭
 ;file \plugins\IEView\src\MUCCHTMLBuilder.cpp
 [%s has joined.]
-
+%s 加入了。
 [%s has left.]
-
+%s 离开了。
 [The topic is %s.]
-
+主题是 %s。
 [Error]
 错误
 ;file \plugins\IEView\src\Options.cpp
 [Default]
 默认
 [Template]
-
+模板
 [All Files]
 所有文件
 [All Images]
-
+所有图像
 [Style Sheet]
-
+样式表
 [Message sessions]
 消息会话
 [IEView]
-
+IEView
 [General]
 通用
 [Skins]

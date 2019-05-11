@@ -6,7 +6,6 @@
 [Shadow color]
 [Alternative shadow]
 [Shadow distance:]
-[Transparent]
 [Alpha:]
 [Timeout (ms):]
 [Show testing OSD]
