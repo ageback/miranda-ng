@@ -3128,32 +3128,108 @@ PNG位图
 ;  Version: 0.98.1.1
 ;  Authors: Nightwish, Pescuma
 ;============================================================
+[Loads and manages contact pictures for other plugins.]
+加载和管理用于其他插件的联系人照片。
+[The pictures you can set here are used as default avatars\nfor contacts that don't have their own.\nUse the checkboxes to enable/disable showing avatars for the protocols.]
+对于没有它们自己头像的联系人，\n你能够在此处设置的照片被用作他们的默认头像。使用复选框来启用/禁用显示协议的头像。
+[Set default picture]
+设置默认照片
+[Delete default picture]
+删除默认照片
+[CAUTION: These pictures are NOT your own avatars.\nTo set your own avatar go to Main menu -> View/change my details -> Avatar.]
+注意：这些照片不是您自己的头像。\n要设置您自己的头像，请转到主菜单 -> 查看/更改我的详细信息 -> 头像。
+[Try to draw avatar background transparent (for images without transparency)]
+尝试绘制透明的头像背景（对于没有透明度的图像）
+[Number of points to define background:]
+定义背景的点数：
+[Color difference allowed:]
+允许的颜色差异：
+[Make transparency proportional to color diff]
+使透明度与颜色差异成比例
+[Draw avatars grayscale]
+绘制头像灰度
+[Show warning messages]
+显示警告消息
+[When setting avatars, always make them square]
+当设置头像时，总是设为正方形
+[Try to draw own avatar background transparent (for images without transparency)]
+尝试绘制自己的头像背景透明（对于没有透明度的图像）
+[This uses the same additional options as in "Contact avatars" tab]
+这使用与“联系人头像”标签中相同的附加选项
+[Protect the picture and prevent automatic avatars from overwriting it]
+保护照片并防止自动头像覆盖它
+[Make the avatar square]
+使头像变成正方形
+[Resize the avatar to fit max allowed protocol size]
+调整头像大小以适应最大允许协议大小
 [Dialog]
 对话框
+[Contact picture]
+联系人照片
 [Change]
 更改
 [Delete]
 删除
 [Reset]
 重置
+[Picture options]
+照片选项
+[Protect the picture]
+保护照片
+[Set as hidden]
+设为隐藏
+[Try to make picture background transparent]
+尝试使照片背景透明
+[Use defaults]
+使用默认
 [Cancel]
 取消
 [Options]
 选项
 [Background]
 背景
+[Transparent]
+透明
+[Points:]
+点：
+[Color diff:]
+颜色差异：
 [Set]
 设置
+[Use per protocol avatars]
+使用每个协议头像
+[Protocols have different avatars]
+协议有不同的头像
 [Avatars]
 头像
+[My Avatars]
+我的头像
+[My Global Avatar Cache]
+我的全局头像缓存
+[Global avatar for %s accounts]
+%s 帐户的全局头像
+[Global avatar]
+全局头像
+[Set avatar options for %s]
+为 %s 设置头像选项
+[Delete picture file from disk (may be necessary to force a reload, but will delete local pictures)?]
+从磁盘删除图片文件（可能需要强制重新加载，但会删除本地图片）？
+[Reset contact picture]
+重置联系人照片
+[Contact has no avatar]
+联系人没有头像
 [Contacts]
 联系人
 [Protocols]
 协议
 [Contact avatars]
 联系人头像
+[Own avatars]
+自己的头像
 [No avatar]
 无头像
+[Are you sure you want to remove your avatar?]
+你确定要移除你的头像吗？
 [Avatar]
 头像
 [All files]
@@ -3166,6 +3242,16 @@ JPEG 位图
 GIF 位图
 [PNG bitmaps]
 PNG位图
+[Flash animations]
+Flash动画
+[XML files]
+XML 文件
+[Grow avatar to fit max allowed protocol size]
+增长头像以适应最大允许的协议大小
+[Set my avatar]
+设置我的头像
+[Set my avatar for %s]
+设置 %s 的头像
 #muuid {e25367a2-51ae-4044-be28-131bc18b71a4}
 ;============================================================
 ;  File: BasicHistory.dll
@@ -13089,6 +13175,8 @@ Miranda 的根目录路径
 十一月
 [December]
 十二月
+[Jun.]
+jun.
 [Idle]
 空闲
 [Unknown]
@@ -18003,6 +18091,10 @@ ICQ - 提供帮助
 情况很复杂
 [In a civil union]
 在民间联盟
+[jun.]
+jun.
+[sen.]
+sen.
 [Send e-mail]
 发送电子邮件
 [Memory allocation error!]

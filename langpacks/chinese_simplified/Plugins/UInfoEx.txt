@@ -1079,9 +1079,9 @@ ICQ - 提供帮助
 [In a civil union]
 在民间联盟
 [jun.]
-
+jun.
 [sen.]
-
+sen.
 ;file \plugins\UserInfoEx\src\svc_constants.h
 ;file \plugins\UserInfoEx\src\svc_email.cpp
 [Send e-mail]
