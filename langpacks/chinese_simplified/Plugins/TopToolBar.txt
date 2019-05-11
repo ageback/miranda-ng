@@ -6,30 +6,30 @@
 ;  Authors: Bethoven
 ;============================================================
 [ToptoolBar adds buttons in top frame for fast access.]
-
+ToptoolBar 在框架顶部添加按钮用于快速访问。
 ;file \plugins\TopToolBar\res\main.rc
 [Buttons order and visibility]
-
+按钮顺序和可见性
 [Button height]
-
+按钮高度
 [Button width]
-
+按钮宽度
 [Interval between buttons]
-
+按钮间隔
 [Use flat mode]
-
+使用平坦模式
 [Auto resize]
-
+自动调整大小
 [Single line]
-
+单行
 [Buttons order:]
-
+按钮顺序：
 [Add separator]
-
+添加分隔符
 [Add launch]
-
+添加启动
 [Delete separator/launch button]
-
+删除分隔符/启动按钮
 [Name:]
 名称：
 [Path:]
@@ -38,15 +38,15 @@
 设置
 ;file \plugins\TopToolBar\src\InternalButtons.cpp
 [Show main menu]
-
+显示主菜单
 [Show options page]
-
+显示选项页
 [Show accounts manager]
-
+显示帐户管理器
 [Find/add contacts]
 查找/添加联系人
 [Show status menu]
-
+显示状态菜单
 [Show/hide offline contacts]
 显示/隐藏离线联系人
 [Show offline contacts]
@@ -54,17 +54,17 @@
 [Hide offline contacts]
 隐藏离线联系人 
 [Enable/disable metacontacts]
-
+启用/禁用中继联系人
 [Enable metacontacts]
-
+启用中继联系人
 [Disable metacontacts]
-
+禁用中继联系人
 [Enable/disable groups]
-
+启用/禁用分组
 [Disable groups]
 禁用分组
 [Enable groups]
-
+启用分组
 [Enable/disable sounds]
 启用/禁用声音
 [Enable sounds]
@@ -72,21 +72,21 @@
 [Disable sounds]
 禁用声音
 [Minimize contact list]
-
+最小化联系人列表
 [Exit]
 退出
 ;file \plugins\TopToolBar\src\main.cpp
 [Execute]
 执行
 [Separator]
-
+分隔符
 ;file \plugins\TopToolBar\src\toolbar.cpp
 [TopToolBar background]
-
+TopToolBar 背景
 [Frames service has not been found, so plugin will be disabled.\nTo run it you need to install and / or enable contact list plugin that supports it:\n- Modern contact list\n- Clist nicer\nYou can get them at https://wiki.miranda-ng.org/Download]
-
+发现 Frames 服务，因此插件将被禁用。\n要运行它，你需要安装并且 / 或者启用支持它的联系人列表插件：\n- 现代联系人列表\n- Clist nicer\n你可以在https://wiki.miranda-ng.org/Download 得到它们
 [TopToolBar]
-
+TopToolBar
 ;file \plugins\TopToolBar\src\ttbopt.cpp
 [Default]
 默认

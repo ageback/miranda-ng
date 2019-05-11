@@ -87,11 +87,11 @@
 [Show icons]
 显示图标
 [Show time]
-
+显示时间
 [Show seconds]
 显示秒
 [Show date]
-
+显示日期
 [Long date format]
 
 [Relative date]

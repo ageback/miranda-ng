@@ -21,8 +21,6 @@
 [lines]
 [You can use embedded variables here: %name% for contact's name, %status% for its status, %statusmsg% for its status message and %account% for its account's name]
 [Enable IEView]
-[Show time]
-[Show date]
 [Long date format]
 [Relative date]
 [Enable message grouping]

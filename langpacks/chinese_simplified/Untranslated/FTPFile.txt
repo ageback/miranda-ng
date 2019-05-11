@@ -38,7 +38,6 @@
 [Close dialog after upload finishes]
 [Automatically delete file after...]
 [Delete from List]
-[Copy Link]
 [User Info]
 [%d minutes]
 [%d hours]

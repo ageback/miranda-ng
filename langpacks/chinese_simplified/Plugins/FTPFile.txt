@@ -125,7 +125,7 @@ URL
 [Delete from List]
 
 [Copy Link]
-
+复制链接
 ;file \plugins\FTPFileYM\src\dialog.cpp
 [User Info]
 

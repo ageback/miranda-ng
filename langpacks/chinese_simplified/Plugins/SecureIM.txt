@@ -133,7 +133,7 @@
 [Enter passphrase for the secret key:]
 
 [Mode]
-
+模式
 [Native SecureIM]
 
 [PGP SecureIM]

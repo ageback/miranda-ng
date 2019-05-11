@@ -57,9 +57,9 @@
 [Preview]
 预览
 [Show date]
-
+显示日期
 [Show time]
-
+显示时间
 [Show headers]
 显示头部
 [Number of begin shown messages]
@@ -86,7 +86,7 @@
 [ added you to the contact list]
 
 [ requested authorization]
-
+ 请求的授权
 [This is a sample message event :-)]
 
 [This is a sample file event :-D]

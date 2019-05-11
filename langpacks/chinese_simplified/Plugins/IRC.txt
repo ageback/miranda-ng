@@ -766,7 +766,7 @@
 [Channel]
 
 [Mode]
-
+模式
 [%s - Filtered - %d items]
 
 [Not listed server]

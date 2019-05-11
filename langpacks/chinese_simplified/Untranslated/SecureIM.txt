@@ -45,7 +45,6 @@
 [Please type in your password]
 [SecureIM plugin Passphrase of private key]
 [Enter passphrase for the secret key:]
-[Mode]
 [Native SecureIM]
 [PGP SecureIM]
 [GPG SecureIM]

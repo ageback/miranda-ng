@@ -6030,6 +6030,8 @@ URL
 覆盖
 [Disabled]
 已禁用
+[Copy Link]
+复制链接
 [Copy Link to Clipboard]
 复制链接到剪贴板
 [Resume]
@@ -7440,6 +7442,8 @@ IEView
 离线
 [Please wait...]
 请等待...
+[Mode]
+模式
 #muuid {144e80a2-d198-428b-acbe-9d55dacc7fde}
 ;============================================================
 ;  File: Jabber.dll
@@ -10277,12 +10281,18 @@ UIN
 解除事件
 [Preview]
 预览
+[Show date]
+显示日期
+[Show time]
+显示时间
 [Show headers]
 显示头部
 [Edit]
 编辑
 [Popups]
 弹出窗口
+[ requested authorization]
+ 请求的授权
 [Contacts]
 联系人
 [Unknown Event]
@@ -12511,8 +12521,12 @@ Popup plus 警告
 消息窗口事件日志
 [Show icons]
 显示图标
+[Show time]
+显示时间
 [Show seconds]
 显示秒
+[Show date]
+显示日期
 [Show names]
 显示名称
 [events]
@@ -13112,6 +13126,8 @@ Miranda 的根目录路径
 密码：
 [Cancel]
 取消
+[Mode]
+模式
 [Status]
 状态
 [General]
@@ -16910,32 +16926,84 @@ Jabber 活动
 ;  Version: 0.8.0.5
 ;  Authors: Bethoven
 ;============================================================
+[ToptoolBar adds buttons in top frame for fast access.]
+ToptoolBar 在框架顶部添加按钮用于快速访问。
+[Buttons order and visibility]
+按钮顺序和可见性
+[Button height]
+按钮高度
+[Button width]
+按钮宽度
+[Interval between buttons]
+按钮间隔
+[Use flat mode]
+使用平坦模式
+[Auto resize]
+自动调整大小
+[Single line]
+单行
+[Buttons order:]
+按钮顺序：
+[Add separator]
+添加分隔符
+[Add launch]
+添加启动
+[Delete separator/launch button]
+删除分隔符/启动按钮
 [Name:]
 名称：
 [Path:]
 路径：
 [Set]
 设置
+[Show main menu]
+显示主菜单
+[Show options page]
+显示选项页
+[Show accounts manager]
+显示帐户管理器
 [Find/add contacts]
 查找/添加联系人
+[Show status menu]
+显示状态菜单
 [Show/hide offline contacts]
 显示/隐藏离线联系人
 [Show offline contacts]
 显示离线联系人
 [Hide offline contacts]
 隐藏离线联系人 
+[Enable/disable metacontacts]
+启用/禁用中继联系人
+[Enable metacontacts]
+启用中继联系人
+[Disable metacontacts]
+禁用中继联系人
+[Enable/disable groups]
+启用/禁用分组
 [Disable groups]
 禁用分组
+[Enable groups]
+启用分组
 [Enable/disable sounds]
 启用/禁用声音
 [Enable sounds]
 启用声音
 [Disable sounds]
 禁用声音
+[Minimize contact list]
+最小化联系人列表
 [Exit]
 退出
 [Execute]
 执行
+[Separator]
+分隔符
+[TopToolBar background]
+TopToolBar 背景
+[Frames service has not been found, so plugin will be disabled.\nTo run it you need to install and / or enable contact list plugin that supports it:\n- Modern contact list\n- Clist nicer\nYou can get them at https://wiki.miranda-ng.org/Download]
+发现 Frames 服务，因此插件将被禁用。\n要运行它，你需要安装并且 / 或者启用支持它的联系人列表插件：\n- 现代联系人列表\n- Clist nicer\n你可以在https://wiki.miranda-ng.org/Download 得到它们
+[TopToolBar]
+TopToolBar
 [Default]
 默认
 [Contact list]
@@ -20144,6 +20212,8 @@ WAV 文件
 有空聊天
 [Invisible]
 隐身
+[Template]
+模板
 [Message sessions]
 消息会话
 #muuid {47d489d3-310d-4ef6-bd05-699fffd5a4aa}
