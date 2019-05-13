@@ -10417,26 +10417,116 @@ UIN
 ;  Version: 0.0.1.12
 ;  Authors: Ricardo Pescuma Domenecci, Drugwash
 ;============================================================
+[Shows and allows you to edit your details for all accounts.]
+显示并允许你编辑你所有帐户的详细信息。
+[Set my nickname]
+设置我的昵称
 [Nickname:]
 昵称：
 [Cancel]
 取消
 [General]
 通用
+[RTL]
+右到左
+[Align text to right]
+文字对齐到右边
+[Auto-resize frame]
+自动调整框架大小
+[Use contact list smileys]
+使用联系人列表表情
+[Replace smileys]
+替换表情
+[Resize smileys]
+调整表情大小
+[Global on...]
+全局...
+[...avatar]
+...头像
+[...nickname]
+...昵称
+[...status]
+...状态
+[...status message]
+...状态消息
 [Account]
 帐户
+[Show account name]
+显示帐户名称
+[Show account cycle button]
+显示帐户循环按钮
+[Cycle through accounts every:]
+循环帐户每隔：
 [seconds]
 秒
 [Avatar]
 头像
+[Custom size:]
+自定义大小：
 [pixels]
 像素
+[Allow it to grow]
+允许它增长
+[Draw border]
+绘制边框
 [Round corners]
 圆角
 [Custom corner size:]
 自定义角尺寸：
+[Use free space (under avatar) to other texts]
+使用可用空间（头像下面）到其他文本
+[Frame options]
+框架选项
+[Top:]
+顶部：
+[Bottom:]
+底部：
+[Left:]
+左边：
+[Right:]
+右边：
+[Set my status message for all status]
+为所有状态设置我的状态消息
 [Status message:]
 状态消息：
+[&Offline]
+离线(&O)
+[On&line]
+在线(&L)
+[&Away]
+离开(&A)
+[&Not available]
+不可用(&N)
+[Occ&upied]
+忙碌(&U)
+[&Do not disturb]
+勿扰(&D)
+[&Free for chat]
+有空聊天(&F)
+[&Invisible]
+隐身(&I)
+[On the &phone]
+在接电话(&P)
+[Out to &lunch]
+外出吃饭(&L)
+[Set my avatar...]
+设置我的头像...
+[Set my nickname...]
+设置我的昵称...  
+[Set my status message...]
+设置我的状态消息...
+[Enable listening to]
+启用正在听
+[Show next account]
+显示下一个帐户
+[Show previous account]
+显示上一个帐户
+[Cycle through accounts]
+在帐户间循环
+[Don't cycle through accounts]
+不要在帐户间循环
+[<no status name>]
+<无状态名称>
 [Nickname]
 昵称
 [Status]
@@ -10445,12 +10535,34 @@ UIN
 状态消息
 [Listening to]
 正在听
+[My details]
+我的详情
 [Background]
 背景
 [Avatar border]
 头像边框
+[Show my details]
+显示我的详情
+[Enable listening to for %s]
+启用 %s 的正在听
+[Set my avatar for %s...]
+为 %s 设置我的头像...
+[Set my nickname for %s...]
+为 %s 设置我的昵称...
+[Set my status message for %s...]
+为 %s 设置我的状态消息...
+[Hide my details]
+隐藏我的详情
+[Previous account]
+上一个帐户
+[Next account]
+下一个帐户
 [Contact list]
 联系人列表
+[Set my nickname for %s]
+为 %s 设置我的昵称
+[Set my status message for %s]
+为 %s 设置我的状态消息
 #muuid {b2dd9270-ce5e-11df-bd3d-0800200c9a66}
 ;============================================================
 ;  File: NewAwaySys.dll

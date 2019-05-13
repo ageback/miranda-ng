@@ -6,7 +6,7 @@
 ;  Authors: Awkward
 ;============================================================
 [Plugin for manage hotkeys to open contact window, insert text, run program and call services]
-
+用来管理打开联系人窗口的热键，插入文字，运行程序和调用服务的插件
 [Apply]
 应用
 [New]
@@ -22,39 +22,39 @@
 [Import]
 导入
 [Action "$" exists, do you want to rewrite it?]
-
+动作 "$" 已存在，你要改写它吗？
 [Choose action]
-
+选择动作
 [&Yes]
 是(&)
 [&No]
 否(&N)
 [A&ppend]
-
+附加(&P)
 [Yes to &All]
-
+所有都是(&A)
 [N&o to All]
-
+所有都否(&O)
 [Export]
 导出
 [Reload/Refresh]
-
+重新载入/刷新
 [Registered actions]
-
+注册的动作
 [Your Actman settings are for old version. If you are ready to upgrade settings, press OK. Else press Cancel and change manually Actman plugin back to old version or make settings backup. To keep previously exported macros please import them back before conversion.]
-
+你的Actman设置适用于旧版本。如果您准备升级设置，请按“确定”。否则按取消并手动将Actman插件更改回旧版本或进行设置备份。要保留以前导出的宏，请在转换前将其导回。
 [Please, don't use macro test for non-saved macros. If you had 'Advanced' or file writing actions previously, check them - their logic was changed.]
-
+请不要对未保存的宏使用宏测试。如果您之前有“高级”或文件写入操作，请检查它们 - 它们的逻辑已更改。
 [Actman settings converted to new version]
-
+Actman 设置转换为新版本
 [Actions]
 动作
 [No description]
-
+无描述
 [Reload]
-
+重新载入
 [Append data to file?]
-
+附加数据到文件吗？
 [Help]
 帮助
 [Action]
@@ -62,91 +62,91 @@
 [Notes]
 笔记
 [INI]
-
+INI
 [Read]
-
+读取
 [Write]
-
+写入
 [INI file name]
-
+INI 文件名
 [Text Editor]
-
+文本编辑器
 [Script]
-
+脚本
 [Wrap Text]
-
+文字换行
 [C&ancel]
-
+取消(&A)
 [Section]
-
+段
 [Parameter]
-
+参数
 [Value]
 值
 [Use LastResult]
-
+使用上次结果
 [UTF8 encoding]
-
+UTF8 编码
 [Function call]
-
+函数调用
 [Function name]
-
+函数名
 [DLL name]
-
+DLL 名
 [Call type]
-
+调用类型
 [Arguments]
-
+参数
 [Number of arguments]
-
+参数数量
 [Argument]
-
+参数
 [Param]
-
+参数
 [Param type]
-
+参数类型
 [number value]
-
+数字值
 [ANSI string]
-
+ANSI 字符串
 [Unicode string]
-
+Unicode 字符串
 [current contact]
-
+当前联系人
 [last result]
-
+上次结果
 [parameter]
-
+参数
 [structure]
-
+结构
 [Ansi message]
-
+Ansi 消息
 [Ansi caption]
-
+Ansi 标题
 [Structure]
-
+结构
 [Structure editor]
-
+结构编辑器
 [alias]
-
+别名
 [type]
 类型
 [length]
-
+长度
 [data]
-
+数据
 [Data align]
-
+数据对齐
 [Native]
-
+本地
 [Packed]
 
 [2 bytes]
-
+2字节
 [4 bytes]
-
+4字节
 [8 bytes]
-
+8字节
 [Byte]
 字节
 [Word]
