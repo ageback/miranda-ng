@@ -31,7 +31,7 @@
 [Favorite Contacts]
 
 [Enable groups]
-
+启用分组
 [Multicolumn menu]
 
 [Configure fonts and colors...]

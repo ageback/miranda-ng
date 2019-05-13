@@ -71,7 +71,7 @@
 [Direction]
 
 [Type]
-
+类型
 [&File]
 文件(&F)
 [&Save]

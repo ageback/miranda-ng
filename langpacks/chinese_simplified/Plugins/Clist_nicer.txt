@@ -398,7 +398,7 @@
 [Enable/Disable sounds]
 启用/禁用声音
 [Minimize contact list]
-
+最小化联系人列表
 [Status menu]
 状态菜单
 [Select view mode]

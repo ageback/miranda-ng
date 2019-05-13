@@ -16,7 +16,7 @@
 [Module/InfoType]
 
 [Setting]
-
+设置
 [Reload]
 
 [New]
@@ -96,17 +96,17 @@
 [Data type:]
 
 [Byte]
-
+字节
 [Word]
-
+单词
 [DWord]
-
+双字
 [Signed]
 
 [As hex]
 
 [String]
-
+字符串
 [TimeStamp]
 时间戳
 [Module:]
@@ -232,7 +232,7 @@
 [Online]
 在线
 [deleted]
-
+已删除
 [off]
 半
 [active]

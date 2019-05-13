@@ -85,7 +85,7 @@
 [Userinfo]
 
 [&Refresh]
-
+刷新(&R)
 [&Query]
 
 [&Close]

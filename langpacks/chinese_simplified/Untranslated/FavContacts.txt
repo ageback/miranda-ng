@@ -6,7 +6,6 @@
 [Hotkey shows menu centered on screen]
 [Menu item preview:]
 [Favorite Contacts]
-[Enable groups]
 [Multicolumn menu]
 [Configure fonts and colors...]
 [Align to the right]

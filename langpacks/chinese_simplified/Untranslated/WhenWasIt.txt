@@ -36,7 +36,6 @@
 [Birthday list (%d)]
 [DTB]
 [Age]
-[Module]
 [Closing in %d seconds]
 [Closing in %d second]
 [Check for birthdays]

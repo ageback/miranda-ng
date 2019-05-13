@@ -2764,6 +2764,16 @@ PNG位图
 动作
 [Notes]
 笔记
+[Value]
+值
+[type]
+类型
+[Byte]
+字节
+[Word]
+单词
+[DWord]
+双字
 [Name]
 名字
 [Plugin]
@@ -2800,10 +2810,16 @@ PNG位图
 按钮
 [Database]
 数据库
+[Module]
+模块
+[Setting]
+设置
 [Settings]
 设置
 [Contact list]
 联系人列表
+[value]
+值
 [name]
 名字
 [Days]
@@ -2812,6 +2828,8 @@ PNG位图
 时间
 [Date]
 日期
+[TopToolbar]
+TopToolBar
 [Main menu]
 主菜单
 [Contact menu]
@@ -3007,6 +3025,8 @@ PNG位图
 ;============================================================
 [Miscellaneous]
 杂项
+[Type]
+类型
 [Unknown]
 未知
 [Services]
@@ -3560,6 +3580,8 @@ XML 文件
 发送
 [Cancel]
 取消
+[Setting Value]
+设置值
 [Settings]
 设置
 [Advanced >>]
@@ -5035,6 +5057,8 @@ Angeli-Ka（绘图），FYR（模板）
 帐户
 [Enable/Disable sounds]
 启用/禁用声音
+[Minimize contact list]
+最小化联系人列表
 [Status menu]
 状态菜单
 [Setup view modes]
@@ -5233,6 +5257,14 @@ Angeli-Ka（绘图），FYR（模板）
 ;============================================================
 [Error]
 错误
+[string]
+字符串
+[byte]
+字节
+[word]
+单词
+[dword]
+双字
 #muuid {4bb5b4aa-c364-4f23-9746-d5b708a286a5}
 ;============================================================
 ;  File: ConnectionNotify.dll
@@ -5523,68 +5555,328 @@ GnuPG插件 - 选择公钥
 ;  Version: 4.0.1.2
 ;  Authors: Bio, Jonathan Gordon
 ;============================================================
+[Advanced Database Editor.]
+高级数据库编辑器。
+[Search and replace]
+搜索和替换
 [Search for]
 搜索
+[Exact match]
+精确匹配
 [&Search]
 搜索(&S)
+[Module name]
+模块名称
+[Setting name]
+设置名称
+[Setting value]
+设置值
 [Case sensitive]
 区分大小写
 [&Cancel]
 取消(&C)
+[Replace with]
+替换为
+[Entirely]
+完全
+[&Replace]
+替换(&R)
+[Restore last opened position]
+恢复最后打开位置
+[Automatically expand "Settings" when Database Editor++ starts]
+Database Editor ++启动时自动展开“设置”
+[Warn when deleting modules]
+删除模块时警告
+[Use popups when watched settings change values]
+当监视的设置改变值时使用弹出窗口
+[Popup timeout (0 for infinite)]
+弹出窗口超时（0表示无限）
 [Background color]
 背景色
+[Add a module to contact]
+添加一个模块到联系人
+[Add a module named]
+添加一个模块名称
+[Add to all contacts (including Settings)]
+添加到所有联系人（包括设置）
 [Cancel]
 取消
+[Edit setting]
+编辑设置
 [Name]
 名字
+[Value]
+值
+[Base]
+基本
+[Hexadecimal]
+十六进制
+[Decimal]
+十进制
+[Save value as:]
+保存值为：
+[Byte]
+字节
+[Word]
+单词
+[Dword]
+双字
+[String]
+字符串
+[Watched database settings]
+监视的数据库设置
+[Copy module to contact]
+复制模块到联系人
+[Contact to copy module and settings to]
+复制模块和设置的目标联系人
+[Copy to all contacts (including Settings)]
+复制到所有联系人（包括设置）
 [Import]
 导入
+[Paste the settings to import here:]
+在这里粘贴要导入的设置：
+[Database Editor++]
+数据库编辑器++
+[&Main]
+主要(&M)
+[&Refresh modules]
+刷新模块(&R)
+[Refresh &settings]
+刷新设置(&S)
 [E&xit]
 退出(&X)
+[&Actions]
+动作(&A)
+[&Search and replace]
+搜索和替换(&S)
+[Delete &resident settings]
+删除居民设置(&R)
+[&Delete module]
+删除模块(&D)
+[&Watches]
+监视(&W)
+[&View all]
+查看所有(&V)
 [&Delete all]
 删除所有(&D)
 [&Export]
 导出(&E)
+[Entire &database]
+整个数据库(&D)
+[All &settings]
+所有设置(&S)
+[All &contacts]
+所有联系人(&C)
 [&Import]
 导入(&I)
+[From a &file]
+从一个文件(&F)
+[From pasted &text]
+从粘贴的文字(&T)
 [&Options]
 选项(&O)
+[&Sort by protocol]
+按协议排序(&S)
+[Show &all]
+显示所有(&A)
+[Show only &loaded]
+只显示加载的(&L)
+[Show only &unloaded]
+只显示未加载的(&U)
+[Edit &Bytes in Hex]
+以十六进制编辑字节(&B)
+[Edit &Words in Hex]
+以十六进制编辑单词(&W) 
+[Edit &Dwords in Hex]
+以十六进制编辑双字(&W)
+[&Inline edit]
+行内编辑(&I)
+[&Restore position]
+恢复位置(&R)
+[&Open options]
+打开选项(&O)
 [&Edit]
 编辑(&E)
 [&Copy]
 复制(&C)
 [&Delete]
 删除(&D)
+[Convert to]
+转换为
+[&Byte]
+字节(&B)
+[&Word]
+单词(&W)
+[&Dword]
+双字(&D)
+[&String]
+字符串(&S)
+[&Unicode]
+&Unicode
 [New]
 新
+[BL&OB]
+BL&OB
+[&Watch]
+监视(&W)
+[&Refresh]
+刷新(&R)
 [&Rename]
 重命名(&R)
+[Copy to contact]
+复制到联系人
+[Export module]
+导出模块
+[&Add module]
+添加模块(&A)
+[&Clone]
+克隆(&C)
+[Export contact]
+导出联系人
+[Import settings]
+导入设置
+[From a file]
+从文件
+[From pasted text]
+从粘贴的文字
+[Export settings]
+导出设置
+[Export contacts]
+导出联系人
+[Import contacts]
+导入联系人
+[Export module from all contacts]
+从所有联系人导出模块
+[Watch window]
+监视窗口
+[Reload watch list]
+重新加载监视列表
+[Copy module "%s"]
+复制模块"%s"
+[Are you sure you want to delete module "%s"?]
+你确定你要删除模块“%s”吗？
+[Delete module from database]
+从数据库删除模块
+[Delete module from database... Loading]
+从数据库删除模块...正在加载 
+[Delete from all contacts (including Settings)]
+从所有联系人删除（包括设置）
+[INI Files]
+INI 文件
 [All Files]
 所有文件
 [Export to file]
 导出到文件
+[Couldn't open file for writing]
+无法打开文件来写入
+[Import to "%s"]
+导入到“%s”
+[Import from files]
+从文件导入
 [Result]
 结果
 [Contact]
 联系
+[Module]
+模块
+[Setting]
+设置
+[Enter a string to search the database for]
+输入要在数据库中搜索的字符串
 [Stop]
 停止
+[Replaced]
+已替换
+[Deleted]
+已删除
+[Found]
+找到
 [Searching...]
 正在搜索...
+[Finished. Items found: %d / replaced: %d / deleted: %d]
+已完成。找到项目：%d / 已替换：%d / 已删除：%d
 [Main icon]
 主图标
+[Closed module]
+关闭的模块
+[Open module]
+打开的模块
 [Settings]
 设置
+[Contacts group]
+联系人分组
+[Unknown contact]
+未知联系人
+[Known contact]
+已知联系人
+[Open user tree]
+打开用户树
+[Empty setting]
+清空设置
+[BLOB setting]
+BLOB 设置
+[Byte setting]
+字节设置
+[Word setting]
+单词设置
+[Dword setting]
+双字设置
+[String setting]
+字符串设置
+[Unicode setting]
+Unicode 设置
 [Handle]
 处理
+[Open Database Editor]
+打开数据库编辑器
 [Database]
 数据库
+[Open user tree in DBE++]
+在 DBE++ 中打开用户树
 [<UNKNOWN>]
 <未知>
+[[UNLOADED]]
+<未加载的>
+[Are you sure you want to delete contact "%s"?]
+你确定要删除联系人“%s”吗？
+[Delete resident settings from database?]
+从数据库中删除居民设置吗？
+[%d items deleted.]
+%d 项被删除。
+[Error loading module list]
+加载模块列表错误
+[Error loading setting list]
+加载设置列表错误
+[Loading contacts...]
+正在加载联系人...
+[Loading modules...]
+正在加载模块...
 [Contacts]
 联系人
+[Add module to "%s"]
+添加模块到“%s”
+[Type]
+类型
 [Size]
 大小
+[Unable to store value in this data type!]
+无法以这种数据类型存储值！
+[Are you sure you want to delete setting(s): %d?]
+你确定要删除设置：%d 吗？
+[*** encrypted ***]
+*** 加密 ***
+[*** buggy resident ***]
+*** buggy 居民 ***
+[Unknown DBVariant type!]
+未知的 DBVariant 类型！
+[Edit setting (%s)]
+编辑设置（%s）
+[New setting (%s)]
+新设置（%s）
+[*** resident ***]
+*** 居民 ***
+[Database Setting Changed: \nModule: "%s", Setting: "%s"\nNew Value (%s): "%s"]
+数据库设置变更：\n模块：%s，设置：“%s”\n新值（%s）：“%s”
 #muuid {f7a6b27c-9d9c-4a42-be86-a448ae109161}
 ;============================================================
 ;  File: Dbx_mmap.dll
@@ -5842,6 +6134,8 @@ Miranda NG [%s] 数据库备份
 显示头像
 [Round corners by]
 圆角
+[Enable groups]
+启用分组
 [Show]
 显示
 [recent contacts]
@@ -7330,6 +7624,8 @@ IEView
 版本
 [Time]
 时间
+[&Refresh]
+刷新(&R)
 [&Close]
 关闭(&C)
 [Name]
@@ -9611,6 +9907,8 @@ Jabber vCard：编辑电话号码
 日期
 [Timestamp]
 时间戳
+[Type]
+类型
 [&File]
 文件(&F)
 [&Close]
@@ -12290,6 +12588,8 @@ Popup plus 警告
 ;============================================================
 [Title]
 标题
+[Setting]
+设置
 [New]
 新
 [Up]
@@ -12318,6 +12618,14 @@ Popup plus 警告
 类型：
 [Other]
 其他
+[Byte]
+字节
+[Word]
+单词
+[DWord]
+双字
+[String]
+字符串
 [TimeStamp]
 时间戳
 [Module:]
@@ -12354,6 +12662,8 @@ Popup plus 警告
 警告
 [Online]
 在线
+[deleted]
+已删除
 [off]
 半
 [active]
@@ -16561,6 +16871,8 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 下
 [Edit]
 编辑
+[Separator]
+分隔符
 [Extra icons]
 额外图标
 [Enable SmileyAdd support]
@@ -18391,6 +18703,8 @@ UserInfoEx 不支持这个版本的 XMLCard
 ;  Version: 0.2.3.11
 ;  Authors: P Boon
 ;============================================================
+[Setting]
+设置
 [Close]
 关闭
 [Notes]
@@ -19967,6 +20281,8 @@ N/A
 联系
 [Birthday]
 生日
+[Module]
+模块
 [Contacts]
 联系人
 [Birthday today]
@@ -20157,6 +20473,8 @@ WAV 文件
 昵称
 [Unknown error]
 未知错误
+[Value]
+值
 [Copy All]
 复制所有
 [Delete selected]

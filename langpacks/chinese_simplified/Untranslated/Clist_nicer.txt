@@ -79,7 +79,6 @@
 [Show menu]
 [Find and add contacts]
 [Open preferences]
-[Minimize contact list]
 [Select view mode]
 [Clear view mode]
 [Always left]

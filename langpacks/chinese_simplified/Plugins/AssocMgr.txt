@@ -20,7 +20,7 @@
 [%hs files]
 
 [Type]
-
+类型
 [Description]
 
 [URLs on websites]

@@ -153,13 +153,13 @@
 [Setting '%s/%s' deleted.]
 
 [string]
-
+字符串
 [byte]
-
+字节
 [word]
-
+单词
 [dword]
-
+双字
 [wide string]
 
 [Wrote '%S:%s' to database entry '%S/%S'.]

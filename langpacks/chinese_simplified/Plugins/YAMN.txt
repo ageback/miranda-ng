@@ -206,7 +206,7 @@
 [Header]
 
 [Value]
-
+值
 [Copy Selected]
 
 [Copy All]

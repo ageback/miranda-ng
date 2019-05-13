@@ -103,7 +103,7 @@
 [Edit]
 编辑
 [Separator]
-
+分隔符
 [Extra icons]
 额外图标
 [Smileys support]

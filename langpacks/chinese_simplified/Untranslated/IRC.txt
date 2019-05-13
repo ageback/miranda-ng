@@ -27,7 +27,6 @@
 [User information]
 [Ping]
 [Userinfo]
-[&Refresh]
 [&Query]
 [Channels]
 [Auth]

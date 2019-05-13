@@ -28,7 +28,6 @@
 [Parse Tipper variables first]
 [Preset items:]
 [Substitutions]
-[Separator]
 [Smileys support]
 [Resize smileys]
 [Replace only isolated smileys]

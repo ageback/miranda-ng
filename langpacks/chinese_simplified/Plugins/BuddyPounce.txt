@@ -25,7 +25,7 @@
 [Load default Settings]
 
 [Setting Value]
-
+设置值
 [Setting text...........]
 
 [Settings]

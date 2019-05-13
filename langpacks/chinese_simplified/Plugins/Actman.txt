@@ -82,7 +82,7 @@
 [Parameter]
 
 [Value]
-
+值
 [Use LastResult]
 
 [UTF8 encoding]
@@ -130,7 +130,7 @@
 [alias]
 
 [type]
-
+类型
 [length]
 
 [data]
@@ -148,11 +148,11 @@
 [8 bytes]
 
 [Byte]
-
+字节
 [Word]
-
+单词
 [DWord]
-
+双字
 [QWord]
 
 [NativeInt]
@@ -370,9 +370,9 @@
 [Manual]
 
 [Module]
-
+模块
 [Setting]
-
+设置
 [Save value]
 
 [Storage]
@@ -414,7 +414,7 @@
 [Service list format]
 
 [value]
-
+值
 [name]
 名字
 [value (name)]
@@ -476,7 +476,7 @@
 [Where to use]
 
 [TopToolbar]
-
+TopToolBar
 [TabSRMM toolbar]
 
 [Core Hotkey]
