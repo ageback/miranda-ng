@@ -415,7 +415,7 @@ John Doe（1/10）
 [Contact]
 联系
 [Proto]
-协议
+因此
 [Age/Nr.]
 年龄/Nr.
 [Anniversary]
@@ -739,7 +739,7 @@ mBirthday
 [Chamorro]
 查莫洛
 [Chinese]
-中国
+中文
 [Croatian]
 克罗地亚语
 [Czech]

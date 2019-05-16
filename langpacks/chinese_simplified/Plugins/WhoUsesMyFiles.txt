@@ -31,7 +31,7 @@
 [Use windows colors]
 使用 Windows 颜色
 [Use default Popup colors]
-
+使用默认弹出窗口颜色
 [Choose colors]
 
 [File access filter && logging settings]

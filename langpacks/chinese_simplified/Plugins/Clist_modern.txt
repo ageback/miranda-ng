@@ -31,7 +31,7 @@
 [Tile vertically according to row height]
 根据行高垂直平铺
 [Use Windows colors]
-使用Windows颜色
+使用 Windows 颜色
 [Available skins]
 可用的皮肤
 [Rescan]
@@ -716,7 +716,7 @@ xStatus 有优先级
 [3rd party frames transparent back color]
 第三方框架透明背景色
 [Not focused]
-未聚集的
+未聚焦的
 [Offline]
 离线
 [Online]
@@ -736,9 +736,9 @@ xStatus 有优先级
 [Out to lunch]
 外出吃饭
 [On the phone]
-接电话
+在打电话
 [Name]
-名称
+名字
 [Name (use locale settings)]
 名称(使用本地设置)
 [Last message time]

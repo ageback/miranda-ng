@@ -31,23 +31,23 @@
 [Disable autoreply when...]
 
 [On&line]
-
+在线(&L)
 [&Away]
-
+离开(&A)
 [&Not available]
-
+不可用(&N)
 [Occ&upied]
-
+忙碌(&U)
 [&Do not disturb]
-
+勿扰(&D)
 [&Free for chat]
-
+有空聊天(&F)
 [&Invisible]
-
+隐身(&I)
 [On the &phone]
-
+在接电话(&P)
 [Out to &lunch]
-
+外出吃饭(&L)
 [Autoreply format:]
 
 [V]

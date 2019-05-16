@@ -19,7 +19,6 @@
 [Tokens]
 [Input]
 [Variables Help]
-[Alias]
 [user defined]
 [stores y as alias named x]
 [Stopped]

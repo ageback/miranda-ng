@@ -166,7 +166,7 @@ Ansi 标题
 [Pointer to words]
 
 [Last result]
-
+上次结果
 [Data length]
 
 [Use Variables]
@@ -256,7 +256,7 @@ Ansi 标题
 [Miranda service help]
 
 [Alias]
-
+别名
 [Return]
 
 [Effect]
@@ -336,7 +336,7 @@ Ansi 标题
 [Message text]
 消息文字
 [RTL]
-
+右到左
 [Right justified text]
 
 [Icons]

@@ -525,7 +525,7 @@ Jabber 代理注册
 [Admin]
 管理员
 [Owner]
-拥有者
+所有者
 [Visitor]
 访问者
 [Participant]

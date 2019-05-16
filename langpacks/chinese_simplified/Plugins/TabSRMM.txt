@@ -69,7 +69,7 @@ Miranda NG 的 IM 和群聊模块。
 [Show when filter is active]
 当过滤器激活时显示
 [Log to file]
-日志到文件
+记录到文件
 [Show popup]
 显示弹出窗口
 [Notify in tray]
@@ -667,7 +667,7 @@ Windows Areo 设置
 [BBCode]
 BBCode 
 [Off]
-关
+半
 [This contact]
 此联系人
 [Global setting]

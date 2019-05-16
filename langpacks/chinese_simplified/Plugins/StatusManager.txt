@@ -119,13 +119,13 @@
 [Status on startup]
 启动时的状态
 [ms]
-ms
+毫秒
 [Set after]
 设置于此后
 [Timeout]
 超时
 [s]
-秒
+南
 [Set window location]
 设置窗口位置
 [Left]

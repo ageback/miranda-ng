@@ -70,7 +70,7 @@
 变量
 ;file \plugins\Variables\src\parse_alias.cpp
 [Alias]
-
+别名
 [user defined]
 
 [stores y as alias named x]

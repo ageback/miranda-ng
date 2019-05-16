@@ -117,7 +117,7 @@
 [&Set]
 
 [Alias]
-
+别名
 [Perform on event:]
 
 [Scripting support]

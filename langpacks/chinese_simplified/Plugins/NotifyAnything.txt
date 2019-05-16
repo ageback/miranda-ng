@@ -29,7 +29,7 @@
 [Debug]
 调试
 [Log to file]
-日志到文件
+记录到文件
 [Message debugging]
 
 ;file \plugins\NotifyAnything\src\main.cpp

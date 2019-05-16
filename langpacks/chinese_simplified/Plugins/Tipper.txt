@@ -113,7 +113,7 @@
 [Use protocol smileys]
 使用协议表情
 [Resize smileys]
-
+调整表情大小
 [Replace only isolated smileys]
 
 [Advanced options]
@@ -478,7 +478,7 @@ Jabber 活动
 [Arrow down]
 
 [Reload]
-
+重新载入
 [Apply]
 应用
 ;file \plugins\TipperYM\src\translations.cpp
@@ -509,7 +509,7 @@ Jabber 活动
 [Chamorro]
 查莫洛
 [Chinese]
-中国
+中文
 [Croatian]
 克罗地亚语
 [Czech]

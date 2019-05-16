@@ -11,9 +11,9 @@
 [Notify when contact changes to one of these statuses]
 当联系人改变为这些状态之一时通知
 [Online]
-离线
-[Offline]
 在线
+[Offline]
+离线
 [Invisible]
 隐身
 [Free for chat]
@@ -29,7 +29,7 @@
 [Out to lunch]
 外出吃饭
 [On the phone]
-接电话
+在打电话
 [Always when changing from offline]
 当从离线改变时总是
 [Notify when contact changes]

@@ -24,7 +24,7 @@
 
 ;file \plugins\MirLua\src\icons.cpp
 [Script]
-
+脚本
 [Loaded]
 
 [Failed]
@@ -32,7 +32,7 @@
 [Open]
 打开
 [Reload]
-
+重新载入
 [Compile]
 
 ;file \plugins\MirLua\src\options.cpp

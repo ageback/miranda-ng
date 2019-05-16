@@ -109,7 +109,7 @@ Miranda NG 的固定便签和提醒实现。
 [&Delete Note]
 删除笔记(&D)
 [Appearance]
-外观
+出现
 [Background Color]
 背景色
 [Custom...]

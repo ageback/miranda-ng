@@ -13,7 +13,6 @@
 [Thinking time:]
 [Engine]
 [Base of remarks]
-[Reload]
 [Stay silent if have no good aswers]
 [Start answers with a lowercase letter]
 [Don't use "I don't understand"-like answers]

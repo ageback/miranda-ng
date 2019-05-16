@@ -51,7 +51,7 @@
 [Border]
 边框
 [Draw border]
-
+绘制边框
 [Left-top edge's color:]
 
 [Right-bottom edge's color:]

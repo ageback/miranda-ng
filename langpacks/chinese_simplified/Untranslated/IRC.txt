@@ -36,7 +36,6 @@
 [CTCP information]
 [Perform]
 [&Set]
-[Alias]
 [Perform on event:]
 [Scripting support]
 [Quit message:]

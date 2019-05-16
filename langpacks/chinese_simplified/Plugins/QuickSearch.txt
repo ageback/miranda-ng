@@ -18,7 +18,7 @@
 [Setting]
 设置
 [Reload]
-
+重新载入
 [New]
 新
 [Up]
@@ -86,7 +86,7 @@
 [DB setting]
 
 [Script]
-
+脚本
 [Service]
 
 [Contact info]
@@ -116,19 +116,19 @@
 [Service:]
 服务：
 [Param]
-
+参数
 [number value]
-
+数字值
 [ANSI string]
-
+ANSI 字符串
 [Unicode string]
-
+Unicode 字符串
 [current contact]
-
+当前联系人
 [last result]
-
+上次结果
 [parameter]
-
+参数
 [Result]
 结果
 [Result type]
@@ -271,6 +271,6 @@
 置于顶层
 ; these lines are not present in the sources, but they are present in compiled plugin
 [Text Editor]
-
+文本编辑器
 [Wrap Text]
-
+文字换行

@@ -262,7 +262,7 @@
 [Keyrings disabled!]
 
 [Native]
-
+本地
 [Disabled]
 已禁用
 [Enabled]

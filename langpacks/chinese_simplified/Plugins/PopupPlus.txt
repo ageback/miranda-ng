@@ -189,7 +189,7 @@ Miranda的窗口
 [Maximum width]
 最大宽度
 [Position:]
-位置：
+职位：
 [Layout:]
 布局：
 [Reorder popups]

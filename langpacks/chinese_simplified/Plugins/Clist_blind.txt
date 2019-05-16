@@ -168,7 +168,7 @@
 显示调整大小的拖动指示器
 ;file \plugins\Clist_blind\src\clcopts.cpp
 [Not focused]
-未聚集的
+未聚焦的
 [Offline]
 离线
 [Online]

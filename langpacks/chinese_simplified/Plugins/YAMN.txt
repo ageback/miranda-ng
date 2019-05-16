@@ -239,7 +239,7 @@
 %s 连接
 ;file \protocols\YAMN\src\proto\pop3\pop3comm.cpp
 [Disconnected]
-
+断开连接
 [POP3 protocol (internal)]
 
 [Found new version of account book, not compatible with this version of YAMN.]

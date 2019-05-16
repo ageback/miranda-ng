@@ -102,7 +102,6 @@
 [Private key not loaded!]
 [The new settings will become valid when you restart Miranda NG!]
 [Keyrings disabled!]
-[Native]
 [Always try]
 [Create SecureIM connection]
 [Disable SecureIM connection]
