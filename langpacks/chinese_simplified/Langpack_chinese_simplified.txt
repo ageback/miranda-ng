@@ -12842,9 +12842,9 @@ Popup plus 警告
 [Enter semicolon (;) separated list of IP network addresses in any of the formats below:\n\tIP/bits\t(10.0.0.1/24)\t\tIP/mask\t(10.0.0.1/255.255.255.0)\n\tIP1-2\t(10.0.0.1-50)\t\tIP1-IP2\t(10.0.0.1-10.0.2.255)]
 以下列任何格式输入以分号（;）分隔的IP网络地址列表：\n\tIP/位\t（10.0.0.1/24）\t\tIP/掩码\t（10.0.0.1/255.255.255.0）\n\tIP1-2\t（10.0.0.1-50）\t\tIP1-IP2\t（10.0.0.1-10.0.2.255）
 [Any entry in the 'Use proxy' list can be prefixed by an exclamation mark (!) to increase its priority. Entries with wrong syntax will be ignored. The plugin checks the IP addresses in the following way:]
-“使用代理”列表中的任何条目都可以使用感叹号（！）作为前缀，以提高其优先级。 语法错误的条目将被忽略。 该插件以下列方式检查IP地址：
+“使用代理”列表中的任何条目都可以使用感叹号（!）作为前缀，以提高其优先级。 语法错误的条目将被忽略。 该插件以下列方式检查IP地址：
 [\t1) Use proxy if any interface has prioritized 'Use proxy' address\n\t2) Don't use proxy if any interface has 'Direct connection' address\n\t3) Use proxy if any interface has 'Use proxy' address\n\t4) Do nothing if unknown or no address found]
-\t1)如果任何接口优先'使用代理'地址，则使用代理\n\t2)如果任何接口具有“直接连接”地址，则不要使用代理\n\t3如果任何接口具有“使用代理”，请使用代理地址\n\t4)如果发现未知或没有地址，则不执行任何操作
+\t1）如果任何接口优先'使用代理'地址，则使用代理\n\t2）如果任何接口具有“直接连接”地址，则不要使用代理\n\t3）如果任何接口具有“使用代理”，请使用代理地址\n\t4）如果发现未知或没有地址，则不执行任何操作
 [Cancel]
 取消
 [Proxy]
