@@ -2870,6 +2870,8 @@ Ansi 标题
 数据对齐
 [Native]
 本地
+[Packed]
+打包
 [2 bytes]
 2字节
 [4 bytes]
@@ -2882,34 +2884,178 @@ Ansi 标题
 单词
 [DWord]
 双字
+[QWord]
+四字
+[NativeInt]
+本地整数
+[Byte Array]
+字节数组
+[Word Array]
+单词数组
+[Pointer to bytes]
+字节指针
+[Pointer to words]
+单词指针
 [Last result]
 上次结果
+[Data length]
+数据长度
+[Use Variables]
+使用变量
+[V]
+V
+[Structure size]
+结构大小
+[Use MMI]
+使用 MMI
+[Structure help]
+结构帮助
 [Name]
 名字
 [Plugin]
 插件
+[Descr]
+描述
+[&Change]
+改变(&C)
 [Result]
 结果
+[Result type]
+结果类型
+[Free memory]
+可用内存
+[DLL Handle Cache]
+DLL处理程序缓存
+[Keep to end]
+留到尾部
+[Close immediately]
+立即关闭
+[Close for macro]
+为宏关闭
 [Contact]
 联系
+[Choose contact]
+选择联系人
 [Refresh]
 刷新
+[Keep handle only]
+只保留处理程序
+[Get from active window]
+从活动窗口获取
+[Chain]
+链
+[Other Action groups]
+其他动作分组
+[not defined]
+未定义的
+[Keep old result]
+保留旧的结果
+[Same thread]
+相同线程
+[Do not wait until the end of execution]
+不要等到执行结束
+[Program]
+程序
+[Text <last> replacing\r\nby last result\r\n\r\nText <param> replacing\r\nby parameter]
+文字<last>替换\r\n被上次结果\r\n\r\n文本 <param> 替换\r\n被参数
+[Process options]
+处理选项
+[Parallel]
+并行
+[Continued]
+继续
+[Process time, ms]
+处理时间，毫秒
+[Current path]
+当前路径
+[Window option]
+窗口选项
+[Start normal]
+普通启动
+[Start hidden]
+隐藏启动
+[Start minimized]
+最小化启动
+[Start maximized]
+最大化启动
+[Program path]
+程序路径
+[Program args]
+程序参数
+[Service]
+服务
+[Miranda service help]
+Miranda 服务帮助
 [Alias]
 别名
+[Return]
+返回
+[Effect]
+效果
 [Service:]
 服务：
+[In/Out]
+入/出
+[Clipboard]
+剪贴板
+[Copy to]
+复制到
+[Paste from]
+粘贴从
 [File]
 文件
+[Append]
+附加
+[UTF8+sign]
+UTF8+签名
+[UTF16+sign]
+UTF16+签名
 [Message window]
 消息窗口
+[Autosend]
+自动发送
+[Jump]
+跳转
+[Condition]
+条件
+[Math]
+数学
+[> greater]
+> 大于
+[< lesser]
+< 小于
+[= equ]
+= 等于
+[& and]
+& 与
 [Text]
 文字
 [Case sensitive]
 区分大小写
+[empty]
+空
+[contains]
+包含
+[starts with]
+开始以
+[ends with]
+结束以
+[NOT]
+非
+[Operation]
+操作
+[JUMP]
+跳转
+[MessageBox]
+消息框
+[Message title]
+消息标题
 [Message text]
 消息文字
 [RTL]
 右到左
+[Right justified text]
+右对齐文本
 [Icons]
 图标
 [Error]
@@ -2922,20 +3068,76 @@ Ansi 标题
 信息
 [Buttons]
 按钮
+[OK, Cancel]
+确定, 取消
+[Abort, Retry, Ignore]
+中止, 重试, 忽略
+[Yes, No, Cancel]
+是, 否, 取消
+[Yes, No]
+是, 否
+[Retry, Cancel]
+重试, 取消
 [Database]
 数据库
+[Contact type]
+联系人类型
+[Own settings]
+自己的设置
+[Manual]
+手工
 [Module]
 模块
 [Setting]
 设置
+[Save value]
+保存值
+[Storage]
+存储
+[LastResult to ]
+最后结果到
+[LastResult from]
+最后结果从
 [Settings]
 设置
 [Contact list]
 联系人列表
+[Active accounts only]
+仅活动帐户
+[Contact list format]
+联系人列表格式
+[You can use %name%, %uid%, %account% and %group% substitutes]
+你可以使用 %name%, %uid%, %account% 和 %group% 代替
+[Service list format]
+服务列表格式
 [value]
 值
 [name]
 名字
+[value (name)]
+值（名称）
+[name 'value']
+名称‘值’
+[Current Macro]
+当前宏
+[Select for FirstRun]
+为第一次运行选择
+[Mark as Volatile]
+标记为易变
+[Single instance]
+单实例
+[Scheduler]
+计划程序
+[Task sample]
+任务示例
+[Start]
+开始
+[Starting after]
+开始于此后
+[Starting from]
+开始从
+[Start immediately]
+立即开始
 [Days]
 天
 [Time]
@@ -2990,10 +3192,14 @@ TopToolBar
 检查更新
 [Notify]
 通知
+[Manage Jabber Bookmarks]
+管理 Jabber 书签
 [text]
 文字
 [Set status message]
 设置状态消息
+[Set protocol status]
+设置协议状态
 [None]
 无
 [Angry]
@@ -3004,12 +3210,24 @@ TopToolBar
 疲劳
 [Birthday]
 生日
+[Drinking beer]
+正在喝啤酒
 [Thinking]
 在思考
 [Eating]
 在吃
 [Watching TV]
 在看电视
+[Meeting]
+在开会
+[Coffee]
+咖啡
+[Listening to music]
+正在听音乐
+[Business]
+商务
+[Shooting]
+射击
 [Gaming]
 在游戏
 [Studying]
@@ -3026,10 +3244,30 @@ TopToolBar
 烹饪
 [Smoking]
 在抽烟
+[Love]
+爱
+[Sets owner current custom status]
+设置拥有者当前自定义状态
+[Display xStatus detail]
+显示 xStatus 详情
 [Undefined]
 未定义
+[Action group list was changed: some was added or deleted]
+操作组列表已更改：添加或删除了一些
 [contact list]
 联系人列表
+[The context menu for a contact is about to be built]
+即将建立联系人的上下文菜单
+[Double click on the contact list]
+双击联系人列表
+[database driver]
+数据库驱动程序
+[New contact added to database]
+新联系人添加到数据库
+[Contact deleting]
+联系人删除
+[Displays a modal dialog box that contains a system icon, a set of buttons, and a brief application-specific message, such as status or error information.]
+显示一个模式对话框，包括一个系统图标、一组按钮和一个应用程序的特定消息，例如状态或错误信息。
 #muuid {6471d451-2fe0-4ee2-850e-9f84f3c0d187}
 ;============================================================
 ;  File: AddContactPlus.dll
