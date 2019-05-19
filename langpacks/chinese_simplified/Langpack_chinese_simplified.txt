@@ -13036,83 +13036,6 @@ Popup plus 警告
 弹出窗口模式：全屏
 [Popup Mode: Block contact]
 弹出窗口模式：阻止联系人
-#muuid {4df0c267-6efb-4410-b651-385f87158509}
-;============================================================
-;  File: ProxySwitch.dll
-;  Plugin: ProxySwitch
-;  Version: 1.0.0.1
-;  Authors: Petr Smejkal
-;============================================================
-[Watches IP address changes, displays popups, and adjusts the proxy settings of Miranda, Internet Explorer and Firefox.]
-监视 IP 地址更改，显示弹出窗口，并调整 Miranda，Internet Explorer 和 Firefox 的代理设置。
-[Network addresses]
-网络地址
-[Direct connection]
-直接连接
-[Use proxy]
-使用代理
-[General]
-通用
-[Manage Miranda NG proxy]
-管理 Miranda NG 代理
-[Manage Internet Explorer proxy]
-管理 Internet Explorer 代理
-[Manage Firefox proxy]
-管理 Firefox 代理
-[Reconnect if IP address changes]
-如果 IP 地址改变就重新连接
-[Hide interfaces]
-隐藏接口
-[Popup options]
-弹出窗口选项
-[Enable popups]
-启用弹出窗口
-[Text color]
-文字颜色
-[Background color]
-背景色
-[Use default popup colors]
-使用默认弹出窗口颜色
-[Show proxy status on change]
-改变时显示代理状态
-[Restart of Miranda NG is required.]
-需要重启 Miranda NG.
-[Enter semicolon (;) separated list of IP network addresses in any of the formats below:\n\tIP/bits\t(10.0.0.1/24)\t\tIP/mask\t(10.0.0.1/255.255.255.0)\n\tIP1-2\t(10.0.0.1-50)\t\tIP1-IP2\t(10.0.0.1-10.0.2.255)]
-以下列任何格式输入以分号（;）分隔的IP网络地址列表：\n\tIP/位\t（10.0.0.1/24）\t\tIP/掩码\t（10.0.0.1/255.255.255.0）\n\tIP1-2\t（10.0.0.1-50）\t\tIP1-IP2\t（10.0.0.1-10.0.2.255）
-[Any entry in the 'Use proxy' list can be prefixed by an exclamation mark (!) to increase its priority. Entries with wrong syntax will be ignored. The plugin checks the IP addresses in the following way:]
-“使用代理”列表中的任何条目都可以使用感叹号（!）作为前缀，以提高其优先级。 语法错误的条目将被忽略。 该插件以下列方式检查IP地址：
-[\t1) Use proxy if any interface has prioritized 'Use proxy' address\n\t2) Don't use proxy if any interface has 'Direct connection' address\n\t3) Use proxy if any interface has 'Use proxy' address\n\t4) Do nothing if unknown or no address found]
-\t1）如果任何接口优先'使用代理'地址，则使用代理\n\t2）如果任何接口具有“直接连接”地址，则不要使用代理\n\t3）如果任何接口具有“使用代理”，请使用代理地址\n\t4）如果发现未知或没有地址，则不执行任何操作
-[Cancel]
-取消
-[Proxy]
-代理
-[Direct]
-直接
-[disconnected]
-断开连接
-[Current IP address]
-当前 IP 地址
-[Enable &IP change notification]
-启用 &IP 改变通知
-[Disable &IP change notification]
-禁用 &IP 改变通知
-[Show my &IP addresses]
-显示我的 &IP 地址
-[Proxy settings && interfaces]
-代理设置和接口
-[Disable proxy]
-禁用代理
-[Enable proxy]
-启用代理
-[Popups]
-弹出窗口
-[IP change notification]
-IP 变更通知
-[Services]
-服务
-[ProxySwitch]
-代理切换
 #muuid {f93ba59c-4f48-4f2e-8a91-77a2801527a3}
 ;============================================================
 ;  File: QuickContacts.dll
@@ -17430,32 +17353,92 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 ;  Version: 2.1.0.7
 ;  Authors: Scott Ellis, yaho
 ;============================================================
+[Tooltip notification windows.]
+工具提示通知窗口。
 [Layout]
 布局
 [Text indent:]
 文字缩进：
+[Title indent:]
+标题缩进：
+[Value indent:]
+值缩进：
+[General padding:]
+一般填充：
+[Text padding:]
+文字填充：
+[Outer avatar padding:]
+外部头像填充：
+[Inner avatar padding:]
+内部头像填充：
+[Alignment]
+对齐：
+[Labels:]
+标签：
+[Values:]
+值：
 [Window]
 窗口
+[Max width:]
+最大宽度：
+[Min width:]
+最小宽度：
+[Max height:]
+最大高度：
+[Min height:]
+最小高度：
 [Avatar size:]
 头像大小：
 [Sidebar width:]
 侧边栏宽度：
+[Hover time:]
+悬停时间：
+[Show if list not focused]
+如果列表没有焦点就显示
 [Options]
 选项
 [Show title]
 显示标题
+[Status bar tips]
+状态栏提示
 [Avatar border]
 头像边框
 [Round corners (avatar)]
 圆角(头像)
+[Keep original avatar size]
+保持原始头像大小
+[Substitution]
+代替
+[Label:]
+标签：
 [Module:]
 模块：
+[Contact protocol module]
+联系人协议模块
+[Setting or prefix:]
+设置或前缀：
+[Translation:]
+翻译：
 [Cancel]
 取消
+[Item]
+项
+[Value:]
+值：
 [Variables]
 变量
+[Draw a line above]
+在上方画一条线
+[Value on a new line]
+值在新行上
+[Parse Tipper variables first]
+先解析 Tipper 变量
+[Preset items:]
+预设项：
 [Items]
 项
+[Substitutions]
+代替
 [Add]
 添加
 [Remove]
@@ -17470,30 +17453,86 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 分隔符
 [Extra icons]
 额外图标
+[Smileys support]
+表情支持
 [Enable SmileyAdd support]
 启用 SmileyAdd 支持
 [Use protocol smileys]
 使用协议表情
 [Resize smileys]
 调整表情大小
+[Advanced options]
+高级选项
+[Status bar and tray tooltip]
+状态栏和托盘工具提示
 [characters]
 字符
 [Skins]
 皮肤
+[Reload skin list]
+重新加载皮肤列表
+[Apply skin]
+应用皮肤
+[Get more skins]
+获得更多皮肤
 [Preview]
 预览
+[No preview]
+无预览
 [Effects]
 效果
+[Animation speed:]
+动画速度：
+[Shadow]
+阴影
 [Border]
 边框
 [Round corners (window)]
 圆角边框(窗口)
+[Skin option]
+皮肤选项
+[Enable skin coloring]
+启用皮肤颜色
+[Load fonts and colors]
+加载字体和颜色
 [Transparency]
 透明度
 [Opacity (%):]
 不透明度(%)：
+[Enable tray tooltips]
+启用托盘工具提示
+[Hide offline protocols]
+隐藏离线协议
+[Expand to second level after:]
+扩展到第二级于此后：
 [ms]
 毫秒
+[First level tooltip]
+第一级工具提示
+[Second level tooltip]
+第二级工具提示
+[Favorite contacts]
+收藏的联系人
+[Hide offline]
+隐藏离线
+[Append protocol name]
+附加协议名称
+[Tipper smileys]
+Tipper 表情
+[Show for all contact types]
+为所有的联系人类型显示
+[Show only for contacts]
+只为联系人显示
+[Show only for chatrooms]
+只为聊天室显示
+[Number of contacts]
+联系人数量
+[Protocol lock status]
+协议锁定状态
+[Logon time]
+登录时间
+[Unread emails]
+未读电子邮件
 [Status]
 状态
 [Status message]
@@ -17502,10 +17541,28 @@ Aero peek警告|您已启用Aero Peek功能并加载了自定义容器窗口皮�
 额外状态
 [Listening to]
 正在听
+[Miranda uptime]
+Miranda 运行时间
+[Contact list event]
+联系人列表事件
 [Jabber activity]
 Jabber 活动
 [Gender]
 性别
+[Country flag]
+国旗
+[Client]
+客户端
+[You must enter a label]
+你必须输入一个标签
+[Invalid Substitution]
+无效的代替
+[<No Label>]
+<无标签>
+[Add item]
+添加项目
+[No icon]
+无图标
 [Icon on left]
 图标在左侧
 [Icon on right]
@@ -17534,18 +17591,46 @@ Jabber 活动
 左侧头像
 [Right avatar]
 右侧头像
+[Max avatar size:]
+最大头像尺寸：
 [None]
 无
+[Animation]
+动画
 [Appearance]
 出现
+[Tooltips]
+工具提示
 [Customize]
 自定义
+[Content]
+内容
+[Tray tooltip]
+托盘工具提示
+[Extra]
+额外
 [%s (locked)]
 %s(锁定)
+[%s ago]
+%s 之前
+[Log on:]
+登录：
+[Unread emails:]
+未读电子邮件
 [Status:]
 状态：
 [Status message:]
 状态消息：
+[Mood:]
+心情：
+[xStatus:]
+XStatus：
+[Activity:]
+活动：
+[Listening to:]
+正在听：
+[Copy avatar]
+复制头像
 [Other]
 其他
 [Account]

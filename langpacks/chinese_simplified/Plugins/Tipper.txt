@@ -6,92 +6,92 @@
 ;  Authors: Scott Ellis, yaho
 ;============================================================
 [Tooltip notification windows.]
-
+工具提示通知窗口。
 ;file \plugins\TipperYM\res\resource.rc
 [Layout]
 布局
 [Text indent:]
 文字缩进：
 [Title indent:]
-
+标题缩进：
 [Value indent:]
-
+值缩进：
 [General padding:]
-
+一般填充：
 [Text padding:]
-
+文字填充：
 [Outer avatar padding:]
-
+外部头像填充：
 [Inner avatar padding:]
-
+内部头像填充：
 [Alignment]
-
+对齐：
 [Labels:]
-
+标签：
 [Values:]
-
+值：
 [Window]
 窗口
 [Max width:]
-
+最大宽度：
 [Min width:]
-
+最小宽度：
 [Max height:]
-
+最大高度：
 [Min height:]
-
+最小高度：
 [Avatar size:]
 头像大小：
 [Sidebar width:]
 侧边栏宽度：
 [Hover time:]
-
+悬停时间：
 [Show if list not focused]
-
+如果列表没有焦点就显示
 [Options]
 选项
 [Show title]
 显示标题
 [Status bar tips]
-
+状态栏提示
 [Avatar border]
 头像边框
 [Round corners (avatar)]
 圆角(头像)
 [Keep original avatar size]
-
+保持原始头像大小
 [Substitution]
-
+代替
 [Label:]
-
+标签：
 [Module:]
 模块：
 [Contact protocol module]
-
+联系人协议模块
 [Setting or prefix:]
-
+设置或前缀：
 [Translation:]
-
+翻译：
 [Cancel]
 取消
 [Item]
-
+项
 [Value:]
-
+值：
 [Variables]
 变量
 [Draw a line above]
-
+在上方画一条线
 [Value on a new line]
-
+值在新行上
 [Parse Tipper variables first]
-
+先解析 Tipper 变量
 [Preset items:]
-
+预设项：
 [Items]
 项
 [Substitutions]
-
+代替
 [Add]
 添加
 [Remove]
@@ -107,7 +107,7 @@
 [Extra icons]
 额外图标
 [Smileys support]
-
+表情支持
 [Enable SmileyAdd support]
 启用 SmileyAdd 支持
 [Use protocol smileys]
@@ -117,7 +117,7 @@
 [Replace only isolated smileys]
 
 [Advanced options]
-
+高级选项
 [Show tooltip after all content is ready (avatar && status message)]
 
 [Retrieve new status message]
@@ -127,7 +127,7 @@
 [Retrieve xStatus details if auto-retrieve is disabled]
 
 [Status bar and tray tooltip]
-
+状态栏和托盘工具提示
 [Limit status messages in status bar and tray tooltips to:]
 
 [characters]
@@ -135,33 +135,33 @@
 [Skins]
 皮肤
 [Reload skin list]
-
+重新加载皮肤列表
 [Apply skin]
-
+应用皮肤
 [Get more skins]
-
+获得更多皮肤
 [Preview]
 预览
 [No preview]
-
+无预览
 [Effects]
 效果
 [Animation speed:]
-
+动画速度：
 [Shadow]
-
+阴影
 [Border]
 边框
 [Round corners (window)]
 圆角边框(窗口)
 [Skin option]
-
+皮肤选项
 [Enable skin coloring]
-
+启用皮肤颜色
 [Load tooltip proportions]
 
 [Load fonts and colors]
-
+加载字体和颜色
 [Transparency]
 透明度
 [Opacity (%):]
@@ -169,43 +169,43 @@
 [Aero Glass (Vista+)]
 
 [Enable tray tooltips]
-
+启用托盘工具提示
 [Handle tray tooltips by Tipper]
 
 [Hide offline protocols]
-
+隐藏离线协议
 [Expand to second level after:]
-
+扩展到第二级于此后：
 [ms]
 毫秒
 [First level tooltip]
-
+第一级工具提示
 [Second level tooltip]
-
+第二级工具提示
 [Favorite contacts]
-
+收藏的联系人
 [Hide offline]
-
+隐藏离线
 [Append protocol name]
-
+附加协议名称
 ;file \plugins\TipperYM\src\mir_smileys.cpp
 [Tipper smileys]
-
+Tipper 表情
 ;file \plugins\TipperYM\src\options.cpp
 [Show for all contact types]
-
+为所有的联系人类型显示
 [Show only for contacts]
-
+只为联系人显示
 [Show only for chatrooms]
-
+只为聊天室显示
 [Number of contacts]
-
+联系人数量
 [Protocol lock status]
-
+协议锁定状态
 [Logon time]
-
+登录时间
 [Unread emails]
-
+未读电子邮件
 [Status]
 状态
 [Status message]
@@ -215,27 +215,27 @@
 [Listening to]
 正在听
 [Miranda uptime]
-
+Miranda 运行时间
 [Contact list event]
-
+联系人列表事件
 [Jabber activity]
 Jabber 活动
 [Gender]
 性别
 [Country flag]
-
+国旗
 [Client]
-
+客户端
 [You must enter a label]
-
+你必须输入一个标签
 [Invalid Substitution]
-
+无效的代替
 [<No Label>]
-
+<无标签>
 [Add item]
-
+添加项目
 [No icon]
-
+无图标
 [Icon on left]
 图标在左侧
 [Icon on right]
@@ -265,52 +265,52 @@ Jabber 活动
 [Right avatar]
 右侧头像
 [Max avatar size:]
-
+最大头像尺寸：
 [None]
 无
 [Animation]
-
+动画
 [Fade]
 
 [Appearance]
 出现
 [Tooltips]
-
+工具提示
 [Customize]
 自定义
 [Content]
-
+内容
 [Tray tooltip]
-
+托盘工具提示
 [Extra]
-
+额外
 ;file \plugins\TipperYM\src\popwin.cpp
 [%s (locked)]
 %s(锁定)
 [%s ago]
-
+%s 之前
 [Log on:]
-
+登录：
 [Unread emails:]
-
+未读电子邮件
 [Status:]
 状态：
 [Status message:]
 状态消息：
 [Mood:]
-
+心情：
 [xStatus:]
-
+XStatus：
 [Activity:]
-
+活动：
 [Listening to:]
-
+正在听：
 [Copy all items with labels]
 
 [Copy all items]
 
 [Copy avatar]
-
+复制头像
 [<No Label>: ]
 
 [<No Value>]
