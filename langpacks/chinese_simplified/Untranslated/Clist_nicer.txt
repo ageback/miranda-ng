@@ -14,7 +14,6 @@
 [Hide numbers when all offline]
 [No expand/collapse icon]
 [Center group names horizontally]
-[Alignment]
 [Margins (left/right)]
 [Row gap]
 [Group row height]

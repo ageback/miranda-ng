@@ -6,24 +6,24 @@
 ;  Authors: Miranda NG team
 ;============================================================
 [Provides popup services based on Windows toast notification for different plugins.]
-
+为不同的插件提供基于Windows Toast通知的弹出服务。
 ;file \plugins\Toaster\res\resource.rc
 [Preview]
 预览
 [Add shortcut]
-
+添加快捷方式
 [Enabled]
 已启用
 ;file \plugins\Toaster\src\main.cpp
 [This plugin requires Windows 8 or higher]
-
+此插件需要 Windows 8 或更高
 [Failed to create temporary directory]
-
+创建临时目录失败
 ;file \plugins\Toaster\src\options.cpp
 [Failed to create shortcut]
-
+创建快捷方式失败
 [Shortcut was added to the start menu]
-
+快捷方式添加到开始菜单
 [Information]
 信息
 [Warning]

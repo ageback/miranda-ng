@@ -6,13 +6,13 @@
 ;  Authors: Miranda NG team
 ;============================================================
 [Core driver to provide OpenSSL-based SSL services.]
-
+核心驱动程序，提供基于OpenSSL的SSL服务。
 ;file \plugins\OpenSSL\src\ssl_openssl.cpp
 [Client cannot decode host message. Possible causes: host does not support SSL or requires not existing security package]
 客户端无法解码主机消息。 可能的原因：主机不支持SSL或需要不存在的安全包
 [Host we are connecting to is not the one certificate was issued for]
 我们连接的主机不是颁发的证书对应的主机
 [OpenSSL library loading failed]
-
+OpenSSL库加载失败
 [OpenSSL error]
-
+OpenSSL 错误

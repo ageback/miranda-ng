@@ -21,7 +21,7 @@ URL
 [Directory on server]
 
 [Port]
-
+端口
 [Command after upload]
 
 [Use passive mode]
@@ -75,7 +75,7 @@ URL
 [Close]
 关闭
 [Clipboard]
-
+剪贴板
 [Options]
 选项
 [Pause]

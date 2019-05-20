@@ -6,14 +6,14 @@
 ;  Authors: Kildor
 ;============================================================
 [Shows ignore state of contact in contact list.]
-
+显示联系人列表中的联系人的忽略状态。
 ;file \plugins\IgnoreState\res\ignore.rc
 [Plugin settings]
 插件设置
 [Filtered events:]
-
+过滤的事件：
 [Use Miranda ignore settings for All Contacts]
-
+为所有联系人使用 Miranda 忽略设置
 ;file \plugins\IgnoreState\src\main.cpp
 [All]
 所有
@@ -24,17 +24,17 @@
 [User Online]
 用户在线
 [Authorization]
-
+授权
 [Typing Notify]
 输入通知
 [Full Ignore]
-
+完全忽略
 [Partial Ignore]
-
+部分忽略
 [Message Ignore]
-
+消息忽略
 [Ignore State]
-
+忽略状态
 ;file \plugins\IgnoreState\src\options.cpp
 [Icons]
 图标

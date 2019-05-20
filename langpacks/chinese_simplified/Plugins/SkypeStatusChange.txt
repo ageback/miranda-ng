@@ -6,16 +6,16 @@
 ;  Authors: Dioksin
 ;============================================================
 [Skype status change according to Miranda status.]
-
+根据 Miranda 状态改变Skype状态。
 ;file \plugins\SkypeStatusChange\res\SkypeStatusChange.rc
 [Synchronize status message]
-
+同步状态消息
 [&Check any protocol or any status to exclude it from synchronization:]
-
+检查任何协议或任何状态以将其从同步中排除：
 [Synchronize if current status differs from previous one]
-
+如果当前状态与前一个状态不同，则同步
 ;file \plugins\SkypeStatusChange\src\options.cpp
 [Change Skype status]
-
+改变 Skype 状态
 [Plugins]
 插件

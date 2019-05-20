@@ -135,7 +135,7 @@
 [Set program list]
 
 [Program]
-
+程序
 [Cancel]
 取消
 [Set LEDs for events]

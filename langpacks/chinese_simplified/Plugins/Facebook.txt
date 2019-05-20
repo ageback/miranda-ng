@@ -71,7 +71,7 @@
 [Log notifications into special chatroom]
 
 [Extra]
-
+额外
 [Use balloon notifications in system tray instead of popups]
 
 [Use this server for opening links:]
@@ -390,7 +390,7 @@
 [Like]
 
 [Love]
-
+爱
 [Sad]
 悲伤
 [Wow]

@@ -200,7 +200,7 @@
 
 ;file \plugins\HistoryStats\src\column_inout.h
 [In/out]
-
+入/出
 [Column holding counts for incoming, outgoing or total characters, messages or chats. This column can display absolute and average values.]
 
 ;file \plugins\HistoryStats\src\column_inoutgraph.cpp
@@ -848,7 +848,7 @@
 [Folder (disabled)]
 
 [Button]
-
+按钮
 [Button (disabled)]
 
 [Date/time picker]

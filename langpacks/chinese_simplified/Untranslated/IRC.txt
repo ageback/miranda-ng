@@ -9,7 +9,6 @@
 [Full name (e-mail)]
 [User ID (Ident)]
 [Ident]
-[Port]
 [only while connecting]
 [Force visible (-i)]
 [Rejoin channel if kicked]

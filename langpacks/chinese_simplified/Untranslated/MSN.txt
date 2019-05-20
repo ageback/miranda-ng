@@ -28,8 +28,6 @@
 [Mobile Device (used for SMS)]
 [Spouse/Partner]
 [Middle Name]
-[First Name]
-[Last Name]
 [Place:]
 [MSN Delete Contact]
 [Remove from Hotmail Address book]

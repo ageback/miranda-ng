@@ -27,7 +27,7 @@
 [ms]
 毫秒
 [Tooltips]
-
+工具提示
 [Miscellaneous]
 杂项
 [0 = Default]

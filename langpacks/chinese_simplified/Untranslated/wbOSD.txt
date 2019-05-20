@@ -1,6 +1,5 @@
 [Shows new message/status change info using on-screen display.]
 [Select font]
-[Shadow]
 [Show drop shadow]
 [Shadow align]
 [Shadow color]

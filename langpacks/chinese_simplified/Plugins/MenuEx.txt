@@ -74,7 +74,7 @@
 [User Online]
 用户在线
 [Authorization]
-
+授权
 [Typing Notify]
 输入通知
 [Open ignore settings]

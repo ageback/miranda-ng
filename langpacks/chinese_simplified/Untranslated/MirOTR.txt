@@ -3,7 +3,6 @@
 [Generating new private key - please wait.]
 [Default Policy]
 [Opportunistic]
-[Manual]
 [End sessions on window close]
 [End sessions when contacts go offline]
 [Prefix encrypted IMs:]

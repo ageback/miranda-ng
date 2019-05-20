@@ -51,7 +51,7 @@
 [Autoreply format:]
 
 [V]
-
+V
 [%extratext% is your status message]
 
 [&Variables]

@@ -11,7 +11,6 @@
 [Reset this counter also when I just change my status text\n(when status icon remains the same)]
 [Disable autoreply when...]
 [Autoreply format:]
-[V]
 [%extratext% is your status message]
 [&Variables]
 [Se&ttings]

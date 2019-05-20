@@ -71,7 +71,7 @@
 [IPv6 address (optional)]
 
 [Port]
-
+端口
 [Public key]
 
 [Old password:]

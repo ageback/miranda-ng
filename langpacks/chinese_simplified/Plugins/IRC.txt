@@ -41,7 +41,7 @@
 [System]
 系统
 [Port]
-
+端口
 [only while connecting]
 
 [Other]

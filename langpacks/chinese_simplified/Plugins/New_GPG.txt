@@ -235,7 +235,7 @@
 [Default private key ID]
 
 [not set]
-
+未设置
 [This key is not used by any contact. Do you want to remove it from public keyring?]
 
 [Key info]

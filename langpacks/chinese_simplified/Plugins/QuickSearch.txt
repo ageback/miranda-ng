@@ -56,9 +56,9 @@
 [Nickname]
 昵称
 [First name]
-
+名
 [Last name]
-
+姓
 [Group]
 分组
 [Container]
@@ -88,7 +88,7 @@
 [Script]
 脚本
 [Service]
-
+服务
 [Contact info]
 
 [Other]
@@ -132,9 +132,9 @@ Unicode 字符串
 [Result]
 结果
 [Result type]
-
+结果类型
 [Free memory]
-
+可用内存
 [Save]
 保存
 [All]

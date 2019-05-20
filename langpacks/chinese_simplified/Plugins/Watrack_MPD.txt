@@ -6,21 +6,21 @@
 ;  Authors: sss
 ;============================================================
 [Music Player Daemon support for Watrack.]
-
+音乐播放器守护进程支持Watrack。
 ;file \plugins\Watrack_MPD\res\watrack_mpd.rc
 [MPD Host]
-
+MPD 主机
 [Port]
-
+端口
 [Password]
 密码
 ;file \plugins\Watrack_MPD\src\init.cpp
 [Watrack MPD connection]
-
+Watrack MPD连接
 ;file \plugins\Watrack_MPD\src\options.cpp
 [Winamp Track]
-
+Winamp 单轨
 [Plugins]
 插件
 [Watrack MPD]
-
+Watrack MPD

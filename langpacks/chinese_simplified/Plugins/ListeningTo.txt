@@ -98,7 +98,7 @@ xStatus
 [Send to %s]
 
 [Listening to music]
-
+正在听音乐
 [Send to all protocols]
 
 [Listening info]

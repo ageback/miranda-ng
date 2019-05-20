@@ -42,7 +42,6 @@
 [Import...]
 [Override existing]
 [Set program list]
-[Program]
 [Set LEDs for events]
 [Num]
 [Caps]

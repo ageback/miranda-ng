@@ -14,7 +14,6 @@
 [Use CSV format]
 [Edit Host]
 [Address:]
-[Label:]
 [TCP Connect]
 [Control Protocol:]
 [Set my status to:]

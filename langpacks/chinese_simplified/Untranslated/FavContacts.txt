@@ -5,7 +5,6 @@
 [Use system colors and fonts]
 [Hotkey shows menu centered on screen]
 [Menu item preview:]
-[Favorite Contacts]
 [Multicolumn menu]
 [Configure fonts and colors...]
 [Align to the right]

@@ -19,7 +19,7 @@
 [Opportunistic]
 
 [Manual]
-
+手工
 [Never]
 从不
 [End sessions on window close]

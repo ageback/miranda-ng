@@ -19,7 +19,6 @@
 [%s\nis a valid feed's address.]
 [News Aggregator]
 [%s\nis not a valid feed's address.]
-[empty]
 [Check All Feeds]
 [Add Feed]
 [Import Feeds]
@@ -45,5 +44,4 @@
 [Enter Feed name]
 [Enter message format]
 [Feed]
-[Contact deleting]
 [NewsAggregator HTTP connections]

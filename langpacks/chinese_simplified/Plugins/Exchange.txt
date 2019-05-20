@@ -9,7 +9,7 @@
 
 ;file \plugins\Exchange\res\exchange.rc
 [Unread emails]
-
+未读电子邮件
 [Close]
 关闭
 [Mark as read]

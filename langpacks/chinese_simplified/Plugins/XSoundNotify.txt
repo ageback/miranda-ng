@@ -6,29 +6,29 @@
 ;  Authors: Roman Torsten
 ;============================================================
 [Provides extended options for sound notifications.]
-
+为声音通知提供扩展选项。
 ;file \plugins\XSoundNotify\res\XSoundNotify.rc
 [Account:]
 帐户：
 [Nick:]
 昵称：
 [Sound:]
-
+声音：
 [Not set]
-
+未设置
 [Choose]
-
+选择
 [Test play]
-
+测试播放
 [Reset]
 重置
 [Ignore sound for this contact]
-
+忽略这个联系人的声音
 [Cancel]
 取消
 ;file \plugins\XSoundNotify\src\dialog.cpp
 [Custom sound for %s (%s)]
-
+自定义 %s（%s）的声音
 [Sound files]
 声音文件
 [WAV files]
@@ -41,9 +41,9 @@ WAV 文件
 [Sounds]
 声音
 [XSound Notify]
-
+XSound 通知
 ;file \plugins\XSoundNotify\src\xsn_main.cpp
 [Self status]
-
+自己的状态
 [Custom contact sound]
-
+自定义联系人声音

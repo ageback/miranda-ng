@@ -14,7 +14,6 @@
 [Don't steal focus unless idle]
 [Alarm]
 [Popup window]
-[Sound:]
 [Run command:]
 [Parameters:]
 [Alert 1]

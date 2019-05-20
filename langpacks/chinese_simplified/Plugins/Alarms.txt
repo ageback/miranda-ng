@@ -61,7 +61,7 @@
 [Popup window]
 
 [Sound:]
-
+声音：
 [Run command:]
 
 [Parameters:]

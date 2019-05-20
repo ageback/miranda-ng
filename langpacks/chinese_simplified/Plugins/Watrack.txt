@@ -462,7 +462,7 @@
 [Use ICQ xStatus]
 
 [Winamp Track]
-
+Winamp 单轨
 [Pause Pushed]
 
 [-default-]

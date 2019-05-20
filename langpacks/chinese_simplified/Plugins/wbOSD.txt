@@ -15,7 +15,7 @@
 [Select font]
 
 [Shadow]
-
+阴影
 [Show drop shadow]
 
 [Shadow align]

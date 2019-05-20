@@ -5,7 +5,6 @@
 [Hide all contacts]
 [Hide when a fullscreen app is active]
 [Show tooltips*]
-[Tooltips]
 [*requires Tipper plugin]
 [Bring to front]
 [Bring to front every]

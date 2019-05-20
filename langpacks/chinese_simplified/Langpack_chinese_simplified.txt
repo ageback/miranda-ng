@@ -3328,6 +3328,8 @@ TopToolBar
 描述：
 [Actions]
 动作
+[Sound:]
+声音：
 [Weekly]
 每周
 [Daily]
@@ -3368,6 +3370,15 @@ TopToolBar
 错误
 [Events]
 事件
+#muuid {0F6C73B4-2B2B-711D-FBB6-BB267DFD7208}
+;============================================================
+;  File: AsSingleWindow.dll
+;  Plugin: AsSingleWindow
+;  Version: 0.1.2.2
+;  Authors: Aleksey Smyrnov aka Soar
+;============================================================
+[Customize]
+自定义
 #muuid {52685cd7-0ec7-44c1-a1a6-381612418202}
 ;============================================================
 ;  File: AssocMgr.dll
@@ -3729,6 +3740,8 @@ XML 文件
 消息
 [Searching]
 正在搜索
+[Scheduler]
+计划程序
 [Advanced]
 高级
 [>> Outgoing timestamp]
@@ -5243,6 +5256,8 @@ Angeli-Ka（绘图），FYR（模板）
 按字母顺序排序分组
 [Quick search in open groups only]
 仅在打开的分组中快速搜索
+[Alignment]
+对齐：
 [Minimum row height:]
 最小行高度：
 [Indent groups by:]
@@ -5602,6 +5617,27 @@ Angeli-Ka（绘图），FYR（模板）
 对话框
 [<None>]
 <无>
+#muuid {e876fe63-0701-4cda-bed5-7c73a379c1d1}
+;============================================================
+;  File: CloudFile.dll
+;  Plugin: CloudFile
+;  Version: 0.11.0.6
+;  Authors: Miranda NG team
+;============================================================
+[General]
+通用
+[Do nothing]
+啥都不干
+[Authorization]
+授权
+[Cancel]
+取消
+[Upload]
+上传
+[None]
+无
+[Services]
+服务
 #muuid {2f1a117c-3c1b-4c01-89ea-6d8fd85a9b4c}
 ;============================================================
 ;  File: CmdLine.dll
@@ -5686,6 +5722,10 @@ Angeli-Ka（绘图），FYR（模板）
 ;  Version: 1.6.0.0
 ;  Authors: Joe Kucera, Todor Totev
 ;============================================================
+[Allows you to send and receive contacts.]
+允许你发送和接收联系人。
+[Send contacts]
+发送联系人
 [&Add]
 添加(&A)
 [&User menu]
@@ -5694,14 +5734,24 @@ Angeli-Ka（绘图），FYR（模板）
 用户详情(&D)
 [&History]
 历史(&H)
+[Choose contacts to be send:]
+选择要发送的联系人：
 [&Send]
 发送(&S)
 [Cancel]
 取消
 [&Select All]
 选择所有(&S)
+[Received contacts]
+接收的联系人
+[Add to &group:]
+添加到分组(&G)：
+[&Details]
+详情(&D)
 [Close]
 关闭
+[Contacts send error]
+联系人发送错误
 [An error has occurred. The protocol reported the following error:]
 出现了一个错误。协议报告了如下错误：
 [Try again]
@@ -5714,6 +5764,8 @@ Angeli-Ka（绘图），FYR（模板）
 用户详情
 [Send Message]
 发送消息
+[Contacts received from]
+联系人接收来自
 [Contacts]
 联系人
 [Events]
@@ -5724,6 +5776,10 @@ Angeli-Ka（绘图），FYR（模板）
 传出联系人
 [Nick]
 昵称
+[First Name]
+名
+[Last Name]
+姓
 [Add Contact Permanently to List]
 永久添加联系人到列表
 [View User's Details]
@@ -5732,6 +5788,10 @@ Angeli-Ka（绘图），FYR（模板）
 查看用户历史
 [User Menu]
 用户菜单
+[Contacts from]
+联系人gotn
+[Send Contacts to]
+发送联系人到
 #muuid {f62c1d7a-ffa4-4065-a251-4c9dd9101cc8}
 ;============================================================
 ;  File: CrashDumper.dll
@@ -5895,6 +5955,71 @@ GnuPG插件 - 选择公钥
 清除
 [Set]
 设置
+#muuid {e882056d-0d1d-4131-9a98-404cbaea6a9c}
+;============================================================
+;  File: CurrencyRates.dll
+;  Plugin: Currency Rates
+;  Version: 0.2.0.3
+;  Authors: Dioksin
+;============================================================
+[Variable List]
+变量列表
+[Edit Settings]
+编辑设置
+[Log]
+日志
+[&Format:]
+格式(&F)：
+[Cancel]
+取消
+[Convert]
+转换
+[Close]
+关闭
+[Colors]
+颜色
+[Use default colors]
+使用默认颜色
+[Background color]
+背景色
+[Text color]
+文字颜色
+[Delay]
+延时
+[From popup plugin]
+来自弹出窗口插件
+[Custom]
+自定义
+[Permanent]
+永久
+[Preview]
+预览
+[&Add]
+添加(&A)
+[&Remove]
+移除(&R)
+[Seconds]
+秒
+[Minutes]
+分
+[Hours]
+小时
+[Auto Update Enabled]
+自动更新启用
+[Auto Update Disabled]
+自动更新禁用
+[Enable/Disable Auto Update]
+启用/禁用自动更新
+[Refresh]
+刷新
+[Network]
+网络
+[Protocol icon]
+协议图标
+[Export]
+导出
+[Import]
+导入
 #muuid {bcec0bd7-ca59-44b2-9a14-3a14980f524a}
 ;============================================================
 ;  File: CyrTranslit.dll
@@ -5902,6 +6027,10 @@ GnuPG插件 - 选择公钥
 ;  Version: 0.1.2.0
 ;  Authors: ValeraVi, Ivan Krechetov
 ;============================================================
+[Replaces (for the selected contacts only) the Cyrillic letters in the outgoing messages with the phonetically equivalent Latin letter combinations.]
+ʹ�������Ч��������ĸ����滻������������ѡ��ϵ�ˣ��ⷢ��Ϣ�е��������ĸ��
+[&Transliterate]
+ֱ��(&T)
 #muuid {a8a417ef-07aa-4f37-869f-7bfd74886534}
 ;============================================================
 ;  File: DbEditorPP.dll
@@ -6231,6 +6360,27 @@ Unicode 设置
 *** 居民 ***
 [Database Setting Changed: \nModule: "%s", Setting: "%s"\nNew Value (%s): "%s"]
 数据库设置变更：\n模块：%s，设置：“%s”\n新值（%s）：“%s”
+#muuid {7c3d0a33-2646-4001-9107-f35ea299d292}
+;============================================================
+;  File: Dbx_mdbx.dll
+;  Plugin: Miranda NG MDBX database driver
+;  Version: 0.95.9.1
+;  Authors: Miranda-NG project
+;============================================================
+[Cancel]
+取消
+[Change password]
+更改密码：
+[Change]
+更改
+[Remove]
+移除
+[Database]
+数据库
+[Compact]
+压缩
+[Password]
+密码
 #muuid {f7a6b27c-9d9c-4a42-be86-a448ae109161}
 ;============================================================
 ;  File: Dbx_mmap.dll
@@ -6250,6 +6400,21 @@ Unicode 设置
 密码
 [Database]
 数据库
+#muuid {da223468-5f8e-4513-88b0-e52ce8a8b33b}
+;============================================================
+;  File: Dbx_sqlite.dll
+;  Plugin: Miranda NG SQLite database driver
+;  Version: 0.95.10.2
+;  Authors: Miranda-NG project
+;============================================================
+[Cancel]
+取消
+[Change password]
+更改密码：
+[Change]
+更改
+[Remove]
+移除
 #muuid {81c220a6-0226-4ad6-bfca-217b17a16053}
 ;============================================================
 ;  File: Db_autobackups.dll
@@ -6359,6 +6524,39 @@ Miranda 的根目录路径
 选择备份文件夹
 [Miranda NG [%s] database backup]
 Miranda NG [%s] 数据库备份
+#muuid {88928401-2ce8-4568-aaa7-226141870cbf}
+;============================================================
+;  File: Discord.dll
+;  Plugin: Discord protocol
+;  Version: 0.6.2.1
+;  Authors: George Hazan
+;============================================================
+[User details]
+用户详情
+[E-mail:]
+电子邮件：
+[Password:]
+密码：
+[Contacts]
+联系人
+[Do not open chat windows on creation]
+不要在创建时打开聊天窗口
+[Nick:]
+昵称：
+[Change &nickname]
+更改昵称(&N)
+[Main icon]
+主图标
+[Group chats]
+分组聊天
+[Network]
+网络
+[Account]
+帐户
+[User ID]
+用户 ID
+[Preview]
+预览
 #muuid {2a1081d1-aee3-4091-b70d-ae46d09f9a7f}
 ;============================================================
 ;  File: Dummy.dll
@@ -6383,8 +6581,22 @@ Miranda NG [%s] 数据库备份
 ;  Version: 0.1.0.2
 ;  Authors: kva
 ;============================================================
+[E-mage LAN protocol support for Miranda NG.]
+Miranda NG的E-mage LAN协议支持。
+[Select your IP address]
+选择你的 IP 地址
+[LAN Settings]
+LAN 设置
+[Use computer name]
+使用计算机名称
 [Your name]
 你的名字
+[Select your name]
+选择你的名称
+[User name, IP address or '*']
+使用名称，IP 地址或‘*’
+[E-mage LAN protocol]
+E-mage LAN 协议
 [Network]
 网络
 #muuid {2fd0df15-7098-41ce-aa92-ff621806e38b}
@@ -6394,6 +6606,8 @@ Miranda NG [%s] 数据库备份
 ;  Version: 0.1.3.4
 ;  Authors: Cristian Libotean, Attila Vajda, MaKaR (NG)
 ;============================================================
+[Unread emails]
+未读电子邮件
 [Close]
 关闭
 [Username:]
@@ -6427,6 +6641,8 @@ Miranda NG [%s] 数据库备份
 用户详情
 [Contacts]
 联系人
+[Extra]
+额外
 [Advanced]
 高级
 [Bots challenge test]
@@ -6469,6 +6685,8 @@ Miranda NG [%s] 数据库备份
 其他事件
 [Angry]
 生气
+[Love]
+爱
 [Sad]
 悲伤
 [Services...]
@@ -6488,6 +6706,8 @@ Miranda NG [%s] 数据库备份
 显示头像
 [Round corners by]
 圆角
+[Favorite Contacts]
+收藏的联系人
 [Enable groups]
 启用分组
 [Show]
@@ -6559,6 +6779,8 @@ Miranda NG [%s] 数据库备份
 国旗
 [Show country flag as &status icon on message window]
 在消息窗口中将国旗显示为状态图标(&S)
+[Country flag]
+国旗
 [Icons]
 图标
 #muuid {53c715a8-eb01-4136-a73c-441868610074}
@@ -6574,6 +6796,8 @@ Miranda NG [%s] 数据库备份
 像素
 [ms]
 毫秒
+[Tooltips]
+工具提示
 [Miscellaneous]
 杂项
 [0 = Default]
@@ -6646,6 +6870,8 @@ Miranda NG [%s] 数据库备份
 密码
 [URL]
 URL
+[Port]
+端口
 [Account name]
 帐户名
 [Protocol]
@@ -6664,6 +6890,8 @@ URL
 昵称
 [Close]
 关闭
+[Clipboard]
+剪贴板
 [Options]
 选项
 [UPLOADING...]
@@ -7580,6 +7808,8 @@ History++ 警告
 天
 [week]
 星期
+[In/out]
+入/出
 [Outgoing]
 传出
 [Incoming]
@@ -7614,6 +7844,8 @@ History++ 警告
 杂项
 [Contact menu]
 联系人菜单
+[Button]
+按钮
 [Statistics]
 统计
 [Configure...]
@@ -7910,8 +8142,14 @@ IEView
 ;  Version: 0.0.3.0
 ;  Authors: Kildor
 ;============================================================
+[Shows ignore state of contact in contact list.]
+显示联系人列表中的联系人的忽略状态。
 [Plugin settings]
 插件设置
+[Filtered events:]
+过滤的事件：
+[Use Miranda ignore settings for All Contacts]
+为所有联系人使用 Miranda 忽略设置
 [All]
 所有
 [Messages]
@@ -7920,8 +8158,18 @@ IEView
 文件
 [User Online]
 用户在线
+[Authorization]
+授权
 [Typing Notify]
 输入通知
+[Full Ignore]
+完全忽略
+[Partial Ignore]
+部分忽略
+[Message Ignore]
+消息忽略
+[Ignore State]
+忽略状态
 [Icons]
 图标
 #muuid {2d77a746-00a6-4343-bfc5-f808cdd772ea}
@@ -7972,6 +8220,8 @@ IEView
 昵称
 [System]
 系统
+[Port]
+端口
 [Other]
 其他
 [Keep connection alive]
@@ -10212,6 +10462,8 @@ Jabber vCard：编辑电话号码
 删除
 [Export...]
 导出...
+[Program]
+程序
 [Cancel]
 取消
 [Other events]
@@ -10320,6 +10572,8 @@ xStatus
 模板：
 [Title:]
 称号
+[Listening to music]
+正在听音乐
 [<Unknown>]
 <未知>
 [Status]
@@ -10395,6 +10649,8 @@ xStatus
 文件
 [User Online]
 用户在线
+[Authorization]
+授权
 [Typing Notify]
 输入通知
 [Customize]
@@ -10513,18 +10769,42 @@ MessageState 未读附加图标
 ;  Version: 0.11.9.1
 ;  Authors: Miranda NG team
 ;============================================================
+[Extends Miranda NG functionality with Lua scripts.]
+使用Lua脚本扩展Miranda NG功能。
+[Reload all]
+重新加载所有
+[Scripts]
+脚本
+[Popup on script error]
+脚本出错时弹出窗口
 [General]
 通用
+[Popup on obsolete methods]
+使用过时的方法时弹出窗口
+[Auto evaluation]
+自动评估
+[Evaluate]
+评估
 [Script]
 脚本
+[Loaded]
+已加载
 [Failed]
 失败
 [Open]
 打开
 [Reload]
 重新载入
+[Compile]
+编译
+[Common scripts]
+通用脚本
 [Services]
 服务
+[C libs folder]
+C 库文件夹
+[Scripts folder]
+脚本文件夹
 #muuid {12d8faad-78ab-4e3c-9854-320e9ea5cc9f}
 ;============================================================
 ;  File: MirOTR.dll
@@ -10534,6 +10814,8 @@ MessageState 未读附加图标
 ;============================================================
 [Always]
 总是
+[Manual]
+手工
 [Never]
 从不
 [Forget]
@@ -10731,6 +11013,10 @@ UIN
 其他
 [Cancel]
 取消
+[First Name]
+名
+[Last Name]
+姓
 [Anniversary]
 周年纪念日
 [Birthday]
@@ -10950,6 +11236,8 @@ UIN
 在接电话(&P)
 [Out to &lunch]
 外出吃饭(&L)
+[V]
+V
 [&Delete]
 删除(&D)
 [Title:]
@@ -11130,6 +11418,8 @@ URL
 导入(&I)
 [Error]
 错误
+[empty]
+空
 [Protocol icon]
 协议图标
 [Auto Update Enabled]
@@ -11138,6 +11428,8 @@ URL
 自动更新禁用
 [Are you sure?]
 你确定吗？
+[Contact deleting]
+联系人删除
 [Network]
 网络
 [Avatars]
@@ -11610,6 +11902,8 @@ xStatus
 名字
 [Protocol]
 协议
+[not set]
+未设置
 [info]
 信息
 [Error]
@@ -12222,10 +12516,16 @@ Purple
 ;  Version: 0.1.0.2
 ;  Authors: Miranda NG team
 ;============================================================
+[Core driver to provide OpenSSL-based SSL services.]
+核心驱动程序，提供基于OpenSSL的SSL服务。
 [Client cannot decode host message. Possible causes: host does not support SSL or requires not existing security package]
 客户端无法解码主机消息。 可能的原因：主机不支持SSL或需要不存在的安全包
 [Host we are connecting to is not the one certificate was issued for]
 我们连接的主机不是颁发的证书对应的主机
+[OpenSSL library loading failed]
+OpenSSL库加载失败
+[OpenSSL error]
+OpenSSL 错误
 #muuid {29517be5-779a-48e5-8950-cb4de1d43172}
 ;============================================================
 ;  File: PackUpdater.dll
@@ -12403,6 +12703,8 @@ Purple
 下
 [Cancel]
 取消
+[Label:]
+标签：
 [Port:]
 端口
 [Contact]
@@ -13036,6 +13338,83 @@ Popup plus 警告
 弹出窗口模式：全屏
 [Popup Mode: Block contact]
 弹出窗口模式：阻止联系人
+#muuid {4df0c267-6efb-4410-b651-385f87158509}
+;============================================================
+;  File: ProxySwitch.dll
+;  Plugin: ProxySwitch
+;  Version: 1.0.0.1
+;  Authors: Petr Smejkal
+;============================================================
+[Watches IP address changes, displays popups, and adjusts the proxy settings of Miranda, Internet Explorer and Firefox.]
+监视 IP 地址更改，显示弹出窗口，并调整 Miranda，Internet Explorer 和 Firefox 的代理设置。
+[Network addresses]
+网络地址
+[Direct connection]
+直接连接
+[Use proxy]
+使用代理
+[General]
+通用
+[Manage Miranda NG proxy]
+管理 Miranda NG 代理
+[Manage Internet Explorer proxy]
+管理 Internet Explorer 代理
+[Manage Firefox proxy]
+管理 Firefox 代理
+[Reconnect if IP address changes]
+如果 IP 地址改变就重新连接
+[Hide interfaces]
+隐藏接口
+[Popup options]
+弹出窗口选项
+[Enable popups]
+启用弹出窗口
+[Text color]
+文字颜色
+[Background color]
+背景色
+[Use default popup colors]
+使用默认弹出窗口颜色
+[Show proxy status on change]
+改变时显示代理状态
+[Restart of Miranda NG is required.]
+需要重启 Miranda NG.
+[Enter semicolon (;) separated list of IP network addresses in any of the formats below:\n\tIP/bits\t(10.0.0.1/24)\t\tIP/mask\t(10.0.0.1/255.255.255.0)\n\tIP1-2\t(10.0.0.1-50)\t\tIP1-IP2\t(10.0.0.1-10.0.2.255)]
+以下列任何格式输入以分号（;）分隔的IP网络地址列表：\n\tIP/位\t（10.0.0.1/24）\t\tIP/掩码\t（10.0.0.1/255.255.255.0）\n\tIP1-2\t（10.0.0.1-50）\t\tIP1-IP2\t（10.0.0.1-10.0.2.255）
+[Any entry in the 'Use proxy' list can be prefixed by an exclamation mark (!) to increase its priority. Entries with wrong syntax will be ignored. The plugin checks the IP addresses in the following way:]
+“使用代理”列表中的任何条目都可以使用感叹号（！）作为前缀，以提高其优先级。 语法错误的条目将被忽略。 该插件以下列方式检查IP地址：
+[\t1) Use proxy if any interface has prioritized 'Use proxy' address\n\t2) Don't use proxy if any interface has 'Direct connection' address\n\t3) Use proxy if any interface has 'Use proxy' address\n\t4) Do nothing if unknown or no address found]
+\t1)如果任何接口优先'使用代理'地址，则使用代理\n\t2)如果任何接口具有“直接连接”地址，则不要使用代理\n\t3如果任何接口具有“使用代理”，请使用代理地址\n\t4)如果发现未知或没有地址，则不执行任何操作
+[Cancel]
+取消
+[Proxy]
+代理
+[Direct]
+直接
+[disconnected]
+断开连接
+[Current IP address]
+当前 IP 地址
+[Enable &IP change notification]
+启用 &IP 改变通知
+[Disable &IP change notification]
+禁用 &IP 改变通知
+[Show my &IP addresses]
+显示我的 &IP 地址
+[Proxy settings && interfaces]
+代理设置和接口
+[Disable proxy]
+禁用代理
+[Enable proxy]
+启用代理
+[Popups]
+弹出窗口
+[IP change notification]
+IP 变更通知
+[Services]
+服务
+[ProxySwitch]
+代理切换
 #muuid {f93ba59c-4f48-4f2e-8a91-77a2801527a3}
 ;============================================================
 ;  File: QuickContacts.dll
@@ -13067,8 +13446,24 @@ Popup plus 警告
 ;  Version: 0.9.1.2
 ;  Authors: Unsane
 ;============================================================
+[Plugin for quick insert (or sending) pre-defined messages in message input area.]
+用于在消息输入区域中快速插入（或发送）预定义消息的插件。
+[Quick Replies]
+快速回复
+[Send replies immediately]
+立即发送回复
+[- Add your replies, one per line.]
+- 添加你的回复，每行一个。
 [Variables]
 变量
+[Hints:]
+提示：
+[- Add "---" for separator.]
+- 添加“---”用来分隔。
+[- Press [v] button for variable's help.]
+- 按 [v] 键显示变量帮助。
+[Button]
+按钮
 [Message sessions]
 消息会话
 #muuid {e4058506-6494-4d60-9cf4-40bf545f78bd}
@@ -13104,6 +13499,10 @@ Popup plus 警告
 性别
 [Nickname]
 昵称
+[First name]
+名
+[Last name]
+姓
 [Group]
 分组
 [E-mail]
@@ -13112,6 +13511,8 @@ Popup plus 警告
 类型：
 [Script]
 脚本
+[Service]
+服务
 [Other]
 其他
 [Byte]
@@ -13144,6 +13545,10 @@ Unicode 字符串
 参数
 [Result]
 结果
+[Result type]
+结果类型
+[Free memory]
+可用内存
 [Save]
 保存
 [All]
@@ -14655,6 +15060,16 @@ Miranda 相关
 ;  Version: 0.0.0.18
 ;  Authors: Dioksin
 ;============================================================
+[Skype status change according to Miranda status.]
+根据 Miranda 状态改变Skype状态。
+[Synchronize status message]
+同步状态消息
+[&Check any protocol or any status to exclude it from synchronization:]
+检查任何协议或任何状态以将其从同步中排除：
+[Synchronize if current status differs from previous one]
+如果当前状态与前一个状态不同，则同步
+[Change Skype status]
+改变 Skype 状态
 [Plugins]
 插件
 #muuid {57e90ac6-1067-423b-8ca3-70a39d200d4f}
@@ -17862,10 +18277,22 @@ XStatus：
 ;  Version: 0.11.2.0
 ;  Authors: Miranda NG team
 ;============================================================
+[Provides popup services based on Windows toast notification for different plugins.]
+为不同的插件提供基于Windows Toast通知的弹出服务。
 [Preview]
 预览
+[Add shortcut]
+添加快捷方式
 [Enabled]
 已启用
+[This plugin requires Windows 8 or higher]
+此插件需要 Windows 8 或更高
+[Failed to create temporary directory]
+创建临时目录失败
+[Failed to create shortcut]
+创建快捷方式失败
+[Shortcut was added to the start menu]
+快捷方式添加到开始菜单
 [Information]
 信息
 [Warning]
@@ -18029,6 +18456,8 @@ TopToolBar
 添加
 [Update]
 更新
+[Port]
+端口
 [New password:]
 新密码：
 [Protocol icon]
@@ -19549,6 +19978,8 @@ Miranda 相关
 第二行
 [Context menu]
 上下文菜单
+[Winamp Track]
+Winamp 单轨
 [Left click]
 左键点击
 [Right click]
@@ -19565,10 +19996,22 @@ Miranda 相关
 ;  Version: 0.0.0.4
 ;  Authors: sss
 ;============================================================
+[Music Player Daemon support for Watrack.]
+音乐播放器守护进程支持Watrack。
+[MPD Host]
+MPD 主机
+[Port]
+端口
 [Password]
 密码
+[Watrack MPD connection]
+Watrack MPD连接
+[Winamp Track]
+Winamp 单轨
 [Plugins]
 插件
+[Watrack MPD]
+Watrack MPD
 #muuid {fc718bc7-abc8-43cd-aad9-761614617738}
 ;============================================================
 ;  File: wbOSD.dll
@@ -19580,6 +20023,8 @@ Miranda 相关
 通用
 [Align]
 对齐
+[Shadow]
+阴影
 [Other]
 其他
 [Background color]
@@ -21072,14 +21517,28 @@ N/A
 ;  Version: 1.0.1.3
 ;  Authors: Roman Torsten
 ;============================================================
+[Provides extended options for sound notifications.]
+为声音通知提供扩展选项。
 [Account:]
 帐户：
 [Nick:]
 昵称：
+[Sound:]
+声音：
+[Not set]
+未设置
+[Choose]
+选择
+[Test play]
+测试播放
 [Reset]
 重置
+[Ignore sound for this contact]
+忽略这个联系人的声音
 [Cancel]
 取消
+[Custom sound for %s (%s)]
+自定义 %s（%s）的声音
 [Sound files]
 声音文件
 [WAV files]
@@ -21090,6 +21549,12 @@ WAV 文件
 (未知联系人)
 [Sounds]
 声音
+[XSound Notify]
+XSound 通知
+[Self status]
+自己的状态
+[Custom contact sound]
+自定义联系人声音
 #muuid {b047a7e5-027a-4cfc-8b18-eda8345d2790}
 ;============================================================
 ;  File: YAMN.dll

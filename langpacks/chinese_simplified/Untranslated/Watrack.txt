@@ -222,7 +222,6 @@
 ["Variables" module use]
 [Acoustic]
 [Use ICQ xStatus]
-[Winamp Track]
 [Pause Pushed]
 [-default-]
 [Global WATrack hotkey]

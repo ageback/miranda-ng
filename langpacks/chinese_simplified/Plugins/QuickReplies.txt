@@ -6,25 +6,25 @@
 ;  Authors: Unsane
 ;============================================================
 [Plugin for quick insert (or sending) pre-defined messages in message input area.]
-
+用于在消息输入区域中快速插入（或发送）预定义消息的插件。
 ;file \plugins\QuickReplies\res\resources.rc
 [Quick Replies]
-
+快速回复
 [Send replies immediately]
-
+立即发送回复
 [- Add your replies, one per line.]
-
+- 添加你的回复，每行一个。
 [Variables]
 变量
 [Hints:]
-
+提示：
 [- Add "---" for separator.]
-
+- 添加“---”用来分隔。
 [- Press [v] button for variable's help.]
-
+- 按 [v] 键显示变量帮助。
 ;file \plugins\QuickReplies\src\events.cpp
 [Button]
-
+按钮
 ;file \plugins\QuickReplies\src\options.cpp
 [Message sessions]
 消息会话

@@ -6,22 +6,22 @@
 ;  Authors: kva
 ;============================================================
 [E-mage LAN protocol support for Miranda NG.]
-
+Miranda NG的E-mage LAN协议支持。
 ;file \protocols\EmLanProto\res\amdproto.rc
 [Select your IP address]
-
+选择你的 IP 地址
 [LAN Settings]
-
+LAN 设置
 [Use computer name]
-
+使用计算机名称
 [Your name]
 你的名字
 [Select your name]
-
+选择你的名称
 ;file \protocols\EmLanProto\src\amdproto.cpp
 [User name, IP address or '*']
-
+使用名称，IP 地址或‘*’
 [E-mage LAN protocol]
-
+E-mage LAN 协议
 [Network]
 网络

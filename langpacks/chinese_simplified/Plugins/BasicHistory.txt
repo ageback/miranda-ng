@@ -264,7 +264,7 @@
 [Searching]
 正在搜索
 [Scheduler]
-
+计划程序
 [Advanced]
 高级
 [>> Outgoing timestamp]

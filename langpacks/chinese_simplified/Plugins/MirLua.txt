@@ -6,27 +6,27 @@
 ;  Authors: Miranda NG team
 ;============================================================
 [Extends Miranda NG functionality with Lua scripts.]
-
+使用Lua脚本扩展Miranda NG功能。
 ;file \plugins\MirLua\res\resource.rc
 [Reload all]
-
+重新加载所有
 [Scripts]
-
+脚本
 [Popup on script error]
-
+脚本出错时弹出窗口
 [General]
 通用
 [Popup on obsolete methods]
-
+使用过时的方法时弹出窗口
 [Auto evaluation]
-
+自动评估
 [Evaluate]
-
+评估
 ;file \plugins\MirLua\src\icons.cpp
 [Script]
 脚本
 [Loaded]
-
+已加载
 [Failed]
 失败
 [Open]
@@ -34,14 +34,14 @@
 [Reload]
 重新载入
 [Compile]
-
+编译
 ;file \plugins\MirLua\src\options.cpp
 [Common scripts]
-
+通用脚本
 ;file \plugins\MirLua\src\plugin.cpp
 [Services]
 服务
 [C libs folder]
-
+C 库文件夹
 [Scripts folder]
-
+脚本文件夹

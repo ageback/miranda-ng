@@ -87,7 +87,7 @@ URL
 [%s\nis not a valid feed's address.]
 
 [empty]
-
+空
 ;file \protocols\NewsAggregator\Src\Icons.cpp
 [Protocol icon]
 协议图标
@@ -151,7 +151,7 @@ URL
 [Feed]
 
 [Contact deleting]
-
+联系人删除
 [Network]
 网络
 ;file \protocols\NewsAggregator\Src\Services.cpp

@@ -6,10 +6,10 @@
 ;  Authors: Joe Kucera, Todor Totev
 ;============================================================
 [Allows you to send and receive contacts.]
-
+允许你发送和接收联系人。
 ;file \plugins\ContactsPlus\res\contacts.rc
 [Send contacts]
-
+发送联系人
 [&Add]
 添加(&A)
 [&User menu]
@@ -19,7 +19,7 @@
 [&History]
 历史(&H)
 [Choose contacts to be send:]
-
+选择要发送的联系人：
 [&Send]
 发送(&S)
 [Cancel]
@@ -27,15 +27,15 @@
 [&Select All]
 选择所有(&S)
 [Received contacts]
-
+接收的联系人
 [Add to &group:]
-
+添加到分组(&G)：
 [&Details]
-
+详情(&D)
 [Close]
 关闭
 [Contacts send error]
-
+联系人发送错误
 [An error has occurred. The protocol reported the following error:]
 出现了一个错误。协议报告了如下错误：
 [Try again]
@@ -50,7 +50,7 @@
 发送消息
 ;file \plugins\ContactsPlus\src\main.cpp
 [Contacts received from]
-
+联系人接收来自
 [Contacts]
 联系人
 [Events]
@@ -63,9 +63,9 @@
 [Nick]
 昵称
 [First Name]
-
+名
 [Last Name]
-
+姓
 [Add Contact Permanently to List]
 永久添加联系人到列表
 [View User's Details]
@@ -75,7 +75,7 @@
 [User Menu]
 用户菜单
 [Contacts from]
-
+联系人gotn
 ;file \plugins\ContactsPlus\src\send.cpp
 [Send Contacts to]
-
+发送联系人到

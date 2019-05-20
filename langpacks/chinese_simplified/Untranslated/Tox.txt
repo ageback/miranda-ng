@@ -22,7 +22,6 @@
 [Tox profile is encrypted. Enter the password to continue.]
 [IPv4 address/ Host]
 [IPv6 address (optional)]
-[Port]
 [Public key]
 [Old password:]
 [Confirm password:]

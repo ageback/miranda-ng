@@ -99,7 +99,7 @@
 [Center group names horizontally]
 
 [Alignment]
-
+对齐：
 [Margins (left/right)]
 
 [Row gap]

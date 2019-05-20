@@ -75,7 +75,6 @@
 [Number of history items to delete: %d.\nAre you sure you want to do this?]
 [Contacts received]
 [Group list]
-[Scheduler]
 [Group list background]
 [Find window]
 [Find window background]
