@@ -6,16 +6,16 @@
 ;  Authors: Anar Ibragimoff
 ;============================================================
 [Forwards messages to some contact when you are not available.]
-
+当您不在时，将消息转发给某些联系人。
 ;file \plugins\YARelay\res\yaRelay.rc
 [Forward messages from...]
-
+转发消息来自...
 [Everyone]
-
+每个人
 [Contact]
 联系
 [Forward when your status is...]
-
+转发当你的状态为...
 [Offline]
 离线
 [Online]
@@ -33,35 +33,35 @@
 [Invisible]
 隐身
 [Forward messages to...]
-
+转发消息给...
 [Template]
 模板
 [%u - user nick;   %i - uin;    %t - time;   \r%d - date;   %m - message]
-
+[%u - 昵称;   %i - uin;    %t - 时间;   \r%d - 日期;   %m - 消息
 [Forwarding options]
-
+转发选项
 [Split message (%m)]
-
+分割消息（%m）
 [Send only first]
-
+只发送第一个
 [Max size of split part (chars)]
-
+分割部分的最大尺寸（字符）
 [Mark received messages as 'read']
-
+标记接收的消息为“已读”
 [Save sent messages in recipient's history]
-
+在接收者的历史中保存发送过的消息
 [split parts (0 = all)]
-
+分割部分（0=所有）
 [Note: Max size - it's a size of %m parameter]
-
+注意：最大尺寸 - 它是 %m 参数的大小
 [Note: messages from this contact will not be forwarded]
-
+注意：来自这个联系人的消息将不被转发
 ;file \plugins\YARelay\src\options.cpp
 [!EVERYONE!]
-
+！每个人！
 [!DON'T FORWARD!]
-
+！不要转发！
 [Message sessions]
 消息会话
 [Messages forwarding]
-
+消息转发

@@ -6,26 +6,26 @@
 ;  Authors: Andrej Krutak
 ;============================================================
 [Shows new message/status change info using on-screen display.]
-
+在屏幕上显示新消息/状态变更信息。
 ;file \plugins\wbOSD\res\wbOSD.rc
 [General]
 通用
 [Align]
 对齐
 [Select font]
-
+选择字体
 [Shadow]
 阴影
 [Show drop shadow]
-
+显示拖放阴影
 [Shadow align]
-
+阴影对齐
 [Shadow color]
-
+阴影颜色
 [Alternative shadow]
-
+替代阴影
 [Shadow distance:]
-
+阴影距离：
 [Other]
 其他
 [Background color]
@@ -33,36 +33,36 @@
 [Transparent]
 透明
 [Alpha:]
-
+阿尔法：
 [Timeout (ms):]
-
+超时（毫秒）：
 [Show testing OSD]
-
+显示测试屏上显示
 [Announce]
-
+通告
 [Status changes]
 状态变更
 [Show my status changes]
-
+显示我的状态变更
 [Text color]
 文字颜色
 [Show events]
-
+显示事件
 [Format:]
-
+格式：
 [Show message window after click]
-
+点击后显示消息窗口
 [Show when my status is:]
-
+显示，当我的状态为：
 ;file \plugins\wbOSD\src\events.cpp
 [%s is %s]
-
+%s 是 %s
 ;file \plugins\wbOSD\src\options.cpp
 [Variables:\n  %n : Nick\n  %m : Message\n  %l : New line]
-
+变量：\n  %n：昵称\n  %m：消息\n  %l：新行
 [Help]
 帮助
 [Miranda NG is great and this is a long message.]
-
+Miranda NG很棒，这是一个很长的信息。
 [Plugins]
 插件

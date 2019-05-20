@@ -6,68 +6,68 @@
 ;  Authors: Nightwish, Pixel
 ;============================================================
 [Allows inline skin item editing for Clist nicer.]
-
+允许Clist nicer 的内联皮肤项目编辑。
 ;file \plugins\Cln_skinedit\res\skinedit.rc
 [Skin items]
-
+皮肤项
 [General]
 通用
 [Gradient]
-
+渐变
 [Left to right]
-
+左到右
 [Right to left]
-
+右到左
 [Top to bottom]
-
+顶部到底部
 [Bottom to top]
-
+底部到顶部
 [Round corners]
 圆角
 [Top-Left]
-
+左上
 [Top-Right]
-
+右上
 [Bottom-Right]
-
+右下
 [Bottom-Left]
-
+右下
 [Item colors]
-
+项颜色
 [First color]
-
+第一个颜色
 [Text color]
 文字颜色
 [Second color]
-
+第二个颜色
 [Transparent]
 透明
 [Alpha (percent)]
-
+阿尔法（百分比）
 [Item margins]
-
+项边距
 [Item borders]
-
+项边框
 [Border style]
-
+项样式
 [3D border (bright / dark)]
-
+3D 边框（明亮 / 黑暗）
 [Item ignored]
-
+忽略的项
 [Dialog]
 对话框
 [Not yet supported]
-
+尚不支持
 ;file \plugins\Cln_skinedit\src\main.cpp
 [Copy from]
-
+复制从
 [<None>]
 <无>
 [Raised]
-
+上升
 [Sunken]
-
+凹陷
 [Bumped]
-
+冲撞
 [Etched]
-
+蚀刻

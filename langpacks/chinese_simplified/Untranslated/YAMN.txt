@@ -13,7 +13,6 @@
 [Replace nickname]
 [Disable Events]
 [New Mail]
-[Sound]
 [Keyboard Flash]
 [Tray Icon]
 [Execute Application]

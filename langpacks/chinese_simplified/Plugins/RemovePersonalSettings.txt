@@ -6,16 +6,16 @@
 ;  Authors: Ricardo Pescuma Domenecci
 ;============================================================
 [Remove personal settings to allow you to send a profile to other user(s) without sending personal data.]
-
+删除个人设置，允许您在不发送个人数据的情况下将个人资料发送给其他用户。
 ;file \plugins\RemovePersonalSettings\src\rps.cpp
 [Configuration file could not be found!]
-
+无法找到配置文件！
 [Settings are deleted now.]
-
+设置现已删除。
 [Remove Personal Settings...]
-
+删除个人设置...
 ;file \plugins\RemovePersonalSettings\src\stdafx.h
 [All your personal settings will be erased!\nMake sure you are running this from a copy of your profile (and not over the original one).\nRunning this will erase files/folders under Miranda main folder.\n\nAre you sure you want to remove all your personal settings?\n\n(You cannot say that I don't told you about the risks :P)]
-
+所有个人设置都将被删除！\n请确保您从个人资料的副本（而不是原始副本）运行此设置。\n运行此操作将删除Miranda主文件夹下的文件/文件夹。\n\n您确定你想删除你的所有个人设置吗？\n\n（你不能说我没有告诉你风险：P）
 [Remove Personal Settings]
-
+移除个人设置

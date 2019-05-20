@@ -63,7 +63,7 @@
 [New Mail]
 
 [Sound]
-
+声音
 [Message]
 消息
 [Keyboard Flash]

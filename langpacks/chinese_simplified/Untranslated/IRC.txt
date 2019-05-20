@@ -70,7 +70,6 @@
 [Send-ahead]
 [Attempt reverse DCC (good if firewalled)]
 [everyone on the contact list]
-[everyone]
 [Disconnect DCC chats when disconnecting from server]
 [Manually set external IP:]
 [Client-to-Client File Transfers]

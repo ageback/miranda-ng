@@ -6,47 +6,47 @@
 ;  Authors: Daniel Wesslen, Korney San
 ;============================================================
 [Displays popups for custom events, triggered by UDP packages.]
-
+为自定义事件显示弹出窗口，通过 UDP 包触发。
 ;file \plugins\NotifyAnything\res\NotifyAnything.rc
 [Security]
 安全
 [Only listen to localhost]
-
+只侦听 localhost
 [Port:]
 端口
 [(Default is 12001)]
-
+（默认是 12001）
 [Password:]
 密码：
 [Allow actions to execute programs]
-
+允许动作来执行程序
 [Sound]
-
+声音
 [Play sounds]
-
+播放声音
 [Use internal speaker]
-
+使用内部喇叭
 [Debug]
 调试
 [Log to file]
 记录到文件
 [Message debugging]
-
+消息调试
 ;file \plugins\NotifyAnything\src\main.cpp
 [Notify Anything]
-
+通知任何事情
 [NotifyAnything: Failed to format error message]
-
+通知任何事情：格式化错误消息失败
 [NotifyAnything: FormatMessage failed, error code was 0x]
-
+通知任何事情：FormatMessage 失败，错误码为 0x
 [Error]
 错误
 ;file \plugins\NotifyAnything\src\options.cpp
 [Log (*.log)\0*.log\0Text (*.txt)\0*.txt\0All Files (*.*)\0*.*\0]
-
+日志（*.log）\0*.log\0文本（*.txt）\0*.txt\0所有文件（*.*）\0*.*\0
 [Invalid port number]
-
+无效端口
 [NotifyAnything]
-
+通知任何事情
 [Plugins]
 插件

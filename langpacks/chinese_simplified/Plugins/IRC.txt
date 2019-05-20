@@ -209,7 +209,7 @@
 [everyone on the contact list]
 
 [everyone]
-
+每个人
 [Disconnect DCC chats when disconnecting from server]
 
 [Manually set external IP:]

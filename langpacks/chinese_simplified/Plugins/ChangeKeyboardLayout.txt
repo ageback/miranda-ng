@@ -6,50 +6,50 @@
 ;  Authors: Yasnovidyashii
 ;============================================================
 [Plugin for changing keyboard layout of text (multilayout).]
-
+插件用来改变文字的键盘布局（多布局）。
 ;file \plugins\ChangeKeyboardLayout\res\ChangeKeyboardLayout.rc
 [Hotkeys]
 热键
 [Changing layout:]
-
+改变布局：
 ["Current word" mode]
-
+“当前单词”模式
 [Changing layout (alternative):]
-
+改变布局（代替）：
 [Inverting lettercase:]
-
+反转字母大小写：
 [Options]
 选项
 [Two-way changing layout (experimental)]
-
+双向改变布局（实验）
 [Log operations]
-
+记录操作
 [Copy result to clipboard]
-
+复制结果到剪贴板
 [Show result in Popup]
-
+在弹出窗口中显示结果
 [Strings for keyboard layouts]
-
+键盘布局字符串
 [Default]
 默认
 [Invert current state]
-
+反转当前状态
 [Switch off]
-
+切换关闭
 [Leave as it is]
-
+保持原样
 [Set Caps Lock state when inverting lettercase:]
-
+反转字母时设置Caps Lock状态：
 [Change active keyboard layout in system]
-
+更改系统中的活动键盘布局
 [Colors]
 颜色
 [Use default colors]
 使用默认颜色
 [Windows colors]
-
+窗口颜色
 [Custom colors]
-
+自定义颜色
 [Back]
 退回
 [Text]
@@ -67,16 +67,16 @@
 [Copy to clipboard]
 复制到剪贴板
 [Dismiss]
-
+解除
 [On right click]
 右键点击时
 [Preview]
 预览
 ;file \plugins\ChangeKeyboardLayout\src\hook_events.cpp
 [Changing Layout]
-
+改变布局
 [Changing Case]
-
+改变大小写
 [Message sessions]
 消息会话
 [Popups]
@@ -84,4 +84,4 @@
 ;file \plugins\ChangeKeyboardLayout\src\main.cpp
 ;file \plugins\ChangeKeyboardLayout\src\stdafx.h
 [ChangeKeyboardLayout]
-
+ChangeKeyboardLayout
