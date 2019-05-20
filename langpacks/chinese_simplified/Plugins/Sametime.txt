@@ -94,7 +94,7 @@
 [Protocol icon]
 协议图标
 [Announce]
-
+通告
 [Notification]
 通知
 [Error]

@@ -25,7 +25,6 @@
 [Protocol module]
 [mBirthday module]
 [Nothing]
-[Dismiss]
 [All contacts except hidden ones]
 [All contacts except ignored ones]
 [All contacts except hidden and ignored ones]

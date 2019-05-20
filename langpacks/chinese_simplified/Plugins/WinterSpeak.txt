@@ -109,7 +109,7 @@
 [Engine/Voice]
 
 [Announce]
-
+通告
 ;file \plugins\WinterSpeak\src\UserInformation.cpp
 [%u is now offline]
 

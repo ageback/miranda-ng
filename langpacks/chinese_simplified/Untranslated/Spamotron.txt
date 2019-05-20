@@ -42,7 +42,6 @@
 [Contact blocked]
 [Contact approved]
 [Challenge sent]
-[Windows colors]
 [Bayes database path]
 [Simple]
 [Math expression]

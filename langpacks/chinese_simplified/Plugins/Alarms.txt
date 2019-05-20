@@ -115,7 +115,7 @@
 [Monthly]
 每月
 [Dismiss]
-
+解除
 [Snooze]
 
 [Static]

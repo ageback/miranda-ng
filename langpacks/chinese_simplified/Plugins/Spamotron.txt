@@ -109,7 +109,7 @@
 [Default colors]
 默认颜色
 [Windows colors]
-
+窗口颜色
 [Default timeout]
 默认超时
 [Preview]

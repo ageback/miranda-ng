@@ -36,7 +36,6 @@
 [Fri]
 [Sat]
 [Sun]
-[Dismiss]
 [Snooze]
 [&Suspend]
 [&Edit...]
