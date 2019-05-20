@@ -25,7 +25,6 @@
 [Options...]
 [Hosts...]
 [Ping]
-[Text Files (*.txt)]
 [<all>]
 [Hosts]
 [Ping Plugin]

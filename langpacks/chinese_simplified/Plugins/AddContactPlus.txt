@@ -6,16 +6,16 @@
 ;  Authors: Bartosz 'Dezeath' Białek
 ;============================================================
 [Provides the ability to quickly add new contacts.]
-
+提供快速添加新联系人的功能。
 ;file \plugins\AddContactPlus\res\resource.rc
 [Add contact]
 添加联系人
 [Add a contact to your contact list]
-
+添加一个联系人到你的联系人列表
 [Account:]
 帐户：
 [Contact ID:]
-
+联系人 ID：
 [Custom name:]
 自定义名字：
 [Group:]
@@ -23,7 +23,7 @@
 [Options]
 选项
 [Add temporarily]
-
+临时添加
 [Send authorization request]
 发送授权请求
 [Authorization request]
@@ -38,15 +38,15 @@
 [None]
 无
 [The contact cannot be added to your contact list. Please make sure the contact ID is entered correctly.]
-
+联系人无法添加到您的联系人列表中。 请确保输入的联系人ID正确。
 [The contact cannot be added to your contact list. If you are not logged into the selected account, please try to do so. Also, make sure the contact ID is entered correctly.]
-
+联系人无法添加到您的联系人列表中。 如果您未登录所选帐户，请尝试这样做。 此外，请确保正确输入联系人ID。
 ;file \plugins\AddContactPlus\src\main.cpp
 [&Add contact...]
-
+添加联系人(&A)...
 [Open add contact dialog]
-
+打开添加联系人对话框
 [Main]
 主
 [AddContact+]
-
+AddContact+

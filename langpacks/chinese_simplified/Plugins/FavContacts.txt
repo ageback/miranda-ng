@@ -6,7 +6,7 @@
 ;  Authors: Victor Pavlychko
 ;============================================================
 [Favorite contacts menu.]
-
+收藏的联系人菜单。
 ;file \plugins\FavContacts\res\resource.rc
 [Customize]
 自定义
@@ -15,43 +15,43 @@
 [Show avatars]
 显示头像
 [Draw avatar border]
-
+绘制头像边框
 [Round corners by]
 圆角
 [px.]
-
+像素
 [Hide for transparent avatars]
-
+隐藏透明头像
 [Use system colors and fonts]
-
+使用系统颜色和字体
 [Hotkey shows menu centered on screen]
-
+在屏幕上居中显示菜单的热键
 [Menu item preview:]
-
+菜单项预览：
 [Favorite Contacts]
 收藏的联系人
 [Enable groups]
 启用分组
 [Multicolumn menu]
-
+多列菜单
 [Configure fonts and colors...]
-
+配置字体和颜色...
 [Align to the right]
-
+对齐到右侧
 [Dim idle contact icons]
-
+暗淡空闲联系人图标
 [Show]
 显示
 [recent contacts]
 最近的联系人
 ;file \plugins\FavContacts\src\favlist.h
 [<no group>]
-
+<无分组>
 ;file \plugins\FavContacts\src\main.cpp
 [Favorite Contact]
 收藏联系人
 [Regular Contact]
-
+常规联系人
 [Favorites]
 收藏
 ;file \plugins\FavContacts\src\menu.cpp
@@ -60,16 +60,16 @@
 联系人
 ;file \plugins\FavContacts\src\services.cpp
 [Contact name]
-
+联系人名称
 [Second line]
 第二行
 [Selected contact name (color)]
-
+选中的联系人名称（颜色）
 [Selected second line (color)]
-
+选中的第二行（颜色）
 [Background]
 背景
 [Selected background]
 选中的背景
 [Show favorite contacts]
-
+显示收藏的联系人

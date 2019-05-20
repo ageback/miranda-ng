@@ -3275,16 +3275,24 @@ TopToolBar
 ;  Version: 0.9.9.2
 ;  Authors: Bartosz 'Dezeath' Białek
 ;============================================================
+[Provides the ability to quickly add new contacts.]
+提供快速添加新联系人的功能。
 [Add contact]
 添加联系人
+[Add a contact to your contact list]
+添加一个联系人到你的联系人列表
 [Account:]
 帐户：
+[Contact ID:]
+联系人 ID：
 [Custom name:]
 自定义名字：
 [Group:]
 分组：
 [Options]
 选项
+[Add temporarily]
+临时添加
 [Send authorization request]
 发送授权请求
 [Authorization request]
@@ -3297,8 +3305,18 @@ TopToolBar
 请授权我的请求并将我添加到您的联系人列表中。
 [None]
 无
+[The contact cannot be added to your contact list. Please make sure the contact ID is entered correctly.]
+联系人无法添加到您的联系人列表中。 请确保输入的联系人ID正确。
+[The contact cannot be added to your contact list. If you are not logged into the selected account, please try to do so. Also, make sure the contact ID is entered correctly.]
+联系人无法添加到您的联系人列表中。 如果您未登录所选帐户，请尝试这样做。 此外，请确保正确输入联系人ID。
+[&Add contact...]
+添加联系人(&A)...
+[Open add contact dialog]
+打开添加联系人对话框
 [Main]
 主
+[AddContact+]
+AddContact+
 #muuid {4dd7762b-d612-4f84-aa86-068f17859b6d}
 ;============================================================
 ;  File: Alarms.dll
@@ -3976,6 +3994,8 @@ XML 文件
 隐藏
 [Do nothing]
 啥都不干
+[Contact name]
+联系人名称
 [Contacts]
 联系人
 [Popups]
@@ -5865,20 +5885,74 @@ Yandex.Disk
 ;  Version: 0.0.7.4
 ;  Authors: Bio
 ;============================================================
+[Console log window for Miranda.]
+Miranda 的控制台日志窗口。
+[Console]
+控制台
+[Single window mode*]
+单窗口模式*
+[Show icons in log*]
+在日志中显示图标*
+[New lines between events*]
+事件之间的新行*
+[Always show at start]
+总是在开始显示
+[Lines wrap length [25-255]]
+换行长度[25-255]
+[Log size limit [1 000 - 1 000 000 lines]]
+日志大小限制[1000 - 1000000行]
+[* Restart needed]
+* 需要重启
+[Save settings and restart console]
+保存设置并重启控制台
 [Show/Hide Console]
 显示/隐藏控制台
 [Hide Console]
 隐藏控制台
 [Show Console]
 显示控制台
+[Scrolling (Ctrl+Q)]
+滚动（Ctrl+Q）
+[Pause logging (Ctrl+P)]
+暂停记录（Ctrl+P）
+[Save log to file (Ctrl+S)]
+保存日志到文件（Ctrl+S）
+[Copy selected log (Ctrl+C)]
+复制选中的日志（Ctrl+C）
+[Delete selected (Del)]
+删除选中（Del）
+[Log options (Ctrl+O)]
+日志选项（Ctrl+O）
+[Start logging in all tabs]
+在所有标签中开始记录
+[Pause logging in all tabs]
+在所有标签中暂停记录
+[Close tab (Ctrl+W)]
+关闭标签（Ctrl+W）
+[*** Console started ***]
+*** 控制台已开始 ***
+[*** Console paused ***]
+*** 控制台已暂停 ***
+[*** Console resumed ***]
+*** 控制台已恢复 ***
+[*** Console cleared ***]
+*** 控制台已清除 ***
+[Miranda Console]
+Miranda 控制台
 [Services]
 服务
 [Text]
 文字
 [Background]
 背景
+[Text Files (*.txt)]
+文本文件（*.txt）
 [All Files]
 所有文件
+[Save selection to file]
+保存选择到文件
+[Save log to file]
+保存日志到文件
 #muuid {0324785E-74CE-4600-B781-851773B3EFC5}
 ;============================================================
 ;  File: Contacts.dll
@@ -6874,34 +6948,68 @@ URL：
 ;  Version: 0.1.0.3
 ;  Authors: Victor Pavlychko
 ;============================================================
+[Favorite contacts menu.]
+收藏的联系人菜单。
 [Customize]
 自定义
 [Show second line]
 显示第二行
 [Show avatars]
 显示头像
+[Draw avatar border]
+绘制头像边框
 [Round corners by]
 圆角
+[px.]
+像素
+[Hide for transparent avatars]
+隐藏透明头像
+[Use system colors and fonts]
+使用系统颜色和字体
+[Hotkey shows menu centered on screen]
+在屏幕上居中显示菜单的热键
+[Menu item preview:]
+菜单项预览：
 [Favorite Contacts]
 收藏的联系人
 [Enable groups]
 启用分组
+[Multicolumn menu]
+多列菜单
+[Configure fonts and colors...]
+配置字体和颜色...
+[Align to the right]
+对齐到右侧
+[Dim idle contact icons]
+暗淡空闲联系人图标
 [Show]
 显示
 [recent contacts]
 最近的联系人
+[<no group>]
+<无分组>
 [Favorite Contact]
 收藏联系人
+[Regular Contact]
+常规联系人
 [Favorites]
 收藏
 [Contacts]
 联系人
+[Contact name]
+联系人名称
 [Second line]
 第二行
+[Selected contact name (color)]
+选中的联系人名称（颜色）
+[Selected second line (color)]
+选中的第二行（颜色）
 [Background]
 背景
 [Selected background]
 选中的背景
+[Show favorite contacts]
+显示收藏的联系人
 #muuid {34b5a402-1b79-4246-b041-43d0b590ae2c}
 ;============================================================
 ;  File: FileAsMessage.dll
@@ -13147,6 +13255,8 @@ OpenSSL 错误
 菜单
 [Enable]
 启用
+[Text Files (*.txt)]
+文本文件（*.txt）
 [All Files]
 所有文件
 [Open log file]
@@ -15250,6 +15360,44 @@ Upload Pie（1星期）
 ;  Version: 2.0.2.6
 ;  Authors: Stark Wong, Mataes, Mikel-Ard-Ri
 ;============================================================
+[Simple Auto Replier.]
+简单的自动回复程序。
+[Enable Auto Replier]
+启用自动回复程序
+[Reply Message Heading:]
+回复消息头：
+[Reply Message when]
+回复消息当
+[No-repeat Interval:]
+无重复间隔：
+[mins]
+分钟
+[&Default]
+默认(&D)
+[I am currently away. I will reply to you when I am back.]
+我现在离开了。 我回来的时候会回复你的。
+[I am currently very busy and can't spare any time to talk with you. Sorry...]
+我现在非常忙，不能随时与你交谈。 抱歉...
+[I am not available right now.]
+我现在不在。
+[I am now doing something, I will talk to you later.]
+我现在正在做某事，我稍后会和你对话。
+[I am on the phone right now. I will get back to you very soon.]
+我现在正打电话。我很快就会回复你。
+[I am having meal right now. I will get back to you very soon.]
+我正在吃饭。我很快就会回复你。
+[Disable Auto&reply]
+禁用自动回复(&R)
+[Enable Auto&reply]
+启用自动回复(&R)
+[Turn off Autoanswer]
+关闭自动应答
+[Turn on Autoanswer]
+开启自动应答
+[Dear %user%, the owner left the following message:]
+亲爱的 %user%，所有者留下了以下消息：
+[Simple Auto Replier]
+简单自动回复程序
 [Message sessions]
 消息会话
 #muuid {768ce156-34ac-45a3-b53b-0083c47615c4}

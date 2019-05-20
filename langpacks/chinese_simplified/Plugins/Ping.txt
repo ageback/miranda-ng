@@ -103,7 +103,7 @@
 
 ;file \plugins\Ping\src\options.cpp
 [Text Files (*.txt)]
-
+文本文件（*.txt）
 [All Files]
 所有文件
 [Open log file]

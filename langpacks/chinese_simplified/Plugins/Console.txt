@@ -6,26 +6,26 @@
 ;  Authors: Bio
 ;============================================================
 [Console log window for Miranda.]
-
+Miranda 的控制台日志窗口。
 ;file \plugins\Console\res\resource.rc
 [Console]
-
+控制台
 [Single window mode*]
-
+单窗口模式*
 [Show icons in log*]
-
+在日志中显示图标*
 [New lines between events*]
-
+事件之间的新行*
 [Always show at start]
-
+总是在开始显示
 [Lines wrap length [25-255]]
-
+换行长度[25-255]
 [Log size limit [1 000 - 1 000 000 lines]]
-
+日志大小限制[1000 - 1000000行]
 [* Restart needed]
-
+* 需要重启
 [Save settings and restart console]
-
+保存设置并重启控制台
 ;file \plugins\Console\src\Console.cpp
 [Show/Hide Console]
 显示/隐藏控制台
@@ -34,33 +34,33 @@
 [Show Console]
 显示控制台
 [Scrolling (Ctrl+Q)]
-
+滚动（Ctrl+Q）
 [Pause logging (Ctrl+P)]
-
+暂停记录（Ctrl+P）
 [Save log to file (Ctrl+S)]
-
+保存日志到文件（Ctrl+S）
 [Copy selected log (Ctrl+C)]
-
+复制选中的日志（Ctrl+C）
 [Delete selected (Del)]
-
+删除选中（Del）
 [Log options (Ctrl+O)]
-
+日志选项（Ctrl+O）
 [Start logging in all tabs]
-
+在所有标签中开始记录
 [Pause logging in all tabs]
-
+在所有标签中暂停记录
 [Close tab (Ctrl+W)]
-
+关闭标签（Ctrl+W）
 [*** Console started ***]
-
+*** 控制台已开始 ***
 [*** Console paused ***]
-
+*** 控制台已暂停 ***
 [*** Console resumed ***]
-
+*** 控制台已恢复 ***
 [*** Console cleared ***]
-
+*** 控制台已清除 ***
 [Miranda Console]
-
+Miranda 控制台
 [Services]
 服务
 [Text]
@@ -68,10 +68,10 @@
 [Background]
 背景
 [Text Files (*.txt)]
-
+文本文件（*.txt）
 [All Files]
 所有文件
 [Save selection to file]
-
+保存选择到文件
 [Save log to file]
-
+保存日志到文件

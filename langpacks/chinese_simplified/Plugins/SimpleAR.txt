@@ -6,45 +6,45 @@
 ;  Authors: Stark Wong, Mataes, Mikel-Ard-Ri
 ;============================================================
 [Simple Auto Replier.]
-
+简单的自动回复程序。
 ;file \plugins\SimpleAR\res\Resource.rc
 [Enable Auto Replier]
-
+启用自动回复程序
 [Reply Message Heading:]
-
+回复消息头：
 [Reply Message when]
-
+回复消息当
 [No-repeat Interval:]
-
+无重复间隔：
 [mins]
-
+分钟
 [&Default]
-
+默认(&D)
 ;file \plugins\SimpleAR\src\Main.cpp
 [I am currently away. I will reply to you when I am back.]
-
+我现在离开了。 我回来的时候会回复你的。
 [I am currently very busy and can't spare any time to talk with you. Sorry...]
-
+我现在非常忙，不能随时与你交谈。 抱歉...
 [I am not available right now.]
-
+我现在不在。
 [I am now doing something, I will talk to you later.]
-
+我现在正在做某事，我稍后会和你对话。
 [I am on the phone right now. I will get back to you very soon.]
-
+我现在正打电话。我很快就会回复你。
 [I am having meal right now. I will get back to you very soon.]
-
+我正在吃饭。我很快就会回复你。
 [Disable Auto&reply]
-
+禁用自动回复(&R)
 [Enable Auto&reply]
-
+启用自动回复(&R)
 [Turn off Autoanswer]
-
+关闭自动应答
 [Turn on Autoanswer]
-
+开启自动应答
 [Dear %user%, the owner left the following message:]
-
+亲爱的 %user%，所有者留下了以下消息：
 ;file \plugins\SimpleAR\src\Options.cpp
 [Simple Auto Replier]
-
+简单自动回复程序
 [Message sessions]
 消息会话
