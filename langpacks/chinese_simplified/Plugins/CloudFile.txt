@@ -6,42 +6,69 @@
 ;  Authors: Miranda NG team
 ;============================================================
 [Allows you to transfer files via cloud services.]
+允许你通过云服务上传文件。
 ;file \protocols\CloudFile\res\resource.rc
 [Default service]
+默认服务
 [General]
+通用
 [Autosend download link to contact]
+自动发送下载链接给联系人
 [Paste download link into message input area]
+粘贴下载链接到消息输入区域
 [Copy download link to clipboard]
+复制下载链接到剪贴板
 [Download link]
+下载链接
 [Do nothing]
+啥都不干
 [Try to rename]
+尝试重命名
 [Try to replace]
+尝试替换
 [On conflict when upload]
+当上传有冲突时
 [Authorization]
+授权
 [Cancel]
+取消
 [Enter authorization code:]
+输入授权码：
 [To allow Miranda NG access to %s:]
+以允许 Miranda NG 访问到 %s：
 [Go to this link]
+转到此链接
 [Request access]
+请求访问
 [Revoke access]
+收回访问
 ;file \protocols\CloudFile\src\icons.cpp
 [Upload file(s)]
+上传文件
 [Dropbox]
+Dropbox
 [Google Drive]
+Google Driver
 [OneDrive]
+OneDrive
 [Yandex.Disk]
+Yandex.Disk
 ;file \protocols\CloudFile\src\menus.cpp
 [Upload to...]
+上传到
 [Upload]
+上传
 ;file \protocols\CloudFile\src\options.cpp
 [None]
+无
 [Services]
+服务
 ;file \protocols\CloudFile\src\srmm.cpp
 [Upload files to...]
+上传文件到...
 ;file \protocols\CloudFile\src\Services\dropbox_service.cpp
 [Server does not respond]
+服务器无响应
 ;file \protocols\CloudFile\src\Services\google_service.cpp
 ;file \protocols\CloudFile\src\Services\microsoft_service.cpp
 ;file \protocols\CloudFile\src\Services\yandex_service.cpp
-
-

@@ -6,43 +6,76 @@
 ;  Authors: Petr Smejkal
 ;============================================================
 [Watches IP address changes, displays popups, and adjusts the proxy settings of Miranda, Internet Explorer and Firefox.]
+监视 IP 地址更改，显示弹出窗口，并调整 Miranda，Internet Explorer 和 Firefox 的代理设置。
 ;file \plugins\ProxySwitch\res\resource.rc
 [Network addresses]
+网络地址
 [Direct connection]
+直接连接
 [Use proxy]
+使用代理
 [General]
+通用
 [Manage Miranda NG proxy]
+管理 Miranda NG 代理
 [Manage Internet Explorer proxy]
+管理 Internet Explorer 代理
 [Manage Firefox proxy]
+管理 Firefox 代理
 [Reconnect if IP address changes]
+如果 IP 地址改变就重新连接
 [Hide interfaces]
+隐藏接口
 [Popup options]
+弹出窗口选项
 [Enable popups]
+启用弹出窗口
 [Text color]
+文字颜色
 [Background color]
+背景色
 [Use default popup colors]
+使用默认弹出窗口颜色
 [Show proxy status on change]
+改变时显示代理状态
 [Restart of Miranda NG is required.]
+需要重启 Miranda NG.
 [Enter semicolon (;) separated list of IP network addresses in any of the formats below:\n\tIP/bits\t(10.0.0.1/24)\t\tIP/mask\t(10.0.0.1/255.255.255.0)\n\tIP1-2\t(10.0.0.1-50)\t\tIP1-IP2\t(10.0.0.1-10.0.2.255)]
+以下列任何格式输入以分号（;）分隔的IP网络地址列表：\n\tIP/位\t（10.0.0.1/24）\t\tIP/掩码\t（10.0.0.1/255.255.255.0）\n\tIP1-2\t（10.0.0.1-50）\t\tIP1-IP2\t（10.0.0.1-10.0.2.255）
 [Any entry in the 'Use proxy' list can be prefixed by an exclamation mark (!) to increase its priority. Entries with wrong syntax will be ignored. The plugin checks the IP addresses in the following way:]
+“使用代理”列表中的任何条目都可以使用感叹号（！）作为前缀，以提高其优先级。 语法错误的条目将被忽略。 该插件以下列方式检查IP地址：
 [\t1) Use proxy if any interface has prioritized 'Use proxy' address\n\t2) Don't use proxy if any interface has 'Direct connection' address\n\t3) Use proxy if any interface has 'Use proxy' address\n\t4) Do nothing if unknown or no address found]
+\t1）如果任何接口优先'使用代理'地址，则使用代理\n\t2）如果任何接口具有“直接连接”地址，则不要使用代理\n\t3）如果任何接口具有“使用代理”，请使用代理地址\n\t4）如果发现未知或没有地址，则不执行任何操作
 [Cancel]
+取消
 ;file \plugins\ProxySwitch\src\ip.cpp
 [Proxy]
+代理
 [Direct]
+直接
 [disconnected]
+断开连接
 ;file \plugins\ProxySwitch\src\main.cpp
 [Current IP address]
+当前 IP 地址
 [Enable &IP change notification]
+启用 &IP 改变通知
 [Disable &IP change notification]
+禁用 &IP 改变通知
 [Show my &IP addresses]
+显示我的 &IP 地址
 [Proxy settings && interfaces]
+代理设置和接口
 [Disable proxy]
+禁用代理
 [Enable proxy]
+启用代理
 [Popups]
+弹出窗口
 [IP change notification]
+IP 变更通知
 ;file \plugins\ProxySwitch\src\opt.cpp
 [Services]
+服务
 [ProxySwitch]
-
-
+代理切换

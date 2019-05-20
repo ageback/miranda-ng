@@ -3390,6 +3390,35 @@ AddContact+
 错误
 [Events]
 事件
+#muuid {0F6C73B4-2B2B-711D-FBB6-BB267DFD7208}
+;============================================================
+;  File: AsSingleWindow.dll
+;  Plugin: AsSingleWindow
+;  Version: 0.1.2.2
+;  Authors: Aleksey Smyrnov aka Soar
+;============================================================
+[Allows you to move, minimize and activate Miranda's windows as if it were a single window.]
+允许您移动，最小化和激活Miranda的窗口，就像它是一个窗口一样。
+[Windows moving]
+窗口移动
+[Contact list on the left]
+联系人列表在左侧
+[Contact list on the right]
+联系人列表在右侧
+[Don't merge windows]
+不要合并窗口
+[At opening one more message window]
+再打开一个消息窗口
+[Merge windows in opening order]
+按开启顺序合并窗口
+[Merge only first window]
+仅合并第一个窗口
+[Don't merge windows until closing]
+关闭之前不要合并窗口
+[AsSingleWindow]
+作为单一窗口
+[Customize]
+自定义
 #muuid {52685cd7-0ec7-44c1-a1a6-381612418202}
 ;============================================================
 ;  File: AssocMgr.dll
@@ -5782,6 +5811,71 @@ Angeli-Ka（绘图），FYR（模板）
 冲撞
 [Etched]
 蚀刻
+#muuid {e876fe63-0701-4cda-bed5-7c73a379c1d1}
+;============================================================
+;  File: CloudFile.dll
+;  Plugin: CloudFile
+;  Version: 0.11.0.6
+;  Authors: Miranda NG team
+;============================================================
+[Allows you to transfer files via cloud services.]
+允许你通过云服务上传文件。
+[Default service]
+默认服务
+[General]
+通用
+[Autosend download link to contact]
+自动发送下载链接给联系人
+[Paste download link into message input area]
+粘贴下载链接到消息输入区域
+[Copy download link to clipboard]
+复制下载链接到剪贴板
+[Download link]
+下载链接
+[Do nothing]
+啥都不干
+[Try to rename]
+尝试重命名
+[Try to replace]
+尝试替换
+[On conflict when upload]
+当上传有冲突时
+[Authorization]
+授权
+[Cancel]
+取消
+[Enter authorization code:]
+输入授权码：
+[To allow Miranda NG access to %s:]
+以允许 Miranda NG 访问到 %s：
+[Go to this link]
+转到此链接
+[Request access]
+请求访问
+[Revoke access]
+收回访问
+[Upload file(s)]
+上传文件
+[Dropbox]
+Dropbox
+[Google Drive]
+Google Driver
+[OneDrive]
+OneDrive
+[Yandex.Disk]
+Yandex.Disk
+[Upload to...]
+上传到
+[Upload]
+上传
+[None]
+无
+[Services]
+服务
+[Upload files to...]
+上传文件到...
+[Server does not respond]
+服务器无响应
 #muuid {2f1a117c-3c1b-4c01-89ea-6d8fd85a9b4c}
 ;============================================================
 ;  File: CmdLine.dll
@@ -6195,6 +6289,71 @@ GnuPG插件 - 选择公钥
 清除
 [Set]
 设置
+#muuid {e882056d-0d1d-4131-9a98-404cbaea6a9c}
+;============================================================
+;  File: CurrencyRates.dll
+;  Plugin: Currency Rates
+;  Version: 0.2.0.3
+;  Authors: Dioksin
+;============================================================
+[Variable List]
+变量列表
+[Edit Settings]
+编辑设置
+[Log]
+日志
+[&Format:]
+格式(&F)：
+[Cancel]
+取消
+[Convert]
+转换
+[Close]
+关闭
+[Colors]
+颜色
+[Use default colors]
+使用默认颜色
+[Background color]
+背景色
+[Text color]
+文字颜色
+[Delay]
+延时
+[From popup plugin]
+来自弹出窗口插件
+[Custom]
+自定义
+[Permanent]
+永久
+[Preview]
+预览
+[&Add]
+添加(&A)
+[&Remove]
+移除(&R)
+[Seconds]
+秒
+[Minutes]
+分
+[Hours]
+小时
+[Auto Update Enabled]
+自动更新启用
+[Auto Update Disabled]
+自动更新禁用
+[Enable/Disable Auto Update]
+启用/禁用自动更新
+[Refresh]
+刷新
+[Network]
+网络
+[Protocol icon]
+协议图标
+[Export]
+导出
+[Import]
+导入
 #muuid {bcec0bd7-ca59-44b2-9a14-3a14980f524a}
 ;============================================================
 ;  File: CyrTranslit.dll
@@ -6535,6 +6694,27 @@ Unicode 设置
 *** 居民 ***
 [Database Setting Changed: \nModule: "%s", Setting: "%s"\nNew Value (%s): "%s"]
 数据库设置变更：\n模块：%s，设置：“%s”\n新值（%s）：“%s”
+#muuid {7c3d0a33-2646-4001-9107-f35ea299d292}
+;============================================================
+;  File: Dbx_mdbx.dll
+;  Plugin: Miranda NG MDBX database driver
+;  Version: 0.95.9.1
+;  Authors: Miranda-NG project
+;============================================================
+[Cancel]
+取消
+[Change password]
+更改密码：
+[Change]
+更改
+[Remove]
+移除
+[Database]
+数据库
+[Compact]
+压缩
+[Password]
+密码
 #muuid {f7a6b27c-9d9c-4a42-be86-a448ae109161}
 ;============================================================
 ;  File: Dbx_mmap.dll
@@ -6554,6 +6734,21 @@ Unicode 设置
 密码
 [Database]
 数据库
+#muuid {da223468-5f8e-4513-88b0-e52ce8a8b33b}
+;============================================================
+;  File: Dbx_sqlite.dll
+;  Plugin: Miranda NG SQLite database driver
+;  Version: 0.95.10.2
+;  Authors: Miranda-NG project
+;============================================================
+[Cancel]
+取消
+[Change password]
+更改密码：
+[Change]
+更改
+[Remove]
+移除
 #muuid {81c220a6-0226-4ad6-bfca-217b17a16053}
 ;============================================================
 ;  File: Db_autobackups.dll
@@ -6663,6 +6858,41 @@ Miranda 的根目录路径
 选择备份文件夹
 [Miranda NG [%s] database backup]
 Miranda NG [%s] 数据库备份
+#muuid {88928401-2ce8-4568-aaa7-226141870cbf}
+;============================================================
+;  File: Discord.dll
+;  Plugin: Discord protocol
+;  Version: 0.6.2.1
+;  Authors: George Hazan
+;============================================================
+[User details]
+用户详情
+[E-mail:]
+电子邮件：
+[Password:]
+密码：
+[Contacts]
+联系人
+[Do not open chat windows on creation]
+不要在创建时打开聊天窗口
+[Nick:]
+昵称：
+[Change &nickname]
+更改昵称(&N)
+[Main icon]
+主图标
+[Group chats]
+分组聊天
+[Network]
+网络
+[Account]
+帐户
+[%s server connection]
+%s 服务器连接
+[User ID]
+用户 ID
+[Preview]
+预览
 #muuid {2a1081d1-aee3-4091-b70d-ae46d09f9a7f}
 ;============================================================
 ;  File: Dummy.dll
@@ -13778,6 +14008,83 @@ Popup plus 警告
 弹出窗口模式：全屏
 [Popup Mode: Block contact]
 弹出窗口模式：阻止联系人
+#muuid {4df0c267-6efb-4410-b651-385f87158509}
+;============================================================
+;  File: ProxySwitch.dll
+;  Plugin: ProxySwitch
+;  Version: 1.0.0.1
+;  Authors: Petr Smejkal
+;============================================================
+[Watches IP address changes, displays popups, and adjusts the proxy settings of Miranda, Internet Explorer and Firefox.]
+监视 IP 地址更改，显示弹出窗口，并调整 Miranda，Internet Explorer 和 Firefox 的代理设置。
+[Network addresses]
+网络地址
+[Direct connection]
+直接连接
+[Use proxy]
+使用代理
+[General]
+通用
+[Manage Miranda NG proxy]
+管理 Miranda NG 代理
+[Manage Internet Explorer proxy]
+管理 Internet Explorer 代理
+[Manage Firefox proxy]
+管理 Firefox 代理
+[Reconnect if IP address changes]
+如果 IP 地址改变就重新连接
+[Hide interfaces]
+隐藏接口
+[Popup options]
+弹出窗口选项
+[Enable popups]
+启用弹出窗口
+[Text color]
+文字颜色
+[Background color]
+背景色
+[Use default popup colors]
+使用默认弹出窗口颜色
+[Show proxy status on change]
+改变时显示代理状态
+[Restart of Miranda NG is required.]
+需要重启 Miranda NG.
+[Enter semicolon (;) separated list of IP network addresses in any of the formats below:\n\tIP/bits\t(10.0.0.1/24)\t\tIP/mask\t(10.0.0.1/255.255.255.0)\n\tIP1-2\t(10.0.0.1-50)\t\tIP1-IP2\t(10.0.0.1-10.0.2.255)]
+以下列任何格式输入以分号（;）分隔的IP网络地址列表：\n\tIP/位\t（10.0.0.1/24）\t\tIP/掩码\t（10.0.0.1/255.255.255.0）\n\tIP1-2\t（10.0.0.1-50）\t\tIP1-IP2\t（10.0.0.1-10.0.2.255）
+[Any entry in the 'Use proxy' list can be prefixed by an exclamation mark (!) to increase its priority. Entries with wrong syntax will be ignored. The plugin checks the IP addresses in the following way:]
+“使用代理”列表中的任何条目都可以使用感叹号（！）作为前缀，以提高其优先级。 语法错误的条目将被忽略。 该插件以下列方式检查IP地址：
+[\t1) Use proxy if any interface has prioritized 'Use proxy' address\n\t2) Don't use proxy if any interface has 'Direct connection' address\n\t3) Use proxy if any interface has 'Use proxy' address\n\t4) Do nothing if unknown or no address found]
+\t1）如果任何接口优先'使用代理'地址，则使用代理\n\t2）如果任何接口具有“直接连接”地址，则不要使用代理\n\t3）如果任何接口具有“使用代理”，请使用代理地址\n\t4）如果发现未知或没有地址，则不执行任何操作
+[Cancel]
+取消
+[Proxy]
+代理
+[Direct]
+直接
+[disconnected]
+断开连接
+[Current IP address]
+当前 IP 地址
+[Enable &IP change notification]
+启用 &IP 改变通知
+[Disable &IP change notification]
+禁用 &IP 改变通知
+[Show my &IP addresses]
+显示我的 &IP 地址
+[Proxy settings && interfaces]
+代理设置和接口
+[Disable proxy]
+禁用代理
+[Enable proxy]
+启用代理
+[Popups]
+弹出窗口
+[IP change notification]
+IP 变更通知
+[Services]
+服务
+[ProxySwitch]
+代理切换
 #muuid {f93ba59c-4f48-4f2e-8a91-77a2801527a3}
 ;============================================================
 ;  File: QuickContacts.dll

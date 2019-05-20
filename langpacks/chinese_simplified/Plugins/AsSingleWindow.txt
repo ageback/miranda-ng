@@ -6,17 +6,26 @@
 ;  Authors: Aleksey Smyrnov aka Soar
 ;============================================================
 [Allows you to move, minimize and activate Miranda's windows as if it were a single window.]
+允许您移动，最小化和激活Miranda的窗口，就像它是一个窗口一样。
 ;file \plugins\AsSingleWindow\res\optionsPage.rc
 [Windows moving]
+窗口移动
 [Contact list on the left]
+联系人列表在左侧
 [Contact list on the right]
+联系人列表在右侧
 [Don't merge windows]
+不要合并窗口
 [At opening one more message window]
+再打开一个消息窗口
 [Merge windows in opening order]
+按开启顺序合并窗口
 [Merge only first window]
+仅合并第一个窗口
 [Don't merge windows until closing]
+关闭之前不要合并窗口
 ;file \plugins\AsSingleWindow\src\Options.cpp
 [AsSingleWindow]
+作为单一窗口
 [Customize]
-
-
+自定义
