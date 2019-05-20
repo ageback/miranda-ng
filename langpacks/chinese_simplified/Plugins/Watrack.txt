@@ -432,7 +432,7 @@
 [Status Template]
 
 [xStatus Title]
-
+xStatus 标题
 ['mono' / 'stereo']
 
 [- "mono" / "stereo"]

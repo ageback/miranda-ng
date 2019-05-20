@@ -207,7 +207,6 @@
 [/me listening "%title%"]
 [Report file name not defined]
 [Status Template]
-[xStatus Title]
 ['mono' / 'stereo']
 [- "mono" / "stereo"]
 [- artist]

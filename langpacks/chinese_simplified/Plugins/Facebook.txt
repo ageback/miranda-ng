@@ -23,7 +23,7 @@
 [Text:]
 文字：
 [URL:]
-
+URL：
 [Place:]
 
 [Contacts >>]
@@ -309,9 +309,9 @@
 
 ;file \protocols\FacebookRM\src\proto.cpp
 [%s server connection]
-
+%s 服务器连接
 [Unable to initialize Netlib for %s.]
-
+无法为%s初始化Netlib。
 [Video call]
 
 [Facebook ID must be numeric value.]

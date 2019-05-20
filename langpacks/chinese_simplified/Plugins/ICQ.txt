@@ -83,7 +83,7 @@
 
 ;file \protocols\ICQ-WIM\src\proto.cpp
 [%s server connection]
-
+%s 服务器连接
 [Synchronize server groups]
 
 [Edit ignore list]

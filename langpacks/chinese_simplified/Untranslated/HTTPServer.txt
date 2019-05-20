@@ -22,7 +22,6 @@
 [No control when Away or Not available]
 [Connection control]
 [Index creation]
-[Disable]
 [Create HTML (compatibility)]
 [Create XML]
 [Total connection limit]

@@ -373,7 +373,7 @@ XStatus：
 [Time:]
 时间：
 [xStatus title]
-
+xStatus 标题
 [xStatus title:]
 
 [xStatus text]

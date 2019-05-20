@@ -21,7 +21,7 @@
 [Password:]
 密码：
 [Server:]
-
+服务器：
 [Preferences]
 
 [Check every]

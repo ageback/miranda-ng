@@ -85,7 +85,7 @@
 帐户
 ;file \protocols\Discord\src\proto.cpp
 [%s server connection]
-
+%s 服务器连接
 [%s gateway connection]
 
 [User ID]

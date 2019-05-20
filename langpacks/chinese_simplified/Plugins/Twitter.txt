@@ -9,7 +9,7 @@
 
 ;file \protocols\Twitter\res\twitter.rc
 [Server:]
-
+服务器：
 [Create a new Twitter account]
 
 [Default group:]
@@ -82,9 +82,9 @@
 
 ;file \protocols\Twitter\src\proto.cpp
 [%s server connection]
-
+%s 服务器连接
 [Unable to initialize Netlib for %s.]
-
+无法为%s初始化Netlib。
 [%s avatar connection]
 
 [Twitter (avatars)]

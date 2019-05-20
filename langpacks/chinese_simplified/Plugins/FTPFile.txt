@@ -39,7 +39,7 @@ URL
 [Copy download link to message log]
 
 [Autosend download link to contact]
-
+自动发送下载链接给联系人
 [Menu items]
 菜单项
 [Use submenu (restart required)]
@@ -83,7 +83,7 @@ URL
 [File Manager]
 
 [Server:]
-
+服务器：
 [User info]
 
 [UPLOADING...]
@@ -159,7 +159,7 @@ FTP 文件
 [FTP Server %d]
 
 [Upload file(s)]
-
+上传文件
 [Zip and upload file(s)]
 
 [Zip and upload folder]

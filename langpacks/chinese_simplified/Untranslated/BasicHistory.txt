@@ -60,7 +60,6 @@
 [%s files (*.%s)]
 [File does not contain selected contact]
 [File is corrupted]
-[This operation will PERMANENTLY REMOVE all history for this contact.\nAre you sure you want to do this?]
 [Do you want to delete all imported messages for this contact?\nNote that next scheduler task import this messages again.]
 [Reply &quoted]
 [Rich HTML]

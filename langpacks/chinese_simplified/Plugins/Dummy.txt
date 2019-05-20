@@ -40,7 +40,7 @@
 [Nickname]
 昵称
 [Visible name]
-
+可见名称
 [E-mail address]
 电子邮件地址
 [Live ID]

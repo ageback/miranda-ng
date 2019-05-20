@@ -6,18 +6,18 @@
 ;  Authors: H. Herkenrath
 ;============================================================
 [Service offering misc country utilities as flag icons and an IP-to-Country database.]
-
+服务提供misc国家公用事业作为标志图标和IP到国家数据库。
 ;file \plugins\CountryFlags\res\resource.rc
 [Country Flags]
 国旗
 [Show country flag as &status icon on message window]
 在消息窗口中将国旗显示为状态图标(&S)
 [Show country flag as &extra image on contact list]
-
+在联系人列表上将国旗显示为额外图像(&E)
 [Use &IP-to-country database for country detection]
-
+使用和IP到国家数据库进行国家检测(&I)
 [Use &unknown flag if the country cannot be determined]
-
+如果无法确定国家，使用未知标志
 ;file \plugins\CountryFlags\src\extraimg.cpp
 [Country flag]
 国旗

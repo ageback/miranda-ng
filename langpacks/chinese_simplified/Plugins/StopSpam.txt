@@ -19,7 +19,7 @@
 [Auth. request reply:]
 
 [Divider:]
-
+分隔器：
 [Vars]
 
 [Disable protection for following accounts:]

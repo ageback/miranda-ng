@@ -23,7 +23,6 @@
 [Copy Discord ID]
 [Enable guild sync]
 [Load server history]
-[%s server connection]
 [%s gateway connection]
 [Protocol is offline or user isn't authorized yet]
 [Attachment]

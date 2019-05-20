@@ -3377,6 +3377,26 @@ TopToolBar
 ;  Version: 0.1.2.2
 ;  Authors: Aleksey Smyrnov aka Soar
 ;============================================================
+[Allows you to move, minimize and activate Miranda's windows as if it were a single window.]
+允许您移动，最小化和激活Miranda的窗口，就像它是一个窗口一样。
+[Windows moving]
+窗口移动
+[Contact list on the left]
+联系人列表在左侧
+[Contact list on the right]
+联系人列表在右侧
+[Don't merge windows]
+不要合并窗口
+[At opening one more message window]
+再打开一个消息窗口
+[Merge windows in opening order]
+按开启顺序合并窗口
+[Merge only first window]
+仅合并第一个窗口
+[Don't merge windows until closing]
+关闭之前不要合并窗口
+[AsSingleWindow]
+作为单一窗口
 [Customize]
 自定义
 #muuid {52685cd7-0ec7-44c1-a1a6-381612418202}
@@ -3401,8 +3421,30 @@ TopToolBar
 ;  Version: 0.0.2.1
 ;  Authors: Thief, idea by snwbrdr
 ;============================================================
+[If a contact didn't authorize you, this plugin puts an icon in front of the contact's name.]
+如果联系人未授权您，则此插件会在联系人姓名前面添加一个图标。
+[Show Request icon]
+显示请求图标
+[Show Grant icon]
+显示批准图标
 [Plugin settings]
 插件设置
+[Enable menu item]
+启用菜单项
+[Show icons only for recently added contacts]
+仅为最近添加的联系人显示图标
+[Request]
+请求
+[Grant]
+批准
+[Request & Grant]
+请求和批准
+[Disable AuthState icons]
+禁用认证状态图标
+[Enable AuthState icons]
+启用认证状态图标
+[Auth state]
+认证状态
 [Icons]
 图标
 #muuid {eb0465e2-ceee-11db-83ef-c1bf55d89593}
@@ -3504,6 +3546,8 @@ TopToolBar
 头像
 [Popups]
 弹出窗口
+[Unknown protocol]
+未知协议
 #muuid {e00f1643-263c-4599-b84b-053e5c511d29}
 ;============================================================
 ;  File: AVS.dll
@@ -3700,6 +3744,8 @@ XML 文件
 导入
 [Export]
 导出
+[This operation will PERMANENTLY REMOVE all history for this contact.\nAre you sure you want to do this?]
+此操作将永久删除此联系人的所有历史记录。\ n您确定要执行此操作吗？
 [Are you sure?]
 你确定吗？
 [Open in &new window]
@@ -4074,6 +4120,8 @@ XML 文件
 ;  Version: 0.8.1.1
 ;  Authors: Ricardo Pescuma Domenecci, based on previous work from Miranda IM project
 ;============================================================
+[A contact list for blind folks.]
+为盲人设计的联系人列表
 [Delete contact]
 删除联系人
 [Are you sure you want to delete %s?]
@@ -4090,6 +4138,18 @@ XML 文件
 使用 选项 - >通讯录 - >忽略 来取消隐藏联系人。
 [Hotkeys]
 热键
+[Show/Hide:]
+显示/隐藏：
+[Read message:]
+阅读消息：
+[Web search:]
+网页搜索：
+[URL:]
+URL：
+[Open in new browser window]
+在新浏览器窗口中打开
+[Show options]
+显示选项
 [Hide offline users]
 隐藏离线用户
 [Hide empty groups]
@@ -4192,8 +4252,14 @@ XML 文件
 仅在打开的分组中快速搜索
 [Templates]
 模板
+[Contact:]
+联系人：
 [Group:]
 分组：
+[Divider:]
+分隔器：
+[Info:]
+信息：
 [Status bar]
 状态栏
 [Show status bar]
@@ -4236,10 +4302,22 @@ XML 文件
 外出吃饭
 [On the phone]
 在打电话
+[Group: %name% %count% [%mode%]]
+分组：%name% %count% [%mode%]
+[Divider: %s]
+分隔器：%s
+[Info: %s]
+信息：%s
 [List]
 列表
 [Global]
 全局
+[Unknown protocol]
+未知协议
+[Expanded]
+扩展
+[Collapsed]
+收缩
 #muuid {043909b6-aad8-4d82-8eb5-9f64cfe867cd}
 ;============================================================
 ;  File: Clist_modern.dll
@@ -5624,20 +5702,64 @@ Angeli-Ka（绘图），FYR（模板）
 ;  Version: 0.11.0.6
 ;  Authors: Miranda NG team
 ;============================================================
+[Allows you to transfer files via cloud services.]
+允许你通过云服务上传文件。
+[Default service]
+默认服务
 [General]
 通用
+[Autosend download link to contact]
+自动发送下载链接给联系人
+[Paste download link into message input area]
+粘贴下载链接到消息输入区域
+[Copy download link to clipboard]
+复制下载链接到剪贴板
+[Download link]
+下载链接
 [Do nothing]
 啥都不干
+[Try to rename]
+尝试重命名
+[Try to replace]
+尝试替换
+[On conflict when upload]
+当上传有冲突时
 [Authorization]
 授权
 [Cancel]
 取消
+[Enter authorization code:]
+输入授权码：
+[To allow Miranda NG access to %s:]
+以允许 Miranda NG 访问到 %s：
+[Go to this link]
+转到此链接
+[Request access]
+请求访问
+[Revoke access]
+收回访问
+[Upload file(s)]
+上传文件
+[Dropbox]
+Dropbox
+[Google Drive]
+Google Driver
+[OneDrive]
+OneDrive
+[Yandex.Disk]
+Yandex.Disk
+[Upload to...]
+上传到
 [Upload]
 上传
 [None]
 无
 [Services]
 服务
+[Upload files to...]
+上传文件到...
+[Server does not respond]
+服务器无响应
 #muuid {2f1a117c-3c1b-4c01-89ea-6d8fd85a9b4c}
 ;============================================================
 ;  File: CmdLine.dll
@@ -5662,18 +5784,34 @@ Angeli-Ka（绘图），FYR（模板）
 ;  Version: 0.1.0.5
 ;  Authors: MaKaR
 ;============================================================
+[Notify with popup if some connection established]
+如果建立了一些连接，则通过弹出窗口通知
+[Set popup colors]
+设置弹出窗口颜色
 [Popup options]
 弹出窗口选项
 [Background]
 背景
 [Text]
 文字
+[Close after:]
+关闭于此后：
+[sec (0 default, -1 disabled)]
+秒（0 默认，-1 禁用）
 [Settings]
 设置
+[try resolve addresses]
+尝试解析地址
 [Version:]
 版本：
+[Show notification if no filter defined]
+如果没有定义过滤器则显示通知
+[Attempt interval (ms)]
+尝试间隔（毫秒）
 [Delete]
 删除
+['Online' means:]
+“在线”表示：
 [Filters]
 过滤器
 [Move down]
@@ -5682,18 +5820,44 @@ Angeli-Ka（绘图），FYR（模板）
 上移
 [Add]
 添加
+[Rule editor]
+规则编辑器
+[Application name]
+应用程序名称
+[Local IP:Port]
+本地 IP:端口
+[Action:]
+动作：
 [Cancel]
 取消
+[* and ? wildcard characters also available (for port enter number or *)]
+* 和 ? 通配符也可用（输入端口号或 *）
+[Remote IP:Port]
+远程 IP:端口
 [Show]
 显示
 [Hide]
 隐藏
+[Always show popup]
+总是显示弹出窗口
+[Never show popup]
+从不显示弹出窗口
 [Status]
 状态
+[Application]
+应用程序
+[Internal socket]
+内部插座
+[External socket]
+外部插座
 [Action]
 动作
 [Plugins]
 插件
+[New Connection Notification]
+新连接通知
+[First close options window]
+先关闭选项窗口
 #muuid {23d4f302-d513-45b7-9027-445f29557311}
 ;============================================================
 ;  File: Console.dll
@@ -6553,6 +6717,8 @@ Miranda NG [%s] 数据库备份
 网络
 [Account]
 帐户
+[%s server connection]
+%s 服务器连接
 [User ID]
 用户 ID
 [Preview]
@@ -6570,6 +6736,8 @@ Miranda NG [%s] 数据库备份
 用户 ID
 [Nickname]
 昵称
+[Visible name]
+可见名称
 [E-mail address]
 电子邮件地址
 [Username]
@@ -6614,6 +6782,8 @@ E-mage LAN 协议
 用户名：
 [Password:]
 密码：
+[Server:]
+服务器：
 [Check every]
 检查每
 [seconds]
@@ -6635,6 +6805,8 @@ E-mage LAN 协议
 密码：
 [Text:]
 文字：
+[URL:]
+URL：
 [Cancel]
 取消
 [User details]
@@ -6669,6 +6841,10 @@ E-mage LAN 协议
 文件
 [%s is typing a message...]
 %s 正在输入消息...
+[%s server connection]
+%s 服务器连接
+[Unable to initialize Netlib for %s.]
+无法为%s初始化Netlib。
 [Network]
 网络
 [Account]
@@ -6775,10 +6951,18 @@ E-mage LAN 协议
 ;  Version: 0.1.0.4
 ;  Authors: H. Herkenrath
 ;============================================================
+[Service offering misc country utilities as flag icons and an IP-to-Country database.]
+服务提供misc国家公用事业作为标志图标和IP到国家数据库。
 [Country Flags]
 国旗
 [Show country flag as &status icon on message window]
 在消息窗口中将国旗显示为状态图标(&S)
+[Show country flag as &extra image on contact list]
+在联系人列表上将国旗显示为额外图像(&E)
+[Use &IP-to-country database for country detection]
+使用和IP到国家数据库进行国家检测(&I)
+[Use &unknown flag if the country cannot be determined]
+如果无法确定国家，使用未知标志
 [Country flag]
 国旗
 [Icons]
@@ -6876,6 +7060,8 @@ URL
 帐户名
 [Protocol]
 协议
+[Autosend download link to contact]
+自动发送下载链接给联系人
 [Menu items]
 菜单项
 [Other]
@@ -6894,6 +7080,8 @@ URL
 剪贴板
 [Options]
 选项
+[Server:]
+服务器：
 [UPLOADING...]
 正在上传...
 [Open in Browser]
@@ -6916,6 +7104,8 @@ URL
 恢复
 [FTP File]
 FTP 文件
+[Upload file(s)]
+上传文件
 [CANCELED]
 已取消
 [CONNECTING...]
@@ -7052,6 +7242,10 @@ FTP 文件
 ;  Version: 1.0.1.2
 ;  Authors: Mixwind
 ;============================================================
+[Check your Gmail inboxes locally.]
+在本地检查你的 Gmail 收件箱。
+[Gmail account]
+Gmail 帐号
 [Name:]
 名称：
 [Password:]
@@ -7062,12 +7256,60 @@ FTP 文件
 保存
 [Delete]
 删除
+[Configuration]
+配置
+[Check Gmail inbox every]
+检查 Gmail 收件箱每
 [minutes]
 分
+[Notify using:]
+通知使用：
+[Duration:]
+间隔：
 [seconds]
 秒
+[Text|Background:]
+文字|背景：
+[On double click:]
+在双击时：
+[System tray]
+系统托盘
+[Popup plugin]
+弹出窗口插件
+[Login using default browser]
+使用默认浏览器登录
+[Login using Internet Explorer]
+使用 Internet Explorer 登录
+[Run custom program]
+运行自定义程序
+[Use online contacts when no new mail]
+当没有新邮件时使用在线联系人
+[Enable icon selection and icon in status bar (restart)]
+启用图标选择和图标在状态栏中（重启）
+[This is a shared computer so disable auto login]
+这是一台共用电脑，所以禁用自动登录
+[Log unread threads into database (enable history)]
+将未读邮件记录到数据库中（启用历史记录）
+[Checking...]
+正在检查...
+[Can't send account data!]
+无法发送帐号数据！
+[Wrong name or password!]
+错误的名称或密码！
+[Can't get RSS feed!]
+无法获得 RSS订阅
 [Other]
 其他
+[Gmail: New thread(s)]
+Gmail：新邮件
+[Gmail Notifier connection]
+Gmail 通知连接
+[&Check all Gmail inboxes]
+检查所有 Gmail 收件箱(&C)
+[&Check Gmail inbox]
+检查 Gmail 收件箱(&C)
+[GmailNotifier]
+Gmail 通知
 [Network]
 网络
 #muuid {b92282ac-686b-4541-a12d-6e9971a253b7}
@@ -7886,6 +8128,8 @@ History++ 警告
 显示弹出窗口
 [Test]
 测试
+[Disable]
+禁用
 [Notifications]
 通知
 [&Copy link]
@@ -7901,16 +8145,30 @@ History++ 警告
 ;  Version: 1.0.0.6
 ;  Authors: Eugene f2065
 ;============================================================
+[Allows you to assign expanded multimedia keys (only for PS/2 keyboards).]
+允许您指定扩展的多媒体键（仅适用于PS/2键盘）。
 [Close Miranda]
 关闭 Miranda
+[Assign]
+分配
 [Clear]
 清除
 [Show/Hide contact list]
 显示/隐藏联系人列表
 [Read message]
 阅读消息
+[Last pressed key]
+上次按的键
+[Extended flag (1xx), Hardware scan code (x23), KeyName]
+扩展标志（1xx），硬件扫描码（x23），键名称
+[Combine left/right keys Shift, Ctrl, Win, Alt]
+左/右键组合Shift，Ctrl，Win，Alt
+[Combination of keys for assignment]
+分配键的组合
 [Customize]
 自定义
+[Hardware HotKeys]
+硬件热键
 #muuid {EFB2355B-82B3-4759-b7d8-95f8e9506291}
 ;============================================================
 ;  File: ICQ.dll
@@ -7942,6 +8200,8 @@ History++ 警告
 通用
 [Advanced]
 高级
+[%s server connection]
+%s 服务器连接
 [admin]
 管理员
 [member]
@@ -7972,14 +8232,32 @@ History++ 警告
 ;  Version: 0.0.1.7
 ;  Authors: Cristian Libotean, Miranda NG team
 ;============================================================
+[Shows the history for a given contact using IEView.]
+使用IEView显示给定联系人的历史记录。
 [Dialog]
 对话框
 [Close]
 关闭
+[&Prev]
+上一个(&P)
+[&Next]
+下一个(&N)
 [&Search]
 搜索(&S)
+[Number of events to load]
+要加载的事件数量
+[Load all events]
+加载所有事件
+[Load only]
+仅加载
+[events per page]
+事件每页
+[Show last page first]
+先显示最后页
 [Other options]
 其它选项
+[Load items in background]
+在后台加载项目
 [RTL is default text direction]
 右到左是默认文字方向
 [Search]
@@ -7990,16 +8268,28 @@ History++ 警告
 取消
 [Text:]
 文字：
+[Direction]
+方向
 [Up]
 上
 [Down]
 下
 [System History]
 系统历史
+[Out of a total of]
+超过总数
+[You can't close the window now, wait for all events to load.]
+您现在无法关闭窗口，等待加载所有事件。
 [Error]
 错误
+[Text search]
+文字搜索
+[Time search]
+时间搜索
 [Time:]
 时间：
+[Search finished. No more entries...]
+搜索完成。没有更多项...
 [Information]
 信息
 [History]
@@ -8276,6 +8566,8 @@ IEView
 消息
 [Notices]
 通知
+[Server:]
+服务器：
 [Password:]
 密码：
 [Owner]
@@ -8288,6 +8580,8 @@ IEView
 未知
 [Ignore]
 忽略
+[%s server connection]
+%s 服务器连接
 [Nickname]
 昵称
 [Main]
@@ -10517,6 +10811,8 @@ Jabber vCard：编辑电话号码
 日期
 [Timestamp]
 时间戳
+[Direction]
+方向
 [Type]
 类型
 [&File]
@@ -10593,10 +10889,16 @@ xStatus
 数据库：
 [Password:]
 密码：
+[Set popup colors]
+设置弹出窗口颜色
 [Background]
 背景
 [Text]
 文字
+[Close after:]
+关闭于此后：
+[sec (0 default, -1 disabled)]
+秒（0 默认，-1 禁用）
 [Status]
 状态
 [Plugins]
@@ -10631,16 +10933,64 @@ xStatus
 ;  Version: 1.3.2.0
 ;  Authors: Heiko Schillinger, Baloo, Billy_Bons, Robert Pösel
 ;============================================================
+[Adds some useful options to a contacts menu.]
+为联系人菜单添加一些有用的选项。
+[Shown menu items]
+显示菜单项
 [Visibility]
 可见性
+[Show alpha icons]
+显示阿尔法图标
+[Hide from list]
+从列表中隐藏
 [Ignore]
 忽略
+[Copy to Account (Ctrl+click for move to Account)]
+复制到帐户（按住Ctrl键并单击以移动到帐户）
+[Browse Received Files]
+浏览接收的文件
+[Copy IP]
+复制 IP
+[Copy MirVer]
+复制 MirVer
+[Copy Status Message]
+复制状态消息
+[Add item name]
+添加项目名称
+[Copy ID]
+复制 ID
+[Add protocol name]
+添加协议名称
+[Show ID in menu item]
+在菜单项中显示 ID
+[Trim too long ID]
+修剪太长的 ID
+[* Use Ctrl+click to see popup with the copied text]
+* 使用Ctrl +单击以查看带有复制文本的弹出窗口
+[Hide contact on 'Ignore all']
+“忽略所有”时隐藏联系人
 [Status message]
 状态消息
+[xStatus title]
+xStatus 标题
+[xStatus message]
+xStatus 消息
 [Listening to]
 正在听
+[Activity title]
+活动标题
+[Activity text]
+活动文字
+[Show in list]
+在列表中显示
 [Always visible]
 总是可见
+[Never visible]
+永不可见
+[Copy to Account]
+复制到帐户
+[Copy xStatus Message]
+复制 xStatus 消息
 [All]
 所有
 [Messages]
@@ -10653,6 +11003,10 @@ xStatus
 授权
 [Typing Notify]
 输入通知
+[Open ignore settings]
+打开忽略设置
+[MenuItemEx]
+MenuItemEx
 [Customize]
 自定义
 #muuid {31aaef41-1411-487e-86e2-c484f4174283}
@@ -10695,6 +11049,26 @@ MessageState 未读附加图标
 ;  Version: 0.1.0.1
 ;  Authors: Cristian Libotean
 ;============================================================
+[This will tell Miranda to run the specified command.]
+�⽫���� Miranda ����ָ�������
+[No help for '%s'.]
+û�С�%s���İ�����
+[Available commands: ]
+���õ����
+[Miranda has been closed or an error has occurred while waiting for the result, could not process request.]
+Miranda �ѹرջ��ڵȴ����ʱ���������޷���������
+[%s usage:\n]
+%s ʹ�ã�\n
+[%s <command> [<param> [<param> [...]]].\n]
+%s <command> [<param> [<param> [...]]].\n
+[This will tell Miranda to run the specified command. The commands can have zero, one or more parameters. Use '%s help' to get a list of possible commands.\n]
+�⽫����Miranda����ָ�������������Ծ��������һ������������ʹ��'��s help'��ȡ���ܵ������б��\n
+[No command can have more than %d parameters.\n]
+û����������г�����d��������\n
+[%s version %s]
+%s �汾 %s
+[Unknown command '%s'.\n]
+δ֪���%s����\n
 #muuid {40da5ebd-4f2d-4bea-841c-eab77bee6f4f}
 ;============================================================
 ;  File: MinecraftDynmap.dll
@@ -10702,12 +11076,30 @@ MessageState 未读附加图标
 ;  Version: 0.0.0.2
 ;  Authors: Robert Pösel
 ;============================================================
+[Minecraft Dynmap support for Miranda NG.]
+Minecraft Dynmap对Miranda NG的支持。
+[Server:]
+服务器：
+[Visible name:]
+可见名称：
 [Admin]
 管理员
 [Normal]
 普通
+[You]
+你
+[Message was not sent. Probably you are sending them too fast or chat is disabled completely.]
+消息未发送。 可能你发送的速度太快，或者完全禁用了聊天。
+[Set server address to connect.]
+设置要连接的服务器地址。
 [Protocol icon]
 协议图标
+[%s server connection]
+%s 服务器连接
+[Unable to initialize Netlib for %s.]
+无法为%s初始化Netlib。
+[Visible name]
+可见名称
 #muuid {798221e1-e47a-4dc8-9077-1e576f9c4307}
 ;============================================================
 ;  File: MirandaG15.dll
@@ -11045,6 +11437,8 @@ UIN
 配置文件
 [Contact list]
 联系人列表
+[Disable]
+禁用
 [Network]
 网络
 [Account]
@@ -12096,16 +12490,38 @@ Non-IM 联系人(&N)
 ;  Version: 0.2.3.0
 ;  Authors: Scott Ellis, NightFox
 ;============================================================
+[Prevent Miranda from storing any history.]
+阻止 Miranda 存储任何历史。
+[Keep history for this contact]
+保留此联系人的历史
+[Disable history for this contact]
+禁用此联系人的历史
+[This operation will PERMANENTLY REMOVE all history for this contact.\nAre you sure you want to do this?]
+此操作将永久删除此联系人的所有历史记录。\ n您确定要执行此操作吗？
 [Clear History]
 清除历史
+[Enable History]
+启用历史
+[Disable History]
+禁用历史
+[History Enabled]
+历史已启用
+[History Disabled]
+历史已禁用
+[Disable]
+禁用
 [Enable]
 启用
 [Clear]
 清除
+[No History]
+无历史
 [** All contacts **]
 ** 所有联系人 **
 [History]
 历史
+[Logging]
+日志
 #muuid {842a6668-f9da-4968-bfd7-d2bd9df848ee}
 ;============================================================
 ;  File: NotesReminders.dll
@@ -12484,14 +12900,26 @@ Purple
 ;  Version: 0.1.3.3
 ;  Authors: Robert Pösel
 ;============================================================
+[Server:]
+服务器：
+[Visible name:]
+可见名称：
 [Server]
 服务器
 [Admin]
 管理员
 [Normal]
 普通
+[You]
+你
 [Connecting...]
 正在连接...
+[%s server connection]
+%s 服务器连接
+[Unable to initialize Netlib for %s.]
+无法为%s初始化Netlib。
+[Visible name]
+可见名称
 [Network]
 网络
 [Account]
@@ -12614,6 +13042,8 @@ OpenSSL 错误
 ;============================================================
 [Settings]
 设置
+[Autosend download link to contact]
+自动发送下载链接给联系人
 [Configure]
 配置
 [Cancel]
@@ -12679,6 +13109,8 @@ OpenSSL 错误
 ;============================================================
 [Timeout]
 超时
+[Logging]
+日志
 [Log to File]
 日志到文件
 [Network]
@@ -12725,6 +13157,8 @@ OpenSSL 错误
 设置
 [Disabled]
 已禁用
+[Disable]
+禁用
 [enabled]
 已启用
 [List]
@@ -13384,7 +13818,7 @@ Popup plus 警告
 [Any entry in the 'Use proxy' list can be prefixed by an exclamation mark (!) to increase its priority. Entries with wrong syntax will be ignored. The plugin checks the IP addresses in the following way:]
 “使用代理”列表中的任何条目都可以使用感叹号（！）作为前缀，以提高其优先级。 语法错误的条目将被忽略。 该插件以下列方式检查IP地址：
 [\t1) Use proxy if any interface has prioritized 'Use proxy' address\n\t2) Don't use proxy if any interface has 'Direct connection' address\n\t3) Use proxy if any interface has 'Use proxy' address\n\t4) Do nothing if unknown or no address found]
-\t1)如果任何接口优先'使用代理'地址，则使用代理\n\t2)如果任何接口具有“直接连接”地址，则不要使用代理\n\t3如果任何接口具有“使用代理”，请使用代理地址\n\t4)如果发现未知或没有地址，则不执行任何操作
+\t1）如果任何接口优先'使用代理'地址，则使用代理\n\t2）如果任何接口具有“直接连接”地址，则不要使用代理\n\t3）如果任何接口具有“使用代理”，请使用代理地址\n\t4）如果发现未知或没有地址，则不执行任何操作
 [Cancel]
 取消
 [Proxy]
@@ -15749,6 +16183,8 @@ APM 恢复时重新连接
 ;  Version: 0.1.0.2
 ;  Authors: Roman Miklashevsky, A. Petkevich, Kosh&chka, persei
 ;============================================================
+[Divider:]
+分隔器：
 [Add contact permanently]
 永久添加联系人
 [Message sessions]
@@ -18072,6 +18508,8 @@ XStatus：
 联系时间
 [Time:]
 时间：
+[xStatus title]
+xStatus 标题
 [Background]
 背景
 [Dividers]
@@ -18442,6 +18880,8 @@ TopToolBar
 ;============================================================
 [Import]
 导入
+[Copy ID]
+复制 ID
 [Export]
 导出
 [Name:]
@@ -18556,6 +18996,28 @@ TopToolBar
 ;  Version: 0.1.0.1
 ;  Authors: Mataes, tico-tico, Tim
 ;============================================================
+[Allows you to switch a layout or transliterate or invert case of the entered text in the message window with SmileyAdd support.]
+������ʹ��SmileyAdd֧������Ϣ�������л����ֻ������ת�����ı��Ĵ�Сд��
+[TranslitSwitcher]
+TranslitSwitcher
+[Switch Layout and Send]
+�л����ֲ�����
+[Translit and Send]
+ֱ�벢����
+[Invert Case and Send]
+��ת��Сд������
+[Convert All / Selected]
+ת������ / ѡ�е�
+[Convert Last / Selected]
+ת������ / ѡ�е�
+[Translit All / Selected]
+ֱ������ / ѡ�е�
+[Translit Last / Selected]
+ֱ������ / ѡ�е�
+[Invert Case All / Selected]
+��ת���� / ѡ�еĴ�Сд 
+[Invert Case Last / Selected]
+��ת���� / ѡ�еĴ�Сд
 #muuid {bc09a71b-b86e-4d33-b18d-82d30451dd3c}
 ;============================================================
 ;  File: Twitter.dll
@@ -18563,6 +19025,8 @@ TopToolBar
 ;  Version: 1.3.0.2
 ;  Authors: dentist, omniwolf, Thief
 ;============================================================
+[Server:]
+服务器：
 [Username:]
 用户名：
 [Send]
@@ -18591,6 +19055,10 @@ TopToolBar
 预览
 [Normal]
 普通
+[%s server connection]
+%s 服务器连接
+[Unable to initialize Netlib for %s.]
+无法为%s初始化Netlib。
 [Network]
 网络
 [Basic]
@@ -19891,6 +20359,8 @@ Miranda 相关
 取消
 [Open in browser]
 在浏览器中打开
+[URL:]
+URL：
 [Read message icon]
 已读消息图标
 [Status icon]
@@ -19953,6 +20423,8 @@ Miranda 相关
 德语
 [Italian]
 意大利语
+[%s server connection]
+%s 服务器连接
 [Errors]
 错误
 [Notifications]
@@ -19978,6 +20450,8 @@ Miranda 相关
 第二行
 [Context menu]
 上下文菜单
+[xStatus Title]
+xStatus 标题
 [Winamp Track]
 Winamp 单轨
 [Left click]
@@ -21295,6 +21769,8 @@ N/A
 文字颜色：
 [Bold]
 粗体
+[URL:]
+URL：
 [Display]
 显示
 [Cancel]
@@ -21355,6 +21831,8 @@ N/A
 弹出窗口
 [Online]
 在线
+[Popup plugin]
+弹出窗口插件
 #muuid {2ff96c84-b0b5-470e-bbf9-907b9f3f5d2f}
 ;============================================================
 ;  File: WhenWasIt.dll
@@ -21574,6 +22052,8 @@ XSound 通知
 帐户
 [Name:]
 名称：
+[Server:]
+服务器：
 [Port:]
 端口
 [Password:]

@@ -15,7 +15,7 @@
 [Ping timeout (secs):]
 
 [Logging]
-
+日志
 [Log to File]
 日志到文件
 [Log Filename:]
@@ -154,7 +154,7 @@
 [%s - timeout]
 
 [Disable]
-
+禁用
 [enabled]
 已启用
 [double clicked]

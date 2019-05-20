@@ -6,10 +6,10 @@
 ;  Authors: MaKaR
 ;============================================================
 [Notify with popup if some connection established]
-
+如果建立了一些连接，则通过弹出窗口通知
 ;file \protocols\ConnectionNotify\res\ConnectionNotify.rc
 [Set popup colors]
-
+设置弹出窗口颜色
 [Popup options]
 弹出窗口选项
 [Background]
@@ -17,23 +17,23 @@
 [Text]
 文字
 [Close after:]
-
+关闭于此后：
 [sec (0 default, -1 disabled)]
-
+秒（0 默认，-1 禁用）
 [Settings]
 设置
 [try resolve addresses]
-
+尝试解析地址
 [Version:]
 版本：
 [Show notification if no filter defined]
-
+如果没有定义过滤器则显示通知
 [Attempt interval (ms)]
-
+尝试间隔（毫秒）
 [Delete]
 删除
 ['Online' means:]
-
+“在线”表示：
 [Filters]
 过滤器
 [Move down]
@@ -43,42 +43,42 @@
 [Add]
 添加
 [Rule editor]
-
+规则编辑器
 [Application name]
-
+应用程序名称
 [Local IP:Port]
-
+本地 IP:端口
 [Action:]
-
+动作：
 [Cancel]
 取消
 [* and ? wildcard characters also available (for port enter number or *)]
-
+* 和 ? 通配符也可用（输入端口号或 *）
 [Remote IP:Port]
-
+远程 IP:端口
 ;file \protocols\ConnectionNotify\src\ConnectionNotify.cpp
 [Show]
 显示
 [Hide]
 隐藏
 [Always show popup]
-
+总是显示弹出窗口
 [Never show popup]
-
+从不显示弹出窗口
 [Status]
 状态
 [Application]
-
+应用程序
 [Internal socket]
-
+内部插座
 [External socket]
-
+外部插座
 [Action]
 动作
 [Plugins]
 插件
 [New Connection Notification]
-
+新连接通知
 ;file \protocols\ConnectionNotify\src\filter.cpp
 [First close options window]
-
+先关闭选项窗口

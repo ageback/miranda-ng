@@ -199,7 +199,7 @@
 [Share]
 
 [URL:]
-
+URL：
 [Only for friends]
 
 ;file \protocols\VKontakte\src\misc.cpp
@@ -539,7 +539,7 @@
 
 ;file \protocols\VKontakte\src\vk_proto.cpp
 [%s server connection]
-
+%s 服务器连接
 [Newsfeed & notification event]
 
 [Mark messages as read]

@@ -23,7 +23,7 @@
 [Name:]
 名称：
 [Server:]
-
+服务器：
 [Port:]
 端口
 [User Name:]

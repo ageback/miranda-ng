@@ -49,6 +49,5 @@
 [Avatar change]
 [removed his/her avatar]
 [changed his/her avatar]
-[Unknown protocol]
 [Unknown UIN]
 [Avatar history: Unable to create shortcut]

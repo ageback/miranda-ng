@@ -265,7 +265,7 @@
 [(*) blank to set this mask for all networks]
 
 [Server:]
-
+服务器：
 [Password:]
 密码：
 ;file \protocols\IRCG\src\clist.cpp
@@ -408,7 +408,7 @@
 
 ;file \protocols\IRCG\src\ircproto.cpp
 [%s server connection]
-
+%s 服务器连接
 [%s client-to-client connections]
 
 [Nickname]

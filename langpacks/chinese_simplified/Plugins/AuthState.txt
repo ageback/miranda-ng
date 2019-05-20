@@ -6,31 +6,31 @@
 ;  Authors: Thief, idea by snwbrdr
 ;============================================================
 [If a contact didn't authorize you, this plugin puts an icon in front of the contact's name.]
-
+如果联系人未授权您，则此插件会在联系人姓名前面添加一个图标。
 ;file \plugins\AuthState\res\authstate.rc
 [Show Request icon]
-
+显示请求图标
 [Show Grant icon]
-
+显示批准图标
 [Plugin settings]
 插件设置
 [Enable menu item]
-
+启用菜单项
 [Show icons only for recently added contacts]
-
+仅为最近添加的联系人显示图标
 ;file \plugins\AuthState\src\main.cpp
 [Request]
-
+请求
 [Grant]
-
+批准
 [Request & Grant]
-
+请求和批准
 [Disable AuthState icons]
-
+禁用认证状态图标
 [Enable AuthState icons]
-
+启用认证状态图标
 [Auth state]
-
+认证状态
 ;file \plugins\AuthState\src\options.cpp
 [Icons]
 图标

@@ -19,7 +19,6 @@
 [Save window position individually for each contact]
 [Show...]
 [Parting line]
-[Direction]
 [&Save]
 [Message &direction]
 [&Outgoing messages only]

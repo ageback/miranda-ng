@@ -1,7 +1,6 @@
 [Tox protocol support for Miranda NG.]
 [Tox ID:]
 [Create]
-[Copy ID]
 [Default group:]
 [Create Tox profile]
 [Import Tox profile]

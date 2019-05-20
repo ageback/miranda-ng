@@ -63,7 +63,7 @@
 [Index creation]
 
 [Disable]
-
+禁用
 [Create HTML (compatibility)]
 
 [Create XML]

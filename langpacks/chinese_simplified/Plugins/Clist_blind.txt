@@ -6,7 +6,7 @@
 ;  Authors: Ricardo Pescuma Domenecci, based on previous work from Miranda IM project
 ;============================================================
 [A contact list for blind folks.]
-
+为盲人设计的联系人列表
 ;file \plugins\Clist_blind\res\resource.rc
 [Delete contact]
 删除联系人
@@ -25,17 +25,17 @@
 [Hotkeys]
 热键
 [Show/Hide:]
-
+显示/隐藏：
 [Read message:]
-
+阅读消息：
 [Web search:]
-
+网页搜索：
 [URL:]
-
+URL：
 [Open in new browser window]
-
+在新浏览器窗口中打开
 [Show options]
-
+显示选项
 [Hide offline users]
 隐藏离线用户
 [Hide empty groups]
@@ -139,13 +139,13 @@
 [Templates]
 模板
 [Contact:]
-
+联系人：
 [Group:]
 分组：
 [Divider:]
-
+分隔器：
 [Info:]
-
+信息：
 [Status bar]
 状态栏
 [Show status bar]
@@ -190,11 +190,11 @@
 [On the phone]
 在打电话
 [Group: %name% %count% [%mode%]]
-
+分组：%name% %count% [%mode%]
 [Divider: %s]
-
+分隔器：%s
 [Info: %s]
-
+信息：%s
 [List]
 列表
 ;file \plugins\Clist_blind\src\clistopts.cpp
@@ -203,8 +203,8 @@
 ;file \plugins\Clist_blind\src\cluiopts.cpp
 ;file \plugins\Clist_blind\src\init.cpp
 [Unknown protocol]
-
+未知协议
 [Expanded]
-
+扩展
 [Collapsed]
-
+收缩

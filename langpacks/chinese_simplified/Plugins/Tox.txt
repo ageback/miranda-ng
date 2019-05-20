@@ -15,7 +15,7 @@
 [Import]
 导入
 [Copy ID]
-
+复制 ID
 [Export]
 导出
 [Name:]

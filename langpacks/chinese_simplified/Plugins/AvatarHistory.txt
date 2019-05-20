@@ -159,7 +159,7 @@
 
 ;file \plugins\AvatarHistory\src\utils.cpp
 [Unknown protocol]
-
+未知协议
 [Unknown UIN]
 
 [Avatar history: Unable to create shortcut]

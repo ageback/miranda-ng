@@ -6,10 +6,10 @@
 ;  Authors: Mixwind
 ;============================================================
 [Check your Gmail inboxes locally.]
-
+在本地检查你的 Gmail 收件箱。
 ;file \protocols\GmailNotifier\res\options.rc
 [Gmail account]
-
+Gmail 帐号
 [Name:]
 名称：
 [Password:]
@@ -21,61 +21,61 @@
 [Delete]
 删除
 [Configuration]
-
+配置
 [Check Gmail inbox every]
-
+检查 Gmail 收件箱每
 [minutes]
 分
 [Notify using:]
-
+通知使用：
 [Duration:]
-
+间隔：
 [seconds]
 秒
 [Text|Background:]
-
+文字|背景：
 [On double click:]
-
+在双击时：
 [System tray]
-
+系统托盘
 [Popup plugin]
-
+弹出窗口插件
 [Login using default browser]
-
+使用默认浏览器登录
 [Login using Internet Explorer]
-
+使用 Internet Explorer 登录
 [Run custom program]
-
+运行自定义程序
 [Use online contacts when no new mail]
-
+当没有新邮件时使用在线联系人
 [Enable icon selection and icon in status bar (restart)]
-
+启用图标选择和图标在状态栏中（重启）
 [This is a shared computer so disable auto login]
-
+这是一台共用电脑，所以禁用自动登录
 [Log unread threads into database (enable history)]
-
+将未读邮件记录到数据库中（启用历史记录）
 ;file \protocols\GmailNotifier\src\check.cpp
 [Checking...]
-
+正在检查...
 [Can't send account data!]
-
+无法发送帐号数据！
 [Wrong name or password!]
-
+错误的名称或密码！
 [Can't get RSS feed!]
-
+无法获得 RSS订阅
 ;file \protocols\GmailNotifier\src\main.cpp
 [Other]
 其他
 [Gmail: New thread(s)]
-
+Gmail：新邮件
 [Gmail Notifier connection]
-
+Gmail 通知连接
 [&Check all Gmail inboxes]
-
+检查所有 Gmail 收件箱(&C)
 [&Check Gmail inbox]
-
+检查 Gmail 收件箱(&C)
 ;file \protocols\GmailNotifier\src\options.cpp
 [GmailNotifier]
-
+Gmail 通知
 [Network]
 网络

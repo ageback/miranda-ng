@@ -6,31 +6,31 @@
 ;  Authors: Robert Pösel
 ;============================================================
 [Minecraft Dynmap support for Miranda NG.]
-
+Minecraft Dynmap对Miranda NG的支持。
 ;file \protocols\MinecraftDynmap\res\resource.rc
 [Server:]
-
+服务器：
 [Visible name:]
-
+可见名称：
 ;file \protocols\MinecraftDynmap\src\chat.cpp
 [Admin]
 管理员
 [Normal]
 普通
 [You]
-
+你
 ;file \protocols\MinecraftDynmap\src\communication.cpp
 [Message was not sent. Probably you are sending them too fast or chat is disabled completely.]
-
+消息未发送。 可能你发送的速度太快，或者完全禁用了聊天。
 [Set server address to connect.]
-
+设置要连接的服务器地址。
 ;file \protocols\MinecraftDynmap\src\dialogs.cpp
 [Protocol icon]
 协议图标
 ;file \protocols\MinecraftDynmap\src\proto.cpp
 [%s server connection]
-
+%s 服务器连接
 [Unable to initialize Netlib for %s.]
-
+无法为%s初始化Netlib。
 [Visible name]
-
+可见名称

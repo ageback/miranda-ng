@@ -21,7 +21,6 @@
 [Remove Ignore]
 [You received e-mail from %s: %s]
 [You have %d unread emails]
-[%s server connection]
 [Synchronize server groups]
 [Edit ignore list]
 [UIN/e-mail/phone]

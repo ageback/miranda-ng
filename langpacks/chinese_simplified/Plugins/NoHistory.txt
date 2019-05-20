@@ -6,38 +6,38 @@
 ;  Authors: Scott Ellis, NightFox
 ;============================================================
 [Prevent Miranda from storing any history.]
-
+阻止 Miranda 存储任何历史。
 ;file \plugins\NoHistory\res\NoHistory.rc
 [Keep history for this contact]
-
+保留此联系人的历史
 [Disable history for this contact]
-
+禁用此联系人的历史
 ;file \plugins\NoHistory\src\dllmain.cpp
 [This operation will PERMANENTLY REMOVE all history for this contact.\nAre you sure you want to do this?]
-
+此操作将永久删除此联系人的所有历史记录。\ n您确定要执行此操作吗？
 [Clear History]
 清除历史
 [Enable History]
-
+启用历史
 [Disable History]
-
+禁用历史
 [History Enabled]
-
+历史已启用
 [History Disabled]
-
+历史已禁用
 ;file \plugins\NoHistory\src\icons.cpp
 [Disable]
-
+禁用
 [Enable]
 启用
 [Clear]
 清除
 [No History]
-
+无历史
 ;file \plugins\NoHistory\src\options.cpp
 [** All contacts **]
 ** 所有联系人 **
 [History]
 历史
 [Logging]
-
+日志

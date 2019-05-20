@@ -6,12 +6,12 @@
 ;  Authors: Eugene f2065
 ;============================================================
 [Allows you to assign expanded multimedia keys (only for PS/2 keyboards).]
-
+允许您指定扩展的多媒体键（仅适用于PS/2键盘）。
 ;file \plugins\HwHotKeys\res\HwHotKeys.rc
 [Close Miranda]
 关闭 Miranda
 [Assign]
-
+分配
 [Clear]
 清除
 [Show/Hide contact list]
@@ -19,15 +19,15 @@
 [Read message]
 阅读消息
 [Last pressed key]
-
+上次按的键
 [Extended flag (1xx), Hardware scan code (x23), KeyName]
-
+扩展标志（1xx），硬件扫描码（x23），键名称
 [Combine left/right keys Shift, Ctrl, Win, Alt]
-
+左/右键组合Shift，Ctrl，Win，Alt
 [Combination of keys for assignment]
-
+分配键的组合
 ;file \plugins\HwHotKeys\src\HwHotKeys_DllMain.cpp
 [Customize]
 自定义
 [Hardware HotKeys]
-
+硬件热键

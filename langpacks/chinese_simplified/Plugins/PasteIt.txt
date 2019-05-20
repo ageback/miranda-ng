@@ -19,7 +19,7 @@
 [Show confirmation dialog box]
 
 [Autosend download link to contact]
-
+自动发送下载链接给联系人
 [Web page settings]
 
 [Web page to configure]

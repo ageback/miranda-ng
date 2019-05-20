@@ -69,7 +69,7 @@
 [Timestamp]
 时间戳
 [Direction]
-
+方向
 [Type]
 类型
 [&File]

@@ -27,7 +27,6 @@
 [Number of msg [IN]:]
 [Number of sent messages]
 [Number of msg [OUT]:]
-[xStatus title]
 [xStatus title:]
 [xStatus text]
 [xStatus text:]

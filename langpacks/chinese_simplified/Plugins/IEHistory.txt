@@ -6,32 +6,32 @@
 ;  Authors: Cristian Libotean, Miranda NG team
 ;============================================================
 [Shows the history for a given contact using IEView.]
-
+使用IEView显示给定联系人的历史记录。
 ;file \plugins\IEHistory\res\IEHistory.rc
 [Dialog]
 对话框
 [Close]
 关闭
 [&Prev]
-
+上一个(&P)
 [&Next]
-
+下一个(&N)
 [&Search]
 搜索(&S)
 [Number of events to load]
-
+要加载的事件数量
 [Load all events]
-
+加载所有事件
 [Load only]
-
+仅加载
 [events per page]
-
+事件每页
 [Show last page first]
-
+先显示最后页
 [Other options]
 其它选项
 [Load items in background]
-
+在后台加载项目
 [RTL is default text direction]
 右到左是默认文字方向
 [Search]
@@ -43,7 +43,7 @@
 [Text:]
 文字：
 [Direction]
-
+方向
 [Up]
 上
 [Down]
@@ -52,19 +52,19 @@
 [System History]
 系统历史
 [Out of a total of]
-
+超过总数
 [You can't close the window now, wait for all events to load.]
-
+您现在无法关闭窗口，等待加载所有事件。
 [Error]
 错误
 [Text search]
-
+文字搜索
 [Time search]
-
+时间搜索
 [Time:]
 时间：
 [Search finished. No more entries...]
-
+搜索完成。没有更多项...
 [Information]
 信息
 [History]

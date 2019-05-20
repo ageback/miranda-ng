@@ -63,7 +63,7 @@
 [Contact name:]
 
 [URL:]
-
+URL：
 [Display]
 显示
 [Between start and end strings]
@@ -317,7 +317,7 @@
 [Remove all whitespace]
 
 [Popup plugin]
-
+弹出窗口插件
 [Use OSD plugin]
 
 [A string is present]

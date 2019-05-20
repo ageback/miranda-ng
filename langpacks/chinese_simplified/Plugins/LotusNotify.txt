@@ -31,15 +31,15 @@
 [Keep connection on error]
 
 [Set popup colors]
-
+设置弹出窗口颜色
 [Background]
 背景
 [Text]
 文字
 [Close after:]
-
+关闭于此后：
 [sec (0 default, -1 disabled)]
-
+秒（0 默认，-1 禁用）
 [Left button click cmd:]
 
 [Command parameters:]
