@@ -6,26 +6,26 @@
 ;  Authors: tico-tico
 ;============================================================
 [Un4seen's BASS interface Miranda NG plugin.]
-
+Un4seen 的低音接口 Miranda NG 插件。
 ;file \plugins\BASS_interface\res\Bass.rc
 [Un4seen's BASS interface]
-
+Un4seen 的低音接口 
 [bass.dll loading error]
-
+bass.dll 加载错误
 [Current bass.dll path:]
-
+当前 bass.dll 路径：
 [Maximum number of BASS internal channels:]
-
+低音内部声道的最大数量：
 [Output device:]
-
+输出设备：
 [Volume:]
-
+音量：
 [Quiet time:]
-
+安静时间：
 [download BASS library]
-
+下载低音库
 [Play only if]
-
+播放仅当
 [Offline]
 离线
 [Online]
@@ -50,9 +50,9 @@
 预览
 ;file \plugins\BASS_interface\src\Main.cpp
 [Un4seen's BASS version: %d.%d.%d.%d]
-
+Un4seen 的低音版本：%d.%d.%d.%d
 [--default device--]
-
+--默认设备--
 [Sounds]
 声音
 [Disable sounds]
@@ -62,13 +62,13 @@
 [Frame background]
 框架背景
 [BASS Interface]
-
+低音接口
 [Bass Interface]
-
+低音接口
 [Bass library]
-
+低音库
 [Sounds enabled]
-
+声音启用
 [Sounds disabled]
-
+声音禁用
 ;file \plugins\BASS_interface\src\stdafx.h

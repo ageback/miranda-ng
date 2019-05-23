@@ -3740,6 +3740,8 @@ XML 文件
 密码
 [Cancel]
 取消
+[Open History]
+打开历史
 [View &history]
 查看历史(&H)
 [Incoming message]
@@ -3881,6 +3883,26 @@ XML 文件
 ;  Version: 0.0.0.14
 ;  Authors: tico-tico
 ;============================================================
+[Un4seen's BASS interface Miranda NG plugin.]
+Un4seen 的低音接口 Miranda NG 插件。
+[Un4seen's BASS interface]
+Un4seen 的低音接口 
+[bass.dll loading error]
+bass.dll 加载错误
+[Current bass.dll path:]
+当前 bass.dll 路径：
+[Maximum number of BASS internal channels:]
+低音内部声道的最大数量：
+[Output device:]
+输出设备：
+[Volume:]
+音量：
+[Quiet time:]
+安静时间：
+[download BASS library]
+下载低音库
+[Play only if]
+播放仅当
 [Offline]
 离线
 [Online]
@@ -3903,6 +3925,10 @@ XML 文件
 外出吃饭
 [Preview]
 预览
+[Un4seen's BASS version: %d.%d.%d.%d]
+Un4seen 的低音版本：%d.%d.%d.%d
+[--default device--]
+--默认设备--
 [Sounds]
 声音
 [Disable sounds]
@@ -3911,6 +3937,16 @@ XML 文件
 启用声音
 [Frame background]
 框架背景
+[BASS Interface]
+低音接口
+[Bass Interface]
+低音接口
+[Bass library]
+低音库
+[Sounds enabled]
+声音启用
+[Sounds disabled]
+声音禁用
 #muuid {488c5c84-56da-434f-96f1-b18900def760}
 ;============================================================
 ;  File: Boltun.dll
@@ -6362,9 +6398,9 @@ GnuPG插件 - 选择公钥
 ;  Authors: ValeraVi, Ivan Krechetov
 ;============================================================
 [Replaces (for the selected contacts only) the Cyrillic letters in the outgoing messages with the phonetically equivalent Latin letter combinations.]
-ʹ�������Ч��������ĸ����滻������������ѡ��ϵ�ˣ��ⷢ��Ϣ�е��������ĸ��
+使用语音等效的拉丁字母组合替换（仅限所选联系人）外发邮件中的西里尔字母。
 [&Transliterate]
-ֱ��(&T)
+直译(&T)
 #muuid {a8a417ef-07aa-4f37-869f-7bfd74886534}
 ;============================================================
 ;  File: DbEditorPP.dll
@@ -6944,24 +6980,72 @@ E-mage LAN 协议
 ;  Version: 0.1.3.4
 ;  Authors: Cristian Libotean, Attila Vajda, MaKaR (NG)
 ;============================================================
+[Notifies you if you have unread email on an exchange server.]
+如果您在Exchange服务器上有未读电子邮件，请通知您。
 [Unread emails]
 未读电子邮件
 [Close]
 关闭
+[Mark as read]
+标记为已读
+[Connection]
+连接
 [Username:]
 用户名：
 [Password:]
 密码：
 [Server:]
 服务器：
+[Preferences]
+首先项
 [Check every]
 检查每
 [seconds]
 秒
+[Force reconnect every]
+强制重新连接每
 [minutes]
 分
+[Check server before trying to connect]
+尝试连接前检查服务器
+[Try to connect]
+尝试连接
+[times before giving up]
+放弃前的次数
+[Show email notifications using popup module]
+使用 popup 模块显示邮件通知
+[Entry ID]
+条目 ID
+[Subject]
+主题
+[Sender]
+发送人
+[Maximum number of retries reached.\nPlugin will stop trying to connect automatically.]
+达到最大重试次数。\n插件将停止尝试自动连接。
+[Server not available]
+服务器不可用
+[Server is not configured...]
+服务器未配置...
+[You have %d unread emails...]
+你有 %d 未读邮件...
+[You have one unread email...]
+你有一封未读邮件...
+[Cannot connect to Exchange server...]
+无法连接到 Exchange 服务器...
+[Exchange email]
+Exchange 邮件
+[Do you want to see the email headers?]
+你想看邮件头部吗？
+[Check exchange mailbox]
+检查 exchange 邮件箱
+[Exchange notify]
+Exchange 通知
 [Plugins]
 插件
+[Forcefully reconnecting to Exchange server ...]
+强制重新连接到Exchange服务器...
+[Connecting to Exchange ...]
+正在连接到 Exchange ...
 #muuid {8432b009-ff32-4727-aae6-a9035038fd58}
 ;============================================================
 ;  File: Facebook.dll
@@ -7121,6 +7205,8 @@ URL：
 字节
 [Appearance]
 出现
+[Send file]
+发送文件
 [Sending...]
 正在发送...
 [Receiving...]
@@ -7304,6 +7390,8 @@ URL
 复制链接
 [Copy Link to Clipboard]
 复制链接到剪贴板
+[Send file]
+发送文件
 [Resume]
 恢复
 [FTP File]
@@ -11105,10 +11193,16 @@ xStatus
 关闭于此后：
 [sec (0 default, -1 disabled)]
 秒（0 默认，-1 禁用）
+[Sender]
+发送人
+[Subject]
+主题
 [Status]
 状态
 [Plugins]
 插件
+[Connection]
+连接
 [Popup]
 弹出窗口
 [Miscellaneous]
@@ -11649,6 +11743,8 @@ UIN
 网络
 [Account]
 帐户
+[Connection]
+连接
 #muuid {69b9443b-dc58-4876-ad39-e3f418a133c5}
 ;============================================================
 ;  File: mTextControl.dll
@@ -14092,12 +14188,54 @@ IP 变更通知
 ;  Version: 1.0.0.0
 ;  Authors: Ricardo Pescuma Domenecci, Heiko Schillinger
 ;============================================================
+[Open contact-specific windows by hotkey.]
+通过热键打开指定联系人窗口。
+[Last Sent]
+上次发送
+[Enable last-sent-to]
+启用“上次发送到”
+[recognize all messages sent]
+识别所有发送的消息
+[recognize messages sent with hotkey only]
+只识别用热键发送的消息
 [Contacts]
 联系人
+[Show offline contacts on these protocols:]
+显示这些协议的离线联系人：
+[But hide them if protocol is offline]
+但是如果协议离线，则隐藏它们
+[Append group name to contact name]
+附加分组名称到联系人名称
+[But show it as a column...]
+但是将它显示为一列...
+[...on left side of name]
+...在名称的左侧
+[Hide subcontacts]
+隐藏子联系人
+[But keep subcontacts of protocols in above list if meta is hidden]
+但如果中继被隐藏，请保留上面列表中的协议的子联系人
+[Enter username:]
+输入用户名：
+[Show all contacts (Ctrl+A)]
+显示所有联系人（Ctrl+A）
+[Show all contacts]
+显示所有联系人
 [Send message]
 发送消息
+[Send file]
+发送文件
+[Open user info]
+打开用户信息
+[Open history]
+打开历史
 [Open contact menu]
 打开联系人菜单
+[Quick Contacts]
+快速联系人
+[Open dialog]
+打开对话框
+[Quick Contacts...]
+快速联系人...
 #muuid {37ed754b-6cf9-40ed-9eb6-0fef8e822475}
 ;============================================================
 ;  File: QuickMessages.dll
@@ -14357,6 +14495,8 @@ Unicode 字符串
 ;  Version: 0.7.0.5
 ;  Authors: Scott Ellis, Szymon Tokarz
 ;============================================================
+[Connection]
+连接
 [Password:]
 密码：
 [Port:]
@@ -16444,6 +16584,8 @@ APM 恢复时重新连接
 联系人
 [Message sessions]
 消息会话
+[Connection]
+连接
 [Cancel]
 取消
 [Block]
@@ -19034,32 +19176,72 @@ xStatus 标题
 ;  Version: 0.7.0.1
 ;  Authors: perf
 ;============================================================
+[Shows a small tooltip above system tray area when a contact status is changed.]
+当联系人状态发生变化时，显示系统托盘区域上方的小工具提示。
+[Select protocols]
+选择协议
+[Choose contacts]
+选择联系人
+[Allow tooltip notifications for the following users:]
+允许以下用户的工具提示通知：
 [Cancel]
 取消
+[Notify upon the following events]
+通知以下事件
 [Online]
 在线
 [Offline]
 离线
+[All other]
+所有其他
 [Typing]
 正在输入
 [Protocols]
 协议
+[Suppress notifications upon connection for]
+连接后禁止通知
 [sec]
 秒
+[Prefix protocol name]
+前缀协议名称
+[Duration]
+持续时间
+[Show tooltip for]
+显示工具提示时长
 [ms]
 毫秒
+[Duration x2 upon online event]
+在线事件的持续时间x2
+[Double click on tooltip]
+双击工具提示时
+[Shows/Hides contact list]
+显示/隐藏联系人列表
+[Opens message dialog]
+打开消息对话框
 [Behavior]
 行为
 [Misc]
 杂项
+[Obey 'Suppress online notification' settings]
+服从'抑制在线通知'设置
+[Auto positioning]
+自动定位
+[Transparent input]
+透明输入
 [Preview]
 预览
 [Translucency options]
 透明度选项
+[Transparent tooltip]
+透明工具提示
 [Contacts]
 联系人
 [Idle]
 空闲
+[Tooltip Notify]
+工具提示通知
+[Other status]
+其他状态
 [Other]
 其他
 [Popups]
@@ -19068,8 +19250,12 @@ xStatus 标题
 ** 新联系人 **
 [** Unknown contacts **]
 ** 未知联系人 **
+[Not Idle]
+非空闲
 [Unknown]
 未知
+[is]
+是
 #muuid {f593c752-51d8-4d46-ba27-37577953f55c}
 ;============================================================
 ;  File: TopToolBar.dll
@@ -19287,27 +19473,27 @@ TopToolBar
 ;  Authors: Mataes, tico-tico, Tim
 ;============================================================
 [Allows you to switch a layout or transliterate or invert case of the entered text in the message window with SmileyAdd support.]
-������ʹ��SmileyAdd֧������Ϣ�������л����ֻ������ת�����ı��Ĵ�Сд��
+允许您使用SmileyAdd支持在消息窗口中切换布局或音译或反转输入文本的大小写。
 [TranslitSwitcher]
 TranslitSwitcher
 [Switch Layout and Send]
-�л����ֲ�����
+切换布局和发送
 [Translit and Send]
-ֱ�벢����
+直译和发送
 [Invert Case and Send]
-��ת��Сд������
+反转大小写和发送
 [Convert All / Selected]
-ת������ / ѡ�е�
+转换全部/选定
 [Convert Last / Selected]
-ת������ / ѡ�е�
+转换上次/选定
 [Translit All / Selected]
-ֱ������ / ѡ�е�
+直译所有/选定
 [Translit Last / Selected]
-ֱ������ / ѡ�е�
+直译上次/选定
 [Invert Case All / Selected]
-��ת���� / ѡ�еĴ�Сд 
+反转所有/选定大小写
 [Invert Case Last / Selected]
-��ת���� / ѡ�еĴ�Сд
+反转上次/选定大小写
 #muuid {bc09a71b-b86e-4d33-b18d-82d30451dd3c}
 ;============================================================
 ;  File: Twitter.dll
@@ -22198,6 +22384,8 @@ URL：
 在后台
 [Close]
 关闭
+[Show all contacts]
+显示所有联系人
 [Title:]
 称号
 [Description:]
@@ -22454,6 +22642,8 @@ XSound 通知
 选择全部
 [From]
 从
+[Subject]
+主题
 [Size]
 大小
 [Date]

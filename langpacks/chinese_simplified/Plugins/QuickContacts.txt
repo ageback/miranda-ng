@@ -6,54 +6,54 @@
 ;  Authors: Ricardo Pescuma Domenecci, Heiko Schillinger
 ;============================================================
 [Open contact-specific windows by hotkey.]
-
+通过热键打开指定联系人窗口。
 ;file \plugins\QuickContacts\res\resource.rc
 [Last Sent]
-
+上次发送
 [Enable last-sent-to]
-
+启用“上次发送到”
 [recognize all messages sent]
-
+识别所有发送的消息
 [recognize messages sent with hotkey only]
-
+只识别用热键发送的消息
 [Contacts]
 联系人
 [Show offline contacts on these protocols:]
-
+显示这些协议的离线联系人：
 [But hide them if protocol is offline]
-
+但是如果协议离线，则隐藏它们
 [Append group name to contact name]
-
+附加分组名称到联系人名称
 [But show it as a column...]
-
+但是将它显示为一列...
 [...on left side of name]
-
+...在名称的左侧
 [Hide subcontacts]
-
+隐藏子联系人
 [But keep subcontacts of protocols in above list if meta is hidden]
-
+但如果中继被隐藏，请保留上面列表中的协议的子联系人
 [Enter username:]
-
+输入用户名：
 [Show all contacts (Ctrl+A)]
-
+显示所有联系人（Ctrl+A）
 ;file \plugins\QuickContacts\src\dialog.cpp
 [Show all contacts]
-
+显示所有联系人
 [Send message]
 发送消息
 [Send file]
-
+发送文件
 [Open user info]
-
+打开用户信息
 [Open history]
-
+打开历史
 [Open contact menu]
 打开联系人菜单
 ;file \plugins\QuickContacts\src\options.cpp
 [Quick Contacts]
-
+快速联系人
 ;file \plugins\QuickContacts\src\quickcontacts.cpp
 [Open dialog]
-
+打开对话框
 [Quick Contacts...]
-
+快速联系人...

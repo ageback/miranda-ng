@@ -151,7 +151,7 @@ URL
 [FTP Server 5]
 
 [Send file]
-
+发送文件
 [Resume]
 恢复
 [FTP File]

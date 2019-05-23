@@ -75,7 +75,6 @@
 [Manually specify host/port]
 [IP info available only after login]
 [MSN Protocol requires message timeout to be not less then 60 sec. Correct the timeout value.]
-[Connection]
 [Server list]
 [Live Mail]
 [Live Alert]

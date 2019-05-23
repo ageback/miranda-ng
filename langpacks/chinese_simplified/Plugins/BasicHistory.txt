@@ -140,7 +140,7 @@
 取消
 ;file \plugins\BasicHistory\src\BasicHistory.cpp
 [Open History]
-
+打开历史
 [View &history]
 查看历史(&H)
 [Delete all user history]

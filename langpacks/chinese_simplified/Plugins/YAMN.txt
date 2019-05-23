@@ -220,7 +220,7 @@
 [From]
 从
 [Subject]
-
+主题
 [Size]
 大小
 [Date]

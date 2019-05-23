@@ -6,73 +6,73 @@
 ;  Authors: perf
 ;============================================================
 [Shows a small tooltip above system tray area when a contact status is changed.]
-
+当联系人状态发生变化时，显示系统托盘区域上方的小工具提示。
 ;file \plugins\TooltipNotify\res\main.rc
 [Select protocols]
-
+选择协议
 [Choose contacts]
-
+选择联系人
 [Allow tooltip notifications for the following users:]
-
+允许以下用户的工具提示通知：
 [Cancel]
 取消
 [Notify upon the following events]
-
+通知以下事件
 [Online]
 在线
 [Offline]
 离线
 [All other]
-
+所有其他
 [Typing]
 正在输入
 [Protocols]
 协议
 [Suppress notifications upon connection for]
-
+连接后禁止通知
 [sec]
 秒
 [Prefix protocol name]
-
+前缀协议名称
 [Duration]
-
+持续时间
 [Show tooltip for]
-
+显示工具提示时长
 [ms]
 毫秒
 [Duration x2 upon online event]
-
+在线事件的持续时间x2
 [Double click on tooltip]
-
+双击工具提示时
 [Shows/Hides contact list]
-
+显示/隐藏联系人列表
 [Opens message dialog]
-
+打开消息对话框
 [Behavior]
 行为
 [Misc]
 杂项
 [Obey 'Suppress online notification' settings]
-
+服从'抑制在线通知'设置
 [Auto positioning]
-
+自动定位
 [Transparent input]
-
+透明输入
 [Preview]
 预览
 [Translucency options]
 透明度选项
 [Transparent tooltip]
-
+透明工具提示
 [Contacts]
 联系人
 [Idle]
 空闲
 ;file \plugins\TooltipNotify\src\TooltipNotify.cpp
 [Tooltip Notify]
-
+工具提示通知
 [Other status]
-
+其他状态
 [Other]
 其他
 [Popups]
@@ -82,8 +82,8 @@
 [** Unknown contacts **]
 ** 未知联系人 **
 [Not Idle]
-
+非空闲
 [Unknown]
 未知
 [is]
-
+是

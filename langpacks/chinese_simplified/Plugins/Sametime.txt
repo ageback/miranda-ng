@@ -9,7 +9,7 @@
 
 ;file \protocols\Sametime\res\resource.rc
 [Connection]
-
+连接
 [ID:]
 
 [Password:]

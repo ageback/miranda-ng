@@ -44,7 +44,6 @@
 [FTP Server 3]
 [FTP Server 4]
 [FTP Server 5]
-[Send file]
 [FTP Server %d]
 [Zip and upload file(s)]
 [Zip and upload folder]

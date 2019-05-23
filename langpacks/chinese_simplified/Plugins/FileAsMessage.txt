@@ -42,7 +42,7 @@
 [Receive file]
 
 [Send file]
-
+发送文件
 [File already exists. Overwrite?]
 
 [Couldn't open a file]

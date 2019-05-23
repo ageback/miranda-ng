@@ -59,9 +59,9 @@
 [Filter messages containing the following:]
 
 [Sender]
-
+发送人
 [Subject]
-
+主题
 [To / CopyTo]
 
 [Offline status mean:]
@@ -94,7 +94,7 @@
 [Plugins]
 插件
 [Connection]
-
+连接
 [Popup]
 弹出窗口
 [Miscellaneous]

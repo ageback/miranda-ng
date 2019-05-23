@@ -6,16 +6,16 @@
 ;  Authors: Cristian Libotean, Attila Vajda, MaKaR (NG)
 ;============================================================
 [Notifies you if you have unread email on an exchange server.]
-
+如果您在Exchange服务器上有未读电子邮件，请通知您。
 ;file \plugins\Exchange\res\exchange.rc
 [Unread emails]
 未读电子邮件
 [Close]
 关闭
 [Mark as read]
-
+标记为已读
 [Connection]
-
+连接
 [Username:]
 用户名：
 [Password:]
@@ -23,56 +23,56 @@
 [Server:]
 服务器：
 [Preferences]
-
+首先项
 [Check every]
 检查每
 [seconds]
 秒
 [Force reconnect every]
-
+强制重新连接每
 [minutes]
 分
 [Check server before trying to connect]
-
+尝试连接前检查服务器
 [Try to connect]
-
+尝试连接
 [times before giving up]
-
+放弃前的次数
 [Show email notifications using popup module]
-
+使用 popup 模块显示邮件通知
 ;file \plugins\Exchange\src\dlg_handlers.cpp
 [Entry ID]
-
+条目 ID
 [Subject]
-
+主题
 [Sender]
-
+发送人
 ;file \plugins\Exchange\src\emails.cpp
 [Maximum number of retries reached.\nPlugin will stop trying to connect automatically.]
-
+达到最大重试次数。\n插件将停止尝试自动连接。
 [Server not available]
-
+服务器不可用
 [Server is not configured...]
-
+服务器未配置...
 [You have %d unread emails...]
-
+你有 %d 未读邮件...
 [You have one unread email...]
-
+你有一封未读邮件...
 [Cannot connect to Exchange server...]
-
+无法连接到 Exchange 服务器...
 [Exchange email]
-
+Exchange 邮件
 [Do you want to see the email headers?]
-
+你想看邮件头部吗？
 ;file \plugins\Exchange\src\hooked_events.cpp
 [Check exchange mailbox]
-
+检查 exchange 邮件箱
 [Exchange notify]
-
+Exchange 通知
 [Plugins]
 插件
 [Forcefully reconnecting to Exchange server ...]
-
+强制重新连接到Exchange服务器...
 ;file \plugins\Exchange\src\MirandaExchange.cpp
 [Connecting to Exchange ...]
-
+正在连接到 Exchange ...

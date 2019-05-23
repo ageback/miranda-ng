@@ -15,7 +15,6 @@
 [Notify for]
 [afterwards]
 [Birthday list]
-[Show all contacts]
 [Set birthday:]
 [Manage anniversaries]
 [Upcoming birthdays]

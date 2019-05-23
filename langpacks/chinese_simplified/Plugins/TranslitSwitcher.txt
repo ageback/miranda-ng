@@ -6,26 +6,26 @@
 ;  Authors: Mataes, tico-tico, Tim
 ;============================================================
 [Allows you to switch a layout or transliterate or invert case of the entered text in the message window with SmileyAdd support.]
-������ʹ��SmileyAdd֧������Ϣ�������л����ֻ������ת�����ı��Ĵ�Сд��
+允许您使用SmileyAdd支持在消息窗口中切换布局或音译或反转输入文本的大小写。
 ;file \plugins\TranslitSwitcher\src\Layoutproc.cpp
 [TranslitSwitcher]
 TranslitSwitcher
 ;file \plugins\TranslitSwitcher\src\TranslitSwitcher.cpp
 [Switch Layout and Send]
-�л����ֲ�����
+切换布局和发送
 [Translit and Send]
-ֱ�벢����
+直译和发送
 [Invert Case and Send]
-��ת��Сд������
+反转大小写和发送
 [Convert All / Selected]
-ת������ / ѡ�е�
+转换全部/选定
 [Convert Last / Selected]
-ת������ / ѡ�е�
+转换上次/选定
 [Translit All / Selected]
-ֱ������ / ѡ�е�
+直译所有/选定
 [Translit Last / Selected]
-ֱ������ / ѡ�е�
+直译上次/选定
 [Invert Case All / Selected]
-��ת���� / ѡ�еĴ�Сд 
+反转所有/选定大小写
 [Invert Case Last / Selected]
-��ת���� / ѡ�еĴ�Сд
+反转上次/选定大小写
