@@ -7226,6 +7226,8 @@ URL：
 ;  Version: 0.2.0.1
 ;  Authors: faith_healer, ghazan, Mataes
 ;============================================================
+[Select protocols]
+选择协议
 [Resource]
 资源
 [Security]
@@ -15328,6 +15330,8 @@ jun.
 空闲
 [Unknown]
 未知
+[Not Idle]
+非空闲
 #muuid {ed39af7c-becd-404e-9499-4d04f711b9cb}
 ;============================================================
 ;  File: SendSS.dll
@@ -17134,7 +17138,7 @@ Windows Areo 设置
 [NOTE: some settings will not affect open containers.]
 注意：某些设置不会影响已打开的容器。
 [Tab layout tweaks]
-标签而已调整
+标签布局调整
 [Selected skin]
 选择皮肤
 [Rescan]
@@ -17838,7 +17842,7 @@ Miranda 的根目录路径
 [General options]
 常规选项
 [Window layout]
-窗口而已
+窗口布局
 [Tabs and switch bar]
 标签和切换栏
 [Choose your options for the tabbed user interface. Not all options can be applied to open windows. You may need to close and re-open them.]

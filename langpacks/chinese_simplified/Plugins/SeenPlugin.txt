@@ -262,4 +262,4 @@ jun.
 [Unknown]
 未知
 [Not Idle]
-
+非空闲
