@@ -6,52 +6,52 @@
 ;  Authors: TioDuke
 ;============================================================
 [Flashes your keyboard LEDs when a message has arrived.]
-
+当消息到达时闪烁键盘LED。
 ;file \plugins\KeyboardNotify\res\resources.rc
 [Accounts to check]
 要检查的帐户
 [Events to react on]
-
+要做出反应的事件
 [Incoming messages]
 传入消息
 [Incoming files]
-
+传入文件
 [Everything else]
-
+其他所有
 [Message-Event only]
-
+仅消息事件
 [Blink if message window is open]
-
+如果消息窗口打开则闪烁
 [and not in foreground]
-
+并且不是在前台
 [only if last is]
-
+仅当最后是
 [sec. old]
-
+秒以前
 [Flash until]
-
+闪动直到
 [seconds]
 秒
 [is re-attended]
-
+重新出席
 [Events are opened]
-
+事件已打开
 [End of 'notify when' conditions]
-
+“通知当”条件的结尾
 [Notify when]
-
+通知当
 [Full Screen mode]
-
+全屏模式
 [Screen Saver is running]
-
+正在运行屏幕保护程序
 [Workstation is locked]
-
+工作站被锁定
 [Defined programs are running]
-
+定义的程序正在运行
 [All other situations]
-
+所有其他情况
 [Only notify if status is]
-
+仅当以下状态时通知
 [Online]
 在线
 [Away]
@@ -71,51 +71,51 @@
 [Out to lunch]
 外出吃饭
 [Pending Events]
-
+挂起的事件
 [Remind me every]
-
+提醒我每
 [minutes]
 分
 [Offline]
 离线
 [xStatuses]
-
+xStatuses
 [Keys to flash]
-
+要闪动的键
 [Num Lock]
-
+数字键盘锁定
 [Caps Lock]
-
+大小写锁定
 [Scroll Lock]
-
+滚动锁定
 [Flashing effects]
-
+闪动效果
 [All at the same time]
-
+所有在同时
 [In turn]
-
+轮流
 [In sequence]
-
+按顺序
 [Custom theme]
-
+自定义主题
 [Accordingly to events' count]
-
+相对应的事件数量
 [Wait before starting flashing]
-
+闪动开始前等待
 [Flash speed]
-
+闪动速度
 [Fast]
-
+快
 [Slow]
-
+慢
 [&Preview]
 预览(&P)
 [Emulate key presses (Use this option if you are using a USB keyboard)]
-
+模拟按键（如果使用USB键盘，请使用此选项）
 [Create/Edit Themes]
-
+创建/编辑主题
 [Theme]
-
+主题
 [Test]
 测试
 [Add]
@@ -125,55 +125,55 @@
 [Delete]
 删除
 [Import/Export]
-
+导入/导出
 [Export...]
 导出...
 [Import...]
-
+导入...
 [Override existing]
-
+覆盖存在的
 [Set program list]
-
+设置程序列表
 [Program]
 程序
 [Cancel]
 取消
 [Set LEDs for events]
-
+设置事件的LED
 [Num]
-
+数字键盘
 [Caps]
-
+大小写
 [Scroll]
-
+滚动
 [Message events]
-
+消息事件
 [File events]
-
+文件事件
 [URL events]
-
+URL 事件
 [Other events]
 其他事件
 [Consider event opened after]
-
+认为事件被打开，在之后
 [Use custom theme]
-
+使用自定义主题
 [The following events are being ignored:]
 以下事件被忽略：
 [Ignore messages]
-
+忽略消息
 [Ignore files]
-
+忽略文件
 [Ignore others]
-
+忽略其他
 [Ignore all]
-
+忽略所有
 [Ignore none]
-
+不忽略
 [Ignore]
 忽略
 [Set xStatus list]
-
+设置 xStatus 列表
 ;file \plugins\KeyboardNotify\src\ignore.cpp
 [** All contacts **]
 ** 所有联系人 **
@@ -181,21 +181,21 @@
 ** 未知联系人 **
 ;file \plugins\KeyboardNotify\src\options.cpp
 [left -> right]
-
+左 -> 右
 [right -> left]
-
+右 -> 左
 [left <-> right]
-
+左 <-> 右
 [\n; Automatically generated Keyboard Notify Theme file\n\n\n]
-
+\n；自动生成的键盘通知主题文件\n\n\n
 [\n; End of automatically generated Keyboard Notify Theme file\n]
-
+\n；自动生成的键盘通知主题文件的结尾\n
 [None]
 无
 [Protocol]
 协议
 [Keyboard Notify Theme]
-
+键盘通知主题
 [All Files]
 所有文件
 [Accounts]
@@ -205,8 +205,8 @@
 [Flashing]
 闪动
 [Themes]
-
+主题
 [Keyboard Flash]
-
+键盘闪动
 [Events]
 事件

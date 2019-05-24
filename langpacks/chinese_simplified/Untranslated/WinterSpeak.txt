@@ -8,7 +8,6 @@
 [Occurring Events]
 [Added to contact list]
 [Announce status changes on connect]
-[Message Events]
 [Read message if less characters than]
 [Ignore event if message dialog is open]
 [Ignore event if message dialog is focused]

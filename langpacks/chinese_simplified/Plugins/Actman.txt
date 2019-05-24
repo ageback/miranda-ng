@@ -614,13 +614,13 @@ TopToolBar
 [Show Global history search window. If already opened, bring it to front.]
 
 [Ignore all]
-
+忽略所有
 [Ignore messages]
-
+忽略消息
 [Ignore URLs]
 
 [Ignore files]
-
+忽略文件
 [Ignore User Online]
 
 [Ignore requests]

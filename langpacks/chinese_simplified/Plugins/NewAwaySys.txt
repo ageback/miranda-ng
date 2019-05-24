@@ -313,9 +313,9 @@ V
 
 ;file \plugins\NewAwaySysMod\src\Notification.cpp
 [Error #%d]
-
+错误 #%d
 [Can't open log file ]
-
+无法打开日志文件
 ;file \plugins\NewAwaySysMod\src\ReadAwayMsg.cpp
 [&Close]
 关闭(&C)

@@ -71,5 +71,4 @@
 [Import history for %s]
 [JSON file]
 [Skipping duplicate group %s.]
-[Import...]
 [Finish]

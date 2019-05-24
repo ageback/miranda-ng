@@ -57,7 +57,7 @@
 [Timeouts]
 
 [Use default]
-
+使用默认
 [Custom]
 自定义
 [Permanent]

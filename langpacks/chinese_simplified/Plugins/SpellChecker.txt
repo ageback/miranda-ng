@@ -126,7 +126,7 @@
 [Always replace with]
 
 [Ignore all]
-
+忽略所有
 [Add to dictionary]
 
 [Corrections]

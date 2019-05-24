@@ -6,24 +6,24 @@
 ;  Authors: Iavor Vajarov, Kosh&chka, Victor Pavlychko
 ;============================================================
 [Floating Contacts plugin for Miranda.]
-
+Miranda 浮动联系人插件
 ;file \plugins\FloatingContacts\res\fltcnt.rc
 [Hiding contacts]
-
+隐藏联系人
 [Hide offline contacts]
 隐藏离线联系人 
 [Stick together]
-
+粘在一起
 [Use fixed width]
-
+使用固定宽度
 [pixels]
 像素
 [Hide all contacts]
-
+隐藏所有联系人
 [Hide when a fullscreen app is active]
-
+全屏应用处于活动状态时隐藏
 [Show tooltips*]
-
+显示工具提示*
 [ms]
 毫秒
 [Tooltips]
@@ -33,29 +33,29 @@
 [0 = Default]
 0 = 默认
 [*requires Tipper plugin]
-
+*需要 Tipper 插件
 [Bring to front]
-
+带到前面
 [Bring to front every]
-
+带到前面每
 [seconds]
 秒
 [Hide when contact list is shown]
-
+当联系人列表显示时隐藏
 [Single click interface]
 单击界面
 [Dim idle contacts]
 变暗淡空闲联系人
 [Idle contacts]
-
+空闲联系人
 [Border]
 边框
 [Draw border]
 绘制边框
 [Left-top edge's color:]
-
+左上边缘的颜色：
 [Right-bottom edge's color:]
-
+右下边缘的颜色：
 [Background]
 背景
 [Background color:]
@@ -86,23 +86,23 @@
 [Contacts which are 'not on list']
 “不在列表中”的联系人
 [Floating contacts]
-
+浮动联系人
 [Show all thumbs]
-
+显示所有缩略图
 [Hide all thumbs]
-
+隐藏所有缩略图
 [Remove thumb]
-
+移除缩略图
 [Show/Hide all thumbs]
-
+显示/隐藏所有缩略图
 [Floating contacts plugin won't work until you uncheck the "Disable drag and drop of items" option in Options - Contact list]
-
+在你取消勾选 选项 - 联系人列表 中的“禁止拖放项目”之前，浮动降伏插件无法工作。
 ;file \plugins\FloatingContacts\src\options.cpp
 [Floating Contacts]
-
+浮动联系人
 [Contact list]
 联系人列表
 [Main Features]
-
+主要功能
 [Appearance]
-出现
+外观

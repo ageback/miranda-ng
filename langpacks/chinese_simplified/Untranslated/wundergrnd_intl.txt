@@ -136,7 +136,6 @@
 [Low Drifting Snow Mist]
 [Low Drifting Snow]
 [Max]
-[Min]
 [Moonrise]
 [Moonset]
 [North]

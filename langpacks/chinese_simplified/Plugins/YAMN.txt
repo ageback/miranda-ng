@@ -67,7 +67,7 @@
 [Message]
 消息
 [Keyboard Flash]
-
+键盘闪动
 [Tray Icon]
 
 [Execute Application]

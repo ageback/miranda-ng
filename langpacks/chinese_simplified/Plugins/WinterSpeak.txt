@@ -59,7 +59,7 @@
 [Announce status changes on connect]
 
 [Message Events]
-
+消息事件
 [Read message if less characters than]
 
 [Ignore event if message dialog is open]

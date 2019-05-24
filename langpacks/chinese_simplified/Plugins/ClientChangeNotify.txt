@@ -6,26 +6,26 @@
 ;  Authors: Deathdemon
 ;============================================================
 [Shows a notification when someone in your contact list changes his client.]
-
+当你的联系人列表中的某人改变他的客户端时显示通知。
 ;file \plugins\ClientChangeNotify\res\Resources.rc
 [ClientChangeNotify error]
-
+ClientChangeNotify 错误
 [Fingerprint plugin not found.]
-
+未发现 Fingerprint 插件。
 [ClientChangeNotify requires it to work properly.]
-
+ClientChangeNotify 需要它来正常工作。 
 [Don't remind me anymore]
-
+不要再提醒我
 [Enable notification]
-
+启用通知
 [Show previous client name]
-
+显示上一个客户端名称
 [Notify also when just client version changes]
-
+当只改变客户端版本时也通知
 [Show client version]
-
+显示客户端版本
 [Don't notify for contacts with disabled status notification]
-
+不要为禁止状态通知的联系人显示通知
 [Click action]
 点击动作
 [On left click]
@@ -45,38 +45,38 @@
 [Background]
 背景
 [Use default]
-
+使用默认
 [Text]
 文字
 [Preview]
 预览
 [Ignore these clients (separated by semicolons):]
-
+忽略这些客户端（用分号分隔）：
 [(you have to install pcre16.mir to use regular expressions here)]
-
+（你必须安装 pcre16.mir 以在这里使用正则表达式）
 ;file \plugins\ClientChangeNotify\src\ClientChangeNotify.cpp
 [changed client to %s (was %s)]
-
+更改客户端为 %s（原来是 %s）
 [changed client to %s]
-
+更改客户端为 %s
 [%s (was %s)]
-
+%s（原来是%s）
 [Disable c&lient change notification]
-
+禁用客户端变更通知(&L)
 [Enable c&lient change notification]
-
+禁用客户端变更通知(&L)
 [ClientChangeNotify: Client changed]
-
+ClientChangeNotify：客户端变更
 [Popups]
 弹出窗口
 ;file \plugins\ClientChangeNotify\src\Misc.h
 [Error #%d]
-
+错误 #%d
 [Can't open log file ]
-
+无法打开日志文件
 ;file \plugins\ClientChangeNotify\src\OptDlg.cpp
 [(you can use regular expressions here)]
-
+（你可以在这里使用正则表达式）
 [Open message window]
 打开消息窗口
 [Close popup]
@@ -90,4 +90,4 @@
 [Do nothing]
 啥都不干
 [ClientChangeNotify]
-
+ClientChangeNotify

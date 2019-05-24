@@ -180,7 +180,7 @@
 [Skipping duplicate group %s.]
 
 [Import...]
-
+导入...
 ;file \plugins\Import\src\wizard.cpp
 [Finish]
 

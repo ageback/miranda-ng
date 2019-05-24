@@ -79,7 +79,7 @@ URL
 [Options]
 选项
 [Pause]
-
+暂停
 [File Manager]
 
 [Server:]

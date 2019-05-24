@@ -131,7 +131,7 @@
 [Files]
 文件
 [Incoming files]
-
+传入文件
 [Outgoing files]
 
 ;file \plugins\HistoryStats\src\column_events.h

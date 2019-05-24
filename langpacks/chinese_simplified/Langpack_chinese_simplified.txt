@@ -3184,6 +3184,12 @@ TopToolBar
 外出吃饭
 [System]
 系统
+[Ignore all]
+忽略所有
+[Ignore messages]
+忽略消息
+[Ignore files]
+忽略文件
 [Ignore Contact]
 忽略联系人
 [Protocol]
@@ -3969,24 +3975,68 @@ Un4seen 的低音版本：%d.%d.%d.%d
 ;  Version: 0.5.0.3
 ;  Authors: Goblineye Entertainment, Billy_Bons
 ;============================================================
+[Anti-Boss plugin. Makes your Miranda NG hidden or password-protected.]
+防Boss插件。使您的Miranda NG隐藏或受密码保护。
 [Go to Options -> Customize -> Hotkeys to change the hotkey]
 转到选项 -> 自定义 -> 热键以更改热键
+[When I press the hotkey:]
+当我按下热键时：
+[Change status to]
+改变状态为
+[Change only if current status is Online]
+仅当当前状态为在线时改变
+[Use default status message]
+使用默认状态消息
 [Disable Sounds]
 禁用声音
 [Show the Tray Icon]
 显示托盘图标
+[When I return:]
+当我返回时：
+[Request password:]
+需要密码
+[Change status back]
+改变状态回到
 [Hotkey]
 热键
+[Miranda NG is locked.\nEnter password to unlock it.]
+Miranda NG 被锁定。\n输入密码以解锁。
 [Password:]
 密码：
 [Cancel]
 取消
+[Workstation is locked]
+工作站被锁定
+[Screen Saver is running]
+正在运行屏幕保护程序
+[Windows is inactive]
+窗口不是活动的
+[Hide Miranda when:]
+隐藏 Miranda 当：
+[Miranda is inactive]
+Miranda 非活动
+[min]
+分钟
+[Miranda is started]
+Miranda 已启动
 [Others]
 其它
 [Create a main menu item]
 创建一个主菜单项
+[Restore hiding on startup after failure]
+启动失败后恢复隐藏
+[Password is not correct!\nPlease, enter correct password.]
+密码不正确！\n请输入正确的密码。
+[Hide Miranda NG]
+隐藏 Miranda NG
 [Hide]
 隐藏
+[Hide/Show Miranda]
+显示/隐藏 Miranda
+[BossKey]
+老板键
+[get the BossKey name]
+得到老板键名称
 [Events]
 事件
 [Main]
@@ -4177,6 +4227,26 @@ ChangeKeyboardLayout
 ;  Version: 0.1.1.4
 ;  Authors: Deathdemon
 ;============================================================
+[Shows a notification when someone in your contact list changes his client.]
+当你的联系人列表中的某人改变他的客户端时显示通知。
+[ClientChangeNotify error]
+ClientChangeNotify 错误
+[Fingerprint plugin not found.]
+未发现 Fingerprint 插件。
+[ClientChangeNotify requires it to work properly.]
+ClientChangeNotify 需要它来正常工作。 
+[Don't remind me anymore]
+不要再提醒我
+[Enable notification]
+启用通知
+[Show previous client name]
+显示上一个客户端名称
+[Notify also when just client version changes]
+当只改变客户端版本时也通知
+[Show client version]
+显示客户端版本
+[Don't notify for contacts with disabled status notification]
+不要为禁止状态通知的联系人显示通知
 [Click action]
 点击动作
 [On left click]
@@ -4195,12 +4265,36 @@ ChangeKeyboardLayout
 颜色
 [Background]
 背景
+[Use default]
+使用默认
 [Text]
 文字
 [Preview]
 预览
+[Ignore these clients (separated by semicolons):]
+忽略这些客户端（用分号分隔）：
+[(you have to install pcre16.mir to use regular expressions here)]
+（你必须安装 pcre16.mir 以在这里使用正则表达式）
+[changed client to %s (was %s)]
+更改客户端为 %s（原来是 %s）
+[changed client to %s]
+更改客户端为 %s
+[%s (was %s)]
+%s（原来是%s）
+[Disable c&lient change notification]
+禁用客户端变更通知(&L)
+[Enable c&lient change notification]
+禁用客户端变更通知(&L)
+[ClientChangeNotify: Client changed]
+ClientChangeNotify：客户端变更
 [Popups]
 弹出窗口
+[Error #%d]
+错误 #%d
+[Can't open log file ]
+无法打开日志文件
+[(you can use regular expressions here)]
+（你可以在这里使用正则表达式）
 [Open message window]
 打开消息窗口
 [Close popup]
@@ -4213,6 +4307,8 @@ ChangeKeyboardLayout
 打开联系人历史
 [Do nothing]
 啥都不干
+[ClientChangeNotify]
+ClientChangeNotify
 #muuid {53e095a3-2695-490a-9dad-d20479093831}
 ;============================================================
 ;  File: Clist_blind.dll
@@ -7340,10 +7436,24 @@ URL：
 ;  Version: 0.7.0.5
 ;  Authors: Iavor Vajarov, Kosh&chka, Victor Pavlychko
 ;============================================================
+[Floating Contacts plugin for Miranda.]
+Miranda 浮动联系人插件
+[Hiding contacts]
+隐藏联系人
 [Hide offline contacts]
 隐藏离线联系人 
+[Stick together]
+粘在一起
+[Use fixed width]
+使用固定宽度
 [pixels]
 像素
+[Hide all contacts]
+隐藏所有联系人
+[Hide when a fullscreen app is active]
+全屏应用处于活动状态时隐藏
+[Show tooltips*]
+显示工具提示*
 [ms]
 毫秒
 [Tooltips]
@@ -7352,16 +7462,30 @@ URL：
 杂项
 [0 = Default]
 0 = 默认
+[*requires Tipper plugin]
+*需要 Tipper 插件
+[Bring to front]
+带到前面
+[Bring to front every]
+带到前面每
 [seconds]
 秒
+[Hide when contact list is shown]
+当联系人列表显示时隐藏
 [Single click interface]
 单击界面
 [Dim idle contacts]
 变暗淡空闲联系人
+[Idle contacts]
+空闲联系人
 [Border]
 边框
 [Draw border]
 绘制边框
+[Left-top edge's color:]
+左上边缘的颜色：
+[Right-bottom edge's color:]
+右下边缘的颜色：
 [Background]
 背景
 [Background color:]
@@ -7390,10 +7514,26 @@ URL：
 你有不同可见性的离线联系人
 [Contacts which are 'not on list']
 “不在列表中”的联系人
+[Floating contacts]
+浮动联系人
+[Show all thumbs]
+显示所有缩略图
+[Hide all thumbs]
+隐藏所有缩略图
+[Remove thumb]
+移除缩略图
+[Show/Hide all thumbs]
+显示/隐藏所有缩略图
+[Floating contacts plugin won't work until you uncheck the "Disable drag and drop of items" option in Options - Contact list]
+在你取消勾选 选项 - 联系人列表 中的“禁止拖放项目”之前，浮动降伏插件无法工作。
+[Floating Contacts]
+浮动联系人
 [Contact list]
 联系人列表
+[Main Features]
+主要功能
 [Appearance]
-出现
+外观
 #muuid {2f129563-2c7d-4a9a-b948-97dfcc0afdd7}
 ;============================================================
 ;  File: Folders.dll
@@ -7446,6 +7586,8 @@ URL
 剪贴板
 [Options]
 选项
+[Pause]
+暂停
 [Server:]
 服务器：
 [UPLOADING...]
@@ -8406,6 +8548,8 @@ History++ 警告
 （未知）
 [Files]
 文件
+[Incoming files]
+传入文件
 [Events]
 事件
 [Group]
@@ -8861,6 +9005,8 @@ IEView
 导入(&I)...
 [All Files]
 所有文件
+[Import...]
+导入...
 #muuid {92382b4d-5572-48a0-b0b9-1336a601d689}
 ;============================================================
 ;  File: IRC.dll
@@ -11088,12 +11234,52 @@ Jabber vCard：编辑电话号码
 ;  Version: 1.5.7.7
 ;  Authors: TioDuke
 ;============================================================
+[Flashes your keyboard LEDs when a message has arrived.]
+当消息到达时闪烁键盘LED。
 [Accounts to check]
 要检查的帐户
+[Events to react on]
+要做出反应的事件
 [Incoming messages]
 传入消息
+[Incoming files]
+传入文件
+[Everything else]
+其他所有
+[Message-Event only]
+仅消息事件
+[Blink if message window is open]
+如果消息窗口打开则闪烁
+[and not in foreground]
+并且不是在前台
+[only if last is]
+仅当最后是
+[sec. old]
+秒以前
+[Flash until]
+闪动直到
 [seconds]
 秒
+[is re-attended]
+重新出席
+[Events are opened]
+事件已打开
+[End of 'notify when' conditions]
+“通知当”条件的结尾
+[Notify when]
+通知当
+[Full Screen mode]
+全屏模式
+[Screen Saver is running]
+正在运行屏幕保护程序
+[Workstation is locked]
+工作站被锁定
+[Defined programs are running]
+定义的程序正在运行
+[All other situations]
+所有其他情况
+[Only notify if status is]
+仅当以下状态时通知
 [Online]
 在线
 [Away]
@@ -11112,12 +11298,52 @@ Jabber vCard：编辑电话号码
 在打电话
 [Out to lunch]
 外出吃饭
+[Pending Events]
+挂起的事件
+[Remind me every]
+提醒我每
 [minutes]
 分
 [Offline]
 离线
+[xStatuses]
+xStatuses
+[Keys to flash]
+要闪动的键
+[Num Lock]
+数字键盘锁定
+[Caps Lock]
+大小写锁定
+[Scroll Lock]
+滚动锁定
+[Flashing effects]
+闪动效果
+[All at the same time]
+所有在同时
+[In turn]
+轮流
+[In sequence]
+按顺序
+[Custom theme]
+自定义主题
+[Accordingly to events' count]
+相对应的事件数量
+[Wait before starting flashing]
+闪动开始前等待
+[Flash speed]
+闪动速度
+[Fast]
+快
+[Slow]
+慢
 [&Preview]
 预览(&P)
+[Emulate key presses (Use this option if you are using a USB keyboard)]
+模拟按键（如果使用USB键盘，请使用此选项）
+[Create/Edit Themes]
+创建/编辑主题
+[Theme]
+主题
 [Test]
 测试
 [Add]
@@ -11126,26 +11352,76 @@ Jabber vCard：编辑电话号码
 更新
 [Delete]
 删除
+[Import/Export]
+导入/导出
 [Export...]
 导出...
+[Import...]
+导入...
+[Override existing]
+覆盖存在的
+[Set program list]
+设置程序列表
 [Program]
 程序
 [Cancel]
 取消
+[Set LEDs for events]
+设置事件的LED
+[Num]
+数字键盘
+[Caps]
+大小写
+[Scroll]
+滚动
+[Message events]
+消息事件
+[File events]
+文件事件
+[URL events]
+URL 事件
 [Other events]
 其他事件
+[Consider event opened after]
+认为事件被打开，在之后
+[Use custom theme]
+使用自定义主题
 [The following events are being ignored:]
 以下事件被忽略：
+[Ignore messages]
+忽略消息
+[Ignore files]
+忽略文件
+[Ignore others]
+忽略其他
+[Ignore all]
+忽略所有
+[Ignore none]
+不忽略
 [Ignore]
 忽略
+[Set xStatus list]
+设置 xStatus 列表
 [** All contacts **]
 ** 所有联系人 **
 [** Unknown contacts **]
 ** 未知联系人 **
+[left -> right]
+左 -> 右
+[right -> left]
+右 -> 左
+[left <-> right]
+左 <-> 右
+[\n; Automatically generated Keyboard Notify Theme file\n\n\n]
+\n；自动生成的键盘通知主题文件\n\n\n
+[\n; End of automatically generated Keyboard Notify Theme file\n]
+\n；自动生成的键盘通知主题文件的结尾\n
 [None]
 无
 [Protocol]
 协议
+[Keyboard Notify Theme]
+键盘通知主题
 [All Files]
 所有文件
 [Accounts]
@@ -11154,6 +11430,10 @@ Jabber vCard：编辑电话号码
 规则
 [Flashing]
 闪动
+[Themes]
+主题
+[Keyboard Flash]
+键盘闪动
 [Events]
 事件
 #muuid {DA0B09F5-9C66-488C-AE37-8A5F191C9079}
@@ -11650,6 +11930,8 @@ C 库文件夹
 高级
 [Stop]
 停止
+[Play]
+播放
 [Frame background]
 框架背景
 [OFF]
@@ -12090,6 +12372,10 @@ V
 开
 [Off]
 半
+[Error #%d]
+错误 #%d
+[Can't open log file ]
+无法打开日志文件
 [&Close]
 关闭(&C)
 [Apply]
@@ -16278,6 +16564,12 @@ Miranda 相关
 ;  Version: 0.3.1.1
 ;  Authors: Peacow, nightwish, bid, borkra
 ;============================================================
+[Smiley support for Miranda NG.]
+Miranda NG 的表情支持。
+[Smiley categories]
+表情类别
+[Specify smiley pack for each category]
+指定每个类别的表情包
 [Name:]
 名称：
 [Author:]
@@ -16286,14 +16578,80 @@ Miranda 相关
 版本：
 [Preview]
 预览
+[Use per protocol global smiley packs]
+使用每个协议全局表情包
 [Display]
 显示
+[Replace only smileys surrounded by spaces]
+仅替换空格包围的表情
+[Scale smiley to text height]
+缩放表情到文字高度
+[Disable custom smileys]
+禁用自定义表情
+[High quality smiley scaling]
+高质量表情缩放
+[Animate]
+动画
+[Maximum 'Custom smiley' height]
+最大“自定义表情”高度
+[Minimum smiley height]
+最小表情高度
+[Smiley selector]
+表情选择器
+[Input area]
+输入区域
+[Enable smileys]
+启用表情
+[Don't replace at cursor]
+不要替换光标位置的
+[Surround inserted smiley with spaces]
+用空格包围插入的表情
+[Use first smiley for selection size]
+使用第一个笑脸选择尺寸
+[IEView style window]
+IEView 样式窗口
+[Horizontal sorting]
+水平排序
+[Show smiley selection window]
+显示表情选择窗口
+[SmileyAdd]
+SmileyAdd
+[Smiley cache]
+表情缓存
+[SmileyAdd HTTP connections]
+SmileyAdd 添加 HTTP 连接
+[Button smiley]
+按钮表情
+[Assign smiley category]
+分配表情类别
 [Background color]
 背景色
+[Only one instance of SmileyAdd could be executed.\nRemove duplicate instances from 'Plugins' directory]
+只能执行一个SmileyAdd实例。\n从“Plugins”目录中删除重复的实例
+[Smiley packs]
+表情包
 [All files]
 所有文件
+[Smileys]
+表情
 [Customize]
 自定义
+[Protocol specific]
+特定协议
+[Smiley pack %s for category "%s" not found.\nSelect correct smiley pack in the Options -> Customize -> Smileys.]
+找不到表情包%s于类别“%s”。\n在选项 -> 自定义 -> 表情 中选择正确的表情包。
+[There were problems loading smiley pack (it should be corrected).\nSee network log for details.]
+加载表情包时出现问题（应该更正）。\n请参阅网络日志了解详情。
+[Smiley #%u in file %s for smiley pack %s not found.]
+未找到表情 #%u 在文件 %s 中为了表情包 %s。
+[%s global smiley pack]
+%s 全局表情包
+[Standard]
+标准
+[Regular expression "%s" in smiley pack "%s" malformed.]
+表情包“％s”中的正则表达式“％s”格式错误。
+[d'Oh!]
+d'Oh!  
 #muuid {14331048-5a73-4fdb-b909-2d7e1825a012}
 ;============================================================
 ;  File: Spamotron.dll
@@ -16350,6 +16708,8 @@ Miranda 相关
 已禁用
 [Unknown]
 未知
+[Ignore all]
+忽略所有
 #muuid {c64cc8e0-cf03-474a-8b11-8bd4565ccf04}
 ;============================================================
 ;  File: SplashScreen.dll
@@ -19809,6 +20169,8 @@ TranslitSwitcher
 退回
 [Text]
 文字
+[Use default]
+使用默认
 [Custom]
 自定义
 [Permanent]
@@ -22406,6 +22768,8 @@ N/A
 本地时间
 [Longitude]
 经度
+[Min]
+分钟
 [Mist]
 薄雾
 [Monday]
@@ -22778,6 +23142,8 @@ N/A
 授权请求
 [Status messages]
 状态消息
+[Message Events]
+消息事件
 [The following events are being ignored:]
 以下事件被忽略：
 [Messages]
@@ -22880,6 +23246,8 @@ XSound 通知
 声音
 [Message]
 消息
+[Keyboard Flash]
+键盘闪动
 [Errors]
 错误
 [Cancel]

@@ -47,7 +47,6 @@
 [There are %d spelling errors. Are you sure you want to send this message?]
 [Other...]
 [Always replace with]
-[Ignore all]
 [Add to dictionary]
 [Corrections]
 [Wrong word: %s]

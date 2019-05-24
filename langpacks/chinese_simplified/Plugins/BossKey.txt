@@ -6,69 +6,69 @@
 ;  Authors: Goblineye Entertainment, Billy_Bons
 ;============================================================
 [Anti-Boss plugin. Makes your Miranda NG hidden or password-protected.]
-
+防Boss插件。使您的Miranda NG隐藏或受密码保护。
 ;file \plugins\BossKeyPlus\res\BossKey.rc
 [Go to Options -> Customize -> Hotkeys to change the hotkey]
 转到选项 -> 自定义 -> 热键以更改热键
 [When I press the hotkey:]
-
+当我按下热键时：
 [Change status to]
-
+改变状态为
 [Change only if current status is Online]
-
+仅当当前状态为在线时改变
 [Use default status message]
-
+使用默认状态消息
 [Disable Sounds]
 禁用声音
 [Show the Tray Icon]
 显示托盘图标
 [When I return:]
-
+当我返回时：
 [Request password:]
-
+需要密码
 [Change status back]
-
+改变状态回到
 [Hotkey]
 热键
 [Miranda NG is locked.\nEnter password to unlock it.]
-
+Miranda NG 被锁定。\n输入密码以解锁。
 [Password:]
 密码：
 [Cancel]
 取消
 [Workstation is locked]
-
+工作站被锁定
 [Screen Saver is running]
-
+正在运行屏幕保护程序
 [Windows is inactive]
-
+窗口不是活动的
 [Hide Miranda when:]
-
+隐藏 Miranda 当：
 [Miranda is inactive]
-
+Miranda 非活动
 [min]
-
+分钟
 [Miranda is started]
-
+Miranda 已启动
 [Others]
 其它
 [Create a main menu item]
 创建一个主菜单项
 [Restore hiding on startup after failure]
-
+启动失败后恢复隐藏
 ;file \plugins\BossKeyPlus\src\BossKey.cpp
 [Password is not correct!\nPlease, enter correct password.]
-
+密码不正确！\n请输入正确的密码。
 [Hide Miranda NG]
-
+隐藏 Miranda NG
 [Hide]
 隐藏
 [Hide/Show Miranda]
-
+显示/隐藏 Miranda
 [BossKey]
-
+老板键
 [get the BossKey name]
-
+得到老板键名称
 ;file \plugins\BossKeyPlus\src\Options.cpp
 [Events]
 事件

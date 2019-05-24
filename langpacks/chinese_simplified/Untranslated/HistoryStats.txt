@@ -48,7 +48,6 @@
 [Files (incoming)]
 [Files (outgoing)]
 [Files (all)]
-[Incoming files]
 [Outgoing files]
 [Column holding event counts for incoming, outgoing or total number of files or URLs.]
 [Column holding the contact list's group name the contact is in.]

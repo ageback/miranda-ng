@@ -19,7 +19,6 @@
 [Completed:]
 [Speed:]
 [Remaining:]
-[Pause]
 [File Manager]
 [User info]
 [FTP File Manager]

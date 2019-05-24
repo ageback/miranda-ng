@@ -6,12 +6,12 @@
 ;  Authors: Peacow, nightwish, bid, borkra
 ;============================================================
 [Smiley support for Miranda NG.]
-
+Miranda NG 的表情支持。
 ;file \plugins\SmileyAdd\res\resource.rc
 [Smiley categories]
-
+表情类别
 [Specify smiley pack for each category]
-
+指定每个类别的表情包
 [Name:]
 名称：
 [Author:]
@@ -21,83 +21,83 @@
 [Preview]
 预览
 [Use per protocol global smiley packs]
-
+使用每个协议全局表情包
 [Display]
 显示
 [Replace only smileys surrounded by spaces]
-
+仅替换空格包围的表情
 [Scale smiley to text height]
-
+缩放表情到文字高度
 [Disable custom smileys]
-
+禁用自定义表情
 [High quality smiley scaling]
-
+高质量表情缩放
 [Animate]
-
+动画
 [Maximum 'Custom smiley' height]
-
+最大“自定义表情”高度
 [Minimum smiley height]
-
+最小表情高度
 [Smiley selector]
-
+表情选择器
 [Input area]
-
+输入区域
 [Enable smileys]
-
+启用表情
 [Don't replace at cursor]
-
+不要替换光标位置的
 [Surround inserted smiley with spaces]
-
+用空格包围插入的表情
 [Use first smiley for selection size]
-
+使用第一个笑脸选择尺寸
 [IEView style window]
-
+IEView 样式窗口
 [Horizontal sorting]
-
+水平排序
 ;file \plugins\SmileyAdd\src\dlgboxsubclass.cpp
 [Show smiley selection window]
-
+显示表情选择窗口
 ;file \plugins\SmileyAdd\src\download.cpp
 [SmileyAdd]
-
+SmileyAdd
 [Smiley cache]
-
+表情缓存
 [SmileyAdd HTTP connections]
-
+SmileyAdd 添加 HTTP 连接
 ;file \plugins\SmileyAdd\src\main.cpp
 [Button smiley]
-
+按钮表情
 [Assign smiley category]
-
+分配表情类别
 [Background color]
 背景色
 [Only one instance of SmileyAdd could be executed.\nRemove duplicate instances from 'Plugins' directory]
-
+只能执行一个SmileyAdd实例。\n从“Plugins”目录中删除重复的实例
 ;file \plugins\SmileyAdd\src\options.cpp
 [Smiley packs]
-
+表情包
 [All files]
 所有文件
 [Smileys]
-
+表情
 [Customize]
 自定义
 ;file \plugins\SmileyAdd\src\services.cpp
 [Protocol specific]
-
+特定协议
 ;file \plugins\SmileyAdd\src\smileys.cpp
 [Smiley pack %s for category "%s" not found.\nSelect correct smiley pack in the Options -> Customize -> Smileys.]
-
+找不到表情包%s于类别“%s”。\n在选项 -> 自定义 -> 表情 中选择正确的表情包。
 [There were problems loading smiley pack (it should be corrected).\nSee network log for details.]
-
+加载表情包时出现问题（应该更正）。\n请参阅网络日志了解详情。
 [Smiley #%u in file %s for smiley pack %s not found.]
-
+未找到表情 #%u 在文件 %s 中为了表情包 %s。
 [%s global smiley pack]
-
+%s 全局表情包
 [Standard]
-
+标准
 [Regular expression "%s" in smiley pack "%s" malformed.]
-
+表情包“％s”中的正则表达式“％s”格式错误。
 ;file \plugins\SmileyAdd\src\smltool.cpp
 [d'Oh!]
-
+d'Oh!  

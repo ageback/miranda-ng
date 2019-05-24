@@ -184,7 +184,7 @@
 [Stop]
 停止
 [Play]
-
+播放
 [Frame background]
 框架背景
 [OFF]

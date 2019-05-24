@@ -100,8 +100,6 @@
 [" dialog?\r\nPress Yes to leave changes in this dialog, or No to discard its changes and save changes of the other message tree instead.]
 [Do you really want to delete this category with its messages?]
 [Do you really want to delete this message?]
-[Error #%d]
-[Can't open log file ]
 [Save, replacing the selected message]
 [Save as a new message]
 [Show settings menu]
