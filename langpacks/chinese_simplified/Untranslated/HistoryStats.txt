@@ -209,7 +209,6 @@
 [Show warnings...]
 [There are some potential conflicts in your settings. However, this is only a warning and can in general be ignored. The details:]
 [Add column...]
-[Delete column]
 [Show additional column info...]
 [General column settings]
 [Title (default if empty)]

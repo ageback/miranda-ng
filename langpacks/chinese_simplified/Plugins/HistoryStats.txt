@@ -519,7 +519,7 @@
 [Add column...]
 
 [Delete column]
-
+删除列
 [Move down]
 下移
 [Move up]

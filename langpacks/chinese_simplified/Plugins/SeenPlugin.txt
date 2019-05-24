@@ -83,7 +83,7 @@
 
 ;file \plugins\SeenPlugin\src\main.cpp
 [LastSeen]
-
+最后看到
 [User status change]
 
 [Changed to Online]

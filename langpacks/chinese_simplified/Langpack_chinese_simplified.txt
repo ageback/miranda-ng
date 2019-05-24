@@ -7197,28 +7197,102 @@ URL：
 ;  Version: 0.1.0.1
 ;  Authors: Denis Stanishevskiy
 ;============================================================
+[File transfer by using the messaging services - as plain text.]
+通过使用消息服务传送文件 - 作为纯文本。
+[fileAsMessage]
+文件作为消息
+[Filename:]
+文件名：
 [Size:]
 大小：
+[Chunk size]
+块大小
 [ms]
 毫秒
+[Delays between sends]
+发送间的延时
 [bytes]
 字节
+[Transfer settings]
+传输设置
 [Appearance]
 出现
+[Unsent]
+未发送
+[Sent]
+已发送
+[To send]
+将要发送
+[Received]
+接收的
+[Use only alphanumeric encoding on transfer]
+传输时仅使用字母数字编码
+[Go to Options -> Events -> File Transfers, "Receiving files" group for extra settings]
+转到 选项 -> 事件 -> 文件传输，“接收文件”分组显示额外设置
+[Receive file]
+接收文件
 [Send file]
 发送文件
+[File already exists. Overwrite?]
+文件已经存在。是否覆盖？
+[Couldn't open a file]
+无法打开文件
+[Size: %d bytes]
+大小：%d 字节
+[Request sent. Awaiting of acceptance..]
+请求已发送。等待接受...
 [Sending...]
 正在发送...
+[Received successfully]
+接收成功
+[Requesting of missing chunks]
+请求缺失的块
 [Receiving...]
 正在接收...
+[Sent successfully]
+发送成功
+[Unknown command for "File As Message" was received]
+收到了对“文件作为消息”未知的命令
+[Incoming file request. Do you want to proceed?]
+传入文件请求。你要继续吗？
+[Canceled by remote user]
+被远程用户取消
+[New incoming file request. Do you want to proceed?]
+新的传入文件请求。你要继续吗？
+[File transfer is paused because of dropped connection]
+由于连接丢失，文件传输被暂停
+[Failed on file initialization]
+文件初始化失败
+[Paused...]
+暂停...
+[Synchronizing...]
+正在同步...
 [Select a file]
 选择一个文件
+[Save as]
+另存为
+[Can't get a file size]
+无法得到文件大小
+[Canceled by user]
+被用户取消
+[Transfer is in progress. Do you really want to close?]
+传输正在进行.你真的要关闭吗?
+[Play]
+播放
+[Pause]
+暂停
+[Revive]
+复活
 [Stop]
 停止
 [Main]
 主
 [Events]
 事件
+[File As Message...]
+文件作为消息...
+[File As Message]
+文件作为消息
 #muuid {687364af-58b0-4af2-a4ee-20f40a8d9afb}
 ;============================================================
 ;  File: Fingerprint.dll
@@ -8370,6 +8444,8 @@ History++ 警告
 创建统计
 [Show statistics]
 显示统计
+[Delete column]
+删除列
 [Move down]
 下移
 [Move up]
@@ -14245,10 +14321,68 @@ IP 变更通知
 ;  Version: 0.0.4.2
 ;  Authors: MaD_CLuSTeR
 ;============================================================
+[Plugin for quick insert pre-defined messages in message input area.]
+在消息输入区域中快速插入预定义消息的插件。
+[Button Right-Click value]
+按钮右键点击值
+[Button Left-Click menu]
+按钮左键点击值
 [Buttons]
 按钮
+[Menu entry value:]
+菜单项值：
+[Misc.]
+杂项
+[Auto-send on Left-Click]
+左键点击时自动发送
+[Auto-send on Right-Click]
+右键点击时自动发送
+[Add to QuickMenu]
+添加到快速菜单
+[Enable QuickMenu]
+启用快速菜单
+[Consider as ServiceName]
+认为是服务名
+[You have changed the plugin settings via database.\nThis requires restart!]
+你通过数据库改变了插件设置。\n这需要重启！
+[Quick Messages Help]
+快速消息帮助
+[- Selected text]
+- 选定的文字
+[List of variables:]
+变量列表：
+[- Text from Clipboard]
+- 剪贴板中的文字
+[- Contacts Protocol name (upper case)]
+- 联系人协议名称（大写）
+[- Contact display name]
+- 联系人显示名称
+[Tips:]
+提示：
+[*Rename menu item into "---" to insert separator]
+*重命名菜单项为“---”以插入分隔符
+[*Use drag'n'drop for arranging menu items]
+*使用拖放来排列菜单项
+[- Contact first name]
+- 联系人名字
+[- Contact last name]
+- 联系人姓
+[Quick Messages]
+快速消息
+[Enter Value]
+输入值
+[Congratulation!\r\nYou have clicked this button 100 times!\r\nThere was access violation at this point...\r\nAnd now function for freeing resources must be called...\r\nBut no! there's only break :D]
+恭喜！\r\n你点击了这个按钮 100 次！\r\n此时存在访问冲突...\r\n现在必须调用释放资源的函数...\r\n但是不！只有休息 :D
+[You win!]
+你赢了！
+[New Button]
+新按钮
+[New Menu Entry]
+新菜单项
 [Message sessions]
 消息会话
+[Quick Messages Button %u]
+快速消息按钮 %u
 #muuid {a6a031b6-d32f-4842-98c6-ec716c576b77}
 ;============================================================
 ;  File: QuickReplies.dll
@@ -14283,8 +14417,16 @@ IP 变更通知
 ;  Version: 1.4.2.0
 ;  Authors: Awkward
 ;============================================================
+[This plugin allows you to quick search for nickname, firstname, lastname, email, uin in your contact list. And now you may add any setting to display - for example user's version of Miranda, group or city.]
+这个插件允许你在你的联系人列表中快速搜索昵称、名字、姓、电子邮件、uin.并且现在你可以添加任何要显示的设置 - 例如用户的 Miranda 版本，分组或城市。
+[Quick Search]
+快速搜索
+[Quick search]
+快速搜索
 [Title]
 标题
+[Module/InfoType]
+模块/信息类型
 [Setting]
 设置
 [Reload]
@@ -14299,6 +14441,20 @@ IP 变更通知
 删除
 [Default]
 默认
+[Additional Options]
+附加选项
+[Tool Window Style]
+工具窗口样式
+[Draw Grid]
+绘制网格
+[Save search pattern]
+保存搜索模式
+[Auto Close mode]
+自动关闭模式
+[Sort by Status]
+按状态排序
+[Show Client Icons]
+显示客户图标
 [Settings]
 设置
 [Title:]
@@ -14307,6 +14463,8 @@ IP 变更通知
 帐户
 [Gender]
 性别
+[UserID]
+用户ID
 [Nickname]
 昵称
 [First name]
@@ -14315,28 +14473,58 @@ IP 变更通知
 姓
 [Group]
 分组
+[Container]
+容器
 [E-mail]
 电子邮件
+[Client ID]
+客户ID
+[Ext IP]
+外部IP
+[LastSeen]
+最后看到
+[Last Event]
+最后的事件
+[Online since]
+上线于
+[Metacontact]
+中继联系人
+[Event count]
+事件数量
+[Contact add time]
+联系人添加时间
 [Type:]
 类型：
+[DB setting]
+数据库设置
 [Script]
 脚本
 [Service]
 服务
+[Contact info]
+联系人信息
 [Other]
 其他
+[Data type:]
+数据类型：
 [Byte]
 字节
 [Word]
 单词
 [DWord]
 双字
+[Signed]
+签名的
+[As hex]
+作为hex
 [String]
 字符串
 [TimeStamp]
 时间戳
 [Module:]
 模块：
+[Setting:]
+设置：
 [Service:]
 服务：
 [Param]
@@ -14367,24 +14555,92 @@ Unicode 字符串
 关闭
 [Refresh]
 刷新
+[QuickSearch]
+快速搜索
 [Show Offline contacts]
 显示离线联系人
+[New column]
+新列
+[Save Item]
+保存项目
+[InfoType:]
+信息类型：
+[New Column]
+新列
+[Column Up]
+列向上
+[Column Down]
+列向下
+[Delete Column]
+删除列
 [Male]
 男性
 [Female]
 女性
 [Contacts]
 联系人
+[ContactInfo]
+联系人信息
+[LastEvent]
+上次的事件
+[EventCount]
+事件数量
+[Script Editor]
+脚本编辑器
 [Normal background]
 普通背景
+[Normal foreground]
+普通背景
+[Odd background]
+奇数背景
+[Odd foreground]
+奇数前景
+[Disabled account background]
+禁用帐号背景
+[Disabled account foreground]
+禁用帐号前景
+[Deleted account background]
+删除帐号背景
+[Deleted account foreground]
+删除帐号前景
+[Hidden contact background]
+隐藏帐号背景
+[Hidden contact foreground]
+隐藏帐号前景
+[Metacontact background]
+中继联系人背景
+[Metacontact foreground]
+中继联系人前景
+[Subcontact background]
+子联系人背景
+[Subcontact foreground]
+子联系人前景
 [&Delete]
 删除(&D)
 [&Copy]
 复制(&C)
+[C&onvert to Meta]
+转换为中继联系人(&O)
+[Attach to &Tab container]
+附加到标签容器(&T)
 [&Move to Group]
 移到分组(&M)
+[Some of selected contacts in different metacontacts already]
+一些选中的联系人已经在不同的中继联系人中了
+[Do you really want to delete selected contacts?]
+你真的要删除选中的联系人吗？
 [Warning]
 警告
+[One or more contacts in same Meta already. Try to convert anyway?]
+一个或多个联系人已经在相同的中继联系人中。仍然尝试转换吗？
+[Editing of column ]
+列编辑 
+[%i users found (%i) Online: %i]
+%i 用户被发现（%i）在线：%i
+[ users found (]
+ 用户被发现（
+[) Online: ]
+）在线：
 [Online]
 在线
 [deleted]
@@ -14393,8 +14649,32 @@ Unicode 字符串
 半
 [active]
 活动
+[Colorize]
+着色
+[QuickSearch window hotkey]
+快速搜索窗口热键
+[Column content is simple database setting.]
+列内容是简单的数据库设置。
+[Column content is script result.\r\nMore help from "Help" button in script dialog.]
+列内容是脚本结果。\r\n在脚本对话框中点击“帮助”按钮获得更多帮助。
+[Column content is contact property (see list). Can be empty.]
+列内容是联系人属性（看列表）。可以为空。
+[Content is last online time.]
+内容是最后上线时间。
+[Content is time of last contact event.]
+内容是最后的联系人事件时间。
+[Content is metacontact info.]
+内容是中继联系人信息。
+[Content is count of ALL contact events (not messages only)]
+内容是所有的联系人事件数量（仅非消息的）
+[Other info]
+其他信息
+[Change setting through QS]
+通过快速搜索改变设置
 [default]
 默认
+[Selected]
+选中的
 [contacts]
 联系人
 [Unknown]
@@ -15258,6 +15538,8 @@ Miranda 的根目录路径
 用户菜单
 [View User's Details]
 查看用户详情
+[LastSeen]
+最后看到
 [<unknown>]
 <未知>
 [Last seen]

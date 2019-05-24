@@ -6,15 +6,15 @@
 ;  Authors: Awkward
 ;============================================================
 [This plugin allows you to quick search for nickname, firstname, lastname, email, uin in your contact list. And now you may add any setting to display - for example user's version of Miranda, group or city.]
-
+这个插件允许你在你的联系人列表中快速搜索昵称、名字、姓、电子邮件、uin.并且现在你可以添加任何要显示的设置 - 例如用户的 Miranda 版本，分组或城市。
 [Quick Search]
-
+快速搜索
 [Quick search]
-
+快速搜索
 [Title]
 标题
 [Module/InfoType]
-
+模块/信息类型
 [Setting]
 设置
 [Reload]
@@ -30,19 +30,19 @@
 [Default]
 默认
 [Additional Options]
-
+附加选项
 [Tool Window Style]
-
+工具窗口样式
 [Draw Grid]
-
+绘制网格
 [Save search pattern]
-
+保存搜索模式
 [Auto Close mode]
-
+自动关闭模式
 [Sort by Status]
-
+按状态排序
 [Show Client Icons]
-
+显示客户图标
 [Settings]
 设置
 [Title:]
@@ -52,7 +52,7 @@
 [Gender]
 性别
 [UserID]
-
+用户ID
 [Nickname]
 昵称
 [First name]
@@ -62,39 +62,39 @@
 [Group]
 分组
 [Container]
-
+容器
 [E-mail]
 电子邮件
 [Client ID]
-
+客户ID
 [Ext IP]
-
+外部IP
 [LastSeen]
-
+最后看到
 [Last Event]
-
+最后的事件
 [Online since]
-
+上线于
 [Metacontact]
-
+中继联系人
 [Event count]
-
+事件数量
 [Contact add time]
-
+联系人添加时间
 [Type:]
 类型：
 [DB setting]
-
+数据库设置
 [Script]
 脚本
 [Service]
 服务
 [Contact info]
-
+联系人信息
 [Other]
 其他
 [Data type:]
-
+数据类型：
 [Byte]
 字节
 [Word]
@@ -102,9 +102,9 @@
 [DWord]
 双字
 [Signed]
-
+签名的
 [As hex]
-
+作为hex
 [String]
 字符串
 [TimeStamp]
@@ -112,7 +112,7 @@
 [Module:]
 模块：
 [Setting:]
-
+设置：
 [Service:]
 服务：
 [Param]
@@ -144,23 +144,23 @@ Unicode 字符串
 [Refresh]
 刷新
 [QuickSearch]
-
+快速搜索
 [Show Offline contacts]
 显示离线联系人
 [New column]
-
+新列
 [Save Item]
-
+保存项目
 [InfoType:]
-
+信息类型：
 [New Column]
-
+新列
 [Column Up]
-
+列向上
 [Column Down]
-
+列向下
 [Delete Column]
-
+删除列
 [Male]
 男性
 [Female]
@@ -168,67 +168,67 @@ Unicode 字符串
 [Contacts]
 联系人
 [ContactInfo]
-
+联系人信息
 [LastEvent]
-
+上次的事件
 [EventCount]
-
+事件数量
 [Script Editor]
-
+脚本编辑器
 [Normal background]
 普通背景
 [Normal foreground]
-
+普通背景
 [Odd background]
-
+奇数背景
 [Odd foreground]
-
+奇数前景
 [Disabled account background]
-
+禁用帐号背景
 [Disabled account foreground]
-
+禁用帐号前景
 [Deleted account background]
-
+删除帐号背景
 [Deleted account foreground]
-
+删除帐号前景
 [Hidden contact background]
-
+隐藏帐号背景
 [Hidden contact foreground]
-
+隐藏帐号前景
 [Metacontact background]
-
+中继联系人背景
 [Metacontact foreground]
-
+中继联系人前景
 [Subcontact background]
-
+子联系人背景
 [Subcontact foreground]
-
+子联系人前景
 [&Delete]
 删除(&D)
 [&Copy]
 复制(&C)
 [C&onvert to Meta]
-
+转换为中继联系人(&O)
 [Attach to &Tab container]
-
+附加到标签容器(&T)
 [&Move to Group]
 移到分组(&M)
 [Some of selected contacts in different metacontacts already]
-
+一些选中的联系人已经在不同的中继联系人中了
 [Do you really want to delete selected contacts?]
-
+你真的要删除选中的联系人吗？
 [Warning]
 警告
 [One or more contacts in same Meta already. Try to convert anyway?]
-
+一个或多个联系人已经在相同的中继联系人中。仍然尝试转换吗？
 [Editing of column ]
-
+列编辑 
 [%i users found (%i) Online: %i]
-
+%i 用户被发现（%i）在线：%i
 [ users found (]
-
+ 用户被发现（
 [) Online: ]
-
+）在线：
 [Online]
 在线
 [deleted]
@@ -238,31 +238,31 @@ Unicode 字符串
 [active]
 活动
 [Colorize]
-
+着色
 [QuickSearch window hotkey]
-
+快速搜索窗口热键
 [Column content is simple database setting.]
-
+列内容是简单的数据库设置。
 [Column content is script result.\r\nMore help from "Help" button in script dialog.]
-
+列内容是脚本结果。\r\n在脚本对话框中点击“帮助”按钮获得更多帮助。
 [Column content is contact property (see list). Can be empty.]
-
+列内容是联系人属性（看列表）。可以为空。
 [Content is last online time.]
-
+内容是最后上线时间。
 [Content is time of last contact event.]
-
+内容是最后的联系人事件时间。
 [Content is metacontact info.]
-
+内容是中继联系人信息。
 [Content is count of ALL contact events (not messages only)]
-
+内容是所有的联系人事件数量（仅非消息的）
 [Other info]
-
+其他信息
 [Change setting through QS]
-
+通过快速搜索改变设置
 [default]
 默认
 [Selected]
-
+选中的
 [contacts]
 联系人
 [Unknown]

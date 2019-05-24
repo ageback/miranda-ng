@@ -6,94 +6,94 @@
 ;  Authors: Denis Stanishevskiy
 ;============================================================
 [File transfer by using the messaging services - as plain text.]
-
+通过使用消息服务传送文件 - 作为纯文本。
 ;file \plugins\FileAsMessage\res\resources.rc
 [fileAsMessage]
-
+文件作为消息
 [Filename:]
-
+文件名：
 [Size:]
 大小：
 [Chunk size]
-
+块大小
 [ms]
 毫秒
 [Delays between sends]
-
+发送间的延时
 [bytes]
 字节
 [Transfer settings]
-
+传输设置
 [Appearance]
 出现
 [Unsent]
-
+未发送
 [Sent]
-
+已发送
 [To send]
-
+将要发送
 [Received]
-
+接收的
 [Use only alphanumeric encoding on transfer]
-
+传输时仅使用字母数字编码
 [Go to Options -> Events -> File Transfers, "Receiving files" group for extra settings]
-
+转到 选项 -> 事件 -> 文件传输，“接收文件”分组显示额外设置
 ;file \plugins\FileAsMessage\src\dialog.cpp
 [Receive file]
-
+接收文件
 [Send file]
 发送文件
 [File already exists. Overwrite?]
-
+文件已经存在。是否覆盖？
 [Couldn't open a file]
-
+无法打开文件
 [Size: %d bytes]
-
+大小：%d 字节
 [Request sent. Awaiting of acceptance..]
-
+请求已发送。等待接受...
 [Sending...]
 正在发送...
 [Received successfully]
-
+接收成功
 [Requesting of missing chunks]
-
+请求缺失的块
 [Receiving...]
 正在接收...
 [Sent successfully]
-
+发送成功
 [Unknown command for "File As Message" was received]
-
+收到了对“文件作为消息”未知的命令
 [Incoming file request. Do you want to proceed?]
-
+传入文件请求。你要继续吗？
 [Canceled by remote user]
-
+被远程用户取消
 [New incoming file request. Do you want to proceed?]
-
+新的传入文件请求。你要继续吗？
 [File transfer is paused because of dropped connection]
-
+由于连接丢失，文件传输被暂停
 [Failed on file initialization]
-
+文件初始化失败
 [Paused...]
-
+暂停...
 [Synchronizing...]
-
+正在同步...
 [Select a file]
 选择一个文件
 [Save as]
-
+另存为
 [Can't get a file size]
-
+无法得到文件大小
 [Canceled by user]
-
+被用户取消
 [Transfer is in progress. Do you really want to close?]
-
+传输正在进行.你真的要关闭吗?
 ;file \plugins\FileAsMessage\src\main.cpp
 [Play]
-
+播放
 [Pause]
-
+暂停
 [Revive]
-
+复活
 [Stop]
 停止
 [Main]
@@ -101,7 +101,7 @@
 [Events]
 事件
 [File As Message...]
-
+文件作为消息...
 ;file \plugins\FileAsMessage\src\stdafx.h
 [File As Message]
-
+文件作为消息

@@ -19,7 +19,6 @@
 [Send Instant Message]
 [last seen history]
 [Date: %d.%m.%y(%Y) \n Date desc: %W - %w - %E - %e \n Time: %H:%M:%S (%h-%p) \n user: %n - %u \n Status: %s \n IP: %i - %r]
-[LastSeen]
 [User status change]
 [Changed to Online]
 [User Logged Off]
