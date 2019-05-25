@@ -135,7 +135,6 @@
 [Export List To &Text File...]
 [Gadu-Gadu account chooser]
 [Gadu-Gadu Link Protocol]
-[Ask]
 [Password could not be reminded because of error:\n\t%s (Error: %d)]
 [Password was sent to your e-mail.]
 [Cannot remove old avatar file before refresh. ERROR: %d: %s\n%s]

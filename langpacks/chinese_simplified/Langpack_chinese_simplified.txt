@@ -3432,14 +3432,58 @@ AddContact+
 ;  Version: 0.2.1.1
 ;  Authors: H. Herkenrath
 ;============================================================
+[Handles file type associations and URLs like gg, mirpu, wpmsg, xmpp, ymsgr.]
+处理文件类型关联和URL像 gg，mirpu，wpmsg，xmpp，ymsgr.
+[Registered associations for Miranda NG:]
+为 Miranda NG 注册的关联：
 [Miscellaneous]
 杂项
+[&Start Miranda NG automatically when the computer starts (using current profile)]
+计算机启动时自动启动 Miranda NG（使用当前配置文件）(&S)
+[Only associate with Miranda NG while it is &running]
+仅当 Miranda NG 正在运行时才与它关联(&R)
+[%hs files]
+%hs 文件
 [Type]
 类型
+[Description]
+描述
+[URLs on websites]
+网站上的URL
+[File types]
+文件类型
+[File association error]
+文件关联错误
+[There was an error writing to the registry to modify the file/url associations.\nReason: %s]
+写入注册表以修改文件/url关联时发生错误。\n\n原因：%s
 [Unknown]
 未知
+[Autostart error]
+自动启动错误
+[There was an error writing to the registry to modify the autostart list.\n\nReason: %s]
+写入注册表以修改自动启动列表时发生错误。\n\n原因：%s
 [Services]
 服务
+[Associations]
+关联
+[Miranda NG database]
+Miranda NG 数据库
+[Miranda NG could not open file]
+Miranda NG 无法打开文件
+[Miranda NG was not able to open "%S".\n\nThere is no registered handler for this file type.]
+Miranda NG 无法打开“%S”。\n\n没有这种文件类型的已注册的处理程序。
+[Miranda NG was not able to open "%S".\n\nThe file could not be processed.]
+Miranda NG 无法打开“%S”。\n\n文件无法处理。
+[Miranda NG could not open URL]
+Miranda NG 无法打开URL
+[Miranda NG was not able to open "%S".\n\nThere is no registered handler for this URL type.]
+Miranda NG 无法打开“%S”。\n\n没有这种URL类型的已注册的处理程序。
+[Miranda NG was not able to open "%S".\n\nThe given URL is invalid and cannot be parsed.]
+Miranda NG 无法打开“%S”。\n\n给定的 URL 无效，无法解析。
+[Access failed:\n%.64hs(%.128s)\n%.250hs(%u)\n%.256hs (%u)]
+访问失败：\n%.64hs（%.128s）\n%.250hs（%u）\n%.256hs（%u）
+[Registry warning]
+注册表警告
 #muuid {dace7d41-dfa9-4772-89ae-a59a6153e6b2}
 ;============================================================
 ;  File: AuthState.dll
@@ -7745,6 +7789,8 @@ FTP 文件
 联系人
 [Allow]
 允许
+[Ask]
+询问
 [Ignore]
 忽略
 [Notifications]

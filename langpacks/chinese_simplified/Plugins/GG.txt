@@ -385,7 +385,7 @@
 [Allow]
 允许
 [Ask]
-
+询问
 [Ignore]
 忽略
 ;file \protocols\Gadu-Gadu\src\ownerinfo.cpp
