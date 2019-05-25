@@ -217,7 +217,7 @@
 [Trim to]
 
 [KB]
-
+KB
 [Group chat]
 
 [Use same style as in the message log]

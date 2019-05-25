@@ -23,7 +23,6 @@
 [Occurrence]
 [Once]
 [Weekdays]
-[Yearly]
 [i'm hiding]
 [Disable next occurrence]
 [Don't trigger on startup]

@@ -122,7 +122,7 @@
 [Name]
 名字
 [Description]
-
+描述
 [Group?]
 
 [True]

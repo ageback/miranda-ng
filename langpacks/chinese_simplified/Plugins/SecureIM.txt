@@ -103,7 +103,7 @@
 [Events]
 事件
 [Popup Timeout]
-
+弹出窗口超时
 [Time in Seconds]
 
 [0 = Default Popup Timeout Value]

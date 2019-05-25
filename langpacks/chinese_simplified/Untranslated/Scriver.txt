@@ -41,7 +41,6 @@
 [Nick list row height]
 [Save logs]
 [Trim to]
-[KB]
 [Group chat]
 [(0 means default setting, -1 means indefinite time)]
 [Paste && send]

@@ -3144,6 +3144,8 @@ UTF16+签名
 时间
 [Date]
 日期
+[Description]
+描述
 [TopToolbar]
 TopToolBar
 [Main menu]
@@ -3358,6 +3360,8 @@ AddContact+
 每周
 [Daily]
 每天
+[Yearly]
+每年
 [Date and time]
 日期和时间
 [Monthly]
@@ -3572,14 +3576,34 @@ Miranda NG 无法打开“%S”。\n\n给定的 URL 无效，无法解析。
 ;  Version: 0.1.0.2
 ;  Authors: Matthew Wild (MattJ), Ricardo Pescuma Domenecci
 ;============================================================
+[This plugin keeps backups of all your contacts' avatar changes and/or shows popups.]
+这个插件保留所有你的联系人的头像变更和/或显示弹出窗口的备份。
 [Save as...]
 保存为...
+[Delete this entry]
+删除此项
+[Delete this entry and the bitmap file]
+删除此项和位图文件
+[Avatar history]
+头像历史
 [Static]
 斜体
 [Open folder]
 打开文件夹
+[Store this user's old avatars in disk]
+在磁盘中存储这个用户的旧头像
+[Log this user's avatars changes to history]
+记录这个用户的头像变更到历史
+[Show popups for this user]
+显示这个用户的弹出窗口
 [Protocols]
 协议
+[Enable tracking for these protocols:]
+允许跟踪这些协议：
+[Metacontacts have special handling: the info is always copied from subcontacts (notifications from a meta are ignored)]
+中继联系人有特殊的处理：信息总是从子联系人复制（忽略来自中继联系人的通知）
+[Show popup when a contact change his avatar]
+当联系人改变他的头像时显示弹出窗口
 [Colors]
 颜色
 [Background color]
@@ -3600,24 +3624,110 @@ Miranda NG 无法打开“%S”。\n\n给定的 URL 无效，无法解析。
 永久
 [Actions]
 动作
+[On right click:]
+右键点击时：
+[On left click:]
+左键点击时：
+[Track]
+跟踪
+[Avatar change:]
+头像变更：
+[Avatar removal:]
+头像移除：
 [Preview]
 预览
+[Avatar history: Select how to store history avatars]
+头像历史：选择如何存储历史头像
+[Please select how the avatar history should be stored. This setting CANNOT be changed in future, because it would cause all previous history to be lost.]
+请选择应该如何存储头像历史。将来无法改变这个设置，因为这将导致所有以前的历史丢失。
+[Store history in Miranda history and all history avatars in same folder]
+在 Miranda 历史中存储历史并且所有历史头像在相同文件夹中
+[Store history in Miranda history and history avatars in per protocol folders]
+在 Miranda 历史中存储历史并且历史头像在每个协议文件夹中
+[Store history in Miranda history and history avatars in per contact folders using shortcuts]
+在 Miranda 历史中存储历史并且使用快捷方式在每个联系人文件夹中存储历史头像
+[Store history avatars in per contact folders using shortcuts]
+使用快捷方式在每个联系人文件夹中存储历史头像
+[Store history avatars in per contact folders]
+在每个联系人文件夹中存储历史头像
+[History is stored inside Miranda database. It can be seen by History++ or Avatar History internal viewer.]
+历史记录存储在 Miranda 数据库中。它可以通过 History++ 或 头像历史内部查看器查看。
+[All avatars are stored as <Profile>\\Avatars History\\<Avatar hash>]
+所有头像都存储为 <Profile>\\Avatars History\\<Avatar hash>
+[All avatars are stored as <Profile>\\Avatars History\\<Protocol>\\<Avatar hash>]
+所有头像都存储为 <Profile>\\Avatars History\\<Protocol>\\<Avatar hash>
+[All avatars are stored as <Profile>\\Avatars History\\<Protocol>\\<Avatar hash> and have a shortcut per history entry in <Profile>\\Avatars History\\<Protocol>\\<Contact ID>\\<Timestamp>]
+所有头像都存储为 <Profile>\\Avatars History\\<Protocol>\\<Avatar hash> 并在 <Profile>\\Avatars History\\<Protocol>\\<Contact ID>\\<Timestamp> 中的每个历史条目中都有一个快捷方式
+[History is stored only in disk. It can be seen by Avatar History internal viewer.]
+历史只存储在磁盘中。可以通过头像历史内部查看器查看它。
+[All avatars are stored as <Profile>\\Avatars History\\<Protocol>\\<Contact ID>\\<Timestamp> (the same image can be stored lot of times)]
+所有头像都存储为 <Profile>\\Avatars History\\<Protocol>\\<Contact ID>\\<Timestamp>（相同的图像可以存储很多次）
+[Avatar history for %s]
+%s 的头像历史
+[Are you sure you wish to delete this history entry?\nOnly the entry in history will be deleted, bitmap file will be kept!]
+你确定要删除这个历史记录吗？\n只删除历史中的记录，位图文件将被保留！
+[Delete avatar log?]
+删除头像记录吗？
+[Are you sure you wish to delete this avatar shortcut?\nOnly shortcut will be deleted, bitmap file will be kept!]
+你确定要删除这个头像快捷方式吗？\n只删除快捷方式，位图文件将被保留！
+[Are you sure you wish to delete this archived avatar?\nThis will delete the history entry and the bitmap file.\nWARNING: This can affect more than one entry in history!]
+你确定要删除这个归档头像吗？\n这将删除历史记录和位图文件。\n警告：这会影响历史中的多个记录！
+[Delete avatar?]
+删除头像吗？
+[Are you sure you wish to delete this archived avatar?\nThis will delete the shortcut and the bitmap file.\nWARNING: This can affect more than one shortcut!]
+您确定要删除此存档的头像吗？\n这将删除快捷方式和位图文件。\n警告：这可能会影响多个快捷方式！
+[Avatar history is empty!]
+头像历史是空的！
+[Avatar path is null.]
+头像路径为空。
+[View avatar history]
+查看头像历史
+[Save avatar for %s]
+保存 %s 的头像
+[Save avatar]
+保存头像
+[Avatar history: Unable to save avatar]
+头像历史：无法保存头像
 [Avatars]
 头像
+[Avatar History]
+头像历史
+[Contact changed avatar]
+联系人改变了头像
+[Contact removed avatar]
+联系人移除了头像
 [Avatar overlay]
 头像叠加
 [Do nothing]
 啥都不干
 [Close popup]
 关闭弹出窗口
+[Show avatar history]
+显示头像历史
+[Show contact history]
+显示联系人历史
+[Test contact]
+测试联系人
+[Test description]
+测试描述
 [History]
 历史
 [Avatar]
 头像
 [Popups]
 弹出窗口
+[Avatar change]
+头像变更
+[removed his/her avatar]
+移除了他/她的头像
+[changed his/her avatar]
+改变了他/她的头像
 [Unknown protocol]
 未知协议
+[Unknown UIN]
+未知 UIN
+[Avatar history: Unable to create shortcut]
+头像历史：无法创建快捷方式
 #muuid {e00f1643-263c-4599-b84b-053e5c511d29}
 ;============================================================
 ;  File: AVS.dll
@@ -8584,6 +8694,8 @@ History++ 警告
 ;============================================================
 [Cancel]
 取消
+[Description]
+描述
 [Add]
 添加
 [Contacts]
@@ -8616,6 +8728,8 @@ History++ 警告
 天
 [week]
 星期
+[month]
+月
 [In/out]
 入/出
 [Outgoing]
@@ -9057,6 +9171,8 @@ IEView
 新帐户
 [&Import...]
 导入(&I)...
+[Miranda NG database]
+Miranda NG 数据库
 [All Files]
 所有文件
 [Import...]
@@ -13715,6 +13831,8 @@ OpenSSL 错误
 更新
 [Cancel]
 取消
+[Description]
+描述
 [Downloading...]
 正在下载...
 [On startup]
@@ -15149,6 +15267,8 @@ Unicode 字符串
 %s 连接
 [Name]
 名字
+[Description]
+描述
 [Notifications]
 通知
 [Errors]
@@ -15288,6 +15408,8 @@ Unicode 字符串
 要高亮的单词(允许通配符)
 [Location]
 位置
+[KB]
+KB
 [Use same style as in the message log]
 使用与消息日志中相同的样式
 [Use default colors]
@@ -15797,6 +15919,8 @@ Miranda 的根目录路径
 预览
 [Events]
 事件
+[Popup Timeout]
+弹出窗口超时
 [Username:]
 用户名：
 [Password:]
@@ -15884,6 +16008,8 @@ Miranda 的根目录路径
 <未知>
 [Last seen]
 上次见到
+[month]
+月
 [day]
 天
 [minutes]
@@ -20195,12 +20321,22 @@ TopToolBar
 ;  Version: 0.1.1.8
 ;  Authors: Ghost, Mironych
 ;============================================================
+[Adding traffic and time counters.]
+添加流量和时间计数器。
+[Selected totals]
+选定总数
 [Accounts]
 帐户
 [Units]
 单位
+[Clear statistics]
+清除统计
 [Notification]
 通知
+[Notify me on every]
+通知我在每
+[kilobytes]
+千字节
 [minutes]
 分
 [Background color:]
@@ -20209,50 +20345,122 @@ TopToolBar
 文字颜色：
 [Reset to default]
 重置为默认
+[Popup timeout]
+弹出窗口超时
 [From popup plugin]
 来自弹出窗口插件
 [Custom]
 自定义
 [Test]
 测试
+[Show now]
+现在显示
+[Space between lines:]
+行间距：
+[Counters format string:]
+计数器格式字符串：
+[Tooltip format string:]
+工具提示格式字符串：
+[Display traffic for current]
+显示当前的流量
 [Display]
 显示
 [Icon]
 图标
 [Account name]
 帐户名
+[Current traffic]
+当前流量
+[Total traffic]
+总流量
+[Current online]
+当前在线
+[Total online]
+总在线
 [General]
 通用
+[Draw frame as skin element]
+绘制框架作为皮肤元素
+[Show tooltip in traffic window]
+在流量窗口中显示工具提示
+["Toggle traffic counter" in main menu]
+在主菜单中显示“切换流量计数器”
+[Visible accounts]
+可见帐户
+[Summary traffic for visible accounts]
+可见帐户的汇总流量
+[Overall traffic]
+总体流量
+[Hide now]
+现在隐藏
 [Day]
 天
 [Week]
 星期
+[Month]
+月
+[Year]
+年
 [Services]
 服务
 [Options]
 选项
+[Traffic counter]
+流量计数器
 [Statistics]
 统计
 [Popups]
 弹出窗口
 [Bytes]
 字节
+[KB]
+KB
 [MB]
-毫巴
+MB
+[Adaptive]
+适配
+[Hourly]
+每小时
 [Daily]
 每天
 [Weekly]
 每周
 [Monthly]
 每月
+[Yearly]
+每年
+[Period]
+周期
 [Incoming]
 传入
 [Outgoing]
 传出
+[Sum]
+合计
 [Online]
 在线
+[Now traffic statistics for selected accounts will be cleared.\nContinue?]
+选中帐户的流量统计现在将被清除。\n是否继续？
+[Couldn't read statistics file]
+无法读取统计文件
+[Traffic Counter]
+流量计数器
 [Font]
 字体
+[Show/Hide frame]
+显示/隐藏框架
+[Hide traffic window]
+隐藏流量窗口
+[Clear the current (Now:) value]
+清除当前（现在：）值
+[Toggle traffic counter]
+切换流量计数器
+[Traffic counter notification]
+流量计数器通知
+[%d kilobytes sent]
+%d 千字节已发送
+[%d kilobytes received]
+%d 千字节已接收
 #muuid {0286947d-3140-4222-b5ad-2c92315e1c1e}
 ;============================================================
 ;  File: TranslitSwitcher.dll
@@ -21550,6 +21758,8 @@ UserInfoEx 不支持这个版本的 XMLCard
 ;  Version: 0.2.3.11
 ;  Authors: P Boon
 ;============================================================
+[Description]
+描述
 [Setting]
 设置
 [Close]
@@ -21720,6 +21930,8 @@ URL：
 xStatus 标题
 [Winamp Track]
 Winamp 单轨
+[Track]
+跟踪
 [Left click]
 左键点击
 [Right click]
@@ -21730,8 +21942,16 @@ Winamp 单轨
 窗口颜色
 [Custom colors]
 自定义颜色
+[Kilobytes]
+千字节
 [none]
 无
+[kb]
+KB
+[Kb]
+KB
+[KB]
+KB
 ;other strings
 #muuid {692e87d0-6c71-4cdc-9e36-2b2d69fbdc4c}
 ;============================================================

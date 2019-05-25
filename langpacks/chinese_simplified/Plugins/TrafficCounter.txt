@@ -6,22 +6,22 @@
 ;  Authors: Ghost, Mironych
 ;============================================================
 [Adding traffic and time counters.]
-
+添加流量和时间计数器。
 ;file \plugins\TrafficCounter\res\resource.rc
 [Selected totals]
-
+选定总数
 [Accounts]
 帐户
 [Units]
 单位
 [Clear statistics]
-
+清除统计
 [Notification]
 通知
 [Notify me on every]
-
+通知我在每
 [kilobytes]
-
+千字节
 [minutes]
 分
 [Background color:]
@@ -31,7 +31,7 @@
 [Reset to default]
 重置为默认
 [Popup timeout]
-
+弹出窗口超时
 [From popup plugin]
 来自弹出窗口插件
 [Custom]
@@ -39,15 +39,15 @@
 [Test]
 测试
 [Show now]
-
+现在显示
 [Space between lines:]
-
+行间距：
 [Counters format string:]
-
+计数器格式字符串：
 [Tooltip format string:]
-
+工具提示格式字符串：
 [Display traffic for current]
-
+显示当前的流量
 ;file \plugins\TrafficCounter\src\options.cpp
 [Display]
 显示
@@ -56,43 +56,43 @@
 [Account name]
 帐户名
 [Current traffic]
-
+当前流量
 [Total traffic]
-
+总流量
 [Current online]
-
+当前在线
 [Total online]
-
+总在线
 [General]
 通用
 [Draw frame as skin element]
-
+绘制框架作为皮肤元素
 [Show tooltip in traffic window]
-
+在流量窗口中显示工具提示
 ["Toggle traffic counter" in main menu]
-
+在主菜单中显示“切换流量计数器”
 [Visible accounts]
-
+可见帐户
 [Summary traffic for visible accounts]
-
+可见帐户的汇总流量
 [Overall traffic]
-
+总体流量
 [Hide now]
-
+现在隐藏
 [Day]
 天
 [Week]
 星期
 [Month]
-
+月
 [Year]
-
+年
 [Services]
 服务
 [Options]
 选项
 [Traffic counter]
-
+流量计数器
 [Statistics]
 统计
 [Popups]
@@ -101,13 +101,13 @@
 [Bytes]
 字节
 [KB]
-
+KB
 [MB]
-毫巴
+MB
 [Adaptive]
-
+适配
 [Hourly]
-
+每小时
 [Daily]
 每天
 [Weekly]
@@ -115,37 +115,37 @@
 [Monthly]
 每月
 [Yearly]
-
+每年
 [Period]
-
+周期
 [Incoming]
 传入
 [Outgoing]
 传出
 [Sum]
-
+合计
 [Online]
 在线
 [Now traffic statistics for selected accounts will be cleared.\nContinue?]
-
+选中帐户的流量统计现在将被清除。\n是否继续？
 [Couldn't read statistics file]
-
+无法读取统计文件
 [Traffic Counter]
-
+流量计数器
 ;file \plugins\TrafficCounter\src\TrafficCounter.cpp
 [Font]
 字体
 [Show/Hide frame]
-
+显示/隐藏框架
 [Hide traffic window]
-
+隐藏流量窗口
 [Clear the current (Now:) value]
-
+清除当前（现在：）值
 [Toggle traffic counter]
-
+切换流量计数器
 [Traffic counter notification]
-
+流量计数器通知
 [%d kilobytes sent]
-
+%d 千字节已发送
 [%d kilobytes received]
-
+%d 千字节已接收

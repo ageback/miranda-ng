@@ -103,7 +103,7 @@
 [year (2 digits)]
 
 [month]
-
+月
 [name of month]
 
 [short name of month]

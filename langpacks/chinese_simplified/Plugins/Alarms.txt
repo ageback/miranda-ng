@@ -85,7 +85,7 @@
 [Weekdays]
 
 [Yearly]
-
+每年
 [i'm hiding]
 
 [Date and time]

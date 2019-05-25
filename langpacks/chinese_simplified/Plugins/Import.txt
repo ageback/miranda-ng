@@ -166,7 +166,7 @@
 [Miranda Import]
 
 [Miranda NG database]
-
+Miranda NG 数据库
 [All Files]
 所有文件
 [You cannot import your current profile into itself]

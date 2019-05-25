@@ -526,7 +526,7 @@ Winamp 单轨
 [Album]
 
 [Track]
-
+跟踪
 [Get Artist Info]
 
 [Get Track Info]
@@ -590,7 +590,7 @@ Winamp 单轨
 [Picture transform]
 
 [Kilobytes]
-
+千字节
 [Megabytes]
 
 [Precision]
@@ -598,11 +598,11 @@ Winamp 单轨
 [none]
 无
 [kb]
-
+KB
 [Kb]
-
+KB
 [KB]
-
+KB
 [Color]
 
 [Output]

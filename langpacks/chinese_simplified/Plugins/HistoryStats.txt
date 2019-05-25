@@ -17,7 +17,7 @@
 [Available column types:]
 
 [Description]
-
+描述
 [Add]
 添加
 [HistoryStats - Conflicting files]
@@ -195,7 +195,7 @@
 [week]
 星期
 [month]
-
+月
 [#{data} per #{unit}]
 
 ;file \plugins\HistoryStats\src\column_inout.h

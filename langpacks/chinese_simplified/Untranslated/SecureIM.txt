@@ -33,7 +33,6 @@
 [Secure connection colors]
 [Send/Receive encrypted colors]
 [SecureIM Popup Colors]
-[Popup Timeout]
 [Time in Seconds]
 [0 = Default Popup Timeout Value]
 [Show a popup on established connection]

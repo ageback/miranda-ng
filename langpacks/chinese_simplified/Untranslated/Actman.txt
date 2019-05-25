@@ -22,7 +22,6 @@
 [Send event on start time]
 [Send event just once]
 [Hooks]
-[Description]
 [hook sample]
 [Event]
 [Miranda event help]
