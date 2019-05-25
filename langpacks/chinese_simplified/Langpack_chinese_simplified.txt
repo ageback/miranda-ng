@@ -3732,6 +3732,8 @@ XML 文件
 在时间戳中显示日期
 [Show seconds in timestamps]
 在时间戳中显示秒
+[Enable smileys]
+启用表情
 [All contacts]
 所有联系人
 [Name]
@@ -6841,6 +6843,8 @@ Unicode 设置
 更改
 [Remove]
 移除
+[Standard]
+标准
 [Database]
 数据库
 [Compact]
@@ -6862,6 +6866,8 @@ Unicode 设置
 更改
 [Remove]
 移除
+[Standard]
+标准
 [Password]
 密码
 [Database]
@@ -6881,6 +6887,8 @@ Unicode 设置
 更改
 [Remove]
 移除
+[Standard]
+标准
 #muuid {81c220a6-0226-4ad6-bfca-217b17a16053}
 ;============================================================
 ;  File: Db_autobackups.dll
@@ -16164,34 +16172,122 @@ Upload Pie（1星期）
 ;  Version: 0.1.3.2
 ;  Authors: MaD_CLuSTeR
 ;============================================================
+[Sessions Manager for Miranda NG.]
+Miranda NG 会话管理器。
+[Action on Startup]
+启动时的动作
+[Open Sessions Manager dialog]
+打开会话管理器对话框
+[Restore Last Session]
+恢复上次的会话
 [Do nothing]
 啥都不干
+[Only if last session present]
+仅当上次会话存在
+[Startup delay]
+启动延时
 [ms]
 毫秒
+[User Sessions Management]
+用户会话管理
 [Edit]
 编辑
 [Delete]
 删除
 [Save]
 保存
+[Action on Exit]
+退出时的动作
+[Ask]
+询问
+[Save Current Session]
+保存当前会话
+[Save only last]
+只保存最后
+[sessions]
+会话
 [Misc]
 杂项
+[Exclude hidden contacts from session on exit]
+退出时从会话中排除隐藏的联系人
+[Warn, when some of LastSession contacts are hidden]
+警告，当某些上次会话的联系人被隐藏时
+[Show other warnings ("session already opened", etc.)]
+显示其他警告（“会话已经打开”，等等）
+[Crash Recovery mode]
+崩溃恢复模式
+[Restore Session]
+恢复会话
+[&Restore Session]
+恢复会话(&R)
 [&Cancel]
 取消(&C)
+[Choose session to restore from the list:]
+从列表中选择要恢复的会话：
+[Del]
+删除
+[Save Session]
+保存会话
+[&Save Session]
+保存会话(&S)
+[Enter session name:]
+输入会话名称：
 [Save and Close]
 保存并关闭
+[adv.]
+高级
 [Sessions Manager]
 会话管理器
 [Cancel]
 取消
+[Save your current session?]
+保存你的当前会话吗？
+[Sessions]
+会话
+[Favorite Session]
+收藏的会话
+[Not favorite Session]
+不是收藏的会话
+[Load Session]
+加载会话
+[Load last Session]
+加载上次会话
+[Current session is empty!]
+当前会话是空的！
+[Session name is empty, enter the name and try again]
+会话名称是空的，输入名称并重试
+[No sessions to open]
+没有会话来打开
+[Last Sessions is empty]
+上次会话是空的
+[No contacts to open]
+没有联系人来打开
+[This Session already opened]
+这个会话已经打开
+[This Session already opened (but probably hidden).\nDo you want to show hidden contacts?]
+这个会话已经打开（但是大概隐藏了）。\n你要显示隐藏的联系人吗？ 
+[Open Sessions Manager]
+打开会话管理器
+[Show Favorite Sessions Menu]
+显示收藏会话菜单
+[Restore last Session]
+恢复上次会话
 [Close Session]
 关闭会话
+[Save session...]
+保存会话...
+[Load session...]
+加载会话...
 [Close session]
 关闭会话
+[Load last session]
+加载上次会话
 [View]
 查看
 [Message sessions]
 消息会话
+[Session Before Last Crash]
+上次崩溃前的会话
 #muuid {7993ab24-1fda-428c-a89b-be377a10be3a}
 ;============================================================
 ;  File: ShlExt.dll

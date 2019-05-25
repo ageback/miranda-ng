@@ -57,7 +57,7 @@
 [Show seconds in timestamps]
 在时间戳中显示秒
 [Enable smileys]
-
+启用表情
 [Search forward in list group]
 
 [Search forward in message window]

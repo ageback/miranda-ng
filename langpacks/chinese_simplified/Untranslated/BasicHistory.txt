@@ -13,7 +13,6 @@
 [New messages on top]
 [Delta time to group messages:]
 [Limit messages to:]
-[Enable smileys]
 [Search forward in list group]
 [Search forward in message window]
 [Match case]
