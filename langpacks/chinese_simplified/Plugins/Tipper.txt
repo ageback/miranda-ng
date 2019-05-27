@@ -451,9 +451,9 @@ xStatus 标题
 [%dd %dh %dm]
 
 [%dh %dm]
-
+%dh %dm
 [%dm]
-
+%dm
 ;file \plugins\TipperYM\src\tipper.cpp
 [Background]
 背景

@@ -44,7 +44,7 @@
 [Loop single media]
 
 [Station Name]
-
+站点名称
 [Timeout, ms (5000)]
 
 [PreBuf, % (75%)]

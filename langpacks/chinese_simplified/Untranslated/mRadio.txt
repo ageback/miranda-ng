@@ -17,7 +17,6 @@
 [Play from first]
 [Shuffle playlist]
 [Loop single media]
-[Station Name]
 [Timeout, ms (5000)]
 [PreBuf, % (75%)]
 [Hallway]

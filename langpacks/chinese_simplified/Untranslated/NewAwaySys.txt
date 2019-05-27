@@ -14,7 +14,6 @@
 [%extratext% is your status message]
 [&Variables]
 [Se&ttings]
-[Ignore requests]
 [Send an autoreply]
 [New &category]
 [Save as &new]

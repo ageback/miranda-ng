@@ -6,7 +6,7 @@
 ;  Authors: Scott Ellis
 ;============================================================
 [Sets once-off, daily, weekly and weekday alarms.]
-
+ 一次性设置，每日，每周和工作日警报。
 ;file \plugins\Alarms\res\resource.rc
 [New]
 新
@@ -15,142 +15,142 @@
 [Edit]
 编辑
 [Alarms]
-
+警报
 [Use popup plugin]
-
+使用弹出窗口插件
 [Default snooze:]
-
+默认打盹：
 [minutes]
 分
 [Row height:]
 行高：
 [Indent:]
-
+缩进：
 [Reminder frame]
-
+提醒框架
 [Auto hide/show]
-
+自动隐藏/显示
 [Loop sound]
-
+循环声音
 [Period (hours):]
-
+周期（小时）：
 [Hide/show with clist]
-
+和联系人列表一起隐藏/显示
 [Auto size vertically]
-
+垂直自动尺寸
 [Transparency (%):]
-
+透明度（%）：
 [Alert window]
-
+警报窗口
 [Round corners]
 圆角
 [Don't steal focus unless idle]
-
+不要偷取焦点，除非空闲
 [Preview]
 预览
 [Alarm]
-
+警报
 [Cancel]
 取消
 [Title:]
-称号
+标题：
 [Description:]
 描述：
 [Actions]
 动作
 [Popup window]
-
+弹出窗口
 [Sound:]
 声音：
 [Run command:]
-
+运行命令：
 [Parameters:]
-
+参数：
 [Alert 1]
-
+警报 1 
 [Alert 2]
-
+警报 2
 [Alert 3]
-
+警报 3
 [Speak]
-
+说话
 [Occurrence]
-
+发生
 [Once]
-
+一次
 [Weekly]
 每周
 [Daily]
 每天
 [Weekdays]
-
+工作日
 [Yearly]
 每年
 [i'm hiding]
-
+我藏起来了
 [Date and time]
 日期和时间
 [Disable next occurrence]
-
+禁止下一次发生
 [Don't trigger on startup]
-
+启动时不要触发
 [No reminder]
-
+不提醒
 [Selected days]
-
+选定的日子
 [Mon]
-
+星期一
 [Tue]
-
+星期二
 [Wed]
-
+星期三
 [Thu]
-
+星期四
 [Fri]
-
+星期五
 [Sat]
-
+星期六
 [Sun]
-
+星期天
 [Monthly]
 每月
 [Dismiss]
 解除
 [Snooze]
-
+打盹
 [Static]
 斜体
 [&Suspend]
-
+暂停(&S)
 [&Edit...]
-
+编辑(&E)...
 [&Delete]
 删除(&D)
 [&Options...]
 选项(&O)
 [&New alarm...]
-
+新警报(&N)...
 ;file \plugins\Alarms\src\alarmlist.cpp
 ;file \plugins\Alarms\src\alarms.cpp
 [Set alarm]
-
+设置警报
 ;file \plugins\Alarms\src\alarm_win.cpp
 [Example alarm]
-
+警报例子
 [Some example text. Example, example, example.]
-
+一些示例文字。示例，示例，示例。
 [5 mins]
-
+5分钟
 [15 mins]
-
+15分钟
 [30 mins]
-
+30分钟
 [1 hour]
-
+1小时
 [1 day]
-
+1天
 [1 week]
-
+1星期
 [Title]
 标题
 [Background]
@@ -159,28 +159,28 @@
 窗口
 ;file \plugins\Alarms\src\frame.cpp
 [%dh %dm]
-
+%dh %dm
 [%dm]
-
+%dm
 [Hide reminders]
-
+隐藏提醒
 [Show reminders]
-
+显示提醒
 [Frames]
 框架
 [Alarm reminders]
-
+警报提醒
 ;file \plugins\Alarms\src\icons.cpp
 [Menu: Set alarm]
-
+菜单：设置警报
 [Reminder: Soon]
-
+提醒：打盹
 [Reminder: Very soon]
-
+提醒：很快
 [Alarm: System tray]
-
+警报：系统托盘
 [Menu: Show/Hide reminders]
-
+菜单：显示/隐藏提醒
 ;file \plugins\Alarms\src\options.cpp
 [Sunday]
 星期天
@@ -197,10 +197,10 @@
 [Saturday]
 星期六
 [Please enter a title for this alarm.]
-
+请输入警报的标题
 [Error]
 错误
 [The alarm time you have selected is in the past.]
-
+你选择的警报时间已经过去了。
 [Events]
 事件

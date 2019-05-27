@@ -155,9 +155,9 @@
 [10 minutes]
 
 [1 hour]
-
+1小时
 [1 day]
-
+1天
 [1 month]
 
 ;file \plugins\PasteIt\src\PasteToWeb2.cpp

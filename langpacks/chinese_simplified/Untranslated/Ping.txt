@@ -7,7 +7,6 @@
 [Interface]
 [Do not change icon when testing]
 [Use Options -> Customize -> Fonts and colors to change text size and color.]
-[Indent:]
 [Repeats for success/failure:]
 [Attach to contact list]
 [Use CSV format]

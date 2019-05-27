@@ -262,7 +262,7 @@ Miranda 服务帮助
 [Effect]
 效果
 ['<proto>' in service name will be replaced by protocol name for contact handle in parameter]
-
+服务名称中的“<proto>”将替换为参数中联系人处理的协议名称
 [Service:]
 服务：
 [In/Out]
@@ -290,7 +290,7 @@ UTF16+签名
 [Condition]
 条件
 [NOP]
-
+NOP
 [Math]
 数学
 [> greater]
@@ -306,7 +306,7 @@ UTF16+签名
 [Case sensitive]
 区分大小写
 [Opposite order]
-
+相反的顺序
 [empty]
 空
 [contains]
@@ -320,17 +320,17 @@ UTF16+签名
 [Operation]
 操作
 [BREAK]
-
+打断
 [JUMP]
 跳转
 [^s - selected (and replaced) part\r\n^e - replaced by empty string\r\n^v - paste text from Clipboard\r\n^t - replaced by tabulation\r\n^l - replaced by last result as unicode\r\n^h - replaced by last result as hex\r\n^f(name[,str])\r\n     paste line from text file.\r\n     brackets contents must be w/o spaces]
-
+^s - 选中的（和被替换的）部分\r\n^e - 被空字符串替换\r\n^v - 从剪贴板粘贴文本\r\n^t - 被制表符替换\r\n^l - 被上次结果作为 unicode 替换\r\n^h - 被上次结果作为16进制替换\r\n^f(name[,str])\r\n    从文本文件粘贴行。\r\n    括号内容必须没有空格
 [Process script after]
-
+运行脚本于此后
 [MessageBox]
 消息框
 [Text <last> replacing\r\nby last result\r\n\r\nReturns:\r\n--------\r\nOK\t= 1\r\nCANCEL\t= 2\r\nABORT\t= 3\r\nRETRY\t= 4\r\nIGNORE\t= 5\r\nYES\t= 6\r\nNO\t= 7\r\nCLOSE\t= 8]
-
+文字 <last> 被替换为\r\n上次的结果\r\n\r\n返回：\r\n--------\r\n\r\nOK\t=1 \r\nCANCEL\t= 2\r\nABORT\t =3\r\nRETRY\t =4\r\nIGNORE\t= 5\r\nYES\t= 6\r\nNO\t= 7\r\nCLOSE\t= 8
 [Message title]
 消息标题
 [Message text]
@@ -382,25 +382,25 @@ UTF16+签名
 [LastResult from]
 最后结果从
 [Slot 0]
-
+插槽 0
 [Slot 1]
-
+插槽 1
 [Slot 2]
-
+插槽 2
 [Slot 3]
-
+插槽 3
 [Slot 4]
-
+插槽 4 
 [Slot 5]
-
+插槽 5
 [Slot 6]
-
+插槽 6
 [Slot 7]
-
+插槽 7
 [Slot 8]
-
+插槽 8
 [Slot 9]
-
+插槽 9
 [Settings]
 设置
 [Contact list]
@@ -448,39 +448,39 @@ UTF16+签名
 [Date]
 日期
 [Repeat]
-
+重复
 [Repeat, times]
-
+重复，次数
 [Interval]
-
+间隔
 [Break on non-zero result]
-
+在非0结果时中断
 [Send event on start time]
-
+在开始时发送事件
 [Send event just once]
-
+只发送一次事件
 [Hooks]
-
+钩子
 [Description]
 描述
 [hook sample]
-
+钩子示例
 [Event]
-
+事件
 [Miranda event help]
-
+Miranda 事件帮助
 [Use Actions]
-
+使用动作
 [Action list]
-
+动作列表
 [Where to use]
-
+在哪里使用
 [TopToolbar]
 TopToolBar
 [TabSRMM toolbar]
-
+TabSRMM 工具栏
 [Core Hotkey]
-
+核心热键
 [Main menu]
 主菜单
 [Contact menu]
@@ -494,59 +494,59 @@ TopToolBar
 [Common]
 通用
 [2 state button/item]
-
+2个状态按钮/项目
 [Save button/item state]
-
+保存按钮/项目
 [Contact related]
-
+联系人相关
 [Normal button tooltip]
-
+普通按钮工具提示
 [Pressed button tooltip]
-
+按下的按钮工具提示
 [Show only if variables return 1]
-
+仅当变量返回 1 时显示
 [Main settings]
-
+主要设置
 [Root popup:]
-
+根弹出窗口：
 [Menu item name:]
-
+菜单项名称：
 [Custom settings]
-
+自定义设置
 [Separated]
 分居
 [Do not translate]
-
+不要显示翻译
 [Show window for new/changed profile password]
-
+为显示新的/改变的配置文件密码显示窗口
 [int 0, if successful]
-
+整型 0，如果成功
 [Hide All Titlebars]
-
+隐藏所有标题栏
 [Show All Frames]
 显示所有框架
 [Show All Titlebars]
-
+显示所有标题栏
 [will never return the user's custom name]
-
+将从不返回用户的自定义名称
 [will return Unicode instead of AnsiChar]
-
+将返回 Unicode 代替 Ansi 字符
 [will not use the cache]
-
+将不使用缓存
 [Gets the string that the contact list will use to represent a contact]
-
+获取联系人列表用于表示联系人的字符串
 [int hMenu handle]
-
+整型 hMenu 处理
 [Built the context menu for a specific contact. Menu should be DestroyMenu()ed after done]
-
+为特定联系人构建了上下文菜单。完成后菜单应该是调用 DestroyMenu()
 [Show All Users]
-
+显示所有用户
 [Show only Online Users]
-
+只显示在线用户
 [Toggle status]
-
+切换状态
 [Change 'hide offline contacts' option value]
-
+改变“隐藏离线联系人”选项值
 [Offline]
 离线
 [Online]
@@ -568,201 +568,201 @@ TopToolBar
 [Out to lunch]
 外出吃饭
 [Set global status]
-
+设置全局状态
 [Switch contact list status]
-
+切换联系人列表状态
 [Closes Miranda]
-
+关闭 Miranda
 [Show or hide netlog console window]
-
+显示或隐藏网络日志控制台窗口
 [int Value]
-
+整型值
 [Returns contact amount, excluding user account]
-
+返回联系数量，不包括用户帐户
 [Ansi Text]
-
+Ansi 文本
 [Removes all settings for the specified module]
-
+移除指定模块的所有设置
 [int 0]
-
+整型 0 
 [Import settings/contacts from file]
-
+从文件导入设置/联系人
 [Opens or activate database editor]
-
+打开或激活数据库编辑器
 [Opens or activate user search dialog]
-
+打开或激活用户搜索对话框
 [displays File Transfer window]
-
+显示文件传输窗口
 [on Desktop]
-
+在桌面上
 [parent window handle]
-
+父窗口处理
 [Show "About..." window]
-
+显示“关于...”窗口
 [Open support (originally - Miranda wiki) page]
-
+打开支持（原本 - Miranda wiki）页面
 [Go to Miranda Homepage]
-
+转到  Miranda 主页
 [Open bug report page]
-
+打开问题报告页面
 [System]
 系统
 [Shows contact history or (wParam=0) system history]
-
+显示联系人历史或（wParam=0）系统历史
 [Erases contact's history. hContact can be NULL(0) to empty system history]
-
+擦除联系人的历史。hContact可以为NULL(0)以清空系统历史
 [Show Global history search window. If already opened, bring it to front.]
-
+显示全局历史搜索窗口。如果已经打开，将它带到前面。
 [Ignore all]
 忽略所有
 [Ignore messages]
 忽略消息
 [Ignore URLs]
-
+忽略 URL
 [Ignore files]
 忽略文件
 [Ignore User Online]
-
+忽略用户在线
 [Ignore requests]
-
+忽略请求
 [Ignore 'You were added']
-
+忽略“你被添加了”
 [Ignore Contact]
 忽略联系人
 [Unignore Contact]
-
+不忽略联系人
 [restart in default profile or profile manager]
-
+以默认配置文件或配置文件管理器重启启动
 [restart with current profile]
-
+以当前配置文件重新启动
 [Restarts Miranda]
-
+重启 Miranda
 [Station name]
-
+站点名称
 [wParam is Handle]
-
+wParam 是 Handle
 [wParam is Ansi station name]
-
+wParam 是 Ansi 站点名称
 [wParam is Unicode station name]
-
+wParam 是 Unicode 站点名称
 [Starting or stopping radio station]
-
+正在启动或停止广播电台
 [Stop cycle]
-
+停止循环
 [Start cycle]
-
+开始循环
 [Start/stops the cycling through protocols]
-
+通过协议开始/停止循环
 [All protocols]
-
+所有协议
 [Protocol]
 协议
 [signed -2 if proto can't set this, -1 on protocol not found, else 0]
-
+签名 -2 如果协议不能设置此项，-1 在未找到协议时，否则为 0 
 [Shows a dialog to set the avatar for all possible protocols]
-
+为所有可能的协议显示设置头像的对话框
 [Shows the next protocol in the frame]
-
+在框架中显示下一个协议
 [Shows the previous protocol in the frame]
-
+在框架中显示上一个协议
 [Open Options dialog]
-
+显示选项对话框
 [Opens the options dialog, optionally at the specified page]
-
+打开选项对话框，可选择在指定页面
 [Check for updates]
 检查更新
 [with confirmation]
-
+需要确认
 [without confirmation]
-
+无需确认
 [Empty updater download folder]
-
+清空更新程序下载文件夹
 [Popup plus (PopupPlus.dll) latest StdPopup (StdPopup.dll)]
-
+Popup plus（PopupPlus.dll）最新的 StdPopup（StdPopup.dll）
 [Enables or disables popup windows]
-
+启用或禁用弹出窗口
 [Notify]
 通知
 [StdPopup or Popup plus]
-
+StdPopup 或 Popup plus
 [Popup window]
-
+弹出窗口
 [Unicode Text]
-
+Unicode 文本
 [Enables or disables popup windows (maybe deprecated)]
-
+启用或禁用弹出窗口（可能已弃用）
 [result of protocol service call]
-
+协议服务调用的结果
 [Send a general request through the protocol chain for a contact]
-
+通过协议链发送一般请求以获取联系人
 [str, account name]
-
+str，帐户名
 [Return account name associated to contact (no need to free it)]
-
+返回与联系人关联的帐户名称（无需释放）
 [displays the Account Manager]
-
+显示帐户管理器
 [Show the dialog to select the contact]
-
+显示选择联系人的对话框
 [filter text]
-
+过滤文本
 [wParam is unicode]
-
+wParam 是 unicode
 [wParam is Ansi]
-
+wParam 是 Ansi
 [Reserved]
-
+保留的
 [Open main QuickSearch window with text filter]
-
+打开带文本过滤器的主QuickSearch窗口
 [Plays sound added through Skin/Sounds/AddNew. If sound not found, standard Windows sound plays]
-
+播放通过Skin/Sounds/AddNew添加的声音。 如果没有找到声音，标准的Windows声音播放
 [Send Email to contact]
-
+发送电子邮件给联系人
 [struct]
-
+结构
 [Returns the received files folder for a contact]
-
+返回联系人的已接收文件文件夹
 [Open contact received file directory]
-
+打开联系人收到的文件目录
 [Send file to contact.]
-
+发送文件给联系人。
 [Opens message window for contact with handle in wparam]
-
+在wParam中打开与句柄联系的消息窗口
 [remove all temporary contacts from db]
-
+从数据库中移除所有临时联系人
 [Call avatar option dialog for contact]
-
+为联系人调用头像选项对话框
 [Filename]
-
+文件名
 [Set (and optionally protect) a local contact picture for the given hContact. If lParam = NIL, the service will open a file selection dialog.]
-
+为给定的hContact设置（并选择性地保护）本地联系人图片。 如果lParam = NIL，服务将打开文件选择对话框。
 [Shows contact property window.]
-
+显示联系人属性窗口。
 [Open URL in current window]
-
+在当前窗口中打开 URL
 [0 - Open URL in current window]
-
+0 - 在当前窗口中打开 URL
 [Open URL in default browser]
-
+在默认浏览器中打开 URL
 [With formating]
-
+带有格式化
 [Don't use formating]
-
+不使用格式化
 [Returns a string containing the versioninfo post]
-
+返回包含versioninfo帖子的字符串
 [Show or save (call default action) Modules version Info]
-
+显示或保存（调用默认操作）模块版本信息
 [Show popup or Info window with current music information.]
-
+显示包含当前音乐信息的弹出窗口或信息窗口。
 [log filename]
-
+日志文件名
 [report filename]
-
+报告文件名
 [int 0, if unsuccessful]
-
+整型 0，如果不成功
 [Create report from log and run it (if option is set). If wParam or lParam is empty then file names from options are used.]
-
+从日志创建报告并运行它（如果设置了选项）。 如果wParam或lParam为空，则使用选项中的文件名。
 [display birthdays window]
-
+显示生日窗口
 [Manage Jabber Bookmarks]
 管理 Jabber 书签
 [text]
@@ -800,7 +800,7 @@ TopToolBar
 [Shooting]
 射击
 [Having fun]
-
+正玩得开心
 [Gaming]
 在游戏
 [Studying]
@@ -808,31 +808,31 @@ TopToolBar
 [Shopping]
 在购物
 [Feeling sick]
-
+感到恶心
 [Sleeping]
 在睡觉
 [Surfing]
-
+冲浪
 [Browsing]
-
+浏览
 [Working]
 在工作
 [Typing]
 正在输入
 [Picnic]
-
+野餐
 [Cooking]
 烹饪
 [Smoking]
 在抽烟
 [I'm high]
-
+我很兴奋
 [On WC]
-
+在上厕所
 [To be or not to be]
-
+生存还是毁灭
 [Watching pro7 on TV]
-
+在电视上看pro7
 [Love]
 爱
 [Sets owner current custom status]

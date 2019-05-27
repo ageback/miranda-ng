@@ -25,11 +25,11 @@
 [Forecast Day 1]
 天气预报第1天 
 [Fri]
-
+星期五
 [Heat Index]
 热度指数
 [Mon]
-
+星期一
 [Mostly Clear]
 大部晴朗
 [Mostly Cloudy]
@@ -67,7 +67,7 @@
 [S]
 南
 [Sat]
-
+星期六
 [Scattered Clouds]
 
 [South]
@@ -77,13 +77,13 @@
 [Southwest]
 
 [Sun]
-
+星期天
 [Sunny]
 晴朗
 [Thu]
-
+星期四
 [Tue]
-
+星期二
 [WNW]
 西北偏北
 [WSW]
@@ -91,7 +91,7 @@
 [W]
 西
 [Wed]
-
+星期三
 [West]
 
 [Wind Direction Degrees]

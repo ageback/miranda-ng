@@ -59,7 +59,7 @@ V
 [Se&ttings]
 
 [Ignore requests]
-
+忽略请求
 [Send an autoreply]
 
 [&Delete]

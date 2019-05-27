@@ -19,7 +19,6 @@
 [%u requests your authorization]
 [there is an incoming file from %u]
 [%u says]
-[Speak]
 [Engine/Voice]
 [%u is now offline]
 [%u is now online]

@@ -218,7 +218,7 @@
 [System tray icon]
 系统托盘图标
 [Popup window]
-
+弹出窗口
 [Message with [img] BBCode]
 
 [You need to specify your registration e-mail first.]

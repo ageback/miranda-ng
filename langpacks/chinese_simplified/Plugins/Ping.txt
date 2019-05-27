@@ -39,7 +39,7 @@
 [Use Options -> Customize -> Fonts and colors to change text size and color.]
 
 [Indent:]
-
+缩进：
 [Row height:]
 行高：
 [Repeats for success/failure:]

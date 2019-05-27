@@ -64,8 +64,6 @@
 [Wind:]
 [# Solid color fill]
 [%dd %dh %dm]
-[%dh %dm]
-[%dm]
 [Labels]
 [Values]
 [Tray title]

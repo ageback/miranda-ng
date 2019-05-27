@@ -105,7 +105,7 @@
 
 ;file \plugins\WinterSpeak\src\main.cpp
 [Speak]
-
+说话
 [Engine/Voice]
 
 [Announce]
