@@ -9240,24 +9240,130 @@ History++ 警告
 ;  Version: 0.1.2.3
 ;  Authors: Kennet Nielsen, modified by Vampik, Houdini
 ;============================================================
+[HTTP Web Server plugin for Miranda.]
+Miranda 的 HTTP Web 服务器插件。
+[IPAddress1]
+IP地址1
+[IPAddress2]
+IP地址2
+[Max downloads]
+最大下载
 [Address]
 地址
+[Mask]
+掩码
+[Share name]
+共享名称
+[Allowed IP]
+允许的IP
+[HTTP Server statistics view]
+HTTP 服务器统计视图
+[Display hidden shares]
+显示隐藏共享
+[New share]
+新共享
+[Show HTTP server statistics]
+显示 HTTP 服务器统计
 [Set to default]
 设为默认
+[External server name]
+外部服务器名称
+[This is the link pasted to the message window]
+这是粘贴到消息窗口的链接
+[Write log file]
+写日志文件
+[Enable HTTP server]
+启用 HTTP 服务器
+[Main menu items]
+主菜单项
+[Open log]
+打开日志
 [Show popups]
 显示弹出窗口
+[Page keyword]
+页面关键字
+[URL address]
+URL 地址
+[%ExternalIP% variable]
+%ExternalIP% 变量
 [Test]
 测试
+[Transfer limit (Kb/s)]
+传输限制（Kb/s）
+[No control when Away or Not available]
+离开或不可用时不控制
+[Connection control]
+连接控制
+[Index creation]
+索引创建
 [Disable]
 禁用
+[Create HTML (compatibility)]
+创建 HTML（兼容性）
+[Create XML]
+创建 XML
 [Notifications]
 通知
+[Total connection limit]
+总连接限制
+[Connections per user limit]
+每用户连接限制
+[Default download limit]
+默认下载限制
+[&Edit share]
+编辑共享(&E)
+[&Remove share]
+移除共享(&R)
+[&Open in Browser]
+在浏览器中打开(&O)
 [&Copy link]
 复制链接(&C)
+[Share Current Directory]
+共享当前目录
 [All files]
 所有文件
+[Specify a file to share]
+指定要共享的文件
+[Failed to share new file]
+共享新文件失败
+[Max Downloads]
+最大下载
+[Allowed Mask]
+允许的掩码
+[Real path]
+真实路径
+[User]
+用户
+[Agent]
+代理
+[Completed]
+完成
+[Speed]
+速度
+[Current IP Address: ]
+当前 IP 地址：
+[Current Address: ]
+当前地址：
+[IP Address: ]
+IP 地址：
+[You are browsing from]
+你正在浏览来自
+[Your external IP was detected as %d.%d.%d.%d\r\nby: %s]
+你的外部 IP 被检测为 %d.%d.%d.%d\r\n通过：%s
+[You need to restart Miranda to change the main menu]
+你需要重启 Miranda 以改变主菜单
+[HTTP Server]
+HTTP 服务器
 [Network]
 网络
+[HTTP Share new file]
+HTTP 共享新文件
+[Share removed]
+共享被移除
+[Failed to bind to port %s\r\nThis is most likely because another program or service is using this port]
+绑定到端口 %s 失败\r\n这很可能是因为另一个程序或服务正在使用这个端口
+[Disable HTTP server]
+禁用 HTTP 服务器
 #muuid {315b3800-8258-44c4-b60e-58c50b9303b6}
 ;============================================================
 ;  File: HwHotKeys.dll
