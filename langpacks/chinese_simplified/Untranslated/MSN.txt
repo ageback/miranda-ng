@@ -34,7 +34,6 @@
 [Block Contact]
 [Invite Contact To Chat]
 [Live ID]
-[User]
 [Chat #]
 [&Invite user...]
 [User &history]

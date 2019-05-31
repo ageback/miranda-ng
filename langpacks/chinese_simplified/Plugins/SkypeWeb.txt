@@ -53,7 +53,7 @@
 [Admin]
 管理员
 [User]
-
+用户
 [Enter new nickname]
 
 [This chat is going to be destroyed forever with all its contents. This action cannot be undone. Are you sure?]

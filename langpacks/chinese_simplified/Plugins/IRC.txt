@@ -101,7 +101,7 @@
 [Server]
 服务器
 [User]
-
+用户
 [Away Info]
 
 [The server returned the following information. Please note that this information might be misleading and/or falsified]

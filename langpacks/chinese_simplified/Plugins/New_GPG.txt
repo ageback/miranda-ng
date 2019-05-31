@@ -293,7 +293,7 @@
 [GPG public key file]
 
 [Failed to open file]
-
+打开文件失败
 [There is no public or private key.]
 
 [Services]

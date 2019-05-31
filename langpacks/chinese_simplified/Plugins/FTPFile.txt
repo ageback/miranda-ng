@@ -6,66 +6,66 @@
 ;  Authors: yaho
 ;============================================================
 [FTP a file to a server and send the URL to your friend. Supported automatic zipping before upload and encryption via SFTP and FTPS.]
-
+通过 FTP 上传文件到服务器并发送 URL 给你的朋友。支持上传前自动压缩和通过 SFTP与 FTPS 加密。
 ;file \plugins\FTPFileYM\res\ftpfile.rc
 [FTP accounts]
-
+FTP 帐户
 [Host name]
-
+主机名
 [User]
-
+用户
 [Password]
 密码
 [URL]
 URL
 [Directory on server]
-
+服务器上的目录
 [Port]
 端口
 [Command after upload]
-
+上传后的命令
 [Use passive mode]
-
+使用被动模式
 [Account name]
 帐户名
 [Protocol]
 协议
 [Default FTP server]
-
+默认 FTP 服务器
 [File download link]
-
+文件下载链接
 [Close dialog after upload is completed]
-
+上传完成后关闭对话框
 [Copy download link to message log]
-
+复制下载链接到消息日志
 [Autosend download link to contact]
 自动发送下载链接给联系人
 [Menu items]
 菜单项
 [Use submenu (restart required)]
-
+使用子菜单（需要重启）
 [Hide inactive accounts]
-
+隐藏非活动帐户
 [Other]
 其他
 [Automatically delete file from FTP server after (experimental):]
-
+从 FTP 服务器自动删除文件于此后（试验性）：
 [ZIP support]
-
+ZIP 支持
 [Enter archive name manually]
-
+手工输入压缩包名称
 [Compression level:]
-
+压缩级别：
 [Upload File Manager]
-
+上传文件管理器
 [File:]
 文件：
 [Completed:]
-
+完成：
 [Speed:]
-
+速度：
 [Remaining:]
-
+剩余：
 [Summary]
 摘要
 [To:]
@@ -81,75 +81,75 @@ URL
 [Pause]
 暂停
 [File Manager]
-
+文件管理器
 [Server:]
 服务器：
 [User info]
-
+用户信息
 [UPLOADING...]
 正在上传...
 [Open in Browser]
 在浏览器中打开
 [FTP File Manager]
-
+FTP 文件管理器
 [Select All]
 选择全部
 [Deselect All]
-
+取消选择全部
 [Delete from list]
-
+从列表删除
 [Delete from FTP]
-
+从 FTP 删除
 [Enter file name]
-
+输入文件名
 [Cancel]
 取消
 [File exists]
-
+文件存在
 [Rename]
 重命名
 [Overwrite]
 覆盖
 [File with the same name already exists on the server.]
-
+服务器上已存在使用相同名称的文件。
 [How to proceed?]
-
+如何处理？
 [Copy URL]
-
+复制 URL
 [Close dialog after upload finishes]
-
+上传完成后关闭对话框
 [Automatically delete file after...]
-
+自动删除文件于此后...
 [Disabled]
 已禁用
 [Delete from List]
-
+从列表删除
 [Copy Link]
 复制链接
 ;file \plugins\FTPFileYM\src\dialog.cpp
 [User Info]
-
+用户信息
 [Copy Link to Clipboard]
 复制链接到剪贴板
 [%d minutes]
-
+%d 分钟
 [%d hours]
-
+%d 小时
 [%d days]
-
+%d 天
 [Do you really want to cancel all running jobs?]
-
+你真的想取消所有正在运行的任务吗？
 ;file \plugins\FTPFileYM\src\ftpfile.cpp
 [FTP Server 1]
-
+FTP 服务器 1
 [FTP Server 2]
-
+FTP 服务器 2
 [FTP Server 3]
-
+FTP 服务器 3
 [FTP Server 4]
-
+FTP 服务器 4
 [FTP Server 5]
-
+FTP 服务器 5
 [Send file]
 发送文件
 [Resume]
@@ -157,98 +157,98 @@ URL
 [FTP File]
 FTP 文件
 [FTP Server %d]
-
+FTP 服务器 %d
 [Upload file(s)]
 上传文件
 [Zip and upload file(s)]
-
+zip压缩并上传文件
 [Zip and upload folder]
-
+zip压缩并上传文件夹
 [FTP File manager]
-
+FTP 文件管理器
 [Show FTPFile manager]
-
+显示 FTP 文件管理器
 [Upload file]
-
+上传文件
 [Zip and upload file]
-
+zip压缩并上传文件
 [You have to fill FTP server setting before upload a file.]
-
+在上传文件之前你必须填写 FTP 服务器设置。
 [Error has occurred while trying to create a dialog!]
-
+当尝试创建对话框时发生错误！
 [File upload complete]
-
+文件上传完成
 [Upload canceled]
-
+上传被取消
 ;file \plugins\FTPFileYM\src\job_generic.cpp
 [All Files (*.*)]
-
+所有文件（*.*）
 [FTP File - Select files]
-
+FTP 文件 - 选择文件
 [FTP File - Select a folder]
-
+FTP 文件 - 选择一个文件夹 
 [Folder not found!]
-
+未找到文件夹！
 [The selected folder does not contain any files.\nFTP File sends files only from the selected folder, not from subfolders.]
-
+选择的文件夹不包含任何文件。\nFTP文件发送只从选中的文件夹发送文件，而不包括子文件夹。
 [CANCELED]
 已取消
 [COMPLETED]
-
+完成
 [CONNECTING...]
 正在连接...
 [CREATED]
 创建
 [PACKING...]
-
+正在打包...
 [PAUSED]
-
+暂停
 [WAITING...]
-
+等待...
 [UNKNOWN]
 未知
 ;file \plugins\FTPFileYM\src\job_packer.cpp
 [Error occurred when zipping the file(s).]
-
+zip压缩文件时发生错误。
 [%0.1f kB/s]
-
+%0.1f kB/s
 [%0.1f%% (%d kB/%d kB)]
-
+%0.1f%% (%d kB/%d kB)
 [%s (%d kB/%d kB)]
-
+%s (%d kB/%d kB)
 [Do you really want to cancel this upload?]
-
+你真的想取消这次上传吗？
 [Status: %s\r\nFile: %s\r\nServer: %S]
-
+状态：%s\r\n文件：%s\r\n服务器：%S
 ;file \plugins\FTPFileYM\src\job_upload.cpp
 [File exists - %s]
-
+文件存在 - %s
 [Error occurred when opening local file.\nAborting file upload...]
-
+打开本地文件时发生错误。\n中止文件上传...
 [Error occurred when initializing libcurl.\nAborting file upload...]
-
+初始化 liburl 时发生错误。\n中止文件上传...
 [FTP error occurred.\n%s]
-
+FTP 发生错误。\n%s
 [Download link:]
-
+下载链接:
 [Do you really want to cancel running upload?]
-
+你真的想取消正在运行的上传吗?
 [%s\r\nSpeed: %s\r\nCompleted: %s\r\nRemaining: %s]
-
+%s\r\n速度：%s\r\n完成：%s\r\n剩余：%s
 ;file \plugins\FTPFileYM\src\manager.cpp
 [You have to fill and enable at least one FTP server in setting.]
-
+你必须在设置中填写并启用至少一个 FTP 服务器。
 [Clear All]
 清除所有
 ;file \plugins\FTPFileYM\src\options.cpp
 [FTP (Standard)]
-
+FTP（标准）
 [FTP+SSL (Explicit)]
-
+FTP + SSL（显式）
 [FTP+SSL (Implicit)]
-
+FTP + SSL（隐式）
 [SFTP (Secure FTP over SSH)]
-
+SFTP（基于SSH的安全FTP）
 [minutes]
 分
 [hours]

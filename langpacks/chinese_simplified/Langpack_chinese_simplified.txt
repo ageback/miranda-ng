@@ -7779,6 +7779,8 @@ URL：
 输入你看到的文字
 [User &details]
 用户详情(&D)
+[User]
+用户
 [Notifications]
 通知
 [Unknown error]
@@ -8154,24 +8156,66 @@ Miranda 浮动联系人插件
 ;  Version: 0.6.0.5
 ;  Authors: yaho
 ;============================================================
+[FTP a file to a server and send the URL to your friend. Supported automatic zipping before upload and encryption via SFTP and FTPS.]
+通过 FTP 上传文件到服务器并发送 URL 给你的朋友。支持上传前自动压缩和通过 SFTP与 FTPS 加密。
+[FTP accounts]
+FTP 帐户
+[Host name]
+主机名
+[User]
+用户
 [Password]
 密码
 [URL]
 URL
+[Directory on server]
+服务器上的目录
 [Port]
 端口
+[Command after upload]
+上传后的命令
+[Use passive mode]
+使用被动模式
 [Account name]
 帐户名
 [Protocol]
 协议
+[Default FTP server]
+默认 FTP 服务器
+[File download link]
+文件下载链接
+[Close dialog after upload is completed]
+上传完成后关闭对话框
+[Copy download link to message log]
+复制下载链接到消息日志
 [Autosend download link to contact]
 自动发送下载链接给联系人
 [Menu items]
 菜单项
+[Use submenu (restart required)]
+使用子菜单（需要重启）
+[Hide inactive accounts]
+隐藏非活动帐户
 [Other]
 其他
+[Automatically delete file from FTP server after (experimental):]
+从 FTP 服务器自动删除文件于此后（试验性）：
+[ZIP support]
+ZIP 支持
+[Enter archive name manually]
+手工输入压缩包名称
+[Compression level:]
+压缩级别：
+[Upload File Manager]
+上传文件管理器
 [File:]
 文件：
+[Completed:]
+完成：
+[Speed:]
+速度：
+[Remaining:]
+剩余：
 [Summary]
 摘要
 [To:]
@@ -8186,44 +8230,168 @@ URL
 选项
 [Pause]
 暂停
+[File Manager]
+文件管理器
 [Server:]
 服务器：
+[User info]
+用户信息
 [UPLOADING...]
 正在上传...
 [Open in Browser]
 在浏览器中打开
+[FTP File Manager]
+FTP 文件管理器
 [Select All]
 选择全部
+[Deselect All]
+取消选择全部
+[Delete from list]
+从列表删除
+[Delete from FTP]
+从 FTP 删除
+[Enter file name]
+输入文件名
 [Cancel]
 取消
+[File exists]
+文件存在
 [Rename]
 重命名
 [Overwrite]
 覆盖
+[File with the same name already exists on the server.]
+服务器上已存在使用相同名称的文件。
+[How to proceed?]
+如何处理？
+[Copy URL]
+复制 URL
+[Close dialog after upload finishes]
+上传完成后关闭对话框
+[Automatically delete file after...]
+自动删除文件于此后...
 [Disabled]
 已禁用
+[Delete from List]
+从列表删除
 [Copy Link]
 复制链接
+[User Info]
+用户信息
 [Copy Link to Clipboard]
 复制链接到剪贴板
+[%d minutes]
+%d 分钟
+[%d hours]
+%d 小时
+[%d days]
+%d 天
+[Do you really want to cancel all running jobs?]
+你真的想取消所有正在运行的任务吗？
+[FTP Server 1]
+FTP 服务器 1
+[FTP Server 2]
+FTP 服务器 2
+[FTP Server 3]
+FTP 服务器 3
+[FTP Server 4]
+FTP 服务器 4
+[FTP Server 5]
+FTP 服务器 5
 [Send file]
 发送文件
 [Resume]
 恢复
 [FTP File]
 FTP 文件
+[FTP Server %d]
+FTP 服务器 %d
 [Upload file(s)]
 上传文件
+[Zip and upload file(s)]
+zip压缩并上传文件
+[Zip and upload folder]
+zip压缩并上传文件夹
+[FTP File manager]
+FTP 文件管理器
+[Show FTPFile manager]
+显示 FTP 文件管理器
+[Upload file]
+上传文件
+[Zip and upload file]
+zip压缩并上传文件
+[You have to fill FTP server setting before upload a file.]
+在上传文件之前你必须填写 FTP 服务器设置。
+[Error has occurred while trying to create a dialog!]
+当尝试创建对话框时发生错误！
+[File upload complete]
+文件上传完成
+[Upload canceled]
+上传被取消
+[All Files (*.*)]
+所有文件（*.*）
+[FTP File - Select files]
+FTP 文件 - 选择文件
+[FTP File - Select a folder]
+FTP 文件 - 选择一个文件夹 
+[Folder not found!]
+未找到文件夹！
+[The selected folder does not contain any files.\nFTP File sends files only from the selected folder, not from subfolders.]
+选择的文件夹不包含任何文件。\nFTP文件发送只从选中的文件夹发送文件，而不包括子文件夹。
 [CANCELED]
 已取消
+[COMPLETED]
+完成
 [CONNECTING...]
 正在连接...
 [CREATED]
 创建
+[PACKING...]
+正在打包...
+[PAUSED]
+暂停
+[WAITING...]
+等待...
 [UNKNOWN]
 未知
+[Error occurred when zipping the file(s).]
+zip压缩文件时发生错误。
+[%0.1f kB/s]
+%0.1f kB/s
+[%0.1f%% (%d kB/%d kB)]
+%0.1f%% (%d kB/%d kB)
+[%s (%d kB/%d kB)]
+%s (%d kB/%d kB)
+[Do you really want to cancel this upload?]
+你真的想取消这次上传吗？
+[Status: %s\r\nFile: %s\r\nServer: %S]
+状态：%s\r\n文件：%s\r\n服务器：%S
+[File exists - %s]
+文件存在 - %s
+[Error occurred when opening local file.\nAborting file upload...]
+打开本地文件时发生错误。\n中止文件上传...
+[Error occurred when initializing libcurl.\nAborting file upload...]
+初始化 liburl 时发生错误。\n中止文件上传...
+[FTP error occurred.\n%s]
+FTP 发生错误。\n%s
+[Download link:]
+下载链接:
+[Do you really want to cancel running upload?]
+你真的想取消正在运行的上传吗?
+[%s\r\nSpeed: %s\r\nCompleted: %s\r\nRemaining: %s]
+%s\r\n速度：%s\r\n完成：%s\r\n剩余：%s
+[You have to fill and enable at least one FTP server in setting.]
+你必须在设置中填写并启用至少一个 FTP 服务器。
 [Clear All]
 清除所有
+[FTP (Standard)]
+FTP（标准）
+[FTP+SSL (Explicit)]
+FTP + SSL（显式）
+[FTP+SSL (Implicit)]
+FTP + SSL（隐式）
+[SFTP (Secure FTP over SSH)]
+SFTP（基于SSH的安全FTP）
 [minutes]
 分
 [hours]
@@ -9760,6 +9928,8 @@ Miranda NG 数据库
 地址
 [Server]
 服务器
+[User]
+用户
 [Question]
 问题
 [&Cancel]
@@ -12702,28 +12872,110 @@ C 库文件夹
 ;  Version: 3.1.2.3
 ;  Authors: Kennet Nielsen, mod by ring0
 ;============================================================
+[Exports every message, URL or file you receive to a text file.]
+将你收到的每一个消息、URL或文件到一个文本文件。
+[Export directory]
+导出目录
 [Browse]
 浏览
+[Default file]
+默认文件
+[File viewer]
+文件查看器
+[Use internal viewer]
+使用内部查看器
+[Replace Miranda history]
+代替 Miranda 历史
+[Export format]
+导出格式
+[Max column width]
+最大列宽
+[Note: 0 = no limit]
+注意：0 = 无限制
+[Time format]
+时间格式
+[Use JSON format for export]
+使用 JSON 格式导出
+[Use UTF8 in new files]
+在新文件中使用 UTF8
+[Append extra new line]
+附加额外的新行
+[Use << and >>]
+使用 << 和 >>
+[Auto filename]
+自动文件名
 [Clear all]
 清除所有
 [Help]
 帮助
+[Export all history]
+导出所有历史
+[Exporting old messages]
+导出旧消息
+[History file for %s (%s, format %s)]
+%s（%s，格式 %s）的历史文件
 [&Find...]
 查找(&F)...
+[&External]
+外部的(&E)
 [&Close]
 关闭(&C)
+[When filename changes]
+当文件名改变时
+[Prompt for action]
+动作的提示
+[Rename file]
+重命名文件
 [Do nothing]
 啥都不干
+[When user is deleted]
+当用户被删除时
+[Delete file]
+删除文件
 [Debug]
 调试
 [User &details]
 用户详情(&D)
+[Export selected]
+导出选中的
+[Set to default filename]
+设为默认文件名
 [Copy]
 复制
+[Miranda database contains %d events]
+Miranda 数据库包含 %d 个事件
+[Failed to open file]
+打开文件失败
+[Search string was not found!]
+未找到搜索字符串！
+[Save as RTF]
+保存为 RTF
+[Color...]
+颜色...
+[Font...]
+字体...
+[Syntax highlight]
+语法高亮
+[History was saved successfully in file\r\n]
+历史成功保存到文件中\r\n
+[Open E&xported History]
+打开导出的历史(&X)
+[Reading database information (Phase 1 of 2)]
+读取数据库信息（2个步骤中的第1个）
+[Sorting and writing database information (Phase 2 of 2)]
+排序和写入数据库信息（2个步骤中的第2个）
+[Failed to open or create file:\n]
+打开或创建文件失败：\n
+[Max line width must be at least %d. Or use 0 for no limit.]
+最大行宽度必须至少为 %d。或者用 0 表示无限制。
+[You need to restart Miranda to change the history function]
+你需要重启 Miranda 来改变历史功能
 [Executable files]
 可执行文件
 [All files]
 所有文件
+[Select Destination Directory]
+选择目标目录
 [File]
 文件
 [Nick]
@@ -12732,22 +12984,50 @@ C 库文件夹
 因此
 [UIN]
 UIN
+[No contacts found to export]
+未找到联系人来导出
+[Export Protocols]
+导出协议
+[Message export]
+消息导出
 [History]
 历史
 [General]
 通用
 [Contacts]
 联系人
+[Additional]
+附加的
+[Miranda NG (Message Export Plugin)]
+Miranda NG（消息导出插件）
+[No_Group]
+无分组
 [(Unknown Contact)]
 (未知联系人)
+[File name for the user "%s" has changed!\n\nfrom:\t%s\nto:\t%s\n\nDo you wish to rename file?]
+用户“%s”的文件名已经改变！\n\n从：\t%s到：\t%s\n\n你想要重命名文件吗？
+[Failed to rename file\n\nfrom:\t%s\nto:\t%s\n\nFailed with error: %s]
+重命名文件失败\n\n从：\t%s\n到：\t%s\n\n失败的错误：%s
+[\nError: ]
+\n错误：
+[\nMessage has not been saved!\n]
+\n消息还没有被保存！\n
+[Do you wish to save debug information?]
+你要保存调试信息吗？
+[All\0*.*\0Text\0*.TXT\0\0]
+所有\0*.*\0文本\0*.TXT\0\0
 [FirstName]
 名字
 [LastName]
 姓
 [e-mail]
 电子邮件
+[Age]
+年龄
 [Gender]
 性别
+[City]
+城市
 [State]
 状态
 [Phone]
@@ -12756,8 +13036,42 @@ UIN
 主页
 [About]
 关于
+[      History for]
+      历史关于
+[User]
+用户
 [Protocol]
 协议
+[File: ]
+文件：
+[Description: ]
+描述：
+[Nick      :]
+昵称      ：
+[FirstName :]
+名字：
+[LastName  :]
+姓：
+[e-mail    :]
+电子邮件：
+[Reason    :]
+原因：
+[Invalid Database event received. Type %d, size %d]
+收到无效的数据库事件。类型 %d，大小 %d
+[The following user made an authorization request:]
+以下用户发起了授权请求：
+[The following user added you to their contact list:]
+以下用户将你添加到了他们的联系人列表：
+[UIN       :]
+UIN       ：
+[Unknown event type %d, size %d]
+未知的事件类型 %d，大小 %d
+[User has been deleted. Do you want to delete the file?]
+用户被删除了。你要删除文件吗？
+[Failed to delete the file]
+删除文件失败
+[No_Nick]
+无昵称
 #muuid {97724af9-f3fb-47d3-a3bf-eaa935c74e6d}
 ;============================================================
 ;  File: MSN.dll
@@ -12799,6 +13113,8 @@ UIN
 添加
 [Admin]
 管理员
+[User]
+用户
 [&Leave chat session]
 离开聊天会话(&L)
 [User &details]
@@ -13690,6 +14006,8 @@ xStatus
 日志文件
 [Info]
 信息
+[Failed to open file]
+打开文件失败
 [Services]
 服务
 [Main]
@@ -14271,16 +14589,48 @@ Purple
 ;  Version: 0.2.0.2
 ;  Authors: Tweety/GouZ, FREAK_THEMIGHTY
 ;============================================================
+[Plugin to shake the contact list and chat window.]
+振动联系人列表和聊天窗口的插件
+[Protocol options]
+协议选项
+[Specify options for each protocol]
+指定每个协议的选项
+[Open contact list]
+打开联系人列表
+[Enable contact list shaking]
+启用联系人列表振动
 [Open message window]
 打开消息窗口
+[Enable message window shaking]
+启用消息窗口振动
+[Show as status change]
+显示为状态变更
+[Auto resend nudge after]
+自动重发轻推于此后
 [s]
-南
+秒
+[Enable popup notification]
+启用弹出窗口通知
+[Respect ignore settings (status changes)]
+尊重忽略设置（状态变更）
+[Sending text]
+正在发送文字
+[Receiving text]
+正在接收文字
 [Privacy]
 隐私
+[Allow sending* one nudge to the same contact every:]
+允许发送* 一个轻推给相同联系人，每：
+[Allow receiving one nudge from the same contact every:]
+允许从相同联系人接收轻推，每：
+[* Nudge sending delay is hardcoded and cannot be changed.]
+* 轻推发送延时是硬编码的，不能改变。
 [Preview]
 预览
 [Text]
 文字
+[Allow nudges when you're:]
+允许轻推当你正在：
 [Offline]
 离线
 [Online]
@@ -14301,10 +14651,40 @@ Purple
 在打电话
 [Out to lunch]
 外出吃饭
+[Shaking contact list options]
+振动联系人列表选项
+[Number of moves]
+移动次数
+[Width of move]
+移动宽度
 [Static]
 斜体
+[Shaking Message Window Options]
+振动消息窗口选项
+[Nudge as Default]
+轻推默认
+[You are not allowed to send too much nudge (only 1 each %d sec, %d sec left)]
+你不允许发送过多的轻推（只允许每 %d 秒 1 个，%d秒剩余）
+[Show Nudge]
+显示轻推
+[Nudge for %s]
+轻推 %s
+[Nudge]
+轻推
+[Default Nudge]
+默认轻推
+[Send nudge]
+发送轻推
+[Send &nudge]
+发送轻推(&N)
+[You received a nudge]
+你收到了一个轻推
+[You sent a nudge]
+你发送了一个轻推
 [Events]
 事件
+[Window Shaking]
+窗口振动
 #muuid {9e1d9244-606c-4ef4-99a0-1d7d23cb7601}
 ;============================================================
 ;  File: Omegle.dll
@@ -17349,6 +17729,8 @@ Miranda 相关
 保存密码
 [Admin]
 管理员
+[User]
+用户
 [Warning]
 警告
 [&Leave chat session]
@@ -24010,6 +24392,8 @@ N/A
 联系
 [Birthday]
 生日
+[Age]
+年龄
 [Module]
 模块
 [Contacts]
@@ -24047,6 +24431,8 @@ N/A
 错误
 [Services]
 服务
+[User]
+用户
 [File]
 文件
 [Popups]

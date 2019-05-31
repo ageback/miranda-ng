@@ -51,7 +51,6 @@
 [This will permanently delete the conversation history]
 [Myself]
 [Friend]
-[User]
 [Former]
 [%s and more (%d)]
 [Login error: %s]

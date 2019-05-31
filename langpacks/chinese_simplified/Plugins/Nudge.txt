@@ -6,48 +6,48 @@
 ;  Authors: Tweety/GouZ, FREAK_THEMIGHTY
 ;============================================================
 [Plugin to shake the contact list and chat window.]
-
+振动联系人列表和聊天窗口的插件
 ;file \plugins\Nudge\res\resource.rc
 [Protocol options]
-
+协议选项
 [Specify options for each protocol]
-
+指定每个协议的选项
 [Open contact list]
-
+打开联系人列表
 [Enable contact list shaking]
-
+启用联系人列表振动
 [Open message window]
 打开消息窗口
 [Enable message window shaking]
-
+启用消息窗口振动
 [Show as status change]
-
+显示为状态变更
 [Auto resend nudge after]
-
+自动重发轻推于此后
 [s]
-南
+秒
 [Enable popup notification]
-
+启用弹出窗口通知
 [Respect ignore settings (status changes)]
-
+尊重忽略设置（状态变更）
 [Sending text]
-
+正在发送文字
 [Receiving text]
-
+正在接收文字
 [Privacy]
 隐私
 [Allow sending* one nudge to the same contact every:]
-
+允许发送* 一个轻推给相同联系人，每：
 [Allow receiving one nudge from the same contact every:]
-
+允许从相同联系人接收轻推，每：
 [* Nudge sending delay is hardcoded and cannot be changed.]
-
+* 轻推发送延时是硬编码的，不能改变。
 [Preview]
 预览
 [Text]
 文字
 [Allow nudges when you're:]
-
+允许轻推当你正在：
 [Offline]
 离线
 [Online]
@@ -69,39 +69,39 @@
 [Out to lunch]
 外出吃饭
 [Shaking contact list options]
-
+振动联系人列表选项
 [Number of moves]
-
+移动次数
 [Width of move]
-
+移动宽度
 [Static]
 斜体
 [Shaking Message Window Options]
-
+振动消息窗口选项
 ;file \plugins\Nudge\src\main.cpp
 [Nudge as Default]
-
+轻推默认
 [You are not allowed to send too much nudge (only 1 each %d sec, %d sec left)]
-
+你不允许发送过多的轻推（只允许每 %d 秒 1 个，%d秒剩余）
 [Show Nudge]
-
+显示轻推
 [Nudge for %s]
-
+轻推 %s
 [Nudge]
-
+轻推
 [Default Nudge]
-
+默认轻推
 [Send nudge]
-
+发送轻推
 [Send &nudge]
-
+发送轻推(&N)
 ;file \plugins\Nudge\src\nudge.cpp
 [You received a nudge]
-
+你收到了一个轻推
 [You sent a nudge]
-
+你发送了一个轻推
 ;file \plugins\Nudge\src\options.cpp
 [Events]
 事件
 [Window Shaking]
-
+窗口振动

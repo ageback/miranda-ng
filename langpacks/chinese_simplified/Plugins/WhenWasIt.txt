@@ -132,7 +132,7 @@ N/A
 [Birthday]
 生日
 [Age]
-
+年龄
 [Module]
 模块
 [Closing in %d seconds]

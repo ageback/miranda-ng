@@ -33,7 +33,6 @@
 [%S protocol]
 [Birthday list (%d)]
 [DTB]
-[Age]
 [Closing in %d seconds]
 [Closing in %d second]
 [Check for birthdays]

@@ -13,7 +13,6 @@
 [Enter password]
 [Enter the password to continue.]
 [Skype Link Protocol]
-[User]
 [Enter new nickname]
 [This chat is going to be destroyed forever with all its contents. This action cannot be undone. Are you sure?]
 [&Invite user...]

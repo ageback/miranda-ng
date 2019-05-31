@@ -121,7 +121,6 @@
 [Key already in secret keyring.]
 [Set file containing GPG public key]
 [GPG public key file]
-[Failed to open file]
 [There is no public or private key.]
 [GnuPG Variables]
 [New passwords do not match]
