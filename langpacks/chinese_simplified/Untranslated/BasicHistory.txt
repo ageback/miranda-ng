@@ -91,7 +91,6 @@
 [Invalid event number]
 [File does not exist. Enter correct file path.]
 [Invalid file]
-[All files (*.*)]
 [Enter filter name]
 [Filter name exists]
 [Event already exists]

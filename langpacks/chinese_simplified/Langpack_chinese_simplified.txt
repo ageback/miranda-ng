@@ -3987,6 +3987,8 @@ Miranda NG 无法打开“%S”。\n\n给定的 URL 无效，无法解析。
 配置
 [Cancel]
 取消
+[Paused]
+暂停
 [Background]
 背景
 [Active]
@@ -4434,6 +4436,8 @@ XML 文件
 传入事件
 [Outgoing events]
 传出事件
+[All files (*.*)]
+所有文件（*.*）
 [Minute]
 分
 [Hour]
@@ -6607,8 +6611,38 @@ Yandex.Disk
 ;  Version: 0.1.0.1
 ;  Authors: Cristian Libotean
 ;============================================================
+[This plugin lets you control Miranda from the command line.]
+这个插件让你从命令行控制 Miranda。
+[Could not initialize CmdLine plugin properly]
+无法正确初始化 CmdLine 插件
 [Error]
 错误
+[Changes account status either globally or per account.\nUsage: status <status> [<account>].\nPossible values for <status> are: offline, online, away, dnd, na, occupied, freechat, invisible, onthephone, outtolunch.\n<Account> is an optional parameter specifying the account to set the status for. If it's not specified then the command will issue a global status change.]
+全局或按帐户更改帐户状态。\n用法：status <status> [<account>]。\n<status> 的可能值包括：offline, online, away, dnd, na, occupied, freechat, invisible, onthephone, outtolunch。\n<Account> 是一个可选参数，指定要为其设置状态的帐户。如果未指定，则该命令将发出全局状态更改。
+[Changes away message either globally or per account.\nUsage: awaymsg <message> [<account>].\n<Message> is the new away message.\n<Account> is an optional parameter specifying the account to set the away message for. If not specified then the away message will be set globally.]
+全局或按帐户更改离开消息。\n用法：awaymsg <message> [<account>]。\n<Message> 是新的离开消息。\n<Account> 是一个可选参数，指定要为其设置离开消息的帐户。如果未指定，则离开消息将被设置为全局。
+[Changes extended status either globally or per account.\nUsage: xstatus <xStatus> [<account>].\n<xStatus> is the new extended status to set. Possible values are: ...\n<Account> is an optional parameter specifying the account for which extended status is set. If not specified then extended status for all accounts will be changed.\nNOTE: Not all accounts/protocols support extended status.]
+全局或按帐户更改扩展状态。\n用法：xstatus <xStatus> [<account>]。\n<xStatus> 是要设置的新的扩展状态。可能的值包括：...\n<Account> 是一个可选参数，指定要为其设置扩展状态的帐户。如果未指定，则将为所有帐户改变扩展状态。\n注意：不是所有帐户/协议都支持扩展状态。
+[Disables or enables popups display.\nUsage: popups (disable | enable | toggle).\nThe command will either enable or disable popups display.]
+禁用或启用弹出窗口显示。\n用法：popups (disable | enable | toggle).\n该命令将启用或禁用弹出窗口显示。
+[Disables or enables sounds.\nUsage: sounds (disable | enable | toggle).\nThe command will either disable or enable sounds.]
+禁用或启用声音。\n用法：sounds (disable | enable | toggle).\n该命令将禁用或启用声音。
+[Hides or shows the contact list window.\nUsage: clist (show | hide | toggle).\nThe command will either show or hide the contact list window.]
+隐藏或显示联系人列表窗口。\n用法：clist (show | hide | toggle).\n该命令将显示或隐藏联系人列表窗口。
+[Closes Miranda.\nUsage: quit [wait].\nIf wait is used then the command will return only when CmdLine plugin has been unloaded by Miranda.]
+关闭 Miranda.\n用法：quit [wait].\n如果使用了 wait，
+[Provides help on other commands.\nUsage: help [<command>].\nThe command will print help information for other commands. If run without any parameters it will print available commands.]
+提供其他命令的帮助。\n用法：help [<command>].\n该命令将打印其他命令的帮助信息。如果不带任何参数运行，它将打印可用的命令。
+[Notifies Exchange plugin to check for email.\nUsage: exchange check.]
+通知 Exchange 插件检查邮件。\n用法：exchange check.
+[Notifies YAMN plugin to check for email.\nUsage: yamn check.]
+通知 YAMN 插件检查邮件。\n用法：yamn check.
+[Calls a Miranda service.\nUsage: callservice <service> (d|s)<wParam> (d|s)<lParam>.\nThe command will call Miranda <service> service using wParam and lParam as arguments; the first letter of the parameter must be either 'd' if the parameter is a decimal number or 's' if the parameter is a string. Be careful when you use this function as you can only pass numbers and strings as data.\nNOTE: If you pass invalid data to a service, Miranda might crash.]
+调用一个Miranda服务。\n用法：callservice <service> (d|s)<wParam> (d|s)<lParam>.\n该命令将使用 wParam 和 lParam 作为参数调用Miranda <service> 服务；
+[Current global status: %s.%s]
+当前全局状态：%s.%s
+['%s' doesn't seem to be a valid account.]
+‘%s’似乎不是一个有效的帐户。
 [string]
 字符串
 [byte]
@@ -6617,6 +6651,16 @@ Yandex.Disk
 单词
 [dword]
 双字
+[[me]]
+我
+[No unread messages found.]
+未找到未读消息
+[Command '%s' is not currently supported.]
+当前不支持‘%s’命令。
+[Could not create CommandLine listening server!]
+无法创建 CommandLine 监听服务器！
+[You can only run one instance of CmdLine plugin.]
+你只能运行 CmdLine 插件的一个实例。
 #muuid {4bb5b4aa-c364-4f23-9746-d5b708a286a5}
 ;============================================================
 ;  File: ConnectionNotify.dll
@@ -7078,6 +7122,8 @@ GnuPG插件 - 选择公钥
 导出
 [Import]
 导入
+[All files (*.*)]
+所有文件（*.*）
 #muuid {bcec0bd7-ca59-44b2-9a14-3a14980f524a}
 ;============================================================
 ;  File: CyrTranslit.dll
@@ -8141,12 +8187,46 @@ Miranda 浮动联系人插件
 ;  Version: 0.2.0.2
 ;  Authors: Cristian Libotean, Miranda NG team
 ;============================================================
+[Allows plugins to save their data to user selected folders; supports variables.]
+允许插件保存它们自己的数据到用户选择的文件夹；支持变量。
+[Custom folders]
+自定义文件夹
 [Preview]
 预览
 [Edit]
 编辑
+[Refresh preview]
+刷新预览
+[Variables help]
+变量帮助
+[Custom folders variables help]
+自定义文件夹变量帮助
 [Close]
 关闭
+[Don't forget to click on Apply to save the changes. If you don't then the changes won't]
+不要忘记单击“应用”以保存更改。如果你不这样做，那么改变不会
+[be saved to the database, they will only be valid for this session.]
+被保存到数据库，它们将只在本会话中生效。
+[Variable string]
+变量字符串
+[What it expands to:]
+它扩展到：
+[Expands to your Miranda path (e.g., c:\\program files\\miranda ng).]
+扩展到你的 Miranda 路径（例如 c:\\program files\\miranda ng）。
+[Expands to your profile path - the value found in mirandaboot.ini,]
+扩展到你的配置文件路径 - mirandaboot.ini 中找到的值，
+[ProfileDir section (usually inside Miranda's folder).]
+ProfileDir 段（通常在 Miranda 的文件夹内）。
+[Expands to your current profile name without the extenstion.]
+扩展到你的当前不带扩展名的配置文件名称。
+[(e.g., default if your your profile is default.dat).]
+（例如，default 如果你的配置文件是 default.dat）。
+[Environment variables]
+环境变量
+[The plugin can also expand environment variables; the variables are specified like in any other]
+插件也可以扩展环境变量；变量就像在任何其他
+[program that can use environment variables, i.e., %<env variable>%.]
+可以使用环境变量的程序中那样指定，例如，%<env variable>%。
 [Customize]
 自定义
 #muuid {9502e511-7e5d-49a1-8ba5-b1aee70fa5bf}
@@ -12592,25 +12672,25 @@ MessageState 未读附加图标
 ;  Authors: Cristian Libotean
 ;============================================================
 [This will tell Miranda to run the specified command.]
-�⽫���� Miranda ����ָ�������
+这将告诉Miranda运行指定的命令。
 [No help for '%s'.]
-û�С�%s���İ�����
+没有‘%s’的帮助。
 [Available commands: ]
-���õ����
+可用的命令
 [Miranda has been closed or an error has occurred while waiting for the result, could not process request.]
-Miranda �ѹرջ��ڵȴ����ʱ���������޷���������
+Miranda已关闭或在等待结果时发生错误，无法处理请求。
 [%s usage:\n]
-%s ʹ�ã�\n
+%s 用法\n
 [%s <command> [<param> [<param> [...]]].\n]
 %s <command> [<param> [<param> [...]]].\n
 [This will tell Miranda to run the specified command. The commands can have zero, one or more parameters. Use '%s help' to get a list of possible commands.\n]
-�⽫����Miranda����ָ�������������Ծ��������һ������������ʹ��'��s help'��ȡ���ܵ������б��\n
+这将告诉Miranda运行指定的命令。命令可以具有零个，一个或多个参数。使用'%s help'获取可能的命令列表。\n
 [No command can have more than %d parameters.\n]
-û����������г�����d��������\n
+没有命令可以有超过%d个参数。\n
 [%s version %s]
-%s �汾 %s
+%s 版本 %s
 [Unknown command '%s'.\n]
-δ֪���%s����\n
+未知命令 ‘%s’。\n
 #muuid {40da5ebd-4f2d-4bea-841c-eab77bee6f4f}
 ;============================================================
 ;  File: MinecraftDynmap.dll
@@ -13400,6 +13480,10 @@ V
 设置
 [Re&ad %s message]
 阅读 %s 消息(&A)
+[%d hours]
+%d 小时
+[%d minutes]
+%d 分钟
 [Read status message]
 阅读状态消息
 [On]
@@ -14888,6 +14972,8 @@ OpenSSL 错误
 服务
 [Main]
 主
+[All Files (*.*)]
+所有文件（*.*）
 [Error]
 错误
 [Are You sure?]
@@ -22712,6 +22798,8 @@ UserInfoEx 不支持这个版本的 XMLCard
 取消
 [Help]
 帮助
+[Variables Help]
+变量帮助
 [Open String Formatting Help]
 打开字符串格式帮助
 [Services]
@@ -22720,6 +22808,8 @@ UserInfoEx 不支持这个版本的 XMLCard
 变量
 [Alias]
 别名
+[Paused]
+暂停
 [External Applications]
 外部应用程序
 [Metacontacts]
@@ -22845,6 +22935,8 @@ URL：
 错误
 [Notifications]
 通知
+[Waiting...]
+等待...
 [Activities]
 活动
 [Music]

@@ -584,7 +584,7 @@ URL：
 [Loading status message from vk.com.\nThis may take some time.]
 
 [Waiting...]
-
+等待...
 [Enter new status message]
 
 ;file \protocols\VKontakte\src\vk_struct.cpp

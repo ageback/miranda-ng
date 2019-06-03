@@ -113,7 +113,7 @@
 
 ;file \plugins\PasteIt\src\PasteIt.cpp
 [All Files (*.*)]
-
+所有文件（*.*）
 [Paste It - Select file]
 
 [Error]

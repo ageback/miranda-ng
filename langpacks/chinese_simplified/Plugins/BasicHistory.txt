@@ -330,7 +330,7 @@
 [Invalid file]
 
 [All files (*.*)]
-
+所有文件（*.*）
 [Enter filter name]
 
 [Filter name exists]

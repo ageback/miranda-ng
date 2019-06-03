@@ -23,7 +23,6 @@
 [You've entered invalid codepage. Select codepage from combo box or enter correct number.]
 [Invalid codepage]
 [Web page]
-[All Files (*.*)]
 [Paste It - Select file]
 [Paste from clipboard]
 [Paste from file]

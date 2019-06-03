@@ -75,7 +75,6 @@
 [Currency Rate Section]
 [Swap button]
 [XML File (*.xml)]
-[All files (*.*)]
 [Miranda could not load CurrencyRates plugin. Microsoft HTML parser is missing.]
 [Log Files (*.txt,*.log)]
 [Enter integer value]

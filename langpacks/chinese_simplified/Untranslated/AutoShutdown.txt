@@ -25,7 +25,6 @@
 [&Now!]
 [Shutdown at:]
 [Time left:]
-[Paused]
 [&Unpause countdown]
 [&Pause countdown]
 [&Cancel countdown]

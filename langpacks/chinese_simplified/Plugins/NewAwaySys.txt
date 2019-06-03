@@ -287,9 +287,9 @@ V
 [Stranger]
 
 [%d hours]
-
+%d 小时
 [%d minutes]
-
+%d 分钟
 [%d seconds]
 
 [Read status message]

@@ -60,7 +60,7 @@
 [Help]
 帮助
 [Variables Help]
-
+变量帮助
 [Open String Formatting Help]
 打开字符串格式帮助
 ;file \plugins\Variables\src\options.cpp
@@ -79,7 +79,7 @@
 [Stopped]
 
 [Paused]
-
+暂停
 [External Applications]
 外部应用程序
 [retrieves song name of the song currently playing in Winamp]

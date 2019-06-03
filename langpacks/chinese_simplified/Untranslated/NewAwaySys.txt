@@ -90,8 +90,6 @@
 [Returns one of your predefined messages by its title: ?nas_predefinedmessage(creepy)]
 [Current protocol name]
 [Stranger]
-[%d hours]
-[%d minutes]
 [%d seconds]
 [Use the default setting]
 [NewAwaySys: Incoming status message request]

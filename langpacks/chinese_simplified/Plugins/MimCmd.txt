@@ -6,24 +6,24 @@
 ;  Authors: Cristian Libotean
 ;============================================================
 [This will tell Miranda to run the specified command.]
-�⽫���� Miranda ����ָ�������
+这将告诉Miranda运行指定的命令。
 ;file \plugins\MimCmd\src\commands.cpp
 [No help for '%s'.]
-û�С�%s���İ�����
+没有‘%s’的帮助。
 [Available commands: ]
-���õ����
+可用的命令
 [Miranda has been closed or an error has occurred while waiting for the result, could not process request.]
-Miranda �ѹرջ��ڵȴ����ʱ���������޷���������
+Miranda已关闭或在等待结果时发生错误，无法处理请求。
 ;file \plugins\MimCmd\src\MimCmd.cpp
 [%s usage:\n]
-%s ʹ�ã�\n
+%s 用法\n
 [%s <command> [<param> [<param> [...]]].\n]
 %s <command> [<param> [<param> [...]]].\n
 [This will tell Miranda to run the specified command. The commands can have zero, one or more parameters. Use '%s help' to get a list of possible commands.\n]
-�⽫����Miranda����ָ�������������Ծ��������һ������������ʹ��'��s help'��ȡ���ܵ������б��\n
+这将告诉Miranda运行指定的命令。命令可以具有零个，一个或多个参数。使用'%s help'获取可能的命令列表。\n
 [No command can have more than %d parameters.\n]
-û����������г�����d��������\n
+没有命令可以有超过%d个参数。\n
 [%s version %s]
-%s �汾 %s
+%s 版本 %s
 [Unknown command '%s'.\n]
-δ֪���%s����\n
+未知命令 ‘%s’。\n

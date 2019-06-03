@@ -229,7 +229,7 @@
 [XML File (*.xml)]
 
 [All files (*.*)]
-
+所有文件（*.*）
 ;file \protocols\CurrencyRates\src\ModuleInfo.cpp
 [Miranda could not load CurrencyRates plugin. Microsoft HTML parser is missing.]
 

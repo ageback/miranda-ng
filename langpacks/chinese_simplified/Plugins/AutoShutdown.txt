@@ -68,7 +68,7 @@
 [Time left:]
 
 [Paused]
-
+暂停
 [&Unpause countdown]
 
 [&Pause countdown]
