@@ -6639,10 +6639,122 @@ Yandex.Disk
 通知 YAMN 插件检查邮件。\n用法：yamn check.
 [Calls a Miranda service.\nUsage: callservice <service> (d|s)<wParam> (d|s)<lParam>.\nThe command will call Miranda <service> service using wParam and lParam as arguments; the first letter of the parameter must be either 'd' if the parameter is a decimal number or 's' if the parameter is a string. Be careful when you use this function as you can only pass numbers and strings as data.\nNOTE: If you pass invalid data to a service, Miranda might crash.]
 调用一个Miranda服务。\n用法：callservice <service> (d|s)<wParam> (d|s)<lParam>.\n该命令将使用 wParam 和 lParam 作为参数调用Miranda <service> 服务；
+[Sends a message to the specified contact(s).\nUsage: message <contact> [<contact> [<contact> [...]]] <message>.\nThe command will send <message> to the specified contact(s) - at least one contact must be specified - all parameters except the last one are considered recipients.\n<Contact> has the following format: <name>[:<account>]. <Name> is the contact display name or unique ID and <account> is an optional parameter representing the account of the contact (useful in case there is more than one contact with the same name).\nNOTE: The message string cannot exceed 512 characters. You can use \\n for new line (and \\\\n for \\n).]
+发送消息给指定的帐户。\n用法：message <contact> [<contact> [<contact> [...]]] <message>.\n该命令将发送 <message> 到指定的帐户 - 必须指定至少一个联系人 - 除了最后一个参数，所有参数都被认为是接收者。\n<Contact> 遵循以下格式：<name>[:<account>]。<Name> 是联系人的显示名称或唯一ID，<account> 是一个可选参数表示联系人的帐户（在多个联系人使用相同名称的情况下有用）。\n注意：消息字符串不能超过 512 个字符。你可以使用 \\n 输入新行（\\\\n 输入 \\n）。
+[Allows you to manage database settings.\nUsage:\n  db set <module> <name> (b|i|d|s|w)<value>\n  db delete <module> <name>\n  db get <module> <name>.\nThe command can set a database entry to the specified value (if the entry does not exist, it will be created) as well as read or delete a specified database entry. <Module> is the name of the module where the key should be located, <name> is the name of the key and <value> is the value to be written. A character must be placed before <value> in order to specify what kind of data to write: b - byte, i - integer (word), d - double word, s - string, w - wide string.]
+允许你管理数据库设置。\n用法：\n  db set <module> <name> (b|i|d|s|w)<value>\n  db delete <module> <name>\n  db get <module> <name>.\n该命令可以设置一个数据库项为指定值（如果该项不存在，它将被创建），以及读取或删除指定的数据库项。<Module> 是键应该所在的模块的名称，<name> 是键的名称，<value> 是要被写入的值。必须在 <value> 之前放置一个字符用来指定要写入什么类型的数据：b - 字节，i - 整数(字)，d - 双字，s - 字符串，w - 宽字符串。
+[Configures proxy settings either globally or per account.\nUsage: proxy (global|<account>) <setting> [<params>].\n<Setting> is one of the following settings:\n  status (disable | enable | toggle)\n  server <proxy type> <server> <port>.]
+全局或按帐户配置代理设置。\n用法：proxy (global|<account>) <setting> [<params>].\n<Setting> 是以下设置之一：\n  status (disable | enable | toggle)\n  server <proxy type> <server> <port>。
+[Allows you to search/list contacts or open message windows for specified contacts.\nUsage:\n  contacts list [<keyword> [account:<account>] [id:<id>] [status:<status>] [<keyword> [...]]].\nThe command will search all contacts and display the ones matching the search criteria. To search for a specific account use the keyword 'account:<account>'. To search for contacts that have a certain ID use the keyword 'id:<id>'. To search for contacts that have a certain status use 'status:<status>'.\n  contacts open [<keyword> [account:<account>] [id:<id>] [status:<status>] [<keyword> [...]]].\nThe command will open a message window for all contacts that match the search criteria. To search for a specific account use the keyword 'account:<account>'. To search for contacts that have a certain ID use the keyword 'id:<id>'. To search for contacts that have a certain status use 'status:<status>'. If no keyword is specified, the command will open a message window for all contacts that have unread messages.]
+允许您搜索/列出联系人或打开指定联系人的消息窗口。\n用法：\n  contacts list [<keyword> [account:<account>] [id:<id>] [status:<status>] [<keyword> [...]]].\n该命令将搜索所有联系人并显示符合搜索条件的那些。要搜索指定帐户，使用关键字“account:<account>”。要搜索有某个ID的联系人，使用关键字“id:<id>”。要搜索有某个状态的联系人，使用“status:<status>”。\n  contacts open [<keyword> [account:<account>] [id:<id>] [status:<status>] [<keyword> [...]]].\n该命令将为所有符合搜索条件的联系人打开一个消息窗口。要搜索指定帐户，使用关键字“account:<account>”。要搜索有某个ID的联系人，使用关键字“id:<id>”。要搜索有某个状态的联系人，使用“status:<status>”。如果没有指定关键字，该命令将为所有有未读消息的联系人打开一个消息窗口。
+[Shows history or unread messages for a contact.\nUsage: history <command> <contact>.\n<Command> is one of the following commands:\n  unread - show unread messages for that contact.\n  show <contact> <start> <finish> - show history from event number <start> to <finish>. If any number is negative, it is interpreted as a relative index from the last event number +1 (so the last event for a contact is -1).]
+显示一个联系人的历史或未读消息。\n用法：history <command> <contact>。\n<Command> 是以下命令之一：\n  unread - 显示那个联系人的未读消息。\n    show <contact> <start> <finish> - 显示从事件编号 <start> 到 <finish> 的历史。如果任何一个数字是负数，它被解读为从最后一个事件编号 +1 的相对索引（因此联系人最后的事件是 -1）。
+[Shows version information for Miranda and CmdLine plugin. If CrashDumper plugin is installed, it will use its report instead.\nUsage: version.\nThe command will print Miranda's and CmdLine's version numbers or, if CrashDumper plugin is installed, it will show Version Info report.]
+显示 Miranda 和 CmdLine 插件的版本信息。如果安装了 CrashDumper，将使用它的报告代替。\n用法：version.\n该命令将打印 Miranda 和 CmdLine 的版本号，或当安装了 CrashDumper 时，将显示版本信息报告。
+[Changes the user's nickname on the given protocol to the new name.\nUsage: setnickname <protocol> new_nickname.]
+将用户在给定协议上的昵称更改为新名称。\n用法：setnickname <protocol> new_nickname。
+[Ignores or removes ignore flags for specific contacts.\nUsage:\n  ignore (block | unblock) <contact> [<contact> [<contact> [...]]].\nThe command will set or remove ignore flags for the specified contacts]
+忽略或移除指定联系人的忽略标志。\n用法：\n  ignore (block | unblock) <contact> [<contact> [<contact> [...]]].\n该命令将设置或移除指定联系人的忽略标志。  
+[Executes Lua script via MirLua plugin.\nUsage:\n  call [<module>] <function>\n  exec "<path>"\n  eval "<code>"]
+通过 Miranda 插件执行 Lua 脚本。\n用法：  call [<module>] <function>\n  exec "<path>"\n  eval "<code>"
+[Wrong number of parameters for command '%s'.]
+命令‘%s’的参数数量错误。
+[Unknown parameter '%s' for command '%s'.]
+未知的参数‘%s’对于命令‘%s’。
 [Current global status: %s.%s]
 当前全局状态：%s.%s
+[Changed global status to '%s' (previous status was '%s').]
+改变全局状态为‘%s’（之前的状态为‘%s’）
+[Changed '%s' status to '%s' (previous status was '%s').]
+改变状态为‘%s’（之前的状态为‘%s’）
 ['%s' doesn't seem to be a valid account.]
 ‘%s’似乎不是一个有效的帐户。
+[Failed to change status for account '%s' to '%s'.]
+改变帐户‘%s’的状态为‘%s’失败。
+[Failed to set '%s' status message to '%s' (status is '%s').]
+设置‘%s’状态消息为‘%s’失败（状态是‘%s’）。
+[Successfully set '%s' status message to '%s' (status is '%s').]
+设置‘%s’状态消息为‘%s’成功（状态是‘%s’）。
+[Account '%s' does not support away messages, skipping.]
+帐户‘%s’不支持离开消息，跳过。
+[Changed '%s' status message to '%s' (status is '%s').]
+更改‘%s’状态消息为‘%s’（状态是‘%s’）。
+[Failed to change status message for account '%s' to '%s' (status is '%s').]
+更改帐户‘%s’的状态消息为‘%s’失败（状态是‘%s’）。
+[Popups are currently enabled.]
+弹出窗口当前是启用的。
+[Popups are currently disabled.]
+弹出窗口当前是禁用的。
+[Popups were enabled successfully.]
+弹出窗口启用成功。
+[Popups could not be enabled.]
+弹出窗口无法启用。
+[Popups were disabled successfully.]
+弹出窗口禁用成功。
+[Popups could not be disabled.]
+弹出窗口无法禁用。
+[Sounds are currently enabled.]
+声音当前是启用的。
+[Sounds are currently disabled.]
+声音当前是禁用的。
+[Sounds were enabled successfully.]
+声音启用成功。
+[Sounds were disabled successfully.]
+声音禁用成功。
+[Contact list is currently shown.]
+联系人列表当前正显示。
+[Contact list is currently hidden.]
+联系人列表当前被隐藏。
+[Contact list was shown successfully.]
+联系人列表显示成功。
+[Contact list was hidden successfully.]
+联系人列表隐藏成功。
+[Issued a quit command.]
+发布了退出命令。
+[Issued a quit and wait command.]
+发布了退出并等待命令。
+[Issued check email command to Exchange plugin.]
+给 Exchange 插件发布了检查邮件命令。
+[Exchange plugin is not running.]
+Exchange 插件没有运行。
+[Issued check email command to YAMN plugin.]
+给 YAMN 插件发布了检查邮件命令。
+[YAMN plugin is not running.]
+YAMN 插件没有运行。
+[CallService call successful: service '%s' returned %p.]
+CallService 调用成功：服务‘%s’返回了 %p。
+[Invalid parameter '%s' passed to CallService command.]
+传递给CallService命令的参数‘%s’ 无效。
+[Service '%s' does not exist.]
+服务‘%s’不存在。
+[Message sent to '%s'.]
+消息已发送给‘%s’。
+[Message to '%s' was marked as sent but the account seems to be offline]
+给‘%s’的消息被标记为已发送，但是该帐户似乎是离线的
+[Could not send message to '%s'.]
+无法发送消息到‘%s’。
+[Timed out while waiting for acknowledgment for contact '%s'.]
+等待确认联系‘%s’时超时。
+[Could not find contact handle for contact '%s'.]
+找不到帐户‘%s’的联系人处理程序。
+[byte:%d]
+字节：%d
+[word:%d]
+字：%d
+[dword:%ld]
+双字：%ld
+[string:'%s']
+字符串：‘%s’
+[wide string:'%S']
+宽字符串：‘%S’
+[utf8:'%s']
+utf8：'%s'
+[blob:N/A]
+blob:N/A
+[unknown value]
+未知的值
+[Setting '%s/%s' deleted.]
+设置 ‘%s/%s’ 已删除。
 [string]
 字符串
 [byte]
@@ -6651,10 +6763,34 @@ Yandex.Disk
 单词
 [dword]
 双字
+[wide string]
+宽字符串
+[Wrote '%S:%s' to database entry '%S/%S'.]
+写‘%S:%s’到数据库项‘%S/%S’。
+[Could not retrieve setting '%S/%S': %S.]
+无法获取设置‘%S/%S’：%S。
+[Setting '%S/%S' was not found.]
+设置‘%S/%S’未找到。
+['%S' proxy was disabled.]
+'%S'代理被禁用。
+['%S' proxy was enabled.]
+'%S'代理被启用。
+[%S proxy server: %S %S:%d.]
+%S 代理服务器： %S %S:%d。
+[%S proxy set to %s %S:%d.]
+%S 代理设置为 %s %S:%d。
+[%S The port or the proxy type parameter is invalid.]
+%S 端口或代理类型参数无效。
 [[me]]
 我
 [No unread messages found.]
 未找到未读消息
+[%s:%S - %d unread events.]
+%s:%S - %d 未读事件。
+[Contact '%s' has %d events in history.]
+在历史中联系人‘%s’有 %d 个事件。
+[Error setting nickname to '%s' for protocol '%s']
+设置昵称为‘%s’为协议‘%s’出错
 [Command '%s' is not currently supported.]
 当前不支持‘%s’命令。
 [Could not create CommandLine listening server!]
