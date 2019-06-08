@@ -7812,18 +7812,60 @@ Miranda NG [%s] 数据库备份
 ;  Version: 0.2.0.0
 ;  Authors: Robert Pösel
 ;============================================================
+[Dummy protocol for Miranda NG. Could be used for holding contacts and history from deprecated protocols or for creating virtual contacts.]
+Miranda NG的假人协议。 可用于保存已弃用协议的联系人和历史记录，也可用于创建虚拟联系人。
+[Protocol template:]
+协议模板：
+[Unique ID setting:]
+唯一 ID 设置：
+[Name of setting that holds unique identifier of contacts]
+持有联系人唯一身份标志的设置的名称
+[Unique ID text:]
+唯一 ID 文字：
+[Visible name of unique identifier of contacts]
+联系人唯一身份标志的可见名称
+[Restart is required to apply these changes.]
+需要重启以应用这些改变。
+[Allow sending messages to contacts]
+允许发送消息给联系人
 [Custom]
 自定义
+[Screen name]
+屏幕名称
+[User name]
+用户名称
+[Facebook ID]
+脸书 ID
+[Gadu-Gadu number]
+Gadu-Gadu 号码
 [User ID]
 用户 ID
+[ICQ number]
+ICQ 号码
 [Nickname]
 昵称
 [Visible name]
 可见名称
 [E-mail address]
 电子邮件地址
+[Live ID]
+Live ID
+[Skype name]
+Skype 名称
+[Steam ID]
+Steam ID
+[Tlen login]
+Tlen 登录
+[Tox ID]
+Tox ID
 [Username]
 用户名
+[VKontakte ID]
+VKontakte ID
+[WhatsApp ID]
+WhatsApp ID
+[This Dummy account has disabled sending messages. Enable it in account options.]
+此虚拟帐户已禁用发送消息。 在帐户选项中启用它。
 #muuid {e08ce7c4-9eeb-4272-b544-0d32e18d90de}
 ;============================================================
 ;  File: EmLanProto.dll
