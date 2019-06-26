@@ -33,7 +33,6 @@
 [Remove from Hotmail Address book]
 [Block Contact]
 [Invite Contact To Chat]
-[Live ID]
 [Chat #]
 [&Invite user...]
 [User &history]

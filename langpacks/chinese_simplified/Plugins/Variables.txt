@@ -54,7 +54,7 @@
 [Tokens]
 
 [Input]
-
+输入
 [Cancel]
 取消
 [Help]
@@ -359,7 +359,7 @@ Miranda 相关
 [expand environment variable x]
 
 [user name]
-
+用户名称
 [text from clipboard]
 
 ;file \plugins\Variables\src\parse_variables.cpp

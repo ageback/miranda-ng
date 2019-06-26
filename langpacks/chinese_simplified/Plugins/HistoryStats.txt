@@ -6,190 +6,190 @@
 ;  Authors: Martin Afanasjew
 ;============================================================
 [Creates detailed, colorful and highly customizable statistics using your message history.]
-
+使用您的消息历史记录创建详细，丰富多彩且可高度自定义的统计信息。
 ;file \plugins\HistoryStats\res\resource.rc
 [HistoryStats - Working...]
-
+HistoryStats - 正在工作...
 [Cancel]
 取消
 [HistoryStats - Add column]
-
+HistoryStats - 添加列
 [Available column types:]
-
+可用的列类型：
 [Description]
 描述
 [Add]
 添加
 [HistoryStats - Conflicting files]
-
+HistoryStats - 冲突文件
 [Some files were temporarily stored in another location to avoid overwriting already existing files. If you always want to overwrite existing files, there is an option for this.]
-
+某些文件暂时存储在另一个位置，以避免覆盖现有文件。 如果您总是想要覆盖现有文件，可以选择此选项。
 [The following files could not be written because files with the same names already existed. Please decide whether to overwrite the existing or to discard the generated files.]
-
+无法写入以下文件，因为已存在具有相同名称的文件。 请决定是否覆盖现有文件或丢弃生成的文件。
 [Overwrite existing]
-
+覆盖已存在的
 [Discard generated]
-
+丢弃生成的
 [HistoryStats supports several plugins. Click to learn more...]
-
+HistoryStats支持多个插件。点击了解更多...
 [Contacts]
 联系人
 [Hide additional column info...]
-
+隐藏附加列信息...
 [HistoryStats - Plugin/extension info]
-
+HistoryStats - 插件/扩展信息
 [Close]
 关闭
 [Plugin/extension name:]
-
+插件/扩展名称：
 [Provided features:]
-
+提供的功能：
 [Detailed description:]
-
+详细描述：
 [HistoryStats - Filter words/messages]
-
+HistoryStats - 过滤单词/消息
 [Sets:]
-
+集合：
 [Set name:]
-
+集合名称：
 [Set mode:]
-
+集合模式：
 [About sets]
-
+关于集合
 [All sets are shared between columns. However, only the checked ones will be applied to the current column. Use the right field to specify words putting every word on a separate line.]
-
+所有集合在列之间共享。但是，只有勾选的将应用于当前列。使用正确的字段指定将每个单词放在单独行上的单词。
 [Configure HistoryStats]
-
+配置 HistoryStats
 [Apply]
 应用
 ;file \plugins\HistoryStats\src\colbase_words.cpp
 [Extract words from]
-
+提取单词从
 [Incoming messages]
 传入消息
 [Outgoing messages]
 传出消息
 [All messages]
-
+所有消息
 [Ignore words shorter than (chars)]
-
+忽略单词短于（字符）
 [Ignore words longer than (chars, 0=no limit)]
-
+忽略单词长于（字符，0=无限制）
 [Filter URLs/e-mail addresses]
-
+过滤 URL/电子邮件地址
 [Filter words/messages]
-
+过滤单词/消息
 [Define...]
-
+定义...
 ;file \plugins\HistoryStats\src\column_chatduration.cpp
 [Chat duration type]
-
+聊天持续时间类型
 [Minimum]
-
+最小化
 [Average]
-
+平均
 [Maximum]
 最大
 [Total (sum of all chats)]
-
+总计（所有聊天的和）
 [Show bar graph for chat duration type]
-
+显示聊天持续时间类型的条形图
 [Other information in tooltip]
-
+工具提示中的其他信息
 [Minimum chat duration]
-
+最小聊天持续时间
 [Average chat duration]
-
+平均聊天持续时间
 [Maximum chat duration]
-
+最大聊天持续时间
 [Total chat duration]
-
+总聊天持续时间
 [Chat duration]
-
+聊天持续时间
 [(unknown)]
 （未知）
 [[Min] #{amount}]
-
+[最小] #{amount}
 [[Avg] #{amount}]
-
+[平均] #{amount}
 [[Max] #{amount}]
-
+[最大] #{amount}
 [[Sum] #{amount}]
-
+[合计] #{amount}
 ;file \plugins\HistoryStats\src\column_chatduration.h
 [Column holding the amount of time you have chatted with the given contact.]
-
+列保留您与给定联系人聊天的时间。
 ;file \plugins\HistoryStats\src\column_events.cpp
 [Events to count]
-
+要计数的事件
 [Files (incoming)]
-
+文件（传入）
 [Files (outgoing)]
-
+文件（传出）
 [Files (all)]
-
+文件（所有）
 [Files]
 文件
 [Incoming files]
 传入文件
 [Outgoing files]
-
+传出文件
 ;file \plugins\HistoryStats\src\column_events.h
 [Events]
 事件
 [Column holding event counts for incoming, outgoing or total number of files or URLs.]
-
+保持事件计数传入，传出或总文件或URL数的列。
 ;file \plugins\HistoryStats\src\column_group.cpp
 [Group]
 分组
 ;file \plugins\HistoryStats\src\column_group.h
 [Column holding the contact list's group name the contact is in.]
-
+保存联系人所在的联系人列表组名称的列。
 ;file \plugins\HistoryStats\src\column_inout.cpp
 [Data source]
-
+数据源
 [Display as]
-
+显示为
 [Absolute]
-
+绝对的
 [Units per day]
-
+单位每天
 [Units per week]
-
+单位每星期
 [Units per month (30 days)]
-
+单位每月（30天）
 [Characters (incoming)]
-
+字符（传入）
 [Characters (outgoing)]
-
+字符（传出）
 [Characters (all)]
-
+字符（所有）
 [Messages (incoming)]
-
+消息（传入）
 [Messages (outgoing)]
-
+消息（传出）
 [Messages (all)]
-
+消息（所有）
 [Chats (incoming)]
-
+聊天（传入）
 [Chats (outgoing)]
-
+聊天（传出）
 [Chats (all)]
-
+聊天（所有）
 [Characters]
 字符
 [Messages]
 消息
 [Chats]
-
+聊天
 [Incoming characters]
-
+传入字符
 [Outgoing characters]
-
+传出字符
 [Incoming chats]
-
+传入聊天
 [Outgoing chats]
-
+传出聊天
 [day]
 天
 [week]
@@ -197,23 +197,23 @@
 [month]
 月
 [#{data} per #{unit}]
-
+#{data} 每 #{unit}
 ;file \plugins\HistoryStats\src\column_inout.h
 [In/out]
 入/出
 [Column holding counts for incoming, outgoing or total characters, messages or chats. This column can display absolute and average values.]
-
+持有计数为传入，传出或总字符，消息或聊天的列。 此列可以显示绝对值和平均值。
 ;file \plugins\HistoryStats\src\column_inoutgraph.cpp
 [Show sum of incoming and outgoing]
-
+显示传入和传出总计
 [In/out details (tooltip)]
-
+入/出详情（工具提示）
 [Percentage in tooltip]
-
+工具提示中的百分比
 [Absolute in tooltip if average selected and vice versa]
 
 [Percentage in bar graph]
-
+柱状图中的百分比
 [Outgoing]
 传出
 [Incoming]
@@ -243,7 +243,7 @@
 [Omitted]
 
 [Totals]
-
+总计
 ;file \plugins\HistoryStats\src\column_nick.h
 [Column holding the contact's nick and first/last message time if selected.]
 
@@ -252,7 +252,7 @@
 协议
 ;file \plugins\HistoryStats\src\column_protocol.h
 [Column holding the contact's protocol.]
-
+持有联系人协议的列。
 ;file \plugins\HistoryStats\src\column_rank.cpp
 [Rank]
 
@@ -271,11 +271,11 @@
 [Custom (for experts only)]
 
 [Column setup]
-
+列设置
 [Bar unit]
-
+栏单位
 [Units per bar]
-
+每个栏的单位
 [Bars per graph]
 
 [Graph alignment]
@@ -291,15 +291,15 @@
 [Days]
 天
 [Weeks]
-
+星期
 [Details for every bar (tooltip) are only available with HTML output.]
 
 ["Split"]
 
 [incoming characters]
-
+传入字符
 [outgoing characters]
-
+传出字符
 [all characters]
 
 [incoming messages]
@@ -307,15 +307,15 @@
 [outgoing messages]
 传出消息
 [all messages]
-
+所有消息
 [incoming chats]
-
+传入聊天
 [outgoing chats]
-
+传出聊天
 [all chats]
-
+所有聊天
 [#{type} for #{data}]
-
+#{data} 的 #{type}
 [wday3:Mon]
 
 [wday3:Tue]
@@ -333,9 +333,9 @@
 [[#{hour}:00-#{hour}:59] #{amount}]
 
 [[#{day}] #{amount}]
-
+[#{day}] #{amount}
 [#{amount}]
-
+#{amount}
 ;file \plugins\HistoryStats\src\column_split.h
 [Column holding a graphical overview of your chatting amount split by day of week or by hour of day. Different chatting amount measures are available.]
 
@@ -484,21 +484,21 @@
 [Exclude]
 
 [Exclude contacts]
-
+排除联系人
 [Input]
-
+输入
 [Input settings]
-
+输入设置
 [Columns]
-
+列
 [Column settings]
-
+列设置
 [Output]
-
+输出
 [Output settings]
-
+输出设置
 [Create]
-
+创建
 [Create statistics]
 创建统计
 [Create statistics (there are warnings)]
@@ -508,16 +508,16 @@
 [You have unsaved settings. Do you want to save before running HistoryStats?]
 
 [HistoryStats]
-
+HistoryStats
 [Show warnings...]
-
+显示警告...
 [Show statistics]
 显示统计
 [There are some potential conflicts in your settings. However, this is only a warning and can in general be ignored. The details:]
 
 ;file \plugins\HistoryStats\src\dlgoption_subcolumns.cpp
 [Add column...]
-
+添加列...
 [Delete column]
 删除列
 [Move down]
@@ -525,37 +525,37 @@
 [Move up]
 上移
 [Show additional column info...]
-
+显示附加列信息...
 [General column settings]
-
+常规列设置
 [Title (default if empty)]
-
+标题（如果为空则默认值）
 [Column specific settings]
-
+列特定设置
 [For this config the selected column...]
 
 [...can be output as: ]
 
 [PNG (partial)]
-
+PNG（部分）
 [...will be output as: ]
-
+...将被输出为：
 [Nothing (column will be skipped)]
 
 [HTML as fallback]
 
 [PNG, ignoring some settings]
-
+PNG，忽略某些设置
 [An internal column configuration error occurred. Please contact the author of this plugin.]
 
 [HistoryStats - Error]
-
+HistoryStats - 错误
 [HTML output unsupported.]
-
+不支持 HTML 输出。
 [Fallback to HTML due to setting.]
-
+由于设置而回滚为HTML。
 [Setting ignored due to PNG output.]
-
+由于PNG输出而忽略设置。
 ;file \plugins\HistoryStats\src\dlgoption_subexclude.cpp
 [** All contacts **]
 ** 所有联系人 **
@@ -563,13 +563,13 @@
 [Integration]
 
 [Create statistics on Miranda NG startup]
-
+在 Miranda NG 启动时创建统计
 [Add menu items to main menu]
-
+添加菜单项到主菜单
 [Put menu items into submenu]
-
+将菜单项放入子菜单
 [Add menu items to contact menu]
-
+将菜单项放入联系人菜单
 [Don't hide menu items for pseudo protocols]
 
 [Hide menu items for protocol...]

@@ -8751,6 +8751,8 @@ SFTP（基于SSH的安全FTP）
 联系人列表
 [%s connection]
 %s 连接
+[Gadu-Gadu Number]
+Gadu-Gadu 号码
 [Participants]
 参加者
 [Protocol icon]
@@ -9556,44 +9558,154 @@ History++ 警告
 ;  Version: 0.2.1.2
 ;  Authors: Martin Afanasjew
 ;============================================================
+[Creates detailed, colorful and highly customizable statistics using your message history.]
+使用您的消息历史记录创建详细，丰富多彩且可高度自定义的统计信息。
+[HistoryStats - Working...]
+HistoryStats - 正在工作...
 [Cancel]
 取消
+[HistoryStats - Add column]
+HistoryStats - 添加列
+[Available column types:]
+可用的列类型：
 [Description]
 描述
 [Add]
 添加
+[HistoryStats - Conflicting files]
+HistoryStats - 冲突文件
+[Overwrite existing]
+覆盖已存在的
+[Discard generated]
+丢弃生成的
 [Contacts]
 联系人
+[Hide additional column info...]
+隐藏附加列信息...
+[HistoryStats - Plugin/extension info]
+HistoryStats - 插件/扩展信息
 [Close]
 关闭
+[Plugin/extension name:]
+插件/扩展名称：
+[Provided features:]
+提供的功能：
+[Detailed description:]
+详细描述：
+[HistoryStats - Filter words/messages]
+HistoryStats - 过滤单词/消息
+[Sets:]
+集合：
+[Set name:]
+集合名称：
+[Set mode:]
+集合模式：
+[About sets]
+关于集合
+[Configure HistoryStats]
+配置 HistoryStats
 [Apply]
 应用
+[Extract words from]
+提取单词从
 [Incoming messages]
 传入消息
 [Outgoing messages]
 传出消息
+[All messages]
+所有消息
+[Ignore words shorter than (chars)]
+忽略单词短于（字符）
+[Ignore words longer than (chars, 0=no limit)]
+忽略单词长于（字符，0=无限制）
+[Filter URLs/e-mail addresses]
+过滤 URL/电子邮件地址
+[Filter words/messages]
+过滤单词/消息
+[Define...]
+定义...
+[Minimum]
+最小化
+[Average]
+平均
 [Maximum]
 最大
+[Total (sum of all chats)]
+总计（所有聊天的和）
+[Other information in tooltip]
+工具提示中的其他信息
 [(unknown)]
 （未知）
+[Events to count]
+要计数的事件
+[Files (incoming)]
+文件（传入）
+[Files (outgoing)]
+文件（传出）
+[Files (all)]
+文件（所有）
 [Files]
 文件
 [Incoming files]
 传入文件
+[Outgoing files]
+传出文件
 [Events]
 事件
 [Group]
 分组
+[Data source]
+数据源
+[Display as]
+显示为
+[Absolute]
+绝对的
+[Units per day]
+单位每天
+[Units per week]
+单位每星期
+[Units per month (30 days)]
+单位每月（30天）
+[Characters (incoming)]
+字符（传入）
+[Characters (outgoing)]
+字符（传出）
+[Characters (all)]
+字符（所有）
+[Messages (incoming)]
+消息（传入）
+[Messages (outgoing)]
+消息（传出）
+[Messages (all)]
+消息（所有）
+[Chats (incoming)]
+聊天（传入）
+[Chats (outgoing)]
+聊天（传出）
+[Chats (all)]
+聊天（所有）
 [Characters]
 字符
 [Messages]
 消息
+[Chats]
+聊天
+[Incoming characters]
+传入字符
+[Outgoing characters]
+传出字符
+[Incoming chats]
+传入聊天
+[Outgoing chats]
+传出聊天
 [day]
 天
 [week]
 星期
 [month]
 月
+[#{data} per #{unit}]
+#{data} 每 #{unit}
 [In/out]
 入/出
 [Outgoing]
@@ -9604,30 +9716,106 @@ History++ 警告
 昵称
 [Protocol]
 协议
+[Column setup]
+列设置
+[Bar unit]
+栏单位
+[Units per bar]
+每个栏的单位
 [Hours]
 小时
 [Days]
 天
+[Weeks]
+星期
+[incoming characters]
+传入字符
+[outgoing characters]
+传出字符
 [incoming messages]
 传入消息
 [outgoing messages]
 传出消息
+[all messages]
+所有消息
+[incoming chats]
+传入聊天
+[outgoing chats]
+传出聊天
+[all chats]
+所有聊天
+[#{type} for #{data}]
+#{data} 的 #{type}
+[[#{day}] #{amount}]
+[#{day}] #{amount}
 [Global]
 全局
 [Global settings]
 全局设置
+[Exclude contacts]
+排除联系人
+[Input]
+输入
+[Input settings]
+输入设置
+[Columns]
+列
+[Column settings]
+列设置
+[Output]
+输出
+[Output settings]
+输出设置
+[Create]
+创建
 [Create statistics]
 创建统计
+[HistoryStats]
+HistoryStats
+[Show warnings...]
+显示警告...
 [Show statistics]
 显示统计
+[Add column...]
+添加列...
 [Delete column]
 删除列
 [Move down]
 下移
 [Move up]
 上移
+[Show additional column info...]
+显示附加列信息...
+[General column settings]
+常规列设置
+[Title (default if empty)]
+标题（如果为空则默认值）
+[Column specific settings]
+列特定设置
+[PNG (partial)]
+PNG（部分）
+[...will be output as: ]
+...将被输出为：
+[PNG, ignoring some settings]
+PNG，忽略某些设置
+[HistoryStats - Error]
+HistoryStats - 错误
+[HTML output unsupported.]
+不支持 HTML 输出。
+[Fallback to HTML due to setting.]
+由于设置而回滚为HTML。
+[Setting ignored due to PNG output.]
+由于PNG输出而忽略设置。
 [** All contacts **]
 ** 所有联系人 **
+[Create statistics on Miranda NG startup]
+在 Miranda NG 启动时创建统计
+[Add menu items to main menu]
+添加菜单项到主菜单
+[Put menu items into submenu]
+将菜单项放入子菜单
+[Add menu items to contact menu]
+将菜单项放入联系人菜单
 [Miscellaneous]
 杂项
 [Contact menu]
@@ -9871,6 +10059,8 @@ HTTP 共享新文件
 密码：
 [Network]
 网络
+[ICQ number]
+ICQ 号码
 [%d files]
 %d 文件
 [%d directories]
@@ -13363,6 +13553,8 @@ UIN       ：
 生日
 [Nickname]
 昵称
+[Live ID]
+Live ID
 [&Invite]
 邀请(&I)
 [&Cancel]
@@ -15110,6 +15302,8 @@ OpenSSL 错误
 下
 [Delete]
 删除
+[User name]
+用户名称
 [Password]
 密码
 [Format]
@@ -21472,6 +21666,8 @@ TopToolBar
 ;  Version: 0.11.3.2
 ;  Authors: Miranda NG team
 ;============================================================
+[Create]
+创建
 [Import]
 导入
 [Copy ID]
@@ -22972,6 +23168,8 @@ UserInfoEx 不支持这个版本的 XMLCard
 笔记
 [Variables...]
 变量...
+[Input]
+输入
 [Cancel]
 取消
 [Help]
@@ -23010,6 +23208,8 @@ Miranda 的根目录路径
 当前登录的Windows用户的“桌面”文件夹 
 [Miranda Related]
 Miranda 相关
+[user name]
+用户名称
 #muuid {32579908-724b-467f-adad-22b6359a749a}
 ;============================================================
 ;  File: VKontakte.dll
@@ -23162,6 +23362,8 @@ KB
 KB
 [KB]
 KB
+[Output]
+输出
 ;other strings
 #muuid {692e87d0-6c71-4cdc-9e36-2b2d69fbdc4c}
 ;============================================================

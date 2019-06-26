@@ -103,7 +103,7 @@
 [Invite Contact To Chat]
 
 [Live ID]
-
+Live ID
 [&Invite]
 邀请(&I)
 [&Cancel]

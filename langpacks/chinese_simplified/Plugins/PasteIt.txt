@@ -55,7 +55,7 @@
 [Login to pastebin.com]
 
 [User name]
-
+用户名称
 [Password]
 密码
 [Paste It]

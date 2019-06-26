@@ -42,7 +42,7 @@
 
 ;file \protocols\ICQCorp\src\services.cpp
 [ICQ number]
-
+ICQ 号码
 [%d file]
 
 [%d files]

@@ -269,7 +269,7 @@
 [Images]
 
 [Gadu-Gadu Number]
-
+Gadu-Gadu 号码
 ;file \protocols\Gadu-Gadu\src\groupchat.cpp
 [Open &conference...]
 

@@ -606,7 +606,7 @@ KB
 [Color]
 
 [Output]
-
+输出
 [Check]
 
 [Choose font...]

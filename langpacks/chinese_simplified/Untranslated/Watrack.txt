@@ -281,7 +281,6 @@
 [Megabytes]
 [Precision]
 [Color]
-[Output]
 [Check]
 [Choose font...]
 [Genres]

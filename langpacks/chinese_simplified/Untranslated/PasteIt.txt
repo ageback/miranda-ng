@@ -15,7 +15,6 @@
 [Restore defaults]
 [Download more]
 [Login to pastebin.com]
-[User name]
 [Paste It]
 [Encoding]
 [Recode]
