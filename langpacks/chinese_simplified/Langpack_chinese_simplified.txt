@@ -3981,30 +3981,182 @@ Miranda NG 无法打开“%S”。\n\n给定的 URL 无效，无法解析。
 ;  Version: 1.4.0.2
 ;  Authors: H. Herkenrath
 ;============================================================
+[Adds the possibility to shutdown the computer when a specified event occurs.]
+添加在发生指定事件时关闭计算机的可能性。
+[Shutdown]
+关机
+[&Show confirmation dialog before shutdown]
+关机前显示确认对话框(&S)
+[&Countdown starts at:]
+倒计时开始于(&C)：
 [seconds]
 秒
+[Shutdown events]
+关机事件
+[&Activate automatic shutdown with the same settings again if Miranda NG was closed with automatic shutdown enabled]
+如果 Miranda NG 被关闭时启用了自动关机，再次用相同设置激活自动关机
+[&Ignore hidden or temporary contacts when watching for all contacts being offline]
+当监视所有联系人离线时忽略隐藏的或临时联系人(&I)
+[Critical shutdown events]
+严重关机事件
+[Automatically shutdown the computer and turn the power off when one of the following occurs:]
+发生以下任一情况时，自动关闭计算机并关闭电源：
+[&Thunderstorm warning is issued (Weather)]
+发布雷暴警告（天气）
+[Automatic shutdown]
+自动关机
+[Select the automatic shutdown event]
+选择自动关机事件
+[Shutdown at &specific time]
+在指定时间关机(&S)
+[Shutdown a&t:]
+关机于(&T)：
+[Shutdown i&n:]
+关机于此后(&N):
+[Shutdown when a &message is received containing the following text:]
+当收到包含以下文字的消息时关机(&M)：
+[Shutdown when Miranda NG becomes &idle]
+当 Miranda 空闲时关机(&I)
 [Configure]
 配置
+[Shutdown when &processor usage drops below:]
+当处理器使用率低于以下值时关机(&P)：
+[(current: 0%)]
+（当前：0%）
+[Shutdown when all contacts are &offline]
+当所有联系人离线时关机(&O)
+[Shutdown when all &file transfers are finished]
+当所有文件传输完成时关机(&F)
+[&Action:]
+动作(&A)：
 [Cancel]
 取消
+[Unsaved data in open applications except Miranda NG might get lost.]
+除了 Miranda NG 以外的应用程序中未保存的数据可能会丢失。
+[Please click "Cancel" if you would like to abort the process.]
+如果你想中止进程请点击“取消”。
+[&Now!]
+现在(&N)！
+[Shutdown at:]
+关机于：
+[Time left:]
+剩余时间：
 [Paused]
 暂停
+[&Unpause countdown]
+取消暂停倒计时(&U)
+[&Pause countdown]
+暂停倒计时(&P)
+[&Cancel countdown]
+取消倒计时(&C)
+[Countdown on frame]
+在框架上倒计时
 [Background]
 背景
+[Progress bar]
+进度条
+[Header]
+头部
 [Active]
 活动
 [Inactive]
 非活动
 [Events]
 事件
+[Second(s)]
+秒
 [Minute(s)]
 分钟
+[Hour(s)]
+小时
 [Day(s)]
 天
+[Week(s)]
+星期
+[Month(s)]
+月
+[(current: %u%%)]
+(当前：%u%%)
+[Start/Stop automatic shutdown]
+开始/停止自动关机
+[Start automatic shutdown]
+开始自动关机
+[Stop automatic shutdown]
+停止自动关机
+[Stop automatic &shutdown]
+停止自动关机(&S) 
+[Automatic &shutdown...]
+自动关机(&S)...
+[Miranda NG is going to be automatically closed in %u second(s).]
+Miranda NG 将在 %u 秒后自动关闭。
+[All Miranda NG protocols are going to be set to offline in %u second(s).]
+所有 Miranda NG 协议将在 %u 秒后被设为离线。
+[You will be logged off automatically in %u second(s).]
+你将在 %u 秒后被自动注销。
+[The computer will automatically be restarted in %u second(s).]
+计算机将在 %u 秒后自动重新启动。
+[The computer will automatically be set to standby mode in %u second(s).]
+计算机将在 %u 秒后被自动设为待机模式。
+[The computer will automatically be set to hibernate mode in %u second(s).]
+计算机将在 %u 秒后被自动设为休眠模式。
+[The workstation will automatically get locked in %u second(s).]
+工作站将在 %u 秒后自动锁定。
+[All dial-up connections will be closed in %u second(s).]
+所有拨号连接将在 %u 秒后关闭。
+[The computer will automatically be shut down in %u second(s).]
+计算机将在 %u 秒后自动关机。
+[Automatic shutdown error]
+自动关机错误
+[The shutdown process failed!\nReason: %s]
+关机进程失败！\n原因：%s
 [Unknown]
 未知
+[Initiating the shutdown process failed!\nReason: %s]
+初始化关机进程失败！\n原因：%s
+[Close Miranda NG]
+关闭 Miranda NG
+[Set Miranda NG offline]
+设置 Miranda NG 离线
+[Log off user]
+注销用户
+[Restart computer]
+重启计算机
+[Shutdown computer]
+关闭计算机
+[Standby mode]
+待机模式
+[Hibernate mode]
+休眠模式
+[Lock workstation]
+锁定工作站
+[Hang up dial-up connections]
+挂起拨号连接
+[Sets all Miranda NG protocols to offline and closes Miranda NG.]
+设置所有 Miranda NG 协议为离线并关闭 Miranda NG.
+[Sets all Miranda NG protocols to offline.]
+设置所有 Miranda NG 协议为离线。
+[Logs the current Windows user off so that another user can log in.]
+注销当前 Windows 用户，以便其他用户登录。
+[Shuts down Windows and then restarts Windows.]
+关闭 Windows 然后重启 Windows.
+[Closes all running programs and shuts down Windows to a point at which it is safe to turn off the power.]
+关闭所有正在运行的程序并关闭 Windows，以便可以安全地关闭电源。
+[Saves the current Windows session in memory and sets the system to suspend mode.]
+将当前Windows会话保存在内存中并将系统设置为挂起模式。
+[Saves the current Windows session on hard drive, so that the power can be turned off.]
+将当前Windows会话保存在硬盘驱动器上，以便可以关闭电源。
+[Locks the computer. To unlock the computer, you must log in.]
+锁定电脑。 要解锁计算机，您必须登录。
+[Sets all protocols to offline and closes all RAS connections.]
+将所有协议设置为离线并关闭所有RAS连接。
 [Alerts]
 警告
+[Automatic shutdown countdown]
+自动关机倒计时
+[AutoShutdown]
+自动关机
+[Toggle automatic shutdown]
+切换自动关机
 [Main]
 主
 #muuid {dbe8c990-7aa0-458d-bab7-33eb07238e71}
@@ -4676,6 +4828,8 @@ Miranda 已启动
 已禁用
 [Hide]
 隐藏
+[weeks]
+星期
 [Do nothing]
 啥都不干
 [Contact name]
@@ -9574,10 +9728,16 @@ HistoryStats - 添加列
 添加
 [HistoryStats - Conflicting files]
 HistoryStats - 冲突文件
+[Some files were temporarily stored in another location to avoid overwriting already existing files. If you always want to overwrite existing files, there is an option for this.]
+某些文件暂时存储在另一个位置，以避免覆盖现有文件。 如果您总是想要覆盖现有文件，可以选择此选项。
+[The following files could not be written because files with the same names already existed. Please decide whether to overwrite the existing or to discard the generated files.]
+无法写入以下文件，因为已存在具有相同名称的文件。 请决定是否覆盖现有文件或丢弃生成的文件。
 [Overwrite existing]
 覆盖已存在的
 [Discard generated]
 丢弃生成的
+[HistoryStats supports several plugins. Click to learn more...]
+HistoryStats支持多个插件。点击了解更多...
 [Contacts]
 联系人
 [Hide additional column info...]
@@ -9602,6 +9762,8 @@ HistoryStats - 过滤单词/消息
 集合模式：
 [About sets]
 关于集合
+[All sets are shared between columns. However, only the checked ones will be applied to the current column. Use the right field to specify words putting every word on a separate line.]
+所有集合在列之间共享。但是，只有勾选的将应用于当前列。使用正确的字段指定将每个单词放在单独行上的单词。
 [Configure HistoryStats]
 配置 HistoryStats
 [Apply]
@@ -9624,6 +9786,8 @@ HistoryStats - 过滤单词/消息
 过滤单词/消息
 [Define...]
 定义...
+[Chat duration type]
+聊天持续时间类型
 [Minimum]
 最小化
 [Average]
@@ -9632,10 +9796,32 @@ HistoryStats - 过滤单词/消息
 最大
 [Total (sum of all chats)]
 总计（所有聊天的和）
+[Show bar graph for chat duration type]
+显示聊天持续时间类型的条形图
 [Other information in tooltip]
 工具提示中的其他信息
+[Minimum chat duration]
+最小聊天持续时间
+[Average chat duration]
+平均聊天持续时间
+[Maximum chat duration]
+最大聊天持续时间
+[Total chat duration]
+总聊天持续时间
+[Chat duration]
+聊天持续时间
 [(unknown)]
 （未知）
+[[Min] #{amount}]
+[最小] #{amount}
+[[Avg] #{amount}]
+[平均] #{amount}
+[[Max] #{amount}]
+[最大] #{amount}
+[[Sum] #{amount}]
+[合计] #{amount}
+[Column holding the amount of time you have chatted with the given contact.]
+列保留您与给定联系人聊天的时间。
 [Events to count]
 要计数的事件
 [Files (incoming)]
@@ -9652,8 +9838,12 @@ HistoryStats - 过滤单词/消息
 传出文件
 [Events]
 事件
+[Column holding event counts for incoming, outgoing or total number of files or URLs.]
+保持事件计数传入，传出或总文件或URL数的列。
 [Group]
 分组
+[Column holding the contact list's group name the contact is in.]
+保存联系人所在的联系人列表组名称的列。
 [Data source]
 数据源
 [Display as]
@@ -9708,14 +9898,28 @@ HistoryStats - 过滤单词/消息
 #{data} 每 #{unit}
 [In/out]
 入/出
+[Column holding counts for incoming, outgoing or total characters, messages or chats. This column can display absolute and average values.]
+持有计数为传入，传出或总字符，消息或聊天的列。 此列可以显示绝对值和平均值。
+[Show sum of incoming and outgoing]
+显示传入和传出总计
+[In/out details (tooltip)]
+入/出详情（工具提示）
+[Percentage in tooltip]
+工具提示中的百分比
+[Percentage in bar graph]
+柱状图中的百分比
 [Outgoing]
 传出
 [Incoming]
 传入
 [Nick]
 昵称
+[Totals]
+总计
 [Protocol]
 协议
+[Column holding the contact's protocol.]
+持有联系人协议的列。
 [Column setup]
 列设置
 [Bar unit]
@@ -9748,6 +9952,8 @@ HistoryStats - 过滤单词/消息
 #{data} 的 #{type}
 [[#{day}] #{amount}]
 [#{day}] #{amount}
+[#{amount}]
+#{amount}
 [Global]
 全局
 [Global settings]
@@ -25094,6 +25300,8 @@ XSound 通知
 昵称
 [Unknown error]
 未知错误
+[Header]
+头部
 [Value]
 值
 [Copy All]

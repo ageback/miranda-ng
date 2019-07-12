@@ -35,7 +35,6 @@
 [Hide contact event]
 [Hide contact]
 [Buddy Expectator]
-[weeks]
 [months]
 [years]
 [Delete the contact]

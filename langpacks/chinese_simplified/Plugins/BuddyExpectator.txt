@@ -113,7 +113,7 @@
 
 ;file \plugins\BuddyExpectator\src\options.cpp
 [weeks]
-
+星期
 [months]
 
 [years]

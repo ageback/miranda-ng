@@ -59,7 +59,6 @@
 [- new mail message(s)]
 [No new mail message, %d spam(s)]
 [Invalid]
-[Header]
 [Copy Selected]
 [Run application]
 [Do you really want to delete %d selected mails?]
