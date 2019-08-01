@@ -7754,6 +7754,8 @@ Unicode 设置
 移除
 [Standard]
 标准
+[Set password]
+设置密码
 [Database]
 数据库
 #muuid {da223468-5f8e-4513-88b0-e52ce8a8b33b}
