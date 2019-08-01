@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: CurrencyRates.dll
 ;  Plugin: Currency Rates
-;  Version: 0.2.0.3
+;  Version: 0.2.1.0
 ;  Authors: Dioksin
 ;============================================================
 [Shows currency rates.]
@@ -58,22 +58,22 @@
 
 [Close]
 关闭
-[Popup Window Settings]
+[Popup settings]
 
 [Colors]
 颜色
 [Use default colors]
 使用默认颜色
-[Use user-defined colors]
-
+[Use custom colors]
+使用自定义颜色
 [Background color]
 背景色
 [Text color]
 文字颜色
-[Delay]
-延时
-[From popup plugin]
-来自弹出窗口插件
+[Timeout]
+超时
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]

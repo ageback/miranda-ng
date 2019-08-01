@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: ConnectionNotify.dll
 ;  Plugin: Connection Notify
-;  Version: 0.1.0.5
+;  Version: 0.1.0.6
 ;  Authors: MaKaR
 ;============================================================
 [Notify with popup if some connection established]
@@ -24,8 +24,6 @@
 设置
 [try resolve addresses]
 尝试解析地址
-[Version:]
-版本：
 [Show notification if no filter defined]
 如果没有定义过滤器则显示通知
 [Attempt interval (ms)]
@@ -57,14 +55,20 @@
 [Remote IP:Port]
 远程 IP:端口
 ;file \protocols\ConnectionNotify\src\ConnectionNotify.cpp
-[Show]
-显示
-[Hide]
-隐藏
+[New Connection Notification]
+新连接通知
+;file \protocols\ConnectionNotify\src\filter.cpp
 [Always show popup]
 总是显示弹出窗口
 [Never show popup]
 从不显示弹出窗口
+[First close options window]
+先关闭选项窗口
+;file \protocols\ConnectionNotify\src\options.cpp
+[Show]
+显示
+[Hide]
+隐藏
 [Status]
 状态
 [Application]
@@ -77,8 +81,3 @@
 动作
 [Plugins]
 插件
-[New Connection Notification]
-新连接通知
-;file \protocols\ConnectionNotify\src\filter.cpp
-[First close options window]
-先关闭选项窗口

@@ -12,7 +12,7 @@
 
 [Popup delay settings]
 
-[Popup Delay (seconds)]
+[Timeout (seconds)]
 
 [Background color]
 背景色
@@ -22,18 +22,18 @@
 
 [Show infinitely]
 
-[Default Popup delay]
-
-[Choose delay time]
-
+[Default]
+默认
+[Custom]
+自定义
 [Popup color settings]
 
-[Use windows colors]
+[Use Windows colors]
 使用 Windows 颜色
-[Use default Popup colors]
-使用默认弹出窗口颜色
-[Choose colors]
-
+[Use default colors]
+使用默认颜色
+[Use custom colors]
+使用自定义颜色
 [File access filter && logging settings]
 
 [Log into text file]

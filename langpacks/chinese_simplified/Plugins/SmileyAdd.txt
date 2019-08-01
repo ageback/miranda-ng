@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: SmileyAdd.dll
 ;  Plugin: SmileyAdd
-;  Version: 0.3.1.1
+;  Version: 0.3.1.2
 ;  Authors: Peacow, nightwish, bid, borkra
 ;============================================================
 [Smiley support for Miranda NG.]
@@ -58,12 +58,14 @@ IEView 样式窗口
 [Show smiley selection window]
 显示表情选择窗口
 ;file \plugins\SmileyAdd\src\download.cpp
-[SmileyAdd]
-SmileyAdd
-[Smiley cache]
-表情缓存
 [SmileyAdd HTTP connections]
 SmileyAdd 添加 HTTP 连接
+[SmileyAdd]
+SmileyAdd
+[Smiley packs' folder]
+表情包目录
+[Smiley cache]
+表情缓存
 ;file \plugins\SmileyAdd\src\main.cpp
 [Button smiley]
 按钮表情

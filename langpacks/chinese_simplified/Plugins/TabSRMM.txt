@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: TabSRMM.dll
 ;  Plugin: TabSRMM
-;  Version: 3.5.0.13
+;  Version: 3.5.0.14
 ;  Authors: The Miranda developers team and contributors
 ;============================================================
 [IM and group chat module for Miranda NG.]
@@ -166,8 +166,8 @@ Miranda NG 的 IM 和群聊模块。
 超时（秒，0 = 默认，-1 = 无超时）
 [Message]
 消息
-[Default colors]
-默认颜色
+[Use default colors]
+使用默认颜色
 [Others]
 其它
 [Preview]
@@ -416,26 +416,24 @@ Windows Areo 设置
 使用 Aero UI 元素（仅当未使用自定义皮肤时）
 [Use Windows 7 task bar enhancements (restart required)]
 使用 Windows 7 任务栏增强（需要重启）
-[Popups]
-弹出窗口
+[Colors]
+颜色
 [...is &typing]
 ...正在输入(&T)
 [...stopped t&yping]
 ...正在停止输入(&Y)
-[Back]
-退回
-[U&se Popup colors]
-使用弹出颜色(&S)
-[&Use Windows colors]
-使用 Windows 颜色(&U)
+[Use &default colors]
+使用默认颜色(&D)
+[Use &Windows colors]
+使用 &Windows 颜色
 [Only &one popup for each contact]
 为每个联系人只弹出一个容器(&O)
 [Show &entry in the main menu]
 在主菜单中显示入口(&E)
 [...is typing]
 ...正在输入
-[From popup plugin]
-来自弹出窗口插件
+[Default]
+默认
 [From protocol]
 来自协议
 [Permanent]
@@ -444,8 +442,8 @@ Windows Areo 设置
 自定义
 [...stopped typing]
 ...已停止输入
-[Popups timeout]
-弹出窗口超时
+[Timeout]
+超时
 [Templates]
 模板
 [Edit template]
@@ -628,8 +626,6 @@ Windows Areo 设置
 关闭容器
 [Show contact picture]
 显示联系人照片
-[Default]
-默认
 [Hidden for this contact]
 对此联系人隐藏
 [Visible for this contact]
@@ -1274,6 +1270,8 @@ TabSRMM 警告消息
 未知模块或联系人
 [Event notifications]
 事件通知
+[Popups]
+弹出窗口
 ;file \plugins\TabSRMM\src\generic_msghandlers.cpp
 [Rich Edit file]
 富编辑文件
@@ -1604,6 +1602,8 @@ History++ 插件
 最小化窗口到任务栏
 [Close or hide window, depends on the close button setting above]
 关闭或隐藏窗口，依赖上面的关闭按钮设置
+[Do nothing (ignore Esc key)]
+啥都不干(忽略 Esc 键)
 [Choose status modes]
 选择状态模式
 [General]

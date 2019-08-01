@@ -158,8 +158,6 @@
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
-[Delay]
-延时
 [On left click]
 左键点击时
 [On right click]
@@ -184,8 +182,8 @@
 当完成重新连接时显示
 [Show other messages]
 显示其他消息
-[From popup plugin]
-来自弹出窗口插件
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]

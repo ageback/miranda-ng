@@ -26,10 +26,6 @@
 忙碌
 [Do not disturb]
 勿扰
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Always when changing from offline]
 当从离线改变时总是
 [Notify when contact changes]
@@ -319,22 +315,6 @@
 （U）不想被打扰！
 [User: Do not disturb]
 用户：勿扰
-[(M) is eating something]
-（M）正在吃东西
-[(F) is eating something]
-（F）正在吃东西
-[(U) is eating something]
-（U）正在吃东西
-[User: Out to lunch]
-用户：外出用餐
-[(M) had to answer the phone]
-（M）不得不接电话
-[(F) had to answer the phone]
-（F）不得不接电话
-[(U) had to answer the phone]
-（U）不得不接电话
-[User: On the phone]
-用户：在接电话
 [User: from offline (has priority!)]
 用户：从离线（具有优先权！）
 [Status message removed]

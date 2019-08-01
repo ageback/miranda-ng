@@ -44,10 +44,6 @@
 有空聊天(&F)
 [&Invisible]
 隐身(&I)
-[On the &phone]
-在接电话(&P)
-[Out to &lunch]
-外出吃饭(&L)
 [Autoreply format:]
 
 [V]
@@ -227,14 +223,6 @@ V
 隐身
 [I'm hiding from the mafia.]
 我在躲避黑手党。
-[On the phone]
-在打电话
-[I've been on the phone since %nas_awaysince_time%, give me a sec!]
-
-[Out to lunch]
-外出吃饭
-[Been having ?ifgreater(?ctime(H),2,?ifgreater(?ctime(H),10,?ifgreater(?ctime(H),16,supper,dinner),breakfast),supper) since %nas_awaysince_time%.]
-
 ;file \plugins\NewAwaySysMod\src\AwaySys.cpp
 [Toggle Off]
 切换关闭

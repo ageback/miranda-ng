@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: TrafficCounter.dll
 ;  Plugin: Traffic counter
-;  Version: 0.1.1.8
+;  Version: 0.1.1.9
 ;  Authors: Ghost, Mironych
 ;============================================================
 [Adding traffic and time counters.]
@@ -32,8 +32,8 @@
 重置为默认
 [Popup timeout]
 弹出窗口超时
-[From popup plugin]
-来自弹出窗口插件
+[Default]
+默认
 [Custom]
 自定义
 [Test]
@@ -133,14 +133,6 @@ MB
 [Traffic Counter]
 流量计数器
 ;file \plugins\TrafficCounter\src\TrafficCounter.cpp
-[Font]
-字体
-[Show/Hide frame]
-显示/隐藏框架
-[Hide traffic window]
-隐藏流量窗口
-[Clear the current (Now:) value]
-清除当前（现在：）值
 [Toggle traffic counter]
 切换流量计数器
 [Traffic counter notification]
@@ -149,3 +141,11 @@ MB
 %d 千字节已发送
 [%d kilobytes received]
 %d 千字节已接收
+[Font]
+字体
+[Show/Hide frame]
+显示/隐藏框架
+[Hide traffic window]
+隐藏流量窗口
+[Clear the current (Now:) value]
+清除当前（现在：）值

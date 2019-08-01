@@ -162,11 +162,6 @@ Miranda NG 核心
 [Plugin updater URI scheme]
 插件更新程序URI方案
 ;file \plugins\PluginUpdater\src\Notifications.cpp
-;file \plugins\PluginUpdater\src\Notifications.h
-[Close popup]
-关闭弹出窗口
-[Do nothing]
-啥都不干
 ;file \plugins\PluginUpdater\src\Options.cpp
 [Backup database before update]
 更新前备份数据库
@@ -178,6 +173,10 @@ Miranda NG 核心
 天
 [Change platform to 64-bit]
 将平台更改为64位
+[Close popup]
+关闭弹出窗口
+[Do nothing]
+啥都不干
 [Test]
 测试
 [Services]

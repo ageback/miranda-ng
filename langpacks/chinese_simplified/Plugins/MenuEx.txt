@@ -43,6 +43,16 @@
 [Hide contact on 'Ignore all']
 “忽略所有”时隐藏联系人
 ;file \plugins\MenuItemEx\src\main.cpp
+[Always visible]
+总是可见
+[Never visible]
+永不可见
+[Copy to Account]
+复制到帐户
+[Show in list]
+在列表中显示
+[Copy xStatus Message]
+复制 xStatus 消息
 [Status message]
 状态消息
 [xStatus title]
@@ -55,16 +65,6 @@ xStatus 消息
 活动标题
 [Activity text]
 活动文字
-[Show in list]
-在列表中显示
-[Always visible]
-总是可见
-[Never visible]
-永不可见
-[Copy to Account]
-复制到帐户
-[Copy xStatus Message]
-复制 xStatus 消息
 [All]
 所有
 [Messages]

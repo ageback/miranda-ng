@@ -106,10 +106,10 @@
 
 [Challenge sent]
 
-[Default colors]
-默认颜色
-[Windows colors]
-窗口颜色
+[Use default colors]
+使用默认颜色
+[Use Windows colors]
+使用 Windows 颜色
 [Default timeout]
 默认超时
 [Preview]

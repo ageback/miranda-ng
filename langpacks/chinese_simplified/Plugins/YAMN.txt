@@ -104,10 +104,6 @@
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [YAMN General Options]
 
 [TopToolBar button "Check mail"]
@@ -359,9 +355,9 @@
 
 [Account Test]
 
-[Account Test (failed)]
-
 [You have N new mail messages]
+
+[Account Test (failed)]
 
 [Connection failed message]
 

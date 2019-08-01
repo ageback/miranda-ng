@@ -81,10 +81,6 @@
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Send If Their Status changes]
 
 [From Offline]
@@ -103,13 +99,7 @@
 
 [To Invisible]
 
-[To On the phone]
-
-[To Out to lunch]
-
 [The Message    (%d Characters)]
-
-[error......]
 
 [Couldn't allocate enough memory]
 

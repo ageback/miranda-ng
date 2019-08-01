@@ -46,18 +46,16 @@
 颜色
 [Use default colors]
 使用默认颜色
-[Windows colors]
-窗口颜色
-[Custom colors]
-自定义颜色
+[Use Windows colors]
+使用 Windows 颜色
+[Use custom colors]
+使用自定义颜色
 [Back]
 退回
 [Text]
 文字
 [Timeout]
 超时
-[From popup plugin]
-来自弹出窗口插件
 [Permanent]
 永久
 [Custom]

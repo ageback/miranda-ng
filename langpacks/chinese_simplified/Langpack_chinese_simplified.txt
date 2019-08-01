@@ -1225,10 +1225,6 @@ Google 翻译
 有空聊天(&F)\tCtrl+6
 [&Invisible\tCtrl+7]
 隐身(&I)\tCtrl+7
-[On the &phone\tCtrl+8]
-接电话(&P)\tCtrl+8
-[Out to &lunch\tCtrl+9]
-外出吃饭(&L)\tCtrl+9
 [Status]
 状态
 [Idle]
@@ -1253,10 +1249,6 @@ Google 翻译
 不，不在这里。
 [I'm hiding from the mafia.]
 我在躲避黑手党。
-[That'll be the phone.]
-那将是电话。
-[Mmm... food.]
-嗯......食物。
 [idleeeeeeee]
 空闲闲闲闲闲
 [Standard contacts]
@@ -1297,10 +1289,6 @@ Google 翻译
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [List background]
 列表背景
 [Global]
@@ -2677,6 +2665,8 @@ ANSI 插件
 开
 [Off]
 半
+[Password]
+密码
 [Unused]
 未使用
 [Frames]
@@ -3294,10 +3284,6 @@ TabSRMM 工具栏
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Set global status]
 设置全局状态
 [Switch contact list status]
@@ -4204,10 +4190,10 @@ Miranda NG 将在 %u 秒后自动关闭。
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
-[Delay]
-延时
-[From popup plugin]
-来自弹出窗口插件
+[Timeout]
+超时
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]
@@ -4673,10 +4659,6 @@ bass.dll 加载错误
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Preview]
 预览
 [Un4seen's BASS version: %d.%d.%d.%d]
@@ -4806,6 +4788,8 @@ Miranda 已启动
 背景
 [Text]
 文字
+[Use default colors]
+使用默认颜色
 [Use Windows colors]
 使用 Windows 颜色
 [Delay]
@@ -4875,10 +4859,6 @@ Miranda 已启动
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Times]
 次
 [Days]
@@ -4934,18 +4914,16 @@ Miranda 已启动
 颜色
 [Use default colors]
 使用默认颜色
-[Windows colors]
-窗口颜色
-[Custom colors]
-自定义颜色
+[Use Windows colors]
+使用 Windows 颜色
+[Use custom colors]
+使用自定义颜色
 [Back]
 退回
 [Text]
 文字
 [Timeout]
 超时
-[From popup plugin]
-来自弹出窗口插件
 [Permanent]
 永久
 [Custom]
@@ -5003,8 +4981,8 @@ ClientChangeNotify 需要它来正常工作。
 左键点击时
 [On right click]
 右键点击时
-[Delay]
-延时
+[Timeout]
+超时
 [Sec]
 秒
 [0 = Default]
@@ -5244,10 +5222,6 @@ URL：
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Group: %name% %count% [%mode%]]
 分组：%name% %count% [%mode%]
 [Divider: %s]
@@ -5927,10 +5901,6 @@ xStatus 有优先级
 有空聊天的联系人
 [Invisible contacts]
 隐身的联系人
-[On the phone contacts]
-在打电话的联系人
-[Out to lunch contacts]
-外出吃饭的联系人
 [Offline contacts]
 离线联系人
 [Online contacts to whom you have a different visibility]
@@ -5993,10 +5963,6 @@ xStatus 有优先级
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Name]
 名字
 [Name (use locale settings)]
@@ -6474,10 +6440,6 @@ Angeli-Ka（绘图），FYR（模板）
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Name]
 名字
 [Status]
@@ -6771,8 +6733,8 @@ Yandex.Disk
 无法正确初始化 CmdLine 插件
 [Error]
 错误
-[Changes account status either globally or per account.\nUsage: status <status> [<account>].\nPossible values for <status> are: offline, online, away, dnd, na, occupied, freechat, invisible, onthephone, outtolunch.\n<Account> is an optional parameter specifying the account to set the status for. If it's not specified then the command will issue a global status change.]
-全局或按帐户更改帐户状态。\n用法：status <status> [<account>]。\n<status> 的可能值包括：offline, online, away, dnd, na, occupied, freechat, invisible, onthephone, outtolunch。\n<Account> 是一个可选参数，指定要为其设置状态的帐户。如果未指定，则该命令将发出全局状态更改。
+[Changes account status either globally or per account.\nUsage: status <status> [<account>].\nPossible values for <status> are: offline, online, away, dnd, na, occupied, freechat, invisible.\n<Account> is an optional parameter specifying the account to set the status for. If it's not specified then the command will issue a global status change.]
+全局或按帐户更改帐户状态。\n用法：status <status> [<account>]。\n<status>可能的值为：offline, online, away, dnd, na, occupied, freechat, invisible.\n<Account> 是一个可选参数，指定要为其设置状态的帐户。如果未指定，则该命令将发布一个全局状态变更。
 [Changes away message either globally or per account.\nUsage: awaymsg <message> [<account>].\n<Message> is the new away message.\n<Account> is an optional parameter specifying the account to set the away message for. If not specified then the away message will be set globally.]
 全局或按帐户更改离开消息。\n用法：awaymsg <message> [<account>]。\n<Message> 是新的离开消息。\n<Account> 是一个可选参数，指定要为其设置离开消息的帐户。如果未指定，则离开消息将被设置为全局。
 [Changes extended status either globally or per account.\nUsage: xstatus <xStatus> [<account>].\n<xStatus> is the new extended status to set. Possible values are: ...\n<Account> is an optional parameter specifying the account for which extended status is set. If not specified then extended status for all accounts will be changed.\nNOTE: Not all accounts/protocols support extended status.]
@@ -6955,7 +6917,7 @@ blob:N/A
 ;============================================================
 ;  File: ConnectionNotify.dll
 ;  Plugin: Connection Notify
-;  Version: 0.1.0.5
+;  Version: 0.1.0.6
 ;  Authors: MaKaR
 ;============================================================
 [Notify with popup if some connection established]
@@ -6976,8 +6938,6 @@ blob:N/A
 设置
 [try resolve addresses]
 尝试解析地址
-[Version:]
-版本：
 [Show notification if no filter defined]
 如果没有定义过滤器则显示通知
 [Attempt interval (ms)]
@@ -7008,14 +6968,18 @@ blob:N/A
 * 和 ? 通配符也可用（输入端口号或 *）
 [Remote IP:Port]
 远程 IP:端口
-[Show]
-显示
-[Hide]
-隐藏
+[New Connection Notification]
+新连接通知
 [Always show popup]
 总是显示弹出窗口
 [Never show popup]
 从不显示弹出窗口
+[First close options window]
+先关闭选项窗口
+[Show]
+显示
+[Hide]
+隐藏
 [Status]
 状态
 [Application]
@@ -7028,10 +6992,6 @@ blob:N/A
 动作
 [Plugins]
 插件
-[New Connection Notification]
-新连接通知
-[First close options window]
-先关闭选项窗口
 #muuid {23d4f302-d513-45b7-9027-445f29557311}
 ;============================================================
 ;  File: Console.dll
@@ -7351,7 +7311,7 @@ GnuPG插件 - 选择公钥
 ;============================================================
 ;  File: CurrencyRates.dll
 ;  Plugin: Currency Rates
-;  Version: 0.2.0.3
+;  Version: 0.2.1.0
 ;  Authors: Dioksin
 ;============================================================
 [Variable List]
@@ -7372,14 +7332,16 @@ GnuPG插件 - 选择公钥
 颜色
 [Use default colors]
 使用默认颜色
+[Use custom colors]
+使用自定义颜色
 [Background color]
 背景色
 [Text color]
 文字颜色
-[Delay]
-延时
-[From popup plugin]
-来自弹出窗口插件
+[Timeout]
+超时
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]
@@ -7775,8 +7737,6 @@ Unicode 设置
 数据库
 [Compact]
 压缩
-[Password]
-密码
 #muuid {f7a6b27c-9d9c-4a42-be86-a448ae109161}
 ;============================================================
 ;  File: Dbx_mmap.dll
@@ -7794,8 +7754,6 @@ Unicode 设置
 移除
 [Standard]
 标准
-[Password]
-密码
 [Database]
 数据库
 #muuid {da223468-5f8e-4513-88b0-e52ce8a8b33b}
@@ -8122,7 +8080,7 @@ Exchange 通知
 ;============================================================
 ;  File: Facebook.dll
 ;  Plugin: Facebook
-;  Version: 0.4.2.1
+;  Version: 0.4.2.4
 ;  Authors: Michal Zelinka, Robert Pösel
 ;============================================================
 [E-mail:]
@@ -10219,15 +10177,15 @@ HTTP 共享新文件
 ;============================================================
 ;  File: ICQ.dll
 ;  Plugin: ICQ-WIM protocol
-;  Version: 0.95.11.4
+;  Version: 0.95.11.5
 ;  Authors: George Hazan
 ;============================================================
 [Password:]
 密码：
 [Do not open chat windows on creation]
 不要在创建时打开聊天窗口
-[E-mail]
-电子邮件
+[Notifications]
+通知
 [Send group chat invitation]
 发送群聊邀请
 [&Invite]
@@ -10238,8 +10196,8 @@ HTTP 共享新文件
 昵称：
 [&Invite a user]
 邀请一个用户(&I)
-[Ignore]
-忽略
+[E-mail]
+电子邮件
 [Network]
 网络
 [General]
@@ -10514,7 +10472,7 @@ IEView
 ;============================================================
 ;  File: Import.dll
 ;  Plugin: Import contacts and messages
-;  Version: 0.95.10.1
+;  Version: 0.95.11.1
 ;  Authors: Miranda team
 ;============================================================
 [Cancel]
@@ -11091,10 +11049,24 @@ Jabber 链接协议
 Jabber 活动
 [Jabber Mood]
 Jabber 表情
+[Error %s %s]
+错误 %s %s
+[Select Command]
+选择命令
+[Not supported]
+不支持的
 [Done]
 完成
+[In progress. Please Wait...]
+正在进行。请稍候...
 [Execute]
 执行
+[Requesting command list. Please wait...]
+正在请求命令列表。请稍候...
+[Jabber Ad-Hoc commands at %s]
+Jabber Ad-Hoc 命令在 %s
+[Sending Ad-Hoc command to %s]
+发送 Ad-Hoc 命令到 %s
 [Jabber Agent Registration]
 Jabber 代理注册
 [No message]
@@ -11153,8 +11125,6 @@ Jabber 代理注册
 可以请求与回复与消息的传递，显示，和组成相关的事件
 [Supports vCard]
 支持 vCard
-[Supports iq-based avatars]
-支持基于 iq 的头像
 [Supports XHTML formatting of chat messages]
 支持聊天消息的 XHTML 格式
 [Supports Jabber Browsing]
@@ -11231,8 +11201,24 @@ Jabber 代理注册
 参加者
 [Visitors]
 访问者
+[User %s is now banned.]
+用户 %s 现在被禁止。
+[User %s changed status to %s with message: %s]
+用户 %s 改变状态为 %s 并附带消息：%s
+[User %s changed status to %s]
+用户 %s 改变状态为 %s
+[Room configuration was changed.]
+房间配置被改变了。
+[Outcast]
+弃儿
+[Affiliation of %s was changed to '%s'.]
+%s 的联系被改变为 '%s'。
 [Role of %s was changed to '%s'.]
 %s 的角色变成了 '%s'。
+[because room is now members-only]
+因为房间现在是仅限成员
+[user banned]
+禁止的用户
 [Change &nickname]
 更改昵称(&N)
 [&Invite a user]
@@ -11331,6 +11317,10 @@ Jabber 代理注册
 邀请用户到\n%s
 [%s (not on roster)]
 %s (不在名单上)
+[%s from\n%s]
+%s 来自\n%s
+[Real JID not available]
+真实的 JID 不可用
 [Reason to kick %s]
 踢 %s 的原因
 [Reason to ban %s]
@@ -11399,12 +11389,30 @@ Jabber 错误
 复制节点名称
 [Copy node information]
 复制节点信息
+[Identities]
+身份
+[category]
+类别
+[type]
+类型
+[Category]
+类别
+[Type]
+类型
+[Supported features]
+支持的功能
+[Info request error]
+信息请求错误
+[Items request error]
+项目请求错误
 [Failed to retrieve room list from server.]
 从服务器接收房间列表失败。
 [No rooms available on server.]
 服务器上没有房间可用。
 [Room list request timed out.]
 房间列表请求超时。
+[<no nick>]
+<无昵称>
 [Loading...]
 正在加载...
 [Please wait for room list to download.]
@@ -11417,6 +11425,8 @@ Jabber 错误
 更改 <%s> 中的昵称
 [Error]
 错误
+[has set the subject to:]
+已经设置主题为：
 [Group chat invitation to\n%s]
 分组聊天邀请给\n%s
 [Status icons]
@@ -12125,6 +12135,8 @@ LiveJournal Talk
 S.ms
 [Some changes will take effect the next time you connect to the Jabber network.]
 某些更改将在您下次连接到Jabber网络时生效。
+[Set New Password for %s@%s]
+为 %s@%s 设置新密码
 [New password does not match.]
 新密码不匹配。
 [Current password is incorrect.]
@@ -12181,6 +12193,8 @@ S.ms
 如果订阅是 '
 [then ]
 那么
+[<none>]
+<无>
 [ (act., def.)]
 （活动，默认）
 [ (active)]
@@ -12225,8 +12239,6 @@ S.ms
 ** 订阅：来自 **
 [** Subscription: none **]
 ** 订阅：无 **
-[<none>]
-<无>
 [Message]
 消息
 [Presence (in)]
@@ -12257,6 +12269,72 @@ S.ms
 协议离线或没有 JID
 [No valid OMEMO session exists]
 不存在可用的 OMEMO 会话
+[Command completed successfully]
+命令成功完成
+[Error occurred during processing command]
+处理命令的过程中发生错误
+[Set status]
+设置状态
+[Set options]
+设置选项
+[Forward unread messages]
+转发未读消息
+[Leave group chats]
+离开分组聊天
+[Lock workstation]
+锁定工作站
+[Quit Miranda NG]
+退出 Miranda NG
+[Change Status]
+改变状态
+[Choose the status and status message]
+选择状态和状态消息
+[Status]
+状态
+[Extended away (Not available)]
+扩展离开（不可用）
+[Invisible]
+隐身
+[Offline]
+离线
+[Priority]
+优先级
+[Status message]
+状态消息
+[Change global status]
+改变全局状态
+[Set Options]
+设置选项
+[Set the desired options]
+设置期望的选项
+[Automatically Accept File Transfers]
+自动接受文件传输
+[Play sounds]
+播放声音
+[Disable remote controlling (check twice what you are doing)]
+禁用远程控制（检查两次你在做什么）
+[There is no messages to forward]
+没有消息可以转发
+[Forward options]
+转发选项
+[%d message(s) to be forwarded]
+%d 消息将被转发
+[Mark messages as read]
+标记消息为已读
+[%d message(s) forwarded]
+%d 消息被转发
+[Workstation successfully locked]
+成功锁定工作站
+[Error %d occurred during workstation lock]
+锁定工作站期间发生错误 %d
+[Confirmation needed]
+需要确认
+[Please confirm Miranda NG shutdown]
+请确认 Miranda NG 关闭
+[There is no group chats to leave]
+没有分组聊天可以离开
+[Choose the group chats you want to leave]
+请选择你想要离开的分组聊天
 [Group]
 分组
 [Subscription]
@@ -12269,8 +12347,12 @@ S.ms
 正在连接...
 [XML for MS Excel (UTF-8 encoded)]
 用于MS Excel的XML（UTF-8编码）
+[Error %s %s\r\nPlease select other server]
+错误 %s %s\r\n请选择其他服务器
 [Error: unknown reply received\r\nPlease select other server]
 错误：收到未知回复\n\n请选择另一个服务器
+[Error %s %s\r\nTry to specify more detailed]
+错误 %s %s\r\n尝试指定更多细节
 [Search error]
 搜索错误
 [Select/type search service URL above and press <Go>]
@@ -12291,8 +12373,6 @@ S.ms
 发送了错误的出席
 [sent unknown presence type]
 发送了未知的出席类型
-[Outcast]
-弃儿
 [Nick:]
 昵称：
 [Status:]
@@ -12309,6 +12389,10 @@ S.ms
 错误：连接丢失
 [Requesting registration instruction...]
 请求注册指令...
+[Authentication failed for %s@%s.]
+%s@%s 认证失败。
+[Message redirected from: %s\r\n]
+消息重定向来自：%s\r\n
 [Registration canceled]
 注册取消
 [Sending registration information...]
@@ -12323,8 +12407,14 @@ S.ms
 版本
 [System]
 系统
+[<currenty online>]
+<当前在线>
 [Last activity]
 上次活动
+[Client capabilities]
+客户端兼容性
+[Software information]
+软件信息
 [Operating system]
 操作系统
 [Operating system version]
@@ -12339,14 +12429,28 @@ Miranda 核心版本
 活动
 [Tune]
 歌曲
+[both]
+两个都
+[to]
+到
+[from]
+从
+[none]
+无
+[<currently online>]
+<当前在线>
 [Last logoff time]
 上次登出时间
 [Uptime]
 运行时间
 [Logoff message]
 登出消息
+[<no information available>]
+<没有信息可用>
 [Last active resource]
 上次活动资源
+[Please switch online to see more details.]
+请切换到在线以查看更多详情。
 [Copy]
 复制
 [Copy only this value]
@@ -12397,8 +12501,6 @@ Miranda 核心版本
 未知错误
 [Unknown error message]
 未知错误消息 
-[Offline]
-离线
 [Advanced Status]
 高级状态
 [Set mood...]
@@ -12832,10 +12934,6 @@ Jabber vCard：编辑电话号码
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Pending Events]
 挂起的事件
 [Remind me every]
@@ -13165,6 +13263,16 @@ xStatus
 * 使用Ctrl +单击以查看带有复制文本的弹出窗口
 [Hide contact on 'Ignore all']
 “忽略所有”时隐藏联系人
+[Always visible]
+总是可见
+[Never visible]
+永不可见
+[Copy to Account]
+复制到帐户
+[Show in list]
+在列表中显示
+[Copy xStatus Message]
+复制 xStatus 消息
 [Status message]
 状态消息
 [xStatus title]
@@ -13177,16 +13285,6 @@ xStatus 消息
 活动标题
 [Activity text]
 活动文字
-[Show in list]
-在列表中显示
-[Always visible]
-总是可见
-[Never visible]
-永不可见
-[Copy to Account]
-复制到帐户
-[Copy xStatus Message]
-复制 xStatus 消息
 [All]
 所有
 [Messages]
@@ -13269,7 +13367,7 @@ Miranda已关闭或在等待结果时发生错误，无法处理请求。
 ;============================================================
 ;  File: MinecraftDynmap.dll
 ;  Plugin: Minecraft Dynmap protocol
-;  Version: 0.0.0.2
+;  Version: 0.1.0.1
 ;  Authors: Robert Pösel
 ;============================================================
 [Minecraft Dynmap support for Miranda NG.]
@@ -13278,6 +13376,8 @@ Minecraft Dynmap对Miranda NG的支持。
 服务器：
 [Visible name:]
 可见名称：
+[Server]
+服务器
 [Admin]
 管理员
 [Normal]
@@ -13897,10 +13997,6 @@ Live ID
 有空聊天(&F)
 [&Invisible]
 隐身(&I)
-[On the &phone]
-在接电话(&P)
-[Out to &lunch]
-外出吃饭(&L)
 [Set my avatar...]
 设置我的头像...
 [Set my nickname...]
@@ -13976,10 +14072,6 @@ Live ID
 有空聊天(&F)
 [&Invisible]
 隐身(&I)
-[On the &phone]
-在接电话(&P)
-[Out to &lunch]
-外出吃饭(&L)
 [V]
 V
 [Ignore requests]
@@ -14036,10 +14128,6 @@ V
 隐身
 [I'm hiding from the mafia.]
 我在躲避黑手党。
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Toggle Off]
 切换关闭
 [Toggle On]
@@ -14217,10 +14305,6 @@ URL
 忙碌
 [Do not disturb]
 勿扰
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Always when changing from offline]
 当从离线改变时总是
 [Notify when contact changes]
@@ -14507,22 +14591,6 @@ URL
 （U）不想被打扰！
 [User: Do not disturb]
 用户：勿扰
-[(M) is eating something]
-（M）正在吃东西
-[(F) is eating something]
-（F）正在吃东西
-[(U) is eating something]
-（U）正在吃东西
-[User: Out to lunch]
-用户：外出用餐
-[(M) had to answer the phone]
-（M）不得不接电话
-[(F) had to answer the phone]
-（F）不得不接电话
-[(U) had to answer the phone]
-（U）不得不接电话
-[User: On the phone]
-用户：在接电话
 [User: from offline (has priority!)]
 用户：从离线（具有优先权！）
 [Status message removed]
@@ -14888,7 +14956,7 @@ Non-IM 联系人(&N)
 ;============================================================
 ;  File: NotesReminders.dll
 ;  Plugin: Sticky Notes & Reminders
-;  Version: 0.2.0.2
+;  Version: 0.2.0.4
 ;  Authors: Joe Kucera, Lubomir Kolev Ivanov, Georg Fischer
 ;============================================================
 [Sticky Notes & Reminders Implementation for Miranda NG.]
@@ -15167,8 +15235,6 @@ Purple
 天
 [Week]
 星期
-[The specified time offset is invalid.]
-指定的时间偏移无效。
 [&Update Reminder]
 更新提醒(&U)
 [Every]
@@ -15183,10 +15249,10 @@ Purple
 备选方案1
 [Alternative 2]
 备选方案2 
-[Reminder text]
-提醒文字
 [Date of activation]
 激活日期
+[Reminder text]
+提醒文字
 [Are you sure you want to delete all reminders?]
 你确定你要删除所有提醒吗？
 [Are you sure you want to delete this reminder?]
@@ -15307,10 +15373,6 @@ Purple
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Shaking contact list options]
 振动联系人列表选项
 [Number of moves]
@@ -15790,10 +15852,6 @@ Miranda NG 核心
 更新检查已经开始！
 [Plugin updater URI scheme]
 插件更新程序URI方案
-[Close popup]
-关闭弹出窗口
-[Do nothing]
-啥都不干
 [Backup database before update]
 更新前备份数据库
 [Stable version (incompatible with current development version)]
@@ -15804,6 +15862,10 @@ Miranda NG 核心
 天
 [Change platform to 64-bit]
 将平台更改为64位
+[Close popup]
+关闭弹出窗口
+[Do nothing]
+啥都不干
 [Test]
 测试
 [Services]
@@ -16174,10 +16236,6 @@ Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn!
 勿扰
 [Free for chat]
 有空聊天
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Width]
 宽度
 [Upper left corner]
@@ -16273,8 +16331,8 @@ Popup plus 警告
 文字颜色
 [Background color]
 背景色
-[Use default popup colors]
-使用默认弹出窗口颜色
+[Use default colors]
+使用默认颜色
 [Show proxy status on change]
 改变时显示代理状态
 [Restart of Miranda NG is required.]
@@ -17390,10 +17448,6 @@ Miranda 的根目录路径
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [** New contacts **]
 ** 新联系人 **
 [** Unknown contacts **]
@@ -17565,7 +17619,7 @@ Miranda 的根目录路径
 ;============================================================
 ;  File: SeenPlugin.dll
 ;  Plugin: Last seen
-;  Version: 5.0.5.4
+;  Version: 5.0.5.5
 ;  Authors: Heiko Schillinger, YB
 ;============================================================
 [Log to file]
@@ -17586,10 +17640,6 @@ Miranda 的根目录路径
 忙碌
 [Do not disturb]
 勿扰
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Free for chat]
 有空聊天
 [Invisible]
@@ -17939,7 +17989,7 @@ Upload Pie（1星期）
 ;============================================================
 ;  File: Sessions.dll
 ;  Plugin: Sessions
-;  Version: 0.1.3.2
+;  Version: 0.1.4.0
 ;  Authors: MaD_CLuSTeR
 ;============================================================
 [Sessions Manager for Miranda NG.]
@@ -18062,7 +18112,7 @@ Miranda NG 会话管理器。
 ;============================================================
 ;  File: ShlExt.dll
 ;  Plugin: Shell extension
-;  Version: 2.2.0.3
+;  Version: 2.2.0.4
 ;  Authors: Sam Kothari, Miranda NG team
 ;============================================================
 [Menus]
@@ -18100,10 +18150,6 @@ Miranda NG 会话管理器。
 我现在不在。
 [I am now doing something, I will talk to you later.]
 我现在正在做某事，我稍后会和你对话。
-[I am on the phone right now. I will get back to you very soon.]
-我现在正打电话。我很快就会回复你。
-[I am having meal right now. I will get back to you very soon.]
-我正在吃饭。我很快就会回复你。
 [Disable Auto&reply]
 禁用自动回复(&R)
 [Enable Auto&reply]
@@ -18347,10 +18393,6 @@ Miranda 相关
 不，不在这里。
 [I'm hiding from the mafia.]
 我在躲避黑手党。
-[That'll be the phone.]
-那将是电话。
-[Mmm... food.]
-嗯......食物。
 [idleeeeeeee]
 空闲闲闲闲闲
 #muuid {2925520b-6677-4658-8bad-5661d13e4692}
@@ -18376,7 +18418,7 @@ Miranda 相关
 ;============================================================
 ;  File: SkypeWeb.dll
 ;  Plugin: Skype protocol (Web)
-;  Version: 0.12.3.3
+;  Version: 0.12.3.4
 ;  Authors: Miranda NG team
 ;============================================================
 [Cancel]
@@ -18429,7 +18471,7 @@ Miranda 相关
 ;============================================================
 ;  File: SmileyAdd.dll
 ;  Plugin: SmileyAdd
-;  Version: 0.3.1.1
+;  Version: 0.3.1.2
 ;  Authors: Peacow, nightwish, bid, borkra
 ;============================================================
 [Smiley support for Miranda NG.]
@@ -18482,12 +18524,14 @@ IEView 样式窗口
 水平排序
 [Show smiley selection window]
 显示表情选择窗口
-[SmileyAdd]
-SmileyAdd
-[Smiley cache]
-表情缓存
 [SmileyAdd HTTP connections]
 SmileyAdd 添加 HTTP 连接
+[SmileyAdd]
+SmileyAdd
+[Smiley packs' folder]
+表情包目录
+[Smiley cache]
+表情缓存
 [Button smiley]
 按钮表情
 [Assign smiley category]
@@ -18539,10 +18583,10 @@ d'Oh!
 出现
 [Background]
 背景
-[Default colors]
-默认颜色
-[Windows colors]
-窗口颜色
+[Use default colors]
+使用默认颜色
+[Use Windows colors]
+使用 Windows 颜色
 [Default timeout]
 默认超时
 [Preview]
@@ -18694,10 +18738,6 @@ d'Oh!
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [On events...]
 在事件...
 [Send]
@@ -18875,8 +18915,6 @@ d'Oh!
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
-[Delay]
-延时
 [On left click]
 左键点击时
 [On right click]
@@ -18901,8 +18939,8 @@ d'Oh!
 当完成重新连接时显示
 [Show other messages]
 显示其他消息
-[From popup plugin]
-来自弹出窗口插件
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]
@@ -19085,7 +19123,7 @@ APM 恢复时重新连接
 ;============================================================
 ;  File: Steam.dll
 ;  Plugin: Steam protocol
-;  Version: 0.11.6.5
+;  Version: 0.11.6.6
 ;  Authors: Miranda NG team, Robert Pösel
 ;============================================================
 [Username:]
@@ -19168,7 +19206,7 @@ APM 恢复时重新连接
 ;============================================================
 ;  File: TabSRMM.dll
 ;  Plugin: TabSRMM
-;  Version: 3.5.0.13
+;  Version: 3.5.0.14
 ;  Authors: The Miranda developers team and contributors
 ;============================================================
 [IM and group chat module for Miranda NG.]
@@ -19329,8 +19367,8 @@ Miranda NG 的 IM 和群聊模块。
 超时（秒，0 = 默认，-1 = 无超时）
 [Message]
 消息
-[Default colors]
-默认颜色
+[Use default colors]
+使用默认颜色
 [Others]
 其它
 [Preview]
@@ -19579,26 +19617,24 @@ Windows Areo 设置
 使用 Aero UI 元素（仅当未使用自定义皮肤时）
 [Use Windows 7 task bar enhancements (restart required)]
 使用 Windows 7 任务栏增强（需要重启）
-[Popups]
-弹出窗口
+[Colors]
+颜色
 [...is &typing]
 ...正在输入(&T)
 [...stopped t&yping]
 ...正在停止输入(&Y)
-[Back]
-退回
-[U&se Popup colors]
-使用弹出颜色(&S)
-[&Use Windows colors]
-使用 Windows 颜色(&U)
+[Use &default colors]
+使用默认颜色(&D)
+[Use &Windows colors]
+使用 &Windows 颜色
 [Only &one popup for each contact]
 为每个联系人只弹出一个容器(&O)
 [Show &entry in the main menu]
 在主菜单中显示入口(&E)
 [...is typing]
 ...正在输入
-[From popup plugin]
-来自弹出窗口插件
+[Default]
+默认
 [From protocol]
 来自协议
 [Permanent]
@@ -19607,8 +19643,8 @@ Windows Areo 设置
 自定义
 [...stopped typing]
 ...已停止输入
-[Popups timeout]
-弹出窗口超时
+[Timeout]
+超时
 [Templates]
 模板
 [Edit template]
@@ -19791,8 +19827,6 @@ Windows Areo 设置
 关闭容器
 [Show contact picture]
 显示联系人照片
-[Default]
-默认
 [Hidden for this contact]
 对此联系人隐藏
 [Visible for this contact]
@@ -20427,6 +20461,8 @@ TabSRMM 警告消息
 未知模块或联系人
 [Event notifications]
 事件通知
+[Popups]
+弹出窗口
 [Rich Edit file]
 富编辑文件
 [No status message]
@@ -20747,6 +20783,8 @@ History++ 插件
 最小化窗口到任务栏
 [Close or hide window, depends on the close button setting above]
 关闭或隐藏窗口，依赖上面的关闭按钮设置
+[Do nothing (ignore Esc key)]
+啥都不干(忽略 Esc 键)
 [Choose status modes]
 选择状态模式
 [General]
@@ -21924,7 +21962,7 @@ TopToolBar
 ;============================================================
 ;  File: TrafficCounter.dll
 ;  Plugin: Traffic counter
-;  Version: 0.1.1.8
+;  Version: 0.1.1.9
 ;  Authors: Ghost, Mironych
 ;============================================================
 [Adding traffic and time counters.]
@@ -21953,8 +21991,8 @@ TopToolBar
 重置为默认
 [Popup timeout]
 弹出窗口超时
-[From popup plugin]
-来自弹出窗口插件
+[Default]
+默认
 [Custom]
 自定义
 [Test]
@@ -22051,14 +22089,6 @@ MB
 无法读取统计文件
 [Traffic Counter]
 流量计数器
-[Font]
-字体
-[Show/Hide frame]
-显示/隐藏框架
-[Hide traffic window]
-隐藏流量窗口
-[Clear the current (Now:) value]
-清除当前（现在：）值
 [Toggle traffic counter]
 切换流量计数器
 [Traffic counter notification]
@@ -22067,6 +22097,14 @@ MB
 %d 千字节已发送
 [%d kilobytes received]
 %d 千字节已接收
+[Font]
+字体
+[Show/Hide frame]
+显示/隐藏框架
+[Hide traffic window]
+隐藏流量窗口
+[Clear the current (Now:) value]
+清除当前（现在：）值
 #muuid {0286947d-3140-4222-b5ad-2c92315e1c1e}
 ;============================================================
 ;  File: TranslitSwitcher.dll
@@ -22100,7 +22138,7 @@ TranslitSwitcher
 ;============================================================
 ;  File: Twitter.dll
 ;  Plugin: Twitter protocol
-;  Version: 1.3.0.2
+;  Version: 1.3.0.3
 ;  Authors: dentist, omniwolf, Thief
 ;============================================================
 [Server:]
@@ -22119,14 +22157,18 @@ TranslitSwitcher
 颜色
 [Use Windows colors]
 使用 Windows 颜色
+[Use default colors]
+使用默认颜色
 [Use custom colors]
 使用自定义颜色
 [Back]
 退回
 [Text]
 文字
-[Use default]
-使用默认
+[Timeout]
+超时
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]
@@ -22280,10 +22322,10 @@ Miranda NG 的扩展用户信息模块。提供界面来编辑所有联系人信
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
-[Delay]
-延时
-[From popup plugin]
-来自弹出窗口插件
+[Timeout]
+超时
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]
@@ -22638,12 +22680,8 @@ John Doe（1/10）
 检查周年纪念日
 [Main]
 主
-[Default]
-默认
 [IM naming]
 IM 命名
-[Password]
-密码
 [Timezone]
 时区
 [Marital status]
@@ -23420,7 +23458,7 @@ Miranda 相关
 ;============================================================
 ;  File: VKontakte.dll
 ;  Plugin: VKontakte protocol
-;  Version: 0.1.9.1
+;  Version: 0.1.9.2
 ;  Authors: Miranda NG team
 ;============================================================
 [Status message]
@@ -23473,6 +23511,8 @@ URL：
 拥有者
 [Unknown]
 未知
+[Not supported]
+不支持的
 [Warning]
 警告
 [Chat]
@@ -23515,6 +23555,8 @@ URL：
 意大利语
 [%s server connection]
 %s 服务器连接
+[Mark messages as read]
+标记消息为已读
 [Errors]
 错误
 [Notifications]
@@ -23552,12 +23594,12 @@ Winamp 单轨
 左键点击
 [Right click]
 右键点击
-[Default colors]
-默认颜色
-[Windows colors]
-窗口颜色
-[Custom colors]
-自定义颜色
+[Use default colors]
+使用默认颜色
+[Use Windows colors]
+使用 Windows 颜色
+[Use custom colors]
+使用自定义颜色
 [Kilobytes]
 千字节
 [none]
@@ -23663,7 +23705,7 @@ Miranda NG很棒，这是一个很长的信息。
 ;============================================================
 ;  File: Weather.dll
 ;  Plugin: Weather
-;  Version: 0.4.0.4
+;  Version: 0.4.0.5
 ;  Authors: Miranda NG team
 ;============================================================
 [Retrieves weather information and displays it in your contact list.]
@@ -23808,14 +23850,14 @@ Miranda NG很棒，这是一个很长的信息。
 左键点击
 [Right Click]
 右键点击
-[Popup Delay]
-弹出窗口延时
-[Delay]
-延时
+[Popup timeout]
+弹出窗口超时
+[Timeout]
+超时
 [seconds]
 秒
-[From popup plugin]
-来自弹出窗口插件
+[Default]
+默认
 [Permanent]
 永久
 [Popup Text]
@@ -23824,8 +23866,6 @@ Miranda NG很棒，这是一个很长的信息。
 弹出窗口标题
 [Variables]
 变量
-[Default]
-默认
 [Preview]
 预览
 [Updates]
@@ -24961,12 +25001,12 @@ URL：
 查找什么：
 [Log to file]
 记录到文件
-[Popup delay]
-弹出窗口延时
-[Delay]
-延时
-[From popup plugin]
-来自弹出窗口插件
+[Popup timeout]
+弹出窗口超时
+[Timeout]
+超时
+[Default]
+默认
 [Permanent]
 永久
 [Preview]
@@ -25101,10 +25141,16 @@ N/A
 背景色
 [Text color]
 文字颜色
-[Use windows colors]
+[Default]
+默认
+[Custom]
+自定义
+[Use Windows colors]
 使用 Windows 颜色
-[Use default Popup colors]
-使用默认弹出窗口颜色
+[Use default colors]
+使用默认颜色
+[Use custom colors]
+使用自定义颜色
 [Error]
 错误
 [Services]
@@ -25284,10 +25330,6 @@ XSound 通知
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Popup]
 弹出窗口
 [Preview]

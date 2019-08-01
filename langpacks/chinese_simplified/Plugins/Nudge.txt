@@ -64,10 +64,6 @@
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Shaking contact list options]
 振动联系人列表选项
 [Number of moves]

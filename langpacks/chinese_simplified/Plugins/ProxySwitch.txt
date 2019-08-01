@@ -34,8 +34,8 @@
 文字颜色
 [Background color]
 背景色
-[Use default popup colors]
-使用默认弹出窗口颜色
+[Use default colors]
+使用默认颜色
 [Show proxy status on change]
 改变时显示代理状态
 [Restart of Miranda NG is required.]

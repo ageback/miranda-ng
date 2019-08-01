@@ -42,6 +42,13 @@
 
 [Set password]
 
+;file \plugins\Dbx_mdbx\src\dbcrypt.cpp
+[Too many errors!]
+
+[Password is not correct!]
+
+[Please type in your password]
+
 ;file \plugins\Dbx_mdbx\src\dbintf.h
 [Change/remove password]
 
@@ -54,16 +61,7 @@
 
 [Database]
 数据库
-[Compact]
-压缩
-;file \plugins\Dbx_mdbx\src\ui.h
 [Logo]
 
-[Password]
-密码
-[Too many errors!]
-
-[Password is not correct!]
-
-[Please type in your password]
-
+[Compact]
+压缩

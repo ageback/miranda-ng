@@ -426,10 +426,6 @@
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Always left]
 
 [Always right]

@@ -38,8 +38,8 @@
 背景
 [Text]
 文字
-[Use Popups colors]
-
+[Use default colors]
+使用默认颜色
 [Use Windows colors]
 使用 Windows 颜色
 [Delay]

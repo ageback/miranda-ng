@@ -132,12 +132,12 @@ URL：
 
 [Save as raw data]
 
-[Popup delay]
-弹出窗口延时
-[Delay]
-延时
-[From popup plugin]
-来自弹出窗口插件
+[Popup timeout]
+弹出窗口超时
+[Timeout]
+超时
+[Default]
+默认
 [Permanent]
 永久
 [Preview]

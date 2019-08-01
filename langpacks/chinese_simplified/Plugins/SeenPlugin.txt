@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: SeenPlugin.dll
 ;  Plugin: Last seen
-;  Version: 5.0.5.4
+;  Version: 5.0.5.5
 ;  Authors: Heiko Schillinger, YB
 ;============================================================
 [Logs when a user was last seen online and which users were online while you were away.]
@@ -52,10 +52,6 @@
 忙碌
 [Do not disturb]
 勿扰
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Free for chat]
 有空聊天
 [Invisible]

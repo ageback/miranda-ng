@@ -394,10 +394,24 @@ Jabber 活动
 [Jabber Mood]
 Jabber 表情
 ;file \protocols\JabberG\src\jabber_adhoc.cpp
+[Error %s %s]
+错误 %s %s
+[Select Command]
+选择命令
+[Not supported]
+不支持的
 [Done]
 完成
+[In progress. Please Wait...]
+正在进行。请稍候...
 [Execute]
 执行
+[Requesting command list. Please wait...]
+正在请求命令列表。请稍候...
+[Jabber Ad-Hoc commands at %s]
+Jabber Ad-Hoc 命令在 %s
+[Sending Ad-Hoc command to %s]
+发送 Ad-Hoc 命令到 %s
 ;file \protocols\JabberG\src\jabber_agent.cpp
 [Jabber Agent Registration]
 Jabber 代理注册
@@ -460,8 +474,6 @@ Jabber 代理注册
 可以请求与回复与消息的传递，显示，和组成相关的事件
 [Supports vCard]
 支持 vCard
-[Supports iq-based avatars]
-支持基于 iq 的头像
 [Supports XHTML formatting of chat messages]
 支持聊天消息的 XHTML 格式
 [Supports Jabber Browsing]
@@ -540,8 +552,24 @@ Jabber 代理注册
 参加者
 [Visitors]
 访问者
+[User %s is now banned.]
+用户 %s 现在被禁止。
+[User %s changed status to %s with message: %s]
+用户 %s 改变状态为 %s 并附带消息：%s
+[User %s changed status to %s]
+用户 %s 改变状态为 %s
+[Room configuration was changed.]
+房间配置被改变了。
+[Outcast]
+弃儿
+[Affiliation of %s was changed to '%s'.]
+%s 的联系被改变为 '%s'。
 [Role of %s was changed to '%s'.]
 %s 的角色变成了 '%s'。
+[because room is now members-only]
+因为房间现在是仅限成员
+[user banned]
+禁止的用户
 [Change &nickname]
 更改昵称(&N)
 [&Invite a user]
@@ -640,6 +668,10 @@ Jabber 代理注册
 邀请用户到\n%s
 [%s (not on roster)]
 %s (不在名单上)
+[%s from\n%s]
+%s 来自\n%s
+[Real JID not available]
+真实的 JID 不可用
 [Reason to kick %s]
 踢 %s 的原因
 [Reason to ban %s]
@@ -710,6 +742,23 @@ Jabber 错误
 复制节点名称
 [Copy node information]
 复制节点信息
+;file \protocols\JabberG\src\jabber_disco.h
+[Identities]
+身份
+[category]
+类别
+[type]
+类型
+[Category]
+类别
+[Type]
+类型
+[Supported features]
+支持的功能
+[Info request error]
+信息请求错误
+[Items request error]
+项目请求错误
 ;file \protocols\JabberG\src\jabber_groupchat.cpp
 [Failed to retrieve room list from server.]
 从服务器接收房间列表失败。
@@ -717,6 +766,8 @@ Jabber 错误
 服务器上没有房间可用。
 [Room list request timed out.]
 房间列表请求超时。
+[<no nick>]
+<无昵称>
 [Loading...]
 正在加载...
 [Please wait for room list to download.]
@@ -729,6 +780,8 @@ Jabber 错误
 更改 <%s> 中的昵称
 [Error]
 错误
+[has set the subject to:]
+已经设置主题为：
 [Group chat invitation to\n%s]
 分组聊天邀请给\n%s
 ;file \protocols\JabberG\src\jabber_icolib.cpp
@@ -1448,6 +1501,8 @@ S.ms
 [Some changes will take effect the next time you connect to the Jabber network.]
 某些更改将在您下次连接到Jabber网络时生效。
 ;file \protocols\JabberG\src\jabber_password.cpp
+[Set New Password for %s@%s]
+为 %s@%s 设置新密码
 [New password does not match.]
 新密码不匹配。
 [Current password is incorrect.]
@@ -1505,6 +1560,8 @@ S.ms
 如果订阅是 '
 [then ]
 那么
+[<none>]
+<无>
 [ (act., def.)]
 （活动，默认）
 [ (active)]
@@ -1549,8 +1606,6 @@ S.ms
 ** 订阅：来自 **
 [** Subscription: none **]
 ** 订阅：无 **
-[<none>]
-<无>
 [Message]
 消息
 [Presence (in)]
@@ -1582,6 +1637,73 @@ S.ms
 协议离线或没有 JID
 [No valid OMEMO session exists]
 不存在可用的 OMEMO 会话
+;file \protocols\JabberG\src\jabber_rc.cpp
+[Command completed successfully]
+命令成功完成
+[Error occurred during processing command]
+处理命令的过程中发生错误
+[Set status]
+设置状态
+[Set options]
+设置选项
+[Forward unread messages]
+转发未读消息
+[Leave group chats]
+离开分组聊天
+[Lock workstation]
+锁定工作站
+[Quit Miranda NG]
+退出 Miranda NG
+[Change Status]
+改变状态
+[Choose the status and status message]
+选择状态和状态消息
+[Status]
+状态
+[Extended away (Not available)]
+扩展离开（不可用）
+[Invisible]
+隐身
+[Offline]
+离线
+[Priority]
+优先级
+[Status message]
+状态消息
+[Change global status]
+改变全局状态
+[Set Options]
+设置选项
+[Set the desired options]
+设置期望的选项
+[Automatically Accept File Transfers]
+自动接受文件传输
+[Play sounds]
+播放声音
+[Disable remote controlling (check twice what you are doing)]
+禁用远程控制（检查两次你在做什么）
+[There is no messages to forward]
+没有消息可以转发
+[Forward options]
+转发选项
+[%d message(s) to be forwarded]
+%d 消息将被转发
+[Mark messages as read]
+标记消息为已读
+[%d message(s) forwarded]
+%d 消息被转发
+[Workstation successfully locked]
+成功锁定工作站
+[Error %d occurred during workstation lock]
+锁定工作站期间发生错误 %d
+[Confirmation needed]
+需要确认
+[Please confirm Miranda NG shutdown]
+请确认 Miranda NG 关闭
+[There is no group chats to leave]
+没有分组聊天可以离开
+[Choose the group chats you want to leave]
+请选择你想要离开的分组聊天
 ;file \protocols\JabberG\src\jabber_roster.cpp
 [Group]
 分组
@@ -1596,8 +1718,12 @@ S.ms
 [XML for MS Excel (UTF-8 encoded)]
 用于MS Excel的XML（UTF-8编码）
 ;file \protocols\JabberG\src\jabber_search.cpp
+[Error %s %s\r\nPlease select other server]
+错误 %s %s\r\n请选择其他服务器
 [Error: unknown reply received\r\nPlease select other server]
 错误：收到未知回复\n\n请选择另一个服务器
+[Error %s %s\r\nTry to specify more detailed]
+错误 %s %s\r\n尝试指定更多细节
 [Search error]
 搜索错误
 [Select/type search service URL above and press <Go>]
@@ -1619,8 +1745,6 @@ S.ms
 发送了错误的出席
 [sent unknown presence type]
 发送了未知的出席类型
-[Outcast]
-弃儿
 [Nick:]
 昵称：
 [Status:]
@@ -1638,6 +1762,10 @@ S.ms
 错误：连接丢失
 [Requesting registration instruction...]
 请求注册指令...
+[Authentication failed for %s@%s.]
+%s@%s 认证失败。
+[Message redirected from: %s\r\n]
+消息重定向来自：%s\r\n
 [Registration canceled]
 注册取消
 [Sending registration information...]
@@ -1653,8 +1781,14 @@ S.ms
 版本
 [System]
 系统
+[<currenty online>]
+<当前在线>
 [Last activity]
 上次活动
+[Client capabilities]
+客户端兼容性
+[Software information]
+软件信息
 [Operating system]
 操作系统
 [Operating system version]
@@ -1669,14 +1803,28 @@ Miranda 核心版本
 活动
 [Tune]
 歌曲
+[both]
+两个都
+[to]
+到
+[from]
+从
+[none]
+无
+[<currently online>]
+<当前在线>
 [Last logoff time]
 上次登出时间
 [Uptime]
 运行时间
 [Logoff message]
 登出消息
+[<no information available>]
+<没有信息可用>
 [Last active resource]
 上次活动资源
+[Please switch online to see more details.]
+请切换到在线以查看更多详情。
 [Copy]
 复制
 [Copy only this value]
@@ -1728,8 +1876,6 @@ Miranda 核心版本
 未知错误
 [Unknown error message]
 未知错误消息 
-[Offline]
-离线
 [Advanced Status]
 高级状态
 [Set mood...]

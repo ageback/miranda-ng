@@ -704,10 +704,6 @@ Miranda 的根目录路径
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Enter]
 
 [Double 'Enter']

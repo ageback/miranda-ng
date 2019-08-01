@@ -134,10 +134,10 @@ Miranda NG 的扩展用户信息模块。提供界面来编辑所有联系人信
 使用 Windows 颜色
 [Use default colors]
 使用默认颜色
-[Delay]
-延时
-[From popup plugin]
-来自弹出窗口插件
+[Timeout]
+超时
+[Default]
+默认
 [Custom]
 自定义
 [Permanent]
@@ -502,12 +502,8 @@ John Doe（1/10）
 ;file \plugins\UserInfoEx\src\mir_icolib.cpp
 [Main]
 主
-[Default]
-默认
 [IM naming]
 IM 命名
-[Password]
-密码
 [Timezone]
 时区
 [Marital status]

@@ -42,10 +42,6 @@ bass.dll 加载错误
 有空聊天
 [Invisible]
 隐身
-[On the phone]
-在打电话
-[Out to lunch]
-外出吃饭
 [Preview]
 预览
 ;file \plugins\BASS_interface\src\Main.cpp

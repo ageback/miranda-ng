@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: MinecraftDynmap.dll
 ;  Plugin: Minecraft Dynmap protocol
-;  Version: 0.0.0.2
+;  Version: 0.1.0.1
 ;  Authors: Robert Pösel
 ;============================================================
 [Minecraft Dynmap support for Miranda NG.]
@@ -13,6 +13,8 @@ Minecraft Dynmap对Miranda NG的支持。
 [Visible name:]
 可见名称：
 ;file \protocols\MinecraftDynmap\src\chat.cpp
+[Server]
+服务器
 [Admin]
 管理员
 [Normal]

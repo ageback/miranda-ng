@@ -32,8 +32,8 @@ ClientChangeNotify 需要它来正常工作。
 左键点击时
 [On right click]
 右键点击时
-[Delay]
-延时
+[Timeout]
+超时
 [Sec]
 秒
 [0 = Default]

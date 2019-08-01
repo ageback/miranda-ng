@@ -1230,10 +1230,6 @@ Google 翻译
 有空聊天(&F)\tCtrl+6
 [&Invisible\tCtrl+7]
 隐身(&I)\tCtrl+7
-[On the &phone\tCtrl+8]
-接电话(&P)\tCtrl+8
-[Out to &lunch\tCtrl+9]
-外出吃饭(&L)\tCtrl+9
 ;file \src\core\stdautoaway\src\options.cpp
 [Status]
 状态
@@ -1261,10 +1257,6 @@ Google 翻译
 不，不在这里。
 [I'm hiding from the mafia.]
 我在躲避黑手党。
-[That'll be the phone.]
-那将是电话。
-[Mmm... food.]
-嗯......食物。
 [idleeeeeeee]
 空闲闲闲闲闲
 ;file \src\core\stdclist\src\clcfonts.cpp
@@ -1307,10 +1299,6 @@ Google 翻译
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [List background]
 列表背景
 ;file \src\core\stdclist\src\clistopts.cpp
@@ -2776,6 +2764,8 @@ ANSI 插件
 开
 [Off]
 半
+[Password]
+密码
 [Unused]
 未使用
 [Frames]

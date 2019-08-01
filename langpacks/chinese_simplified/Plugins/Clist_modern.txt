@@ -667,10 +667,6 @@ xStatus 有优先级
 有空聊天的联系人
 [Invisible contacts]
 隐身的联系人
-[On the phone contacts]
-在打电话的联系人
-[Out to lunch contacts]
-外出吃饭的联系人
 [Offline contacts]
 离线联系人
 [Online contacts to whom you have a different visibility]
@@ -733,10 +729,6 @@ xStatus 有优先级
 有空聊天
 [Invisible]
 隐身
-[Out to lunch]
-外出吃饭
-[On the phone]
-在打电话
 [Name]
 名字
 [Name (use locale settings)]
