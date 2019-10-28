@@ -1110,6 +1110,10 @@ Miranda NG 正在重启。\n请稍等...
 显示子联系人显示名称
 [Lock name to first contact]
 锁定名称到第一个联系人
+[Choose needed logger from listed below:]
+从下面列表中选择需要的日志：
+[Enable custom log controls in group chats]
+启用在分组聊天中自定义日志控件
 [Current language:]
 当前语言:
 [Last modified using:]
@@ -1440,12 +1444,6 @@ Google 翻译
 突出显示单词时闪动窗口
 [Show list of users in the chat room]
 显示聊天室中的用户列表
-[Show button for sending messages]
-显示发送消息的按钮
-[Show buttons for controlling the chat room]
-显示控制聊天室的按钮
-[Show buttons for formatting the text you are typing]
-显示用于格式化你正在输入的文字的按钮
 [Show button menus when right clicking the buttons]
 当右键点击按钮时显示按钮菜单
 [Show the topic of the room on your contact list (if supported)]
@@ -1662,19 +1660,6 @@ Google 翻译
 聊天
 [Popups]
 弹出窗口
-;file \src\core\stdmsg\src\chat_window.cpp
-[%s: chat room (%u user)]
-%s：聊天室（%u 用户）
-[%s: chat room (%u users)]
-%s：聊天室（%u 用户）
-[%s: message session]
-%s：消息会话
-[%s: message session (%u users)]
-%s：消息会话（%u 用户）
-[Nickname]
-昵称
-[Unique ID]
-唯一身份
 ;file \src\core\stdmsg\src\cmdlist.cpp
 [The message send timed out.]
 消息发送超时。
@@ -1684,12 +1669,20 @@ Google 翻译
 [Outgoing message (10x10)]
 传出消息  (10x10)
 ;file \src\core\stdmsg\src\msgdialog.cpp
-[Last message received on %s at %s.]
-最后一条消息接收于 %s %s。
-[Message session]
-消息会话
 [%s is typing a message...]
 %s 正在输入消息...
+[Last message received on %s at %s.]
+最后一条消息接收于 %s %s。
+[%s: chat room (%u user)]
+%s：聊天室（%u 用户）
+[%s: chat room (%u users)]
+%s：聊天室（%u 用户）
+[%s: message session]
+%s：消息会话
+[%s: message session (%u users)]
+%s：消息会话（%u 用户）
+[Message session]
+消息会话
 ;file \src\core\stdmsg\src\msglog.cpp
 [Me]
 我
@@ -1791,7 +1784,6 @@ Miranda 无法加载内置消息模块，msftedit.dll 丢失。点击“是”�
 启用弹出窗口
 [Popups are disabled]
 禁用弹出窗口
-;file \src\core\stdpopup\src\notify_imp.cpp
 ;file \src\core\stdpopup\src\options.cpp
 [Example]
 示例
@@ -2794,6 +2786,13 @@ WAV 文件
 [Unselect all]
 取消选择所有
 ;file \src\mir_app\src\srmm_base.cpp
+[Nickname]
+昵称
+[Unique ID]
+唯一身份
+;file \src\mir_app\src\srmm_log.cpp
+[Log viewer]
+日志查看器
 ;file \src\mir_app\src\srmm_toolbar.cpp
 [<Separator>]
 <分隔符>

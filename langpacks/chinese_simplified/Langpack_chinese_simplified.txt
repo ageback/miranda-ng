@@ -1105,6 +1105,10 @@ Miranda NG 正在重启。\n请稍等...
 显示子联系人显示名称
 [Lock name to first contact]
 锁定名称到第一个联系人
+[Choose needed logger from listed below:]
+从下面列表中选择需要的日志：
+[Enable custom log controls in group chats]
+启用在分组聊天中自定义日志控件
 [Current language:]
 当前语言:
 [Last modified using:]
@@ -1417,12 +1421,6 @@ Google 翻译
 突出显示单词时闪动窗口
 [Show list of users in the chat room]
 显示聊天室中的用户列表
-[Show button for sending messages]
-显示发送消息的按钮
-[Show buttons for controlling the chat room]
-显示控制聊天室的按钮
-[Show buttons for formatting the text you are typing]
-显示用于格式化你正在输入的文字的按钮
 [Show button menus when right clicking the buttons]
 当右键点击按钮时显示按钮菜单
 [Show the topic of the room on your contact list (if supported)]
@@ -1639,6 +1637,16 @@ Google 翻译
 聊天
 [Popups]
 弹出窗口
+[The message send timed out.]
+消息发送超时。
+[Incoming message (10x10)]
+传入消息  (10x10)
+[Outgoing message (10x10)]
+传出消息  (10x10)
+[%s is typing a message...]
+%s 正在输入消息...
+[Last message received on %s at %s.]
+最后一条消息接收于 %s %s。
 [%s: chat room (%u user)]
 %s：聊天室（%u 用户）
 [%s: chat room (%u users)]
@@ -1647,22 +1655,8 @@ Google 翻译
 %s：消息会话
 [%s: message session (%u users)]
 %s：消息会话（%u 用户）
-[Nickname]
-昵称
-[Unique ID]
-唯一身份
-[The message send timed out.]
-消息发送超时。
-[Incoming message (10x10)]
-传入消息  (10x10)
-[Outgoing message (10x10)]
-传出消息  (10x10)
-[Last message received on %s at %s.]
-最后一条消息接收于 %s %s。
 [Message session]
 消息会话
-[%s is typing a message...]
-%s 正在输入消息...
 [Me]
 我
 [File sent]
@@ -2693,6 +2687,12 @@ ANSI 插件
 WAV 文件
 [Unselect all]
 取消选择所有
+[Nickname]
+昵称
+[Unique ID]
+唯一身份
+[Log viewer]
+日志查看器
 [<Separator>]
 <分隔符>
 [Toolbar]
@@ -4308,7 +4308,7 @@ Miranda NG 将在 %u 秒后自动关闭。
 ;============================================================
 ;  File: AVS.dll
 ;  Plugin: Avatar service
-;  Version: 0.98.1.1
+;  Version: 0.98.1.2
 ;  Authors: Nightwish, Pescuma
 ;============================================================
 [Loads and manages contact pictures for other plugins.]
@@ -7148,7 +7148,7 @@ Miranda 控制台
 ;============================================================
 ;  File: CrashDumper.dll
 ;  Plugin: Crash dumper
-;  Version: 0.1.0.3
+;  Version: 0.1.0.4
 ;  Authors: borkra
 ;============================================================
 [Crash Dumper and Version Information for Miranda NG.]
@@ -7179,6 +7179,8 @@ Miranda NG 的崩溃转储和版本信息。
 使用经典日期
 [* You need to restart Miranda NG to apply changes]
 * 你需要重启 Miranda NG 来应用变更
+[Display popups about successful actions]
+显示关于成功的动作的弹出窗口
 [View]
 查看
 [&Copy]
@@ -7733,6 +7735,8 @@ Unicode 设置
 移除
 [Standard]
 标准
+[Set password]
+设置密码
 [Database]
 数据库
 [Compact]
@@ -7775,11 +7779,13 @@ Unicode 设置
 移除
 [Standard]
 标准
+[Set password]
+设置密码
 #muuid {81c220a6-0226-4ad6-bfca-217b17a16053}
 ;============================================================
 ;  File: Db_autobackups.dll
 ;  Plugin: Db autobackuper
-;  Version: 0.1.0.3
+;  Version: 0.1.0.4
 ;  Authors: chaos.persei, sje, Kildor, Billy_Bons
 ;============================================================
 [Database autobackuper plugin.]
@@ -10179,7 +10185,7 @@ HTTP 共享新文件
 ;============================================================
 ;  File: ICQ.dll
 ;  Plugin: ICQ-WIM protocol
-;  Version: 0.95.11.5
+;  Version: 0.95.11.6
 ;  Authors: George Hazan
 ;============================================================
 [Password:]
@@ -10208,6 +10214,12 @@ HTTP 共享新文件
 高级
 [%s server connection]
 %s 服务器连接
+[Name]
+名字
+[Rename]
+重命名
+[Delete]
+删除
 [admin]
 管理员
 [member]
@@ -10393,14 +10405,6 @@ ICQ 号码
 分组开启
 [Group Off]
 分组关闭
-[%s has joined.]
-%s 加入了。
-[%s has left.]
-%s 离开了。
-[The topic is %s.]
-主题是 %s。
-[Error]
-错误
 [Default]
 默认
 [Template]
@@ -12409,7 +12413,7 @@ S.ms
 版本
 [System]
 系统
-[<currenty online>]
+[<currently online>]
 <当前在线>
 [Last activity]
 上次活动
@@ -12439,8 +12443,6 @@ Miranda 核心版本
 从
 [none]
 无
-[<currently online>]
-<当前在线>
 [Last logoff time]
 上次登出时间
 [Uptime]
@@ -15699,7 +15701,7 @@ OpenSSL 错误
 ;============================================================
 ;  File: PluginUpdater.dll
 ;  Plugin: Plugin updater
-;  Version: 0.2.0.3
+;  Version: 0.2.0.5
 ;  Authors: Mataes, George Hazan
 ;============================================================
 [Installs and updates plugins and other Miranda NG components.]
@@ -15750,6 +15752,8 @@ PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮
 更改平台为 32位
 [Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.]
 一些组件被更新。\n你需要重启你的 Miranda 来应用安装的更新。
+[Use HTTPS]
+使用 HTTPS
 [Notifications]
 通知
 [Restart]
@@ -15796,6 +15800,18 @@ PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮
 以下是Miranda NG组件缺失的完整列表。检查要下载的组件。\n\n点击信息图标查看组件信息页面。
 [Download]
 下载
+[Component Name]
+组件名称
+[State]
+状态
+[Plugins]
+插件
+[Icons]
+图标
+[Languages]
+语言
+[Other]
+其他
 [Downloading...]
 正在下载...
 [Succeeded.]
@@ -15810,18 +15826,6 @@ PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮
 下载完成
 [Download complete. Do you want to go to plugins option page?]
 下载完成。你要转到插件选项页吗？
-[Component Name]
-组件名称
-[State]
-状态
-[Plugins]
-插件
-[Icons]
-图标
-[Languages]
-语言
-[Other]
-其他
 [List is empty.]
 列表为空。
 [List loading already started!]
@@ -16939,7 +16943,7 @@ Unicode 字符串
 ;============================================================
 ;  File: Scriver.dll
 ;  Plugin: Scriver
-;  Version: 3.0.1.10
+;  Version: 3.0.2.1
 ;  Authors: Miranda NG team
 ;============================================================
 [Behavior]
@@ -16952,6 +16956,8 @@ Unicode 字符串
 秒
 [Tabs]
 标签
+[Only show tab bar when it's needed]
+仅当有需要时显示标签栏
 [Tabs at the bottom]
 标签置于底部
 [characters]
@@ -16982,8 +16988,6 @@ Unicode 字符串
 显示秒
 [Show date]
 显示日期
-[Show names]
-显示名称
 [events]
 事件
 [minutes]
@@ -17080,30 +17084,6 @@ KB
 背景
 [Timeout (s)]
 超时(秒)
-[Log]
-日志
-[&Copy]
-复制(&C)
-[Co&py all]
-复制所有(&P)
-[Select &all]
-选择所有(&A)
-[Word lookup]
-单词查找
-[Yandex]
-Yandex
-[Wikipedia (en)]
-维基百科(英语)
-[Google Maps]
-Google 地图
-[Google Translate]
-Google 翻译
-[C&lear log]
-清除日志(&L)
-[&Open link]
-打开链接(&O)
-[&Copy link]
-复制链接(&C)
 [Message]
 消息
 [Undo]
@@ -17118,6 +17098,8 @@ Google 翻译
 粘贴
 [Delete]
 删除
+[Select &all]
+选择所有(&A)
 [Clear]
 清除
 [Close other tabs]
@@ -17268,20 +17250,12 @@ Miranda 的根目录路径
 当启用了“事件过滤器”时，要在新聊天室中显示的默认事件
 [Select folder]
 选择文件夹
-[%s: chat room (%u user)]
-%s：聊天室（%u 用户）
-[%s: chat room (%u users)]
-%s：聊天室（%u 用户）
-[%s: message session]
-%s：消息会话
-[%s: message session (%u users)]
-%s：消息会话（%u 用户）
-[Nickname]
-昵称
-[Unique ID]
-唯一身份
-[Status]
-状态
+[Message sessions]
+消息会话
+[General]
+通用
+[Popups]
+弹出窗口
 [Add contact]
 添加联系人
 [Send message]
@@ -17390,14 +17364,12 @@ Miranda 的根目录路径
 越南语
 [Korean (Johab)]
 韩语 (Johab) 
-[%s is typing a message...]
-%s 正在输入消息...
-[Last message received on %s at %s.]
-最后一条消息接收于 %s %s。
-[Look up '%s':]
-查找 '%s'：
-[No word to look up]
-没有查找单词
+[Nickname]
+昵称
+[Unique ID]
+唯一身份
+[Status]
+状态
 [Me]
 我
 [Today]
@@ -17454,14 +17426,8 @@ Miranda 的根目录路径
 ** 新联系人 **
 [** Unknown contacts **]
 ** 未知联系人 **
-[Message sessions]
-消息会话
-[General]
-通用
 [Typing notify]
 输入通知
-[Popups]
-弹出窗口
 [Message from %s]
 来自 %s 的消息
 [%s is typing a message]
@@ -17536,6 +17502,18 @@ Miranda 的根目录路径
 联系人停止输入
 [An unknown error has occurred.]
 发生了未知的错误。
+[%s is typing a message...]
+%s 正在输入消息...
+[Last message received on %s at %s.]
+最后一条消息接收于 %s %s。
+[%s: chat room (%u user)]
+%s：聊天室（%u 用户）
+[%s: chat room (%u users)]
+%s：聊天室（%u 用户）
+[%s: message session]
+%s：消息会话
+[%s: message session (%u users)]
+%s：消息会话（%u 用户）
 [The message send timed out.]
 消息发送超时。
 [Always on top]
@@ -19208,7 +19186,7 @@ APM 恢复时重新连接
 ;============================================================
 ;  File: TabSRMM.dll
 ;  Plugin: TabSRMM
-;  Version: 3.5.0.14
+;  Version: 3.6.0.1
 ;  Authors: The Miranda developers team and contributors
 ;============================================================
 [IM and group chat module for Miranda NG.]
@@ -19389,10 +19367,6 @@ Miranda NG 的 IM 和群聊模块。
 所有模式
 [Choose modes]
 选择模式
-[Message log view mode (does not affect open windows)]
-消息日志视图模式（不影响打开的窗口）
-[Select how to display the message log. This setting can be ignored when one of the listed plugins is not installed.]
-选择如何显示消息日志。如果列出的插件中的某一个没有安装，此设置会被忽略。
 [Send text formatting method]
 发送文字格式方法
 [You can override the global setting for text formatting here. Use "Force off" to never send formatting info for this contact.]
@@ -19401,14 +19375,14 @@ Miranda NG 的 IM 和群聊模块。
 信息面板模式
 [Show avatar in message window]
 在消息窗口中显示头像
-[Use private splitter position]
-使用私有分隔位置
-[Contact is a favorite contact]
-联系人是一个收藏的联系人
 [Ignore sending timeouts]
 忽略发送超时
 [Load only actual history]
 仅加载实际历史记录
+[Use private splitter position]
+使用私有分隔位置
+[Contact is a favorite contact]
+联系人是一个收藏的联系人
 [Always trim message log to]
 始终将消息日志修剪为
 [events]
@@ -19545,8 +19519,6 @@ RTL模板...
 加载之前的事件少于
 [minutes old]
 分钟
-[Global message log display]
-全局消息日志显示
 [Typing notification options]
 输入通知选项
 [Send typing notifications to the following users when you are typing a message to them:]
@@ -19919,8 +19891,6 @@ BBCode
 复制消息到剪贴板
 [&File]
 文件(&F)
-[Save message log as...]
-保存消息日志为...
 [Close message session\tCtrl+W]
 关闭消息会话\tCtrl+W
 [Close container\tAlt+F4]
@@ -20143,66 +20113,6 @@ UIN
 联系人本地时间
 [Window caption (skinned mode)]
 窗口标题（皮肤模式）
-[Open new chat rooms in the default container]
-在默认容器中打开新聊天室
-[Flash window when someone speaks]
-有人说话时闪动窗口
-[Flash window when a word is highlighted]
-突出显示单词时闪动窗口
-[Create tabs or windows for highlight events]
-为高亮事件创建标签或窗口
-[Activate chat window on highlight]
-高亮时激活聊天窗口
-[Show list of users in the chat room]
-显示聊天室中的用户列表
-[Colorize nicknames in member list]
-在成员列表中着色昵称
-[Show button menus when right clicking the buttons]
-当右键点击按钮时显示按钮菜单
-[Show topic as status message on the contact list]
-在联系人列表中将主题显示为状态消息
-[Do not pop up the window when joining a chat room]
-当加入聊天室时不要弹出窗口
-[Sync splitter position with standard IM sessions]
-同步分隔栏与标准IM会话
-[Show contact's status modes if supported by the protocol]
-如果协议支持，则显示联系人的状态模式
-[Display contact's status icon before user role icon]
-在用户角色图标之前显示联系人的状态图标
-[Use IRC style status indicators in the nick list]
-在昵称列表中使用IRC样式状态指示符
-[Use alternative sorting method in member list]
-在成员列表中使用替代排序方法
-[Prefix all events with a timestamp]
-在所有事件前加时间戳前缀
-[Timestamp only when event time differs]
-仅当事件时间不同时的时间戳
-[Timestamp has same color as the event]
-时间戳的颜色和事件相同
-[Indent the second line of a message]
-缩进消息的第二行
-[Limit user names in the message log to 20 characters]
-限制消息日志中的用户名为20字符
-[Add a colon (:) to auto-completed user names]
-为自动填写的用户名添加冒号(:)
-[Add a comma instead of a colon to auto-completed user names]
-为自动填写的用户名添加逗号而不是冒号
-[Start private conversation on double click in nick list (insert nick if unchecked)]
-在昵称列表中双击启动私人对话（如果未选中则插入昵称）
-[Strip colors from messages in the log]
-从日志中的消息中去除颜色
-[Enable the 'event filter' for new rooms]
-为新房间启用“事件过滤器”
-[Use IRC style status indicators in the log]
-在日志中使用IRC样式状态指示器
-[Allow clickable user names in the message log]
-在消息日志中允许可点击的用户名
-[Add new line after names]
-在名称后面添加新行
-[Colorize user names in message log]
-着色消息日志中的用户名
-[Scale down icons to 10x10 pixels in the chat log]
-在聊天记录中将图标缩小到10x10像素
 [Window Icon]
 窗口图标
 [Icon overlay]
@@ -20279,6 +20189,66 @@ UIN
 聊天室窗口的外观和功能
 [Appearance of the message log]
 消息日志的外观
+[Open new chat rooms in the default container]
+在默认容器中打开新聊天室
+[Flash window when someone speaks]
+有人说话时闪动窗口
+[Flash window when a word is highlighted]
+突出显示单词时闪动窗口
+[Create tabs or windows for highlight events]
+为高亮事件创建标签或窗口
+[Activate chat window on highlight]
+高亮时激活聊天窗口
+[Show list of users in the chat room]
+显示聊天室中的用户列表
+[Colorize nicknames in member list]
+在成员列表中着色昵称
+[Show button menus when right clicking the buttons]
+当右键点击按钮时显示按钮菜单
+[Show topic as status message on the contact list]
+在联系人列表中将主题显示为状态消息
+[Do not pop up the window when joining a chat room]
+当加入聊天室时不要弹出窗口
+[Sync splitter position with standard IM sessions]
+同步分隔栏与标准IM会话
+[Show contact's status modes if supported by the protocol]
+如果协议支持，则显示联系人的状态模式
+[Display contact's status icon before user role icon]
+在用户角色图标之前显示联系人的状态图标
+[Use IRC style status indicators in the nick list]
+在昵称列表中使用IRC样式状态指示符
+[Use alternative sorting method in member list]
+在成员列表中使用替代排序方法
+[Prefix all events with a timestamp]
+在所有事件前加时间戳前缀
+[Timestamp only when event time differs]
+仅当事件时间不同时的时间戳
+[Timestamp has same color as the event]
+时间戳的颜色和事件相同
+[Indent the second line of a message]
+缩进消息的第二行
+[Limit user names in the message log to 20 characters]
+限制消息日志中的用户名为20字符
+[Add a colon (:) to auto-completed user names]
+为自动填写的用户名添加冒号(:)
+[Add a comma instead of a colon to auto-completed user names]
+为自动填写的用户名添加逗号而不是冒号
+[Start private conversation on double click in nick list (insert nick if unchecked)]
+在昵称列表中双击启动私人对话（如果未选中则插入昵称）
+[Strip colors from messages in the log]
+从日志中的消息中去除颜色
+[Enable the 'event filter' for new rooms]
+为新房间启用“事件过滤器”
+[Use IRC style status indicators in the log]
+在日志中使用IRC样式状态指示器
+[Allow clickable user names in the message log]
+在消息日志中允许可点击的用户名
+[Add new line after names]
+在名称后面添加新行
+[Colorize user names in message log]
+着色消息日志中的用户名
+[Scale down icons to 10x10 pixels in the chat log]
+在聊天记录中将图标缩小到10x10像素
 [nick of current contact (if defined)]
 当前联系人的昵称(如果定义了)
 [protocol name of current contact (if defined). Account name is used when protocol supports multiple accounts]
@@ -20349,36 +20319,6 @@ Miranda 的根目录路径
 高亮
 [%s%s says:%s %s]
 %s%s 说：%s %s
-[Expand or collapse the side bar]
-展开或收缩边栏
-[The filter cannot be enabled, because there are no event types selected either global or for this chat room]
-无法启用过滤器，因为没有为全局或此聊天室选择事件类型
-[Event filter error]
-事件过滤器错误
-[, %d %s, %d %s idle]
-, %d %s, %d %s 空闲
-[hours]
-小时
-[hour]
-小时
-[minutes]
-分
-[minute]
-分
-[, %d %s idle]
-, %d %s 空闲
-[%s on %s%s]
-%s 在 %s%s
-[%s: chat room (%u user%s)]
-%s：聊天室(%u 用户%s)
-[%s: chat room (%u users%s)]
-%s：聊天室(%u 用户%s)
-[, event filter active]
-, 事件过滤器激活
-[%s: message session]
-%s：消息会话
-[%s: message session (%u users)]
-%s：消息会话（%u 用户）
 [Message session...]
 消息会话...
 [Default container]
@@ -20431,8 +20371,6 @@ Miranda 的根目录路径
 不要显示它们
 [&User]
 用户(&U)
-[&Room]
-房间(&R)
 [Sounds are %s. Click to toggle status, hold Shift and click to set for all open containers]
 声音是 %s。点击切换状态，按住 Shift 并点击可以为所有打开的容器设置
 [disabled]
@@ -20461,12 +20399,54 @@ TabSRMM 警告消息
 新消息：
 [Unknown module or contact]
 未知模块或联系人
+[Show a preview of the event]
+显示事件预览
+[Don't announce event when message dialog is open]
+消息对话框打开时不要公布事件
+[Don't announce events from RSS protocols]
+不要公布来自RSS协议的事件
+[Enable the system tray icon]
+启用系统托盘图标
+[Merge new events for the same contact into existing popup]
+将同一联系人的新事件合并到现有弹出窗口中
+[Show headers]
+显示头部
+[Dismiss popup]
+关闭弹出窗口
+[Open event]
+打开事件
+[Dismiss event]
+解除事件
+[Disable event notifications for instant messages]
+禁用即时消息的事件通知
+[Disable event notifications for group chats]
+禁用群聊的事件通知 
+[Disable notifications for non-message events]
+禁用非消息事件的事件通知 
+[Remove popups for a contact when the message window is focused]
+在消息窗口聚焦时移除联系人的弹出窗口
+[Remove popups for a contact when I start typing a reply]
+当我开始输入回复时移除联系人的弹出窗口
+[Remove popups for a contact when I send a reply]
+当我发送回复时移除联系人的弹出窗口
+[Disable notifications]
+禁用通知
+[System tray icon]
+系统托盘图标
+[Left click actions (popups only)]
+左键点击动作（仅弹出窗口）
+[Right click actions (popups only)]
+右键点击动作（仅弹出窗口）
+[Timeout actions (popups only)]
+超时点击动作（仅弹出窗口）
+[Combine notifications for the same contact]
+合并同一个联系人的通知 
+[Remove popups under following conditions]
+在以下情况时移除弹出窗口
 [Event notifications]
 事件通知
 [Popups]
 弹出窗口
-[Rich Edit file]
-富编辑文件
 [No status message]
 无状态消息
 [You cannot edit user notes when there are unsent messages]
@@ -20631,6 +20611,8 @@ TabSRMM
 永久添加此联系人到你的联系人列表
 [Do not add this contact permanently]
 不要永久添加此联系人
+[Expand or collapse the side bar]
+展开或收缩边栏
 [Contact not on list. You may add it...]
 联系人不在列表上。你可以添加他...
 [A message failed to send successfully.]
@@ -20643,14 +20625,12 @@ TabSRMM
 重试
 [Send later]
 稍后发送
-[UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nRight click for metacontact control\nClick dropdown to add or remove user from your favorites.]
-UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n右键点击显示中继联系人控件\n点击下拉可以添加或从收藏夹中移除用户。
-[No UID]
-无UID
-[UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nClick dropdown to change this contact's favorite status.]
-UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n点击下拉以改变此联系人的收藏状态。
 [You are editing the user notes. Click the button again or use the hotkey (default: Alt+N) to save the notes and return to normal messaging mode]
 你正在编辑用户注释。再次点击按钮或使用热键（默认：Alt+N）来保存注释并返回到普通消息模式
+[The filter cannot be enabled, because there are no event types selected either global or for this chat room]
+无法启用过滤器，因为没有为全局或此聊天室选择事件类型
+[Event filter error]
+事件过滤器错误
 [Selection copied to clipboard]
 选择复制到剪贴板
 [WARNING: The message you are trying to paste exceeds the message size limit for the active protocol. It will be sent in chunks of max %d characters]
@@ -20663,6 +20643,14 @@ UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n点�
 消息发送超时
 [Contact is offline and this protocol does not support sending files to offline users.]
 联系人离线并且此协议不支持发送文件给离线用户。
+['(Unknown contact)']
+'(未知联系人)'
+[The 'paste and send' feature is disabled. You can enable it on the 'General' options page in the 'Sending messages' section]
+“粘贴和发送”功能已被禁用。您可以在“发送消息”部分的“常规”选项页面上启用它
+[Set your avatar...]
+设置你的头像...
+[A message delivery has failed.\nClick to open the message window.]
+消息传递失败。\n点击以打开消息窗口。
 [Error creating destination directory]
 创建目标目录失败
 [Save contact picture]
@@ -20671,16 +20659,40 @@ UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n点�
 图像文件
 [The file exists. Do you want to overwrite it?]
 文件已存在。你要覆盖它吗？
-[Set your avatar...]
-设置你的头像...
-[Save and close session]
-保存并关闭会话
-[The 'paste and send' feature is disabled. You can enable it on the 'General' options page in the 'Sending messages' section]
-“粘贴和发送”功能已被禁用。您可以在“发送消息”部分的“常规”选项页面上启用它
-['(Unknown contact)']
-'(未知联系人)'
 [JPEG-compressed images]
 JPEG-压缩图像
+[Save and close session]
+保存并关闭会话
+[, %d %s, %d %s idle]
+, %d %s, %d %s 空闲
+[hours]
+小时
+[hour]
+小时
+[minutes]
+分
+[minute]
+分
+[, %d %s idle]
+, %d %s 空闲
+[%s on %s%s]
+%s 在 %s%s
+[%s: chat room (%u user%s)]
+%s：聊天室(%u 用户%s)
+[%s: chat room (%u users%s)]
+%s：聊天室(%u 用户%s)
+[, event filter active]
+, 事件过滤器激活
+[%s: message session]
+%s：消息会话
+[%s: message session (%u users)]
+%s：消息会话（%u 用户）
+[UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nRight click for metacontact control\nClick dropdown to add or remove user from your favorites.]
+UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n右键点击显示中继联系人控件\n点击下拉可以添加或从收藏夹中移除用户。
+[No UID]
+无UID
+[UID: %s (Shift+click -> copy to clipboard)\nClick for user's details\nClick dropdown to change this contact's favorite status.]
+UID：%s (Shift+点击 -> 复制到剪贴板）\n点击显示用户详情\n点击下拉以改变此联系人的收藏状态。
 [Thai]
 泰语
 [Japanese]
@@ -20761,14 +20773,72 @@ JPEG-压缩图像
 您是否还想从主题中读取消息模板？\n小心：这将覆盖存储的模板集，此模板集可能显著影响消息窗口的外观。\n选择取消则不加载任何内容。
 [Load theme]
 加载主题
-[Internal message log]
-内部消息日志
-[IEView plugin]
-IEView 插件
-[History++ plugin]
-History++ 插件
-[You have chosen to use an external plugin for displaying the message history in the chat window. Most of the settings on this page are for the standard message log viewer only and will have no effect. To change the appearance of the message log, you must configure either IEView or History++.]
-您已选择使用外部插件在聊天窗口中显示消息历史记录。此页面上的大多数设置仅适用于标准消息日志查看器，不会起作用。要更改消息日志的外观，必须配置IEView 或 History++。
+[Message window behavior]
+消息窗口行为
+[Sending messages]
+发送消息
+[Send on Shift+Enter]
+Shift+Enter 时发送
+[Send message on 'Enter']
+按“回车”时发送消息
+[Send message on double 'Enter']
+按两次“回车”时发送消息
+[Minimize the message window on send]
+当发送时最小化消息窗口
+[Close the message window on send]
+当发送时关闭消息窗口
+[Always flash contact list and tray icon for new messages]
+总是为新消息闪动联系人列表和托盘图标
+[Delete temporary contacts on close]
+关闭时删除临时联系人
+[Enable "Paste and send" feature]
+启用“粘贴并发送”功能
+[Allow BBCode formatting in outgoing messages]
+允许传入消息中的 BBCode 格式
+[Automatically split long messages (experimental, use with care)]
+自动分割长消息（试验性，小心使用）
+[Log status changes]
+日志状态变更
+[Use the same splitter height for all sessions]
+为所有会话使用相同的分隔器高度
+[Automatically copy selected text]
+自动复制选择的文字
+[Message log appearance]
+消息日志外观
+[Support for external plugins]
+支持外部插件
+[Timestamp settings (note: timestamps also depend on your templates)]
+时间戳设置（注意：时间戳也依赖于你的模板）
+[Message log icons]
+消息日志图标
+[Show dates in timestamps]
+在时间戳中显示日期
+[Show seconds in timestamps]
+在时间戳中显示秒
+[Use contacts local time (if timezone info available)]
+使用联系人的本地时间（如果时区信息不可用）
+[Draw grid lines]
+绘制网格线
+[Use incoming/outgoing icons]
+使用传入/传出图标
+[Use message grouping]
+使用消息分组
+[Simple text formatting (*bold*, etc.)]
+简单文字格式化（*粗体*，等等）
+[Support BBCode formatting]
+支持 BBCode 格式化
+[Place a separator in the log after a window lost its foreground status]
+窗口丢失其前台状态后，在日志中放置分隔符
+[Only place a separator when an incoming event is announced with a popup]
+仅在使用弹出窗口宣布传入事件时放置分隔符
+[Show events at the new line (IEView Compatibility Mode)]
+在新行显示事件（IEView兼容模式）
+[Underline timestamp/nickname (IEView Compatibility Mode)]
+下划线时间戳/昵称（IEView兼容模式）
+[Show timestamp after nickname (IEView Compatibility Mode)]
+显示昵称后的时间戳（IEView兼容模式）
+[Use normal templates (uncheck to use simple templates if your template set supports them)]
+使用普通模板（如果模板集支持，则取消选中使用简单模板）
 [** New contacts **]
 ** 新联系人 **
 [** Unknown contacts **]
@@ -20779,6 +20849,30 @@ History++ 插件
 总是，但是当窗口获得焦点时无弹出窗口
 [Only when no message window is open]
 仅当没有打开的消息窗口时
+[How to create tabs and windows for incoming messages]
+如何为传入消息创建标签和窗口
+[Show status text on tabs]
+在标签上显示状态文字
+[Prefer xStatus icons when available]
+当 xStatus 图标可用时优先使用它
+[Detailed tooltip on tabs (requires Tipper plugin)]
+在标签上显示详细工具提示（需要 Tipper 插件）
+[ALWAYS activate new message sessions (has PRIORITY over the options below)]
+总是激活新的消息会话（优先于以下选项）
+[Automatically create new message sessions without activating them]
+自动创建新的消息会话而不激活它们
+[New windows are minimized (the option above MUST be active)]
+新窗口最小化（上面的选项必须是激活的）
+[Activate a minimized window when a new tab is created inside it]
+在其中创建新选项卡时激活最小化窗口
+[Automatically switch existing tabs in minimized windows on incoming messages (ignored when using Aero Peek task bar features)]
+当传入消息时自动切换最小化窗口中的存在的标签（当使用 Aero Peek 任务栏功能时忽略）
+[Close button only hides message windows]
+关闭按钮仅隐藏消息窗口
+[Allow Tab key in typing area (this will disable focus selection by Tab key)]
+劲旅输入区域中的 Tab 键（这将禁止通过 Tab 键焦点选择）
+[Add offline contacts to multisend list]
+添加离线联系人到多发送列表
 [Normal - close tab, if last tab is closed also close the window]
 普通 - 关闭标签，如果最后一个标签被关闭，也关闭窗口
 [Minimize the window to the task bar]
@@ -20787,6 +20881,24 @@ History++ 插件
 关闭或隐藏窗口，依赖上面的关闭按钮设置
 [Do nothing (ignore Esc key)]
 啥都不干(忽略 Esc 键)
+[Message window tweaks]
+消息窗口调整
+[Display metacontact icons]
+显示中继联系人图标
+[Error feedback]
+错误反馈
+[Close current tab on send]
+发送时关闭当前标签
+[Enable unattended send (experimental feature, required for multisend and send later) (*)]
+启用无人值守发送（实验性功能，多发送和稍后发送需要此功能）（*）
+[Show client description in info panel]
+在信息面板中显示客户端描述
+[On tab control]
+在标签控件上
+[On the button bar]
+在按钮栏上
+[Disable error popups on sending failures]
+发送失败时禁止错误弹出窗口
 [Choose status modes]
 选择状态模式
 [General]
@@ -20805,8 +20917,6 @@ History++ 插件
 加载并应用
 [Window layout tweaks]
 窗口布局调整
-[A message delivery has failed.\nClick to open the message window.]
-消息传递失败。\n点击以打开消息窗口。
 [Message Log Options]
 消息日志选项
 [Image tag]
@@ -20993,156 +21103,6 @@ TabSRMM 主题
 在更改皮肤之前，需要关闭所有消息容器\n继续吗？
 [Change skin]
 改变皮肤
-[Message window tweaks]
-消息窗口调整
-[Display metacontact icons]
-显示中继联系人图标
-[Error feedback]
-错误反馈
-[Close current tab on send]
-发送时关闭当前标签
-[Enable unattended send (experimental feature, required for multisend and send later) (*)]
-启用无人值守发送（实验性功能，多发送和稍后发送需要此功能）（*）
-[Show client description in info panel]
-在信息面板中显示客户端描述
-[On tab control]
-在标签控件上
-[On the button bar]
-在按钮栏上
-[Disable error popups on sending failures]
-发送失败时禁止错误弹出窗口
-[Show a preview of the event]
-显示事件预览
-[Don't announce event when message dialog is open]
-消息对话框打开时不要公布事件
-[Don't announce events from RSS protocols]
-不要公布来自RSS协议的事件
-[Enable the system tray icon]
-启用系统托盘图标
-[Merge new events for the same contact into existing popup]
-将同一联系人的新事件合并到现有弹出窗口中
-[Show headers]
-显示头部
-[Dismiss popup]
-关闭弹出窗口
-[Open event]
-打开事件
-[Dismiss event]
-解除事件
-[Disable event notifications for instant messages]
-禁用即时消息的事件通知
-[Disable event notifications for group chats]
-禁用群聊的事件通知 
-[Disable notifications for non-message events]
-禁用非消息事件的事件通知 
-[Remove popups for a contact when the message window is focused]
-在消息窗口聚焦时移除联系人的弹出窗口
-[Remove popups for a contact when I start typing a reply]
-当我开始输入回复时移除联系人的弹出窗口
-[Remove popups for a contact when I send a reply]
-当我发送回复时移除联系人的弹出窗口
-[Disable notifications]
-禁用通知
-[System tray icon]
-系统托盘图标
-[Left click actions (popups only)]
-左键点击动作（仅弹出窗口）
-[Right click actions (popups only)]
-右键点击动作（仅弹出窗口）
-[Timeout actions (popups only)]
-超时点击动作（仅弹出窗口）
-[Combine notifications for the same contact]
-合并同一个联系人的通知 
-[Remove popups under following conditions]
-在以下情况时移除弹出窗口
-[Message window behavior]
-消息窗口行为
-[Sending messages]
-发送消息
-[Send on Shift+Enter]
-Shift+Enter 时发送
-[Send message on 'Enter']
-按“回车”时发送消息
-[Send message on double 'Enter']
-按两次“回车”时发送消息
-[Minimize the message window on send]
-当发送时最小化消息窗口
-[Close the message window on send]
-当发送时关闭消息窗口
-[Always flash contact list and tray icon for new messages]
-总是为新消息闪动联系人列表和托盘图标
-[Delete temporary contacts on close]
-关闭时删除临时联系人
-[Enable "Paste and send" feature]
-启用“粘贴并发送”功能
-[Allow BBCode formatting in outgoing messages]
-允许传入消息中的 BBCode 格式
-[Automatically split long messages (experimental, use with care)]
-自动分割长消息（试验性，小心使用）
-[Log status changes]
-日志状态变更
-[Automatically copy selected text]
-自动复制选择的文字
-[Message log appearance]
-消息日志外观
-[Support for external plugins]
-支持外部插件
-[Timestamp settings (note: timestamps also depend on your templates)]
-时间戳设置（注意：时间戳也依赖于你的模板）
-[Message log icons]
-消息日志图标
-[Show dates in timestamps]
-在时间戳中显示日期
-[Show seconds in timestamps]
-在时间戳中显示秒
-[Use contacts local time (if timezone info available)]
-使用联系人的本地时间（如果时区信息不可用）
-[Draw grid lines]
-绘制网格线
-[Use incoming/outgoing icons]
-使用传入/传出图标
-[Use message grouping]
-使用消息分组
-[Simple text formatting (*bold*, etc.)]
-简单文字格式化（*粗体*，等等）
-[Support BBCode formatting]
-支持 BBCode 格式化
-[Place a separator in the log after a window lost its foreground status]
-窗口丢失其前台状态后，在日志中放置分隔符
-[Only place a separator when an incoming event is announced with a popup]
-仅在使用弹出窗口宣布传入事件时放置分隔符
-[Show events at the new line (IEView Compatibility Mode)]
-在新行显示事件（IEView兼容模式）
-[Underline timestamp/nickname (IEView Compatibility Mode)]
-下划线时间戳/昵称（IEView兼容模式）
-[Show timestamp after nickname (IEView Compatibility Mode)]
-显示昵称后的时间戳（IEView兼容模式）
-[Use normal templates (uncheck to use simple templates if your template set supports them)]
-使用普通模板（如果模板集支持，则取消选中使用简单模板）
-[How to create tabs and windows for incoming messages]
-如何为传入消息创建标签和窗口
-[Show status text on tabs]
-在标签上显示状态文字
-[Prefer xStatus icons when available]
-当 xStatus 图标可用时优先使用它
-[Detailed tooltip on tabs (requires Tipper plugin)]
-在标签上显示详细工具提示（需要 Tipper 插件）
-[ALWAYS activate new message sessions (has PRIORITY over the options below)]
-总是激活新的消息会话（优先于以下选项）
-[Automatically create new message sessions without activating them]
-自动创建新的消息会话而不激活它们
-[New windows are minimized (the option above MUST be active)]
-新窗口最小化（上面的选项必须是激活的）
-[Activate a minimized window when a new tab is created inside it]
-在其中创建新选项卡时激活最小化窗口
-[Automatically switch existing tabs in minimized windows on incoming messages (ignored when using Aero Peek task bar features)]
-当传入消息时自动切换最小化窗口中的存在的标签（当使用 Aero Peek 任务栏功能时忽略）
-[Close button only hides message windows]
-关闭按钮仅隐藏消息窗口
-[Allow Tab key in typing area (this will disable focus selection by Tab key)]
-劲旅输入区域中的 Tab 键（这将禁止通过 Tab 键焦点选择）
-[Add offline contacts to multisend list]
-添加离线联系人到多发送列表
 [Disable &typing notification]
 禁止输入通知(&T)
 [Enable &typing notification]
@@ -21155,12 +21115,6 @@ Shift+Enter 时发送
 联系人开始输入
 [Contact stopped typing]
 联系人停止输入
-[Force default message log]
-强制默认消息日志
-[Force History++]
-强制 History++
-[Force IEView]
-强制 IEView
 [Set messaging options for %s]
 设置 %s 的消息选项
 [TabSRMM message (%s)]
@@ -21926,6 +21880,8 @@ TopToolBar
 密码：
 [Change password]
 更改密码：
+[Set password]
+设置密码
 [Cancel]
 取消
 [Add]
@@ -22140,7 +22096,7 @@ TranslitSwitcher
 ;============================================================
 ;  File: Twitter.dll
 ;  Plugin: Twitter protocol
-;  Version: 1.3.0.3
+;  Version: 1.3.1.1
 ;  Authors: dentist, omniwolf, Thief
 ;============================================================
 [Server:]
@@ -25136,7 +25092,7 @@ N/A
 ;============================================================
 ;  File: WhoUsesMyFiles.dll
 ;  Plugin: Who Use My Files
-;  Version: 0.1.0.3
+;  Version: 0.1.0.4
 ;  Authors: Nikolay Redko
 ;============================================================
 [Background color]

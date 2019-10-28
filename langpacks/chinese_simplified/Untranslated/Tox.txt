@@ -13,7 +13,6 @@
 [Enable UDP hole-punching]
 [Enable local network peer discovery]
 [Remove password]
-[Set password]
 [If this field contains Tox address (76 hex characters), you will be prompted to add it in your friend list. Otherwise, Miranda will search this query via toxme.io.]
 [DNS name:]
 [Enter password]

@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: PluginUpdater.dll
 ;  Plugin: Plugin updater
-;  Version: 0.2.0.3
+;  Version: 0.2.0.5
 ;  Authors: Mataes, George Hazan
 ;============================================================
 [Installs and updates plugins and other Miranda NG components.]
@@ -54,6 +54,8 @@ PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮
 更改平台为 32位
 [Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.]
 一些组件被更新。\n你需要重启你的 Miranda 来应用安装的更新。
+[Use HTTPS]
+使用 HTTPS
 [Notifications]
 通知
 [Restart]
@@ -101,6 +103,18 @@ PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮
 [Download]
 下载
 ;file \plugins\PluginUpdater\src\DlgListNew.cpp
+[Component Name]
+组件名称
+[State]
+状态
+[Plugins]
+插件
+[Icons]
+图标
+[Languages]
+语言
+[Other]
+其他
 [Downloading...]
 正在下载...
 [Succeeded.]
@@ -115,18 +129,6 @@ PluginUpdater 检测到某些 Miranda 组件的较新版本。点击详细按钮
 下载完成
 [Download complete. Do you want to go to plugins option page?]
 下载完成。你要转到插件选项页吗？
-[Component Name]
-组件名称
-[State]
-状态
-[Plugins]
-插件
-[Icons]
-图标
-[Languages]
-语言
-[Other]
-其他
 [List is empty.]
 列表为空。
 [List loading already started!]

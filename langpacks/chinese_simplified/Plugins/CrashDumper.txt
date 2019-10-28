@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: CrashDumper.dll
 ;  Plugin: Crash dumper
-;  Version: 0.1.0.3
+;  Version: 0.1.0.4
 ;  Authors: borkra
 ;============================================================
 [Crash Dumper and Version Information for Miranda NG.]
@@ -34,6 +34,8 @@ Miranda NG 的崩溃转储和版本信息。
 使用经典日期
 [* You need to restart Miranda NG to apply changes]
 * 你需要重启 Miranda NG 来应用变更
+[Display popups about successful actions]
+显示关于成功的动作的弹出窗口
 [View]
 查看
 [&Copy]

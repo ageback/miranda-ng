@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: Scriver.dll
 ;  Plugin: Scriver
-;  Version: 3.0.1.10
+;  Version: 3.0.2.1
 ;  Authors: Miranda NG team
 ;============================================================
 [Scriver - send and receive instant messages.]
@@ -36,8 +36,8 @@
 标签
 [Enable tabs]
 
-[Always show tab bar]
-
+[Only show tab bar when it's needed]
+仅当有需要时显示标签栏
 [Tabs at the bottom]
 标签置于底部
 [Limit names on tabs to]
@@ -82,8 +82,6 @@
 
 [Message window event log]
 消息窗口事件日志
-[Enable IEView]
-
 [Show icons]
 显示图标
 [Show time]
@@ -96,8 +94,8 @@
 
 [Relative date]
 
-[Show names]
-显示名称
+[Hide names]
+
 [Enable message grouping]
 
 [Mark follow-up messages with timestamp]
@@ -234,30 +232,6 @@ KB
 超时(秒)
 [(0 means default setting, -1 means indefinite time)]
 
-[Log]
-日志
-[&Copy]
-复制(&C)
-[Co&py all]
-复制所有(&P)
-[Select &all]
-选择所有(&A)
-[Word lookup]
-单词查找
-[Yandex]
-Yandex
-[Wikipedia (en)]
-维基百科(英语)
-[Google Maps]
-Google 地图
-[Google Translate]
-Google 翻译
-[C&lear log]
-清除日志(&L)
-[&Open link]
-打开链接(&O)
-[&Copy link]
-复制链接(&C)
 [Message]
 消息
 [Undo]
@@ -274,6 +248,8 @@ Google 翻译
 
 [Delete]
 删除
+[Select &all]
+选择所有(&A)
 [Clear]
 清除
 [Close other tabs]
@@ -454,21 +430,14 @@ Miranda 的根目录路径
 当启用了“事件过滤器”时，要在新聊天室中显示的默认事件
 [Select folder]
 选择文件夹
-;file \plugins\Scriver\src\chat_window.cpp
-[%s: chat room (%u user)]
-%s：聊天室（%u 用户）
-[%s: chat room (%u users)]
-%s：聊天室（%u 用户）
-[%s: message session]
-%s：消息会话
-[%s: message session (%u users)]
-%s：消息会话（%u 用户）
-[Nickname]
-昵称
-[Unique ID]
-唯一身份
-[Status]
-状态
+[Message sessions]
+消息会话
+[General]
+通用
+[Event log]
+
+[Popups]
+弹出窗口
 ;file \plugins\Scriver\src\globals.cpp
 [Add contact]
 添加联系人
@@ -620,18 +589,14 @@ Miranda 的根目录路径
 [Action: Paste and send]
 
 ;file \plugins\Scriver\src\msgdialog.cpp
-[Sending in progress: %d message(s) left...]
-
-[%s is typing a message...]
-%s 正在输入消息...
-[Last message received on %s at %s.]
-最后一条消息接收于 %s %s。
-[Look up '%s':]
-查找 '%s'：
-[No word to look up]
-没有查找单词
 [User menu - %s]
 
+[Nickname]
+昵称
+[Unique ID]
+唯一身份
+[Status]
+状态
 ;file \plugins\Scriver\src\msglog.cpp
 [Me]
 我
@@ -716,16 +681,8 @@ Miranda 的根目录路径
 ** 新联系人 **
 [** Unknown contacts **]
 ** 未知联系人 **
-[Message sessions]
-消息会话
-[General]
-通用
-[Event log]
-
 [Typing notify]
 输入通知
-[Popups]
-弹出窗口
 ;file \plugins\Scriver\src\msgs.cpp
 [Message from %s]
 来自 %s 的消息
@@ -806,6 +763,21 @@ Miranda 的根目录路径
 ;file \plugins\Scriver\src\msgtimedout.cpp
 [An unknown error has occurred.]
 发生了未知的错误。
+;file \plugins\Scriver\src\msgutils.cpp
+[Sending in progress: %d message(s) left...]
+
+[%s is typing a message...]
+%s 正在输入消息...
+[Last message received on %s at %s.]
+最后一条消息接收于 %s %s。
+[%s: chat room (%u user)]
+%s：聊天室（%u 用户）
+[%s: chat room (%u users)]
+%s：聊天室（%u 用户）
+[%s: message session]
+%s：消息会话
+[%s: message session (%u users)]
+%s：消息会话（%u 用户）
 ;file \plugins\Scriver\src\sendqueue.cpp
 [The message send timed out.]
 消息发送超时。

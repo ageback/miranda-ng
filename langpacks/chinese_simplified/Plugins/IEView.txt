@@ -89,15 +89,6 @@
 分组开启
 [Group Off]
 分组关闭
-;file \plugins\IEView\src\MUCCHTMLBuilder.cpp
-[%s has joined.]
-%s 加入了。
-[%s has left.]
-%s 离开了。
-[The topic is %s.]
-主题是 %s。
-[Error]
-错误
 ;file \plugins\IEView\src\Options.cpp
 [Default]
 默认

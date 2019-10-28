@@ -1781,7 +1781,7 @@ S.ms
 版本
 [System]
 系统
-[<currenty online>]
+[<currently online>]
 <当前在线>
 [Last activity]
 上次活动
@@ -1811,8 +1811,6 @@ Miranda 核心版本
 从
 [none]
 无
-[<currently online>]
-<当前在线>
 [Last logoff time]
 上次登出时间
 [Uptime]
