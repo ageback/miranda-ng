@@ -151,7 +151,7 @@ void __cdecl CJabberProto::OnAddContactForever(MCONTACT hContact)
 
 	SendGetVcard(hContact);
 
-	db_unset(hContact, "CList", "Hidden");
+	Contact_Hide(hContact, false);
 }
 
 int __cdecl CJabberProto::OnDbSettingChanged(WPARAM hContact, LPARAM lParam)

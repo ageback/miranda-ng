@@ -1317,8 +1317,9 @@ int GaduProto::dbsettingchanged(WPARAM hContact, LPARAM lParam)
 		// If not on list changed
 		if (!strcmp(cws->szSetting, "NotOnList"))
 		{
-			if (db_get_b(hContact, "CList", "Hidden", 0))
+			if (Contact_IsHidden(hContact))
 				return 0;
+			
 			// Notify user normally this time if added to the list permanently
 			if (cws->value.type == DBVT_DELETED || (cws->value.type == DBVT_BYTE && cws->value.bVal == 0))
 				notifyuser(hContact, 1);
@@ -1366,8 +1367,7 @@ void GaduProto::notifyuser(MCONTACT hContact, int refresh)
 	{
 		// Check if user should be invisible
 		// Or be blocked ?
-		if ((getWord(hContact, GG_KEY_APPARENT, (WORD)ID_STATUS_ONLINE) == ID_STATUS_OFFLINE) ||
-			db_get_b(hContact, "CList", "NotOnList", 0))
+		if ((getWord(hContact, GG_KEY_APPARENT, (WORD)ID_STATUS_ONLINE) == ID_STATUS_OFFLINE) || !Contact_OnList(hContact))
 		{
 			gg_EnterCriticalSection(&sess_mutex, "notifyuser", 77, "sess_mutex", 1);
 			if (refresh) {
@@ -1422,8 +1422,7 @@ void GaduProto::notifyall()
 	int cc = 0;
 	for (auto &hContact : AccContacts()) {
 		if (uins[cc] = getDword(hContact, GG_KEY_UIN, 0)) {
-			if ((getWord(hContact, GG_KEY_APPARENT, (WORD)ID_STATUS_ONLINE) == ID_STATUS_OFFLINE) ||
-				db_get_b(hContact, "CList", "NotOnList", 0))
+			if ((getWord(hContact, GG_KEY_APPARENT, (WORD)ID_STATUS_ONLINE) == ID_STATUS_OFFLINE) || !Contact_OnList(hContact))
 				types[cc] = GG_USER_OFFLINE;
 			else if (getByte(hContact, GG_KEY_BLOCK, 0))
 				types[cc] = GG_USER_BLOCKED;
@@ -1459,8 +1458,8 @@ MCONTACT GaduProto::getcontact(uin_t uin, int create, int inlist, wchar_t *szNic
 	for (auto &hContact : AccContacts()) {
 		if ((uin_t)getDword(hContact, GG_KEY_UIN, 0) == uin && !isChatRoom(hContact)) {
 			if (inlist) {
-				db_unset(hContact, "CList", "NotOnList");
-				db_unset(hContact, "CList", "Hidden");
+				Contact_PutOnList(hContact);
+				Contact_Hide(hContact, false);
 			}
 			return hContact;
 		}
@@ -1469,21 +1468,11 @@ MCONTACT GaduProto::getcontact(uin_t uin, int create, int inlist, wchar_t *szNic
 		return NULL;
 
 	MCONTACT hContact = db_add_contact();
-	if (!hContact) {
-		debugLogW(L"getcontact(): Failed to create Gadu-Gadu contact %s", szNick);
-		return NULL;
-	}
-
-	if (Proto_AddToContact(hContact, m_szModuleName) != 0) {
-		// For some reason we failed to register the protocol for this contact
-		db_delete_contact(hContact);
-		debugLogA("getcontact(): Failed to register GG contact %d", uin);
-		return NULL;
-	}
+	Proto_AddToContact(hContact, m_szModuleName);
 
 	debugLogA("getcontact(): Added buddy: %d", uin);
 	if (!inlist)
-		db_set_b(hContact, "CList", "NotOnList", 1);
+		Contact_RemoveFromList(hContact);
 
 	setDword(hContact, GG_KEY_UIN, (DWORD)uin);
 	setWord(hContact, GG_KEY_STATUS, ID_STATUS_OFFLINE);

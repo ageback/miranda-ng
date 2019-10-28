@@ -162,8 +162,8 @@ class CDiscordProto : public PROTO<CDiscordProto>
 	void __cdecl GatewayThread(void*);
 	bool  GatewayThreadWorker(void);
 	
-	void  GatewaySend(const JSONNode&, int opCode = 1);
-	void  GatewayProcess(const JSONNode&);
+	void  GatewaySend(const JSONNode &pNode);
+	void  GatewayProcess(const JSONNode &pNode);
 
 	void  GatewaySendHeartbeat(void);
 	void  GatewaySendIdentify(void);
@@ -282,6 +282,7 @@ public:
 
 	int SetStatus(int iNewStatus) override;
 
+	void OnBuildProtoMenu() override;
 	void OnContactDeleted(MCONTACT) override;
 	void OnModulesLoaded() override;
 	void OnShutdown() override;

@@ -30,7 +30,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 CSrmmBaseDialog::CSrmmBaseDialog(CMPluginBase &pPlugin, int idDialog, SESSION_INFO *si) :
 	CDlgBase(pPlugin, idDialog),
-	m_log(this, IDC_SRMM_LOG),
 	m_message(this, IDC_SRMM_MESSAGE),
 	m_nickList(this, IDC_SRMM_NICKLIST),
 
@@ -61,7 +60,7 @@ CSrmmBaseDialog::CSrmmBaseDialog(CMPluginBase &pPlugin, int idDialog, SESSION_IN
 	m_btnHistory.OnClick = Callback(this, &CSrmmBaseDialog::onClick_History);
 	m_btnChannelMgr.OnClick = Callback(this, &CSrmmBaseDialog::onClick_ChanMgr);
 
-	m_nickList.OnDblClick = Callback(this, &CChatRoomDlg::onDblClick_List);
+	m_nickList.OnDblClick = Callback(this, &CMsgDialog::onDblClick_List);
 
 	if (si) {
 		m_hContact = si->hContact;
@@ -79,10 +78,13 @@ CSrmmBaseDialog::CSrmmBaseDialog(CMPluginBase &pPlugin, int idDialog, SESSION_IN
 
 void CSrmmBaseDialog::RunUserMenu(HWND hwndOwner, USERINFO *ui, const POINT &pt)
 {
+	HMENU hMenu = LoadMenu(g_plugin.getInst(), MAKEINTRESOURCE(IDR_USERMENU));
+	HMENU hSubMenu = GetSubMenu(hMenu, 0);
+	TranslateMenu(hSubMenu);
+
 	USERINFO uinew;
 	memcpy(&uinew, ui, sizeof(USERINFO));
-	HMENU hMenu = GetSubMenu(g_hMenu, 0);
-	UINT uID = Chat_CreateGCMenu(hwndOwner, hMenu, pt, m_si, uinew.pszUID, uinew.pszNick);
+	UINT uID = CreateGCMenu(hwndOwner, hSubMenu, pt, m_si, uinew.pszUID, uinew.pszNick);
 	switch (uID) {
 	case 0:
 		break;
@@ -95,7 +97,7 @@ void CSrmmBaseDialog::RunUserMenu(HWND hwndOwner, USERINFO *ui, const POINT &pt)
 		Chat_DoEventHook(m_si, GC_USER_NICKLISTMENU, ui, nullptr, uID);
 		break;
 	}
-	Chat_DestroyGCMenu(hMenu, 1);
+	DestroyMenu(hMenu);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -127,193 +129,6 @@ static LRESULT CALLBACK Srmm_ButtonSubclassProc(HWND hwnd, UINT msg, WPARAM wPar
 	}
 
 	return mir_callNextSubclass(hwnd, Srmm_ButtonSubclassProc, msg, wParam, lParam);
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-static wchar_t szTrimString[] = L":;,.!?\'\"><()[]- \r\n";
-
-EXTERN_C MIR_APP_DLL(LRESULT) CALLBACK stubLogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
-{
-	CSrmmBaseDialog *pDlg = (CSrmmBaseDialog*)GetWindowLongPtr(GetParent(hwnd), GWLP_USERDATA);
-	if (pDlg != nullptr)
-		return pDlg->WndProc_Log(msg, wParam, lParam);
-
-	return mir_callNextSubclass(hwnd, stubLogProc, msg, wParam, lParam);
-}
-
-LRESULT CSrmmBaseDialog::WndProc_Log(UINT msg, WPARAM wParam, LPARAM lParam)
-{
-	CHARRANGE sel;
-
-	switch (msg) {
-	case WM_ACTIVATE:
-		if (LOWORD(wParam) == WA_INACTIVE) {
-			m_log.SendMsg(EM_EXGETSEL, 0, (LPARAM)&sel);
-			if (sel.cpMin != sel.cpMax) {
-				sel.cpMin = sel.cpMax;
-				m_log.SendMsg(EM_EXSETSEL, 0, (LPARAM)&sel);
-			}
-		}
-		break;
-
-	case WM_SETCURSOR:
-		if (m_bInMenu) {
-			SetCursor(LoadCursor(nullptr, IDC_ARROW));
-			return TRUE;
-		}
-		break;
-
-	case WM_KEYDOWN:
-	case WM_SYSKEYDOWN:
-		if (!(GetKeyState(VK_RMENU) & 0x8000)) {
-			MSG message = { m_hwnd, msg, wParam, lParam };
-			LRESULT iButtonFrom = Hotkey_Check(&message, BB_HK_SECTION);
-			if (iButtonFrom) {
-				Srmm_ProcessToolbarHotkey(m_hContact, iButtonFrom, m_hwnd);
-				return TRUE;
-			}
-		}
-		break;
-
-	case WM_CHAR:
-		if (wParam >= ' ') {
-			SetFocus(m_message.GetHwnd());
-			m_message.SendMsg(WM_CHAR, wParam, lParam);
-		}
-		else if (wParam == '\t')
-			SetFocus(m_message.GetHwnd());
-		break;
-
-	case WM_CONTEXTMENU:
-		if (m_si == nullptr)
-			break;
-
-		POINT pt, ptl;
-		m_log.SendMsg(EM_EXGETSEL, 0, (LPARAM)&sel);
-		if (lParam == 0xFFFFFFFF) {
-			m_log.SendMsg(EM_POSFROMCHAR, (WPARAM)&pt, (LPARAM)sel.cpMax);
-			ClientToScreen(m_log.GetHwnd(), &pt);
-		}
-		else {
-			pt.x = GET_X_LPARAM(lParam);
-			pt.y = GET_Y_LPARAM(lParam);
-		}
-		ptl = pt;
-		ScreenToClient(m_log.GetHwnd(), (LPPOINT)&ptl);
-		{
-			wchar_t *pszWord = (wchar_t*)_alloca(8192);
-			pszWord[0] = '\0';
-
-			int iCharIndex = m_log.SendMsg(EM_CHARFROMPOS, 0, (LPARAM)&ptl);
-			if (iCharIndex < 0)
-				break;
-
-			int start = m_log.SendMsg(EM_FINDWORDBREAK, WB_LEFT, iCharIndex);
-			int end = m_log.SendMsg(EM_FINDWORDBREAK, WB_RIGHT, iCharIndex);
-
-			if (end - start > 0) {
-				CHARRANGE cr;
-				cr.cpMin = start;
-				cr.cpMax = end;
-
-				TEXTRANGE tr = { 0 };
-				tr.chrg = cr;
-				tr.lpstrText = (wchar_t*)pszWord;
-				int iRes = m_log.SendMsg(EM_GETTEXTRANGE, 0, (LPARAM)&tr);
-				if (iRes > 0) {
-					wchar_t *p = wcschr(pszWord, '\r');
-					if (p) *p = 0;
-
-					size_t iLen = mir_wstrlen(pszWord) - 1;
-					while (wcschr(szTrimString, pszWord[iLen])) {
-						pszWord[iLen] = '\0';
-						iLen--;
-					}
-				}
-			}
-
-			CHARRANGE all = { 0, -1 };
-			HMENU hMenu = GetSubMenu(g_hMenu, 1);
-			m_bInMenu = true;
-			UINT uID = Chat_CreateGCMenu(m_log.GetHwnd(), hMenu, pt, m_si, nullptr, pszWord);
-			m_bInMenu = false;
-			switch (uID) {
-			case 0:
-				PostMessage(m_hwnd, WM_MOUSEACTIVATE, 0, 0);
-				break;
-
-			case IDM_COPYALL:
-				m_log.SendMsg(EM_EXGETSEL, 0, (LPARAM)&sel);
-				m_log.SendMsg(EM_EXSETSEL, 0, (LPARAM)&all);
-				m_log.SendMsg(WM_COPY, 0, 0);
-				m_log.SendMsg(EM_EXSETSEL, 0, (LPARAM)&sel);
-				PostMessage(m_hwnd, WM_MOUSEACTIVATE, 0, 0);
-				break;
-
-			case IDM_CLEAR:
-				m_log.SetText(L"");
-				g_chatApi.LM_RemoveAll(&m_si->pLog, &m_si->pLogEnd);
-				m_si->iEventCount = 0;
-				m_si->LastTime = 0;
-				PostMessage(m_hwnd, WM_MOUSEACTIVATE, 0, 0);
-				break;
-
-			case IDM_SEARCH_GOOGLE:
-			case IDM_SEARCH_BING:
-			case IDM_SEARCH_YANDEX:
-			case IDM_SEARCH_YAHOO:
-			case IDM_SEARCH_WIKIPEDIA:
-			case IDM_SEARCH_FOODNETWORK:
-			case IDM_SEARCH_GOOGLE_MAPS:
-			case IDM_SEARCH_GOOGLE_TRANSLATE:
-				{
-					CMStringW szURL;
-					switch (uID) {
-					case IDM_SEARCH_WIKIPEDIA:
-						szURL.Format(L"http://en.wikipedia.org/wiki/%s", pszWord);
-						break;
-					case IDM_SEARCH_YAHOO:
-						szURL.Format(L"http://search.yahoo.com/search?p=%s&ei=UTF-8", pszWord);
-						break;
-					case IDM_SEARCH_FOODNETWORK:
-						szURL.Format(L"http://search.foodnetwork.com/search/delegate.do?fnSearchString=%s", pszWord);
-						break;
-					case IDM_SEARCH_BING:
-						szURL.Format(L"http://www.bing.com/search?q=%s&form=OSDSRC", pszWord);
-						break;
-					case IDM_SEARCH_GOOGLE_MAPS:
-						szURL.Format(L"http://maps.google.com/maps?q=%s&ie=utf-8&oe=utf-8", pszWord);
-						break;
-					case IDM_SEARCH_GOOGLE_TRANSLATE:
-						szURL.Format(L"http://translate.google.com/?q=%s&ie=utf-8&oe=utf-8", pszWord);
-						break;
-					case IDM_SEARCH_YANDEX:
-						szURL.Format(L"http://yandex.ru/yandsearch?text=%s", pszWord);
-						break;
-					case IDM_SEARCH_GOOGLE:
-						szURL.Format(L"http://www.google.com/search?q=%s&ie=utf-8&oe=utf-8", pszWord);
-						break;
-					}
-					Utils_OpenUrlW(szURL);
-				}
-				PostMessage(m_hwnd, WM_MOUSEACTIVATE, 0, 0);
-				break;
-
-			default:
-				PostMessage(m_hwnd, WM_MOUSEACTIVATE, 0, 0);
-				Chat_DoEventHook(m_si, GC_USER_LOGMENU, nullptr, nullptr, uID);
-				break;
-			}
-			Chat_DestroyGCMenu(hMenu, 5);
-		}
-		break;
-	}
-
-	LRESULT res = mir_callNextSubclass(m_log.GetHwnd(), stubLogProc, msg, wParam, lParam);
-	if (msg == WM_GETDLGCODE)
-		return res & ~DLGC_HASSETSEL;
-	return res;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -358,6 +173,13 @@ LRESULT CSrmmBaseDialog::WndProc_Message(UINT msg, WPARAM wParam, LPARAM lParam)
 	switch (msg) {
 	case WM_GETDLGCODE:
 		return res & ~DLGC_HASSETSEL;
+
+	case WM_KEYUP:
+	case WM_LBUTTONUP:
+	case WM_RBUTTONUP:
+	case WM_MBUTTONUP:
+		RefreshButtonStatus();
+		break;
 
 	case WM_KEYDOWN:
 	case WM_SYSKEYDOWN:
@@ -626,15 +448,21 @@ bool CSrmmBaseDialog::OnInitDialog()
 	WindowList_Add(g_hWindowList, m_hwnd, m_hContact);
 	SetWindowLongPtr(m_hwnd, GWLP_USERDATA, (LONG_PTR)this);
 
-	SetWindowLongPtr(m_log.GetHwnd(), GWLP_USERDATA, LPARAM(this));
-	mir_subclassWindow(m_log.GetHwnd(), stubLogProc);
-	m_log.SetReadOnly(true);
+	m_pLog = Srmm_GetLogWindow((CMsgDialog*)this);
+	if (m_pLog->GetType() != 0) { // custom log type
+		HWND hwndLog = GetDlgItem(m_hwnd, IDC_SRMM_LOG);
+		EnableWindow(hwndLog, FALSE);
+		ShowWindow(hwndLog, SW_HIDE);
+	}
+	m_pLog->Attach();
 
 	SetWindowLongPtr(m_message.GetHwnd(), GWLP_USERDATA, LPARAM(this));
 	mir_subclassWindow(m_message.GetHwnd(), stubMessageProc);
 
-	SetWindowLongPtr(m_nickList.GetHwnd(), GWLP_USERDATA, LPARAM(this));
-	mir_subclassWindow(m_nickList.GetHwnd(), stubNicklistProc);
+	if (isChat()) {
+		SetWindowLongPtr(m_nickList.GetHwnd(), GWLP_USERDATA, LPARAM(this));
+		mir_subclassWindow(m_nickList.GetHwnd(), stubNicklistProc);
+	}
 
 	// three buttons below are initiated inside this call, so button creation must precede subclassing
 	Srmm_CreateToolbarIcons(m_hwnd, isChat() ? BBBF_ISCHATBUTTON : BBBF_ISIMBUTTON);
@@ -649,10 +477,12 @@ bool CSrmmBaseDialog::OnInitDialog()
 
 void CSrmmBaseDialog::OnDestroy()
 {
+	m_pLog->Detach();
+	delete m_pLog;
+
 	WindowList_Remove(g_hWindowList, m_hwnd);
 
 	SetWindowLongPtr(m_hwnd, GWLP_USERDATA, 0);
-	mir_unsubclassWindow(m_log.GetHwnd(), stubLogProc);
 	mir_unsubclassWindow(m_message.GetHwnd(), stubMessageProc);
 	mir_unsubclassWindow(m_nickList.GetHwnd(), stubNicklistProc);
 }
@@ -685,65 +515,8 @@ INT_PTR CSrmmBaseDialog::DlgProc(UINT msg, WPARAM wParam, LPARAM lParam)
 
 	case WM_NOTIFY:
 		LPNMHDR hdr = (LPNMHDR)lParam;
-		if (hdr->hwndFrom == m_log.GetHwnd() && hdr->code == EN_LINK) {
-			ENLINK *pLink = (ENLINK*)lParam;
-			switch (pLink->msg) {
-			case WM_SETCURSOR:
-				SetCursor(g_hCurHyperlinkHand);
-				SetWindowLongPtr(m_hwnd, DWLP_MSGRESULT, TRUE);
-				return TRUE;
-
-			case WM_RBUTTONDOWN:
-			case WM_LBUTTONUP:
-			case WM_LBUTTONDBLCLK:
-				CHARRANGE sel;
-				m_log.SendMsg(EM_EXGETSEL, 0, (LPARAM)&sel);
-				if (sel.cpMin != sel.cpMax)
-					break;
-
-				CMStringW wszText(' ', pLink->chrg.cpMax - pLink->chrg.cpMin + 1);
-
-				TEXTRANGE tr;
-				tr.chrg = pLink->chrg;
-				tr.lpstrText = wszText.GetBuffer();
-				m_log.SendMsg(EM_GETTEXTRANGE, 0, (LPARAM)&tr);
-				if (wcschr(tr.lpstrText, '@') != nullptr && wcschr(tr.lpstrText, ':') == nullptr && wcschr(tr.lpstrText, '/') == nullptr)
-					wszText.Insert(0, L"mailto:");
-
-				if (pLink->msg == WM_RBUTTONDOWN) {
-					HMENU hMenu = LoadMenu(g_plugin.getInst(), MAKEINTRESOURCE(IDR_CONTEXT));
-					HMENU hSubMenu = GetSubMenu(hMenu, 6);
-					TranslateMenu(hSubMenu);
-
-					POINT pt = { GET_X_LPARAM(pLink->lParam), GET_Y_LPARAM(pLink->lParam) };
-					ClientToScreen(((NMHDR *)lParam)->hwndFrom, &pt);
-
-					switch (TrackPopupMenu(hSubMenu, TPM_RETURNCMD, pt.x, pt.y, 0, m_hwnd, nullptr)) {
-					case IDM_OPENLINK:
-						Utils_OpenUrlW(wszText);
-						break;
-
-					case IDM_COPYLINK:
-						if (OpenClipboard(m_hwnd)) {
-							EmptyClipboard();
-							HGLOBAL hData = GlobalAlloc(GMEM_MOVEABLE, (wszText.GetLength() + 1) * sizeof(wchar_t));
-							mir_wstrcpy((wchar_t*)GlobalLock(hData), wszText);
-							GlobalUnlock(hData);
-							SetClipboardData(CF_UNICODETEXT, hData);
-							CloseClipboard();
-						}
-						break;
-					}
-
-					DestroyMenu(hMenu);
-					SetWindowLongPtr(m_hwnd, DWLP_MSGRESULT, TRUE);
-					return TRUE;
-				}
-
-				Utils_OpenUrlW(wszText);
-				SetFocus(m_message.GetHwnd());
-			}
-		}
+		if (hdr->hwndFrom == m_pLog->GetHwnd())
+			m_pLog->Notify(wParam, lParam);
 		break;
 	}
 
@@ -753,21 +526,68 @@ INT_PTR CSrmmBaseDialog::DlgProc(UINT msg, WPARAM wParam, LPARAM lParam)
 void CSrmmBaseDialog::AddLog()
 {
 	if (m_si->pLogEnd)
-		StreamInEvents(m_si->pLog, false);
+		m_pLog->LogEvents(m_si->pLog, false);
 	else
-		ClearLog();
+		m_pLog->Clear();
 }
 
 void CSrmmBaseDialog::ClearLog()
 {
-	m_log.SetText(L"");
+	m_pLog->Clear();
 }
 
-void CSrmmBaseDialog::RedrawLog2()
+void CSrmmBaseDialog::UpdateOptions()
+{
+	MODULEINFO *mi = m_si->pMI;
+	EnableWindow(m_btnBold.GetHwnd(), mi->bBold);
+	EnableWindow(m_btnItalic.GetHwnd(), mi->bItalics);
+	EnableWindow(m_btnUnderline.GetHwnd(), mi->bUnderline);
+	EnableWindow(m_btnColor.GetHwnd(), mi->bColor);
+	EnableWindow(m_btnBkColor.GetHwnd(), mi->bBkgColor);
+	if (m_si->iType == GCW_CHATROOM)
+		EnableWindow(m_btnChannelMgr.GetHwnd(), mi->bChanMgr);
+
+	Resize();
+	RedrawLog2(m_si);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+void RedrawLog2(SESSION_INFO *si)
+{
+	si->LastTime = 0;
+	if (si->pLog)
+		si->pDlg->m_pLog->LogEvents(si->pLogEnd, TRUE);
+}
+
+static void __cdecl phase2(SESSION_INFO *si)
+{
+	Sleep(30);
+	if (si && si->pDlg)
+		RedrawLog2(si);
+}
+
+void CSrmmBaseDialog::RedrawLog()
 {
 	m_si->LastTime = 0;
-	if (m_si->pLog)
-		StreamInEvents(m_si->pLogEnd, TRUE);
+	if (m_si->pLog) {
+		LOGINFO *pLog = m_si->pLog;
+		if (m_si->iEventCount > 60) {
+			int index = 0;
+			while (index < 59) {
+				if (pLog->next == nullptr)
+					break;
+
+				pLog = pLog->next;
+				if (m_si->iType != GCW_CHATROOM || !m_bFilterEnabled || (m_iLogFilterFlags & pLog->iType) != 0)
+					index++;
+			}
+			m_pLog->LogEvents(pLog, true);
+			mir_forkThread<SESSION_INFO>(phase2, m_si);
+		}
+		else m_pLog->LogEvents(m_si->pLogEnd, true);
+	}
+	else ClearLog();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -896,7 +716,7 @@ int CSrmmBaseDialog::NotifyEvent(int code)
 	mwe.uType = code;
 	mwe.uFlags = MSG_WINDOW_UFLAG_MSG_BOTH;
 	mwe.hwndInput = m_message.GetHwnd();
-	mwe.hwndLog = m_log.GetHwnd();
+	mwe.hwndLog = m_pLog->GetHwnd();
 	return ::NotifyEventHooks(hHookSrmmEvent, 0, (LPARAM)&mwe);
 }
 
@@ -911,44 +731,44 @@ bool CSrmmBaseDialog::ProcessHotkeys(int key, bool isShift, bool isCtrl, bool is
 	if (isCtrl && !isAlt) {
 		switch (key) {
 		case VK_SPACE: // ctrl-space (paste clean text)
-			m_btnBold.Push(false); onClick_BIU(&m_btnBold);
-			m_btnItalic.Push(false); onClick_BIU(&m_btnItalic);
-			m_btnUnderline.Push(false); onClick_BIU(&m_btnUnderline);
+			m_btnBold.Push(false); m_btnBold.Click();
+			m_btnItalic.Push(false); m_btnItalic.Click();
+			m_btnUnderline.Push(false); m_btnUnderline.Click();
 
-			m_btnColor.Push(false); onClick_Color(&m_btnColor);
-			m_btnBkColor.Push(false); onClick_BkColor(&m_btnBkColor);
+			m_btnColor.Push(false); m_btnColor.Click();
+			m_btnBkColor.Push(false); m_btnBkColor.Click();
 			return true;
 
 		case 0x42: // ctrl-b (bold)
 			m_btnBold.Push(!m_btnBold.IsPushed());
-			onClick_BIU(&m_btnBold);
+			m_btnBold.Click();
 			return true;
 
 		case 0x48: // ctrl-h (history)
-			onClick_History(&m_btnHistory);
+			m_btnHistory.Click();
 			return true;
 
 		case 0x49: // ctrl-i (italics)
 			m_btnItalic.Push(!m_btnItalic.IsPushed());
-			onClick_BIU(&m_btnItalic);
+			m_btnItalic.Click();
 			return true;
 
 		case 0x4b: // ctrl-k (paste clean text)
 			m_btnColor.Push(!m_btnColor.IsPushed());
-			onClick_Color(&m_btnColor);
+			m_btnColor.Click();
 			return true;
 
 		case 0x4c: // ctrl-l (back color)
 			m_btnBkColor.Push(!m_btnBkColor.IsPushed());
-			onClick_BkColor(&m_btnBkColor);
+			m_btnBkColor.Click();
 			return true;
 
 		case 0x55: // ctrl-u (underlining)
 			m_btnUnderline.Push(!m_btnUnderline.IsPushed());
-			onClick_BIU(&m_btnUnderline);
+			m_btnUnderline.Click();
 			return true;
 
-		case VK_F4: // ctrl-F4 (close tab)
+		case VK_F4: // ctrl-F4 
 			CloseTab();
 			return true;
 		}
@@ -957,8 +777,11 @@ bool CSrmmBaseDialog::ProcessHotkeys(int key, bool isShift, bool isCtrl, bool is
 	return false;
 }
 
-void CSrmmBaseDialog::RefreshButtonStatus(void)
+void CSrmmBaseDialog::RefreshButtonStatus()
 {
+	if (m_si == nullptr)
+		return;
+
 	CHARFORMAT2 cf;
 	cf.cbSize = sizeof(CHARFORMAT2);
 	cf.dwMask = CFM_BOLD | CFM_ITALIC | CFM_UNDERLINE | CFM_BACKCOLOR | CFM_COLOR;

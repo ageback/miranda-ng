@@ -9,7 +9,8 @@ public:
 		flags &= (~NLHRF_DUMPASTEXT);
 		Headers
 			<< FORMAT_VALUE("Authorization", "skype_token %s", ppro->m_szApiToken.get())
-			<< CHAR_VALUE("Content-Type", "text/json");
+			<< CHAR_VALUE("Content-Type", "text/json")
+			<< CHAR_VALUE("X-Client-Version", "0/0.0.0.0");
 
 		JSONNode node, jPermissions, jPermission(JSON_ARRAY);
 		jPermissions.set_name("permissions");
@@ -19,8 +20,7 @@ public:
 		node << JSONNode("type", "sharing/file") << JSONNode("filename", szFileName) << jPermissions;
 
 		Body << VALUE(node.write().c_str());
-
-	}// {"id":"0-neu-d1-d0649c1fb4e4c60f2d2d1f2165a99f60"}
+	}
 };
 
 class ASMObjectUploadRequest : public HttpRequest

@@ -58,7 +58,7 @@ int Meta_SetNick(char *szProto)
 * @return TRUE on success, FALSE otherwise
 */
 
-BOOL Meta_Assign(MCONTACT hSub, MCONTACT hMeta, BOOL set_as_default)
+BOOL Meta_Assign(MCONTACT hSub, MCONTACT hMeta, bool set_as_default)
 {
 	DBCachedContact *ccDest = CheckMeta(hMeta), *ccSub = currDb->getCache()->GetCachedContact(hSub);
 	if (ccDest == nullptr || ccSub == nullptr)
@@ -79,7 +79,7 @@ BOOL Meta_Assign(MCONTACT hSub, MCONTACT hMeta, BOOL set_as_default)
 	}
 
 	// Check that is is 'on the list'
-	if (db_get_b(hSub, "CList", "NotOnList", 0) == 1) {
+	if (!Contact_OnList(hSub)) {
 		MessageBox(nullptr, TranslateT("Contact is 'not on list' - please add the contact to your contact list before assigning."), TranslateT("Assignment error"), MB_OK | MB_ICONWARNING);
 		db_free(&dbv);
 		return FALSE;
@@ -180,9 +180,8 @@ BOOL Meta_Assign(MCONTACT hSub, MCONTACT hMeta, BOOL set_as_default)
 	// merge sub's events to the meta-history
 	currDb->MetaMergeHistory(ccDest, ccSub);
 
-	// Ignore status if the option is on
-	if (g_metaOptions.bSuppressStatus)
-		CallService(MS_IGNORE_IGNORE, hSub, IGNOREEVENT_USERONLINE);
+	// hide sub finally
+	Contact_Hide(ccSub->contactID);
 
 	NotifyEventHooks(hSubcontactsChanged, hMeta, 0);
 	return TRUE;
@@ -372,9 +371,6 @@ int Meta_HideLinkedContacts(void)
 			}
 		}
 
-		if (g_metaOptions.bSuppressStatus)
-			CallService(MS_IGNORE_IGNORE, hContact, IGNOREEVENT_USERONLINE);
-
 		MCONTACT hMostOnline = Meta_GetMostOnline(ccMeta); // set nick
 		Meta_CopyContactNick(ccMeta, hMostOnline);
 		Meta_FixStatus(ccMeta);
@@ -385,22 +381,17 @@ int Meta_HideLinkedContacts(void)
 
 int Meta_HideMetaContacts(bool bHide)
 {
-	// set status suppression
-	bool bSuppress = bHide ? FALSE : g_metaOptions.bSuppressStatus;
-
 	for (auto &hContact : Contacts()) {
 		bool bSet;
 		DBCachedContact *cc = currDb->getCache()->GetCachedContact(hContact);
-		if (cc->IsSub()) { // show on hide, reverse flag
+		if (cc->IsSub()) // show on hide, reverse flag
 			bSet = !bHide;
-			CallService(bSuppress ? MS_IGNORE_IGNORE : MS_IGNORE_UNIGNORE, hContact, IGNOREEVENT_USERONLINE);
-		}
 		else if (cc->IsMeta())
 			bSet = bHide;
 		else
 			continue;
 
-		db_set_b(hContact, "CList", "Hidden", bSet);
+		Contact_Hide(hContact, bSet);
 	}
 
 	if (bHide) {
@@ -408,15 +399,6 @@ int Meta_HideMetaContacts(bool bHide)
 			SendMessage(p->m_hWnd, WM_CLOSE, 0, 0);
 		arMetaWindows.destroy();
 	}
-
-	return 0;
-}
-
-int Meta_SuppressStatus(bool suppress)
-{
-	for (auto &hContact : Contacts())
-		if (db_mc_isSub(hContact))
-			CallService((suppress) ? MS_IGNORE_IGNORE : MS_IGNORE_UNIGNORE, hContact, IGNOREEVENT_USERONLINE);
 
 	return 0;
 }

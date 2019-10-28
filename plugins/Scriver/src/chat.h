@@ -70,15 +70,12 @@ extern GlobalLogSettings g_Settings;
 void LoadMsgLogBitmaps(void);
 void FreeMsgLogBitmaps(void);
 
-// services.c
-void ShowRoom(SESSION_INFO *si);
-
 // manager.c
-SESSION_INFO* SM_FindSessionAutoComplete(const char* pszModule, SESSION_INFO* currSession, SESSION_INFO* prevSession, const wchar_t* pszOriginal, const wchar_t* pszCurrent);
+SESSION_INFO* SM_FindSessionAutoComplete(const char *pszModule, SESSION_INFO *currSession, SESSION_INFO *prevSession, const wchar_t *pszOriginal, const wchar_t *pszCurrent);
 char          SM_GetStatusIndicator(SESSION_INFO *si, USERINFO *ui);
 
 // tools.c
-wchar_t*      my_strstri(const wchar_t* s1, const wchar_t* s2) ;
+const wchar_t* my_strstri(const wchar_t *s1, const wchar_t *s2);
 
 /////////////////////////////////////////////////////////////////////////////////////////
 

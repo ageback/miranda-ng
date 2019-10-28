@@ -33,7 +33,7 @@ void InputAreaContextMenu(HWND hwnd, WPARAM, LPARAM lParam, MCONTACT hContact)
 	CHARRANGE sel, all = { 0, -1 };
 
 	HMENU hMenu = LoadMenu(g_plugin.getInst(), MAKEINTRESOURCE(IDR_CONTEXT));
-	HMENU hSubMenu = GetSubMenu(hMenu, 2);
+	HMENU hSubMenu = GetSubMenu(hMenu, 0);
 	TranslateMenu(hSubMenu);
 	SendMessage(hwnd, EM_EXGETSEL, 0, (LPARAM)&sel);
 	if (sel.cpMin == sel.cpMax) {
@@ -112,7 +112,7 @@ void InputAreaContextMenu(HWND hwnd, WPARAM, LPARAM lParam, MCONTACT hContact)
 	DestroyMenu(hMenu);
 }
 
-bool CScriverWindow::CheckSend()
+bool CMsgDialog::CheckSend()
 {
 	BOOL isShift = GetKeyState(VK_SHIFT) & 0x8000;
 	BOOL isCtrl = GetKeyState(VK_CONTROL) & 0x8000;
@@ -134,8 +134,8 @@ bool CScriverWindow::CheckSend()
 		if (m_iLastEnterTime + 1000 < GetTickCount())
 			m_iLastEnterTime = GetTickCount();
 		else {
-			m_log.SendMsg(WM_KEYDOWN, VK_BACK, 0);
-			m_log.SendMsg(WM_KEYUP, VK_BACK, 0);
+			LOG()->WndProc(WM_KEYDOWN, VK_BACK, 0);
+			LOG()->WndProc(WM_KEYUP, VK_BACK, 0);
 			PostMessage(m_hwnd, WM_COMMAND, IDOK, 0);
 			return true;
 		}
@@ -144,7 +144,7 @@ bool CScriverWindow::CheckSend()
 	return false;
 }
 
-int CScriverWindow::InputAreaShortcuts(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+int CMsgDialog::InputAreaShortcuts(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	BOOL isShift = GetKeyState(VK_SHIFT) & 0x8000;
 	BOOL isAlt = GetKeyState(VK_MENU) & 0x8000;
@@ -155,31 +155,31 @@ int CScriverWindow::InputAreaShortcuts(HWND hwnd, UINT msg, WPARAM wParam, LPARA
 
 	switch (action) {
 	case KB_PREV_TAB:
-		SendMessage(m_pParent->hwnd, CM_ACTIVATEPREV, 0, (LPARAM)m_hwnd);
+		m_pParent->ActivatePrevChild(m_hwnd);
 		return FALSE;
 	case KB_NEXT_TAB:
-		SendMessage(m_pParent->hwnd, CM_ACTIVATENEXT, 0, (LPARAM)m_hwnd);
+		m_pParent->ActivateNextChild(m_hwnd);
 		return FALSE;
 	case KB_SWITCHSTATUSBAR:
-		SendMessage(m_pParent->hwnd, DM_SWITCHSTATUSBAR, 0, 0);
+		m_pParent->ToggleStatusBar();
 		return FALSE;
 	case KB_SWITCHTITLEBAR:
-		SendMessage(m_pParent->hwnd, DM_SWITCHTITLEBAR, 0, 0);
+		m_pParent->ToggleTitleBar();
 		return FALSE;
 	case KB_SWITCHINFOBAR:
-		SendMessage(m_pParent->hwnd, DM_SWITCHINFOBAR, 0, 0);
+		m_pParent->ToggleInfoBar();
 		return FALSE;
 	case KB_SWITCHTOOLBAR:
-		SendMessage(m_pParent->hwnd, DM_SWITCHTOOLBAR, 0, 0);
+		m_pParent->ToggleToolBar();
 		return FALSE;
 	case KB_MINIMIZE:
-		ShowWindow(m_pParent->hwnd, SW_MINIMIZE);
+		ShowWindow(m_pParent->m_hwnd, SW_MINIMIZE);
 		return FALSE;
 	case KB_CLOSE:
 		SendMessage(m_hwnd, WM_CLOSE, 0, 0);
 		return FALSE;
 	case KB_CLEAR_LOG:
-		SendMessage(m_hwnd, DM_CLEARLOG, 0, 0);
+		ClearLog();
 		return FALSE;
 	case KB_TAB1:
 	case KB_TAB2:
@@ -190,7 +190,7 @@ int CScriverWindow::InputAreaShortcuts(HWND hwnd, UINT msg, WPARAM wParam, LPARA
 	case KB_TAB7:
 	case KB_TAB8:
 	case KB_TAB9:
-		SendMessage(m_pParent->hwnd, CM_ACTIVATEBYINDEX, 0, action - KB_TAB1);
+		m_pParent->ActivateChildByIndex(action - KB_TAB1);
 		return FALSE;
 	case KB_SEND_ALL:
 		PostMessage(m_hwnd, WM_COMMAND, IDC_SENDALL, 0);
@@ -209,7 +209,7 @@ int CScriverWindow::InputAreaShortcuts(HWND hwnd, UINT msg, WPARAM wParam, LPARA
 	switch (msg) {
 	case WM_KEYDOWN:
 		if (wParam >= '1' && wParam <= '9' && isCtrl) {
-			SendMessage(m_pParent->hwnd, CM_ACTIVATEBYINDEX, 0, wParam - '1');
+			m_pParent->ActivateChildByIndex(wParam - '1');
 			return 0;
 		}
 
@@ -219,12 +219,12 @@ int CScriverWindow::InputAreaShortcuts(HWND hwnd, UINT msg, WPARAM wParam, LPARA
 		if (wParam == VK_SPACE && isCtrl) // ctrl-space (paste clean text)
 			return FALSE;
 
-		if (wParam == 'R' && isCtrl && isShift) {     // ctrl-shift-r
-			SendMessage(m_hwnd, DM_SWITCHRTL, 0, 0);
+		if (wParam == 'R' && isCtrl && isShift) { // ctrl-shift-r
+			ToggleRtl();
 			return FALSE;
 		}
 
-		if ((wParam == VK_UP || wParam == VK_DOWN) && isCtrl && !g_plugin.getByte(SRMSGSET_AUTOCLOSE, SRMSGDEFSET_AUTOCLOSE)) {
+		if ((wParam == VK_UP || wParam == VK_DOWN) && isCtrl && !g_plugin.bAutoClose) {
 			if (cmdList && hwnd == m_message.GetHwnd()) {
 				TCmdList *cmdListNew = nullptr;
 				if (wParam == VK_UP) {
@@ -270,11 +270,11 @@ int CScriverWindow::InputAreaShortcuts(HWND hwnd, UINT msg, WPARAM wParam, LPARA
 
 	case WM_SYSKEYDOWN:
 		if ((wParam == VK_LEFT) && isAlt) {
-			SendMessage(m_pParent->hwnd, CM_ACTIVATEPREV, 0, (LPARAM)m_hwnd);
+			m_pParent->ActivatePrevChild(m_hwnd);
 			return 0;
 		}
 		if ((wParam == VK_RIGHT) && isAlt) {
-			SendMessage(m_pParent->hwnd, CM_ACTIVATENEXT, 0, (LPARAM)m_hwnd);
+			m_pParent->ActivateNextChild(m_hwnd);
 			return 0;
 		}
 		break;

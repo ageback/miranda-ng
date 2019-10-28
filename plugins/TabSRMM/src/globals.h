@@ -32,7 +32,7 @@
 
 struct TSplitterBroadCast {
 	TContainerData *pSrcContainer;
-	CTabBaseDlg *pSrcDat;
+	CMsgDialog *pSrcDat;
 	LONG pos, pos_chat;
 	LONG off_chat, off_im;
 	LPARAM lParam;
@@ -66,13 +66,12 @@ public:
 	HWND        g_hwndHotkeyHandler;
 	HICON       g_iconIn, g_iconOut, g_iconErr, g_iconContainer, g_iconStatus;
 	HICON       g_iconOverlayDisabled, g_iconOverlayEnabled, g_iconClock;
-	HCURSOR     hCurSplitNS, hCurSplitWE;
+	HCURSOR     hCurSplitNS, hCurSplitWE, hCurSplitSW, hCurSplitWSE;
 	HBITMAP     g_hbmUnknown;
-	bool        g_SmileyAddAvail, g_WantIEView, g_WantHPP;
+	bool        g_SmileyAddAvail;
 	HIMAGELIST  g_hImageList;
 	HICON       g_IconMsgEvent, g_IconTypingEvent, g_IconFileEvent, g_IconSend;
 	HICON       g_IconMsgEventBig, g_IconTypingEventBig;
-	HICON       g_IconGroupOpen, g_IconGroupClose, g_IconChecked, g_IconUnchecked;
 	HMENU       g_hMenuContext, g_hMenuContainer, g_hMenuTrayUnread;
 	HMENU       g_hMenuFavorites, g_hMenuRecent, g_hMenuTrayContext;
 	HICON       g_buttonBarIcons[NR_BUTTONBARICONS];
@@ -90,6 +89,7 @@ public:
 	bool        m_bHideOnClose;
 	bool        m_bStatusOnTabs;
 	bool        m_bLogStatusChanges;
+	bool        m_bUseSameSplitSize;
 	bool        m_bUseDividers;
 	bool        m_bDividersUsePopupConfig;
 	bool        m_bAllowOfflineMultisend;

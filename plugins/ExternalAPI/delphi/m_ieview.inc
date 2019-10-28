@@ -48,7 +48,6 @@ const
 type
   PIEVIEWWINDOW = ^TIEVIEWWINDOW;
   TIEVIEWWINDOW = record
-    cbSize : int;   // size of the strusture
     iType  : int;   // one of IEW_* values
     dwMode : dword; // compatibility mode - one of IEWM_* values
     dwFlags: dword; // flags, one of IEWF_* values
@@ -122,7 +121,6 @@ const
 type
   PtagIEVIEWEVENTDATA = ^TtagIEVIEWEVENTDATA;
   TtagIEVIEWEVENTDATA = record
-    cbSize   :int;
     iType    :int;       // Event type, one of MUCC_EVENT_* values
     dwFlags  :dword;     // Event flags - IEEF_*
     fontName :PAnsiChar;     // Text font name
@@ -151,11 +149,6 @@ const
   IEEF_NO_UNICODE   = 2; // disable Unicode support
   IEEF_NO_SCROLLING = 4; // do not scroll logs to bottom
 
-const
-  IEVIEWEVENT_SIZE_V1 = 28;
-  IEVIEWEVENT_SIZE_V2 = 32;
-  IEVIEWEVENT_SIZE_V3 = 36;
-
 type
   tagIEVIEWEVENT = record
     case byte of
@@ -165,7 +158,6 @@ type
 
   PIEVIEWEVENT = ^TIEVIEWEVENT;
   TIEVIEWEVENT = record
-    cbSize   :int;            // size of the strusture
     iType    :int;            // one of IEE_* values
     dwFlags  :dword;          // one of IEEF_* values
     hwnd     :HWND;           // HWND returned by IEW_CREATE
@@ -206,7 +198,6 @@ const
 
 type
   IEVIEWNAVIGATE = record
-    cbSize :int;   // size of the strusture
     iType  :int;   // one of IEN_* values
     dwFlags:dword; // one of IEEF_* values
     hwnd   :HWND;  // HWND returned by IEW_CREATE

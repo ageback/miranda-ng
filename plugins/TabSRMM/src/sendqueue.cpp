@@ -35,7 +35,7 @@ SendQueue *sendQueue = nullptr;
 // as "failed" by either the ACKRESULT_FAILED or a timeout handler
 // returns: zero-based queue index or -1 if none was found
 
-int SendQueue::findNextFailed(const CTabBaseDlg *dat) const
+int SendQueue::findNextFailed(const CMsgDialog *dat) const
 {
 	if (dat)
 		for (int i = 0; i < NR_SENDJOBS; i++)
@@ -45,7 +45,7 @@ int SendQueue::findNextFailed(const CTabBaseDlg *dat) const
 	return -1;
 }
 
-void SendQueue::handleError(CTabBaseDlg *dat, const int iEntry) const
+void SendQueue::handleError(CMsgDialog *dat, const int iEntry) const
 {
 	if (!dat) return;
 
@@ -63,7 +63,7 @@ void SendQueue::handleError(CTabBaseDlg *dat, const int iEntry) const
 //add a message to the sending queue.
 // iLen = required size of the memory block to hold the message
 
-int SendQueue::addTo(CTabBaseDlg *dat, size_t iLen, int dwFlags)
+int SendQueue::addTo(CMsgDialog *dat, size_t iLen, int dwFlags)
 {
 	int i;
 	int iFound = NR_SENDJOBS;
@@ -190,7 +190,7 @@ size_t SendQueue::getSendLength(const int iEntry)
 	return p.iSendLength;
 }
 
-int SendQueue::sendQueued(CTabBaseDlg *dat, const int iEntry)
+int SendQueue::sendQueued(CMsgDialog *dat, const int iEntry)
 {
 	HWND hwndDlg = dat->GetHwnd();
 	CContactCache *ccActive = CContactCache::getContactCache(dat->m_hContact);
@@ -214,9 +214,9 @@ int SendQueue::sendQueued(CTabBaseDlg *dat, const int iEntry)
 		}
 
 		if (iSendLength >= iMinLength) {
-			wchar_t	tszError[256];
+			wchar_t tszError[256];
 			mir_snwprintf(tszError, TranslateT("The message cannot be sent delayed or to multiple contacts, because it exceeds the maximum allowed message length of %d bytes"), iMinLength);
-			::SendMessage(dat->GetHwnd(), DM_ACTIVATETOOLTIP, IDC_SRMM_MESSAGE, LPARAM(tszError));
+			dat->ActivateTooltip(IDC_SRMM_MESSAGE, tszError);
 			sendQueue->clearJob(iEntry);
 			return 0;
 		}
@@ -238,12 +238,12 @@ int SendQueue::sendQueued(CTabBaseDlg *dat, const int iEntry)
 	if (dat->m_hContact == 0)
 		return 0;  //never happens
 
-	dat->m_nMax = (int)dat->m_cache->getMaxMessageLength(); // refresh length info
+	size_t iMaxSize = dat->m_cache->getMaxMessageLength();
 
 	if (M.GetByte("autosplit", 0) && !(dat->m_sendMode & SMODE_SENDLATER)) {
 		// determine send buffer length
 		BOOL fSplit = FALSE;
-		if ((int)getSendLength(iEntry) >= dat->m_nMax)
+		if (getSendLength(iEntry) >= iMaxSize)
 			fSplit = true;
 
 		if (!fSplit)
@@ -253,7 +253,7 @@ int SendQueue::sendQueued(CTabBaseDlg *dat, const int iEntry)
 		m_jobs[iEntry].hOwnerWnd = hwndDlg;
 		m_jobs[iEntry].iStatus = SQ_INPROGRESS;
 		m_jobs[iEntry].iAcksNeeded = 1;
-		m_jobs[iEntry].chunkSize = dat->m_nMax;
+		m_jobs[iEntry].chunkSize = (int)iMaxSize;
 
 		DWORD dwOldFlags = m_jobs[iEntry].dwFlags;
 		mir_forkthread(DoSplitSendA, (LPVOID)iEntry);
@@ -269,9 +269,9 @@ int SendQueue::sendQueued(CTabBaseDlg *dat, const int iEntry)
 			wchar_t	tszError[256];
 
 			size_t iSendLength = getSendLength(iEntry);
-			if ((int)iSendLength >= dat->m_nMax) {
-				mir_snwprintf(tszError, TranslateT("The message cannot be sent delayed or to multiple contacts, because it exceeds the maximum allowed message length of %d bytes"), dat->m_nMax);
-				SendMessage(dat->GetHwnd(), DM_ACTIVATETOOLTIP, IDC_SRMM_MESSAGE, LPARAM(tszError));
+			if (iSendLength >= iMaxSize) {
+				mir_snwprintf(tszError, TranslateT("The message cannot be sent delayed or to multiple contacts, because it exceeds the maximum allowed message length of %d bytes"), iMaxSize);
+				dat->ActivateTooltip(IDC_SRMM_MESSAGE, tszError);
 				clearJob(iEntry);
 				return 0;
 			}
@@ -321,15 +321,15 @@ void SendQueue::clearJob(const int iIndex)
 // ) user decided to cancel a failed send
 // it removes the completed / canceled send job from the queue and schedules the next job to send (if any)
 
-void SendQueue::checkQueue(const CTabBaseDlg *dat) const
+void SendQueue::checkQueue(const CMsgDialog *dat) const
 {
 	if (dat) {
 		HWND	hwndDlg = dat->GetHwnd();
 
 		if (dat->m_iOpenJobs == 0)
-			::HandleIconFeedback(const_cast<CTabBaseDlg*>(dat), (HICON)INVALID_HANDLE_VALUE);
+			::HandleIconFeedback(const_cast<CMsgDialog*>(dat), (HICON)INVALID_HANDLE_VALUE);
 		else if (!(dat->m_sendMode & SMODE_NOACK))
-			::HandleIconFeedback(const_cast<CTabBaseDlg*>(dat), PluginConfig.g_IconSend);
+			::HandleIconFeedback(const_cast<CMsgDialog*>(dat), PluginConfig.g_IconSend);
 
 		if (dat->m_pContainer->m_hwndActive == hwndDlg)
 			dat->UpdateReadChars();
@@ -340,7 +340,7 @@ void SendQueue::checkQueue(const CTabBaseDlg *dat) const
 // logs an error message to the message window.Optionally, appends the original message
 // from the given sendJob (queue index)
 
-void SendQueue::logError(CTabBaseDlg *dat, int iSendJobIndex, const wchar_t *szErrMsg) const
+void SendQueue::logError(CMsgDialog *dat, int iSendJobIndex, const wchar_t *szErrMsg) const
 {
 	if (dat == nullptr)
 		return;
@@ -361,13 +361,13 @@ void SendQueue::logError(CTabBaseDlg *dat, int iSendJobIndex, const wchar_t *szE
 	dbei.cbBlob = (int)iMsgLen;
 	dbei.timestamp = time(0);
 	dbei.szModule = (char *)szErrMsg;
-	dat->StreamInEvents(0, 1, 1, &dbei);
+	dat->LogEvent(&dbei);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // show or hide the error control button bar on top of the window
 
-void SendQueue::showErrorControls(CTabBaseDlg *dat, const int showCmd) const
+void SendQueue::showErrorControls(CMsgDialog *dat, const int showCmd) const
 {
 	UINT	myerrorControls[] = { IDC_STATICERRORICON, IDC_STATICTEXT, IDC_RETRY, IDC_CANCELSEND, IDC_MSGSENDLATER };
 	HWND	hwndDlg = dat->GetHwnd();
@@ -395,7 +395,7 @@ void SendQueue::showErrorControls(CTabBaseDlg *dat, const int showCmd) const
 		dat->EnableSending(TRUE);
 }
 
-void SendQueue::recallFailed(CTabBaseDlg *dat, int iEntry) const
+void SendQueue::recallFailed(CMsgDialog *dat, int iEntry) const
 {
 	if (dat == nullptr)
 		return;
@@ -412,7 +412,7 @@ void SendQueue::recallFailed(CTabBaseDlg *dat, int iEntry) const
 	SendDlgItemMessage(dat->GetHwnd(), IDC_SRMM_MESSAGE, EM_SETSEL, -1, -1);
 }
 
-int SendQueue::ackMessage(CTabBaseDlg *dat, WPARAM wParam, LPARAM lParam)
+int SendQueue::ackMessage(CMsgDialog *dat, WPARAM wParam, LPARAM lParam)
 {
 	ACKDATA *ack = (ACKDATA *)lParam;
 
@@ -537,7 +537,7 @@ LRESULT SendQueue::WarnPendingJobs(unsigned int)
 //
 // @return the index on success, -1 on failure
 
-int SendQueue::doSendLater(int iJobIndex, CTabBaseDlg *dat, MCONTACT hContact, bool fIsSendLater)
+int SendQueue::doSendLater(int iJobIndex, CMsgDialog *dat, MCONTACT hContact, bool fIsSendLater)
 {
 	bool  fAvail = sendLater->isAvail();
 
@@ -557,9 +557,10 @@ int SendQueue::doSendLater(int iJobIndex, CTabBaseDlg *dat, MCONTACT hContact, b
 		dbei.timestamp = time(0);
 		dbei.cbBlob = (int)mir_strlen(utfText) + 1;
 		dbei.pBlob = (PBYTE)(char*)utfText;
-		dat->StreamInEvents(0, 1, 1, &dbei);
+		dat->LogEvent(&dbei);
+
 		if (dat->m_hDbEventFirst == 0)
-			SendMessage(dat->GetHwnd(), DM_REMAKELOG, 0, 0);
+			dat->RemakeLog();
 		dat->m_cache->saveHistory();
 		dat->EnableSendButton(false);
 		if (dat->m_pContainer->m_hwndActive == dat->GetHwnd())

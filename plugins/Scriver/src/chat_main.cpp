@@ -44,16 +44,12 @@ static void OnFlashHighlight(SESSION_INFO *si, int bInactive)
 	if (!bInactive || !si->pDlg)
 		return;
 
-	if (g_Settings.bFlashWindowHighlight)
-		SendMessage(GetParent(si->pDlg->GetHwnd()), CM_STARTFLASHING, 0, 0);
-
 	si->wState |= GC_EVENT_HIGHLIGHT;
 	si->pDlg->FixTabIcons();
 	si->pDlg->UpdateTitle();
 
-	HWND hwndParent = GetParent(si->pDlg->GetHwnd());
-	if (g_Settings.bFlashWindowHighlight && GetActiveWindow() != si->pDlg->GetHwnd() && GetForegroundWindow() != hwndParent)
-		SendMessage(hwndParent, CM_STARTFLASHING, 0, 0);
+	if (g_Settings.bFlashWindowHighlight)
+		si->pDlg->StartFlashing();
 }
 
 static void OnFlashWindow(SESSION_INFO *si, int bInactive)
@@ -61,15 +57,11 @@ static void OnFlashWindow(SESSION_INFO *si, int bInactive)
 	if (!bInactive || !si->pDlg)
 		return;
 
-	if (g_Settings.bFlashWindow)
-		SendMessage(GetParent(si->pDlg->GetHwnd()), CM_STARTFLASHING, 0, 0);
-
 	si->pDlg->FixTabIcons();
 	si->pDlg->UpdateTitle();
 
-	HWND hwndParent = GetParent(si->pDlg->GetHwnd());
-	if (g_Settings.bFlashWindow && GetActiveWindow() != hwndParent && GetForegroundWindow() != hwndParent)
-		SendMessage(hwndParent, CM_STARTFLASHING, 0, 0);
+	if (g_Settings.bFlashWindow)
+		si->pDlg->StartFlashing();
 }
 
 static void OnDestroyModule(MODULEINFO *mi)
@@ -127,6 +119,26 @@ static void OnLoadSettings()
 	LOGFONT lf;
 	LoadMsgDlgFont(MSGFONTID_MESSAGEAREA, &lf, nullptr);
 	g_Settings.MessageBoxFont = CreateFontIndirect(&lf);
+}
+
+static void ShowRoom(SESSION_INFO *si)
+{
+	if (si == nullptr)
+		return;
+
+	// Do we need to create a window?
+	CMsgDialog *pDlg;
+	if (si->pDlg == nullptr) {
+		pDlg = new CMsgDialog(si);
+		pDlg->Show();
+
+		si->pDlg = pDlg;
+	}
+	else pDlg = si->pDlg;
+
+	pDlg->UpdateTabControl();
+	SendMessage(pDlg->GetHwnd(), WM_MOUSEACTIVATE, 0, 0);
+	SetFocus(GetDlgItem(pDlg->GetHwnd(), IDC_SRMM_MESSAGE));
 }
 
 int Chat_Load()

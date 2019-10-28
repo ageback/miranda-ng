@@ -128,6 +128,10 @@ static INT_PTR CALLBACK sttEnterStringDlgProc(HWND hwndDlg, UINT msg, WPARAM wPa
 				rc.bottom += (rc.bottom - rc.top) * 2;
 				SetWindowPos(hwndDlg, nullptr, 0, 0, rc.right - rc.left, rc.bottom - rc.top, SWP_NOMOVE | SWP_NOREPOSITION);
 				break;
+
+			default: // single string edit field
+				params->idcControl = IDC_TXT_SIMPLE;
+				params->height = rc.bottom - rc.top;
 			}
 		}
 		ShowWindow(GetDlgItem(hwndDlg, params->idcControl), SW_SHOW);
@@ -247,17 +251,16 @@ static INT_PTR CALLBACK sttEnterStringDlgProc(HWND hwndDlg, UINT msg, WPARAM wPa
 	return FALSE;
 }
 
-INT_PTR __cdecl svcEnterString(WPARAM, LPARAM lParam)
+MIR_APP_DLL(bool) EnterString(ENTER_STRING *pForm)
 {
-	ENTER_STRING *pForm = (ENTER_STRING*)lParam;
-	if (pForm == nullptr || pForm->cbSize != sizeof(ENTER_STRING))
-		return FALSE;
+	if (pForm == nullptr)
+		return false;
 
-	EnterStringFormParam param;
+	EnterStringFormParam param = {};
 	memcpy(&param, pForm, sizeof(ENTER_STRING));
 	if (!DialogBoxParam(g_plugin.getInst(), MAKEINTRESOURCE(IDD_ENTER_STRING), GetForegroundWindow(), sttEnterStringDlgProc, LPARAM(&param)))
-		return FALSE;
+		return false;
 
 	pForm->ptszResult = param.ptszResult;
-	return TRUE;
+	return true;
 }

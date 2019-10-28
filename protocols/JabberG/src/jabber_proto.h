@@ -186,6 +186,7 @@ struct CJabberProto : public PROTO<CJabberProto>, public IJabberInterface
 	CMOption<BYTE> m_bProcessXMPPLinks;
 	CMOption<BYTE> m_bIgnoreRosterGroups;
 	CMOption<BYTE> m_bEnableCarbons;
+	CMOption<BYTE> m_bUseHttpUpload;
 	CMOption<BYTE> m_bUseOMEMO;
 	CMOption<BYTE> m_bEnableStreamMgmt;
 
@@ -382,7 +383,7 @@ struct CJabberProto : public PROTO<CJabberProto>, public IJabberInterface
 	void   GcQuit(JABBER_LIST_ITEM* jid, int code, const TiXmlElement *reason);
 
 	void   AdminSet(const char *to, const char *ns, const char *szItem, const char *itemVal, const char *var, const char *varVal);
-	void   AdminGet(const char *to, const char *ns, const char *var, const char *varVal, JABBER_IQ_HANDLER foo);
+	void   AdminGet(const char *to, const char *ns, const char *var, const char *varVal, JABBER_IQ_HANDLER foo, void *pInfo = nullptr);
 	void   AdminSetReason(const char *to, const char *ns, const char *szItem, const char *itemVal, const char *var, const char *varVal, const char *rsn);
 	void   AddMucListItem(JABBER_MUC_JIDLIST_INFO* jidListInfo, const char *str);
 	void   AddMucListItem(JABBER_MUC_JIDLIST_INFO* jidListInfo, const char *str, const char *reason);
@@ -457,7 +458,7 @@ struct CJabberProto : public PROTO<CJabberProto>, public IJabberInterface
 	void   __cdecl FileServerThread(filetransfer *ft);
 
 	void   FtCancel(filetransfer *ft);
-	void   FtInitiate(char* jid, filetransfer *ft);
+	void   FtInitiate(const char* jid, filetransfer *ft);
 	void   FtHandleSiRequest(const TiXmlElement *iqNode);
 	void   FtAcceptSiRequest(filetransfer *ft);
 	void   FtAcceptIbbRequest(filetransfer *ft);
@@ -550,6 +551,8 @@ struct CJabberProto : public PROTO<CJabberProto>, public IJabberInterface
 	BOOL   OnFtHandleIbbIq(const TiXmlElement *iqNode, CJabberIqInfo *pInfo);
 	BOOL   OnIbbRecvdData(const char *data, const char *sid, const char *seq);
 
+	void   OnHttpSlotAllocated(const TiXmlElement *iqNode, CJabberIqInfo *pInfo);
+
 	void   OnFtSiResult(const TiXmlElement *iqNode, CJabberIqInfo *pInfo);
 	BOOL   FtIbbSend(int blocksize, filetransfer *ft);
 	BOOL   FtSend(HNETLIBCONN hConn, filetransfer *ft);
@@ -569,7 +572,7 @@ struct CJabberProto : public PROTO<CJabberProto>, public IJabberInterface
 
 	void   SetMucConfig(CJabberFormDlg *pDlg, void *from);
 	void   MucShutdown(void);
-	void   OnIqResultMucGetJidList(const TiXmlElement *iqNode, JABBER_MUC_JIDLIST_TYPE listType);
+	void   OnIqResultMucGetJidList(const TiXmlElement *iqNode, JABBER_MUC_JIDLIST_TYPE listType, CJabberIqInfo*);
 
 	//---- jabber_message_handlers.cpp ---------------------------------------------------
 
@@ -604,7 +607,6 @@ struct CJabberProto : public PROTO<CJabberProto>, public IJabberInterface
 
 	//---- jabber_menu.cpp ---------------------------------------------------------------
 
-	INT_PTR    __cdecl OnMenuConvertChatContact(WPARAM wParam, LPARAM lParam);
 	INT_PTR    __cdecl OnMenuRosterAdd(WPARAM wParam, LPARAM lParam);
 	INT_PTR    __cdecl OnMenuHandleRequestAuth(WPARAM wParam, LPARAM lParam);
 	INT_PTR    __cdecl OnMenuHandleGrantAuth(WPARAM wParam, LPARAM lParam);

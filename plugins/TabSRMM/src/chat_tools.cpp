@@ -28,6 +28,8 @@
 
 #include "stdafx.h"
 
+char szIndicators[] = { 0, '+', '%', '@', '!', '*' };
+
 static void __stdcall ShowRoomFromPopup(void *pi)
 {
 	SESSION_INFO *si = (SESSION_INFO*)pi;
@@ -133,7 +135,7 @@ BOOL DoPopup(SESSION_INFO *si, GCEVENT *gce)
 	if (si == nullptr || !(iEvent & si->iLogPopupFlags))
 		return true;
 
-	CTabBaseDlg *dat = si->pDlg;
+	CMsgDialog *dat = si->pDlg;
 	TContainerData *pContainer = dat ? dat->m_pContainer : nullptr;
 
 	wchar_t *bbStart, *bbEnd;
@@ -206,7 +208,7 @@ void DoFlashAndSoundWorker(FLASH_PARAMS *p)
 	if (si == nullptr)
 		return;
 
-	CTabBaseDlg *dat = nullptr;
+	CMsgDialog *dat = nullptr;
 	if (si->pDlg) {
 		dat = si->pDlg;
 		if (dat) {
@@ -290,7 +292,7 @@ BOOL DoSoundsFlashPopupTrayStuff(SESSION_INFO *si, GCEVENT *gce, BOOL bHighlight
 	if (gce == nullptr || si == nullptr || gce->bIsMe || si->iType == GCW_SERVER)
 		return FALSE;
 
-	CTabBaseDlg *dat = nullptr;
+	CMsgDialog *dat = nullptr;
 	FLASH_PARAMS *params = (FLASH_PARAMS*)mir_calloc(sizeof(FLASH_PARAMS));
 	params->hContact = si->hContact;
 	params->bInactive = TRUE;
@@ -307,8 +309,8 @@ BOOL DoSoundsFlashPopupTrayStuff(SESSION_INFO *si, GCEVENT *gce, BOOL bHighlight
 	if (bHighlight) {
 		gce->iType |= GC_EVENT_HIGHLIGHT;
 		params->sound = "ChatHighlight";
-		if (db_get_b(si->hContact, "CList", "Hidden", 0) != 0)
-			db_unset(si->hContact, "CList", "Hidden");
+		if (Contact_IsHidden(si->hContact) != 0)
+			Contact_Hide(si->hContact, false);
 		if (params->bInactive) {
 			bFlagUnread = true;
 			DoTrayIcon(si, gce);
@@ -491,7 +493,7 @@ void Chat_SetFilters(SESSION_INFO *si)
 	DWORD dwFlags_local = db_get_dw(si->hContact, CHAT_MODULE, "FilterFlags", GC_EVENT_ALL);
 	DWORD dwMask = db_get_dw(si->hContact, CHAT_MODULE, "FilterMask", 0);
 
-	CChatRoomDlg *pDlg = si->pDlg;
+	CMsgDialog *pDlg = si->pDlg;
 	if (pDlg) {
 		pDlg->m_iLogFilterFlags = dwFlags_default;
 		for (int i = 0; i < 32; i++) {

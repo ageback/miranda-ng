@@ -94,8 +94,7 @@ int MoveIeView(HWND hWnd)
 {
 	HistoryWindowData *data = (HistoryWindowData *)GetWindowLongPtr(hWnd, DWLP_USER);
 	if (data) {
-		IEVIEWWINDOW ieWnd = { 0 };
-		ieWnd.cbSize = sizeof(ieWnd);
+		IEVIEWWINDOW ieWnd = {};
 		ieWnd.parent = hWnd;
 		ieWnd.hwnd = data->hIEView;
 		ieWnd.iType = IEW_SETPOS;
@@ -108,8 +107,7 @@ int MoveIeView(HWND hWnd)
 int DestroyIEView(HWND hWnd)
 {
 	HistoryWindowData *data = (HistoryWindowData *)GetWindowLongPtr(hWnd, DWLP_USER);
-	IEVIEWWINDOW ieWnd = { 0 };
-	ieWnd.cbSize = sizeof(ieWnd);
+	IEVIEWWINDOW ieWnd = {};
 	ieWnd.parent = hWnd;
 	ieWnd.hwnd = data->hIEView;
 	ieWnd.iType = IEW_DESTROY;
@@ -131,19 +129,17 @@ void FillIEViewInfo(IEVIEWEVENTDATA *fillData, DBEVENTINFO dbInfo, PBYTE blob)
 		break;
 	}
 
-	fillData->pszNick = "<nick here>";
+	fillData->szNick.a = "<nick here>";
 	fillData->bIsMe = (dbInfo.flags & DBEF_SENT);
 	fillData->dwFlags = (dbInfo.flags & DBEF_SENT) ? IEEDF_SENT : 0;
 	fillData->time = dbInfo.timestamp;
 	size_t len = mir_strlen((char *)blob) + 1;
 	PBYTE pos;
 
-	fillData->pszText = (char *)blob;
-	//	fillData.pszText2 = (char *) blob;
+	fillData->szText.a = (char *)blob;
 	if (len < dbInfo.cbBlob) {
 		pos = blob + len;
-		fillData->pszTextW = (wchar_t *)pos;
-		//			fillData->pszText2W = (wchar_t *) pos;
+		fillData->szText.w = (wchar_t *)pos;
 		fillData->dwFlags |= IEEDF_UNICODE_TEXT;
 	}
 }
@@ -161,10 +157,9 @@ DWORD WINAPI WorkerThread(LPVOID lpvData)
 	IEVIEWEVENTDATA ieData[LOAD_COUNT] = { 0 };
 	PBYTE messages[LOAD_COUNT] = {};
 	MEVENT dbEvent = data->ieEvent.hDbEventFirst;
-	for (i = 0; i < LOAD_COUNT; i++) {
-		ieData[i].cbSize = sizeof(IEVIEWEVENTDATA); //set the cbsize here, no need to do it every time
+	for (i = 0; i < LOAD_COUNT; i++)
 		ieData[i].next = &ieData[i + 1]; //it's a vector, so v[i]'s next element is v[i + 1]
-	}
+
 	ieData[LOAD_COUNT - 1].next = nullptr;
 	IEVIEWEVENT ieEvent = data->ieEvent;
 	ieEvent.iType = IEE_LOG_MEM_EVENTS;
@@ -322,8 +317,7 @@ int LoadNext(HWND hWnd)
 int ScrollToBottom(HWND hWnd)
 {
 	HistoryWindowData *data = (HistoryWindowData *)GetWindowLongPtr(hWnd, DWLP_USER);
-	IEVIEWWINDOW ieWnd = { 0 };
-	ieWnd.cbSize = sizeof(ieWnd);
+	IEVIEWWINDOW ieWnd = {};
 	ieWnd.iType = IEW_SCROLLBOTTOM;
 	ieWnd.hwnd = data->hIEView;
 	ieWnd.parent = hWnd;

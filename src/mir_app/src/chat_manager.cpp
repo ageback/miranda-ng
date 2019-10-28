@@ -126,14 +126,6 @@ static void SM_FreeSession(SESSION_INFO *si, bool bRemoveContact = false)
 	mir_free(si->ptszName);
 	mir_free(si->ptszStatusbarText);
 	mir_free(si->ptszTopic);
-
-	while (si->lpCommands != nullptr) {
-		COMMANDINFO *pNext = si->lpCommands->next;
-		mir_free(si->lpCommands->lpCommand);
-		mir_free(si->lpCommands);
-		si->lpCommands = pNext;
-	}
-
 	delete si;
 }
 
@@ -318,22 +310,6 @@ BOOL SM_TakeStatus(const wchar_t *pszID, const char *pszModule, const wchar_t *p
 	return TRUE;
 }
 
-static BOOL SM_BroadcastMessage(const char *pszModule, UINT msg, WPARAM wParam, LPARAM lParam, BOOL bAsync)
-{
-	for (auto &si : g_arSessions) {
-		if (pszModule && _strcmpi(si->pszModule, pszModule))
-			continue;
-
-		if (si->pDlg) {
-			if (bAsync)
-				PostMessage(si->pDlg->GetHwnd(), msg, wParam, lParam);
-			else
-				SendMessage(si->pDlg->GetHwnd(), msg, wParam, lParam);
-		}
-	}
-	return TRUE;
-}
-
 BOOL SM_SetStatus(const char *pszModule, SESSION_INFO *si, int wStatus)
 {
 	if (si == nullptr) {
@@ -350,7 +326,7 @@ BOOL SM_SetStatus(const char *pszModule, SESSION_INFO *si, int wStatus)
 	si->wStatus = wStatus;
 	if (si->hContact) {
 		if (si->iType != GCW_SERVER && wStatus != ID_STATUS_OFFLINE)
-			db_unset(si->hContact, "CList", "Hidden");
+			Contact_Hide(si->hContact, false);
 
 		db_set_w(si->hContact, si->pszModule, "Status", (WORD)wStatus);
 	}
@@ -391,76 +367,6 @@ void SM_RemoveAll(void)
 		SM_FreeSession(it, false);
 		g_arSessions.remove(g_arSessions.indexOf(&it));
 	}
-}
-
-static void SM_AddCommand(const wchar_t *pszID, const char *pszModule, const char* lpNewCommand)
-{
-	SESSION_INFO *si = SM_FindSession(pszID, pszModule);
-	if (si == nullptr)
-		return;
-
-	COMMANDINFO *node = (COMMANDINFO *)mir_alloc(sizeof(COMMANDINFO));
-	node->lpCommand = mir_strdup(lpNewCommand);
-	node->last = nullptr; // always added at beginning!
-
-	// new commands are added at start
-	if (si->lpCommands == nullptr) {
-		node->next = nullptr;
-		si->lpCommands = node;
-	}
-	else {
-		node->next = si->lpCommands;
-		si->lpCommands->last = node; // hmm, weird
-		si->lpCommands = node;
-	}
-	si->lpCurrentCommand = nullptr; // current command
-	si->wCommandsNum++;
-
-	if (si->wCommandsNum > WINDOWS_COMMANDS_MAX) {
-		COMMANDINFO *pCurComm = si->lpCommands;
-		while (pCurComm->next != nullptr)
-			pCurComm = pCurComm->next;
-		
-		COMMANDINFO *pLast = pCurComm->last;
-		mir_free(pCurComm->lpCommand);
-		mir_free(pCurComm);
-		pLast->next = nullptr;
-		// done
-		si->wCommandsNum--;
-	}
-}
-
-static char* SM_GetPrevCommand(const wchar_t *pszID, const char *pszModule) // get previous command. returns nullptr if previous command does not exist. current command remains as it was.
-{
-	SESSION_INFO *si = SM_FindSession(pszID, pszModule);
-	if (si == nullptr)
-		return nullptr;
-
-	COMMANDINFO *pPrevCmd = nullptr;
-	if (si->lpCurrentCommand != nullptr) {
-		if (si->lpCurrentCommand->next != nullptr) // not nullptr
-			pPrevCmd = si->lpCurrentCommand->next; // next command (newest at beginning)
-		else
-			pPrevCmd = si->lpCurrentCommand;
-	}
-	else pPrevCmd = si->lpCommands;
-
-	si->lpCurrentCommand = pPrevCmd; // make it the new command
-	return (pPrevCmd) ? pPrevCmd->lpCommand : nullptr;
-}
-
-static char* SM_GetNextCommand(const wchar_t *pszID, const char *pszModule) // get next command. returns nullptr if next command does not exist. current command becomes nullptr (a prev command after this one will get you the last command)
-{
-	SESSION_INFO *si = SM_FindSession(pszID, pszModule);
-	if (si == nullptr)
-		return nullptr;
-
-	COMMANDINFO *pNextCmd = nullptr;
-	if (si->lpCurrentCommand != nullptr)
-		pNextCmd = si->lpCurrentCommand->last; // last command (newest at beginning)
-
-	si->lpCurrentCommand = pNextCmd; // make it the new command
-	return (pNextCmd) ? pNextCmd->lpCommand : nullptr;
 }
 
 static int SM_GetCount(const char *pszModule)
@@ -844,7 +750,8 @@ static BOOL UM_RemoveUser(SESSION_INFO *si, const wchar_t *pszUID)
 		return FALSE;
 
 	auto &arKeys = si->getKeyList();
-	arKeys.remove(pUser);
+	if (arKeys.remove(pUser) == -1)
+		DebugBreak();
 
 	auto &arUsers = si->getUserList();
 	for (auto &ui : arUsers) {
@@ -946,10 +853,6 @@ static void ResetApi()
 	g_chatApi.SM_CreateSession = ::SM_CreateSession;
 	g_chatApi.SM_FindSession = ::SM_FindSession;
 	g_chatApi.SM_GetStatusIcon = ::SM_GetStatusIcon;
-	g_chatApi.SM_BroadcastMessage = ::SM_BroadcastMessage;
-	g_chatApi.SM_AddCommand = ::SM_AddCommand;
-	g_chatApi.SM_GetPrevCommand = ::SM_GetPrevCommand;
-	g_chatApi.SM_GetNextCommand = ::SM_GetNextCommand;
 	g_chatApi.SM_GetCount = ::SM_GetCount;
 	g_chatApi.SM_FindSessionByIndex = ::SM_FindSessionByIndex;
 	g_chatApi.SM_GetUserFromIndex = ::SM_GetUserFromIndex;

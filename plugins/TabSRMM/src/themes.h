@@ -370,8 +370,8 @@ public:
 	static void    TSAPI	SkinDrawBG(HWND hwndClient, HWND hwnd, TContainerData *pContainer, RECT *rcClient, HDC hdcTarget);
 	static void    TSAPI	DrawDimmedIcon(HDC hdc, LONG left, LONG top, LONG dx, LONG dy, HICON hIcon, BYTE alpha);
 	static DWORD   TSAPI HexStringToLong(const wchar_t *szSource);
-	static UINT    TSAPI	DrawRichEditFrame(HWND hwnd, const CTabBaseDlg *mwdat, UINT skinID, UINT msg, WPARAM wParam, LPARAM lParam, WNDPROC OldWndProc);
-	static UINT    TSAPI	NcCalcRichEditFrame(HWND hwnd, const CTabBaseDlg *mwdat, UINT skinID, UINT msg, WPARAM wParam, LPARAM lParam, WNDPROC OldWndProc);
+	static UINT    TSAPI	DrawRichEditFrame(HWND hwnd, const CMsgDialog *mwdat, UINT skinID, UINT msg, WPARAM wParam, LPARAM lParam, WNDPROC OldWndProc);
+	static UINT    TSAPI	NcCalcRichEditFrame(HWND hwnd, const CMsgDialog *mwdat, UINT skinID, UINT msg, WPARAM wParam, LPARAM lParam, WNDPROC OldWndProc);
 	static HBITMAP TSAPI CreateAeroCompatibleBitmap(const RECT &rc, HDC dc);
 	static int     TSAPI	RenderText(HDC hdc, HANDLE hTheme, const wchar_t *szText, RECT *rc, DWORD dtFlags, const int iGlowSize = DEFAULT_GLOW_SIZE, COLORREF clr = 0, bool fForceAero = false);
 	static void    TSAPI	MapClientToParent(HWND hwndClient, HWND hwndParent, RECT &rc);
@@ -450,27 +450,29 @@ private:
 
 struct TabControlData
 {
-	BOOL    m_VisualStyles;
-	HWND    hwnd;
-	DWORD   dwStyle;
-	DWORD   cx, cy;
-	HANDLE  hTheme, hThemeButton, hbp;
-	BYTE    m_xpad;
-	TContainerData *pContainer;
-	BOOL    bDragging;
-	int     iBeginIndex;
-	int	iHoveredTabIndex;
-	int	iHoveredCloseIcon;
-	HWND    hwndDrag;
-	CSrmmWindow *dragDat;
+	HWND   hwnd;
+	DWORD  dwStyle;
+	DWORD  cx, cy;
+	HANDLE hTheme, hThemeButton, hbp;
+	int    xpad;
+	int    iBeginIndex;
+	int    iHoveredTabIndex;
+	int    iHoveredCloseIcon;
+	HWND   hwndDrag;
+
+	bool   bVisualStyles;
+	bool   bDragging;
+	bool   bRefreshWithoutClip;
+	bool   bSavePos;
+	bool   bTipActive;
+	bool   bAeroTabs;
+	bool   bCloseButton;
+	
 	HIMAGELIST himlDrag;
-	BOOL    bRefreshWithoutClip;
-	BOOL    fSavePos;
-	BOOL    fTipActive;
-	BOOL	fAeroTabs;
-	BOOL	fCloseButton;
-	CSrmmWindow* helperDat;				// points to the client data of the active tab
-	CImageItem*			helperItem, *helperGlowItem;				// aero ui, holding the skin image for the tabs
+	TContainerData *pContainer;
+	CMsgDialog *dragDat;
+	CMsgDialog *helperDat;  // points to the client data of the active tab
+	CImageItem *helperItem, *helperGlowItem;				// aero ui, holding the skin image for the tabs
 };
 
 extern CSkin *Skin;
@@ -495,12 +497,12 @@ struct ButtonItem {
 	char    szModule[256], szSetting[256];
 	BYTE    bValuePush[256], bValueRelease[256];
 	DWORD   type;
-	void(*pfnAction)(ButtonItem *item, HWND hwndDlg, CTabBaseDlg *dat, HWND hwndItem);
-	void(*pfnCallback)(ButtonItem *item, HWND hwndDlg, CTabBaseDlg *dat, HWND hwndItem);
+	void(*pfnAction)(ButtonItem *item, HWND hwndDlg, CMsgDialog *dat, HWND hwndItem);
+	void(*pfnCallback)(ButtonItem *item, HWND hwndDlg, CMsgDialog *dat, HWND hwndItem);
 	wchar_t   tszLabel[40];
 	ButtonItem* nextItem;
 	HANDLE  hContact;
-	CSrmmWindow *dat;
+	CMsgDialog *dat;
 };
 
 typedef struct _tagButtonSet {

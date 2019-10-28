@@ -293,8 +293,8 @@ BOOL DoSoundsFlashPopupTrayStuff(SESSION_INFO *si, GCEVENT *gce, BOOL bHighlight
 		gce->iType |= GC_EVENT_HIGHLIGHT;
 		if (bInactive || !g_Settings->bSoundsFocus)
 			Skin_PlaySound("ChatHighlight");
-		if (db_get_b(si->hContact, "CList", "Hidden", 0) != 0)
-			db_unset(si->hContact, "CList", "Hidden");
+		if (Contact_IsHidden(si->hContact))
+			Contact_Hide(si->hContact, false);
 		if (bInactive)
 			g_chatApi.DoTrayIcon(si, gce);
 		if (bInactive || !g_Settings->bPopupInactiveOnly)
@@ -567,6 +567,7 @@ MIR_APP_DLL(BOOL) Chat_DoEventHook(SESSION_INFO *si, int iType, const USERINFO *
 
 	gch.ptszText = (LPTSTR)pszText;
 	gch.dwData = dwItem;
+	gch.pDlg = si->pDlg;
 	NotifyEventHooks(hevSendEvent, 0, (WPARAM)&gch);
 	return TRUE;
 }
@@ -747,11 +748,13 @@ MIR_APP_DLL(void) Chat_AddMenuItems(HMENU hMenu, int nItems, const gc_item *Item
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-MIR_APP_DLL(UINT) Chat_CreateGCMenu(HWND hwnd, HMENU hMenu, POINT pt, SESSION_INFO *si, const wchar_t *pszUID, const wchar_t *pszWordText)
+UINT CreateGCMenu(HWND hwnd, HMENU hMenu, POINT pt, SESSION_INFO *si, const wchar_t *pszUID, const wchar_t *pszWordText)
 {
 	GCMENUITEMS gcmi = {};
-	gcmi.pszID = si->ptszID;
-	gcmi.pszModule = si->pszModule;
+	if (si) {
+		gcmi.pszID = si->ptszID;
+		gcmi.pszModule = si->pszModule;
+	}
 	gcmi.pszUID = (wchar_t*)pszUID;
 	gcmi.hMenu = hMenu;
 
@@ -781,21 +784,10 @@ MIR_APP_DLL(UINT) Chat_CreateGCMenu(HWND hwnd, HMENU hMenu, POINT pt, SESSION_IN
 		gcmi.Type = MENU_ON_NICKLIST;
 	}
 
-	NotifyEventHooks(hevBuildMenuEvent, 0, (WPARAM)&gcmi);
+	if (si)
+		NotifyEventHooks(hevBuildMenuEvent, 0, (WPARAM)&gcmi);
 
 	return TrackPopupMenu(hMenu, TPM_RETURNCMD | TPM_RIGHTBUTTON, pt.x, pt.y, 0, hwnd, nullptr);
-}
-
-MIR_APP_DLL(void) Chat_DestroyGCMenu(HMENU hMenu, int iIndex)
-{
-	MENUITEMINFO mii = { 0 };
-	mii.cbSize = sizeof(mii);
-	mii.fMask = MIIM_SUBMENU;
-	while (GetMenuItemInfo(hMenu, iIndex, TRUE, &mii)) {
-		if (mii.hSubMenu != nullptr)
-			DestroyMenu(mii.hSubMenu);
-		RemoveMenu(hMenu, iIndex, MF_BYPOSITION);
-	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

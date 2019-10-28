@@ -53,22 +53,17 @@
 
 #include "stdafx.h"
 
-/**
- * maps MUC event types to icon names for retrieving the "big" icons
- * while generating task bar thumbnails.
- * used by getMUCBigICon()
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// maps MUC event types to icon names for retrieving the "big" icons
+// while generating task bar thumbnails.
+// used by getMUCBigICon()
 
 CTaskbarInteract* Win7Taskbar = nullptr;
 
-/**
- * set the overlay icon for a task bar button. Used for typing notifications and incoming
- * message indicator.
- *
- * @param 	hwndDlg HWND: 	container window handle
- * @param 	lParam  LPARAM:	icon handle
- * @return	true if icon has been set and taskbar will accept it, false otherwise
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// sets the overlay icon for a task bar button. Used for typing notifications and incoming
+// message indicator.
+
 bool CTaskbarInteract::setOverlayIcon(HWND hwndDlg, LPARAM lParam) const
 {
 	if (m_pTaskbarInterface && m_isEnabled && m_fHaveLargeicons) {
@@ -78,10 +73,10 @@ bool CTaskbarInteract::setOverlayIcon(HWND hwndDlg, LPARAM lParam) const
 	return false;
 }
 
-/**
- * check the task bar status for "large icon mode".
- * @return bool: true if large icons are in use, false otherwise
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// checks the task bar status for "large icon mode".
+// @return bool: true if large icons are in use, false otherwise
+
 bool CTaskbarInteract::haveLargeIcons()
 {
 	m_fHaveLargeicons = false;
@@ -113,10 +108,9 @@ bool CTaskbarInteract::haveLargeIcons()
 	return(m_fHaveLargeicons);
 }
 
-/**
- * removes the overlay icon for the given container window
- * @param hwndDlg HWND: window handle
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// removes the overlay icon for the given container window
+
 void CTaskbarInteract::clearOverlayIcon(HWND hwndDlg) const
 {
 	if (m_pTaskbarInterface && m_isEnabled)
@@ -130,12 +124,10 @@ LONG CTaskbarInteract::updateMetrics()
 	return(m_IconSize);
 }
 
-/**
- * register a new task bar button ("tab") for the button group hwndContainer
- * (one of the top level message windows)
- * @param hwndTab			proxy window handle
- * @param hwndContainer		a message container window
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// register a new task bar button ("tab") for the button group hwndContainer
+// (one of the top level message windows)
+
 void CTaskbarInteract::registerTab(const HWND hwndTab, const HWND hwndContainer) const
 {
 	if (m_isEnabled) {
@@ -144,50 +136,39 @@ void CTaskbarInteract::registerTab(const HWND hwndTab, const HWND hwndContainer)
 	}
 }
 
-/**
- * remove a previously registered proxy window. The destructor of the proxy
- * window class is using this before destroying the proxy window itself.
- * @param hwndTab	proxy window handle
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// remove a previously registered proxy window. The destructor of the proxy
+// window class is using this before destroying the proxy window itself.
+// @param hwndTab	proxy window handle
+
 void CTaskbarInteract::unRegisterTab(const HWND hwndTab) const
 {
 	if (m_isEnabled)
 		m_pTaskbarInterface->UnregisterTab(hwndTab);
 }
 
-/**
- * set a tab as active. The active thumbnail will appear with a slightly
- * different background and transparency.
- *
- * @param hwndTab			window handle of the PROXY window to activate
- * 							(don't use the real window handle of the message
- * 							tab, because it is not a toplevel window).
- * @param hwndGroup			window group to which it belongs (usually, the
- * 							container window handle).
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// set a tab as active. The active thumbnail will appear with a slightly
+// different background and transparency.
+
 void CTaskbarInteract::SetTabActive(const HWND hwndTab, const HWND hwndGroup) const
 {
 	if (m_isEnabled)
 		m_pTaskbarInterface->SetTabActive(hwndTab, hwndGroup, 0);
 }
 
-/**
- * This is called from the broadcasted WM_DWMCOMPOSITIONCHANGED event by all messages
- * sessions. It checks and, if needed, destroys or creates a proxy object, based on
- * the status of the DWM
- * @param dat		session window data
- *
- * static member function
- */
-void CTabBaseDlg::VerifyProxy()
+/////////////////////////////////////////////////////////////////////////////////////////
+// This is called from the broadcasted WM_DWMCOMPOSITIONCHANGED event by all messages
+// sessions. It checks and, if needed, destroys or creates a proxy object, based on
+// the status of the DWM
+
+void CMsgDialog::VerifyProxy()
 {
 	if (IsWinVer7Plus() && PluginConfig.m_useAeroPeek) {
 		if (nullptr == m_pWnd) {
 			m_pWnd = new CProxyWindow(this);
-			if (m_pWnd) {
-				m_pWnd->updateIcon(m_hTabStatusIcon);
-				m_pWnd->updateTitle(m_cache->getNick());
-			}
+			m_pWnd->updateIcon(m_hTabStatusIcon);
+			m_pWnd->updateTitle(m_cache->getNick());
 		}
 		else m_pWnd->verifyDwmState();
 	}
@@ -202,12 +183,12 @@ void CTabBaseDlg::VerifyProxy()
 	}
 }
 
-/**
- * create the proxy (toplevel) window required to show per tab thumbnails
- * and previews for a message session.
- * each tab has one invisible proxy window
- */
-CProxyWindow::CProxyWindow(CTabBaseDlg *dat) :
+/////////////////////////////////////////////////////////////////////////////////////////
+// create the proxy (toplevel) window required to show per tab thumbnails
+// and previews for a message session.
+// each tab has one invisible proxy window
+
+CProxyWindow::CProxyWindow(CMsgDialog *dat) :
 	m_dat(dat)
 {
 	m_hwndProxy = ::CreateWindowEx(/*WS_EX_TOOLWINDOW | */WS_EX_NOACTIVATE, PROXYCLASSNAME, L"",
@@ -231,10 +212,10 @@ CProxyWindow::~CProxyWindow()
 	delete m_thumb;
 }
 
-/**
- * verify status of DWM when system broadcasts a WM_DWMCOMPOSITIONCHANGED message
- * delete thumbnails, if no longer needed
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// verify status of DWM when system broadcasts a WM_DWMCOMPOSITIONCHANGED message
+// delete thumbnails, if no longer needed
+
 void CProxyWindow::verifyDwmState()
 {
 	if (!M.isDwmActive()) {
@@ -252,13 +233,10 @@ void CProxyWindow::verifyDwmState()
 	}
 }
 
-/**
- * send a thumbnail to the DWM. If required, refresh it first.
- * called by WM_DWMSENDICONICTHUMBNAIL handler.
- *
- * @param width		thumbnail width as requested by DWM via lParam
- * @param height	thumbnail height as requested by DWM via lParam
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// send a thumbnail to the DWM. If required, refresh it first.
+// called by WM_DWMSENDICONICTHUMBNAIL handler.
+
 void CProxyWindow::sendThumb(LONG width, LONG height)
 {
 	if (nullptr == m_thumb) {
@@ -275,20 +253,19 @@ void CProxyWindow::sendThumb(LONG width, LONG height)
 		CMimAPI::m_pfnDwmSetIconicThumbnail(m_hwndProxy, m_thumb->getHBM(), DWM_SIT_DISPLAYFRAME);
 }
 
-/**
- * send a live preview image of a given message session to the DWM.
- * called by WM_DWMSENDICONICLIVEPREVIEWBITMAP on DWM's request.
- *
- * The bitmap can be deleted after submitting it, because the DWM
- * will cache a copy of it (and re-request it when its own bitmap cache
- * was purged).
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// send a live preview image of a given message session to the DWM.
+// called by WM_DWMSENDICONICLIVEPREVIEWBITMAP on DWM's request.
+//
+// The bitmap can be deleted after submitting it, because the DWM
+// will cache a copy of it (and re-request it when its own bitmap cache was purged).
+
 void CProxyWindow::sendPreview()
 {
 	if (m_dat->m_pContainer == nullptr)
 		return;
 
-	CSrmmWindow *dat_active = reinterpret_cast<CSrmmWindow *>(::GetWindowLongPtr(m_dat->m_pContainer->m_hwndActive, GWLP_USERDATA));
+	CMsgDialog *dat_active = reinterpret_cast<CMsgDialog *>(::GetWindowLongPtr(m_dat->m_pContainer->m_hwndActive, GWLP_USERDATA));
 	if (!m_thumb || !dat_active)
 		return;
 
@@ -298,23 +275,19 @@ void CProxyWindow::sendPreview()
 	HDC hdc, dc;
 	int twips = (int)(15.0f / PluginConfig.m_DPIscaleY);
 	bool fIsChat = m_dat->isChat();
-	HWND 	hwndRich = ::GetDlgItem(m_dat->GetHwnd(), IDC_SRMM_LOG);
-	LONG 	cx, cy;
+	HWND hwndRich = m_dat->m_pLog->GetHwnd();
 	POINT	ptOrigin = { 0 }, ptBottom;
 
 	if (m_dat->m_dwFlags & MWF_NEEDCHECKSIZE) {
 		RECT	rcClient;
-
 		::SendMessage(m_dat->m_pContainer->m_hwnd, DM_QUERYCLIENTAREA, 0, (LPARAM)&rcClient);
 		::MoveWindow(m_dat->GetHwnd(), rcClient.left, rcClient.top, (rcClient.right - rcClient.left), (rcClient.bottom - rcClient.top), FALSE);
 		::SendMessage(m_dat->GetHwnd(), WM_SIZE, 0, 0);
 		m_dat->DM_ScrollToBottom(0, 1);
 	}
-	/*
-		* a minimized container has a null rect as client area, so do not use it
-		* use the last known client area size instead.
-		*/
-
+	
+	// a minimized container has a null rect as client area, so do not use it
+	// use the last known client area size instead.
 	if (!::IsIconic(m_dat->m_pContainer->m_hwnd)) {
 		::GetWindowRect(m_dat->m_pContainer->m_hwndActive, &rcLog);
 		::GetClientRect(m_dat->m_pContainer->m_hwnd, &rcContainer);
@@ -333,8 +306,8 @@ void CProxyWindow::sendPreview()
 	ptBottom.y = rcTemp.bottom;
 	::ScreenToClient(m_dat->m_pContainer->m_hwnd, &ptBottom);
 
-	cx = rcLog.right - rcLog.left;
-	cy = rcLog.bottom - rcLog.top;
+	int cx = rcLog.right - rcLog.left;
+	int cy = rcLog.bottom - rcLog.top;
 	rcRich.left = 0;
 	rcRich.top = 0;
 	rcRich.right = cx;
@@ -352,10 +325,7 @@ void CProxyWindow::sendPreview()
 
 	LRESULT first = ::SendMessage(hwndRich, EM_CHARFROMPOS, 0, LPARAM(&ptOrigin));
 
-	/*
-		* paint the content of the message log control into a separate bitmap without
-		* transparency
-		*/
+	// paint the content of the message log control into a separate bitmap without transparency
 	HDC hdcRich = ::CreateCompatibleDC(dc);
 	HBITMAP hbmRich = CSkin::CreateAeroCompatibleBitmap(rcRich, hdcRich);
 	HBITMAP hbmRichOld = reinterpret_cast<HBITMAP>(::SelectObject(hdcRich, hbmRich));
@@ -365,9 +335,9 @@ void CProxyWindow::sendPreview()
 	::FillRect(hdcRich, &rcRich, br);
 	::DeleteObject(br);
 
-	if (m_dat->m_hwndIEView)
-		::SendMessage(m_dat->m_hwndIEView, WM_PRINT, reinterpret_cast<WPARAM>(hdcRich), PRF_CLIENT | PRF_NONCLIENT);
-	else if (m_dat->m_hwndHPP) {
+	if (m_dat->m_iLogMode == WANT_IEVIEW_LOG)
+		::SendMessage(hwndRich, WM_PRINT, reinterpret_cast<WPARAM>(hdcRich), PRF_CLIENT | PRF_NONCLIENT);
+	else if (m_dat->m_iLogMode == WANT_HPP_LOG) {
 		CSkin::RenderText(hdcRich, m_dat->m_hTheme, TranslateT("Previews not available when using History++ plugin for message log display."),
 			&rcRich, DT_VCENTER | DT_CENTER | DT_WORDBREAK, 10, m_dat->m_pContainer->m_theme.fontColors[MSGFONTID_MYMSG], false);
 	}
@@ -381,7 +351,6 @@ void CProxyWindow::sendPreview()
 		fr.rcPage = rcRich;
 		fr.chrg.cpMax = -1;
 		fr.chrg.cpMin = first;
-
 		::SendMessage(hwndRich, EM_FORMATRANGE, 1, LPARAM(&fr));
 	}
 
@@ -406,16 +375,13 @@ void CProxyWindow::sendPreview()
 	::DeleteObject(hbm);
 }
 
-/**
- * set the large icon for the thumbnail. This is mostly used by group chats
- * to indicate last active event in the session.
- *
- * hIcon may be 0 to remove a custom big icon. In that case, the renderer
- * will try to figure out a suitable one, based on session data.
- *
- * @param hIcon			icon handle (should be a 32x32 icon)
- * @param fInvalidate	invalidate the thumbnail (default value = true)
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// set the large icon for the thumbnail. This is mostly used by group chats
+// to indicate last active event in the session.
+//
+// hIcon may be 0 to remove a custom big icon. In that case, the renderer
+// will try to figure out a suitable one, based on session data.
+
 void CProxyWindow::setBigIcon(const HICON hIcon, bool fInvalidate)
 {
 	m_hBigIcon = hIcon;
@@ -423,15 +389,12 @@ void CProxyWindow::setBigIcon(const HICON hIcon, bool fInvalidate)
 		Invalidate();
 }
 
-/**
- * set a overlay icon for the thumbnail. This is mostly used by group chats
- * to indicate last active event in the session.
- *
- * hIcon may be 0 to remove a custom overlay icon.
- *
- * @param hIcon			icon handle (should be a 16x16 icon)
- * @param fInvalidate	invalidate the thumbnail (default value = true)
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// set a overlay icon for the thumbnail. This is mostly used by group chats
+// to indicate last active event in the session.
+// 
+// hIcon may be 0 to remove a custom overlay icon.
+
 void CProxyWindow::setOverlayIcon(const HICON hIcon, bool fInvalidate)
 {
 	m_hOverlayIcon = hIcon;
@@ -439,34 +402,32 @@ void CProxyWindow::setOverlayIcon(const HICON hIcon, bool fInvalidate)
 		Invalidate();
 }
 
-/**
- * update the (small) thumbnail icon in front of the title string
- * @param hIcon		new icon handle
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// update the (small) thumbnail icon in front of the title string
+
 void CProxyWindow::updateIcon(const HICON hIcon) const
 {
 	if (m_hwndProxy && hIcon)
 		::SendMessage(m_hwndProxy, WM_SETICON, ICON_SMALL, LPARAM(hIcon));
 }
 
-/**
- * set the task bar button ("tab") active. This activates the proxy
- * window as a sub-window of the (top level) container window.
- * This is called whenever the active message tab or window changes
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// set the task bar button ("tab") active. This activates the proxy
+// window as a sub-window of the (top level) container window.
+// This is called whenever the active message tab or window changes
+
 void CProxyWindow::activateTab() const
 {
 	Win7Taskbar->SetTabActive(m_hwndProxy, m_dat->m_pContainer->m_hwnd);
 }
-/**
- * invalidate the thumbnail, it will be recreated at the next request
- * by the DWM
- *
- * this is called from several places whenever a relevant information,
- * represented in a thumbnail image, has changed.
- *
- * also tell the DWM that it must request a new thumb.
- */
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// invalidate the thumbnail, it will be recreated at the next request by the DWM
+// 
+// this is called from several places whenever a relevant information,
+// represented in a thumbnail image, has changed.
+// also tells the DWM that it must request a new thumb.
+
 void CProxyWindow::Invalidate() const
 {
 	if (m_thumb) {
@@ -511,26 +472,26 @@ LRESULT CALLBACK CProxyWindow::stubWndProc(HWND hWnd, UINT msg, WPARAM wParam, L
 	return ::DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
-/**
- * window procedure for the proxy window
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// window procedure for the proxy window
+
 LRESULT CALLBACK CProxyWindow::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg) {
 	case WM_CLOSE:
-		SendMessage(m_dat->GetHwnd(), WM_CLOSE, 1, 2);
 		{
-			TContainerData *pC = m_dat->m_pContainer;
-			if (!IsIconic(pC->m_hwnd))
-				SetForegroundWindow(pC->m_hwnd);
+			HWND hwndCont = m_dat->m_pContainer->m_hwnd;
+
+			SendMessage(m_dat->GetHwnd(), WM_CLOSE, 1, 2);
+
+			if (!IsIconic(hwndCont))
+				SetForegroundWindow(hwndCont);
 		}
 		return 0;
 
-		/*
-		* proxy window was activated by clicking on the thumbnail. Send this
-		* to the real message window.
-		*/
 	case WM_ACTIVATE:
+		// proxy window was activated by clicking on the thumbnail. Send this
+		// to the real message window.
 		if (WA_ACTIVE == wParam) {
 			if (IsWindow(m_dat->GetHwnd()))
 				::PostMessage(m_dat->GetHwnd(), DM_ACTIVATEME, 0, 0);
@@ -553,13 +514,9 @@ LRESULT CALLBACK CProxyWindow::wndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARA
 	return ::DefWindowProc(hWnd, msg, wParam, lParam);
 }
 
-/**
- * base thumbnail class. Create the background and common parts for a
- * thumbnail
- *
- * @param _p			 owner proxy window object
- * @return
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// base thumbnail class. Create the background and common parts for a thumbnail
+
 CThumbBase::CThumbBase(const CProxyWindow* _p) :
 	m_isValid(false)
 {
@@ -568,11 +525,11 @@ CThumbBase::CThumbBase(const CProxyWindow* _p) :
 	renderBase();
 }
 
-/**
- * render base for a thumbnail. This creates the background, the large icon
- * and the basic status mode text. It also divides the thumbnail rectangle
- * into a few content rectangles used later by the content renderer.
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// render base for a thumbnail. This creates the background, the large icon
+// and the basic status mode text. It also divides the thumbnail rectangle
+// into a few content rectangles used later by the content renderer.
+
 void CThumbBase::renderBase()
 {
 	HICON	hIcon = nullptr;
@@ -657,9 +614,9 @@ void CThumbBase::renderBase()
 	m_cy = m_rcIcon.bottom - m_rcIcon.top;
 }
 
-/**
- * divide space into content rectangles for normal thumbnails
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// divide space into content rectangles for normal thumbnails
+
 void CThumbBase::setupRect()
 {
 	if (!m_pWnd->getDat()->isChat()) {
@@ -682,10 +639,9 @@ void CThumbBase::setupRect()
 	}
 }
 
-/**
- * destroy the thumbnail object. Just delete the bitmap we cached
- * @return
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// destroy the thumbnail object. Just delete the bitmap we cached 
+
 CThumbBase::~CThumbBase()
 {
 	if (m_hbmThumb) {
@@ -695,21 +651,18 @@ CThumbBase::~CThumbBase()
 	}
 }
 
-/**
- * create a IM session thumbnail. base class will create the
- * bitmap and render the background.
- *
- * @param _p	our owner (CProxyWindow object)
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// create a IM session thumbnail. base class will create the bitmap and render the background.
+
 CThumbIM::CThumbIM(const CProxyWindow* _p) : CThumbBase(_p)
 {
 	renderContent();
 	setValid(true);
 }
 
-/**
- * update the thumbnail, render everything and set it valid
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// update the thumbnail, render everything and set it valid
+
 void CThumbIM::update()
 {
 	renderBase();
@@ -717,11 +670,10 @@ void CThumbIM::update()
 	setValid(true);
 }
 
-/**
- * render the content for an IM chat session thumbnail
- * m_hdc etc. must already be initialized (done by the constructor)
- * background had been already rendered
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// render the content for an IM chat session thumbnail m_hdc etc. 
+// must already be initialized (done by the constructor) background had been already rendered
+
 void CThumbIM::renderContent()
 {
 	double dNewWidth = 0.0, dNewHeight = 0.0;
@@ -752,10 +704,8 @@ void CThumbIM::renderContent()
  	::DeleteDC(dc);
 	m_rcBottom.bottom -= 16;
 
-	/*
-	 * status message and bottom line (either UID or nick name, depending on
-	 * task bar grouping mode). For chat rooms, it is the topic.
-	 */
+	// status message and bottom line (either UID or nick name, depending on
+	// task bar grouping mode). For chat rooms, it is the topic.
 	if ((m_rcBottom.bottom - m_rcBottom.top) < 2 * m_sz.cy)
 		m_dtFlags |= DT_SINGLELINE;
 
@@ -771,12 +721,10 @@ void CThumbIM::renderContent()
 	CSkin::RenderText(m_hdc, m_dat->m_hTheme, Win7Taskbar->haveAlwaysGroupingMode() ? m_dat->m_cache->getUIN() : m_dat->m_cache->getNick(),
 		&m_rcBottom, m_dtFlags | DT_SINGLELINE | DT_WORD_ELLIPSIS | DT_END_ELLIPSIS, 10, 0, true);
 
-	/*
-	 * finalize it
-	 * do NOT delete the bitmap, the dwm will need the handle
-	 * m_hbm is deleted when a new thumbnail is generated on dwm's request.
-	 * this is not a leak!
-	 */
+	// finalize it
+	// do NOT delete the bitmap, the dwm will need the handle
+	// m_hbm is deleted when a new thumbnail is generated on dwm's request.
+	// this is not a leak!
 	if (m_hOldFont)
 		::SelectObject(m_hdc, m_hOldFont);
 
@@ -784,13 +732,10 @@ void CThumbIM::renderContent()
 	::DeleteDC(m_hdc);
 }
 
-/**
- * create a MUC session thumbnail. base class will create the
- * bitmap and render the background.
- *
- * @param _p	our owner (CProxyWindow object)
- * @return
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// create a MUC session thumbnail. base class will create the 
+// bitmap and render the background.
+
 CThumbMUC::CThumbMUC(const CProxyWindow* _p, SESSION_INFO *_si)
 	: CThumbBase(_p),
 	si(_si)
@@ -799,9 +744,9 @@ CThumbMUC::CThumbMUC(const CProxyWindow* _p, SESSION_INFO *_si)
 	setValid(true);
 }
 
-/**
- * update an invalidated thumbnail
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// update an invalidated thumbnail
+
 void CThumbMUC::update()
 {
 	renderBase();
@@ -809,9 +754,9 @@ void CThumbMUC::update()
 	setValid(true);
 }
 
-/**
- * render content area for a MUC thumbnail
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// render content area for a MUC thumbnail
+
 void CThumbMUC::renderContent()
 {
 	if (si == nullptr)
@@ -868,12 +813,10 @@ void CThumbMUC::renderContent()
 
 	CSkin::RenderText(m_hdc, m_dat->m_hTheme, szStatusMsg, &m_rcBottom, DT_WORD_ELLIPSIS | DT_END_ELLIPSIS | m_dtFlags, 10, 0, true);
 
-	/*
-	 * finalize it
-	 * do NOT delete the bitmap, the dwm will need the handle
-	 * m_hbm is deleted when a new thumbnail is generated on dwm's request.
-	 * this is not a leak!
-	 */
+	// finalize it
+	// do NOT delete the bitmap, the dwm will need the handle
+	// m_hbm is deleted when a new thumbnail is generated on dwm's request.
+	// this is not a leak!
 	if (m_hOldFont)
 		::SelectObject(m_hdc, m_hOldFont);
 

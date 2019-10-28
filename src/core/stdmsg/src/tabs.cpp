@@ -98,7 +98,7 @@ static LRESULT CALLBACK TabSubclassProc(HWND hwnd, UINT msg, WPARAM wParam, LPAR
 			ScreenToClient(hwnd, &tci.pt);
 			int idx = TabCtrl_HitTest(hwnd, &tci);
 			if (idx != -1 && idx != iBeginIndex)
-				SendMessage(GetParent(hwnd), GC_DROPPEDTAB, idx, iBeginIndex);
+				pOwner->DropTab(idx, iBeginIndex);
 		}
 		break;
 
@@ -153,6 +153,10 @@ bool CTabbedWindow::OnInitDialog()
 	m_hwndStatus = CreateWindowEx(0, STATUSCLASSNAME, nullptr, WS_CHILD | WS_VISIBLE | SBT_TOOLTIPS | SBARS_SIZEGRIP, 0, 0, 0, 0, m_hwnd, nullptr, g_plugin.getInst(), nullptr);
 	SendMessage(m_hwndStatus, SB_SETMINHEIGHT, GetSystemMetrics(SM_CYSMICON), 0);
 
+	RECT rc;
+	GetWindowRect(m_hwndStatus, &rc);
+	m_statusHeight = rc.bottom - rc.top;
+
 	SetWindowPosition();
 
 	if (!g_Settings.bTabsEnable) {
@@ -187,10 +191,8 @@ void CTabbedWindow::OnDestroy()
 int CTabbedWindow::Resizer(UTILRESIZECONTROL *urc)
 {
 	if (urc->wId == IDC_TAB) {
-		RECT rc;
-		GetWindowRect(m_hwndStatus, &rc);
 		urc->rcItem.top = 1;
-		urc->rcItem.bottom = urc->dlgNewSize.cy - (rc.bottom - rc.top) - 1;
+		urc->rcItem.bottom = urc->dlgNewSize.cy - m_statusHeight - 1;
 		return RD_ANCHORX_WIDTH | RD_ANCHORY_CUSTOM;
 	}
 	
@@ -201,7 +203,7 @@ int CTabbedWindow::Resizer(UTILRESIZECONTROL *urc)
 
 CTabbedWindow* CTabbedWindow::AddPage(MCONTACT hContact, wchar_t *pwszText, int iNoActivate)
 {
-	CSrmmWindow *pDlg = new CSrmmWindow(this, hContact);
+	CMsgDialog *pDlg = new CMsgDialog(this, hContact);
 	pDlg->m_wszInitialText = pwszText;
 	if (iNoActivate != -1)
 		pDlg->m_bNoActivate = iNoActivate != 0;
@@ -237,7 +239,7 @@ void CTabbedWindow::AddPage(SESSION_INFO *si, int insertAt)
 		if (!IsWindowVisible(m_hwnd))
 			Show(SW_SHOW);
 
-		CChatRoomDlg *pDlg = new CChatRoomDlg(this, si);
+		CMsgDialog *pDlg = new CMsgDialog(this, si);
 		pDlg->SetParent(m_hwnd);
 		m_tab.AddPage(szTemp, nullptr, pDlg);
 		m_tab.ActivatePage(m_tab.GetCount() - 1);
@@ -250,6 +252,32 @@ void CTabbedWindow::AddPage(SESSION_INFO *si, int insertAt)
 CMsgDialog* CTabbedWindow::CurrPage() const
 {
 	return (m_pEmbed != nullptr) ? m_pEmbed : (CMsgDialog*)m_tab.GetActivePage();
+}
+
+void CTabbedWindow::DropTab(int begin, int end)
+{
+	if (begin == end)
+		return;
+
+	m_tab.SwapPages(begin, end);
+
+	CMsgDialog *pDlg = (CMsgDialog *)m_tab.GetNthPage(end);
+	if (pDlg) {
+		FixTabIcons(pDlg);
+		m_tab.ActivatePage(end);
+	}
+
+	// fix the "fixed" positions
+	int tabCount = m_tab.GetCount();
+	for (int i = 0; i < tabCount; i++) {
+		pDlg = (CMsgDialog *)m_tab.GetNthPage(i);
+		if (pDlg == nullptr)
+			continue;
+
+		SESSION_INFO *si = pDlg->m_si;
+		if (si && si->hContact && db_get_w(si->hContact, si->pszModule, "TabPosition", 0) != 0)
+			db_set_w(si->hContact, si->pszModule, "TabPosition", i + 1);
+	}
 }
 
 void CTabbedWindow::FixTabIcons(CMsgDialog *pDlg)
@@ -278,11 +306,27 @@ void CTabbedWindow::FixTabIcons(CMsgDialog *pDlg)
 	if (pDlg == CurrPage()) {
 		Window_FreeIcon_IcoLib(m_hwnd);
 		if (g_dat.bUseStatusWinIcon)
-			Window_SetProtoIcon_IcoLib(m_hwnd, pDlg->GetProto(), pDlg->GetStatus());
+			Window_SetProtoIcon_IcoLib(m_hwnd, pDlg->m_szProto, pDlg->m_wStatus);
 		else if (pDlg->isChat())
 			Window_SetIcon_IcoLib(m_hwnd, g_plugin.getIconHandle(IDI_CHANMGR));
 		else
 			Window_SetSkinIcon_IcoLib(m_hwnd, SKINICON_EVENT_MESSAGE);
+	}
+}
+
+void CTabbedWindow::RemoveTab(CMsgDialog *pDlg)
+{
+	int idx = m_tab.GetDlgIndex(pDlg);
+	if (idx == -1)
+		return;
+
+	m_tab.RemovePage(idx);
+	if (m_tab.GetCount() == 0)
+		PostMessage(m_hwnd, WM_CLOSE, 0, 0);
+	else {
+		if (m_tab.GetNthPage(idx) == nullptr)
+			idx--;
+		m_tab.ActivatePage(idx);
 	}
 }
 
@@ -355,32 +399,92 @@ void CTabbedWindow::SetWindowPosition()
 		else SetWindowPos(m_hwnd, nullptr, 0, 0, 550, 400, SWP_NOZORDER | SWP_NOMOVE | SWP_SHOWWINDOW);
 	}
 
-	if (!g_dat.bSavePerContact && g_dat.bCascade)
-		Srmm_Broadcast(DM_CASCADENEWWINDOW, (WPARAM)m_hwnd, (LPARAM)&m_windowWasCascaded);
+	if (!g_dat.bSavePerContact && g_dat.bCascade) {
+		RECT rc, rcMax = {};
+		CTabbedWindow *pMaxTab = nullptr;
+
+		for (auto &it : g_arDialogs) {
+			auto *pTab = it->m_pOwner;
+			if (pTab == this)
+				continue;
+
+			GetWindowRect(pTab->GetHwnd(), &rc);
+			if (rc.left > rcMax.left && rc.top > rcMax.top) {
+				pMaxTab = pTab;
+				rcMax = rc;
+			}
+		}
+
+		if (pMaxTab) {
+			m_windowWasCascaded = 1;
+			int offset = GetSystemMetrics(SM_CYCAPTION) + GetSystemMetrics(SM_CYFRAME);
+			SetWindowPos(m_hwnd, nullptr, rcMax.left + offset, rcMax.top + offset, 0, 0, SWP_NOZORDER | SWP_NOACTIVATE | SWP_NOSIZE);
+		}
+	}
+}
+
+void CTabbedWindow::SwitchNextTab()
+{
+	int total = m_tab.GetCount();
+	int i = TabCtrl_GetCurSel(m_tab.GetHwnd());
+	if (i != -1 && total > 1) {
+		if (i < total - 1)
+			i++;
+		else
+			i = 0;
+		m_tab.ActivatePage(i);
+		TabClicked();
+	}
+}
+
+void CTabbedWindow::SwitchPrevTab()
+{
+	int total = m_tab.GetCount();
+	int i = TabCtrl_GetCurSel(m_tab.GetHwnd());
+	if (i != -1 && total >= 1) {
+		if (i > 0)
+			i--;
+		else
+			i = total - 1;
+		m_tab.ActivatePage(i);
+		TabClicked();
+	}
+}
+
+void CTabbedWindow::SwitchTab(int iNewTab)
+{
+	int total = m_tab.GetCount();
+	int i = TabCtrl_GetCurSel(m_tab.GetHwnd());
+	if (i != -1 && total != -1 && total != 1 && i != iNewTab && total > iNewTab) {
+		m_tab.ActivatePage(iNewTab);
+		TabClicked();
+	}
 }
 
 void CTabbedWindow::TabClicked()
 {
-	CChatRoomDlg *pDlg = (CChatRoomDlg*)m_tab.GetActivePage();
+	CMsgDialog *pDlg = (CMsgDialog*)m_tab.GetActivePage();
 	if (pDlg == nullptr)
 		return;
 
-	SESSION_INFO *s = pDlg->m_si;
-	if (s) {
-		if (s->wState & STATE_TALK) {
-			s->wState &= ~STATE_TALK;
-			db_set_w(s->hContact, s->pszModule, "ApparentMode", 0);
+	SetFocus(pDlg->m_message.GetHwnd());
+
+	SESSION_INFO *si = pDlg->m_si;
+	if (si) {
+		if (si->wState & STATE_TALK) {
+			si->wState &= ~STATE_TALK;
+			db_set_w(si->hContact, si->pszModule, "ApparentMode", 0);
 		}
 
-		if (s->wState & GC_EVENT_HIGHLIGHT) {
-			s->wState &= ~GC_EVENT_HIGHLIGHT;
+		if (si->wState & GC_EVENT_HIGHLIGHT) {
+			si->wState &= ~GC_EVENT_HIGHLIGHT;
 
-			if (g_clistApi.pfnGetEvent(s->hContact, 0))
-				g_clistApi.pfnRemoveEvent(s->hContact, GC_FAKE_EVENT);
+			if (g_clistApi.pfnGetEvent(si->hContact, 0))
+				g_clistApi.pfnRemoveEvent(si->hContact, GC_FAKE_EVENT);
 		}
 
-		if (!s->pDlg) {
-			g_chatApi.ShowRoom(s);
+		if (!si->pDlg) {
+			g_chatApi.ShowRoom(si);
 			SendMessage(m_hwnd, WM_MOUSEACTIVATE, 0, 0);
 		}
 	}
@@ -396,113 +500,6 @@ INT_PTR CTabbedWindow::DlgProc(UINT msg, WPARAM wParam, LPARAM lParam)
 	int idx;
 
 	switch (msg) {
-	case GC_ADDTAB:
-		AddPage((SESSION_INFO*)lParam);
-		break;
-
-	case GC_SWITCHNEXTTAB:
-		{
-			int total = m_tab.GetCount();
-			int i = TabCtrl_GetCurSel(m_tab.GetHwnd());
-			if (i != -1 && total > 1) {
-				if (i < total - 1)
-					i++;
-				else
-					i = 0;
-				m_tab.ActivatePage(i);
-				TabClicked();
-			}
-		}
-		break;
-
-	case GC_SWITCHPREVTAB:
-		{
-			int total = m_tab.GetCount();
-			int i = TabCtrl_GetCurSel(m_tab.GetHwnd());
-			if (i != -1 && total >= 1) {
-				if (i > 0)
-					i--;
-				else
-					i = total - 1;
-				m_tab.ActivatePage(i);
-				TabClicked();
-			}
-		}
-		break;
-
-	case GC_SWITCHTAB:
-		{
-			int total = m_tab.GetCount();
-			int i = TabCtrl_GetCurSel(m_tab.GetHwnd());
-			if (i != -1 && total != -1 && total != 1 && i != lParam && total > lParam) {
-				m_tab.ActivatePage(i);
-				TabClicked();
-			}
-		}
-		break;
-
-	case GC_REMOVETAB:
-		idx = (lParam) ? m_tab.GetDlgIndex((CDlgBase*)lParam) : TabCtrl_GetCurSel(m_tab.GetHwnd());
-		if (idx == -1)
-			break;
-
-		m_tab.RemovePage(idx);
-		if (m_tab.GetCount() == 0)
-			PostMessage(m_hwnd, WM_CLOSE, 0, 0);
-		else {
-			if (m_tab.GetNthPage(idx) == nullptr)
-				idx--;
-			m_tab.ActivatePage(idx);
-		}
-		break;
-
-	case GC_TABCHANGE:
-		SetWindowLongPtr(m_hwnd, GWLP_USERDATA, (LONG_PTR)lParam);
-		// ScrollToBottom();
-		break;
-
-	case GC_DROPPEDTAB:
-		{
-			int begin = (int)lParam;
-			int end = (int)wParam;
-			if (begin == end)
-				break;
-
-			m_tab.SwapPages(begin, end);
-
-			CChatRoomDlg *pDlg = (CChatRoomDlg*)m_tab.GetNthPage(end);
-			if (pDlg) {
-				FixTabIcons(pDlg);
-				m_tab.ActivatePage(end);
-			}
-
-			// fix the "fixed" positions
-			int tabCount = m_tab.GetCount();
-			for (int i = 0; i < tabCount; i++) {
-				pDlg = (CChatRoomDlg*)m_tab.GetNthPage(i);
-				if (pDlg == nullptr)
-					continue;
-
-				SESSION_INFO *si = pDlg->m_si;
-				if (si && si->hContact && db_get_w(si->hContact, si->pszModule, "TabPosition", 0) != 0)
-					db_set_w(si->hContact, si->pszModule, "TabPosition", i + 1);
-			}
-		}
-		break;
-
-	case GC_RENAMETAB:
-		if (CChatRoomDlg *pDlg = (CChatRoomDlg*)lParam) {
-			idx = m_tab.GetDlgIndex(pDlg);
-			if (idx == -1)
-				break;
-
-			TCITEM tci;
-			tci.mask = TCIF_TEXT;
-			tci.pszText = pDlg->m_si->ptszName;
-			TabCtrl_SetItem(m_tab.GetHwnd(), idx, &tci);
-		}
-		break;
-
 	case WM_MOVE:
 		SaveWindowPosition(false);
 		break;
@@ -518,7 +515,7 @@ INT_PTR CTabbedWindow::DlgProc(UINT msg, WPARAM wParam, LPARAM lParam)
 		if (!((rc.right - rc.left) == oldSizeX && (rc.bottom - rc.top) == oldSizeY)) {
 			CMsgDialog *pDlg = (g_Settings.bTabsEnable) ? (CMsgDialog*)m_tab.GetActivePage() : m_pEmbed;
 			if (pDlg != nullptr) {
-				pDlg->ScrollToBottom();
+				pDlg->m_pLog->ScrollToBottom();
 				pDlg->Resize();
 			}
 		}

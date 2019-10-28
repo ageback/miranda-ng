@@ -128,6 +128,7 @@ CJabberProto::CJabberProto(const char *aProtoName, const wchar_t *aUserName) :
 	m_bProcessXMPPLinks(this, "ProcessXMPPLinks", false),
 	m_bIgnoreRosterGroups(this, "IgnoreRosterGroups", false),
 	m_bEnableCarbons(this, "EnableCarbons", true),
+	m_bUseHttpUpload(this, "UseHttpUpload", false),
 	m_bUseOMEMO(this, "UseOMEMO", false),
 	m_bEnableStreamMgmt(this, "UseStreamMgmt", false)
 {
@@ -358,7 +359,7 @@ MCONTACT CJabberProto::AddToListByJID(const char *newJid, DWORD flags)
 
 	MCONTACT hContact = DBCreateContact(newJid, nullptr, true, false);
 	if (flags & PALF_TEMPORARY)
-		db_set_b(hContact, "CList", "Hidden", 1);
+		Contact_Hide(hContact);
 
 	return hContact;
 }
@@ -424,7 +425,7 @@ int CJabberProto::Authorize(MEVENT hDbEvent)
 			if (MCONTACT hContact = AddToListByJID(blob.get_email(), 0)) {
 				// Trigger actual add by removing the "NotOnList" added by AddToListByJID()
 				// See AddToListByJID() and JabberDbSettingChanged().
-				db_unset(hContact, "CList", "NotOnList");
+				Contact_PutOnList(hContact);
 			}
 		}
 	}
@@ -734,14 +735,12 @@ HANDLE CJabberProto::SearchBasic(const wchar_t *szJid)
 
 HANDLE CJabberProto::SearchByEmail(const wchar_t *email)
 {
-	if (!m_bJabberOnline || email == nullptr)
+	ptrA szServerName(getStringA("Jud"));
+	if (!m_bJabberOnline || email == nullptr || szServerName == nullptr)
 		return nullptr;
 
-	ptrA szServerName(getStringA("Jud"));
-
-	LPCSTR jid = szServerName == 0 ? "users.jabber.org" : szServerName.get();
-	CJabberIqInfo *pInfo = AddIQ(&CJabberProto::OnIqResultSetSearch, JABBER_IQ_TYPE_SET, jid);
-	m_ThreadInfo->send(XmlNodeIq(pInfo) << XQUERY("jabber:iq:search") << XCHILD("email", T2Utf(email)));
+	CJabberIqInfo *pInfo = AddIQ(&CJabberProto::OnIqResultSetSearch, JABBER_IQ_TYPE_SET, szServerName);
+	m_ThreadInfo->send(XmlNodeIq(pInfo) << XQUERY(JABBER_FEAT_JUD) << XCHILD("email", T2Utf(email)));
 	return (HANDLE)pInfo->GetIqId();
 }
 
@@ -750,18 +749,15 @@ HANDLE CJabberProto::SearchByEmail(const wchar_t *email)
 
 HANDLE CJabberProto::SearchByName(const wchar_t *nick, const wchar_t *firstName, const wchar_t *lastName)
 {
-	if (!m_bJabberOnline)
+	ptrA szServerName(getStringA("Jud"));
+	if (!m_bJabberOnline || szServerName == nullptr)
 		return nullptr;
 
 	BOOL bIsExtFormat = m_bExtendedSearch;
 
-	ptrA szServerName(getStringA("Jud"));
-
-	CJabberIqInfo *pInfo = AddIQ(
-		(bIsExtFormat) ? &CJabberProto::OnIqResultExtSearch : &CJabberProto::OnIqResultSetSearch,
-		JABBER_IQ_TYPE_SET, szServerName == 0 ? "users.jabber.org" : szServerName);
+	CJabberIqInfo *pInfo = AddIQ((bIsExtFormat) ? &CJabberProto::OnIqResultExtSearch : &CJabberProto::OnIqResultSetSearch, JABBER_IQ_TYPE_SET, szServerName);
 	XmlNodeIq iq(pInfo);
-	TiXmlElement *query = iq << XQUERY("jabber:iq:search");
+	TiXmlElement *query = iq << XQUERY(JABBER_FEAT_JUD);
 
 	if (bIsExtFormat) {
 		if (m_tszSelectedLang)
@@ -844,31 +840,31 @@ HANDLE CJabberProto::SendFile(MCONTACT hContact, const wchar_t *szDescription, w
 	if (item->ft != nullptr)
 		return nullptr;
 
-	JabberCapsBits jcb = GetResourceCapabilities(item->jid);
-	if (jcb == JABBER_RESOURCE_CAPS_IN_PROGRESS) {
-		Sleep(600);
-		jcb = GetResourceCapabilities(item->jid);
-	}
+	JabberCapsBits jcb = 0;
+	if (!m_bUseHttpUpload) {
+		GetResourceCapabilities(item->jid);
+		if (jcb == JABBER_RESOURCE_CAPS_IN_PROGRESS) {
+			Sleep(600);
+			jcb = GetResourceCapabilities(item->jid);
+		}
 
-	// fix for very smart clients, like gajim
-	if (!m_bBsDirect && !m_bBsProxyManual) {
-		// disable bytestreams
-		jcb &= ~JABBER_CAPS_BYTESTREAMS;
-	}
+		// fix for very smart clients, like gajim
+		if (!m_bBsDirect && !m_bBsProxyManual) {
+			// disable bytestreams
+			jcb &= ~JABBER_CAPS_BYTESTREAMS;
+		}
 
-	// if only JABBER_CAPS_SI_FT feature set (without BS or IBB), disable JABBER_CAPS_SI_FT
-	if ((jcb & (JABBER_CAPS_SI_FT | JABBER_CAPS_IBB | JABBER_CAPS_BYTESTREAMS)) == JABBER_CAPS_SI_FT)
-		jcb &= ~JABBER_CAPS_SI_FT;
+		// if only JABBER_CAPS_SI_FT feature set (without BS or IBB), disable JABBER_CAPS_SI_FT
+		if ((jcb & (JABBER_CAPS_SI_FT | JABBER_CAPS_IBB | JABBER_CAPS_BYTESTREAMS)) == JABBER_CAPS_SI_FT)
+			jcb &= ~JABBER_CAPS_SI_FT;
 
-	if (
-		// can't get caps
-		(jcb & JABBER_RESOURCE_CAPS_ERROR)
-		// caps not already received
-		|| (jcb == JABBER_RESOURCE_CAPS_NONE)
-		// XEP-0096 and OOB not supported?
-		|| !(jcb & (JABBER_CAPS_SI_FT | JABBER_CAPS_OOB))) {
-		MsgPopup(hContact, TranslateT("No compatible file transfer mechanism exists"), Utf2T(item->jid));
-		return nullptr;
+		if ((jcb & JABBER_RESOURCE_CAPS_ERROR) // can't get caps
+			|| (jcb == JABBER_RESOURCE_CAPS_NONE) // caps not already received
+			|| !(jcb & (JABBER_CAPS_SI_FT | JABBER_CAPS_OOB))) // XEP-0096 and OOB not supported?
+		{
+			MsgPopup(hContact, TranslateT("No compatible file transfer mechanism exists"), Utf2T(item->jid));
+			return nullptr;
+		}
 	}
 
 	filetransfer *ft = new filetransfer(this);
@@ -881,7 +877,7 @@ HANDLE CJabberProto::SendFile(MCONTACT hContact, const wchar_t *szDescription, w
 
 	int i, j;
 	for (i = j = 0; i < ft->std.totalFiles; i++) {
-		struct _stati64 statbuf;
+		struct _stat64 statbuf;
 		if (_wstat64(ppszFiles[i], &statbuf))
 			debugLogW(L"'%s' is an invalid filename", ppszFiles[i]);
 		else {
@@ -900,7 +896,7 @@ HANDLE CJabberProto::SendFile(MCONTACT hContact, const wchar_t *szDescription, w
 	ft->szDescription = mir_wstrdup(szDescription);
 	ft->jid = mir_strdup(jid);
 
-	if (jcb & JABBER_CAPS_SI_FT)
+	if (m_bUseHttpUpload || (jcb & JABBER_CAPS_SI_FT))
 		FtInitiate(item->jid, ft);
 	else if (jcb & JABBER_CAPS_OOB)
 		ForkThread((MyThreadFunc)&CJabberProto::FileServerThread, ft);
@@ -956,7 +952,7 @@ int CJabberProto::SendMsg(MCONTACT hContact, int unused_unknown, const char *psz
 		}
 	}
 
-	int  isEncrypted, id = SerialNext();
+	int isEncrypted, id = SerialNext();
 	if (!strncmp(pszSrc, PGP_PROLOG, mir_strlen(PGP_PROLOG))) {
 		const char *szEnd = strstr(pszSrc, PGP_EPILOG);
 		char *tempstring = (char*)alloca(mir_strlen(pszSrc) + 2);
@@ -1118,8 +1114,11 @@ int CJabberProto::SetStatus(int iNewStatus)
 	}
 	else if (m_bJabberOnline)
 		SetServerStatus(iNewStatus);
-	else
-		ProtoBroadcastAck(0, ACKTYPE_STATUS, ACKRESULT_SUCCESS, (HANDLE)oldStatus, m_iStatus);
+	else {
+		// race condition: old thread is dying, but we're already offline. report failure
+		m_iDesiredStatus = oldStatus;
+		ProtoBroadcastAck(0, ACKTYPE_STATUS, ACKRESULT_FAILED, (HANDLE)oldStatus, m_iStatus);
+	}
 
 	return 0;
 }

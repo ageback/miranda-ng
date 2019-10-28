@@ -146,7 +146,7 @@ VOID CALLBACK OnlineNotifTimerProc(HWND, UINT, UINT_PTR idEvent, DWORD)
 				continue;
 
 			BYTE bDCC = ppro->getByte(hContact, "DCC", 0);
-			BYTE bHidden = db_get_b(hContact, "CList", "Hidden", 0);
+			bool bHidden = Contact_IsHidden(hContact);
 			if (bDCC || bHidden)
 				continue;
 			if (ppro->getWString(hContact, "Default", &dbv))
@@ -685,13 +685,13 @@ bool CIrcProto::OnIrc_PRIVMSG(const CIrcMessage *pmsg)
 
 			CONTACT user = { pmsg->prefix.sNick, pmsg->prefix.sUser, pmsg->prefix.sHost, false, false, false };
 
-			if (CallService(MS_IGNORE_ISIGNORED, NULL, IGNOREEVENT_MESSAGE))
+			if (Ignore_IsIgnored(NULL, IGNOREEVENT_MESSAGE))
 			if (!CList_FindContact(&user))
 				return true;
 
 			if ((m_ignore && IsIgnored(pmsg->prefix.sNick, pmsg->prefix.sUser, pmsg->prefix.sHost, 'q'))) {
 				MCONTACT hContact = CList_FindContact(&user);
-				if (!hContact || (hContact && db_get_b(hContact, "CList", "Hidden", 0) == 1))
+				if (!hContact || (hContact && Contact_IsHidden(hContact)))
 					return true;
 			}
 
@@ -708,11 +708,8 @@ bool CIrcProto::OnIrc_PRIVMSG(const CIrcMessage *pmsg)
 		}
 
 		if (bIsChannel) {
-			if (!(pmsg->m_bIncoming && m_ignore && IsIgnored(pmsg->prefix.sNick, pmsg->prefix.sUser, pmsg->prefix.sHost, 'm'))) {
-				if (!pmsg->m_bIncoming)
-					mess.Replace(L"%%", L"%");
+			if (!(pmsg->m_bIncoming && m_ignore && IsIgnored(pmsg->prefix.sNick, pmsg->prefix.sUser, pmsg->prefix.sHost, 'm')))
 				DoEvent(GC_EVENT_MESSAGE, pmsg->parameters[0], pmsg->m_bIncoming ? pmsg->prefix.sNick : m_info.sNick, mess, nullptr, nullptr, NULL, true, pmsg->m_bIncoming ? false : true);
-			}
 			return true;
 		}
 	}
@@ -1063,10 +1060,7 @@ bool CIrcProto::IsCTCP(const CIrcMessage *pmsg)
 				MCONTACT hContact = CList_FindContact(&user);
 
 				// check if it should be ignored
-				if (m_DCCChatIgnore == 1 ||
-					m_DCCChatIgnore == 2 && hContact &&
-					db_get_b(hContact, "CList", "NotOnList", 0) == 0 &&
-					db_get_b(hContact, "CList", "Hidden", 0) == 0) {
+				if (m_DCCChatIgnore == 1 || m_DCCChatIgnore == 2 && hContact && Contact_OnList(hContact) && !Contact_IsHidden(hContact)) {
 					CMStringW host = pmsg->prefix.sUser + L"@" + pmsg->prefix.sHost;
 					CList_AddDCCChat(pmsg->prefix.sNick, host, dwAdr, iPort); // add a CHAT event to the clist
 				}
@@ -1129,7 +1123,7 @@ bool CIrcProto::IsCTCP(const CIrcMessage *pmsg)
 				}
 				else {
 					CONTACT user = { pmsg->prefix.sNick, pmsg->prefix.sUser, pmsg->prefix.sHost, false, false, false };
-					if (CallService(MS_IGNORE_ISIGNORED, NULL, IGNOREEVENT_FILE))
+					if (Ignore_IsIgnored(NULL, IGNOREEVENT_FILE))
 					if (!CList_FindContact(&user))
 						return true;
 
@@ -2380,6 +2374,13 @@ bool CIrcProto::DoOnConnect(const CIrcMessage*)
 	return 0;
 }
 
+void __cdecl CIrcProto::DoPerformThread(void *param)
+{
+	wchar_t *pwszPerform = (wchar_t *)param;
+	PostIrcMessageWnd(nullptr, NULL, pwszPerform);
+	mir_free(pwszPerform);
+}
+
 static void __cdecl AwayWarningThread(LPVOID)
 {
 	Thread_SetName("IRC: AwayWarningThread");
@@ -2391,16 +2392,17 @@ int CIrcProto::DoPerform(const char* event)
 	CMStringA sSetting = CMStringA("PERFORM:") + event;
 	sSetting.MakeUpper();
 
-	DBVARIANT dbv;
-	if (!getWString(sSetting, &dbv)) {
-		if (!my_strstri(dbv.pwszVal, L"/away"))
-			PostIrcMessageWnd(nullptr, NULL, dbv.pwszVal);
-		else
-			mir_forkthread(AwayWarningThread);
-		db_free(&dbv);
-		return 1;
+	wchar_t *pwszPerform = getWStringA(sSetting);
+	if (pwszPerform == nullptr)
+		return 0;
+
+	if (my_strstri(pwszPerform, L"/away")) {
+		mir_free(pwszPerform);
+		mir_forkthread(AwayWarningThread);
 	}
-	return 0;
+	else ForkThread(&CIrcProto::DoPerformThread, pwszPerform);
+
+	return 1;
 }
 
 int CIrcProto::IsIgnored(const CMStringW& nick, const CMStringW& address, const CMStringW& host, char type)

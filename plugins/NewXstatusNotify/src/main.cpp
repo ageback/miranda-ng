@@ -262,7 +262,7 @@ wchar_t* GetStr(STATUSMSGINFO *n, const wchar_t *tmplt)
 
 bool SkipHiddenContact(MCONTACT hContact)
 {
-	return (!opt.HiddenContactsToo && (db_get_b(hContact, "CList", "Hidden", 0) == 1));
+	return (!opt.HiddenContactsToo && Contact_IsHidden(hContact));
 }
 
 void LogSMsgToDB(STATUSMSGINFO *smi, const wchar_t *tmplt)
@@ -505,7 +505,7 @@ int ProcessStatus(DBCONTACTWRITESETTING *cws, MCONTACT hContact)
 	}
 
 	//If *Miranda* ignores the UserOnline event, exit!
-	if (CallService(MS_IGNORE_ISIGNORED, hContact, IGNOREEVENT_USERONLINE))
+	if (Ignore_IsIgnored(hContact, IGNOREEVENT_USERONLINE))
 		return 0;
 
 	//If we get here, we have to notify the Hooks.

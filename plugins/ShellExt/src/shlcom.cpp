@@ -271,10 +271,8 @@ bool ipcGetSortedContacts(THeaderIPC * ipch, int* pSlot, bool bGroupMode)
 
 			// is HIT on?
 			if (BST_UNCHECKED == g_plugin.getByte(SHLExt_UseHITContacts, BST_UNCHECKED)) {
-				// don't show people who are "Hidden" "NotOnList" or Ignored
-				if (db_get_b(hContact, "CList", "Hidden", 0) == 1 ||
-					db_get_b(hContact, "CList", "NotOnList", 0) == 1 ||
-					CallService(MS_IGNORE_ISIGNORED, hContact, IGNOREEVENT_MESSAGE | IGNOREEVENT_FILE) != 0)
+				// don't show people who are hidden, "NotOnList" or ignored
+				if (Contact_IsHidden(hContact) || !Contact_OnList(hContact) || Ignore_IsIgnored(hContact, IGNOREEVENT_MESSAGE | IGNOREEVENT_FILE) != 0)
 					continue;
 			}
 			// is HIT2 off?

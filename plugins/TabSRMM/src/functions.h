@@ -50,7 +50,7 @@ LONG_PTR CALLBACK HotkeyHandlerDlgProc(HWND hwndDlg, UINT msg, WPARAM wParam, LP
 
 int   TSAPI NEN_ReadOptions(NEN_OPTIONS *options);
 int   TSAPI NEN_WriteOptions(NEN_OPTIONS *options);
-int   TSAPI UpdateTrayMenu(const CTabBaseDlg *dat, WORD wStatus, const char *szProto, const wchar_t *szStatus, MCONTACT hContact, DWORD fromEvent);
+int   TSAPI UpdateTrayMenu(const CMsgDialog *dat, WORD wStatus, const char *szProto, const wchar_t *szStatus, MCONTACT hContact, DWORD fromEvent);
 void  TSAPI DeletePopupsForContact(MCONTACT hContact, DWORD dwMask);
 
 /*
@@ -59,7 +59,7 @@ void  TSAPI DeletePopupsForContact(MCONTACT hContact, DWORD dwMask);
 
 void  TSAPI CreateSystrayIcon(int create);
 void  TSAPI FlashTrayIcon(HICON hIcon);
-void  TSAPI UpdateTrayMenuState(CTabBaseDlg *dat, BOOL bForced);
+void  TSAPI UpdateTrayMenuState(CMsgDialog *dat, BOOL bForced);
 void  TSAPI LoadFavoritesAndRecent();
 void  TSAPI AddContactToFavorites(MCONTACT hContact, const wchar_t *szNickname, const char *szProto, wchar_t *szStatus,
 	WORD wStatus, HICON hIcon, BOOL mode, HMENU hMenu);
@@ -73,7 +73,7 @@ void  TSAPI HandleMenuEntryFromhContact(MCONTACT iSelection);
 HWND  TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact, bool bActivateTAb, bool bPopupContainer, bool bWantPopup, MEVENT hdbEvent = 0, bool bIsWchar = false, const char *pszInitialText = nullptr);
 int   TSAPI ActivateTabFromHWND(HWND hwndTab, HWND hwnd);
 void  TSAPI FlashContainer(TContainerData *pContainer, int iMode, int iNum);
-void  TSAPI CreateImageList(BOOL bInitial);
+void  TSAPI CreateImageList(bool bInitial);
 
 TContainerData* TSAPI FindMatchingContainer(const wchar_t *szName);
 TContainerData* TSAPI CreateContainer(const wchar_t *name, int iTemp, MCONTACT hContactFrom);
@@ -82,7 +82,7 @@ TContainerData* TSAPI FindContainerByName(const wchar_t *name);
 int   TSAPI GetTabIndexFromHWND(HWND hwndTab, HWND hwnd);
 HWND  TSAPI GetTabWindow(HWND hwndTab, int idx);
 int   TSAPI GetTabItemFromMouse(HWND hwndTab, POINT *pt);
-void  TSAPI CloseOtherTabs(HWND hwndTab, CTabBaseDlg &dat);
+void  TSAPI CloseOtherTabs(HWND hwndTab, CMsgDialog &dat);
 int   TSAPI ActivateTabFromHWND(HWND hwndTab, HWND hwnd);
 void  TSAPI AdjustTabClientRect(TContainerData *pContainer, RECT *rc);
 void  TSAPI ReflashContainer(TContainerData *pContainer);
@@ -135,7 +135,7 @@ int   _DebugPopup(MCONTACT hContact, const wchar_t *fmt, ...);
 
 const wchar_t* TSAPI GetThemeFileName(int iMode);
 int   TSAPI CheckThemeVersion(const wchar_t *szIniFilename);
-void  TSAPI WriteThemeToINI(const wchar_t *szIniFilename, CSrmmWindow *dat);
+void  TSAPI WriteThemeToINI(const wchar_t *szIniFilename, CMsgDialog *dat);
 void  TSAPI ReadThemeFromINI(const wchar_t *szIniFilename, TContainerData *dat, int noAdvanced, DWORD dwFlags);
 
 // TypingNotify
@@ -143,10 +143,6 @@ int   TN_ModuleInit();
 int   TN_OptionsInitialize(WPARAM wParam, LPARAM lParam);
 int   TN_ModuleDeInit();
 void  TN_TypingMessage(MCONTACT hContact, int iMode);
-
-// hotkeys
-
-LRESULT ProcessHotkeysByMsgFilter(const CCtrlBase&, UINT msg, WPARAM wParam, LPARAM lParam);
 
 void TSAPI DrawMenuItem(DRAWITEMSTRUCT *dis, HICON hIcon, DWORD dwIdle);
 

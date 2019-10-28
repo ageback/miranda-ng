@@ -35,7 +35,6 @@
 #define IDI_FOODNETWORK                 147
 #define IDI_LASTICON                    148
 #define IDR_CONTEXT                     180
-#define IDD_CHANNEL                     401
 #define IDD_OPTIONS1                    402
 #define IDD_OPTIONS2                    403
 #define IDD_FILTER                      405
@@ -87,12 +86,11 @@
 #define IDC_LIMITCHATSTABSNUM           1014
 #define IDC_LIMITCHATSTABSNUMSPIN       1015
 #define IDC_SMILEY                      1016
-#define IDC_SHOWNAMES                   1020
+#define IDC_HIDENAMES                   1020
 #define IDC_USETABS                     1022
 #define IDC_SHOWSECONDS                 1023
 #define IDC_USELONGDATE                 1024
 #define IDC_USERELATIVEDATE             1025
-#define IDC_USEIEVIEW                   1026
 #define IDC_FONTSCOLORS                 1027
 #define IDC_LOADUNREAD                  1031
 #define IDC_SHOWLOGICONS                1032
@@ -143,7 +141,7 @@
 #define IDC_ATRANSPARENCYPERC           1620
 #define IDC_ITRANSPARENCYVALUE          1621
 #define IDC_ITRANSPARENCYPERC           1622
-#define IDC_ALWAYSSHOWTABS              1623
+#define IDC_HIDEONETAB              1623
 #define IDC_SENDALL                     1624
 #define IDC_TRANSPARENCYTEXT1           1627
 #define IDC_TRANSPARENCYTEXT2           1628
@@ -230,14 +228,6 @@
 #define IDM_CLOSETAB                    40020
 #define IDM_CLOSEOTHERTABS              40021
 #define IDM_TOPMOST                     40040
-#define IDM_SEARCH_GOOGLE               40080
-#define IDM_SEARCH_BING                 40081
-#define IDM_SEARCH_YANDEX               40082
-#define IDM_SEARCH_WIKIPEDIA            40083
-#define IDM_SEARCH_GOOGLE_MAPS          40084
-#define IDM_SEARCH_GOOGLE_TRANSLATE     40085
-#define IDM_SEARCH_YAHOO                40086
-#define IDM_SEARCH_FOODNETWORK          40087
 #define ID_MESS                         50001
 #define ID_COPYALL                      50006
 #define ID_Menu                         50026

@@ -32,7 +32,7 @@ static DWORD GetMask(MCONTACT hContact)
 		if(hContact == NULL)
 			mask=0;
 		else {
-			if(db_get_b(hContact, "CList", "Hidden", 0) || db_get_b(hContact, "CList", "NotOnList", 0))
+			if (Contact_IsHidden(hContact) || !Contact_OnList(hContact))
 				mask = g_plugin.getDword("Mask1", 0);
 			else
 				mask = g_plugin.getDword("Default1", 0);

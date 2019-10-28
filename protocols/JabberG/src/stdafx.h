@@ -70,6 +70,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <m_hotkeys.h>
 #include <m_icolib.h>
 #include <m_idle.h>
+#include <m_json.h>
 #include <m_langpack.h>
 #include <m_message.h>
 #include <m_netlib.h>
@@ -77,7 +78,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <m_protosvc.h>
 #include <m_protoint.h>
 #include <m_skin.h>
-#include <m_json.h>
+#include <m_srmm_int.h>
 #include <m_timezones.h>
 #include <m_toptoolbar.h>
 #include <m_userinfo.h>
@@ -404,8 +405,8 @@ struct JABBER_MODEMSGS
 	char *szFreechat;
 };
 
-typedef enum { FT_SI, FT_OOB, FT_BYTESTREAM, FT_IBB } JABBER_FT_TYPE;
-typedef enum { FT_CONNECTING, FT_INITIALIZING, FT_RECEIVING, FT_DONE, FT_ERROR, FT_DENIED } JABBER_FILE_STATE;
+enum JABBER_FT_TYPE { FT_SI, FT_OOB, FT_BYTESTREAM, FT_IBB, FT_HTTP };
+enum JABBER_FILE_STATE { FT_CONNECTING, FT_INITIALIZING, FT_RECEIVING, FT_DONE, FT_ERROR, FT_DENIED };
 
 struct filetransfer
 {
@@ -481,6 +482,7 @@ struct JABBER_MUC_JIDLIST_INFO : public MZeroedObject
 	TiXmlDocument doc;
 	TiXmlElement *iqNode;
 	CJabberProto *ppro;
+	void *pUserData;
 
 	wchar_t* type2str(void) const;
 };

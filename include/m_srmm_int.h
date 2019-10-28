@@ -25,7 +25,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef M_SRMM_INT_H__
 #define M_SRMM_INT_H__ 1
 
-#include <m_core.h>
+#include <m_gui.h>
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // toolbar button internal representation
@@ -98,5 +98,160 @@ EXTERN_C MIR_APP_DLL(void) Srmm_ClickToolbarIcon(MCONTACT hContact, int idFrom, 
 // wParam = 0 (ignored)
 // lParam = 0 (ignored)
 #define WM_CBD_RECREATE (WM_CBD_FIRST+4)
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// SRMM log window container
+
+class CMsgDialog;
+
+class MIR_APP_EXPORT CSrmmLogWindow
+{
+	CSrmmLogWindow(const CSrmmLogWindow &) = delete;
+	CSrmmLogWindow &operator=(const CSrmmLogWindow &) = delete;
+
+protected:
+	CMsgDialog &m_pDlg;
+
+	CSrmmLogWindow(CMsgDialog &pDlg) :
+		m_pDlg(pDlg)
+	{}
+
+public:
+	virtual ~CSrmmLogWindow() {}
+
+	virtual void     Attach() = 0;
+	virtual void     Detach() = 0;
+					     
+	virtual bool     AtBottom() = 0;
+	virtual void     Clear() = 0;
+	virtual int      GetType() = 0;
+	virtual HWND     GetHwnd() = 0;
+	virtual wchar_t* GetSelection() = 0;
+	virtual void     LogEvents(MEVENT hDbEventFirst, int count, bool bAppend) = 0;
+	virtual void     LogEvents(DBEVENTINFO *dbei, bool bAppend) = 0;
+	virtual void     LogEvents(struct LOGINFO *, bool) = 0;
+	virtual void     Resize() = 0;
+	virtual void     ScrollToBottom() = 0;
+	virtual void     UpdateOptions() {};
+
+	virtual INT_PTR Notify(WPARAM, LPARAM) { return 0; }
+};
+
+typedef CSrmmLogWindow *(__cdecl *pfnSrmmLogCreator)(CMsgDialog &pDlg);
+
+EXTERN_C MIR_APP_DLL(HANDLE) RegisterSrmmLog(const char *pszShortName, const wchar_t *pwszScreenName, pfnSrmmLogCreator fnBuilder);
+EXTERN_C MIR_APP_DLL(void) UnregisterSrmmLog(HANDLE);
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Standard built-in RTF logger class
+
+class MIR_APP_EXPORT CRtfLogWindow : public CSrmmLogWindow
+{
+protected:
+	CCtrlRichEdit &m_rtf;
+
+public:
+	CRtfLogWindow(CMsgDialog &pDlg);
+	~CRtfLogWindow() override;
+
+	virtual INT_PTR WndProc(UINT msg, WPARAM wParam, LPARAM lParam);
+
+	////////////////////////////////////////////////////////////////////////////////////////
+	void     Attach() override;
+	void     Detach() override;
+		      
+	bool     AtBottom() override;
+	void     Clear() override;
+	HWND     GetHwnd() override;
+	wchar_t* GetSelection() override;
+	int      GetType() override;
+	void     Resize() override;
+	void     ScrollToBottom() override;
+
+	INT_PTR Notify(WPARAM, LPARAM) override;
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Basic SRMM window dialog
+
+#include <chat_resource.h>
+
+// message procedures' stubs
+EXTERN_C MIR_APP_DLL(LRESULT) CALLBACK stubLogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+EXTERN_C MIR_APP_DLL(LRESULT) CALLBACK stubMessageProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+EXTERN_C MIR_APP_DLL(LRESULT) CALLBACK stubNicklistProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+class MIR_APP_EXPORT CSrmmBaseDialog : public CDlgBase
+{
+	friend class CRtfLogWindow;
+
+	CSrmmBaseDialog(const CSrmmBaseDialog &) = delete;
+	CSrmmBaseDialog &operator=(const CSrmmBaseDialog &) = delete;
+
+protected:
+	CSrmmBaseDialog(CMPluginBase &pPlugin, int idDialog, struct SESSION_INFO *si = nullptr);
+
+	bool OnInitDialog() override;
+	void OnDestroy() override;
+
+	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
+
+	int  NotifyEvent(int code);
+	bool ProcessHotkeys(int key, bool bShift, bool bCtrl, bool bAlt);
+	void RefreshButtonStatus(void);
+	void RunUserMenu(HWND hwndOwner, struct USERINFO *ui, const POINT &pt);
+
+protected:
+	CSrmmLogWindow *m_pLog = nullptr;
+	CCtrlRichEdit m_message;
+	SESSION_INFO *m_si;
+	COLORREF m_clrInputBG, m_clrInputFG;
+	time_t m_iLastEnterTime;
+
+	CCtrlListBox m_nickList;
+	CCtrlButton m_btnColor, m_btnBkColor;
+	CCtrlButton m_btnBold, m_btnItalic, m_btnUnderline;
+	CCtrlButton m_btnHistory, m_btnChannelMgr, m_btnNickList, m_btnFilter;
+
+	void onClick_BIU(CCtrlButton *);
+	void onClick_Color(CCtrlButton *);
+	void onClick_BkColor(CCtrlButton *);
+
+	void onClick_ChanMgr(CCtrlButton *);
+	void onClick_History(CCtrlButton *);
+
+	void onDblClick_List(CCtrlListBox *);
+
+public:
+	MCONTACT m_hContact;
+	int m_iLogFilterFlags;
+	bool m_bFilterEnabled, m_bNicklistEnabled;
+	bool m_bFGSet, m_bBGSet;
+	bool m_bInMenu;
+	COLORREF m_iFG, m_iBG;
+
+	void ClearLog();
+	void RedrawLog();
+	void ShowColorChooser(int iCtrlId);
+
+	virtual void AddLog();
+	virtual void CloseTab() {}
+	virtual bool IsActive() const PURE;
+	virtual void LoadSettings() PURE;
+	virtual void SetStatusText(const wchar_t *, HICON) {}
+	virtual void ShowFilterMenu() {}
+	virtual void UpdateNickList() {}
+	virtual void UpdateOptions();
+	virtual void UpdateStatusBar() {}
+	virtual void UpdateTitle() PURE;
+
+	virtual LRESULT WndProc_Message(UINT msg, WPARAM wParam, LPARAM lParam);
+	virtual LRESULT WndProc_Nicklist(UINT msg, WPARAM wParam, LPARAM lParam);
+
+	__forceinline bool isChat() const { return m_si != nullptr; }
+
+	__inline void *operator new(size_t size) { return calloc(1, size); }
+	__inline void operator delete(void *p) { free(p); }
+};
 
 #endif // M_MESSAGE_H__

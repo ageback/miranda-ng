@@ -31,7 +31,7 @@ BOOL CIrcProto::CList_AddDCCChat(const CMStringW& name, const CMStringW& hostmas
 
 	CONTACT usertemp = { name, nullptr, nullptr, false, false, true };
 	MCONTACT hc = CList_FindContact(&usertemp);
-	if (hc && db_get_b(hc, "CList", "NotOnList", 0) == 0 && db_get_b(hc, "CList", "Hidden", 0) == 0)
+	if (hc && Contact_OnList(hc) && !Contact_IsHidden(hc))
 		bFlag = true;
 
 	CMStringW contactname = name; contactname += DCCSTRING;
@@ -88,9 +88,9 @@ MCONTACT CIrcProto::CList_AddContact(CONTACT *user, bool InList, bool SetOnline)
 	MCONTACT hContact = CList_FindContact(user);
 	if (hContact) {
 		if (InList)
-			db_unset(hContact, "CList", "NotOnList");
+			Contact_PutOnList(hContact);
 		setWString(hContact, "Nick", user->name);
-		db_unset(hContact, "CList", "Hidden");
+		Contact_Hide(hContact, false);
 		if (SetOnline && getWord(hContact, "Status", ID_STATUS_OFFLINE) == ID_STATUS_OFFLINE)
 			setWord(hContact, "Status", ID_STATUS_ONLINE);
 		return hContact;
@@ -102,10 +102,10 @@ MCONTACT CIrcProto::CList_AddContact(CONTACT *user, bool InList, bool SetOnline)
 		Proto_AddToContact(hContact, m_szModuleName);
 
 		if (InList)
-			db_unset(hContact, "CList", "NotOnList");
+			Contact_PutOnList(hContact);
 		else
-			db_set_b(hContact, "CList", "NotOnList", 1);
-		db_unset(hContact, "CList", "Hidden");
+			Contact_RemoveFromList(hContact);
+		Contact_Hide(hContact, false);
 		setWString(hContact, "Nick", user->name);
 		setWString(hContact, "Default", user->name);
 		setWord(hContact, "Status", SetOnline ? ID_STATUS_ONLINE : ID_STATUS_OFFLINE);

@@ -1,7 +1,9 @@
 LIBRARY mir_app.mir
 
 EXPORTS
+Miranda_Close               @1 NONAME
 CallProtoService            @2
+Miranda_SetIdleCallback     @3 NONAME
 Skin_LoadProtoIcon          @4
 Skin_LoadIcon               @5
 Button_FreeIcon_IcoLib      @6
@@ -102,6 +104,7 @@ Button_SetSkin_IcoLib      @24
 ?setWString@PROTO_INTERFACE@@QEAAXPEBDPEB_W@Z @107 NONAME
 ?setWord@PROTO_INTERFACE@@QEAAXIPEBDG@Z @108 NONAME
 ?setWord@PROTO_INTERFACE@@QEAAXPEBDG@Z @109 NONAME
+EnterString @110 NONAME
 ProtoBroadcastAck @111
 ProtoCreateHookableEvent @113
 ProtoCreateService @114
@@ -271,6 +274,7 @@ Miranda_OkToExit @344
 Miranda_GetVersion @345
 Miranda_GetFileVersion @346
 Miranda_GetVersionText @347
+Netlib_GetUserAgent @348
 Netlib_CloseHandle @349
 Netlib_Recv @350
 Netlib_Send @351
@@ -327,6 +331,7 @@ ProtoGetAvatarMimeType @401
 ?set_uin@DB_AUTH_BLOB@@QEAAXK@Z @402 NONAME
 ??0CSrmmBaseDialog@@IEAA@AEAVCMPluginBase@@HPEAUSESSION_INFO@@@Z @403 NONAME
 ??1CSrmmBaseDialog@@UEAA@XZ @405 NONAME
+Srmm_FindDialog @406 NONAME
 ??_7CSrmmBaseDialog@@6B@ @407 NONAME
 ?DlgProc@CSrmmBaseDialog@@MEAA_JI_K_J@Z @408 NONAME
 ??2CSrmmBaseDialog@@SAPEAX_K@Z @409 NONAME
@@ -338,15 +343,12 @@ Srmm_LogStreamCallback @412
 ?CloseTab@CSrmmBaseDialog@@UEAAXXZ @416 NONAME
 ?UpdateStatusBar@CSrmmBaseDialog@@UEAAXXZ @417 NONAME
 Chat_UpdateOptions @418 NONAME
-?RedrawLog@CSrmmBaseDialog@@UEAAXXZ @419 NONAME
+?RedrawLog@CSrmmBaseDialog@@QEAAXXZ @419 NONAME
 ?UpdateOptions@CSrmmBaseDialog@@UEAAXXZ @420 NONAME
 ?ShowColorChooser@CSrmmBaseDialog@@QEAAXH@Z @421 NONAME
 ?ShowFilterMenu@CSrmmBaseDialog@@UEAAXXZ @422 NONAME
 ?OnInitDialog@CSrmmBaseDialog@@MEAA_NXZ @423 NONAME
-?StreamInEvents@CSrmmBaseDialog@@UEAAXPEAULOGINFO@@_N@Z @424 NONAME
 ?AddLog@CSrmmBaseDialog@@UEAAXXZ @425 NONAME
-?RedrawLog2@CSrmmBaseDialog@@QEAAXXZ @426 NONAME
-?ScrollToBottom@CSrmmBaseDialog@@UEAAXXZ @427 NONAME
 ?UpdateNickList@CSrmmBaseDialog@@UEAAXXZ @428 NONAME
 ?onClick_BIU@CSrmmBaseDialog@@IEAAXPEAVCCtrlButton@@@Z @430 NONAME
 ?onClick_BkColor@CSrmmBaseDialog@@IEAAXPEAVCCtrlButton@@@Z @431 NONAME
@@ -355,14 +357,13 @@ Chat_UpdateOptions @418 NONAME
 ?ProcessHotkeys@CSrmmBaseDialog@@IEAA_NH_N00@Z @434 NONAME
 ?onClick_History@CSrmmBaseDialog@@IEAAXPEAVCCtrlButton@@@Z @435 NONAME
 ?onClick_ChanMgr@CSrmmBaseDialog@@IEAAXPEAVCCtrlButton@@@Z @436 NONAME
-?WndProc_Log@CSrmmBaseDialog@@UEAA_JI_K_J@Z @437 NONAME
 ?WndProc_Message@CSrmmBaseDialog@@UEAA_JI_K_J@Z @438 NONAME
 ?WndProc_Nicklist@CSrmmBaseDialog@@UEAA_JI_K_J@Z @439 NONAME
 ?onDblClick_List@CSrmmBaseDialog@@IEAAXPEAVCCtrlListBox@@@Z @440 NONAME
 ?OnDestroy@CSrmmBaseDialog@@MEAAXXZ @441 NONAME
 Chat_AddMenuItems @442 NONAME
-Chat_DestroyGCMenu @443 NONAME
-Chat_CreateGCMenu @444 NONAME
+Contact_IsHidden @443
+Contact_Hide @444
 Chat_DoEventHook @445 NONAME
 stubLogProc @446 NONAME
 stubMessageProc @447 NONAME
@@ -685,3 +686,36 @@ ImageList_AddSkinIcon @774
 Clist_GetGroup @775
 Clist_SetGroup @776
 ?ReportSelfAvatarChanged@PROTO_INTERFACE@@QEAAXXZ @777 NONAME
+Miranda_GetIdle @778 NONAME
+Ignore_Allow @779
+Ignore_Ignore @780
+Ignore_IsIgnored @781
+Contact_OnList @782
+Contact_PutOnList @783
+Contact_RemoveFromList @784
+RegisterHppLogger @785
+UnregisterHppLogger @786
+??0CRtfLogWindow@@QEAA@AEAVCMsgDialog@@@Z @787 NONAME
+??0CSrmmLogWindow@@IEAA@AEAVCMsgDialog@@@Z @788 NONAME
+??1CRtfLogWindow@@UEAA@XZ @789 NONAME
+??1CSrmmLogWindow@@UEAA@XZ @790 NONAME
+??_7CRtfLogWindow@@6B@ @791 NONAME
+??_7CSrmmLogWindow@@6B@ @792 NONAME
+?AtBottom@CRtfLogWindow@@UEAA_NXZ @793 NONAME
+?Attach@CRtfLogWindow@@UEAAXXZ @794 NONAME
+?Clear@CRtfLogWindow@@UEAAXXZ @795 NONAME
+?Detach@CRtfLogWindow@@UEAAXXZ @796 NONAME
+?GetHwnd@CRtfLogWindow@@UEAAPEAUHWND__@@XZ @797 NONAME
+?GetSelection@CRtfLogWindow@@UEAAPEA_WXZ @798 NONAME
+?Notify@CRtfLogWindow@@UEAA_J_K_J@Z @799 NONAME
+?Notify@CSrmmLogWindow@@UEAA_J_K_J@Z @800 NONAME
+?Resize@CRtfLogWindow@@UEAAXXZ @801 NONAME
+?ScrollToBottom@CRtfLogWindow@@UEAAXXZ @802 NONAME
+?UpdateOptions@CSrmmLogWindow@@UEAAXXZ @803 NONAME
+?WndProc@CRtfLogWindow@@UEAA_JI_K_J@Z @804 NONAME
+RegisterSrmmLog @805 NONAME
+UnregisterSrmmLog @806 NONAME
+?GetType@CRtfLogWindow@@UEAAHXZ @807 NONAME
+WebSocket_Send @808 NONAME
+WebSocket_InitHeader @809 NONAME
+WebSocket_Connect @810 NONAME

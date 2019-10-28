@@ -24,21 +24,31 @@
 
 void CIcqProto::CheckAvatarChange(MCONTACT hContact, const JSONNode &ev)
 {
-	CMStringW wszIconId(ev["iconId"].as_mstring());
-	CMStringW oldIconID(getMStringW(hContact, "IconId"));
-	if (wszIconId == oldIconID) {
-		wchar_t wszFullName[MAX_PATH];
-		GetAvatarFileName(hContact, wszFullName, _countof(wszFullName));
-		if (_waccess(wszFullName, 0) == 0)
-			return;
+	CMStringW wszIconId(ev["bigIconId"].as_mstring());
+	if (wszIconId.IsEmpty())
+		wszIconId = ev["iconId"].as_mstring();
+	
+	if (!wszIconId.IsEmpty()) {
+		CMStringW oldIconID(getMStringW(hContact, "IconId"));
+		if (wszIconId == oldIconID) {
+			wchar_t wszFullName[MAX_PATH];
+			GetAvatarFileName(hContact, wszFullName, _countof(wszFullName));
+			if (_waccess(wszFullName, 0) == 0)
+				return;
+		}
+
+		setWString(hContact, "IconId", wszIconId);
 	}
+	else delSetting(hContact, "IconId");
 
-	setWString(hContact, "IconId", wszIconId);
-
-	CMStringA szUrl(ev["buddyIcon"].as_mstring());
-	auto *pReq = new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, szUrl, &CIcqProto::OnReceiveAvatar);
-	pReq->hContact = hContact;
-	Push(pReq);
+	CMStringA szUrl(ev["bigBuddyIcon"].as_mstring());
+	if (szUrl.IsEmpty())
+		szUrl = ev["buddyIcon"].as_mstring();
+	if (!szUrl.IsEmpty()) {
+		auto *pReq = new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, szUrl, &CIcqProto::OnReceiveAvatar);
+		pReq->hContact = hContact;
+		Push(pReq);
+	}
 }
 
 void CIcqProto::CheckLastId(MCONTACT hContact, const JSONNode &ev)
@@ -159,8 +169,12 @@ void CIcqProto::ConnectionFailed(int iReason, int iErrorCode)
 
 void CIcqProto::MoveContactToGroup(MCONTACT hContact, const wchar_t *pwszGroup, const wchar_t *pwszNewGroup)
 {
-	Push(new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/moveBuddy")
-		<< AIMSID(this) << WCHAR_PARAM("buddy", GetUserId(hContact)) << GROUP_PARAM("group", pwszGroup) << GROUP_PARAM("newGroup", pwszNewGroup));
+	auto *pReq = new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/moveBuddy") << AIMSID(this) << WCHAR_PARAM("buddy", GetUserId(hContact));
+	if (mir_wstrlen(pwszGroup))
+		pReq << GROUP_PARAM("group", pwszGroup);
+	if (mir_wstrlen(pwszNewGroup))
+		pReq << GROUP_PARAM("newGroup", pwszNewGroup);
+	Push(pReq);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -597,7 +611,7 @@ void CIcqProto::OnAddBuddy(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq)
 	JsonReply root(pReply);
 	if (root.error() == 200) {
 		RetrieveUserInfo(pReq->hContact);
-		db_unset(pReq->hContact, "CList", "NotOnList");
+		Contact_PutOnList(pReq->hContact);
 	}
 }
 

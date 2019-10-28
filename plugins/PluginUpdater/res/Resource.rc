@@ -56,7 +56,7 @@ BEGIN
     PUSHBUTTON      "Select &none",IDC_SELNONE,175,218,60,14,NOT WS_TABSTOP
 END
 
-IDD_OPT_UPDATENOTIFY DIALOGEX 0, 0, 301, 251
+IDD_OPT_UPDATENOTIFY DIALOGEX 0, 0, 301, 260
 STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
 EXSTYLE WS_EX_CONTROLPARENT
 FONT 8, "MS Shell Dlg", 0, 0, 0x1
@@ -74,17 +74,18 @@ BEGIN
     CONTROL         "Silent mode",IDC_SILENTMODE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,72,267,10
     CONTROL         "Backup database before update (requires Db_autobackups plugin)",IDC_BACKUP,
                     "Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,11,86,272,10
-    GROUPBOX        "Files source",IDC_STATIC,2,104,285,121
+    GROUPBOX        "Files source",IDC_STATIC,2,104,285,132
     CONTROL         "Stable version",IDC_STABLE,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,117,267,10
     CONTROL         "Stable version with debug symbols",IDC_STABLE_SYMBOLS,
-                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,132,267,10
-    CONTROL         "Development version (less stable)",IDC_TRUNK,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,147,267,10
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,131,267,10
+    CONTROL         "Development version (less stable)",IDC_TRUNK,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,145,267,10
     CONTROL         "Development version with debug symbols",IDC_TRUNK_SYMBOLS,
-                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,162,267,10
-    CONTROL         "Custom version",IDC_CUSTOM,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,177,267,10
-    EDITTEXT        IDC_CUSTOMURL,12,190,267,16,ES_AUTOHSCROLL | WS_DISABLED
-    CONTROL         "Change platform to 32-bit",IDC_CHANGE_PLATFORM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,211,212,10
-    CTEXT           "Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.",IDC_NEEDRESTARTLABEL,11,228,267,15,NOT WS_VISIBLE
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,159,267,10
+    CONTROL         "Custom version",IDC_CUSTOM,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,12,173,267,10
+    EDITTEXT        IDC_CUSTOMURL,12,185,267,16,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Change platform to 32-bit",IDC_CHANGE_PLATFORM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,206,267,10
+    CTEXT           "Some component(s) was updated.\nYou need to restart your Miranda to apply installed updates.",IDC_NEEDRESTARTLABEL,11,239,267,15,NOT WS_VISIBLE
+    CONTROL         "Use HTTPS",IDC_USE_HTTPS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,219,267,10
 END
 
 IDD_POPUP DIALOGEX 0, 0, 316, 174
@@ -124,16 +125,17 @@ BEGIN
     CTEXT           "Popups",IDC_STATIC,7,9,79,8
 END
 
-IDD_LIST DIALOGEX 0, 0, 240, 236
+IDD_MISSINGPLUGINS DIALOGEX 0, 0, 240, 249
 STYLE DS_SETFONT | DS_SETFOREGROUND | DS_3DLOOK | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
 EXSTYLE WS_EX_CONTROLPARENT
 CAPTION "Component list"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     CTEXT           "Here is the complete list of missing Miranda NG components. Check components that you want to download.\n\nClick on info icon to view component info page.",IDC_UPDATETEXT,9,9,223,44
-    DEFPUSHBUTTON   "Download",IDOK,175,218,60,14,WS_DISABLED
-    CONTROL         "",IDC_LIST_UPDATES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,64,229,149
-    PUSHBUTTON      "Select &none",IDC_SELNONE,109,218,60,14,NOT WS_TABSTOP
+    CONTROL         "",IDC_LIST_UPDATES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,76,229,149
+    DEFPUSHBUTTON   "Download",IDOK,175,231,60,14,WS_DISABLED
+    PUSHBUTTON      "Select &none",IDC_SELNONE,109,231,60,14,NOT WS_TABSTOP
+    EDITTEXT        IDC_SEARCH,6,58,229,14
 END
 
 
@@ -184,7 +186,7 @@ BEGIN
         VERTGUIDE, 11
         VERTGUIDE, 278
         VERTGUIDE, 286
-        BOTTOMMARGIN, 243
+        BOTTOMMARGIN, 254
     END
 
     IDD_POPUP, DIALOG
@@ -204,12 +206,11 @@ BEGIN
         VERTGUIDE, 311
     END
 
-    IDD_LIST, DIALOG
+    IDD_MISSINGPLUGINS, DIALOG
     BEGIN
         VERTGUIDE, 6
         VERTGUIDE, 235
-        BOTTOMMARGIN, 234
-        HORZGUIDE, 232
+        BOTTOMMARGIN, 245
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -221,6 +222,11 @@ END
 //
 
 IDD_OPT_UPDATENOTIFY AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_MISSINGPLUGINS AFX_DIALOG_LAYOUT
 BEGIN
     0
 END

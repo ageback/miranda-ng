@@ -463,11 +463,9 @@ bool CVkProto::AutoFillForm(char *pBody, CMStringA &szAction, CMStringA& szResul
 
 CMStringW CVkProto::RunConfirmationCode(LPCWSTR pwszTitle)
 {
-	ENTER_STRING pForm = { sizeof(pForm) };
+	ENTER_STRING pForm = {};
 	pForm.type = ESF_COMBO;
-	pForm.recentCount = 0;
 	pForm.caption = IsEmpty(pwszTitle) ? TranslateT("Enter confirmation code") : pwszTitle;
-	pForm.ptszInitVal = nullptr;
 	pForm.szModuleName = m_szModuleName;
 	pForm.szDataPrefix = "confirmcode_";
 	return (!EnterString(&pForm)) ? CMStringW() : CMStringW(ptrW(pForm.ptszResult));
@@ -475,9 +473,8 @@ CMStringW CVkProto::RunConfirmationCode(LPCWSTR pwszTitle)
 
 CMStringW CVkProto::RunRenameNick(LPCWSTR pwszOldName)
 {
-	ENTER_STRING pForm = { sizeof(pForm) };
+	ENTER_STRING pForm = {};
 	pForm.type = ESF_COMBO;
-	pForm.recentCount = 0;
 	pForm.caption = TranslateT("Enter new nickname");
 	pForm.ptszInitVal = pwszOldName;
 	pForm.szModuleName = m_szModuleName;
@@ -1503,7 +1500,7 @@ void CVkProto::AddVkDeactivateEvent(MCONTACT hContact, CMStringW&  wszType)
 		hContact, wszType.c_str(),
 		(int)m_vkOptions.bShowVkDeactivateEvents,
 		(int)getBool(hContact, "ShowVkDeactivateEvents", true),
-		(int)(db_get_b(hContact, "CList", "Hidden", 0) == 0));
+		(int)(!Contact_IsHidden(hContact)));
 
 	CVKDeactivateEvent vkDeactivateEvent[] = {
 		{ L"", Translate("User restored control over own page") },
@@ -1531,7 +1528,7 @@ void CVkProto::AddVkDeactivateEvent(MCONTACT hContact, CMStringW&  wszType)
 		(
 			m_vkOptions.bShowVkDeactivateEvents
 			&& getBool(hContact, "ShowVkDeactivateEvents", true)
-			&& (db_get_b(hContact, "CList", "Hidden", 0) == 0)
+			&& (!Contact_IsHidden(hContact))
 		) ? 0 : DBEF_READ);
 	db_event_add(hContact, &dbei);
 }

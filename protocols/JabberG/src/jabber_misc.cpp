@@ -46,7 +46,7 @@ void CJabberProto::AddContactToRoster(const char *jid, const char *nick, const c
 void CJabberProto::DBAddAuthRequest(const char *jid, const char *nick)
 {
 	MCONTACT hContact = DBCreateContact(jid, nick, true, true);
-	delSetting(hContact, "Hidden");
+	Contact_Hide(hContact, false);
 
 	DB_AUTH_BLOB blob(hContact, nick, nullptr, nullptr, jid, nullptr);
 
@@ -86,7 +86,7 @@ MCONTACT CJabberProto::DBCreateContact(const char *jid, const char *nick, bool t
 	if (nick != nullptr && *nick != '\0')
 		setUString(hNewContact, "Nick", nick);
 	if (temporary)
-		db_set_b(hNewContact, "CList", "NotOnList", 1);
+		Contact_RemoveFromList(hNewContact);
 	else
 		SendGetVcard(hNewContact);
 	
@@ -148,13 +148,11 @@ void CJabberProto::GetAvatarFileName(MCONTACT hContact, wchar_t* pszDest, size_t
 	if (hContact != 0) {
 		char str[256];
 		JabberShaStrBuf buf;
-		DBVARIANT dbv;
-		if (!db_get_utf(hContact, m_szModuleName, "jid", &dbv)) {
-			strncpy_s(str, dbv.pszVal, _TRUNCATE);
-			str[sizeof(str) - 1] = 0;
-			db_free(&dbv);
-		}
-		else _i64toa((LONG_PTR)hContact, str, 10);
+		ptrA szJid(getUStringA(hContact, "jid"));
+		if (szJid)
+			strncpy_s(str, szJid, _TRUNCATE);
+		else
+			_i64toa((LONG_PTR)hContact, str, 10);
 		mir_snwprintf(pszDest + tPathLen, MAX_PATH - tPathLen, L"%S%s", JabberSha1(str, buf), szFileType);
 	}
 	else if (m_ThreadInfo != nullptr) {
@@ -207,8 +205,10 @@ void CJabberProto::ResolveTransportNicks(const char *jid)
 
 void CJabberProto::SetServerStatus(int iNewStatus)
 {
-	if (!m_bJabberOnline)
+	if (!m_bJabberOnline) {
+		m_iDesiredStatus = m_iStatus;
 		return;
+	}
 
 	// change status
 	int oldStatus = m_iStatus;
@@ -230,8 +230,10 @@ void CJabberProto::SetServerStatus(int iNewStatus)
 		return;
 	}
 
-	if (m_iStatus == oldStatus)
+	if (m_iStatus == oldStatus) {
+		m_iDesiredStatus = m_iStatus;
 		return;
+	}
 
 	// send presence update
 	SendPresence(m_iStatus, true);

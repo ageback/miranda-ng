@@ -34,9 +34,6 @@ static branch_t branch1[] = {
 	{ LPGENW("Flash window when someone speaks"), "FlashWindow", 0, false },
 	{ LPGENW("Flash window when a word is highlighted"), "FlashWindowHighlight", 0, true },
 	{ LPGENW("Show list of users in the chat room"), "ShowNicklist", 0, true },
-	{ LPGENW("Show button for sending messages"), "ShowSend", 0, false },
-	{ LPGENW("Show buttons for controlling the chat room"), "ShowTopButtons", 0, true },
-	{ LPGENW("Show buttons for formatting the text you are typing"), "ShowFormatButtons", 0, true },
 	{ LPGENW("Show button menus when right clicking the buttons"), "RightClickFilter", 0, false },
 	{ LPGENW("Show the topic of the room on your contact list (if supported)"), "TopicOnClist", 0, false },
 	{ LPGENW("Do not play sounds when the chat room is focused"), "SoundsFocus", 0, false },
@@ -265,15 +262,15 @@ class COptMainDlg : public CDlgBase
 		tvis.hParent = hParent;
 		tvis.hInsertAfter = TVI_LAST;
 		tvis.item.mask = TVIF_TEXT | TVIF_STATE;
-		for (int i = 0; i < nValues; i++) {
-			tvis.item.pszText = TranslateW(branch[i].szDescr);
+		for (int i = 0; i < nValues; i++, branch++) {
+			tvis.item.pszText = TranslateW(branch->szDescr);
 			tvis.item.stateMask = TVIS_STATEIMAGEMASK;
-			if (branch[i].iMode)
-				iState = ((db_get_dw(0, CHAT_MODULE, branch[i].szDBName, defaultval)&branch[i].iMode) & branch[i].iMode) != 0 ? 2 : 1;
+			if (branch->iMode)
+				iState = ((db_get_dw(0, CHAT_MODULE, branch->szDBName, defaultval) & branch->iMode) & branch->iMode) != 0 ? 2 : 1;
 			else
-				iState = db_get_b(0, CHAT_MODULE, branch[i].szDBName, branch[i].bDefault) != 0 ? 2 : 1;
+				iState = db_get_b(0, CHAT_MODULE, branch->szDBName, branch->bDefault) != 0 ? 2 : 1;
 			tvis.item.state = INDEXTOSTATEIMAGEMASK(iState);
-			branch[i].hItem = checkBoxes.InsertItem(&tvis);
+			branch->hItem = checkBoxes.InsertItem(&tvis);
 		}
 	}
 
@@ -283,18 +280,18 @@ class COptMainDlg : public CDlgBase
 
 		TVITEMEX tvi;
 		tvi.mask = TVIF_HANDLE | TVIF_STATE;
-		for (int i = 0; i < nValues; i++) {
-			tvi.hItem = branch[i].hItem;
+		for (int i = 0; i < nValues; i++, branch++) {
+			tvi.hItem = branch->hItem;
 			checkBoxes.GetItem(&tvi);
 			BYTE bChecked = (((tvi.state & TVIS_STATEIMAGEMASK) >> 12) == 1) ? 0 : 1;
-			if (branch[i].iMode) {
+			if (branch->iMode) {
 				if (bChecked)
-					iState |= branch[i].iMode;
+					iState |= branch->iMode;
 				if (iState & GC_EVENT_ADDSTATUS)
 					iState |= GC_EVENT_REMOVESTATUS;
-				db_set_dw(0, CHAT_MODULE, branch[i].szDBName, (DWORD)iState);
+				db_set_dw(0, CHAT_MODULE, branch->szDBName, (DWORD)iState);
 			}
-			else db_set_b(0, CHAT_MODULE, branch[i].szDBName, bChecked);
+			else db_set_b(0, CHAT_MODULE, branch->szDBName, bChecked);
 		}
 	}
 

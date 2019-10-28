@@ -83,10 +83,8 @@ void CIcqProto::OnGetChatInfo(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq)
 /////////////////////////////////////////////////////////////////////////////////////////
 // Invitation dialog
 
-class CGroupchatInviteDlg : public CProtoDlgBase<CIcqProto>
+class CGroupchatInviteDlg : public CIcqDlgBase
 {
-	typedef CProtoDlgBase<CIcqProto> CSuper;
-
 	CCtrlClc m_clc;
 	SESSION_INFO *m_si;
 
@@ -115,7 +113,7 @@ class CGroupchatInviteDlg : public CProtoDlgBase<CIcqProto>
 
 public:
 	CGroupchatInviteDlg(CIcqProto *ppro, SESSION_INFO *si) :
-		CSuper(ppro, IDD_GROUPCHAT_INVITE),
+		CIcqDlgBase(ppro, IDD_GROUPCHAT_INVITE),
 		m_si(si),
 		m_clc(this, IDC_CLIST)
 	{
@@ -260,7 +258,7 @@ void CIcqProto::Chat_SendPrivateMessage(GCHOOK *gch)
 	if (pCache == nullptr) {
 		hContact = CreateContact(gch->ptszUID, true);
 		setWString(hContact, "Nick", gch->ptszNick);
-		db_set_b(hContact, "CList", "Hidden", 1);
+		Contact_Hide(hContact);
 		db_set_dw(hContact, "Ignore", "Mask1", 0);
 	}
 	else hContact = pCache->m_hContact;

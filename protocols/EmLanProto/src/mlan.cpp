@@ -205,9 +205,9 @@ MCONTACT CMLan::FindContact(in_addr addr, const char *nick, bool add_to_list, bo
 		u_long caddr = g_plugin.getDword(res, "ipaddr", -1);
 		if (caddr == addr.S_un.S_addr) {
 			if (make_permanent)
-				db_unset(res, "CList", "NotOnList");
+				Contact_PutOnList(res);
 			if (make_visible)
-				db_unset(res, "CList", "Hidden");
+				Contact_Hide(res, false);
 			return res;
 		}
 	}
@@ -219,9 +219,9 @@ MCONTACT CMLan::FindContact(in_addr addr, const char *nick, bool add_to_list, bo
 		g_plugin.setString(res, "Nick", nick);
 
 		if (!make_permanent)
-			db_set_b(res, "CList", "NotOnList", 1);
+			Contact_RemoveFromList(res);
 		if (!make_visible)
-			db_set_b(res, "CList", "Hidden", 1);
+			Contact_Hide(res);
 
 		g_plugin.setWord(res, "Status", status);
 		return res;
@@ -340,7 +340,7 @@ void CMLan::OnRecvPacket(u_char *mes, int len, in_addr from)
 
 void CMLan::RecvMessageUrl(CCSDATA *ccs)
 {
-	db_unset(ccs->hContact, "CList", "Hidden");
+	Contact_Hide(ccs->hContact, false);
 
 	PROTORECVEVENT *pre = (PROTORECVEVENT*)ccs->lParam;
 	ptrA szMessage(mir_utf8encode(pre->szMessage));
@@ -924,7 +924,7 @@ void CMLan::RecvFile(CCSDATA *ccs)
 {
 	PROTORECVEVENT *pre = (PROTORECVEVENT *)ccs->lParam;
 
-	db_unset(ccs->hContact, "CList", "Hidden");
+	Contact_Hide(ccs->hContact, false);
 
 	char *szFile = pre->szMessage + sizeof(DWORD);
 	char *szDesc = szFile + mir_strlen(szFile) + 1;

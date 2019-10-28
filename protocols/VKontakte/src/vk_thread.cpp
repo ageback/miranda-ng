@@ -357,11 +357,10 @@ MCONTACT CVkProto::SetContactInfo(const JSONNode &jnItem, bool flag, VKContactTy
 		return 0;
 
 	if (vkContactType == VKContactType::vkContactMUCUser) {
-		db_set_b(hContact, "CList", "Hidden", 1);
-		db_set_b(hContact, "CList", "NotOnList", 1);
+		Contact_Hide(hContact);
+		Contact_RemoveFromList(hContact);
 		db_set_dw(hContact, "Ignore", "Mask1", 0);
 	}
-
 
 	CMStringW wszNick, wszValue;
 	int iValue;

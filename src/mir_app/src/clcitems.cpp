@@ -25,6 +25,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "stdafx.h"
 #include "clc.h"
 
+static ClcCacheEntry nullpce = {};
+
 // routines for managing adding/removal of items in the list, including sorting
 
 ClcContact* fnAddItemToGroup(ClcGroup *group, int iAboveItem)
@@ -199,7 +201,7 @@ ClcContact* fnAddContactToGroup(ClcData *dat, ClcGroup *group, MCONTACT hContact
 		cc->flags |= CONTACTF_VISTO;
 	else if (apparentMode)
 		cc->flags |= CONTACTF_VISTO | CONTACTF_INVISTO;
-	if (db_get_b(hContact, "CList", "NotOnList", 0))
+	if (!Contact_OnList(hContact))
 		cc->flags |= CONTACTF_NOTONLIST;
 	DWORD idleMode = szProto != nullptr ? db_get_dw(hContact, szProto, "IdleTS", 0) : 0;
 	if (idleMode)
@@ -307,7 +309,7 @@ MIR_APP_DLL(void) Clist_DeleteItemFromTree(HWND hwnd, MCONTACT hItem)
 	ClcContact *contact;
 	if (Clist_FindItem(hwnd, dat, hItem, &contact, &group)) {
 		Clist_RemoveItemFromGroup(hwnd, group, contact, 1);
-		contact->pce = nullptr;
+		contact->pce = &nullpce;
 		return;
 	}
 
@@ -340,7 +342,7 @@ MIR_APP_DLL(void) Clist_DeleteItemFromTree(HWND hwnd, MCONTACT hItem)
 
 int fnGetContactHiddenStatus(MCONTACT hContact, char*, ClcData*)
 {
-	return db_get_b(hContact, "CList", "Hidden", 0);
+	return Contact_IsHidden(hContact);
 }
 
 void fnRebuildEntireList(HWND hwnd, ClcData *dat)

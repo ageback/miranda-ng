@@ -43,11 +43,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #include <string>
 using namespace std;
 
-#ifdef ComboBox_SelectItemData
- // use Workaround for MS bug ComboBox_SelectItemData;
- #undef ComboBox_SelectItemData
-#endif
-
 #include <win2k.h>
 #include <msapi/vsstyle.h>
 #include <msapi/vssym32.h>
@@ -168,6 +163,8 @@ extern IconItem ICONS_BTN[ICO_BTN_END_];
 #else
 #	define DBGMSG(str,...)
 #endif
+
+void ComboBox_SelectItem(HWND hCombo, LPARAM data);
 
 template<class _Elem>
 std::basic_string<_Elem> replace(const std::basic_string<_Elem> & Origninal, const std::basic_string<_Elem> & What, const std::basic_string<_Elem> & With)

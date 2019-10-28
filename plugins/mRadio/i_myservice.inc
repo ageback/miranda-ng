@@ -170,7 +170,7 @@ begin
       AnsiToWide(group,p,MirandaCP);
       CreateGroupW(p,result);
       mFreeMem(p);
-      CallService(MS_IGNORE_IGNORE,result,IGNOREEVENT_ALL);
+      Ignore_Ignore(result,IGNOREEVENT_ALL);
     end;
   end;
 end;
@@ -283,8 +283,6 @@ begin
     if result<>0 then
     begin
       Proto_AddToContact(result,PluginName);
-      //
-//      DBWriteByte(result,strCList,'Hidden'   ,0);
       DBWriteByte(result,strCList,'NotOnList',1);
       // URL
       DBWriteUnicode(result,PluginName,optStationURL,@buf);
@@ -295,7 +293,7 @@ begin
 
       SetStatus(result,ID_STATUS_OFFLINE);
 
-      CallService(MS_IGNORE_IGNORE,result,IGNOREEVENT_USERONLINE{IGNOREEVENT_ALL});
+      Ignore_Ignore(result,IGNOREEVENT_USERONLINE);
 
       CallService(MS_RADIO_COMMAND,MRC_PLAY,result);
     end;

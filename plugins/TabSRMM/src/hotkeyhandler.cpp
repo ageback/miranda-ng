@@ -68,7 +68,7 @@ static HOTKEYDESC _hotkeydescs[] = {
 	{ "tabsrmm_close_other", LPGEN("Close other tabs"), TABSRMM_HK_SECTION_GENERIC, nullptr, HOTKEYCODE(HOTKEYF_ALT | HOTKEYF_CONTROL, 'W'), 0, TABSRMM_HK_CLOSE_OTHER },
 };
 
-LRESULT ProcessHotkeysByMsgFilter(const CCtrlBase &pCtrl, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT CMsgDialog::ProcessHotkeysByMsgFilter(const CCtrlBase &pCtrl, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	MSGFILTER mf;
 	mf.nmhdr.code = EN_MSGFILTER;
@@ -77,7 +77,7 @@ LRESULT ProcessHotkeysByMsgFilter(const CCtrlBase &pCtrl, UINT msg, WPARAM wPara
 	mf.lParam = lParam;
 	mf.wParam = wParam;
 	mf.msg = msg;
-	return SendMessage(pCtrl.GetParent()->GetHwnd(), WM_NOTIFY, 0, (LPARAM)&mf);
+	return OnFilter(&mf);
 }
 
 static INT_PTR HotkeyProcessor(WPARAM, LPARAM lParam)
@@ -183,9 +183,9 @@ LONG_PTR CALLBACK HotkeyHandlerDlgProc(HWND hwndDlg, UINT msg, WPARAM wParam, LP
 					hWnd = si ? si->pDlg->GetHwnd() : nullptr;
 				}
 
-				CSrmmWindow *dat = nullptr;
+				CMsgDialog *dat = nullptr;
 				if (hWnd)
-					dat = (CSrmmWindow*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
+					dat = (CMsgDialog*)GetWindowLongPtr(hWnd, GWLP_USERDATA);
 
 				{
 					HICON hIcon;

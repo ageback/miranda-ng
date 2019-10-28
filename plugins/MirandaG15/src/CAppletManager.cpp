@@ -720,8 +720,7 @@ void CAppletManager::SendTypingNotification(MCONTACT hContact, bool bEnable)
 		return;
 	if (protoCaps & PF1_INVISLIST && protoStatus == ID_STATUS_INVISIBLE && db_get_w(hContact, szProto, "ApparentMode", 0) != ID_STATUS_ONLINE)
 		return;
-	if (db_get_b(hContact, "CList", "NotOnList", 0)
-		&& !db_get_b(0, "SRMsg", "UnknownTyping", 1))
+	if (!Contact_OnList(hContact) && !db_get_b(0, "SRMsg", "UnknownTyping", 1))
 		return;
 	// End user check
 	CallService(MS_PROTO_SELFISTYPING, hContact, bEnable ? PROTOTYPE_SELFTYPING_ON : PROTOTYPE_SELFTYPING_OFF);
@@ -1123,7 +1122,7 @@ int CAppletManager::HookChatInbound(WPARAM, LPARAM lParam)
 		Event.hContact = NULL;
 
 	// Ignore events from hidden chatrooms, except for join events
-	if (gce->pszID.w != nullptr && db_get_b(Event.hContact, "CList", "Hidden", 0)) {
+	if (gce->pszID.w != nullptr && Contact_IsHidden(Event.hContact)) {
 		if (gce->iType == GC_EVENT_JOIN && pHistory)
 			pHistory->LUsers.push_back(toTstring(gce->pszNick.w));
 
@@ -1645,7 +1644,7 @@ int CAppletManager::HookSettingChanged(WPARAM hContact, LPARAM lParam)
 	else if (!strcmp(dbcws->szModule, "CList")) {
 		if (!strcmp(dbcws->szSetting, "Hidden")) {
 			Event.eType = EVENT_CONTACT_HIDDEN;
-			Event.iValue = db_get_b(hContact, "CList", "Hidden", 0);
+			Event.iValue = Contact_IsHidden(hContact);
 		}
 		else if (!strcmp(dbcws->szSetting, "Group")) {
 			Event.eType = EVENT_CONTACT_GROUP;

@@ -22,83 +22,33 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "stdafx.h"
 #include "statusicon.h"
 
-/////////////////////////////////////////////////////////////////////////////////////////
-
-CMsgDialog::CMsgDialog(CTabbedWindow *pOwner, int iDialogId, SESSION_INFO *si) :
-	CSuper(g_plugin, iDialogId, si),
-	m_btnOk(this, IDOK),
-	m_pOwner(pOwner)
-{
-	m_autoClose = 0;
-	m_forceResizable = true;
-}
-
-void CMsgDialog::CloseTab()
-{
-	if (g_Settings.bTabsEnable) {
-		SendMessage(GetParent(m_hwndParent), GC_REMOVETAB, 0, (LPARAM)this);
-		Close();
-	}
-	else SendMessage(m_hwndParent, WM_CLOSE, 0, 0);
-}
-
-INT_PTR CMsgDialog::DlgProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
-{
-	switch (uMsg) {
-	case WM_ACTIVATE:
-		if (LOWORD(wParam) != WA_ACTIVE)
-			break;
-
-		SetFocus(m_message.GetHwnd());
-		__fallthrough;
-
-	case WM_MOUSEACTIVATE:
-		OnActivate();
-		break;
-
-	case WM_TIMER:
-		if (wParam == TIMERID_FLASHWND) {
-			m_pOwner->FixTabIcons(this);
-			if (!g_dat.nFlashMax || m_nFlash < 2 * g_dat.nFlashMax)
-				FlashWindow(m_pOwner->GetHwnd(), TRUE);
-			m_nFlash++;
-		}
-		break;
-	}
-
-	return CSuper::DlgProc(uMsg, wParam, lParam);
-}
-
-bool CMsgDialog::IsActive() const
-{
-	bool bRes = m_pOwner->IsActive();
-	if (g_Settings.bTabsEnable && bRes)
-		bRes &= m_pOwner->m_tab.GetActivePage() == this;
-
-	return bRes;
-}
-
-void CMsgDialog::StartFlash()
-{
-	::SetTimer(m_hwnd, TIMERID_FLASHWND, 900, nullptr);
-}
-
-void CMsgDialog::StopFlash()
-{
-	if (::KillTimer(m_hwnd, TIMERID_FLASHWND)) {
-		::FlashWindow(m_pOwner->GetHwnd(), FALSE);
-
-		m_nFlash = 0;
-		m_pOwner->FixTabIcons(this);
-	}
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
+static HGENMENU hMsgMenuItem;
+static HMODULE hMsftEdit;
 
 int OnCheckPlugins(WPARAM, LPARAM);
 
-HGENMENU hMsgMenuItem;
-HMODULE hMsftEdit;
+/////////////////////////////////////////////////////////////////////////////////////////
+
+int SendMessageDirect(const wchar_t *szMsg, MCONTACT hContact)
+{
+	if (hContact == 0)
+		return 0;
+
+	int flags = 0;
+	if (Utils_IsRtl(szMsg))
+		flags |= PREF_RTL;
+
+	T2Utf sendBuffer(szMsg);
+	if (!mir_strlen(sendBuffer))
+		return 0;
+
+	if (db_mc_isMeta(hContact))
+		hContact = db_mc_getSrmmSub(hContact);
+
+	int sendId = ProtoChainSend(hContact, PSS_MESSAGE, flags, (LPARAM)sendBuffer);
+	msgQueue_add(hContact, sendId, sendBuffer.detach(), flags);
+	return sendId;
+}
 
 static int SRMMStatusToPf2(int status)
 {
@@ -225,9 +175,9 @@ static int TypingMessage(WPARAM hContact, LPARAM lParam)
 
 	Skin_PlaySound((lParam) ? "TNStart" : "TNStop");
 
-	HWND hwnd = Srmm_FindWindow(hContact);
-	if (hwnd)
-		SendMessage(hwnd, DM_TYPING, 0, lParam);
+	auto *pDlg = Srmm_FindDialog(hContact);
+	if (pDlg)
+		pDlg->UserTyping(lParam);
 	else if (lParam && g_dat.bShowTypingTray) {
 		wchar_t szTip[256];
 		mir_snwprintf(szTip, TranslateT("%s is typing a message"), Clist_GetContactDisplayName(hContact));
@@ -274,9 +224,9 @@ static int MessageSettingChanged(WPARAM hContact, LPARAM lParam)
 // If a contact gets deleted, close its message window if there is any
 static int ContactDeleted(WPARAM wParam, LPARAM)
 {
-	HWND hwnd = Srmm_FindWindow(wParam);
-	if (hwnd)
-		SendMessage(hwnd, DM_CLOSETAB, 0, 0);
+	auto *pDlg = Srmm_FindDialog(wParam);
+	if (pDlg)
+		pDlg->CloseTab();
 
 	return 0;
 }
@@ -509,9 +459,10 @@ static int SplitmsgModulesLoaded(WPARAM, LPARAM)
 	return 0;
 }
 
-int PreshutdownSendRecv(WPARAM, LPARAM)
+static int Preshutdown(WPARAM, LPARAM)
 {
-	Srmm_Broadcast(DM_CLOSETAB, 0, 0);
+	for (auto &it : g_arDialogs.rev_iter())
+		it->CloseTab();
 	return 0;
 }
 
@@ -521,8 +472,10 @@ static int IconsChanged(WPARAM, LPARAM)
 	LoadMsgLogIcons();
 
 	// change all the icons
-	Srmm_Broadcast(DM_REMAKELOG, 0, 0);
-	Srmm_Broadcast(DM_UPDATEWINICON, 0, 0);
+	for (auto &it : g_arDialogs) {
+		it->RemakeLog();
+		it->FixTabIcons();
+	}
 	return 0;
 }
 
@@ -563,7 +516,7 @@ int LoadSendRecvMessageModule(void)
 	HookEvent(ME_PROTO_CONTACTISTYPING, TypingMessage);
 	HookEvent(ME_SKIN_ICONSCHANGED, IconsChanged);
 	HookEvent(ME_SYSTEM_MODULESLOADED, SplitmsgModulesLoaded);
-	HookEvent(ME_SYSTEM_PRESHUTDOWN, PreshutdownSendRecv);
+	HookEvent(ME_SYSTEM_PRESHUTDOWN, Preshutdown);
 
 	CreateServiceFunction(MS_MSG_SENDMESSAGE, SendMessageCommand);
 	CreateServiceFunction(MS_MSG_SENDMESSAGEW, SendMessageCommand_W);

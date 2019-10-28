@@ -81,7 +81,7 @@ struct SESSION_INFO;
 struct MODULEINFO;
 struct LOGSTREAMDATA;
 
-class CChatRoomDlg;
+class CMsgDialog;
 
 struct USERINFO : public MZeroedObject, public MNonCopyable
 {
@@ -106,12 +106,6 @@ struct MIR_APP_EXPORT GCModuleInfoBase : public MZeroedObject, public MNonCopyab
 	bool     bChanMgr, bAckMsg;
 	
 	int      iMaxText;
-};
-
-struct COMMANDINFO
-{
-	char *lpCommand;
-	COMMANDINFO *last, *next;
 };
 
 struct FONTINFO
@@ -172,8 +166,7 @@ struct MIR_APP_EXPORT GCSessionInfoBase : public MZeroedObject, public MNonCopya
 
 	int         currentHovered;
 
-	CChatRoomDlg *pDlg;
-	COMMANDINFO *lpCommands, *lpCurrentCommand;
+	CMsgDialog *pDlg;
 	LOGINFO *pLog, *pLogEnd;
 	USERINFO *pMe;
 	STATUSINFO *pStatuses;
@@ -292,10 +285,6 @@ struct CHAT_MANAGER
 	SESSION_INFO* (*SM_CreateSession)(void);
 	SESSION_INFO* (*SM_FindSession)(const wchar_t *pszID, const char *pszModule);
 	HICON         (*SM_GetStatusIcon)(SESSION_INFO *si, USERINFO * ui);
-	BOOL          (*SM_BroadcastMessage)(const char *pszModule, UINT msg, WPARAM wParam, LPARAM lParam, BOOL bAsync);
-	void          (*SM_AddCommand)(const wchar_t *pszID, const char *pszModule, const char* lpNewCommand);
-	char*         (*SM_GetPrevCommand)(const wchar_t *pszID, const char *pszModule);
-	char*         (*SM_GetNextCommand)(const wchar_t *pszID, const char *pszModule);
 	int           (*SM_GetCount)(const char *pszModule);
 	SESSION_INFO* (*SM_FindSessionByIndex)(const char *pszModule, int iItem);
 	USERINFO*     (*SM_GetUserFromIndex)(const wchar_t *pszID, const char *pszModule, int index);
@@ -399,6 +388,7 @@ EXTERN_C MIR_APP_DLL(void) Srmm_Broadcast(UINT, WPARAM, LPARAM);
 
 // finds a SRMM window using hContact
 EXTERN_C MIR_APP_DLL(HWND) Srmm_FindWindow(MCONTACT hContact);
+EXTERN_C MIR_APP_DLL(CMsgDialog*) Srmm_FindDialog(MCONTACT hContact);
 
 // updates options for all windows
 EXTERN_C MIR_APP_DLL(void) Chat_UpdateOptions();
@@ -406,94 +396,7 @@ EXTERN_C MIR_APP_DLL(void) Chat_UpdateOptions();
 // runs ME_GC_EVENT with the parameters passed
 EXTERN_C MIR_APP_DLL(BOOL) Chat_DoEventHook(SESSION_INFO *si, int iType, const USERINFO *pUser, const wchar_t* pszText, INT_PTR dwItem);
 
-// chat menu creation / destruction
-EXTERN_C MIR_APP_DLL(UINT) Chat_CreateGCMenu(HWND hwnd, HMENU hMenu, POINT pt, SESSION_INFO *si, const wchar_t *pszUID, const wchar_t *pszWordText);
-EXTERN_C MIR_APP_DLL(void) Chat_DestroyGCMenu(HMENU hMenu, int iIndex);
-
 // calculates width or height of a string
 EXTERN_C MIR_APP_DLL(int) Chat_GetTextPixelSize(const wchar_t *pszText, HFONT hFont, bool bWidth);
-
-// message procedures' stubs
-EXTERN_C MIR_APP_DLL(LRESULT) CALLBACK stubLogProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-EXTERN_C MIR_APP_DLL(LRESULT) CALLBACK stubMessageProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-EXTERN_C MIR_APP_DLL(LRESULT) CALLBACK stubNicklistProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-#include <chat_resource.h>
-
-class MIR_APP_EXPORT CSrmmBaseDialog : public CDlgBase
-{
-	CSrmmBaseDialog(const CSrmmBaseDialog&) = delete;
-	CSrmmBaseDialog& operator=(const CSrmmBaseDialog&) = delete;
-
-protected:
-	CSrmmBaseDialog(CMPluginBase&, int idDialog, SESSION_INFO *si = nullptr);
-
-	bool OnInitDialog() override;
-	void OnDestroy() override;
-
-	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
-
-	int  NotifyEvent(int code);
-	bool ProcessHotkeys(int key, bool bShift, bool bCtrl, bool bAlt);
-	void RefreshButtonStatus(void);
-	void RunUserMenu(HWND hwndOwner, USERINFO *ui, const POINT &pt);
-
-protected:
-	CCtrlRichEdit m_message, m_log;
-	SESSION_INFO *m_si;
-	COLORREF m_clrInputBG, m_clrInputFG;
-	time_t m_iLastEnterTime;
-
-	CCtrlListBox m_nickList;
-	CCtrlButton m_btnColor, m_btnBkColor;
-	CCtrlButton m_btnBold, m_btnItalic, m_btnUnderline;
-	CCtrlButton m_btnHistory, m_btnChannelMgr, m_btnNickList, m_btnFilter;
-
-	void onClick_BIU(CCtrlButton*);
-	void onClick_Color(CCtrlButton*);
-	void onClick_BkColor(CCtrlButton*);
-
-	void onClick_ChanMgr(CCtrlButton*);
-	void onClick_History(CCtrlButton*);
-
-	void onDblClick_List(CCtrlListBox*);
-
-public:
-	MCONTACT m_hContact;
-	int m_iLogFilterFlags;
-	bool m_bFilterEnabled, m_bNicklistEnabled;
-	bool m_bFGSet, m_bBGSet;
-	bool m_bInMenu;
-	COLORREF m_iFG, m_iBG;
-
-	void ClearLog();
-	void RedrawLog2();
-	void ShowColorChooser(int iCtrlId);
-
-	virtual void AddLog();
-	virtual void CloseTab() {}
-	virtual bool IsActive() const PURE;
-	virtual void LoadSettings() PURE;
-	virtual void RedrawLog() {}
-	virtual void ScrollToBottom() {}
-	virtual void SetStatusText(const wchar_t*, HICON) {}
-	virtual void ShowFilterMenu() {}
-	virtual void StreamInEvents(LOGINFO*, bool) {}
-	virtual void UpdateNickList() {}
-	virtual void UpdateOptions() {}
-	virtual void UpdateStatusBar() {}
-	virtual void UpdateTitle() PURE;
-
-	virtual LRESULT WndProc_Log(UINT msg, WPARAM wParam, LPARAM lParam);
-	virtual LRESULT WndProc_Message(UINT msg, WPARAM wParam, LPARAM lParam);
-	virtual LRESULT WndProc_Nicklist(UINT msg, WPARAM wParam, LPARAM lParam);
-
-	__forceinline bool isChat() const { return m_si != nullptr; }
-
-	__inline void* operator new(size_t size){ return calloc(1, size); }
-	__inline void operator delete(void* p) { free(p); }
-};
 
 #endif // M_CHAT_INT_H__

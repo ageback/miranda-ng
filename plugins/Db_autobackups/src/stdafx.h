@@ -6,11 +6,13 @@
 #include <windows.h>
 #include <shlobj.h>
 #include <time.h>
+
+#include <string>
 #include <vector>
 #include <functional>
 #include <filesystem>
 
-namespace fs = std::experimental::filesystem;
+namespace fs = std::filesystem;
 
 #include <newpluginapi.h>
 #include <m_clist.h>
@@ -34,7 +36,6 @@ struct CMPlugin : public PLUGIN<CMPlugin>
 {
 	CMPlugin();
 
-	bool               bTerminated;
 	CMOption<BYTE>	    backup_types;
 	CMOption<WORD>	    period;
 	CMOption<BYTE>	    period_type;
@@ -60,7 +61,8 @@ struct CMPlugin : public PLUGIN<CMPlugin>
 
 int  SetBackupTimer(void);
 int  OptionsInit(WPARAM wParam, LPARAM lParam);
-void BackupStart(wchar_t *backup_filename, bool bInThread = true);
+void BackupStart(wchar_t *backup_filename);
+int  BackupStatus(void);
 
 struct ZipFile
 {

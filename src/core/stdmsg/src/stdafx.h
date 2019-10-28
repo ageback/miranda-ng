@@ -71,13 +71,62 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <m_srmm_int.h>
 
 /////////////////////////////////////////////////////////////////////////////////////////
+// tabs.cpp
 
-struct MODULEINFO : public GCModuleInfoBase
+class CMsgDialog;
+
+class CTabbedWindow : public CDlgBase
 {
-	HICON hOnlineIcon, hOfflineIcon;
-	int OnlineIconIndex, OfflineIconIndex;
+	void SaveWindowPosition(bool bUpdateSession);
+	void SetWindowPosition();
+
+	int oldSizeX = 0, oldSizeY = 0;
+	int iX = 0, iY = 0;
+	int iWidth = 0, iHeight = 0;
+	int m_windowWasCascaded = 0;
+	int m_statusHeight = 0;
+
+public:
+	CCtrlPages m_tab;
+	HWND m_hwndStatus = nullptr;
+	CMsgDialog *m_pEmbed = nullptr;
+
+	CTabbedWindow();
+
+	bool IsActive() const
+	{
+		return GetActiveWindow() == m_hwnd && GetForegroundWindow() == m_hwnd;
+	}
+
+	CTabbedWindow *AddPage(MCONTACT hContact, wchar_t *pwszText = nullptr, int iActivate = -1);
+	CMsgDialog *CurrPage() const;
+
+	void AddPage(SESSION_INFO*, int insertAt = -1);
+	void DropTab(int begin, int end);
+	void FixTabIcons(CMsgDialog*);
+	void RemoveTab(CMsgDialog*);
+	void SetMessageHighlight(CMsgDialog*);
+	void SetTabHighlight(CMsgDialog*);
+	void SwitchNextTab(void);
+	void SwitchPrevTab(void);
+	void SwitchTab(int iNewTab);
+	void TabClicked(void);
+
+	bool OnInitDialog() override;
+	void OnDestroy() override;
+
+	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
+	int Resizer(UTILRESIZECONTROL *urc) override;
 };
 
+extern CTabbedWindow *g_pTabDialog;
+
+void UninitTabs(void);
+CTabbedWindow *GetContainer();
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+struct MODULEINFO : public GCModuleInfoBase {};
 struct SESSION_INFO : public GCSessionInfoBase {};
 struct LOGSTREAMDATA : public GCLogStreamDataBase {};
 
@@ -87,11 +136,6 @@ struct LOGSTREAMDATA : public GCLogStreamDataBase {};
 #include "version.h"
 
 #define EM_ACTIVATE   (WM_USER+0x102)
-
-#define GC_SWITCHNEXTTAB (WM_USER+0x103)
-#define GC_SWITCHPREVTAB (WM_USER+0x104)
-#define GC_TABCHANGE     (WM_USER+0x105)
-#define GC_SWITCHTAB     (WM_USER+0x106)
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -111,6 +155,8 @@ struct CMPlugin : public PLUGIN<CMPlugin>
 {
 	CMPlugin();
 
+	HANDLE hLogger;
+
 	int Load() override;
 	int Unload() override;
 };
@@ -127,6 +173,7 @@ void Load_ChatModule(void);
 
 // log.cpp
 char* Log_CreateRtfHeader(void);
+CSrmmLogWindow *logBuilder(CMsgDialog &pDlg);
 
 // window.cpp
 SESSION_INFO* SM_GetPrevWindow(SESSION_INFO *si);
@@ -137,51 +184,5 @@ void AddIcons(void);
 
 // tools.cpp
 void SetButtonsPos(HWND hwndDlg, bool bIsChat);
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// tabs.cpp
-
-class CTabbedWindow : public CDlgBase
-{
-	void SaveWindowPosition(bool bUpdateSession);
-	void SetWindowPosition();
-
-	int oldSizeX = 0, oldSizeY = 0;
-	int iX = 0, iY = 0;
-	int iWidth = 0, iHeight = 0;
-	int m_windowWasCascaded = 0;
-
-public:
-	CCtrlPages m_tab;
-	HWND m_hwndStatus = nullptr;
-	CMsgDialog *m_pEmbed = nullptr;
-
-	CTabbedWindow();
-
-	bool IsActive() const
-	{
-		return GetActiveWindow() == m_hwnd && GetForegroundWindow() == m_hwnd;
-	}
-
-	CTabbedWindow* AddPage(MCONTACT hContact, wchar_t *pwszText = nullptr, int iActivate = -1);
-	CMsgDialog* CurrPage() const;
-
-	void AddPage(SESSION_INFO*, int insertAt = -1);
-	void FixTabIcons(CMsgDialog*);
-	void SetMessageHighlight(CMsgDialog*);
-	void SetTabHighlight(CMsgDialog*);
-	void TabClicked();
-
-	bool OnInitDialog() override;
-	void OnDestroy() override;
-
-	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
-	int Resizer(UTILRESIZECONTROL *urc) override;
-};
-
-extern CTabbedWindow *g_pTabDialog;
-
-void UninitTabs(void);
-CTabbedWindow* GetContainer();
 
 #pragma comment(lib,"comctl32.lib")

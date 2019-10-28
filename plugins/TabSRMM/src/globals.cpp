@@ -70,6 +70,8 @@ void CGlobals::reloadSystemStartup()
 
 	hCurSplitNS = LoadCursor(nullptr, IDC_SIZENS);
 	hCurSplitWE = LoadCursor(nullptr, IDC_SIZEWE);
+	hCurSplitSW = LoadCursor(nullptr, IDC_SIZENESW);
+	hCurSplitWSE = LoadCursor(nullptr, IDC_SIZENWSE);
 
 	HDC hScrnDC = GetDC(nullptr);
 	m_DPIscaleX = GetDeviceCaps(hScrnDC, LOGPIXELSX) / 96.0;
@@ -94,17 +96,6 @@ void CGlobals::reloadSystemModulesChanged()
 		PluginConfig.g_SmileyAddAvail = 1;
 		HookEvent(ME_SMILEYADD_OPTIONSCHANGED, ::SmileyAddOptionsChanged);
 	}
-
-	// ieView
-	BOOL bIEView = ServiceExists(MS_IEVIEW_WINDOW);
-	if (bIEView) {
-		BOOL bOldIEView = M.GetByte("ieview_installed", 0);
-		if (bOldIEView != bIEView)
-			db_set_b(0, SRMSGMOD_T, "default_ieview", 1);
-		db_set_b(0, SRMSGMOD_T, "ieview_installed", 1);
-		HookEvent(ME_IEVIEW_OPTIONSCHANGED, ::IEViewOptionsChanged);
-	}
-	else db_set_b(0, SRMSGMOD_T, "ieview_installed", 0);
 
 	m_hwndClist = g_clistApi.hwndContactList;
 
@@ -137,6 +128,7 @@ void CGlobals::reloadSettings(bool fReloadSkins)
 	m_bCutContactNameOnTabs = M.GetBool("cuttitle", false);
 	m_bStatusOnTabs = M.GetBool("tabstatus", true);
 	m_bLogStatusChanges = M.GetBool("logstatuschanges", false);
+	m_bUseSameSplitSize = M.GetBool("usesamesplitsize", true);
 	m_bUseDividers = M.GetBool("usedividers", false);
 	m_bDividersUsePopupConfig = M.GetBool("div_popupconfig", false);
 	m_MsgTimeout = g_plugin.getDword(SRMSGSET_MSGTIMEOUT, SRMSGDEFSET_MSGTIMEOUT);
@@ -266,7 +258,7 @@ int CGlobals::ModulesLoaded(WPARAM, LPARAM)
 	for (int i = 0; i < NR_BUTTONBARICONS; i++)
 		PluginConfig.g_buttonBarIcons[i] = nullptr;
 	::LoadIconTheme();
-	::CreateImageList(TRUE);
+	::CreateImageList(true);
 	::CB_InitCustomButtons();
 
 	PluginConfig.reloadSystemModulesChanged();
@@ -380,12 +372,12 @@ int CGlobals::DBSettingChanged(WPARAM hContact, LPARAM lParam)
 	}
 
 	if (hwnd != nullptr) {
-		CTabBaseDlg *dat = c->getDat();
+		CMsgDialog *dat = c->getDat();
 		if (!strcmp(setting, "MirVer"))
 			PostMessage(hwnd, DM_CLIENTCHANGED, 0, 0);
 
 		if (dat && !strcmp(setting, "NotOnList") && (cws->value.type == DBVT_DELETED || cws->value.bVal == 0))
-			((CSrmmWindow*)dat)->onClick_CancelAdd(0);
+			((CMsgDialog*)dat)->onClick_CancelAdd(0);
 		
 		if (dat && (fChanged || fExtendedStatusChange))
 			dat->UpdateTitle();
@@ -429,7 +421,7 @@ int CGlobals::MetaContactEvent(WPARAM hContact, LPARAM)
 	if (hContact) {
 		CContactCache *c = CContactCache::getContactCache(hContact);
 		c->updateMeta();
-		CTabBaseDlg *pDlg = c->getDat();
+		CMsgDialog *pDlg = c->getDat();
 		if (pDlg) {
 			pDlg->UpdateTitle();
 			pDlg->GetClientIcon();
@@ -530,7 +522,7 @@ void CGlobals::logStatusChange(WPARAM wParam, const CContactCache *c)
 	if (c == nullptr)
 		return;
 
-	CSrmmWindow *dat = c->getDat();
+	CMsgDialog *dat = c->getDat();
 	if (dat == nullptr || !c->isValid())
 		return;
 
@@ -539,7 +531,7 @@ void CGlobals::logStatusChange(WPARAM wParam, const CContactCache *c)
 		return;
 
 	// don't log them if WE are logging off
-	if (Proto_GetStatus(c->getProto()) == ID_STATUS_OFFLINE)
+	if (Proto_GetStatus(c->getProto()) == ID_STATUS_OFFLINE || db_get_b(hContact, c->getProto(), "ChatRoom", 0))
 		return;
 
 	WORD wStatus = LOWORD(wParam);
@@ -568,5 +560,5 @@ void CGlobals::logStatusChange(WPARAM wParam, const CContactCache *c)
 	dbei.eventType = EVENTTYPE_STATUSCHANGE;
 	dbei.timestamp = time(0);
 	dbei.szModule = (char*)c->getProto();
-	dat->StreamInEvents(0, 1, 1, &dbei);
+	dat->LogEvent(&dbei);
 }

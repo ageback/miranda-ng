@@ -158,7 +158,7 @@ int CreateAvatarInCache(MCONTACT hContact, AVATARCACHEENTRY *ace, const char *sz
 	GetObject(ace->hbmPic, sizeof(bminfo), &bminfo);
 
 	ace->dwFlags = AVS_BITMAP_VALID;
-	if (hContact != NULL && db_get_b(hContact, "ContactPhoto", "Hidden", 0))
+	if (hContact != NULL && Contact_IsHidden(hContact))
 		ace->dwFlags |= AVS_HIDEONCLIST;
 	ace->hContact = hContact;
 	ace->bmHeight = bminfo.bmHeight;
@@ -412,7 +412,7 @@ int ChangeAvatar(MCONTACT hContact, bool fLoad, bool fNotifyHist, int pa_format)
 		return 0;
 
 	if (fNotifyHist)
-		node->dwFlags |= AVH_MUSTNOTIFY;
+		node->bNotify = true;
 
 	node->pa_format = pa_format;
 	if (fLoad) {

@@ -27,8 +27,6 @@ HCURSOR  hDragCursor;
 HGENMENU hMsgMenuItem;
 HMODULE hMsftEdit;
 
-extern HWND GetParentWindow(MCONTACT hContact, BOOL bChat);
-
 #define SCRIVER_DB_GETEVENTTEXT "Scriver/GetText"
 
 static int SRMMStatusToPf2(int status)
@@ -55,7 +53,7 @@ static int SRMMStatusToPf2(int status)
 }
 
 int IsAutoPopup(MCONTACT hContact) {
-	if (g_dat.flags & SMF_AUTOPOPUP) {
+	if (g_dat.flags.bAutoPopup) {
 		char *szProto = GetContactProto(hContact);
 
 		hContact = db_mc_getSrmmSub(hContact);
@@ -73,11 +71,11 @@ static INT_PTR ReadMessageCommand(WPARAM, LPARAM lParam)
 	CLISTEVENT *pcle = (CLISTEVENT*)lParam;
 	MCONTACT hContact = db_mc_tryMeta(pcle->hContact);
 
-	HWND hwndExisting = Srmm_FindWindow(hContact);
-	if (hwndExisting == nullptr)
-		(new CSrmmWindow(hContact, false))->Show();
+	auto *pDlg = Srmm_FindDialog(hContact);
+	if (pDlg == nullptr)
+		(new CMsgDialog(hContact, false))->Show();
 	else
-		SendMessage(GetParent(hwndExisting), CM_POPUPWINDOW, 0, (LPARAM)hwndExisting);
+		pDlg->PopupWindow();
 	return 0;
 }
 
@@ -107,7 +105,7 @@ static int MessageEventAdded(WPARAM hContact, LPARAM lParam)
 		/* new message */
 		Skin_PlaySound("AlertMsg");
 		if (IsAutoPopup(hContact)) {
-			(new CSrmmWindow(hContact, true))->Show();
+			(new CMsgDialog(hContact, true))->Show();
 			return 0;
 		}
 	}
@@ -141,18 +139,18 @@ static INT_PTR SendMessageCommandWorker(MCONTACT hContact, wchar_t *pszMsg)
 	if (!(CallProtoService(szProto, PS_GETCAPS, PFLAGNUM_1, 0) & PF1_IMSEND))
 		return 1;
 
-	HWND hwnd = Srmm_FindWindow(hContact);
-	if (hwnd != nullptr) {
+	auto *pDlg = Srmm_FindDialog(hContact);
+	if (pDlg != nullptr) {
 		if (pszMsg) {
-			HWND hEdit = GetDlgItem(hwnd, IDC_SRMM_MESSAGE);
+			HWND hEdit = GetDlgItem(pDlg->GetHwnd(), IDC_SRMM_MESSAGE);
 			SendMessage(hEdit, EM_SETSEL, -1, GetWindowTextLength(hEdit));
 			SendMessage(hEdit, EM_REPLACESEL, FALSE, (LPARAM)pszMsg);
 			mir_free(pszMsg);
 		}
-		SendMessage(GetParent(hwnd), CM_POPUPWINDOW, 0, (LPARAM)hwnd);
+		pDlg->PopupWindow();
 	}
 	else {
-		CSrmmWindow *pDlg = new CSrmmWindow(hContact, false);
+		pDlg = new CMsgDialog(hContact, false);
 		pDlg->m_wszInitialText = pszMsg;
 		pDlg->Show();
 	}
@@ -182,20 +180,20 @@ static INT_PTR TypingMessageCommand(WPARAM, LPARAM lParam)
 
 static int TypingMessage(WPARAM hContact, LPARAM lParam)
 {
-	if (!(g_dat.flags2 & SMF2_SHOWTYPING))
+	if (!g_dat.flags2.bShowTyping)
 		return 0;
 
 	hContact = db_mc_tryMeta(hContact);
 
 	Skin_PlaySound((lParam) ? "TNStart" : "TNStop");
 
-	HWND hwnd = Srmm_FindWindow(hContact);
-	if (hwnd)
-		SendMessage(hwnd, DM_TYPING, 0, lParam);
-	else if (lParam && (g_dat.flags2 & SMF2_SHOWTYPINGTRAY)) {
+	auto *pDlg = Srmm_FindDialog(hContact);
+	if (pDlg != nullptr)
+		pDlg->UserIsTyping(lParam);
+	else if (lParam && g_dat.flags2.bShowTypingTray) {
 		wchar_t szTip[256];
 		mir_snwprintf(szTip, TranslateT("%s is typing a message"), Clist_GetContactDisplayName(hContact));
-		if (g_dat.flags2 & SMF2_SHOWTYPINGCLIST) {
+		if (g_dat.flags2.bShowTypingClist) {
 			g_clistApi.pfnRemoveEvent(hContact, 1);
 
 			CLISTEVENT cle = {};
@@ -261,7 +259,7 @@ static void RestoreUnreadMessageAlerts(void)
 				continue;
 
 			if (IsAutoPopup(hContact) && !windowAlreadyExists)
-				(new CSrmmWindow(hContact, true))->Show();
+				(new CMsgDialog(hContact, true))->Show();
 			else
 				arEvents.insert(new MSavedEvent(hContact, hDbEvent));
 		}
@@ -283,12 +281,12 @@ static void RestoreUnreadMessageAlerts(void)
 	}
 }
 
-void CScriverWindow::SetStatusText(const wchar_t *wszText, HICON hIcon)
+void CMsgDialog::SetStatusText(const wchar_t *wszText, HICON hIcon)
 {
 	ParentWindowData *pDat = m_pParent;
 	if (pDat != nullptr) {
-		SendMessage(pDat->hwndStatus, SB_SETICON, 0, (LPARAM)hIcon);
-		SendMessage(pDat->hwndStatus, SB_SETTEXT, 0, (LPARAM)(wszText == nullptr ? L"" : wszText));
+		SendMessage(pDat->m_hwndStatus, SB_SETICON, 0, (LPARAM)hIcon);
+		SendMessage(pDat->m_hwndStatus, SB_SETTEXT, 0, (LPARAM)(wszText == nullptr ? L"" : wszText));
 	}
 }
 
@@ -322,76 +320,6 @@ static int AvatarChanged(WPARAM wParam, LPARAM lParam)
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
-// CScriverWindow
-
-CScriverWindow::CScriverWindow(int iDialog, SESSION_INFO *si)
-	: CSrmmBaseDialog(g_plugin, iDialog, si)
-{
-	m_autoClose = CLOSE_ON_CANCEL;
-}
-
-void CScriverWindow::CloseTab()
-{
-	Close();
-}
-
-void CScriverWindow::LoadSettings()
-{
-	m_clrInputBG = g_plugin.getDword(SRMSGSET_INPUTBKGCOLOUR, SRMSGDEFSET_INPUTBKGCOLOUR);
-	LoadMsgDlgFont(MSGFONTID_MESSAGEAREA, nullptr, &m_clrInputFG);
-}
-
-void CScriverWindow::Reattach(HWND hwndContainer)
-{
-	MCONTACT hContact = m_hContact;
-
-	POINT pt;
-	GetCursorPos(&pt);
-	HWND hParent = WindowFromPoint(pt);
-	while (GetParent(hParent) != nullptr)
-		hParent = GetParent(hParent);
-
-	hParent = WindowList_Find(g_dat.hParentWindowList, (UINT_PTR)hParent);
-	if ((hParent != nullptr && hParent != hwndContainer) || (hParent == nullptr && m_pParent->childrenCount > 1 && (GetKeyState(VK_CONTROL) & 0x8000))) {
-		if (hParent == nullptr) {
-			hParent = GetParentWindow(hContact, FALSE);
-
-			RECT rc;
-			GetWindowRect(hParent, &rc);
-
-			rc.right = (rc.right - rc.left);
-			rc.bottom = (rc.bottom - rc.top);
-			rc.left = pt.x - rc.right / 2;
-			rc.top = pt.y - rc.bottom / 2;
-			HMONITOR hMonitor = MonitorFromRect(&rc, MONITOR_DEFAULTTONEAREST);
-
-			MONITORINFO mi;
-			mi.cbSize = sizeof(mi);
-			GetMonitorInfo(hMonitor, &mi);
-
-			RECT rcDesktop = mi.rcWork;
-			if (rc.left < rcDesktop.left)
-				rc.left = rcDesktop.left;
-			if (rc.top < rcDesktop.top)
-				rc.top = rcDesktop.top;
-			MoveWindow(hParent, rc.left, rc.top, rc.right, rc.bottom, FALSE);
-		}
-		NotifyEvent(MSG_WINDOW_EVT_CLOSING);
-		NotifyEvent(MSG_WINDOW_EVT_CLOSE);
-		SetParent(hParent);
-		SendMessage(hwndContainer, CM_REMOVECHILD, 0, (LPARAM)m_hwnd);
-		SendMessage(m_hwnd, DM_SETPARENT, 0, (LPARAM)hParent);
-		SendMessage(hParent, CM_ADDCHILD, (WPARAM)this, 0);
-		SendMessage(m_hwnd, DM_UPDATETABCONTROL, 0, 0);
-		SendMessage(hParent, CM_ACTIVATECHILD, 0, (LPARAM)m_hwnd);
-		NotifyEvent(MSG_WINDOW_EVT_OPENING);
-		NotifyEvent(MSG_WINDOW_EVT_OPEN);
-		ShowWindow(hParent, SW_SHOWNA);
-		EnableWindow(hParent, TRUE);
-	}
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
 // status icons processing
 
 static void RegisterStatusIcons()
@@ -411,9 +339,9 @@ int StatusIconPressed(WPARAM wParam, LPARAM lParam)
 	if (mir_strcmp(SRMM_MODULE, sicd->szModule))
 		return 0;
 
-	HWND hwnd = Srmm_FindWindow(wParam);
-	if (hwnd != nullptr)
-		SendMessage(hwnd, DM_SWITCHTYPING, 0, 0);
+	auto *pDlg = Srmm_FindDialog(wParam);
+	if (pDlg != nullptr)
+		pDlg->SwitchTyping();
 	return 0;
 }
 
@@ -536,16 +464,15 @@ int RegisterToolbarIcons(WPARAM, LPARAM)
 static int ModuleLoad(WPARAM, LPARAM)
 {
 	g_dat.smileyAddInstalled = ServiceExists(MS_SMILEYADD_SHOWSELECTION) && ServiceExists(MS_SMILEYADD_REPLACESMILEYS);
-	g_dat.ieviewInstalled = ServiceExists(MS_IEVIEW_WINDOW);
 	return 0;
 }
 
 static int MetaContactChanged(WPARAM hMeta, LPARAM)
 {
 	if (hMeta) {
-		HWND hwnd = Srmm_FindWindow(hMeta);
-		if (hwnd != nullptr)
-			SendMessage(hwnd, DM_GETAVATAR, 0, 0);
+		auto *pDlg = Srmm_FindDialog(hMeta);
+		if (pDlg != nullptr)
+			pDlg->GetAvatar();
 	}
 	return 0;
 }

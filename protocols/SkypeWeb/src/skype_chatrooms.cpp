@@ -72,14 +72,12 @@ void CSkypeProto::OnLoadChats(const NETLIBHTTPREQUEST *response)
 	if (totalCount >= 99 || conversations.size() >= 99)
 		PushRequest(new SyncHistoryFirstRequest(syncState.c_str(), this), &CSkypeProto::OnSyncHistory);
 
-	for (size_t i = 0; i < conversations.size(); i++) {
-		const JSONNode &conversation = conversations.at(i);
-		const JSONNode &threadProperties = conversation["threadProperties"];
-		const JSONNode &id = conversation["id"];
-
+	for (auto &conversation : conversations) {
 		if (!conversation["lastMessage"])
 			continue;
 
+		const JSONNode &id = conversation["id"];
+		const JSONNode &threadProperties = conversation["threadProperties"];
 		CMStringW topic(threadProperties["topic"].as_mstring());
 		SendRequest(new GetChatInfoRequest(id.as_string().c_str(), this), &CSkypeProto::OnGetChatInfo, topic.Detach());
 	}
@@ -109,9 +107,8 @@ int CSkypeProto::OnGroupChatEventHook(WPARAM, LPARAM lParam)
 			if (hContact == NULL) {
 				hContact = AddContact(user_id, true);
 				setWord(hContact, "Status", ID_STATUS_ONLINE);
-				db_set_b(hContact, "CList", "Hidden", 1);
+				Contact_Hide(hContact);
 				setWString(hContact, "Nick", gch->ptszUID);
-				db_set_dw(hContact, "Ignore", "Mask1", 0);
 			}
 			CallService(MS_MSG_SENDMESSAGEW, hContact, 0);
 		}
@@ -167,9 +164,8 @@ int CSkypeProto::OnGroupChatEventHook(WPARAM, LPARAM lParam)
 		case 50:
 			ptrA tnick_old(GetChatContactNick(chat_id, user_id, T2Utf(gch->ptszText)));
 
-			ENTER_STRING pForm = { sizeof(pForm) };
+			ENTER_STRING pForm = {};
 			pForm.type = ESF_COMBO;
-			pForm.recentCount = 0;
 			pForm.caption = TranslateT("Enter new nickname");
 			pForm.szModuleName = m_szModuleName;
 			pForm.szDataPrefix = "renamenick_";
@@ -384,9 +380,7 @@ void CSkypeProto::OnGetChatInfo(const NETLIBHTTPREQUEST *response, void *p)
 
 	CMStringA chatId(UrlToSkypename(root["messages"].as_string().c_str()));
 	StartChatRoom(_A2T(chatId), topic);
-	for (size_t i = 0; i < members.size(); i++) {
-		const JSONNode &member = members.at(i);
-
+	for (auto &member : members) {
 		CMStringA username(UrlToSkypename(member["userLink"].as_string().c_str()));
 		std::string role = member["role"].as_string();
 		AddChatContact(chatId, username, username, role.c_str(), true);
@@ -534,10 +528,9 @@ int CSkypeProto::OnGroupChatMenuHook(WPARAM, LPARAM lParam)
 CMStringW CSkypeProto::ChangeTopicForm()
 {
 	CMStringW caption(FORMAT, L"[%s] %s", _A2T(m_szModuleName), TranslateT("Enter new chatroom topic"));
-	ENTER_STRING pForm = { sizeof(pForm) };
+	ENTER_STRING pForm = {};
 	pForm.type = ESF_MULTILINE;
 	pForm.caption = caption;
-	pForm.ptszInitVal = nullptr;
 	pForm.szModuleName = m_szModuleName;
 	return (!EnterString(&pForm)) ? CMStringW() : CMStringW(ptrW(pForm.ptszResult));
 }

@@ -38,12 +38,13 @@ MCONTACT CMsnProto::MSN_HContactFromEmail(const char* wlid, const char* msnNick,
 		int netId = (msc && msc->netId)?msc->netId:(szNet?atoi(szNet):NETID_MSN);
 		hContact = db_add_contact();
 		Proto_AddToContact(hContact, m_szModuleName);
-		if (netId != NETID_SKYPE) setString(hContact, "e-mail", szEmail);
+		if (netId != NETID_SKYPE)
+			setString(hContact, "e-mail", szEmail);
 		setStringUtf(hContact, "Nick", msnNick ? msnNick : szEmail);
 		setWord(hContact, "netId", netId);
 		setString(hContact, "wlid", szEmail);
 		if (temporary)
-			db_set_b(hContact, "CList", "NotOnList", 1);
+			Contact_RemoveFromList(hContact);
 
 		Lists_Add(0, szNet?atoi(szNet):NETID_MSN, szEmail, hContact);
 	}
@@ -77,9 +78,9 @@ void CMsnProto::MSN_SetContactDb(MCONTACT hContact, const char *szEmail)
 	const int listId = cont->list;
 
 	if (listId & LIST_FL) {
-		if (db_get_b(hContact, "CList", "NotOnList", 0) == 1) {
-			db_unset(hContact, "CList", "NotOnList");
-			db_unset(hContact, "CList", "Hidden");
+		if (!Contact_OnList(hContact)) {
+			Contact_PutOnList(hContact);
+			Contact_Hide(hContact, false);
 		}
 
 		if (listId & (LIST_BL | LIST_AL)) {

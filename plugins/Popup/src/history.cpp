@@ -138,14 +138,10 @@ static INT_PTR CALLBACK HistoryDlgProc(HWND hwnd, UINT msg, WPARAM, LPARAM lPara
 				logType = LOG_HPP;
 				ShowWindow(GetDlgItem(hwnd, IDC_POPUP_LIST), SW_HIDE);
 
-				IEVIEWWINDOW ieWindow;
-				ieWindow.cbSize = sizeof(IEVIEWWINDOW);
+				IEVIEWWINDOW ieWindow = {};
 				ieWindow.iType = IEW_CREATE;
-				ieWindow.dwFlags = 0;
-				ieWindow.dwMode = IEWM_MUCC;
+				ieWindow.dwMode = IEWM_HISTORY;
 				ieWindow.parent = hwnd;
-				ieWindow.x = 0;
-				ieWindow.y = 0;
 				ieWindow.cx = 100;
 				ieWindow.cy = 100;
 				CallService(MS_HPP_EG_WINDOW, 0, (LPARAM)&ieWindow);
@@ -158,7 +154,6 @@ static INT_PTR CALLBACK HistoryDlgProc(HWND hwnd, UINT msg, WPARAM, LPARAM lPara
 				pt.y = rcLst.top;
 				ScreenToClient(hwnd, &pt);
 
-				ieWindow.cbSize = sizeof(IEVIEWWINDOW);
 				ieWindow.iType = IEW_SETPOS;
 				ieWindow.parent = hwnd;
 				ieWindow.hwnd = hwndLog;
@@ -168,39 +163,28 @@ static INT_PTR CALLBACK HistoryDlgProc(HWND hwnd, UINT msg, WPARAM, LPARAM lPara
 				ieWindow.cy = rcLst.bottom - rcLst.top;
 				CallService(MS_HPP_EG_WINDOW, 0, (LPARAM)&ieWindow);
 
-				IEVIEWEVENTDATA ieData;
+				IEVIEWEVENTDATA ieData = {};
 
-				IEVIEWEVENT ieEvent;
-				ieEvent.cbSize = sizeof(ieEvent);
+				IEVIEWEVENT ieEvent = {};
 				ieEvent.iType = IEE_LOG_MEM_EVENTS;
-				ieEvent.dwFlags = 0;
 				ieEvent.hwnd = hwndLog;
 				ieEvent.eventData = &ieData;
 				ieEvent.count = 1;
-				ieEvent.codepage = 0;
-				ieEvent.pszProto = nullptr;
 
 				for (auto &ppd : arPopupHistory) {
-					ieData.cbSize = sizeof(ieData);
 					ieData.iType = IEED_EVENT_SYSTEM;
-					ieData.dwFlags = 0;
 					ieData.color = ppd->colorText;
 					if (ppd->flags & PU2_UNICODE) {
-						ieData.dwFlags |= IEEDF_UNICODE_TEXT | IEEDF_UNICODE_NICK;
-						ieData.pszNickW = ppd->szTitle.w;
-						ieData.pszTextW = ppd->szText.w;
-						ieData.pszText2W = nullptr;
+						ieData.dwFlags = IEEDF_UNICODE_TEXT | IEEDF_UNICODE_NICK;
+						ieData.szNick.w = ppd->szTitle.w;
+						ieData.szText.w = ppd->szText.w;
 					}
 					else {
-						ieData.dwFlags |= 0;
-						ieData.pszNick = ppd->szTitle.a;
-						ieData.pszText = ppd->szText.a;
-						ieData.pszText2 = nullptr;
+						ieData.dwFlags = 0;
+						ieData.szNick.a = ppd->szTitle.a;
+						ieData.szText.a = ppd->szText.a;
 					}
-					ieData.bIsMe = FALSE;
 					ieData.time = ppd->dwTimestamp;
-					ieData.dwData = 0;
-					ieData.next = nullptr;
 					CallService(MS_HPP_EG_EVENT, 0, (WPARAM)&ieEvent);
 				}
 			}
@@ -306,8 +290,7 @@ static INT_PTR CALLBACK HistoryDlgProc(HWND hwnd, UINT msg, WPARAM, LPARAM lPara
 					rcLst.left, rcLst.top, rcLst.right - rcLst.left, rcLst.bottom - rcLst.top,
 					SWP_NOZORDER | SWP_DEFERERASE | SWP_SHOWWINDOW);
 
-				IEVIEWWINDOW ieWindow;
-				ieWindow.cbSize = sizeof(IEVIEWWINDOW);
+				IEVIEWWINDOW ieWindow = {};
 				ieWindow.iType = IEW_SETPOS;
 				ieWindow.parent = hwnd;
 				ieWindow.hwnd = hwndLog;
@@ -353,38 +336,26 @@ static INT_PTR CALLBACK HistoryDlgProc(HWND hwnd, UINT msg, WPARAM, LPARAM lPara
 		if (logType == LOG_HPP) {
 			POPUPDATA2 *ppd = (POPUPDATA2 *)lParam;
 
-			IEVIEWEVENTDATA ieData;
+			IEVIEWEVENTDATA ieData = {};
 
-			IEVIEWEVENT ieEvent;
-			ieEvent.cbSize = sizeof(ieEvent);
+			IEVIEWEVENT ieEvent = {};
 			ieEvent.iType = IEE_LOG_MEM_EVENTS;
-			ieEvent.dwFlags = 0;
 			ieEvent.hwnd = hwndLog;
 			ieEvent.eventData = &ieData;
 			ieEvent.count = 1;
-			ieEvent.codepage = 0;
-			ieEvent.pszProto = nullptr;
 
-			ieData.cbSize = sizeof(ieData);
-			ieData.dwFlags = 0;
 			ieData.iType = IEED_EVENT_SYSTEM;
 			ieData.color = ppd->colorText;
 			if (ppd->flags & PU2_UNICODE) {
 				ieData.dwFlags |= IEEDF_UNICODE_TEXT | IEEDF_UNICODE_NICK;
-				ieData.pszNickW = ppd->szTitle.w;
-				ieData.pszTextW = ppd->szText.w;
-				ieData.pszText2W = nullptr;
+				ieData.szNick.w = ppd->szTitle.w;
+				ieData.szText.w = ppd->szText.w;
 			}
 			else {
-				ieData.dwFlags |= 0;
-				ieData.pszNick = ppd->szTitle.a;
-				ieData.pszText = ppd->szText.a;
-				ieData.pszText2 = nullptr;
+				ieData.szNick.a = ppd->szTitle.a;
+				ieData.szText.a = ppd->szText.a;
 			}
-			ieData.bIsMe = FALSE;
 			ieData.time = ppd->dwTimestamp;
-			ieData.dwData = 0;
-			ieData.next = nullptr;
 			CallService(MS_HPP_EG_EVENT, 0, (WPARAM)&ieEvent);
 		}
 		else if (logType == LOG_DEFAULT) {
@@ -405,10 +376,8 @@ static INT_PTR CALLBACK HistoryDlgProc(HWND hwnd, UINT msg, WPARAM, LPARAM lPara
 
 	case WM_DESTROY:
 		if (logType == LOG_HPP) {
-			IEVIEWWINDOW ieWindow;
-			ieWindow.cbSize = sizeof(IEVIEWWINDOW);
+			IEVIEWWINDOW ieWindow = {};
 			ieWindow.iType = IEW_DESTROY;
-			ieWindow.dwFlags = 0;
 			ieWindow.dwMode = IEWM_TABSRMM;
 			ieWindow.parent = hwnd;
 			ieWindow.hwnd = hwndLog;

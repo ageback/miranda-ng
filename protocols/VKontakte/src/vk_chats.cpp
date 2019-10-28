@@ -475,8 +475,8 @@ int CVkProto::OnChatEvent(WPARAM, LPARAM lParam)
 			MCONTACT hContact = FindUser(_wtoi(gch->ptszUID));
 			if (hContact == 0) {
 				hContact = FindUser(_wtoi(gch->ptszUID), true);
-				db_set_b(hContact, "CList", "Hidden", 1);
-				db_set_b(hContact, "CList", "NotOnList", 1);
+				Contact_Hide(hContact);
+				Contact_RemoveFromList(hContact);
 				db_set_dw(hContact, "Ignore", "Mask1", 0);
 				RetrieveUserInfo(_wtoi(gch->ptszUID));
 			}
@@ -519,7 +519,7 @@ void CVkProto::OnSendChatMsg(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pReq)
 
 LPTSTR CVkProto::ChangeChatTopic(CVkChatInfo *cc)
 {
-	ENTER_STRING pForm = { sizeof(pForm) };
+	ENTER_STRING pForm = {};
 	pForm.type = ESF_MULTILINE;
 	pForm.caption = TranslateT("Enter new chat title");
 	pForm.ptszInitVal = cc->m_wszTopic;
@@ -723,8 +723,8 @@ void CVkProto::NickMenuHook(CVkChatInfo *cc, GCHOOK *gch)
 		hContact = FindUser(cu->m_uid);
 		if (hContact == 0) {
 			hContact = FindUser(cu->m_uid, true);
-			db_set_b(hContact, "CList", "Hidden", 1);
-			db_set_b(hContact, "CList", "NotOnList", 1);
+			Contact_Hide(hContact);
+			Contact_RemoveFromList(hContact);
 			db_set_dw(hContact, "Ignore", "Mask1", 0);
 		}
 		CallService(MS_USERINFO_SHOWDIALOG, hContact);

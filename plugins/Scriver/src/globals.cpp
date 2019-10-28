@@ -125,17 +125,15 @@ static int ackevent(WPARAM, LPARAM lParam)
 	if (item == nullptr)
 		return 0;
 
-	HWND hwndSender = item->hwndSender;
+	auto *pSender = item->pDlg;
 	if (pAck->result == ACKRESULT_FAILED) {
 		if (item->hwndErrorDlg != nullptr)
-			item = FindOldestPendingSendQueueItem(hwndSender, hContact);
+			item = FindOldestPendingSendQueueItem(pSender, hContact);
 
 		if (item != nullptr && item->hwndErrorDlg == nullptr) {
-			if (hwndSender != nullptr) {
-				SendMessage(hwndSender, DM_STOPMESSAGESENDING, 0, 0);
-
-				CErrorDlg *pDlg = new CErrorDlg((wchar_t*)pAck->lParam, hwndSender, item);
-				SendMessage(hwndSender, DM_SHOWERRORMESSAGE, 0, (LPARAM)pDlg);
+			if (pSender != nullptr) {
+				pSender->StopMessageSending();
+				(new CErrorDlg((wchar_t *)pAck->lParam, pSender, item))->Create();
 			}
 			else RemoveSendQueueItem(item);
 		}
@@ -163,12 +161,12 @@ static int ackevent(WPARAM, LPARAM lParam)
 	if (item->hwndErrorDlg != nullptr)
 		DestroyWindow(item->hwndErrorDlg);
 
-	if (RemoveSendQueueItem(item) && g_plugin.getByte(SRMSGSET_AUTOCLOSE, SRMSGDEFSET_AUTOCLOSE)) {
-		if (hwndSender != nullptr)
-			DestroyWindow(hwndSender);
+	if (RemoveSendQueueItem(item) && g_plugin.bAutoClose) {
+		if (pSender != nullptr)
+			pSender->Close();
 	}
-	else if (hwndSender != nullptr) {
-		SendMessage(hwndSender, DM_STOPMESSAGESENDING, 0, 0);
+	else if (pSender != nullptr) {
+		pSender->StopMessageSending();
 		Skin_PlaySound("SendMsg");
 	}
 
@@ -224,7 +222,6 @@ void LoadGlobalIcons()
 	ImageList_RemoveAll(g_dat.hButtonIconList);
 	ImageList_RemoveAll(g_dat.hChatButtonIconList);
 	ImageList_RemoveAll(g_dat.hHelperIconList);
-	ImageList_RemoveAll(g_dat.hSearchEngineIconList);
 	
 	for (auto &it : buttonIcons) {
 		if (it == 0)
@@ -240,12 +237,6 @@ void LoadGlobalIcons()
 
 	int overlayIcon = g_plugin.addImgListIcon(g_dat.hHelperIconList, IDI_OVERLAY);
 	ImageList_SetOverlayImage(g_dat.hHelperIconList, overlayIcon, 1);
-
-	for (int i = IDI_GOOGLE; i < IDI_LASTICON; i++) {
-		HICON hIcon = (HICON)LoadImage(g_plugin.getInst(), MAKEINTRESOURCE(i), IMAGE_ICON, 0, 0, 0);
-		ImageList_AddIcon(g_dat.hSearchEngineIconList, hIcon);
-		DestroyIcon(hIcon);
-	}
 }
 
 static struct { UINT cpId; const wchar_t *cpName; } cpTable[] =
@@ -271,7 +262,7 @@ void LoadInfobarFonts()
 {
 	LOGFONT lf;
 	LoadMsgDlgFont(MSGFONTID_MESSAGEAREA, &lf, nullptr);
-	g_dat.minInputAreaHeight = g_plugin.getDword(SRMSGSET_AUTORESIZELINES, SRMSGDEFSET_AUTORESIZELINES) * abs(lf.lfHeight) * g_dat.logPixelSY / 72;
+	g_dat.minInputAreaHeight = g_plugin.iAutoResizeLines * abs(lf.lfHeight) * g_dat.logPixelSY / 72;
 	
 	if (g_dat.hInfobarBrush != nullptr)
 		DeleteObject(g_dat.hInfobarBrush);
@@ -312,7 +303,6 @@ void InitGlobals()
 	g_dat.hChatButtonIconList = ImageList_Create(16, 16, ILC_COLOR32 | ILC_MASK, 0, 0);
 	g_dat.hTabIconList = ImageList_Create(16, 16, ILC_COLOR32 | ILC_MASK, 0, 0);
 	g_dat.hHelperIconList = ImageList_Create(16, 16, ILC_COLOR32 | ILC_MASK, 0, 0);
-	g_dat.hSearchEngineIconList = ImageList_Create(16, 16, ILC_COLOR32 | ILC_MASK, 0, 0);
 	g_dat.logPixelSX = GetDeviceCaps(hdc, LOGPIXELSX);
 	g_dat.logPixelSY = GetDeviceCaps(hdc, LOGPIXELSY);
 	LoadInfobarFonts();
@@ -331,8 +321,6 @@ void FreeGlobals()
 		ImageList_Destroy(g_dat.hChatButtonIconList);
 	if (g_dat.hHelperIconList)
 		ImageList_Destroy(g_dat.hHelperIconList);
-	if (g_dat.hSearchEngineIconList)
-		ImageList_Destroy(g_dat.hSearchEngineIconList);
 	mir_free(g_dat.tabIconListUsage);
 
 	WindowList_Destroy(g_dat.hParentWindowList);
@@ -342,103 +330,63 @@ void FreeGlobals()
 
 void ReloadGlobals()
 {
-	g_dat.flags = 0;
-	g_dat.flags2 = 0;
-	if (g_plugin.getByte(SRMSGSET_AVATARENABLE, SRMSGDEFSET_AVATARENABLE))
-		g_dat.flags |= SMF_AVATAR;
-	if (g_plugin.getByte(SRMSGSET_SHOWPROGRESS, SRMSGDEFSET_SHOWPROGRESS))
-		g_dat.flags |= SMF_SHOWPROGRESS;
-	if (g_plugin.getByte(SRMSGSET_SHOWLOGICONS, SRMSGDEFSET_SHOWLOGICONS))
-		g_dat.flags |= SMF_SHOWICONS;
-	if (g_plugin.getByte(SRMSGSET_SHOWTIME, SRMSGDEFSET_SHOWTIME))
-		g_dat.flags |= SMF_SHOWTIME;
-	if (g_plugin.getByte(SRMSGSET_SHOWSECONDS, SRMSGDEFSET_SHOWSECONDS))
-		g_dat.flags |= SMF_SHOWSECONDS;
-	if (g_plugin.getByte(SRMSGSET_SHOWDATE, SRMSGDEFSET_SHOWDATE))
-		g_dat.flags |= SMF_SHOWDATE;
-	if (g_plugin.getByte(SRMSGSET_USELONGDATE, SRMSGDEFSET_USELONGDATE))
-		g_dat.flags |= SMF_LONGDATE;
-	if (g_plugin.getByte(SRMSGSET_USERELATIVEDATE, SRMSGDEFSET_USERELATIVEDATE))
-		g_dat.flags |= SMF_RELATIVEDATE;
-	if (g_plugin.getByte(SRMSGSET_GROUPMESSAGES, SRMSGDEFSET_GROUPMESSAGES))
-		g_dat.flags |= SMF_GROUPMESSAGES;
-	if (g_plugin.getByte(SRMSGSET_MARKFOLLOWUPS, SRMSGDEFSET_MARKFOLLOWUPS))
-		g_dat.flags |= SMF_MARKFOLLOWUPS;
-	if (g_plugin.getByte(SRMSGSET_MESSAGEONNEWLINE, SRMSGDEFSET_MESSAGEONNEWLINE))
-		g_dat.flags |= SMF_MSGONNEWLINE;
-	if (g_plugin.getByte(SRMSGSET_DRAWLINES, SRMSGDEFSET_DRAWLINES))
-		g_dat.flags |= SMF_DRAWLINES;
-	if (g_plugin.getByte(SRMSGSET_HIDENAMES, SRMSGDEFSET_HIDENAMES))
-		g_dat.flags |= SMF_HIDENAMES;
-	if (g_plugin.getByte(SRMSGSET_AUTOPOPUP, SRMSGDEFSET_AUTOPOPUP))
-		g_dat.flags |= SMF_AUTOPOPUP;
-	if (g_plugin.getByte(SRMSGSET_STAYMINIMIZED, SRMSGDEFSET_STAYMINIMIZED))
-		g_dat.flags |= SMF_STAYMINIMIZED;
-	if (g_plugin.getByte(SRMSGSET_SAVEDRAFTS, SRMSGDEFSET_SAVEDRAFTS))
-		g_dat.flags |= SMF_SAVEDRAFTS;
+	g_dat.dwFlags = 0;
+	g_dat.dwFlags2 = 0;
 
-	if (g_plugin.getByte(SRMSGSET_DELTEMP, SRMSGDEFSET_DELTEMP))
-		g_dat.flags |= SMF_DELTEMP;
-	if (g_plugin.getByte(SRMSGSET_INDENTTEXT, SRMSGDEFSET_INDENTTEXT))
-		g_dat.flags |= SMF_INDENTTEXT;
+	g_dat.flags.bShowAvatar = g_plugin.bShowAvatar;
+	g_dat.flags.bShowProgress = g_plugin.bShowProgress;
+	g_dat.flags.bShowIcons = g_plugin.bShowIcons;
+	g_dat.flags.bShowTime = g_plugin.bShowTime;
+	g_dat.flags.bShowSeconds = g_plugin.bShowSeconds;
+	g_dat.flags.bShowDate = g_plugin.bShowDate;
+	g_dat.flags.bLongDate = g_plugin.bLongDate;
+	g_dat.flags.bRelativeDate = g_plugin.bRelativeDate;
+	g_dat.flags.bGroupMessages = g_plugin.bGroupMessages;
+	g_dat.flags.bMarkFollowups = g_plugin.bMarkFollowups;
+	g_dat.flags.bMsgOnNewline = g_plugin.bMsgOnNewline;
+	g_dat.flags.bDrawLines = g_plugin.bDrawLines;
+	g_dat.flags.bHideNames = g_plugin.bHideNames;
+	g_dat.flags.bIndentText = g_plugin.bIndentText;
+	
+	g_dat.flags.bAutoPopup = g_plugin.bAutoPopup;
+	g_dat.flags.bStayMinimized = g_plugin.bStayMinimized;
+	g_dat.flags.bSaveDrafts = g_plugin.bSaveDrafts;
+	g_dat.flags.bDelTemp = g_plugin.bDelTemp;
 
 	g_dat.sendMode = (SendMode)g_plugin.getByte(SRMSGSET_SENDMODE, SRMSGDEFSET_SENDMODE);
-	g_dat.openFlags = g_plugin.getDword(SRMSGSET_POPFLAGS, SRMSGDEFSET_POPFLAGS);
-	g_dat.indentSize = g_plugin.getWord(SRMSGSET_INDENTSIZE, SRMSGDEFSET_INDENTSIZE);
+	g_dat.openFlags = g_plugin.iPopFlags;
+	g_dat.indentSize = g_plugin.iIndentSize;
 	g_dat.logLineColour = g_plugin.getDword(SRMSGSET_LINECOLOUR, SRMSGDEFSET_LINECOLOUR);
 
-	if (g_plugin.getByte(SRMSGSET_USETABS, SRMSGDEFSET_USETABS))
-		g_dat.flags2 |= SMF2_USETABS;
-	if (g_plugin.getByte(SRMSGSET_TABSATBOTTOM, SRMSGDEFSET_TABSATBOTTOM))
-		g_dat.flags2 |= SMF2_TABSATBOTTOM;
-	if (g_plugin.getByte(SRMSGSET_SWITCHTOACTIVE, SRMSGDEFSET_SWITCHTOACTIVE))
-		g_dat.flags2 |= SMF2_SWITCHTOACTIVE;
-	if (g_plugin.getByte(SRMSGSET_LIMITNAMES, SRMSGDEFSET_LIMITNAMES))
-		g_dat.flags2 |= SMF2_LIMITNAMES;
-	if (g_plugin.getByte(SRMSGSET_HIDEONETAB, SRMSGDEFSET_HIDEONETAB))
-		g_dat.flags2 |= SMF2_HIDEONETAB;
-	if (g_plugin.getByte(SRMSGSET_SEPARATECHATSCONTAINERS, SRMSGDEFSET_SEPARATECHATSCONTAINERS))
-		g_dat.flags2 |= SMF2_SEPARATECHATSCONTAINERS;
-	if (g_plugin.getByte(SRMSGSET_TABCLOSEBUTTON, SRMSGDEFSET_TABCLOSEBUTTON))
-		g_dat.flags2 |= SMF2_TABCLOSEBUTTON;
-	if (g_plugin.getByte(SRMSGSET_LIMITTABS, SRMSGDEFSET_LIMITTABS))
-		g_dat.flags2 |= SMF2_LIMITTABS;
-	if (g_plugin.getByte(SRMSGSET_LIMITCHATSTABS, SRMSGDEFSET_LIMITCHATSTABS))
-		g_dat.flags2 |= SMF2_LIMITCHATSTABS;
-	if (g_plugin.getByte(SRMSGSET_HIDECONTAINERS, SRMSGDEFSET_HIDECONTAINERS))
-		g_dat.flags2 |= SMF2_HIDECONTAINERS;
+	g_dat.flags2.bUseTabs = g_plugin.bUseTabs;
+	g_dat.flags2.bTabsAtBottom = g_plugin.bTabsAtBottom;
+	g_dat.flags2.bSwitchToActive = g_plugin.bSwitchToActive;
+	g_dat.flags2.bLimitNames = g_plugin.bLimitNames;
+	g_dat.flags2.bHideOneTab = g_plugin.bHideOneTab;
+	g_dat.flags2.bSeparateChats = g_plugin.bSeparateChats;
+	g_dat.flags2.bTabCloseButton = g_plugin.bTabCloseButton;
+	g_dat.flags2.bLimitTabs = g_plugin.bLimitTabs;
+	g_dat.flags2.bLimitChatTabs = g_plugin.bLimitChatTabs;
+	g_dat.flags2.bHideContainer = g_plugin.bHideContainer;
+	g_dat.flags2.bUseTransparency = g_plugin.bUseTransparency;
 
-	if (g_plugin.getByte(SRMSGSET_SHOWSTATUSBAR, SRMSGDEFSET_SHOWSTATUSBAR))
-		g_dat.flags2 |= SMF2_SHOWSTATUSBAR;
-	if (g_plugin.getByte(SRMSGSET_SHOWTITLEBAR, SRMSGDEFSET_SHOWTITLEBAR))
-		g_dat.flags2 |= SMF2_SHOWTITLEBAR;
-	if (g_plugin.getByte(SRMSGSET_SHOWBUTTONLINE, SRMSGDEFSET_SHOWBUTTONLINE))
-		g_dat.flags2 |= SMF2_SHOWTOOLBAR;
-	if (g_plugin.getByte(SRMSGSET_SHOWINFOBAR, SRMSGDEFSET_SHOWINFOBAR))
-		g_dat.flags2 |= SMF2_SHOWINFOBAR;
+	g_dat.flags2.bShowStatusBar = g_plugin.bShowStatusBar;
+	g_dat.flags2.bShowTitleBar = g_plugin.bShowTitleBar;
+	g_dat.flags2.bShowToolBar = g_plugin.bShowToolBar;
+	g_dat.flags2.bShowInfoBar = g_plugin.bShowInfoBar;
 
-	if (g_plugin.getByte(SRMSGSET_SHOWTYPING, SRMSGDEFSET_SHOWTYPING))
-		g_dat.flags2 |= SMF2_SHOWTYPING;
-	if (g_plugin.getByte(SRMSGSET_SHOWTYPINGWIN, SRMSGDEFSET_SHOWTYPINGWIN))
-		g_dat.flags2 |= SMF2_SHOWTYPINGWIN;
-	if (g_plugin.getByte(SRMSGSET_SHOWTYPINGNOWIN, SRMSGDEFSET_SHOWTYPINGNOWIN))
-		g_dat.flags2 |= SMF2_SHOWTYPINGTRAY;
-	if (g_plugin.getByte(SRMSGSET_SHOWTYPINGCLIST, SRMSGDEFSET_SHOWTYPINGCLIST))
-		g_dat.flags2 |= SMF2_SHOWTYPINGCLIST;
-	if (g_plugin.getByte(SRMSGSET_SHOWTYPINGSWITCH, SRMSGDEFSET_SHOWTYPINGSWITCH))
-		g_dat.flags2 |= SMF2_SHOWTYPINGSWITCH;
-	if (g_plugin.getByte(SRMSGSET_USETRANSPARENCY, SRMSGDEFSET_USETRANSPARENCY))
-		g_dat.flags2 |= SMF2_USETRANSPARENCY;
+	g_dat.flags2.bShowTyping = g_plugin.bShowTyping;
+	g_dat.flags2.bShowTypingWin = g_plugin.bShowTypingWin;
+	g_dat.flags2.bShowTypingTray = g_plugin.bShowTypingTray;
+	g_dat.flags2.bShowTypingClist = g_plugin.bShowTypingClist;
+	g_dat.flags2.bShowTypingSwitch = g_plugin.bShowTypingSwitch;
 
-	g_dat.activeAlpha = g_plugin.getDword(SRMSGSET_ACTIVEALPHA, SRMSGDEFSET_ACTIVEALPHA);
-	g_dat.inactiveAlpha = g_plugin.getDword(SRMSGSET_INACTIVEALPHA, SRMSGDEFSET_INACTIVEALPHA);
-
-	if (g_plugin.getByte(SRMSGSET_USEIEVIEW, SRMSGDEFSET_USEIEVIEW))
-		g_dat.flags |= SMF_USEIEVIEW;
-
-	g_dat.limitNamesLength = g_plugin.getDword(SRMSGSET_LIMITNAMESLEN, SRMSGDEFSET_LIMITNAMESLEN);
-	g_dat.limitTabsNum = g_plugin.getDword(SRMSGSET_LIMITTABSNUM, SRMSGDEFSET_LIMITTABSNUM);
-	g_dat.limitChatsTabsNum = g_plugin.getDword(SRMSGSET_LIMITCHATSTABSNUM, SRMSGDEFSET_LIMITCHATSTABSNUM);
+	g_dat.activeAlpha = g_plugin.iActiveAlpha;
+	g_dat.inactiveAlpha = g_plugin.iInactiveAlpha;
+	
+	g_dat.limitNamesLength = g_plugin.iLimitNames;
+	g_dat.limitTabsNum = g_plugin.iLimitTabs;
+	g_dat.limitChatsTabsNum = g_plugin.iLimitChatTabs;
 
 	ptrW wszTitleFormat(g_plugin.getWStringA(SRMSGSET_WINDOWTITLE));
 	if (wszTitleFormat == nullptr)

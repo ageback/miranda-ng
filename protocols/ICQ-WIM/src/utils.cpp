@@ -99,7 +99,7 @@ MCONTACT CIcqProto::CreateContact(const CMStringW &wszId, bool bTemporary)
 	RetrieveUserInfo(hContact);
 
 	if (bTemporary)
-		db_set_b(hContact, "CList", "NotOnList", 1);
+		Contact_RemoveFromList(hContact);
 
 	return hContact;
 }
@@ -307,15 +307,6 @@ void CIcqProto::setId(MCONTACT hContact, const char *szSetting, __int64 iValue)
 	__int64 oldVal = getId(hContact, szSetting);
 	if (oldVal != iValue)
 		db_set_blob(hContact, m_szModuleName, szSetting, &iValue, sizeof(iValue));
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-
-void parseGroup(CMStringW &wszGroup)
-{
-	wszGroup.Replace(L">", L"\\");
-	if (wszGroup[0] == '\\')
-		wszGroup.Delete(0, 1);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

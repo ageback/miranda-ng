@@ -1638,23 +1638,30 @@ void CJabberProto::OnProcessPresence(const TiXmlElement *node, ThreadData *info)
 
 			debugLogA("Avatar enabled");
 			for (auto *xNode : TiXmlFilter(node, "x")) {
-				if (!mir_strcmp(XmlGetAttr(xNode, "xmlns"), "vcard-temp:x:update")) {
+				auto *pszNamespace = XmlGetAttr(xNode, "xmlns");
+				if (!mir_strcmp(pszNamespace, "vcard-temp:x:update")) {
 					auto *szPhoto = XmlGetChildText(xNode, "photo");
 					if (szPhoto && !bHasAvatar) {
 						if (mir_strlen(szPhoto)) {
+							// no file - no saved hash
+							wchar_t tszFileName[MAX_PATH];
+							GetAvatarFileName(hContact, tszFileName, _countof(tszFileName));
+							if (::_waccess(tszFileName, 0) != 0)
+								delSetting(hContact, "AvatarHash");
+
 							bHasAvatar = true;
 							ptrA saved(getStringA(hContact, "AvatarHash"));
 							if (saved == nullptr || mir_strcmp(saved, szPhoto)) {
 								debugLogA("Avatar was changed, reloading");
-								setString(hContact, "AvatarHash", szPhoto);
-								ProtoBroadcastAck(hContact, ACKTYPE_AVATAR, ACKRESULT_STATUS, nullptr, 0);
+								SendGetVcard(hContact);
 								continue;
 							}
 						}
 						else bRemovedAvatar = true;
 					}
-
-					const char *txt = XmlGetAttr(xNode, "vcard");
+				}
+				else if (!mir_strcmp(pszNamespace, "miranda:x:vcard")) {
+					auto *txt = xNode->GetText();
 					if (mir_strlen(txt)) {
 						ptrA saved(getStringA(hContact, "VCardHash"));
 						if (saved == nullptr || mir_strcmp(saved, txt)) {
@@ -1682,7 +1689,7 @@ void CJabberProto::OnProcessPresence(const TiXmlElement *node, ThreadData *info)
 			ListRemoveResource(LIST_ROSTER, from);
 
 			hContact = HContactFromJID(from);
-			if (hContact && db_get_b(hContact, "CList", "NotOnList", 0) == 1) {
+			if (hContact && !Contact_OnList(hContact)) {
 				// remove selfcontact, if where is no more another resources
 				if (item->arResources.getCount() == 1 && ResourceInfoFromJID(info->fullJID))
 					ListRemoveResource(LIST_ROSTER, info->fullJID);
@@ -1732,7 +1739,7 @@ void CJabberProto::OnProcessPresence(const TiXmlElement *node, ThreadData *info)
 						if (item)
 							item->hContact = hContact;
 						setUString(hContact, "Nick", szNick);
-						db_unset(hContact, "CList", "NotOnList");
+						Contact_PutOnList(hContact);
 					}
 				}
 			}

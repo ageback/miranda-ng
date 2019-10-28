@@ -193,6 +193,24 @@ void CMimAPI::InitAPI()
 		}
 	}
 	else m_haveBufferedPaint = false;
+
+	switch (GetByte("default_ieview", -1)) {
+	case 1:
+		db_set_s(0, "SRMM", "Logger", "ieview");
+		__fallthrough;
+
+	case 0:
+		db_unset(0, SRMSGMOD_T, "default_ieview");
+	}
+
+	switch (GetByte("default_hpp", -1)) {
+	case 1:
+		db_set_s(0, "SRMM", "Logger", "hpp");
+		__fallthrough;
+
+	case 0:
+		db_unset(0, SRMSGMOD_T, "default_hpp");
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -306,7 +324,7 @@ int CMimAPI::ProtoAck(WPARAM, LPARAM lParam)
 		for (int j = 0; j < SendQueue::NR_SENDJOBS; j++) {
 			SendJob &p = jobs[j];
 			if (pAck->hProcess == (HANDLE)p.iSendId && pAck->hContact == p.hContact) {
-				CSrmmWindow *dat = p.hOwnerWnd ? (CSrmmWindow*)GetWindowLongPtr(p.hOwnerWnd, GWLP_USERDATA) : nullptr;
+				CMsgDialog *dat = p.hOwnerWnd ? (CMsgDialog*)GetWindowLongPtr(p.hOwnerWnd, GWLP_USERDATA) : nullptr;
 				if (dat == nullptr) {
 					sendQueue->ackMessage(nullptr, (WPARAM)MAKELONG(j, i), lParam);
 					return 0;

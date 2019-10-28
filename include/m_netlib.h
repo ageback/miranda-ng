@@ -374,6 +374,11 @@ EXTERN_C MIR_APP_DLL(UINT_PTR) Netlib_GetSocket(HNETLIBCONN hConnection);
 EXTERN_C MIR_APP_DLL(HNETLIBUSER) Netlib_GetConnNlu(HNETLIBCONN hConn);
 
 /////////////////////////////////////////////////////////////////////////////////////////
+// Gets the fake User-Agent header field to make some sites happy
+
+EXTERN_C MIR_APP_DLL(char*) Netlib_GetUserAgent();
+
+/////////////////////////////////////////////////////////////////////////////////////////
 // Converts numerical representation of IP in SOCKADDR_INET into string representation with IP and port
 // IPv4 will be supplied in formats address:port or address
 // IPv6 will be supplied in formats [address]:port or [address]
@@ -767,6 +772,30 @@ EXTERN_C MIR_APP_DLL(void) Netlib_DestroySecurityProvider(HANDLE hProvider);
 // Returns the NTLM response string. The result value should be freed using mir_free
 
 EXTERN_C MIR_APP_DLL(char*) Netlib_NtlmCreateResponse(HANDLE hProvider, const char *szChallenge, wchar_t *szLogin, wchar_t *szPass, unsigned &complete);
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// WebSocket support
+
+struct WSHeader
+{
+	WSHeader()
+	{
+		memset(this, 0, sizeof(*this));
+	}
+
+	bool bIsFinal, bIsMasked;
+	int opCode, firstByte;
+	size_t payloadSize, headerSize;
+};
+
+// connects to a WebSocket server
+EXTERN_C MIR_APP_DLL(HNETLIBCONN) WebSocket_Connect(HNETLIBUSER, const char *szHost, NETLIBHTTPHEADER *pHeaders = nullptr);
+
+// validates that the provided buffer contains full WebSocket datagram
+EXTERN_C MIR_APP_DLL(bool) WebSocket_InitHeader(WSHeader &hdr, const void *pData, size_t bufSize);
+
+// sends a packet to WebSocket
+EXTERN_C MIR_APP_DLL(void) WebSocket_Send(HNETLIBCONN nlc, const void *pData, size_t strLen);
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // Netlib hooks (0.8+)

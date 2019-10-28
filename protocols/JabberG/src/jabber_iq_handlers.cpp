@@ -42,10 +42,10 @@ BOOL CJabberProto::OnIqRequestVersion(const TiXmlElement*, CJabberIqInfo *pInfo)
 	query << XCHILD("version", szCoreVersion);
 
 	if (m_bShowOSVersion) {
-		wchar_t os[256] = { 0 };
-		if (!GetOSDisplayString(os, _countof(os)))
-			mir_wstrncpy(os, L"Microsoft Windows", _countof(os));
-		query << XCHILD("os", T2Utf(os));
+		char os[256];
+		if (!OS_GetDisplayString(os, _countof(os)))
+			mir_strncpy(os, "Microsoft Windows", _countof(os));
+		query << XCHILD("os", os);
 	}
 
 	m_ThreadInfo->send(iq);
@@ -257,7 +257,7 @@ BOOL CJabberProto::OnRosterPushRequest(const TiXmlElement*, CJabberIqInfo *pInfo
 				UpdateSubscriptionInfo(item->hContact, item);
 			}
 			else if (isChatRoom(item->hContact))
-				db_unset(item->hContact, "CList", "Hidden");
+				Contact_Hide(item->hContact, false);
 			else
 				UpdateSubscriptionInfo(item->hContact, item);
 		}

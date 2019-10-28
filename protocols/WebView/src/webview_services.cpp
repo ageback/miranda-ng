@@ -351,9 +351,9 @@ INT_PTR AddToList(WPARAM, LPARAM lParam)
 			// contact visible
 			// and add them on the list
 			sameurl++;
-			if (db_get_b(hContact, "CList", "NotOnList", 1)) {
-				db_unset(hContact, "CList", "NotOnList");
-				db_unset(hContact, "CList", "Hidden");
+			if (!Contact_OnList(hContact)) {
+				Contact_PutOnList(hContact);
+				Contact_Hide(hContact, false);
 			}
 		}
 		db_free(&dbv);
@@ -402,9 +402,9 @@ INT_PTR AddToList(WPARAM, LPARAM lParam)
 				// contact visible
 				// and add them on the list
 				samename++;
-				if (db_get_b(hContact2, "CList", "NotOnList", 1)) {
-					db_unset(hContact2, "CList", "NotOnList");
-					db_unset(hContact2, "CList", "Hidden");
+				if (!Contact_OnList(hContact2)) {
+					Contact_PutOnList(hContact2);
+					Contact_Hide(hContact2, false);
 				}
 				db_free(&dbv);
 			}

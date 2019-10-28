@@ -42,7 +42,7 @@ TInfoPanelConfig CInfoPanel::m_ipConfig = {};
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-CInfoPanel::CInfoPanel(CTabBaseDlg *dat)
+CInfoPanel::CInfoPanel(CMsgDialog *dat)
 {
 	if (dat) {
 		m_dat = dat;
@@ -861,7 +861,7 @@ void CInfoPanel::trackMouse(POINT &pt)
 // @param ctrlId : control id
 // @param lParam : typically a wchar_t * for the tooltip text
 
-void CInfoPanel::showTip(UINT ctrlId, const LPARAM lParam)
+void CInfoPanel::showTip(UINT ctrlId, const wchar_t *pwszTip)
 {
 	if (!m_active || !m_dat->m_hwndTip)
 		return;
@@ -872,8 +872,8 @@ void CInfoPanel::showTip(UINT ctrlId, const LPARAM lParam)
 		::GetWindowRect(GetDlgItem(hwndDlg, ctrlId), &rc);
 		::SendMessage(m_dat->m_hwndTip, TTM_TRACKPOSITION, 0, (LPARAM)MAKELONG(rc.left, rc.bottom));
 	}
-	if (lParam)
-		m_dat->ti.lpszText = reinterpret_cast<wchar_t *>(lParam);
+	if (pwszTip)
+		m_dat->ti.lpszText = (wchar_t*)pwszTip;
 	else {
 		if (m_hwndConfig)
 			return;
@@ -962,7 +962,7 @@ LRESULT CALLBACK CInfoPanel::avatarParentSubclass(HWND hwnd, UINT msg, WPARAM wP
 	case WM_ERASEBKGND:
 		// parent window of the infopanel ACC control
 		RECT rc, rcItem;
-		CSrmmWindow *dat = (CSrmmWindow*)GetWindowLongPtr(GetParent(hwnd), GWLP_USERDATA);
+		CMsgDialog *dat = (CMsgDialog*)GetWindowLongPtr(GetParent(hwnd), GWLP_USERDATA);
 		if (dat == nullptr)
 			break;
 

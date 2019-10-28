@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "stdafx.h"
 
-FacebookProto::FacebookProto(const char* proto_name, const wchar_t* username) :
+FacebookProto::FacebookProto(const char *proto_name, const wchar_t *username) :
 	PROTO<FacebookProto>(proto_name, username),
 	m_tszDefaultGroup(getWStringA(FACEBOOK_KEY_DEF_GROUP))
 {
@@ -281,9 +281,9 @@ MCONTACT FacebookProto::AddToList(int flags, PROTOSEARCHRESULT* psr)
 	MCONTACT hContact = AddToContactList(&fbu, false, add_temporarily);
 
 	// Reset NotOnList flag if present and we're adding this contact not temporarily
-	if (hContact && !add_temporarily && db_get_b(hContact, "CList", "NotOnList", 0)) {
-		db_unset(hContact, "CList", "Hidden");
-		db_unset(hContact, "CList", "NotOnList");
+	if (hContact && !add_temporarily && !Contact_OnList(hContact)) {
+		Contact_Hide(hContact, false);
+		Contact_PutOnList(hContact);
 	}
 
 	return hContact;

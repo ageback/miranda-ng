@@ -90,7 +90,7 @@ int ContactSettingChanged(WPARAM wParam, LPARAM lParam)
 
 	db_set_w(hContact, "UserOnline", "OldStatus2", newStatus);
 
-	if (CallService(MS_IGNORE_ISIGNORED, wParam, IGNOREEVENT_USERONLINE)) return 0;
+	if (Ignore_IsIgnored(wParam, IGNOREEVENT_USERONLINE)) return 0;
 
 	DWORD dwStatuses = MAKELPARAM(oldStatus, newStatus);
 	NotifyEventHooks(hHookContactStatusChanged, wParam, (LPARAM)dwStatuses);
@@ -117,9 +117,7 @@ int ContactStatusChanged(WPARAM wParam, LPARAM lParam)
 
 	logmsg("ContactStatusChanged2");
 
-	if (db_get_b(hContact, "CList", "NotOnList", 0) || db_get_b(hContact, "CList", "Hidden", 0) ||
-		(CallService(MS_IGNORE_ISIGNORED, wParam, IGNOREEVENT_USERONLINE) && newStatus == ID_STATUS_ONLINE)
-		)
+	if (!Contact_OnList(hContact) || Contact_IsHidden(hContact) || (Ignore_IsIgnored(wParam, IGNOREEVENT_USERONLINE) && newStatus == ID_STATUS_ONLINE))
 		return 0;
 
 	wchar_t bufferW[512];

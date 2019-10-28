@@ -18,6 +18,7 @@
 #define IDD_OPT_PROTOCOLORDER           109
 #define IDD_OPT_ICOLIB                  110
 #define IDD_ICOLIB_IMPORT               111
+#define IDD_OPT_SRMMLOG						 112
 #define IDI_LOADED_GRAY                 113
 #define IDI_NOTLOADED_GRAY              114
 #define IDD_ADDED                       115
@@ -31,8 +32,9 @@
 #define IDI_INVISIBLE                   130
 #define IDI_NA                          131
 #define IDI_LOAD                        132
-#define IDR_SRMM                        133
+#define IDR_USERMENU                    133
 #define IDD_OPT_SOUND                   134
+#define IDR_LOGMENU                     135
 #define IDI_RECVMSG                     136
 #define IDI_URL                         138
 #define IDI_MCMENUOFF                   144
@@ -214,6 +216,7 @@
 #define IDC_TOOLBARTREE                 1040
 #define IDC_URL                         1041
 #define IDC_FONTGROUP                   1042
+#define IDC_TXT_SIMPLE                  1043
 #define IDC_BTN_RESET                   1045
 #define IDC_REASON                      1046
 #define IDC_BTN_UNDO                    1047
@@ -538,6 +541,7 @@
 #define IDC_RADIO1                      1740
 #define IDC_RADIO2                      1741
 #define IDC_ADDCHECK                    1742
+#define IDC_ENABLE_CUSTOM               1743
 #define IDC_GETMOREPLUGINS              1744
 #define IDC_DISABLEMENUICONS            1745
 #define IDC_SM_ENABLED                  1746

@@ -234,8 +234,8 @@ MCONTACT FacebookProto::AddToContactList(facebook_user* fbu, bool force_add, boo
 	if (hContact) {
 		// Save these values only when adding new contact, not when updating existing
 		if (add_temporarily) {
-			db_set_b(hContact, "CList", "Hidden", 1);
-			db_set_b(hContact, "CList", "NotOnList", 1);
+			Contact_Hide(hContact);
+			Contact_RemoveFromList(hContact);
 		}
 
 		setString(hContact, FACEBOOK_KEY_ID, fbu->user_id.c_str());
@@ -251,7 +251,7 @@ MCONTACT FacebookProto::AddToContactList(facebook_user* fbu, bool force_add, boo
 		setByte(hContact, FACEBOOK_KEY_CONTACT_TYPE, fbu->type);
 
 		if (getByte(FACEBOOK_KEY_DISABLE_STATUS_NOTIFY, 0))
-			CallService(MS_IGNORE_IGNORE, hContact, (LPARAM)IGNOREEVENT_USERONLINE);
+			Ignore_Ignore(hContact, IGNOREEVENT_USERONLINE);
 
 		if (!fbu->real_name.empty())
 			SaveName(hContact, fbu);
@@ -415,7 +415,7 @@ void FacebookProto::IgnoreFriendshipRequest(void *data)
 		NotifyEvent(m_tszUserName, TranslateT("Request for friendship was ignored."), 0, EVENT_FRIENDSHIP);
 
 		// Delete this contact, if he's temporary
-		if (db_get_b(hContact, "CList", "NotOnList", 0))
+		if (!Contact_OnList(hContact))
 			db_delete_contact(hContact);
 	}
 	else facy.client_notify(TranslateT("Error occurred when ignoring friendship request."));

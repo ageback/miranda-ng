@@ -46,8 +46,72 @@ PLUGININFOEX pluginInfoEx = {
 };
 
 CMPlugin::CMPlugin() :
-	PLUGIN<CMPlugin>(SRMM_MODULE, pluginInfoEx)
-{}
+	PLUGIN<CMPlugin>(SRMM_MODULE, pluginInfoEx),
+	bCascade(SRMM_MODULE, "Cascade", 1),
+	bAutoMin(SRMM_MODULE, "AutoMin", 0),
+	bTopmost(SRMM_MODULE, "Topmost", 0),
+	bDelTemp(SRMM_MODULE, "DeleteTempCont", 0),
+	bTypingNew(SRMM_MODULE, "DefaultTyping", 1),
+	bAutoClose(SRMM_MODULE, "AutoClose", 0),
+	bAutoPopup(SRMM_MODULE, "AutoPopupMsg", 0),
+	bSaveDrafts(SRMM_MODULE, "SaveDrafts", 0),
+	bTypingUnknown(SRMM_MODULE, "UnknownTyping", 0),
+	bHideContainer(SRMM_MODULE, "HideContainers", 0),
+	bStayMinimized(SRMM_MODULE, "StayMinimized", 0),
+	bSavePerContact(SRMM_MODULE, "SavePerContact", 0),
+
+	bShowAvatar(SRMM_MODULE, "AvatarEnable", 1),
+	bShowProgress(SRMM_MODULE, "ShowProgress", 0),
+	bShowIcons(SRMM_MODULE, "ShowLogIcon", 1),
+	bShowTime(SRMM_MODULE, "ShowTime", 1),
+	bShowSeconds(SRMM_MODULE, "ShowSeconds", 1),
+	bShowDate(SRMM_MODULE, "ShowDate", 0),
+	bLongDate(SRMM_MODULE, "UseLongDate", 0),
+	bRelativeDate(SRMM_MODULE, "UseRelativeDate", 0),
+	bDrawLines(SRMM_MODULE, "DrawLines", 0),
+	bHideNames(SRMM_MODULE, "HideNames", 1),
+	bIndentText(SRMM_MODULE, "IndentText", 0),
+	bGroupMessages(SRMM_MODULE, "GroupMessages", 0),
+	bMarkFollowups(SRMM_MODULE, "MarkFollowUps", 0),
+	bMsgOnNewline(SRMM_MODULE, "MessageOnNewLine", 0),
+	bUseTransparency(SRMM_MODULE, "UseTransparency", 0),
+
+	bShowToolBar(SRMM_MODULE, "ShowButtonLine", 1),
+	bShowInfoBar(SRMM_MODULE, "ShowInfoBar", 1),
+	bShowTitleBar(SRMM_MODULE, "ShowTitleBar", 1),
+	bShowStatusBar(SRMM_MODULE, "ShowStatusBar", 1),
+
+	bUseTabs(SRMM_MODULE, "UseTabs", 1),
+	bLimitTabs(SRMM_MODULE, "LimitTabs", 0),
+	bLimitChatTabs(SRMM_MODULE, "LimitChatsTabs", 0),
+	bLimitNames(SRMM_MODULE, "LimitNamesOnTabs", 1),
+	bHideOneTab(SRMM_MODULE, "HideOneTab", 1),
+	bTabsAtBottom(SRMM_MODULE, "TabsPosition", 0),
+	bSeparateChats(SRMM_MODULE, "SeparateChatsContainers", 0),
+	bTabCloseButton(SRMM_MODULE, "TabCloseButton", 0),
+	bSwitchToActive(SRMM_MODULE, "SwitchToActiveTab", 0),
+
+	bShowTyping(SRMM_MODULE, "ShowTyping", 1),
+	bShowTypingWin(SRMM_MODULE, "ShowTypingWin", 1),
+	bShowTypingTray(SRMM_MODULE, "ShowTypingTray", 0),
+	bShowTypingClist(SRMM_MODULE, "ShowTypingClist", 1),
+	bShowTypingSwitch(SRMM_MODULE, "ShowTypingSwitch", 1),
+
+	iLimitNames(SRMM_MODULE, "LimitNamesLength", 20),
+	iLimitTabs(SRMM_MODULE, "LimitTabsNum", 10),
+	iLimitChatTabs(SRMM_MODULE, "LimitChatsTabsNum", 10),
+	iLoadCount(SRMM_MODULE, "LoadCount", 10),
+	iLoadTime(SRMM_MODULE, "LoadTime", 10),
+	iPopFlags(SRMM_MODULE, "PopupFlags", 0),
+	iFlashCount(SRMM_MODULE, "FlashMax", 3),
+	iIndentSize(SRMM_MODULE, "IndentSize", 0),
+	iActiveAlpha(SRMM_MODULE, "ActiveAlpha", 0),
+	iInactiveAlpha(SRMM_MODULE, "InactiveAlpha", 0),
+	iMsgTimeout(SRMM_MODULE, "MessageTimeout", 10),
+	iHistoryMode(SRMM_MODULE, "LoadHistory", LOADHISTORY_UNREAD),
+	iAutoResizeLines(SRMM_MODULE, "AutoResizeLines", 2)
+{
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +124,17 @@ int CMPlugin::Load()
 	if (IsWinVer7Plus())
 		CoCreateInstance(CLSID_TaskbarList, nullptr, CLSCTX_ALL, IID_ITaskbarList3, (void**)&pTaskbarInterface);
 
+	hLogger = RegisterSrmmLog("built-in", L"Scriver internal log", &logBuilder);
+
+	switch (getByte("UseIEView", -1)) {
+	case 1:
+		setString("Logger", "ieview");
+		__fallthrough;
+
+	case 0:
+		delSetting("UseIEView");
+	}
+
 	return OnLoadModule();
 }
 
@@ -67,6 +142,7 @@ int CMPlugin::Load()
 
 int CMPlugin::Unload()
 {
+	UnregisterSrmmLog(hLogger);
 	if (pTaskbarInterface)
 		pTaskbarInterface->Release();
 	return OnUnloadModule();

@@ -43,7 +43,8 @@ CIcqProto::CIcqProto(const char *aProtoName, const wchar_t *aUserName) :
 	m_arHttpQueue(10),
 	m_arOwnIds(1, PtrKeySortT),
 	m_arCache(20, &CompareCache),
-	arMarkReadQueue(10, NumericKeySortT),
+	m_arGroups(10, NumericKeySortT),
+	m_arMarkReadQueue(10, NumericKeySortT),
 	m_evRequestsQueue(CreateEvent(nullptr, FALSE, FALSE, nullptr)),
 	m_szOwnId(this, DB_KEY_ID),
 	m_iStatus1(this, "Status1", ID_STATUS_AWAY),
@@ -159,6 +160,13 @@ void CIcqProto::OnBuildProtoMenu()
 	mi.hIcolibItem = Skin_GetIconHandle(SKINICON_OTHER_GROUP);
 	m_hUploadGroups = Menu_AddProtoMenuItem(&mi, m_szModuleName);
 
+	mi.pszService = "/EditGroups";
+	CreateProtoService(mi.pszService, &CIcqProto::EditGroups);
+	mi.name.a = LPGEN("Edit server groups");
+	mi.position = 200002;
+	mi.hIcolibItem = Skin_GetIconHandle(SKINICON_OTHER_GROUP);
+	Menu_AddProtoMenuItem(&mi, m_szModuleName);
+
 	Menu_ShowItem(m_hUploadGroups, false);
 }
 
@@ -176,6 +184,92 @@ INT_PTR CIcqProto::UploadGroups(WPARAM, LPARAM)
 			MoveContactToGroup(it, wszIcqGroup, wszMirGroup);
 	}
 	return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+class CGroupEditDlg : public CIcqDlgBase
+{
+	CCtrlListView groups;
+
+public:
+	
+	static CGroupEditDlg *pDlg;
+
+	CGroupEditDlg(CIcqProto *ppro) :
+		CIcqDlgBase(ppro, IDD_EDITGROUPS),
+		groups(this, IDC_GROUPS)
+	{
+		groups.OnBuildMenu = Callback(this, &CGroupEditDlg::onMenu);
+	}
+
+	void RefreshGroups()
+	{
+		for (auto &it : m_proto->m_arGroups.rev_iter())
+			groups.AddItem(it->wszName, 0, (LPARAM)it);
+	}
+
+	bool OnInitDialog() override
+	{
+		pDlg = this;
+		groups.AddColumn(0, TranslateT("Name"), 300);
+		RefreshGroups();
+		return true;
+	}
+
+	void OnDestroy() override
+	{
+		pDlg = nullptr;
+	}
+
+	void onMenu(void *)
+	{
+		int cur = groups.GetSelectionMark();
+		if (cur == -1)
+			return;
+
+		IcqGroup *pGroup = (IcqGroup *)groups.GetItemData(cur);
+
+		HMENU hMenu = CreatePopupMenu();
+		AppendMenu(hMenu, MF_STRING, 1, TranslateT("Rename"));
+		AppendMenu(hMenu, MF_STRING, 2, TranslateT("Delete"));
+
+		POINT pt;
+		GetCursorPos(&pt);
+		int cmd = TrackPopupMenu(hMenu, TPM_RIGHTBUTTON | TPM_RETURNCMD, pt.x, pt.y, 0, m_hwnd, nullptr);
+		DestroyMenu(hMenu);
+
+		if (cmd == 1) { // rename
+			ENTER_STRING es = {};
+			es.szModuleName = m_proto->m_szModuleName;
+			es.caption = TranslateT("Enter new group name");
+			if (!EnterString(&es))
+				return;
+
+			m_proto->Push(new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/renameGroup")
+				<< AIMSID(m_proto) << WCHAR_PARAM("oldGroup", pGroup->wszSrvName) << GROUP_PARAM("newGroup", es.ptszResult));
+
+			mir_free(es.ptszResult);
+		}
+		else if (cmd == 2) { // delete
+			m_proto->Push(new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/removeGroup")
+				<< AIMSID(m_proto) << WCHAR_PARAM("group", pGroup->wszSrvName));
+		}
+	}
+};
+
+CGroupEditDlg *CGroupEditDlg::pDlg = nullptr;
+
+INT_PTR CIcqProto::EditGroups(WPARAM, LPARAM)
+{
+	(new CGroupEditDlg(this))->Show();
+	return 0;
+}
+
+void RefreshGroups(void)
+{
+	if (CGroupEditDlg::pDlg != nullptr)
+		CGroupEditDlg::pDlg->RefreshGroups();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -199,9 +293,9 @@ void CIcqProto::MarkReadTimerProc(HWND hwnd, UINT, UINT_PTR id, DWORD)
 {
 	CIcqProto *ppro = (CIcqProto*)id;
 
-	mir_cslock lck(ppro->csMarkReadQueue);
-	while (ppro->arMarkReadQueue.getCount()) {
-		IcqCacheItem *pUser = ppro->arMarkReadQueue[0];
+	mir_cslock lck(ppro->m_csMarkReadQueue);
+	while (ppro->m_arMarkReadQueue.getCount()) {
+		IcqCacheItem *pUser = ppro->m_arMarkReadQueue[0];
 
 		auto *pReq = new AsyncHttpRequest(CONN_RAPI, REQUEST_POST, ICQ_ROBUST_SERVER);
 		JSONNode request, params; params.set_name("params");
@@ -210,7 +304,7 @@ void CIcqProto::MarkReadTimerProc(HWND hwnd, UINT, UINT_PTR id, DWORD)
 		pReq->m_szParam = ptrW(json_write(&request));
 		ppro->Push(pReq);
 
-		ppro->arMarkReadQueue.remove(0);
+		ppro->m_arMarkReadQueue.remove(0);
 	}
 	KillTimer(hwnd, id);
 }
@@ -231,9 +325,9 @@ int CIcqProto::OnDbEventRead(WPARAM, LPARAM hDbEvent)
 		
 		IcqCacheItem *pCache = FindContactByUIN(GetUserId(hContact));
 		if (pCache) {
-			mir_cslock lck(csMarkReadQueue);
-			if (arMarkReadQueue.indexOf(pCache) == -1)
-				arMarkReadQueue.insert(pCache);
+			mir_cslock lck(m_csMarkReadQueue);
+			if (m_arMarkReadQueue.indexOf(pCache) == -1)
+				m_arMarkReadQueue.insert(pCache);
 		}
 	}
 	return 0;
@@ -246,20 +340,22 @@ int CIcqProto::OnGroupChange(WPARAM hContact, LPARAM lParam)
 
 	CLISTGROUPCHANGE *pParam = (CLISTGROUPCHANGE*)lParam;
 	if (hContact == 0) { // whole group is changed
-		auto *pReq = new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/") << AIMSID(this);
 		if (pParam->pszOldName == nullptr) {
-			pReq->m_szUrl += "addGroup";
-			pReq << GROUP_PARAM("group", pParam->pszNewName);
+			for (auto &it : m_arGroups)
+				if (it->wszName == pParam->pszNewName)
+					return 0;
+
+			Push(new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/addGroup")
+				<< AIMSID(this) << GROUP_PARAM("group", pParam->pszNewName));
 		}
 		else if (pParam->pszNewName == nullptr) {
-			pReq->m_szUrl += "removeGroup";
-			pReq << GROUP_PARAM("group", pParam->pszOldName);
+			Push(new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/removeGroup") 
+				<< AIMSID(this) << GROUP_PARAM("group", pParam->pszOldName));
 		}
 		else {
-			pReq->m_szUrl += "renameGroup";
-			pReq << GROUP_PARAM("oldGroup", pParam->pszOldName) << GROUP_PARAM("newGroup", pParam->pszNewName);
+			Push(new AsyncHttpRequest(CONN_MAIN, REQUEST_GET, ICQ_API_SERVER "/buddylist/renameGroup") 
+				<< AIMSID(this) << GROUP_PARAM("oldGroup", pParam->pszOldName) << GROUP_PARAM("newGroup", pParam->pszNewName));
 		}
-		Push(pReq);
 	}
 	else MoveContactToGroup(hContact, getMStringW(hContact, "IcqGroup"), pParam->pszNewName);
 	
@@ -315,6 +411,9 @@ INT_PTR CIcqProto::GetCaps(int type, MCONTACT)
 
 	case PFLAGNUM_3:
 		return PF2_ONLINE | PF2_SHORTAWAY | PF2_LONGAWAY | PF2_LIGHTDND | PF2_HEAVYDND | PF2_INVISIBLE;
+	
+	case PFLAGNUM_5:
+		return PF2_SHORTAWAY | PF2_LONGAWAY | PF2_LIGHTDND | PF2_HEAVYDND | PF2_INVISIBLE;
 
 	case PFLAGNUM_4:
 		nReturn = PF4_FORCEAUTH | PF4_SUPPORTIDLE | PF4_OFFLINEFILES | PF4_IMSENDOFFLINE | PF4_SUPPORTTYPING | PF4_AVATARS | PF4_SERVERMSGID | PF4_READNOTIFY;

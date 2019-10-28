@@ -65,20 +65,12 @@ MCONTACT CSametimeProto::AddContact(mwSametimeUser* user, bool temporary)
 	bool new_contact = false;
 	if (!hContact) {
 		hContact = db_add_contact();
-		if (!hContact) {
-			debugLogW(L"AddContact(): Failed to create Sametime contact");
-			return NULL; ///TODO error handling
-		}
-		if (Proto_AddToContact(hContact, m_szModuleName) != 0) {
-			db_delete_contact(hContact);
-			debugLogW(L"AddContact(): Failed to register Sametime contact");
-			return NULL; ///TODO error handling
-		}
+		Proto_AddToContact(hContact, m_szModuleName);
 		new_contact = true;
 	}
 	else if (!temporary) {
-		db_unset(hContact, "CList", "NotOnList");
-		db_unset(hContact, "CList", "Hidden");
+		Contact_PutOnList(hContact);
+		Contact_Hide(hContact, false);
 	}
 
 
@@ -112,12 +104,12 @@ MCONTACT CSametimeProto::AddContact(mwSametimeUser* user, bool temporary)
 	}
 
 	if (temporary) {
-		db_set_b(hContact, "CList", "NotOnList", 1);
-		db_set_b(hContact, "CList", "Hidden", 1);
+		Contact_RemoveFromList(hContact);
+		Contact_Hide(hContact);
 	}
 	else {
-		db_unset(hContact, "CList", "NotOnList");
-		db_unset(hContact, "CList", "Hidden");
+		Contact_PutOnList(hContact);
+		Contact_Hide(hContact, false);
 	}
 
 	return hContact;

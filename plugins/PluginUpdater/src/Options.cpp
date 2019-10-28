@@ -19,9 +19,35 @@ Boston, MA 02111-1307, USA.
 
 #include "stdafx.h"
 
+static const wchar_t* GetHttps(HWND hwndDlg)
+{
+	return IsDlgButtonChecked(hwndDlg, IDC_USE_HTTPS) ? L"https" : L"http";
+}
+
 static int GetBits(HWND hwndDlg)
 {
 	return IsDlgButtonChecked(hwndDlg, IDC_CHANGE_PLATFORM) ? DEFAULT_OPP_BITS : DEFAULT_BITS;
+}
+
+static void UpdateUrl(HWND hwndDlg)
+{
+	wchar_t defurl[MAX_PATH];
+	if (IsDlgButtonChecked(hwndDlg, IDC_STABLE)) {
+		mir_snwprintf(defurl, DEFAULT_UPDATE_URL, GetHttps(hwndDlg), GetBits(hwndDlg));
+		SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+	}
+	else if (IsDlgButtonChecked(hwndDlg, IDC_STABLE_SYMBOLS)) {
+		mir_snwprintf(defurl, DEFAULT_UPDATE_URL_STABLE_SYMBOLS, GetHttps(hwndDlg), GetBits(hwndDlg));
+		SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+	}
+	else if (IsDlgButtonChecked(hwndDlg, IDC_TRUNK)) {
+		mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK, GetHttps(hwndDlg), GetBits(hwndDlg));
+		SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+	}
+	else if (IsDlgButtonChecked(hwndDlg, IDC_TRUNK_SYMBOLS)) {
+		mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK_SYMBOLS, GetHttps(hwndDlg), GetBits(hwndDlg));
+		SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+	}
 }
 
 static int GetUpdateMode()
@@ -50,19 +76,22 @@ static int GetUpdateMode()
 
 wchar_t* GetDefaultUrl()
 {
+	int bits = g_plugin.bChangePlatform ? DEFAULT_OPP_BITS : DEFAULT_BITS;
+	const wchar_t *pwszProto = g_plugin.bUseHttps ? L"https" : L"http";
+
 	wchar_t url[MAX_PATH];
 	switch (GetUpdateMode()) {
 	case UPDATE_MODE_STABLE:
-		mir_snwprintf(url, DEFAULT_UPDATE_URL, g_plugin.bChangePlatform ? DEFAULT_OPP_BITS : DEFAULT_BITS);
+		mir_snwprintf(url, DEFAULT_UPDATE_URL, pwszProto, bits);
 		return mir_wstrdup(url);
 	case UPDATE_MODE_STABLE_SYMBOLS:
-		mir_snwprintf(url, DEFAULT_UPDATE_URL_STABLE_SYMBOLS, g_plugin.bChangePlatform ? DEFAULT_OPP_BITS : DEFAULT_BITS);
+		mir_snwprintf(url, DEFAULT_UPDATE_URL_STABLE_SYMBOLS, pwszProto, bits);
 		return mir_wstrdup(url);
 	case UPDATE_MODE_TRUNK:
-		mir_snwprintf(url, DEFAULT_UPDATE_URL_TRUNK, g_plugin.bChangePlatform ? DEFAULT_OPP_BITS : DEFAULT_BITS);
+		mir_snwprintf(url, DEFAULT_UPDATE_URL_TRUNK, pwszProto, bits);
 		return mir_wstrdup(url);
 	case UPDATE_MODE_TRUNK_SYMBOLS:
-		mir_snwprintf(url, DEFAULT_UPDATE_URL_TRUNK_SYMBOLS, g_plugin.bChangePlatform ? DEFAULT_OPP_BITS : DEFAULT_BITS);
+		mir_snwprintf(url, DEFAULT_UPDATE_URL_TRUNK_SYMBOLS, pwszProto, bits);
 		return mir_wstrdup(url);
 	default:
 		return g_plugin.getWStringA(DB_SETTING_UPDATE_URL);
@@ -73,8 +102,6 @@ wchar_t* GetDefaultUrl()
 
 static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	wchar_t defurl[MAX_PATH];
-
 	switch (msg) {
 	case WM_INITDIALOG:
 		if (g_plugin.bUpdateOnStartup) {
@@ -82,6 +109,7 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 			EnableWindow(GetDlgItem(hwndDlg, IDC_ONLYONCEADAY), TRUE);
 		}
 
+		CheckDlgButton(hwndDlg, IDC_USE_HTTPS, g_plugin.bUseHttps ? BST_CHECKED : BST_UNCHECKED);
 		CheckDlgButton(hwndDlg, IDC_ONLYONCEADAY, g_plugin.bOnlyOnceADay ? BST_CHECKED : BST_UNCHECKED);
 		CheckDlgButton(hwndDlg, IDC_CHANGE_PLATFORM, g_plugin.bChangePlatform ? BST_CHECKED : BST_UNCHECKED);
 
@@ -123,24 +151,20 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 
 		switch (GetUpdateMode()) {
 		case UPDATE_MODE_STABLE:
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
 			CheckDlgButton(hwndDlg, IDC_STABLE, BST_CHECKED);
+			UpdateUrl(hwndDlg);
 			break;
 		case UPDATE_MODE_STABLE_SYMBOLS:
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL_STABLE_SYMBOLS, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
 			CheckDlgButton(hwndDlg, IDC_STABLE_SYMBOLS, BST_CHECKED);
+			UpdateUrl(hwndDlg);
 			break;
 		case UPDATE_MODE_TRUNK:
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
 			CheckDlgButton(hwndDlg, IDC_TRUNK, BST_CHECKED);
+			UpdateUrl(hwndDlg);
 			break;
 		case UPDATE_MODE_TRUNK_SYMBOLS:
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK_SYMBOLS, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
 			CheckDlgButton(hwndDlg, IDC_TRUNK_SYMBOLS, BST_CHECKED);
+			UpdateUrl(hwndDlg);
 			break;
 		default:
 			CheckDlgButton(hwndDlg, IDC_CUSTOM, BST_CHECKED);
@@ -189,32 +213,28 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 		case IDC_TRUNK_SYMBOLS:
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CHANGE_PLATFORM), TRUE);
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CUSTOMURL), FALSE);
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK_SYMBOLS, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+			UpdateUrl(hwndDlg);
 			SendMessage(GetParent(hwndDlg), PSM_CHANGED, 0, 0);
 			break;
 
 		case IDC_TRUNK:
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CHANGE_PLATFORM), TRUE);
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CUSTOMURL), FALSE);
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+			UpdateUrl(hwndDlg);
 			SendMessage(GetParent(hwndDlg), PSM_CHANGED, 0, 0);
 			break;
 
 		case IDC_STABLE:
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CHANGE_PLATFORM), TRUE);
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CUSTOMURL), FALSE);
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+			UpdateUrl(hwndDlg);
 			SendMessage(GetParent(hwndDlg), PSM_CHANGED, 0, 0);
 			break;
 
 		case IDC_STABLE_SYMBOLS:
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CHANGE_PLATFORM), TRUE);
 			EnableWindow(GetDlgItem(hwndDlg, IDC_CUSTOMURL), FALSE);
-			mir_snwprintf(defurl, DEFAULT_UPDATE_URL_STABLE_SYMBOLS, GetBits(hwndDlg));
-			SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
+			UpdateUrl(hwndDlg);
 			SendMessage(GetParent(hwndDlg), PSM_CHANGED, 0, 0);
 			break;
 
@@ -230,6 +250,11 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 			SendMessage(GetParent(hwndDlg), PSM_CHANGED, 0, 0);
 			break;
 
+		case IDC_USE_HTTPS:
+			UpdateUrl(hwndDlg);
+			SendMessage(GetParent(hwndDlg), PSM_CHANGED, 0, 0);
+			break;
+
 		case IDC_PERIOD:
 		case IDC_CUSTOMURL:
 			if ((HWND)lParam == GetFocus() && (HIWORD(wParam) == EN_CHANGE))
@@ -242,22 +267,7 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 			break;
 
 		case IDC_CHANGE_PLATFORM:
-			if (IsDlgButtonChecked(hwndDlg, IDC_STABLE)) {
-				mir_snwprintf(defurl, DEFAULT_UPDATE_URL, GetBits(hwndDlg));
-				SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
-			}
-			else if (IsDlgButtonChecked(hwndDlg, IDC_STABLE_SYMBOLS)) {
-				mir_snwprintf(defurl, DEFAULT_UPDATE_URL_STABLE_SYMBOLS, GetBits(hwndDlg));
-				SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
-			}
-			else if (IsDlgButtonChecked(hwndDlg, IDC_TRUNK)) {
-				mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK, GetBits(hwndDlg));
-				SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
-			}
-			else if (IsDlgButtonChecked(hwndDlg, IDC_TRUNK_SYMBOLS)) {
-				mir_snwprintf(defurl, DEFAULT_UPDATE_URL_TRUNK_SYMBOLS, GetBits(hwndDlg));
-				SetDlgItemText(hwndDlg, IDC_CUSTOMURL, defurl);
-			}
+			UpdateUrl(hwndDlg);
 			SendMessage(GetParent(hwndDlg), PSM_CHANGED, 0, 0);
 			break;
 
@@ -279,6 +289,7 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 				g_plugin.setByte("UpdateOnPeriod", g_plugin.bUpdateOnPeriod = IsDlgButtonChecked(hwndDlg, IDC_UPDATEONPERIOD));
 				g_plugin.setByte("PeriodMeasure", g_plugin.iPeriodMeasure = ComboBox_GetCurSel(GetDlgItem(hwndDlg, IDC_PERIODMEASURE)));
 				g_plugin.setByte("SilentMode", g_plugin.bSilentMode = IsDlgButtonChecked(hwndDlg, IDC_SILENTMODE));
+				g_plugin.setByte("UseHttps", g_plugin.bUseHttps = IsDlgButtonChecked(hwndDlg, IDC_USE_HTTPS));
 				g_plugin.setByte("Backup", g_plugin.bBackup = IsDlgButtonChecked(hwndDlg, IDC_BACKUP));
 				wchar_t buffer[3] = { 0 };
 				Edit_GetText(GetDlgItem(hwndDlg, IDC_PERIOD), buffer, _countof(buffer));
@@ -286,48 +297,41 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 
 				InitTimer((void*)1);
 
+				int iNewMode;
 				bool bNoSymbols = false;
 				if (IsDlgButtonChecked(hwndDlg, IDC_STABLE)) {
-					g_plugin.setByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_STABLE);
-					if (!g_plugin.bChangePlatform)
-						g_plugin.bForceRedownload = 0;
-					g_plugin.delSetting(DB_SETTING_REDOWNLOAD);
+					iNewMode = UPDATE_MODE_STABLE;
 					bNoSymbols = true;
 				}
 				else if (IsDlgButtonChecked(hwndDlg, IDC_STABLE_SYMBOLS)) {
-					// Only set ForceRedownload if the previous UpdateMode was different
-					// to redownload all plugin with pdb files
-					if (g_plugin.getByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_STABLE) != UPDATE_MODE_STABLE_SYMBOLS) {
-						g_plugin.setByte(DB_SETTING_REDOWNLOAD, g_plugin.bForceRedownload = 1);
-						g_plugin.setByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_STABLE_SYMBOLS);
-					}
+					iNewMode = UPDATE_MODE_STABLE_SYMBOLS;
 				}
 				else if (IsDlgButtonChecked(hwndDlg, IDC_TRUNK)) {
-					g_plugin.setByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_TRUNK);
-					if (!g_plugin.bChangePlatform)
-						g_plugin.bForceRedownload = 0;
-					g_plugin.delSetting(DB_SETTING_REDOWNLOAD);
+					iNewMode = UPDATE_MODE_TRUNK;
 					bNoSymbols = true;
 				}
 				else if (IsDlgButtonChecked(hwndDlg, IDC_TRUNK_SYMBOLS)) {
-					// Only set ForceRedownload if the previous UpdateMode was different
-					// to redownload all plugin with pdb files
-					if (g_plugin.getByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_STABLE) != UPDATE_MODE_TRUNK_SYMBOLS) {
-						g_plugin.setByte(DB_SETTING_REDOWNLOAD, g_plugin.bForceRedownload = 1);
-						g_plugin.setByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_TRUNK_SYMBOLS);
-					}
+					iNewMode = UPDATE_MODE_TRUNK_SYMBOLS;
 				}
 				else {
 					wchar_t tszUrl[100];
 					GetDlgItemText(hwndDlg, IDC_CUSTOMURL, tszUrl, _countof(tszUrl));
 					g_plugin.setWString(DB_SETTING_UPDATE_URL, tszUrl);
-					g_plugin.setByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_CUSTOM);
-					g_plugin.bForceRedownload = 0;
-					g_plugin.delSetting(DB_SETTING_REDOWNLOAD);
+					iNewMode = UPDATE_MODE_CUSTOM;
+				}
+
+				bool bStartUpdate = false;
+
+				// Repository was changed, force recheck
+				if (g_plugin.getByte(DB_SETTING_UPDATE_MODE, UPDATE_MODE_STABLE) != iNewMode) {
+					g_plugin.setByte(DB_SETTING_UPDATE_MODE, iNewMode);
+					if (!bNoSymbols)
+						g_plugin.bForceRedownload = true;
+					bStartUpdate = true;
 				}
 
 				if (IsDlgButtonChecked(hwndDlg, IDC_CHANGE_PLATFORM)) {
-					g_plugin.setByte(DB_SETTING_REDOWNLOAD, g_plugin.bForceRedownload = 1);
+					g_plugin.bForceRedownload = bStartUpdate = true;
 					g_plugin.setByte(DB_SETTING_CHANGEPLATFORM, g_plugin.bChangePlatform = 1);
 				}
 				else g_plugin.setByte(DB_SETTING_CHANGEPLATFORM, g_plugin.bChangePlatform = 0);
@@ -349,7 +353,7 @@ static INT_PTR CALLBACK UpdateNotifyOptsProc(HWND hwndDlg, UINT msg, WPARAM wPar
 				}
 
 				// if user tried to change the channel, run the update dialog immediately
-				if (IsWindowEnabled(GetDlgItem(hwndDlg, IDC_CHANGE_PLATFORM)))
+				if (bStartUpdate)
 					CallService(MS_PU_CHECKUPDATES, 0, 0);
 			}
 		}

@@ -203,14 +203,14 @@ int CTooltipNotify::ContactSettingChanged(WPARAM hContact, LPARAM lParam)
 		idle = true;
 	else return 0;
 
-	if (db_get_b(hContact, "CList", "Hidden", 0))
+	if (Contact_IsHidden(hContact))
 		return 0;
 
 	const char *pszProto = cws->szModule;
 	if (g_plugin.getByte(pszProto, ProtoUserBit | ProtoIntBit) != (ProtoUserBit | ProtoIntBit))
 		return 0;
 
-	if (db_get_b(hContact, "CList", "NotOnList", 0) && m_sOptions.bIgnoreUnknown)
+	if (!Contact_OnList(hContact) && m_sOptions.bIgnoreUnknown)
 		return 0;
 
 	if (g_plugin.getByte(hContact, CONTACT_IGNORE_TTNOTIFY, m_sOptions.bIgnoreNew))
@@ -227,7 +227,7 @@ int CTooltipNotify::ContactSettingChanged(WPARAM hContact, LPARAM lParam)
 		break;
 
 	case ID_STATUS_ONLINE:
-		if (CallService(MS_IGNORE_ISIGNORED, hContact, IGNOREEVENT_USERONLINE) && m_sOptions.bConjSOLN) return 0;
+		if (Ignore_IsIgnored(hContact, IGNOREEVENT_USERONLINE) && m_sOptions.bConjSOLN) return 0;
 		if (!m_sOptions.bOnline) return 0;
 		Skin_PlaySound(SND_ONLINE);
 		break;

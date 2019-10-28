@@ -158,7 +158,7 @@ INT_PTR CDiscordProto::GetCaps(int type, MCONTACT)
 	case PFLAGNUM_3:
 		return PF2_ONLINE | PF2_LONGAWAY | PF2_HEAVYDND | PF2_INVISIBLE;
 	case PFLAGNUM_4:
-		return PF4_FORCEAUTH | PF4_NOCUSTOMAUTH | PF4_NOAUTHDENYREASON | PF4_SUPPORTTYPING | PF4_SUPPORTIDLE | PF4_AVATARS | PF4_IMSENDOFFLINE | PF4_SERVERMSGID;
+		return PF4_FORCEAUTH | PF4_NOCUSTOMAUTH | PF4_NOAUTHDENYREASON | PF4_SUPPORTTYPING | PF4_SUPPORTIDLE | PF4_AVATARS | PF4_IMSENDOFFLINE | PF4_SERVERMSGID | PF4_OFFLINEFILES;
 	case PFLAG_UNIQUEIDTEXT:
 		return (INT_PTR)Translate("User ID");
 	}
@@ -341,7 +341,7 @@ MCONTACT CDiscordProto::AddToList(int flags, PROTOSEARCHRESULT *psr)
 	MCONTACT hContact = db_add_contact();
 	Proto_AddToContact(hContact, m_szModuleName);
 	if (flags & PALF_TEMPORARY)
-		db_set_b(hContact, "CList", "NotOnList", 1);
+		Contact_RemoveFromList(hContact);
 	
 	*p = 0;
 	CDiscordUser *pUser = new CDiscordUser(0);

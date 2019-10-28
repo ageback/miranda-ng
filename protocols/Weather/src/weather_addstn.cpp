@@ -48,9 +48,9 @@ INT_PTR WeatherAddToList(WPARAM, LPARAM lParam)
 				if (!mir_wstrcmpi(psr->email.w, dbv.pwszVal)) {
 					// remove the flag for not on list and hidden, thus make the contact visible
 					// and add them on the list
-					if (db_get_b(hContact, "CList", "NotOnList", 1)) {
-						db_unset(hContact, "CList", "NotOnList");
-						db_unset(hContact, "CList", "Hidden");
+					if (!Contact_OnList(hContact)) {
+						Contact_PutOnList(hContact);
+						Contact_Hide(hContact, false);
 					}
 					db_free(&dbv);
 					// contact is added, function quitting
@@ -66,7 +66,7 @@ INT_PTR WeatherAddToList(WPARAM, LPARAM lParam)
 	MCONTACT hContact = db_add_contact();
 	Proto_AddToContact(hContact, MODULENAME);
 	// suppress online notification for the new contact
-	CallService(MS_IGNORE_IGNORE, hContact, IGNOREEVENT_USERONLINE);
+	Ignore_Ignore(hContact, IGNOREEVENT_USERONLINE);
 
 	// set contact info and settings
 	wchar_t svc[256];

@@ -279,6 +279,37 @@ MIR_APP_DLL(int) Contact_GetStatus(MCONTACT hContact)
 	return db_get_w(hContact, szProto, "Status", ID_STATUS_OFFLINE);
 }
 
+///////////////////////////////////////////////////////////////////////////////
+
+MIR_APP_DLL(bool) Contact_IsHidden(MCONTACT hContact)
+{
+	return db_get_b(hContact, "CList", "Hidden", 0) != 0;
+}
+
+MIR_APP_DLL(void) Contact_Hide(MCONTACT hContact, bool bHidden)
+{
+	if (bHidden)
+		db_set_b(hContact, "CList", "Hidden", 1);
+	else
+		db_unset(hContact, "CList", "Hidden");
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+MIR_APP_DLL(bool) Contact_OnList(MCONTACT hContact)
+{
+	return db_get_b(hContact, "CList", "NotOnList", 0) == 0;
+}
+
+MIR_APP_DLL(void) Contact_PutOnList(MCONTACT hContact)
+{
+	db_unset(hContact, "CList", "NotOnList");
+}
+
+MIR_APP_DLL(void) Contact_RemoveFromList(MCONTACT hContact)
+{
+	db_set_b(hContact, "CList", "NotOnList", 1);
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // Options dialog

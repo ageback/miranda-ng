@@ -34,9 +34,9 @@
 #include "m_protoint.h"
 
 #define ICQ_APP_ID "ic1nmMjqg7Yu-0hL"
-#define ICQ_API_SERVER "https://api.icq.net"
+#define ICQ_API_SERVER "https://u.icq.net/wim"
 #define ICQ_FAKE_EVENT_ID 0xBABAEB
-#define ICQ_ROBUST_SERVER "https://rapi.icq.net"
+#define ICQ_ROBUST_SERVER "https://u.icq.net/rapi"
 
 #define PS_DUMMY "/DoNothing"
 #define PS_GOTO_INBOX "/GotoInbox"
@@ -68,7 +68,30 @@ enum ChatMenuItems
 	IDM_INVITE = 10, IDM_LEAVE
 };
 
-struct IcqCacheItem
+struct IcqGroup
+{
+	IcqGroup(int _p1, const CMStringW &_p2) :
+		id(_p1),
+		wszSrvName(_p2)
+	{
+		SetName(_p2);
+	}
+
+	int id;
+	int level;
+	CMStringW wszName, wszSrvName;
+
+	void SetName(const CMStringW &str)
+	{
+		wszName = str;
+		level = wszName.SpanIncluding(L">").GetLength();
+		if (level != 0)
+			wszName.Delete(0, level);
+		wszName.Replace(L">", L"\\");
+	}
+};
+
+struct IcqCacheItem : public MZeroedObject
 {
 	IcqCacheItem(const CMStringW &wszId, MCONTACT _contact) :
 		m_aimid(wszId),
@@ -77,7 +100,7 @@ struct IcqCacheItem
 
 	CMStringW m_aimid;
 	MCONTACT m_hContact;
-	bool m_bInList = false;
+	bool m_bInList;
 	int m_iApparentMode;
 	time_t m_timer1, m_timer2;
 };
@@ -159,6 +182,7 @@ class CIcqProto : public PROTO<CIcqProto>
 	friend class CEditIgnoreListDlg;
 	friend class CIcqEnterLoginDlg;
 	friend class CIcqOptionsDlg;
+	friend class CGroupEditDlg;
 
 	friend AsyncHttpRequest* operator <<(AsyncHttpRequest*, const AIMSID&);
 
@@ -189,8 +213,8 @@ class CIcqProto : public PROTO<CIcqProto>
 	void      OnLoggedIn(void);
 	void      OnLoggedOut(void);
 
-	mir_cs    csMarkReadQueue;
-	LIST<IcqCacheItem> arMarkReadQueue;
+	mir_cs    m_csMarkReadQueue;
+	LIST<IcqCacheItem> m_arMarkReadQueue;
 	static    void CALLBACK MarkReadTimerProc(HWND hwnd, UINT, UINT_PTR id, DWORD);
 
 	AsyncHttpRequest* UserInfoRequest(MCONTACT);
@@ -243,6 +267,8 @@ class CIcqProto : public PROTO<CIcqProto>
 
 	mir_cs    m_csOwnIds;
 	OBJLIST<IcqOwnMessage> m_arOwnIds;
+
+	OBJLIST<IcqGroup> m_arGroups;
 
 	CIcqDlgBase *m_pdlgEditIgnore;	
 
@@ -309,6 +335,7 @@ class CIcqProto : public PROTO<CIcqProto>
 	INT_PTR   __cdecl SetAvatar(WPARAM, LPARAM);
 	
 	INT_PTR   __cdecl CreateAccMgrUI(WPARAM, LPARAM);
+	INT_PTR   __cdecl EditGroups(WPARAM, LPARAM);
 	INT_PTR   __cdecl GetEmailCount(WPARAM, LPARAM);
 	INT_PTR   __cdecl GotoInbox(WPARAM, LPARAM);
 	INT_PTR   __cdecl UploadGroups(WPARAM, LPARAM);

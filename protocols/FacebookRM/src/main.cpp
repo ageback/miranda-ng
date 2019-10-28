@@ -24,7 +24,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 CMPlugin g_plugin;
 
-std::string g_strUserAgent;
 DWORD g_mirandaVersion;
 bool g_bMessageState;
 HWND g_hwndHeartbeat;
@@ -75,22 +74,8 @@ int CMPlugin::Load()
 	InitIcons();
 	InitContactMenus();
 
-	// Init native User-Agent
-	MFileVersion v;
-	Miranda_GetFileVersion(&v);
-	std::stringstream agent;
-	agent << "Miranda NG/" << v[0] << "." << v[1] << "." << v[2];
-#ifdef _WIN64
-	agent << " Facebook Protocol RM x64/";
-#else
-	agent << " Facebook Protocol RM/";
-#endif
-	agent << __VERSION_STRING_DOTS;
-	g_strUserAgent = agent.str();
-
 	// Initialize random generator (used only as fallback in utils)
 	srand(::time(0));
-
 	return 0;
 }
 

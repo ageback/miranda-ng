@@ -384,7 +384,7 @@ void CMenuBar::invoke(const int id)
 
 	m_isContactMenu = m_isMainMenu = false;
 
-	CSrmmWindow *dat = (CSrmmWindow*)GetWindowLongPtr(m_pContainer->m_hwndActive, GWLP_USERDATA);
+	CMsgDialog *dat = (CMsgDialog*)GetWindowLongPtr(m_pContainer->m_hwndActive, GWLP_USERDATA);
 
 	MCONTACT hContact = dat ? dat->m_hContact : 0;
 
@@ -436,35 +436,42 @@ void CMenuBar::Cancel(void)
 	autoShow(0);
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
+static void MY_CheckMenu(const HMENU hMenu, int id, DWORD key)
+{
+	::CheckMenuItem(hMenu, id, MF_BYCOMMAND | (key ? MF_CHECKED : MF_UNCHECKED));
+}
+
 void CMenuBar::updateState(const HMENU hMenu) const
 {
-	CSrmmWindow *dat = (CSrmmWindow*)GetWindowLongPtr(m_pContainer->m_hwndActive, GWLP_USERDATA);
+	CMsgDialog *dat = (CMsgDialog*)GetWindowLongPtr(m_pContainer->m_hwndActive, GWLP_USERDATA);
 	if (dat) {
-		::CheckMenuItem(hMenu, ID_VIEW_SHOWMENUBAR, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_NOMENUBAR ? MF_UNCHECKED : MF_CHECKED);
-		::CheckMenuItem(hMenu, ID_VIEW_SHOWSTATUSBAR, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_NOSTATUSBAR ? MF_UNCHECKED : MF_CHECKED);
-		::CheckMenuItem(hMenu, ID_VIEW_SHOWAVATAR, MF_BYCOMMAND | (dat->m_bShowAvatar ? MF_CHECKED : MF_UNCHECKED));
-		::CheckMenuItem(hMenu, ID_VIEW_SHOWTITLEBAR, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_NOTITLE ? MF_UNCHECKED : MF_CHECKED);
-
+		MY_CheckMenu(hMenu, ID_VIEW_SHOWMENUBAR, !(m_pContainer->m_dwFlags & CNT_NOMENUBAR) && !m_mustAutoHide);
+		MY_CheckMenu(hMenu, ID_VIEW_SHOWSTATUSBAR, !(m_pContainer->m_dwFlags & CNT_NOSTATUSBAR));
+		MY_CheckMenu(hMenu, ID_VIEW_SHOWAVATAR, dat->m_bShowAvatar);
+		
+		MY_CheckMenu(hMenu, ID_VIEW_SHOWTITLEBAR, !(m_pContainer->m_dwFlags & CNT_NOTITLE));
 		::EnableMenuItem(hMenu, ID_VIEW_SHOWTITLEBAR, CSkin::m_skinEnabled && CSkin::m_frameSkins ? MF_GRAYED : MF_ENABLED);
 
-		::CheckMenuItem(hMenu, ID_VIEW_TABSATBOTTOM, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_TABSBOTTOM ? MF_CHECKED : MF_UNCHECKED);
-		::CheckMenuItem(hMenu, ID_VIEW_VERTICALMAXIMIZE, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_VERTICALMAX ? MF_CHECKED : MF_UNCHECKED);
-		::CheckMenuItem(hMenu, ID_VIEW_SHOWTOOLBAR, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_HIDETOOLBAR ? MF_UNCHECKED : MF_CHECKED);
-		::CheckMenuItem(hMenu, ID_VIEW_BOTTOMTOOLBAR, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_BOTTOMTOOLBAR ? MF_CHECKED : MF_UNCHECKED);
+		MY_CheckMenu(hMenu, ID_VIEW_TABSATBOTTOM, m_pContainer->m_dwFlags & CNT_TABSBOTTOM);
+		MY_CheckMenu(hMenu, ID_VIEW_VERTICALMAXIMIZE, m_pContainer->m_dwFlags & CNT_VERTICALMAX);
+		MY_CheckMenu(hMenu, ID_VIEW_SHOWTOOLBAR, !(m_pContainer->m_dwFlags & CNT_HIDETOOLBAR));
+		MY_CheckMenu(hMenu, ID_VIEW_BOTTOMTOOLBAR, m_pContainer->m_dwFlags & CNT_BOTTOMTOOLBAR);
 
-		::CheckMenuItem(hMenu, ID_VIEW_SHOWMULTISENDCONTACTLIST, MF_BYCOMMAND | (dat->m_sendMode & SMODE_MULTIPLE) ? MF_CHECKED : MF_UNCHECKED);
-		::CheckMenuItem(hMenu, ID_VIEW_STAYONTOP, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_STICKY ? MF_CHECKED : MF_UNCHECKED);
+		MY_CheckMenu(hMenu, ID_VIEW_SHOWMULTISENDCONTACTLIST, dat->m_sendMode & SMODE_MULTIPLE);
+		MY_CheckMenu(hMenu, ID_VIEW_STAYONTOP, m_pContainer->m_dwFlags & CNT_STICKY);
 
 		::EnableMenuItem(hMenu, 2, MF_BYPOSITION | (nen_options.bWindowCheck ? MF_GRAYED : MF_ENABLED));
-		::CheckMenuItem(hMenu, ID_EVENTPOPUPS_DISABLEALLEVENTPOPUPS, MF_BYCOMMAND | m_pContainer->m_dwFlags & (CNT_DONTREPORT | CNT_DONTREPORTUNFOCUSED | CNT_DONTREPORTFOCUSED | CNT_ALWAYSREPORTINACTIVE) ? MF_UNCHECKED : MF_CHECKED);
-		::CheckMenuItem(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSIFWINDOWISMINIMIZED, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_DONTREPORT ? MF_CHECKED : MF_UNCHECKED);
-		::CheckMenuItem(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSFORALLINACTIVESESSIONS, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_ALWAYSREPORTINACTIVE ? MF_CHECKED : MF_UNCHECKED);
-		::CheckMenuItem(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSIFWINDOWISUNFOCUSED, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_DONTREPORTUNFOCUSED ? MF_CHECKED : MF_UNCHECKED);
-		::CheckMenuItem(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSIFWINDOWISFOCUSED, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_DONTREPORTFOCUSED ? MF_CHECKED : MF_UNCHECKED);
+		MY_CheckMenu(hMenu, ID_EVENTPOPUPS_DISABLEALLEVENTPOPUPS, !(m_pContainer->m_dwFlags & (CNT_DONTREPORT | CNT_DONTREPORTUNFOCUSED | CNT_DONTREPORTFOCUSED | CNT_ALWAYSREPORTINACTIVE)));
+		MY_CheckMenu(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSIFWINDOWISMINIMIZED, m_pContainer->m_dwFlags & CNT_DONTREPORT);
+		MY_CheckMenu(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSFORALLINACTIVESESSIONS, m_pContainer->m_dwFlags & CNT_ALWAYSREPORTINACTIVE);
+		MY_CheckMenu(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSIFWINDOWISUNFOCUSED, m_pContainer->m_dwFlags & CNT_DONTREPORTUNFOCUSED);
+		MY_CheckMenu(hMenu, ID_EVENTPOPUPS_SHOWPOPUPSIFWINDOWISFOCUSED, m_pContainer->m_dwFlags & CNT_DONTREPORTFOCUSED);
 
-		::CheckMenuItem(hMenu, ID_WINDOWFLASHING_USEDEFAULTVALUES, MF_BYCOMMAND | (m_pContainer->m_dwFlags & (CNT_NOFLASH | CNT_FLASHALWAYS)) ? MF_UNCHECKED : MF_CHECKED);
-		::CheckMenuItem(hMenu, ID_WINDOWFLASHING_DISABLEFLASHING, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_NOFLASH ? MF_CHECKED : MF_UNCHECKED);
-		::CheckMenuItem(hMenu, ID_WINDOWFLASHING_FLASHUNTILFOCUSED, MF_BYCOMMAND | m_pContainer->m_dwFlags & CNT_FLASHALWAYS ? MF_CHECKED : MF_UNCHECKED);
+		MY_CheckMenu(hMenu, ID_WINDOWFLASHING_USEDEFAULTVALUES, !(m_pContainer->m_dwFlags & (CNT_NOFLASH | CNT_FLASHALWAYS)));
+		MY_CheckMenu(hMenu, ID_WINDOWFLASHING_DISABLEFLASHING, m_pContainer->m_dwFlags & CNT_NOFLASH);
+		MY_CheckMenu(hMenu, ID_WINDOWFLASHING_FLASHUNTILFOCUSED, m_pContainer->m_dwFlags & CNT_FLASHALWAYS);
 	}
 }
 
@@ -477,12 +484,11 @@ void CMenuBar::updateState(const HMENU hMenu) const
 
 void CMenuBar::configureMenu() const
 {
-	CSrmmWindow *dat = (CSrmmWindow*)::GetWindowLongPtr(m_pContainer->m_hwndActive, GWLP_USERDATA);
+	CMsgDialog *dat = (CMsgDialog*)::GetWindowLongPtr(m_pContainer->m_hwndActive, GWLP_USERDATA);
 	if (dat) {
 		bool fChat = dat->isChat();
 
 		::SendMessage(m_hwndToolbar, TB_SETSTATE, 103, fChat ? TBSTATE_HIDDEN : TBSTATE_ENABLED);
-		::SendMessage(m_hwndToolbar, TB_SETSTATE, 104, fChat ? TBSTATE_ENABLED : TBSTATE_HIDDEN);
 		::SendMessage(m_hwndToolbar, TB_SETSTATE, 105, fChat ? TBSTATE_HIDDEN : TBSTATE_ENABLED);
 
 		if (!fChat)
@@ -553,25 +559,18 @@ void CMenuBar::checkButtons()
 		m_TbButtons[3].dwData = 0;								// dynamically built by Clist service
 
 		m_TbButtons[4].iBitmap = I_IMAGENONE;
-		m_TbButtons[4].iString = (INT_PTR)TranslateT("&Room");
+		m_TbButtons[4].iString = (INT_PTR)TranslateT("Message &log");
 		m_TbButtons[4].fsState = TBSTATE_ENABLED;
 		m_TbButtons[4].fsStyle = BTNS_DROPDOWN | BTNS_AUTOSIZE;
-		m_TbButtons[4].idCommand = 104;
-		m_TbButtons[4].dwData = 0;
+		m_TbButtons[4].idCommand = 105;
+		m_TbButtons[4].dwData = reinterpret_cast<DWORD_PTR>(::GetSubMenu(PluginConfig.getMenuBar(), 2));
 
 		m_TbButtons[5].iBitmap = I_IMAGENONE;
-		m_TbButtons[5].iString = (INT_PTR)TranslateT("Message &log");
+		m_TbButtons[5].iString = (INT_PTR)TranslateT("&Container");
 		m_TbButtons[5].fsState = TBSTATE_ENABLED;
 		m_TbButtons[5].fsStyle = BTNS_DROPDOWN | BTNS_AUTOSIZE;
-		m_TbButtons[5].idCommand = 105;
-		m_TbButtons[5].dwData = reinterpret_cast<DWORD_PTR>(::GetSubMenu(PluginConfig.getMenuBar(), 2));
-
-		m_TbButtons[6].iBitmap = I_IMAGENONE;
-		m_TbButtons[6].iString = (INT_PTR)TranslateT("&Container");
-		m_TbButtons[6].fsState = TBSTATE_ENABLED;
-		m_TbButtons[6].fsStyle = BTNS_DROPDOWN | BTNS_AUTOSIZE;
-		m_TbButtons[6].idCommand = 106;
-		m_TbButtons[6].dwData = reinterpret_cast<DWORD_PTR>(::GetSubMenu(PluginConfig.getMenuBar(), 3));
+		m_TbButtons[5].idCommand = 106;
+		m_TbButtons[5].dwData = reinterpret_cast<DWORD_PTR>(::GetSubMenu(PluginConfig.getMenuBar(), 3));
 
 		m_buttonsInit = true;
 	}
@@ -663,10 +662,10 @@ static int   tooltip_active = FALSE;
 static POINT ptMouse = { 0 };
 RECT   rcLastStatusBarClick;		// remembers click (down event) point for status bar clicks
 
-LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LONG_PTR CALLBACK CMsgDialog::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	TContainerData *pContainer = (TContainerData*)GetWindowLongPtr(GetParent(hWnd), GWLP_USERDATA);
-	CTabBaseDlg *dat = nullptr;
+	CMsgDialog *dat = nullptr;
 	POINT pt;
 
 	if (OldStatusBarproc == nullptr) {
@@ -725,7 +724,7 @@ LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM
 			HANDLE hTheme = bAero ? OpenThemeData(hWnd, L"ButtonStyle") : nullptr;
 
 			if (pContainer)
-				dat = (CTabBaseDlg*)GetWindowLongPtr(pContainer->m_hwndActive, GWLP_USERDATA);
+				dat = (CMsgDialog*)GetWindowLongPtr(pContainer->m_hwndActive, GWLP_USERDATA);
 
 			RECT rcClient;
 			GetClientRect(hWnd, &rcClient);
@@ -787,8 +786,9 @@ LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM
 						rc.top = rc.bottom - 3;
 						rc.left = 0;
 
+						int iMaxSize = (int)dat->m_cache->getMaxMessageLength();
 						if (!PluginConfig.m_autoSplit) {
-							float fMax = (float)dat->m_nMax;
+							float fMax = (float)iMaxSize;
 							float uPercent = (float)dat->m_textLen / ((fMax / (float)100.0) ? (fMax / (float)100.0) : (float)75.0);
 							float fx = ((float)rc.right / (float)100.0) * uPercent;
 
@@ -796,17 +796,17 @@ LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM
 							FillRect(hdcMem, &rc, br);
 						}
 						else {
-							float baselen = (dat->m_textLen <= dat->m_nMax) ? (float)dat->m_textLen : (float)dat->m_nMax;
-							float fMax = (float)dat->m_nMax;
+							float baselen = (dat->m_textLen <= iMaxSize) ? (float)dat->m_textLen : (float)iMaxSize;
+							float fMax = (float)iMaxSize;
 							float uPercent = baselen / ((fMax / (float)100.0) ? (fMax / (float)100.0) : (float)75.0);
 							float fx;
 							LONG  width = rc.right - rc.left;
-							if (dat->m_textLen >= dat->m_nMax)
+							if (dat->m_textLen >= iMaxSize)
 								rc.right = rc.right / 3;
 							fx = ((float)rc.right / (float)100.0) * uPercent;
 							rc.right = (LONG)fx;
 							FillRect(hdcMem, &rc, br);
-							if (dat->m_textLen >= dat->m_nMax) {
+							if (dat->m_textLen >= iMaxSize) {
 								SelectObject(hdcMem, brOld);
 								DeleteObject(br);
 								br = CreateSolidBrush(RGB(255, 0, 0));
@@ -830,7 +830,7 @@ LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM
 				wchar_t szText[1024]; szText[0] = 0;
 				LRESULT result = SendMessage(hWnd, SB_GETTEXT, i, (LPARAM)szText);
 				if (i == 2 && pContainer) {
-					CSrmmWindow *pDat = (CSrmmWindow*)GetWindowLongPtr(pContainer->m_hwndActive, GWLP_USERDATA);
+					CMsgDialog *pDat = (CMsgDialog*)GetWindowLongPtr(pContainer->m_hwndActive, GWLP_USERDATA);
 					if (pDat)
 						pDat->DrawStatusIcons(hdcMem, itemRect, 2);
 				}
@@ -878,7 +878,7 @@ LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM
 		// needed when an icon is added to or removed from the icon area
 		{
 			int list_icons = 0;
-			dat = (CTabBaseDlg*)lParam;
+			dat = (CMsgDialog*)lParam;
 			if (dat)
 				while (Srmm_GetNthIcon(dat->m_hContact, list_icons))
 					list_icons++;
@@ -941,7 +941,7 @@ LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM
 		GetCursorPos(&pt);
 		if (pt.x != ptMouse.x || pt.y != ptMouse.y)
 			break;
-		dat = (CTabBaseDlg*)GetWindowLongPtr(pContainer->m_hwndActive, GWLP_USERDATA);
+		dat = (CMsgDialog*)GetWindowLongPtr(pContainer->m_hwndActive, GWLP_USERDATA);
 		if (dat != nullptr) {
 			RECT rc;
 			SIZE size;
@@ -985,7 +985,7 @@ LONG_PTR CALLBACK CTabBaseDlg::StatusBarSubclassProc(HWND hWnd, UINT msg, WPARAM
 
 				mir_snwprintf(wBuf, 
 					TranslateT("There are %d pending send jobs. Message length: %d bytes, message length limit: %d bytes\n\n%d messages are queued for later delivery"),
-					dat->m_iOpenJobs, dat->m_message.GetRichTextLength(CP_UTF8), dat->m_nMax ? dat->m_nMax : 20000, iQueued);
+					dat->m_iOpenJobs, dat->m_message.GetRichTextLength(CP_UTF8), dat->m_cache->getMaxMessageLength(), iQueued);
 				CallService("mToolTip/ShowTipW", (WPARAM)wBuf, (LPARAM)&ti);
 			}
 

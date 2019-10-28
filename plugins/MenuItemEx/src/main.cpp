@@ -377,7 +377,7 @@ static INT_PTR onSetVis(WPARAM wparam, LPARAM)
 static INT_PTR onHide(WPARAM wparam, LPARAM)
 {
 	MCONTACT hContact = (MCONTACT)wparam;
-	db_set_b(hContact, "CList", "Hidden", (BYTE)!db_get_b(hContact, "CList", "Hidden", 0));
+	Contact_Hide(hContact, !Contact_IsHidden(hContact));
 	return 0;
 }
 
@@ -630,7 +630,7 @@ static INT_PTR onChangeProto(WPARAM hContact, LPARAM lparam)
 static int isIgnored(MCONTACT hContact, int type)
 {
 	if (type != IGNOREEVENT_ALL)
-		return CallService(MS_IGNORE_ISIGNORED, hContact, (LPARAM)type);
+		return Ignore_IsIgnored(hContact, (LPARAM)type);
 
 	int i = 0, all = 0;
 	for (i = 1; i < _countof(ii); i++)
@@ -643,9 +643,12 @@ static int isIgnored(MCONTACT hContact, int type)
 static INT_PTR onIgnore(WPARAM wparam, LPARAM lparam)
 {
 	if (g_plugin.getByte("ignorehide", 0) && (lparam == IGNOREEVENT_ALL))
-		db_set_b((MCONTACT)wparam, "CList", "Hidden", (isIgnored((MCONTACT)wparam, lparam) ? (byte)0 : (byte)1));
+		Contact_Hide(wparam, !isIgnored((MCONTACT)wparam, lparam));
 
-	CallService(isIgnored((MCONTACT)wparam, lparam) ? MS_IGNORE_UNIGNORE : MS_IGNORE_IGNORE, wparam, lparam);
+	if (isIgnored(wparam, lparam))
+		Ignore_Allow(wparam, lparam);
+	else
+		Ignore_Ignore(wparam, lparam);
 	return 0;
 }
 
@@ -693,8 +696,7 @@ static int BuildMenu(WPARAM wparam, LPARAM)
 	bEnabled = bShowAll || (flags & VF_HFL);
 	Menu_ShowItem(hmenuHide, bEnabled);
 	if (bEnabled) {
-		BYTE bHidden = db_get_b(hContact, "CList", "Hidden", 0);
-		if (bHidden)
+		if (Contact_IsHidden(hContact))
 			Menu_ModifyItem(hmenuHide, LPGENW("Show in list"), IcoLib_GetIconHandle("miex_showil"));
 		else
 			Menu_ModifyItem(hmenuHide, LPGENW("Hide from list"), IcoLib_GetIconHandle("miex_hidefl"));

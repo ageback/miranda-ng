@@ -37,6 +37,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <fcntl.h>
 
 #include <newpluginapi.h>
+#include <m_chat_int.h>
 #include <m_clistint.h>
 #include <m_langpack.h>
 #include <m_protosvc.h>
@@ -49,6 +50,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <m_chat.h>
 #include <m_icolib.h>
 #include <m_netlib.h>
+#include <m_srmm_int.h>
 #include <m_timezones.h>
 #include <m_smileyadd.h>
 #include <m_ieview.h>
@@ -59,14 +61,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include "ieview_services.h"
 #include "Options.h"
 #include "version.h"
-#include "ChatHTMLBuilder.h"
 #include "HistoryHTMLBuilder.h"
 #include "HTMLBuilder.h"
 #include "resource.h"
 #include "ScriverHTMLBuilder.h"
 #include "TabSRMMHTMLBuilder.h"
 #include "TemplateHTMLBuilder.h"
-#include "MUCCHTMLBuilder.h"
 #include "Template.h"
 #include "TextToken.h"
 #include "external_funcs.h"
@@ -77,9 +77,13 @@ struct CMPlugin : public PLUGIN<CMPlugin>
 {
 	CMPlugin();
 
+	HANDLE hLogger;
+
 	int Load() override;
 	int Unload() override;
 };
+
+CSrmmLogWindow *logBuilder(CMsgDialog &pDlg);
 
 extern IEView *debugView;
 extern char *workingDirUtf8;

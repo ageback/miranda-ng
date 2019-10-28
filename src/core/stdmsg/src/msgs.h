@@ -22,198 +22,156 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifndef SRMM_MSGS_H
 #define SRMM_MSGS_H
 
-#define DM_REMAKELOG         (WM_USER+11)
 #define HM_DBEVENTADDED      (WM_USER+12)
-#define DM_CASCADENEWWINDOW  (WM_USER+13)
 #define DM_OPTIONSAPPLIED    (WM_USER+14)
-#define DM_CLOSETAB          (WM_USER+15)
 #define DM_UPDATETITLE       (WM_USER+16)
 #define DM_NEWTIMEZONE       (WM_USER+18)
-#define DM_TYPING            (WM_USER+20)
-#define DM_UPDATEWINICON     (WM_USER+21)
-#define DM_USERNAMETOCLIP    (WM_USER+23)
-#define DM_AVATARSIZECHANGE  (WM_USER+24)
-#define DM_AVATARCALCSIZE    (WM_USER+25)
-#define DM_GETAVATAR         (WM_USER+26)
-#define DM_UPDATESIZEBAR     (WM_USER+27)
 #define HM_AVATARACK         (WM_USER+28)
 #define DM_STATUSICONCHANGE  (WM_USER+31)
 
 #define EVENTTYPE_JABBER_CHATSTATES     2000
 #define EVENTTYPE_JABBER_PRESENCE       2001
 
-class CMsgDialog : public CSrmmBaseDialog
+class CLogWindow : public CRtfLogWindow
 {
-	typedef CSrmmBaseDialog CSuper;
-	friend class CTabbedWindow;
-
-protected:
-	CCtrlButton m_btnOk;
-	CTabbedWindow *m_pOwner;
-	DWORD m_nFlash = 0;
-
-	CMsgDialog(CTabbedWindow *pOwner, int idDialog, SESSION_INFO *si = nullptr);
-
-	virtual const char* GetProto() const PURE;
-	virtual int GetStatus() const PURE;
-
-	virtual void OnActivate() PURE;
-
-	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
+	typedef CRtfLogWindow CSuper;
 
 public:
-	virtual int GetImageId() const PURE;
+	CLogWindow(CMsgDialog &pDlg) :
+		CSuper(pDlg)
+	{}
 
-	void CloseTab() override;
-	bool IsActive() const override;
+	void Attach() override;
+	void LogEvents(MEVENT hDbEventFirst, int count, bool bAppend) override;
+	void LogEvents(DBEVENTINFO *dbei, bool bAppend);
+	void LogEvents(struct LOGINFO *, bool) override;
+	void UpdateOptions() override;
 
-	void StartFlash();
-	void StopFlash();
-
-	__forceinline SESSION_INFO* getChat() const { return m_si; }
+	INT_PTR WndProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
 };
 
-class CSrmmWindow : public CMsgDialog
+class CMsgDialog : public CSrmmBaseDialog
 {
-	typedef CMsgDialog CSuper;
-	
-	LRESULT WndProc_Log(UINT msg, WPARAM wParam, LPARAM lParam) override;
-	LRESULT WndProc_Message(UINT msg, WPARAM wParam, LPARAM lParam) override;
+	friend class CLogWindow;
+	friend class CTabbedWindow;
+	typedef CSrmmBaseDialog CSuper;
 
-	CCtrlBase m_avatar;
-	CSplitter m_splitter;
-
+	void Init(void);
 	void NotifyTyping(int mode);
 	void ProcessFileDrop(HDROP hDrop);
 	void ShowAvatar(void);
 	void ShowTime(bool bForce);
 	void SetupStatusBar(void);
-	void StreamInEvents(MEVENT hDbEventFirst, int count, bool bAppend);
 	void UpdateIcon(WPARAM wParam);
 	void UpdateLastMessage(void);
+	void UpdateSizeBar(void);
 
-	char *m_szProto;
-	HICON m_hStatusIcon = nullptr;
-	HFONT m_hFont = nullptr;
-	HBRUSH m_hBkgBrush = nullptr;
+	static INT_PTR CALLBACK FilterWndProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+	CCtrlBase m_avatar;
+	CCtrlButton m_btnOk;
+
+	CTabbedWindow *m_pOwner;
+	DWORD m_nFlash = 0;
+	char *m_szProto = nullptr;
+
+	// splitters
+	CSplitter m_splitterX, m_splitterY;
+	int  m_iSplitterX, m_iSplitterY;
 	SIZE m_minEditBoxSize;
 	RECT m_minEditInit;
+	RECT m_rcLog;
 
-	int m_windowWasCascaded;
-	int m_nTypeSecs, m_nTypeMode;
-	int m_limitAvatarH;
-	DWORD m_nLastTyping;
-	DWORD m_lastMessage;
-	HANDLE m_hTimeZone;
-	WORD m_wStatus, m_wOldStatus;
-	WORD m_wMinute;
-	bool m_bIsMeta, m_bShowTyping;
+	// tab autocomplete
+	int m_iTabStart = 0;
+	wchar_t m_szTabSave[20];
+	void TabAutoComplete();
 
-public:
-	bool m_bIsAutoRTL, m_bNoActivate;
-	MEVENT m_hDbEventFirst, m_hDbEventLast;
-
-	int m_avatarWidth, m_avatarHeight;
-	int m_iSplitterY;
-
-	int m_cmdListInd;
+	// entered messages
+	int m_cmdListInd = 0;
 	LIST<wchar_t> m_cmdList;
 
-	HBITMAP m_avatarPic;
-	wchar_t *m_wszInitialText;
+	HFONT m_hFont = nullptr;
+
+	int m_nTypeSecs = 0, m_nTypeMode = 0;
+	int m_limitAvatarH = 0;
+	DWORD m_nLastTyping = 0;
+	DWORD m_lastMessage = 0;
+	HANDLE m_hTimeZone = 0;
+	WORD m_wStatus = ID_STATUS_OFFLINE, m_wOldStatus = ID_STATUS_OFFLINE;
+	WORD m_wMinute = 0;
+	bool m_bIsMeta = false, m_bShowTyping = false, m_bWindowCascaded = false, m_bNoActivate = false;
 
 public:
-	CSrmmWindow(CTabbedWindow*, MCONTACT hContact);
+	CMsgDialog(CTabbedWindow *pOwner, MCONTACT hContact);
+	CMsgDialog(CTabbedWindow *pOwner, SESSION_INFO *si);
 
 	bool OnInitDialog() override;
 	void OnDestroy() override;
-	void OnActivate() override;
-
-	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
 	int Resizer(UTILRESIZECONTROL *urc) override;
 
-	virtual const char* GetProto() const { return m_szProto; }
-	virtual int GetStatus() const { return m_wStatus; }
+	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
+	LRESULT WndProc_Message(UINT msg, WPARAM wParam, LPARAM lParam) override;
+	LRESULT WndProc_Nicklist(UINT msg, WPARAM wParam, LPARAM lParam) override;
 
-	int  GetImageId() const override;
-	void LoadSettings() override {}
-	void ScrollToBottom() override;
-	void SetStatusText(const wchar_t*, HICON) override;
-	void UpdateTitle() override;
+	void OnActivate();
+	void RemakeLog();
+	void UpdateAvatar();
+	void UserTyping(int nSecs);
 
-	void OnSplitterMoved(CSplitter*);
+	void onSplitterX(CSplitter *);
+	void onSplitterY(CSplitter *);
 
-	void onClick_Ok(CCtrlButton*);
+	void onChange_Text(CCtrlEdit *);
+
+	void onClick_Ok(CCtrlButton *);
+	void onClick_Filter(CCtrlButton *);
+	void onClick_NickList(CCtrlButton *);
 
 	void OnOptionsApplied(bool bUpdateAvatar);
 
 	void UpdateReadChars(void);
 
-	__forceinline MCONTACT getActiveContact() const
-	{	return (m_bIsMeta) ? db_mc_getSrmmSub(m_hContact) : m_hContact;
+	__forceinline MCONTACT getActiveContact() const {
+		return (m_bIsMeta) ? db_mc_getSrmmSub(m_hContact) : m_hContact;
 	}
-};
 
-/////////////////////////////////////////////////////////////////////////////////////////
+	__forceinline CLogWindow* LOG() {
+		return ((CLogWindow *)m_pLog);
+	}
 
-#define GC_ADDTAB		  (WM_USER+200)
-#define GC_REMOVETAB   (WM_USER+201)
-#define GC_DROPPEDTAB  (WM_USER+202)
-#define GC_RENAMETAB   (WM_USER+203)
+	MEVENT m_hDbEventFirst, m_hDbEventLast;
 
-class CChatRoomDlg : public CMsgDialog
-{
-	typedef CMsgDialog CSuper;
-	friend class CTabbedWindow;
+	int m_avatarWidth = 0, m_avatarHeight = 0;
 
-	static INT_PTR CALLBACK FilterWndProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
+	bool m_bIsAutoRTL = false;
+	HBITMAP m_avatarPic = 0;
+	wchar_t *m_wszInitialText = 0;
 
-	LRESULT WndProc_Log(UINT msg, WPARAM wParam, LPARAM lParam) override;
-	LRESULT WndProc_Message(UINT msg, WPARAM wParam, LPARAM lParam) override;
-	LRESULT WndProc_Nicklist(UINT msg, WPARAM wParam, LPARAM lParam) override;
+	int GetImageId() const;
 
-	wchar_t szTabSave[20];
+	void __forceinline FixTabIcons()
+	{	m_pOwner->FixTabIcons(this);
+	}
 
-	CCtrlButton m_btnOk;
-	CSplitter m_splitterX, m_splitterY;
-
-	int m_iSplitterX, m_iSplitterY;
-
-public:
-	CChatRoomDlg(CTabbedWindow*, SESSION_INFO*);
-
-	bool OnInitDialog() override;
-	void OnDestroy() override;
-	void OnActivate() override;
-
-	INT_PTR DlgProc(UINT msg, WPARAM wParam, LPARAM lParam) override;
-	int Resizer(UTILRESIZECONTROL *urc) override;
-
-	virtual const char* GetProto() const { return m_si->pszModule; }
-	virtual int GetStatus() const { return m_si->wStatus; }
-
-	int  GetImageId() const override;
+	void CloseTab() override;
+	bool IsActive() const override;
 	void LoadSettings() override;
-	void RedrawLog() override;
-	void StreamInEvents(LOGINFO *lin, bool bRedraw) override;
-	void ScrollToBottom() override;
+	void SetStatusText(const wchar_t *, HICON) override;
 	void ShowFilterMenu() override;
 	void UpdateNickList() override;
 	void UpdateOptions() override;
 	void UpdateStatusBar() override;
 	void UpdateTitle() override;
 
-	void onClick_Ok(CCtrlButton*);
-
-	void onClick_Filter(CCtrlButton*);
-	void onClick_NickList(CCtrlButton*);
-
-	void onSplitterX(CSplitter*);
-	void onSplitterY(CSplitter*);
+	void StartFlash();
+	void StopFlash();
 };
 
-INT_PTR CALLBACK ErrorDlgProc(HWND hwndDlg, UINT msg, WPARAM wParam, LPARAM lParam);
+extern LIST<CMsgDialog> g_arDialogs;
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 int  DbEventIsForMsgWindow(DBEVENTINFO *dbei);
 int  DbEventIsShown(DBEVENTINFO *dbei);
 int  SendMessageDirect(const wchar_t *szMsg, MCONTACT hContact);

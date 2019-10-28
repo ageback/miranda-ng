@@ -82,7 +82,7 @@ void CDiscordProto::Chat_SendPrivateMessage(GCHOOK *gch)
 		setId(hContact, DB_KEY_ID, userId);
 		setId(hContact, DB_KEY_CHANNELID, _wtoi64(gch->ptszID));
 		setWString(hContact, "Nick", gch->ptszNick);
-		db_set_b(hContact, "CList", "Hidden", 1);
+		Contact_Hide(hContact);
 		db_set_dw(hContact, "Ignore", "Mask1", 0);
 	}
 	else hContact = pUser->hContact;
@@ -96,7 +96,7 @@ void CDiscordProto::Chat_ProcessLogMenu(GCHOOK *gch)
 	if (pUser == nullptr)
 		return;
 
-	ENTER_STRING es = { sizeof(es) };
+	ENTER_STRING es = {};
 	es.szModuleName = m_szModuleName;
 
 	switch (gch->dwData) {

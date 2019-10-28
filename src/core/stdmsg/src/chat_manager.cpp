@@ -46,9 +46,11 @@ SESSION_INFO* SM_GetNextWindow(SESSION_INFO *si)
 	if (i == -1)
 		return nullptr;
 
-	for (auto &p : g_chatApi.arSessions)
+	for (i++; i < g_chatApi.arSessions.getCount(); i++) {
+		SESSION_INFO *p = g_chatApi.arSessions[i];
 		if (p->pDlg)
 			return p;
+	}
 
 	return nullptr;
 }
@@ -62,25 +64,6 @@ GlobalLogSettings g_Settings;
 static MODULEINFO* MM_CreateModule()
 {
 	return new MODULEINFO();
-}
-
-static void OnDestroyModule(MODULEINFO *mi)
-{
-	if (mi->hOnlineIcon)
-		DestroyIcon(mi->hOnlineIcon);
-	if (mi->hOfflineIcon)
-		DestroyIcon(mi->hOfflineIcon);
-}
-
-static void OnCreateModule(MODULEINFO *mi)
-{
-	OnDestroyModule(mi);
-
-	mi->OnlineIconIndex = g_clistApi.pfnIconFromStatusMode(mi->pszModule, ID_STATUS_ONLINE, 0);
-	mi->hOnlineIcon = ImageList_GetIcon(Clist_GetImageList(), mi->OnlineIconIndex, ILD_TRANSPARENT);
-
-	mi->OfflineIconIndex = g_clistApi.pfnIconFromStatusMode(mi->pszModule, ID_STATUS_OFFLINE, 0);
-	mi->hOfflineIcon = ImageList_GetIcon(Clist_GetImageList(), mi->OfflineIconIndex, ILD_TRANSPARENT);
 }
 
 static void OnReplaceSession(SESSION_INFO *si)
@@ -194,7 +177,7 @@ static void ShowRoom(SESSION_INFO *si)
 			PostMessage(pContainer->GetHwnd(), WM_SIZE, 0, 0);
 		}
 		else {
-			CMsgDialog *pDlg = pContainer->m_pEmbed = new CChatRoomDlg(pContainer, si);
+			CMsgDialog *pDlg = pContainer->m_pEmbed = new CMsgDialog(pContainer, si);
 			pContainer->Create();
 			pDlg->SetParent(pContainer->GetHwnd());
 			pDlg->Create();
@@ -236,8 +219,6 @@ void Load_ChatModule()
 	Chat_CustomizeApi(&data);
 
 	g_chatApi.MM_CreateModule = MM_CreateModule;
-	g_chatApi.OnCreateModule = OnCreateModule;
-	g_chatApi.OnDestroyModule = OnDestroyModule;
 	g_chatApi.OnReplaceSession = OnReplaceSession;
 
 	g_chatApi.OnLoadSettings = OnLoadSettings;

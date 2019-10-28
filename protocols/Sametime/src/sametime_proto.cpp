@@ -170,8 +170,8 @@ int CSametimeProto::RecvFile(MCONTACT hContact, PROTORECVFILE* pre)
 {
 	debugLogW(L"CSametimeProto::RecvFile()  hContact=[%x]", hContact);
 
-	db_unset(hContact, "CList", "Hidden");
-	db_unset(hContact, "CList", "NotOnList");
+	Contact_Hide(hContact, false);
+	Contact_PutOnList(hContact);
 
 	return CSuper::RecvFile(hContact, pre);
 }
@@ -180,8 +180,8 @@ MEVENT CSametimeProto::RecvMsg(MCONTACT hContact, PROTORECVEVENT* pre)
 {
 	debugLogW(L"CSametimeProto::RecvMsg() hContact=[%x]", hContact);
 
-	db_unset(hContact, "CList", "Hidden");
-	db_unset(hContact, "CList", "NotOnList");
+	Contact_Hide(hContact, false);
+	Contact_PutOnList(hContact);
 
 	return CSuper::RecvMsg(hContact, pre);
 }
