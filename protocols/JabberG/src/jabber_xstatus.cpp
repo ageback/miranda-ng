@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -1149,10 +1149,10 @@ INT_PTR __cdecl CJabberProto::OnGetXStatusIcon(WPARAM wParam, LPARAM lParam)
 /////////////////////////////////////////////////////////////////////////////////////////
 // SendPepMood - sends mood
 
-BOOL CJabberProto::SendPepTune(wchar_t* szArtist, wchar_t* szLength, wchar_t* szSource, wchar_t* szTitle, wchar_t* szTrack, wchar_t* szUri)
+bool CJabberProto::SendPepTune(wchar_t* szArtist, wchar_t* szLength, wchar_t* szSource, wchar_t* szTitle, wchar_t* szTrack, wchar_t* szUri)
 {
 	if (!m_bJabberOnline || !m_bPepSupported)
-		return FALSE;
+		return false;
 
 	XmlNodeIq iq("set", SerialNext());
 	TiXmlElement *tuneNode = iq << XCHILDNS("pubsub", JABBER_FEAT_PUBSUB)
@@ -1168,8 +1168,7 @@ BOOL CJabberProto::SendPepTune(wchar_t* szArtist, wchar_t* szLength, wchar_t* sz
 		if (szUri) tuneNode << XCHILD("uri", T2Utf(szUri));
 	}
 	m_ThreadInfo->send(iq);
-
-	return TRUE;
+	return true;
 }
 
 void CJabberProto::SetContactTune(MCONTACT hContact, const wchar_t *szArtist, const wchar_t *szLength, const wchar_t *szSource, const wchar_t *szTitle, const wchar_t *szTrack)

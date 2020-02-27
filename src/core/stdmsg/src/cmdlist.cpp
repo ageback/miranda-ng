@@ -1,6 +1,6 @@
 /*
 
-Copyright 2000-12 Miranda IM, 2012-19 Miranda NG team,
+Copyright 2000-12 Miranda IM, 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -32,11 +32,11 @@ static VOID CALLBACK MsgTimer(HWND, UINT, UINT_PTR, DWORD dwTime)
 	LIST<TMsgQueue> arTimedOut(1);
 	{
 		mir_cslock lck(csMsgQueue);
-		auto T = msgQueue.rev_iter();
-		for (auto &it : T)
+
+		for (auto &it : msgQueue.rev_iter())
 			if (dwTime - it->ts > g_dat.msgTimeout) {
 				arTimedOut.insert(it);
-				msgQueue.remove(T.indexOf(&it));
+				msgQueue.removeItem(&it);
 			}
 	}
 
@@ -91,7 +91,7 @@ void msgQueue_processack(MCONTACT hContact, int id, BOOL success, LPARAM lParam)
 	DBEVENTINFO dbei = {};
 	dbei.eventType = EVENTTYPE_MESSAGE;
 	dbei.flags = DBEF_SENT | DBEF_UTF | (p->flags & PREF_RTL ? DBEF_RTL : 0);
-	dbei.szModule = GetContactProto(hContact);
+	dbei.szModule = Proto_GetBaseAccountName(hContact);
 	dbei.timestamp = time(0);
 	dbei.cbBlob = (DWORD)(mir_strlen(p->szMsg) + 1);
 	dbei.pBlob = (PBYTE)p->szMsg;

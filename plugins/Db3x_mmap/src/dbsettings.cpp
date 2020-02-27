@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -208,7 +208,7 @@ LBL_Seek:
 	// try to get the missing mc setting from the active sub
 	if (cc && cc->IsMeta() && ValidLookupName(szModule, szSetting)) {
 		if (contactID = db_mc_getDefault(contactID)) {
-			if (szModule = GetContactProto(contactID)) {
+			if (szModule = Proto_GetBaseAccountName(contactID)) {
 				moduleNameLen = (int)mir_strlen(szModule);
 				goto LBL_Seek;
 			}

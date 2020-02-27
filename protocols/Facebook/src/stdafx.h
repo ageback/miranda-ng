@@ -1,7 +1,7 @@
 /*
 
 Facebook plugin for Miranda NG
-Copyright © 2019 Miranda NG team
+Copyright © 2019-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,13 +21,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #pragma once
 
 #include <windows.h>
+#include <malloc.h>
 #include <time.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
+#include <assert.h>
 
 #include <win2k.h>
 #include <newpluginapi.h>
 #include <m_avatars.h>
-#include <m_chat.h>
+#include <m_chat_int.h>
 #include <m_clistint.h>
+#include <m_contacts.h>
 #include <m_database.h>
 #include <m_idle.h>
 #include <m_ignore.h>
@@ -53,7 +59,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "../../libs/zlib/src/zlib.h"
 
 #include "db.h"
+#include "dialogs.h"
 #include "mqtt.h"
 #include "proto.h"
+#include "resource.h"
+#include "version.h"
 
 extern bool g_bMessageState;

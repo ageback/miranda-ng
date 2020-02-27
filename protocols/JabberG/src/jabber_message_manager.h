@@ -6,7 +6,7 @@ Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-08  George Hazan
 Copyright (c) 2007     Maxim Mluhov
 Copyright (c) 2008-09  Dmitriy Chervov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -35,7 +35,7 @@ typedef void (*MESSAGE_USER_DATA_FREE_FUNC)(void *pUserData);
 
 class CJabberMessageInfo;
 
-typedef BOOL (CJabberProto::*JABBER_PERMANENT_MESSAGE_HANDLER)(const TiXmlElement *messageNode, ThreadData *pThreadData, CJabberMessageInfo* pInfo);
+typedef bool (CJabberProto::*JABBER_PERMANENT_MESSAGE_HANDLER)(const TiXmlElement *messageNode, ThreadData *pThreadData, CJabberMessageInfo* pInfo);
 
 #define JABBER_MESSAGE_PARSE_FROM					(1<<3)
 #define JABBER_MESSAGE_PARSE_HCONTACT				((1<<4)|JABBER_MESSAGE_PARSE_FROM)

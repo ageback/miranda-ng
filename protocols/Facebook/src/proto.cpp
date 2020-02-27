@@ -1,7 +1,7 @@
 /*
 
 Facebook plugin for Miranda NG
-Copyright © 2019 Miranda NG team
+Copyright © 2019-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,9 +20,39 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "stdafx.h"
 
-FacebookProto::FacebookProto(const char *proto_name, const wchar_t *username) :
-	PROTO<FacebookProto>(proto_name, username)
+static int CompareUsers(const FacebookUser *p1, const FacebookUser *p2)
 {
+	if (p1->id == p2->id)
+		return 0;
+
+	return (p1->id < p2->id) ? -1 : 1;
+}
+
+static int CompareMessages(const COwnMessage *p1, const COwnMessage *p2)
+{
+	if (p1->msgId == p2->msgId)
+		return 0;
+
+	return (p1->msgId < p2->msgId) ? -1 : 1;
+}
+
+FacebookProto::FacebookProto(const char *proto_name, const wchar_t *username) :
+	PROTO<FacebookProto>(proto_name, username),
+	m_impl(*this),
+	m_users(50, CompareUsers),
+	arOwnMessages(1, CompareMessages),
+	m_bKeepUnread(this, "KeepUnread", false),
+	m_bUseBigAvatars(this, "UseBigAvatars", true),
+	m_bUseGroupchats(this, "UseGroupChats", true),
+	m_bHideGroupchats(this, "HideGroupChats", true),
+	m_wszDefaultGroup(this, "DefaultGroup", L"Facebook")
+{
+	for (auto &cc : AccContacts()) {
+		CMStringA szId(getMStringA(cc, DBKEY_ID));
+		if (!szId.IsEmpty())
+			m_users.insert(new FacebookUser(_atoi64(szId), cc, isChatRoom(cc)));
+	}
+
 	// to upgrade previous settings
 	if (getByte("Compatibility") < 1) {
 		setByte("Compatibility", 1);
@@ -56,6 +86,8 @@ FacebookProto::FacebookProto(const char *proto_name, const wchar_t *username) :
 	}
 
 	m_uid = _atoi64(getMStringA(DBKEY_ID));
+	m_sid = _atoi64(getMStringA(DBKEY_SID));
+	m_szSyncToken = getMStringA(DBKEY_SYNC_TOKEN);
 
 	// Create standard network connection
 	wchar_t descr[512];
@@ -66,6 +98,29 @@ FacebookProto::FacebookProto(const char *proto_name, const wchar_t *username) :
 	nlu.szSettingsModule = m_szModuleName;
 	nlu.szDescriptiveName.w = descr;
 	m_hNetlibUser = Netlib_RegisterUser(&nlu);
+
+	db_set_resident(m_szModuleName, "UpdateNeeded");
+
+	// Services
+	CreateProtoService(PS_CREATEACCMGRUI, &FacebookProto::SvcCreateAccMgrUI);
+	CreateProtoService(PS_GETAVATARINFO, &FacebookProto::GetAvatarInfo);
+	CreateProtoService(PS_GETAVATARCAPS, &FacebookProto::GetAvatarCaps);
+
+	// Events
+	HookProtoEvent(ME_GC_EVENT, &FacebookProto::GroupchatEventHook);
+	HookProtoEvent(ME_GC_BUILDMENU, &FacebookProto::GroupchatMenuHook);
+	HookProtoEvent(ME_OPT_INITIALISE, &FacebookProto::OnOptionsInit);
+	HookProtoEvent(ME_DB_EVENT_MARKED_READ, &FacebookProto::OnMarkedRead);
+
+	// Default group
+	Clist_GroupCreate(0, m_wszDefaultGroup);
+
+	// Group chats
+	GCREGISTER gcr = {};
+	gcr.dwFlags = GC_TYPNOTIF;
+	gcr.ptszDispName = m_tszUserName;
+	gcr.pszModule = m_szModuleName;
+	Chat_Register(&gcr);
 }
 
 FacebookProto::~FacebookProto()
@@ -74,6 +129,12 @@ FacebookProto::~FacebookProto()
 
 void FacebookProto::OnModulesLoaded()
 {
+}
+
+void FacebookProto::OnShutdown()
+{
+	if (m_mqttConn != nullptr)
+		Netlib_Shutdown(m_mqttConn);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -114,6 +175,28 @@ INT_PTR FacebookProto::GetCaps(int type, MCONTACT)
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+int FacebookProto::SendMsg(MCONTACT hContact, int, const char *pszSrc)
+{
+	if (!m_bOnline) {
+		ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_FAILED, (HANDLE)1, (LPARAM)TranslateT("Protocol is offline or user isn't authorized yet"));
+		return 1;
+	}
+
+	CMStringA userId(getMStringA(hContact, DBKEY_ID));
+
+	__int64 msgId;
+	Utils_GetRandom(&msgId, sizeof(msgId));
+	msgId = abs(msgId);
+
+	JSONNode root; root << CHAR_PARAM("body", pszSrc) << INT64_PARAM("msgid", msgId) << INT64_PARAM("sender_fbid", m_uid) << CHAR_PARAM("to", userId);
+	MqttPublish("/send_message2", root);
+
+	arOwnMessages.insert(new COwnMessage(msgId, m_mid));
+	return m_mid;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 int FacebookProto::SetStatus(int iNewStatus)
 {
 	if (iNewStatus != ID_STATUS_OFFLINE && IsStatusConnecting(m_iStatus)) {
@@ -149,7 +232,7 @@ int FacebookProto::SetStatus(int iNewStatus)
 
 	// log off & free all resources
 	if (iNewStatus == ID_STATUS_OFFLINE) {
-		OnLoggedOut();
+		OnShutdown();
 
 		m_iStatus = ID_STATUS_OFFLINE;
 	}
@@ -168,4 +251,22 @@ int FacebookProto::SetStatus(int iNewStatus)
 
 	ProtoBroadcastAck(0, ACKTYPE_STATUS, ACKRESULT_SUCCESS, (HANDLE)iOldStatus, m_iStatus);
 	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+
+int FacebookProto::UserIsTyping(MCONTACT hContact, int type)
+{
+	JSONNode root; root << INT_PARAM("state", type == PROTOTYPE_SELFTYPING_ON) << CHAR_PARAM("to", getMStringA(hContact, DBKEY_ID));
+	MqttPublish("/typing", root);
+	return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+// Services
+
+INT_PTR FacebookProto::SvcCreateAccMgrUI(WPARAM, LPARAM lParam)
+{
+	return (INT_PTR) CreateDialogParam(g_plugin.getInst(), MAKEINTRESOURCE(IDD_FACEBOOKACCOUNT),
+		(HWND) lParam, FBAccountProc, (LPARAM) this);
 }

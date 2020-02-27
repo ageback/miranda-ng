@@ -4,7 +4,7 @@ Jabber Protocol Plugin for Miranda NG
 
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -391,19 +391,19 @@ void CJabberProto::SendPresenceTo(int status, const char *to, const TiXmlElement
 			<< XATTR("node", JABBER_CAPS_MIRANDA_NODE) << XATTR("ver", m_clientCapsManager.GetFeaturesCrc());
 
 		LIST<char> arrExtCaps(5);
-		if (bSecureIM)
+		if (g_plugin.bSecureIM)
 			arrExtCaps.insert(JABBER_EXT_SECUREIM);
 
-		if (bMirOTR)
+		if (g_plugin.bMirOTR)
 			arrExtCaps.insert(JABBER_EXT_MIROTR);
 
-		if (bNewGPG)
+		if (g_plugin.bNewGPG)
 			arrExtCaps.insert(JABBER_EXT_NEWGPG);
 
 		if(m_bUseOMEMO)
 			arrExtCaps.insert(JABBER_EXT_OMEMO);
 
-		if (bPlatform)
+		if (g_plugin.bPlatform)
 			arrExtCaps.insert(JABBER_EXT_PLATFORMX64);
 		else
 			arrExtCaps.insert(JABBER_EXT_PLATFORMX86);
@@ -931,10 +931,10 @@ void __cdecl CJabberProto::LoadHttpAvatars(void* param)
 							fwrite(res->pData, res->dataLength, 1, out);
 							fclose(out);
 							setString(ai.hContact, "AvatarHash", buffer);
-							ProtoBroadcastAck(ai.hContact, ACKTYPE_AVATAR, ACKRESULT_SUCCESS, &ai, 0);
+							ProtoBroadcastAck(ai.hContact, ACKTYPE_AVATAR, ACKRESULT_SUCCESS, &ai);
 							debugLogW(L"Broadcast new avatar: %s", ai.filename);
 						}
-						else ProtoBroadcastAck(ai.hContact, ACKTYPE_AVATAR, ACKRESULT_FAILED, &ai, 0);
+						else ProtoBroadcastAck(ai.hContact, ACKTYPE_AVATAR, ACKRESULT_FAILED, &ai);
 					}
 				}
 			}

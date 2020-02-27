@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -56,13 +56,11 @@ void CSkypeProto::StartChatRoom(const wchar_t *tid, const wchar_t *tname)
 
 void CSkypeProto::OnLoadChats(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr)
+	JsonReply reply(response);
+	if (reply.error())
 		return;
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		return;
-
+	auto &root = reply.data();
 	const JSONNode &metadata = root["_metadata"];
 	const JSONNode &conversations = root["conversations"].as_array();
 
@@ -89,12 +87,12 @@ int CSkypeProto::OnGroupChatEventHook(WPARAM, LPARAM lParam)
 {
 	GCHOOK *gch = (GCHOOK*)lParam;
 	if (!gch)
-		return 1;
-
-	if (mir_strcmp(gch->pszModule, m_szModuleName) != 0)
 		return 0;
 
-	T2Utf chat_id(gch->ptszID), user_id(gch->ptszUID);
+	if (mir_strcmp(gch->si->pszModule, m_szModuleName) != 0)
+		return 0;
+
+	T2Utf chat_id(gch->si->ptszID), user_id(gch->ptszUID);
 
 	switch (gch->iType) {
 	case GC_USER_MESSAGE:
@@ -131,10 +129,8 @@ int CSkypeProto::OnGroupChatEventHook(WPARAM, LPARAM lParam)
 				if (hContact != NULL)
 					SendRequest(new InviteUserToChatRequest(chat_id, Contacts[hContact], "User", this));
 
-				{
-					mir_cslock lck(m_InviteDialogsLock);
-					m_InviteDialogs.remove(&dlg);
-				}
+				mir_cslock lck(m_InviteDialogsLock);
+				m_InviteDialogs.remove(&dlg);
 			}
 			break;
 
@@ -202,7 +198,7 @@ int CSkypeProto::OnGroupChatEventHook(WPARAM, LPARAM lParam)
 		}
 		break;
 	}
-	return 0;
+	return 1;
 }
 
 INT_PTR CSkypeProto::OnJoinChatRoom(WPARAM hContact, LPARAM)
@@ -366,13 +362,12 @@ void CSkypeProto::AddMessageToChat(const char *chat_id, const char *from, const 
 void CSkypeProto::OnGetChatInfo(const NETLIBHTTPREQUEST *response, void *p)
 {
 	ptrW topic((wchar_t*)p); // memory must be freed in any case
-	if (response == nullptr || response->pData == nullptr)
+
+	JsonReply reply(response);
+	if (reply.error())
 		return;
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		return;
-
+	auto &root = reply.data();
 	const JSONNode &members = root["members"];
 	const JSONNode &properties = root["properties"];
 	if (!properties["capabilities"] || properties["capabilities"].empty())

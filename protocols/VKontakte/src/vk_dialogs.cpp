@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -221,7 +221,7 @@ void CVkGCCreateForm::btnOk_OnOk(CCtrlButton*)
 void CVkGCCreateForm::FilterList(CCtrlClc*)
 {
 	for (auto &hContact : Contacts()) {
-		char *proto = GetContactProto(hContact);
+		char *proto = Proto_GetBaseAccountName(hContact);
 		if (mir_strcmp(proto, m_proto->m_szModuleName) || m_proto->isChatRoom(hContact) || m_proto->getDword(hContact, "ID") == VK_FEED_USER)
 			if (HANDLE hItem = m_clCList.FindContact(hContact))
 				m_clCList.DeleteItem(hItem);

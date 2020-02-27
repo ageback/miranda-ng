@@ -1,7 +1,7 @@
 /*
 
 Facebook plugin for Miranda NG
-Copyright © 2019 Miranda NG team
+Copyright © 2019-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#define FACEBOOK_ORCA_AGENT "[FBAN/Orca-Android;FBAV/192.0.0.31.101;FBPN/com.facebook.orca;FBLC/en_US;FBBV/52182662]"
+#define FACEBOOK_ORCA_AGENT FB_API_MQTT_AGENT
 
 #define FB_THRIFT_TYPE_STOP   0
 #define FB_THRIFT_TYPE_VOID   1
@@ -59,8 +59,12 @@ class FbThrift
 	MBinBuffer m_buf;
 
 public:
-	__inline void* data() { return m_buf.data(); }
-	__inline size_t size() { return m_buf.length(); }
+	__forceinline void* data() const { return m_buf.data(); }
+	__forceinline size_t size() const { return m_buf.length(); }
+
+	__forceinline void reset(size_t cbLen, void *pData)
+	{	m_buf.assign(pData, cbLen);
+	}
 
 	FbThrift& operator<<(uint8_t);
 	FbThrift& operator<<(const char *);
@@ -76,11 +80,46 @@ public:
 	void writeList(int iType, int size);
 };
 
+class FbThriftReader : public FbThrift
+{
+	bool m_lastBool = false, m_lastBval = false;
+	size_t offset = 0;
+
+	uint8_t decodeType(int type);
+
+public:
+	bool isStop();
+	bool readBool(bool &bVal);
+	bool readByte(uint8_t &val);
+	bool readField(uint8_t &type, uint16_t &id);
+	bool readInt16(uint16_t &val);
+	bool readInt32(uint32_t &val);
+	bool readInt64(uint64_t &val);
+	bool readIntV(uint64_t &val);
+	bool readList(uint8_t &type, uint32_t &size);
+	bool readStr(char *&val); // val must be freed via mir_free()
+};
+
 class MqttMessage : public FbThrift
 {
-public:
-	MqttMessage(FbMqttMessageType type, uint8_t flags, size_t payloadSize);
+	friend class FacebookProto;
 
+	uint8_t m_leadingByte;
+
+public:
+	MqttMessage();
+	MqttMessage(FbMqttMessageType type, uint8_t flags = 0);
+
+	__forceinline int getType() const
+	{
+		return m_leadingByte >> 4;
+	}
+
+	__forceinline int getFlags() const
+	{	return m_leadingByte & 0x0F;
+	}
+
+	char* readStr(const uint8_t *&pData) const;
 	void writeStr(const char *str);
 };
 
@@ -92,3 +131,7 @@ public:
 #define FB_MQTT_CONNECT_FLAG_RET  0x0020
 #define FB_MQTT_CONNECT_FLAG_PASS 0x0040
 #define FB_MQTT_CONNECT_FLAG_USER 0x0080
+
+#define FB_MQTT_MESSAGE_FLAG_QOS0 0x0000
+#define FB_MQTT_MESSAGE_FLAG_QOS1 0x0002
+#define FB_MQTT_MESSAGE_FLAG_QOS2 0x0004

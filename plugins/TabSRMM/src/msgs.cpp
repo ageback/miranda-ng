@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -60,15 +60,6 @@ int SmileyAddOptionsChanged(WPARAM, LPARAM)
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
-// service function - open the tray menu from the TTB button
-
-static INT_PTR Service_OpenTrayMenu(WPARAM, LPARAM lParam)
-{
-	SendMessage(PluginConfig.g_hwndHotkeyHandler, DM_TRAYICONNOTIFY, 101, lParam == 0 ? WM_LBUTTONUP : WM_RBUTTONUP);
-	return 0;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
 // service function finds a message session
 // wParam = contact handle for which we want the window handle
 // thanks to bio for the suggestion of this service
@@ -97,16 +88,16 @@ int TSAPI MessageWindowOpened(MCONTACT hContact, HWND _hwnd)
 
 	SendMessage(hwnd, DM_QUERYCONTAINER, 0, (LPARAM)&pContainer);
 	if (pContainer) {
-		if (pContainer->m_dwFlags & CNT_DONTREPORT) {
+		if (pContainer->m_flags.m_bDontReport) {
 			if (IsIconic(pContainer->m_hwnd))
 				return 0;
 		}
-		if (pContainer->m_dwFlags & CNT_DONTREPORTUNFOCUSED) {
+		if (pContainer->m_flags.m_bDontReportUnfocused) {
 			if (!IsIconic(pContainer->m_hwnd) && !pContainer->IsActive())
 				return 0;
 		}
-		if (pContainer->m_dwFlags & CNT_ALWAYSREPORTINACTIVE) {
-			if (pContainer->m_dwFlags & CNT_DONTREPORTFOCUSED)
+		if (pContainer->m_flags.m_bAlwaysReportInactive) {
+			if (pContainer->m_flags.m_bDontReportFocused)
 				return 0;
 
 			return pContainer->m_hwndActive == hwnd;
@@ -158,7 +149,7 @@ INT_PTR SendMessageCommand_Worker(MCONTACT hContact, LPCSTR pszMsg, bool isWchar
 	}
 
 	// does the MCONTACT's protocol support IM messages?
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto == nullptr)
 		return 0; // unknown contact
 	if (0 == (CallProtoService(szProto, PS_GETCAPS, PFLAGNUM_1, 0) & PF1_IMSEND))
@@ -242,7 +233,7 @@ int AvatarChanged(WPARAM wParam, LPARAM lParam)
 		return 0;
 
 	for (TContainerData *p = pFirstContainer; p; p = p->pNext)
-		BroadCastContainer(p, DM_UPDATEPICLAYOUT, wParam, lParam);
+		p->BroadCastContainer(DM_UPDATEPICLAYOUT, wParam, lParam);
 	return 0;
 }
 
@@ -252,59 +243,8 @@ int MyAvatarChanged(WPARAM wParam, LPARAM lParam)
 		return 0;
 
 	for (TContainerData *p = pFirstContainer; p; p = p->pNext)
-		BroadCastContainer(p, DM_MYAVATARCHANGED, wParam, lParam);
+		p->BroadCastContainer(DM_MYAVATARCHANGED, wParam, lParam);
 	return 0;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// tabbed mode support functions...
-// (C) by Nightwish
-//
-// this function searches and activates the tab belonging to the given hwnd (which is the
-// hwnd of a message dialog window)
-
-int TSAPI ActivateExistingTab(TContainerData *pContainer, HWND hwndChild)
-{
-	CMsgDialog *dat = (CMsgDialog*)GetWindowLongPtr(hwndChild, GWLP_USERDATA);	// needed to obtain the hContact for the message window
-	if (!dat || !pContainer)
-		return FALSE;
-
-	NMHDR nmhdr = {};
-	nmhdr.code = TCN_SELCHANGE;
-	if (TabCtrl_GetItemCount(GetDlgItem(pContainer->m_hwnd, IDC_MSGTABS)) > 1 && !(pContainer->m_dwFlags & CNT_DEFERREDTABSELECT)) {
-		TabCtrl_SetCurSel(GetDlgItem(pContainer->m_hwnd, IDC_MSGTABS), GetTabIndexFromHWND(GetDlgItem(pContainer->m_hwnd, IDC_MSGTABS), hwndChild));
-		SendMessage(pContainer->m_hwnd, WM_NOTIFY, 0, (LPARAM)&nmhdr);	// just select the tab and let WM_NOTIFY do the rest
-	}
-	if (!dat->isChat())
-		pContainer->UpdateTitle(dat->m_hContact);
-	if (IsIconic(pContainer->m_hwnd)) {
-		SendMessage(pContainer->m_hwnd, WM_SYSCOMMAND, SC_RESTORE, 0);
-		SetForegroundWindow(pContainer->m_hwnd);
-	}
-
-	// hide on close feature
-	if (!IsWindowVisible(pContainer->m_hwnd)) {
-		WINDOWPLACEMENT wp = { 0 };
-		wp.length = sizeof(wp);
-		GetWindowPlacement(pContainer->m_hwnd, &wp);
-
-		// all tabs must re-check the layout on activation because adding a tab while
-		// the container was hidden can make this necessary
-		BroadCastContainer(pContainer, DM_CHECKSIZE, 0, 0);
-		if (wp.showCmd == SW_SHOWMAXIMIZED)
-			ShowWindow(pContainer->m_hwnd, SW_SHOWMAXIMIZED);
-		else {
-			ShowWindow(pContainer->m_hwnd, SW_SHOWNA);
-			SetForegroundWindow(pContainer->m_hwnd);
-		}
-		SendMessage(pContainer->m_hwndActive, WM_SIZE, 0, 0);			// make sure the active tab resizes its layout properly
-	}
-	else if (GetForegroundWindow() != pContainer->m_hwnd)
-		SetForegroundWindow(pContainer->m_hwnd);
-
-	if (!dat->isChat())
-		SetFocus(GetDlgItem(hwndChild, IDC_SRMM_MESSAGE));
-	return TRUE;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -312,20 +252,20 @@ int TSAPI ActivateExistingTab(TContainerData *pContainer, HWND hwndChild)
 // bActivateTab: make the new tab the active one
 // bPopupContainer: restore container if it was minimized, otherwise flash it...
 
-HWND TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact, bool bActivateTab, bool bPopupContainer, bool bWantPopup, MEVENT hdbEvent, bool bIsUnicode, const char *pszInitialText)
+void TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact, bool bActivateTab, bool bPopupContainer, bool bWantPopup, MEVENT hdbEvent, bool bIsUnicode, const char *pszInitialText)
 {
 	if (Srmm_FindWindow(hContact) != nullptr) {
 		_DebugPopup(hContact, L"Warning: trying to create duplicate window");
-		return nullptr;
+		return ;
 	}
 
 	// if we have a max # of tabs/container set and want to open something in the default container...
 	if (hContact != 0 && M.GetByte("limittabs", 0) && !wcsncmp(pContainer->m_wszName, L"default", 6))
 		if ((pContainer = FindMatchingContainer(L"default")) == nullptr)
 			if ((pContainer = CreateContainer(L"default", CNT_CREATEFLAG_CLONED, hContact)) == nullptr)
-				return nullptr;
+				return;
 
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 
 	// obtain various status information about the contact
 	wchar_t *contactName = Clist_GetContactDisplayName(hContact);
@@ -349,18 +289,17 @@ HWND TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact,
 	else
 		mir_snwprintf(tabtitle, L"%s", newcontactname);
 
-	HWND hwndTab = GetDlgItem(pContainer->m_hwnd, IDC_MSGTABS);
 	// hide the active tab
 	if (pContainer->m_hwndActive && bActivateTab)
 		ShowWindow(pContainer->m_hwndActive, SW_HIDE);
 
 	int iTabIndex_wanted = M.GetDword(hContact, "tabindex", pContainer->m_iChilds * 100);
-	int iCount = TabCtrl_GetItemCount(hwndTab);
+	int iCount = TabCtrl_GetItemCount(pContainer->m_hwndTabs);
 
 	pContainer->m_iTabIndex = iCount;
 	if (iCount > 0) {
 		for (int i = iCount - 1; i >= 0; i--) {
-			HWND hwnd = GetTabWindow(hwndTab, i);
+			HWND hwnd = GetTabWindow(pContainer->m_hwndTabs, i);
 			CMsgDialog *dat = (CMsgDialog*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
 			if (dat) {
 				int relPos = M.GetDword(dat->m_hContact, "tabindex", i * 100);
@@ -375,11 +314,11 @@ HWND TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact,
 	item.mask = TCIF_TEXT | TCIF_IMAGE;
 	item.iImage = 0;
 	item.cchTextMax = _countof(tabtitle);
-	int iTabId = TabCtrl_InsertItem(hwndTab, pContainer->m_iTabIndex, &item);
+	int iTabId = TabCtrl_InsertItem(pContainer->m_hwndTabs, pContainer->m_iTabIndex, &item);
 
-	SendMessage(hwndTab, EM_REFRESHWITHOUTCLIP, 0, 0);
+	SendMessage(pContainer->m_hwndTabs, EM_REFRESHWITHOUTCLIP, 0, 0);
 	if (bActivateTab)
-		TabCtrl_SetCurSel(hwndTab, iTabId);
+		TabCtrl_SetCurSel(pContainer->m_hwndTabs, iTabId);
 	
 	CMsgDialog *pWindow = new CMsgDialog(IDD_MSGSPLITNEW, hContact);
 	pWindow->m_iTabID = iTabId;
@@ -391,13 +330,11 @@ HWND TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact,
 	pWindow->m_hDbEventFirst = hdbEvent;
 	if (pszInitialText)
 		pWindow->wszInitialText = (bIsUnicode) ? mir_wstrdup((const wchar_t*)pszInitialText) : mir_a2u(pszInitialText);
-	pWindow->SetParent(hwndTab);
+	pWindow->SetParent(pContainer->m_hwndTabs);
 	pWindow->Create();
 
-	HWND hwndNew = pWindow->GetHwnd();
-
 	// switchbar support
-	if (pContainer->m_dwFlags & CNT_SIDEBAR)
+	if (pContainer->m_flags.m_bSideBar)
 		pContainer->m_pSideBar->addSession(pWindow, pContainer->m_iTabIndex);
 
 	SendMessage(pContainer->m_hwnd, WM_SIZE, 0, 0);
@@ -409,16 +346,16 @@ HWND TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact,
 			SetFocus(pContainer->m_hwndActive);
 		}
 		else {
-			if (pContainer->m_dwFlags & CNT_NOFLASH)
+			if (pContainer->m_flags.m_bNoFlash)
 				pContainer->SetIcon(0, Skin_LoadIcon(SKINICON_EVENT_MESSAGE));
 			else
-				FlashContainer(pContainer, 1, 0);
+				pContainer->FlashContainer(1, 0);
 		}
 	}
 
 	if (bActivateTab) {
-		ActivateExistingTab(pContainer, hwndNew);
-		SetFocus(hwndNew);
+		pWindow->ActivateTab();
+		SetFocus(pWindow->GetHwnd());
 		RedrawWindow(pContainer->m_hwnd, nullptr, nullptr, RDW_ERASENOW);
 		UpdateWindow(pContainer->m_hwnd);
 		if (GetForegroundWindow() != pContainer->m_hwnd && bPopupContainer == TRUE)
@@ -435,7 +372,7 @@ HWND TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact,
 		wp.length = sizeof(wp);
 		GetWindowPlacement(pContainer->m_hwnd, &wp);
 
-		BroadCastContainer(pContainer, DM_CHECKSIZE, 0, 0); // make sure all tabs will re-check layout on activation
+		pContainer->BroadCastContainer(DM_CHECKSIZE, 0, 0); // make sure all tabs will re-check layout on activation
 		if (wp.showCmd == SW_SHOWMAXIMIZED)
 			ShowWindow(pContainer->m_hwnd, SW_SHOWMAXIMIZED);
 		else {
@@ -453,8 +390,6 @@ HWND TSAPI CreateNewTabForContact(TContainerData *pContainer, MCONTACT hContact,
 	if (ServiceExists(MS_HPP_EG_EVENT) && ServiceExists(MS_IEVIEW_EVENT) && db_get_b(0, "HistoryPlusPlus", "IEViewAPI", 0))
 		if (IDYES == CWarning::show(CWarning::WARN_HPP_APICHECK, MB_ICONWARNING | MB_YESNO))
 			db_set_b(0, "HistoryPlusPlus", "IEViewAPI", 0);
-
-	return hwndNew;		// return handle of the new dialog
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -548,7 +483,6 @@ static TIconDesc _deficons[] =
 	{ "tabSRMM_Leftarrow", LPGEN("Left Arrow"), &PluginConfig.g_buttonBarIcons[ICON_DEFAULT_LEFT], -IDI_LEFTARROW, 1 },
 	{ "tabSRMM_Rightarrow", LPGEN("Right Arrow"), &PluginConfig.g_buttonBarIcons[ICON_DEFAULT_RIGHT], -IDI_RIGHTARROW, 1 },
 	{ "tabSRMM_Pulluparrow", LPGEN("Up Arrow"), &PluginConfig.g_buttonBarIcons[ICON_DEFAULT_UP], -IDI_PULLUPARROW, 1 },
-	{ "tabSRMM_sb_slist", LPGEN("Session List"), &PluginConfig.g_sideBarIcons[0], -IDI_SESSIONLIST, 1 },
 };
 
 static TIconDesc _trayIcon[] =
@@ -734,7 +668,6 @@ static void TSAPI InitAPI()
 	CreateServiceFunction("TabSRMsg/ReloadSettings", ReloadSettings);
 
 	CreateServiceFunction(MS_TABMSG_SETUSERPREFS, SetUserPrefs);
-	CreateServiceFunction(MS_TABMSG_TRAYSUPPORT, Service_OpenTrayMenu);
 	CreateServiceFunction(MS_TABMSG_SLQMGR, CSendLater::svcQMgr);
 
 	SI_InitStatusIcons();

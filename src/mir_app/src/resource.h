@@ -24,6 +24,7 @@
 #define IDD_ADDED                       115
 #define IDD_ENTER_STRING                116
 #define IDI_ADDGROUP                    117
+#define IDD_EMPTY                       118
 #define IDD_AUTHREQ                     121
 #define IDD_DETAILS                     125
 #define IDD_HISTORY                     127
@@ -589,7 +590,7 @@
 #define IDI_POPUP                       40088
 #define IDI_NOPOPUP                     40089
 
-#define LEGAL_COPYRIGHT "Copyright © 2000-11 Miranda IM, 2012-19 Miranda NG team. This software is released under the terms of the GNU General Public License.\0"
+#define LEGAL_COPYRIGHT "Copyright © 2000-11 Miranda IM, 2012-20 Miranda NG team. This software is released under the terms of the GNU General Public License.\0"
 
 // Next default values for new objects
 // 

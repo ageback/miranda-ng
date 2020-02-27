@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -30,14 +30,10 @@ CDbxMDBX::CDbxMDBX(const TCHAR *tszFileName, int iMode) :
 	m_safetyMode(true),
 	m_bReadOnly((iMode & DBMODE_READONLY) != 0),
 	m_bShared((iMode & DBMODE_SHARED) != 0),
-	m_maxContactId(0)
+	m_maxContactId(0),
+	m_impl(*this)
 {
 	m_tszProfileName = mir_wstrdup(tszFileName);
-
-	if (!m_bReadOnly) {
-		m_hwndTimer = CreateWindowExW(0, L"STATIC", nullptr, 0, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, HWND_DESKTOP, nullptr, g_plugin.getInst(), nullptr);
-		::SetWindowLongPtr(m_hwndTimer, GWLP_USERDATA, (LONG_PTR)this);
-	}
 }
 
 CDbxMDBX::~CDbxMDBX()
@@ -46,9 +42,6 @@ CDbxMDBX::~CDbxMDBX()
 
 	if (!m_bReadOnly)
 		TouchFile();
-
-	if (m_hwndTimer != nullptr)
-		::DestroyWindow(m_hwndTimer);
 
 	for (auto &it : hService)
 		DestroyServiceFunction(it);
@@ -67,6 +60,15 @@ int CDbxMDBX::Load()
 	unsigned int defFlags = MDBX_CREATE;
 	{
 		txn_ptr trnlck(StartTran());
+		if (trnlck == nullptr) {
+			if (m_dbError == MDBX_TXN_FULL) {
+				if (IDOK == MessageBox(NULL, TranslateT("Your database is in the obsolete format. Click OK to read the upgrade instructions or Cancel to exit"), TranslateT("Error"), MB_ICONERROR | MB_OKCANCEL))
+					Utils_OpenUrl("https://www.miranda-ng.org/news/unknown-profile-format");
+				return EGROKPRF_OBSOLETE;
+			}
+			return EGROKPRF_DAMAGED;
+		}
+		
 		mdbx_dbi_open(trnlck, "global", defFlags | MDBX_INTEGERKEY, &m_dbGlobal);
 		mdbx_dbi_open(trnlck, "crypto", defFlags, &m_dbCrypto);
 		mdbx_dbi_open(trnlck, "contacts", defFlags | MDBX_INTEGERKEY, &m_dbContacts);
@@ -188,7 +190,7 @@ LBL_Fail:
 
 	res = FlushFileBuffers(pFile);
 	if (res == 0) {
-		Netlib_Logf(0, "CDbxMDBX::Backup: FlushFileBuffers failed with error code %d (%d)", GetLastError());
+		Netlib_Logf(0, "CDbxMDBX::Backup: FlushFileBuffers failed with error code %d", GetLastError());
 		goto LBL_Fail;
 	}
 
@@ -250,7 +252,7 @@ int CDbxMDBX::Map()
 	if (rc != MDBX_SUCCESS)
 		return EGROKPRF_CANTREAD;
 
-	unsigned int mode = MDBX_NOSUBDIR | MDBX_MAPASYNC | MDBX_WRITEMAP | MDBX_NOSYNC | MDBX_COALESCE | MDBX_EXCLUSIVE;
+	unsigned int mode = MDBX_NOSUBDIR | MDBX_MAPASYNC | MDBX_WRITEMAP | MDBX_SAFE_NOSYNC | MDBX_COALESCE | MDBX_EXCLUSIVE;
 	if (m_bReadOnly)
 		mode |= MDBX_RDONLY;
 
@@ -279,22 +281,11 @@ void CDbxMDBX::TouchFile()
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-static VOID CALLBACK DoBufferFlushTimerProc(HWND hwnd, UINT, UINT_PTR idEvent, DWORD)
-{
-	KillTimer(hwnd, idEvent);
-
-	CDbxMDBX *pDb = (CDbxMDBX *)GetWindowLongPtr(hwnd, GWLP_USERDATA);
-	if (pDb)
-		pDb->DBFlush(true);
-}
-
 void CDbxMDBX::DBFlush(bool bForce)
 {
-	if (bForce) {
-		mdbx_env_sync(m_env, true);
-	}
-	else if (m_safetyMode) {
-		::KillTimer(m_hwndTimer, 1);
-		::SetTimer(m_hwndTimer, 1, 50, DoBufferFlushTimerProc);
-	}
+	if (bForce)
+		mdbx_env_sync(m_env);
+
+	else if (m_safetyMode)
+		m_impl.m_timer.Start(50);
 }

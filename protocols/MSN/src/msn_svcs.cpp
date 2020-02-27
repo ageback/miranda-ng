@@ -1,7 +1,7 @@
 /*
 Plugin of Miranda IM for communicating with users of the MSN Messenger protocol.
 
-Copyright (c) 2012-2019 Miranda NG team
+Copyright (c) 2012-2020 Miranda NG team
 Copyright (c) 2006-2012 Boris Krasnovskiy.
 Copyright (c) 2003-2005 George Hazan.
 Copyright (c) 2002-2003 Richard Hughes (original version).
@@ -55,12 +55,6 @@ INT_PTR CMsnProto::GetAvatar(WPARAM wParam, LPARAM lParam)
 /////////////////////////////////////////////////////////////////////////////////////////
 // MsnGetAvatarInfo - retrieve the avatar info
 
-void CMsnProto::sttFakeAvatarAck(void* arg)
-{
-	Sleep(100);
-	ProtoBroadcastAck(((PROTO_AVATAR_INFORMATION*)arg)->hContact, ACKTYPE_AVATAR, ACKRESULT_FAILED, arg);
-}
-
 INT_PTR CMsnProto::GetAvatarInfo(WPARAM wParam, LPARAM lParam)
 {
 	PROTO_AVATAR_INFORMATION *pai = (PROTO_AVATAR_INFORMATION*)lParam;
@@ -69,7 +63,8 @@ INT_PTR CMsnProto::GetAvatarInfo(WPARAM wParam, LPARAM lParam)
 
 	if (pai->hContact) {
 		cont = Lists_Get(pai->hContact);
-		if (cont == nullptr) return GAIR_NOAVATAR;
+		if (cont == nullptr)
+			return GAIR_NOAVATAR;
 
 		/*
 		if ((cont->cap1 & 0xf0000000) == 0)
@@ -125,9 +120,7 @@ INT_PTR CMsnProto::GetAvatarInfo(WPARAM wParam, LPARAM lParam)
 		WORD wStatus = getWord(pai->hContact, "Status", ID_STATUS_OFFLINE);
 		if (wStatus == ID_STATUS_OFFLINE) {
 			delSetting(pai->hContact, "AvatarHash");
-			PROTO_AVATAR_INFORMATION *fakeAI = new PROTO_AVATAR_INFORMATION;
-			*fakeAI = *pai;
-			ForkThread(&CMsnProto::sttFakeAvatarAck, fakeAI);
+			ProtoBroadcastAck(pai->hContact, ACKTYPE_AVATAR, ACKRESULT_FAILED, pai);
 		}
 		else if (!getString(pai->hContact, "AvatarUrl", &dbv)) {
 			pushAvatarRequest(pai->hContact, dbv.pszVal);

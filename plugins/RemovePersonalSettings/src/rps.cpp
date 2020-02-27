@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-05 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -260,7 +260,7 @@ void DeleteSetting(const char *setting)
 
 BOOL isMetaContact(MCONTACT hContact)
 {
-	return mir_strcmp(GetContactProto(hContact), METACONTACTS_PROTOCOL_NAME) == 0;
+	return mir_strcmp(Proto_GetBaseAccountName(hContact), METACONTACTS_PROTOCOL_NAME) == 0;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -371,7 +371,7 @@ void RemoveUsers()
 		MEVENT hDbEvent = db_event_first(0);
 
 		while (hDbEvent != NULL) {
-			db_event_delete(0, hDbEvent);
+			db_event_delete(hDbEvent);
 			hDbEvent = db_event_first(0);
 		}
 

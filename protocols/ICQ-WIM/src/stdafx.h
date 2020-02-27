@@ -6,7 +6,7 @@
 // Copyright © 2001-2002 Jon Keating, Richard Hughes
 // Copyright © 2002-2004 Martin Öberg, Sam Kothari, Robert Rainwater
 // Copyright © 2004-2010 Joe Kucera
-// Copyright © 2012-2019 Miranda NG team
+// Copyright © 2012-2020 Miranda NG team
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -40,8 +40,6 @@
 #include <direct.h>
 #include <fcntl.h>
 #include <process.h>
-
-#include <map>
 
 // Miranda IM SDK includes
 #include <newpluginapi.h> // This must be included first
@@ -106,6 +104,5 @@ void RefreshGroups(void);
 int StatusFromString(const CMStringW&);
 char* time2text(time_t time);
 
-extern HWND g_hwndHeartbeat;
 extern bool g_bSecureIM, g_bMessageState;
 extern IconItem iconList[];

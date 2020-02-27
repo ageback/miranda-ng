@@ -1,4 +1,5 @@
 /*
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (C) 2006 Ricardo Pescuma Domenecci, Nightwish
 
 This is free software; you can redistribute it and/or
@@ -78,7 +79,7 @@ int CreateAvatarInCache(MCONTACT hContact, AVATARCACHEENTRY *ace, const char *sz
 	ace->szFilename[0] = 0;
 
 	if (szProto == nullptr) {
-		char *proto = GetContactProto(hContact);
+		char *proto = Proto_GetBaseAccountName(hContact);
 		if (proto == nullptr || !g_plugin.getByte(proto, 1))
 			return -1;
 
@@ -158,7 +159,7 @@ int CreateAvatarInCache(MCONTACT hContact, AVATARCACHEENTRY *ace, const char *sz
 	GetObject(ace->hbmPic, sizeof(bminfo), &bminfo);
 
 	ace->dwFlags = AVS_BITMAP_VALID;
-	if (hContact != NULL && Contact_IsHidden(hContact))
+	if (hContact != NULL && db_get_b(hContact, "ContactPhoto", "Hidden", 0))
 		ace->dwFlags |= AVS_HIDEONCLIST;
 	ace->hContact = hContact;
 	ace->bmHeight = bminfo.bmHeight;
@@ -378,7 +379,7 @@ BOOL Proto_IsFetchingWhenContactOfflineAllowed(const char *proto)
 
 protoPicCacheEntry* GetProtoDefaultAvatar(MCONTACT hContact)
 {
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto)
 		for (auto &p : g_ProtoPictures)
 			if (!mir_strcmp(p->szProtoname, szProto) && p->hbmPic != nullptr)

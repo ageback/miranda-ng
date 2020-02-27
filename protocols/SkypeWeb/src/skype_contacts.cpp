@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -92,13 +92,11 @@ MCONTACT CSkypeProto::AddContact(const char *skypename, bool isTemporary)
 
 void CSkypeProto::LoadContactsAuth(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr)
+	JsonReply reply(response);
+	if (reply.error())
 		return;
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		return;
-
+	auto &root = reply.data();
 	for (auto &item : root["invite_list"]) {
 		std::string skypename = item["mri"].as_string().erase(0, 2);
 		std::string reason = item["greeting"].as_string();
@@ -129,14 +127,11 @@ void CSkypeProto::LoadContactsAuth(const NETLIBHTTPREQUEST *response)
 //[{"username":"echo123", "firstname" : "Echo \/ Sound Test Service", "lastname" : null, "avatarUrl" : null, "mood" : null, "richMood" : null, "displayname" : null, "country" : null, "city" : null},...]
 void CSkypeProto::LoadContactsInfo(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr)
+	JsonReply root(response);
+	if (root.error())
 		return;
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		return;
-
-	for (auto &item : root) {
+	for (auto &item : root.data()) {
 		std::string skypename = item["username"].as_string();
 		MCONTACT hContact = AddContact(skypename.c_str());
 		if (hContact) {
@@ -152,13 +147,11 @@ void CSkypeProto::LoadContactsInfo(const NETLIBHTTPREQUEST *response)
 
 void CSkypeProto::LoadContactList(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr)
+	JsonReply reply(response);
+	if (reply.error())
 		return;
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		return;
-
+	auto &root = reply.data();
 	LIST<char> skypenames(1);
 	bool loadAll = getBool("LoadAllContacts", false);
 	for (auto &item : root["contacts"]) {

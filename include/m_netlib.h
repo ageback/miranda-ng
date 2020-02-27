@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-12 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -434,6 +434,10 @@ struct NETLIBHTTPHEADER
 	char *szValue;
 };
 
+EXTERN_C MIR_APP_DLL(char*) Netlib_GetHeader(const NETLIBHTTPREQUEST *pRec, const char *pszName);
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 #define REQUEST_RESPONSE 0	// used by structure returned by MS_NETLIB_RECVHTTPHEADERS
 #define REQUEST_GET      1
 #define REQUEST_POST     2
@@ -471,6 +475,10 @@ struct NETLIBHTTPREQUEST
 	char *szResultDescr;
 	HNETLIBCONN nlc;
 	int timeout;
+
+	__forceinline const char *operator[](const char *pszName) {
+		return Netlib_GetHeader(this, pszName);
+	}
 };
 
 EXTERN_C MIR_APP_DLL(int) Netlib_SendHttpRequest(HNETLIBCONN hConnection, NETLIBHTTPREQUEST *pRec);
@@ -745,6 +753,8 @@ EXTERN_C MIR_APP_DLL(int) Netlib_LogW(HNETLIBUSER hUser, const wchar_t *pwszStr)
 EXTERN_C MIR_APP_DLL(int) Netlib_Logf(HNETLIBUSER hUser, _Printf_format_string_ const char *fmt, ...);
 EXTERN_C MIR_APP_DLL(int) Netlib_LogfW(HNETLIBUSER hUser, _Printf_format_string_ const wchar_t *fmt, ...);
 
+EXTERN_C MIR_APP_DLL(void) Netlib_Dump(HNETLIBCONN nlc, const void *buf, size_t len, bool bIsSent, int flags);
+
 /////////////////////////////////////////////////////////////////////////////////////////
 // Security providers (0.6+)
 
@@ -789,7 +799,7 @@ struct WSHeader
 };
 
 // connects to a WebSocket server
-EXTERN_C MIR_APP_DLL(HNETLIBCONN) WebSocket_Connect(HNETLIBUSER, const char *szHost, NETLIBHTTPHEADER *pHeaders = nullptr);
+EXTERN_C MIR_APP_DLL(NETLIBHTTPREQUEST*) WebSocket_Connect(HNETLIBUSER, const char *szHost, NETLIBHTTPHEADER *pHeaders = nullptr);
 
 // validates that the provided buffer contains full WebSocket datagram
 EXTERN_C MIR_APP_DLL(bool) WebSocket_InitHeader(WSHeader &hdr, const void *pData, size_t bufSize);

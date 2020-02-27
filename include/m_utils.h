@@ -3,7 +3,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-12 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -360,8 +360,8 @@ EXTERN_C MIR_APP_DLL(char*) Utils_ReplaceVars(const char *szData, MCONTACT hCont
 EXTERN_C MIR_APP_DLL(wchar_t*) Utils_ReplaceVarsW(const wchar_t *szData, MCONTACT hContact = 0, REPLACEVARSARRAY *vars = nullptr);
 
 #if defined(__cplusplus)
-	#if !defined(M_SYSTEM_CPP_H__)
-		#include "m_system_cpp.h"
+	#if !defined(M_SYSTEM_H__)
+		#include "m_system.h"
 	#endif
 
 	struct VARS : public ptrA

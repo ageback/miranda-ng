@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -82,26 +82,27 @@ LBL_Seek:
 	if (szCachedSettingName[-1] != 0)
 		return 1;
 
+	DBCachedContact *cc = (contactID) ? m_cache->GetCachedContact(contactID) : nullptr;
+
+	DBSettingKey *keyVal = (DBSettingKey *)_alloca(sizeof(DBSettingKey) + settingNameLen);
+	keyVal->hContact = contactID;
+	keyVal->dwModuleId = GetModuleID(szModule);
+	memcpy(&keyVal->szSettingName, szSetting, settingNameLen + 1);
+
 	int res;
 	const BYTE *pBlob;
-	DBCachedContact *cc = (contactID) ? m_cache->GetCachedContact(contactID) : nullptr;
 	{
 		txn_ptr_ro trnlck(m_txn_ro);
-
-		DBSettingKey *keyVal = (DBSettingKey *)_alloca(sizeof(DBSettingKey) + settingNameLen);
-		keyVal->hContact = contactID;
-		keyVal->dwModuleId = GetModuleID(szModule);
-		memcpy(&keyVal->szSettingName, szSetting, settingNameLen + 1);
-
 		MDBX_val key = { keyVal,  sizeof(DBSettingKey) + settingNameLen }, data;
 		res = mdbx_get(trnlck, m_dbSettings, &key, &data);
 		pBlob = (const BYTE*)data.iov_base;
 	}
+
 	if (res != MDBX_SUCCESS) {
 		// try to get the missing mc setting from the active sub
 		if (cc && cc->IsMeta() && ValidLookupName(szModule, szSetting)) {
 			if (contactID = db_mc_getDefault(contactID)) {
-				if (szModule = GetContactProto(contactID)) {
+				if (szModule = Proto_GetBaseAccountName(contactID)) {
 					moduleNameLen = strlen(szModule);
 					goto LBL_Seek;
 				}

@@ -76,8 +76,6 @@ TLS
 Поддерживать соединение
 [Automatically delete contacts not in my roster]
 Автоматически удалять контакты, которые не в списке
-[User directory:]
-Директория пользователей:
 [Language for human-readable resources:]
 Язык для видимых человеку ресурсов:
 [File Transfer]
@@ -86,8 +84,6 @@ TLS
 Передача файлов через прямое соединение
 [Specify external address:]
 Внешний адрес:
-[Allow file sending through bytestream proxy server:]
-Передача через потоковый прокси-сервер:
 [Miscellaneous]
 Прочее
 [Hint:]
@@ -470,8 +466,6 @@ Bytestream Proxy недоступно
 Приём и отправка пингов (ping)
 [Supports data forms]
 Формы данных
-[Can request and respond to events relating to the delivery, display, and composition of messages]
-Запрос и ответ на события - доставка, отображение, составление сообщений
 [Supports vCard]
 vCard (визитные карточки)
 [Supports XHTML formatting of chat messages]
@@ -544,14 +538,14 @@ xHTML формат чат сообщений
 Участник
 [Moderator]
 Модератор
-[Owners]
-Владельцы
-[Moderators]
-Модераторы
-[Participants]
-Участники
 [Visitors]
 Посетители
+[Participants]
+Участники
+[Moderators]
+Модераторы
+[Owners]
+Владельцы
 [User %s is now banned.]
 
 [User %s changed status to %s with message: %s]
@@ -730,6 +724,8 @@ Jabber ошибка
 Добавить поиск
 [Use this proxy]
 Использовать этот прокси
+[Use for uploads]
+Использовать для отправки файлов
 [Commands...]
 Команды...
 [Logon]
@@ -911,8 +907,6 @@ Jabber ошибка
 ;file \protocols\JabberG\src\jabber_menu.cpp
 [Jabber account chooser]
 Выбор учётной записи Jabber
-[Convert]
-Конвертировать
 [Add to Bookmarks]
 Добавить в закладки
 [Commands]
@@ -927,10 +921,6 @@ Jabber ошибка
 Последний активный
 [Server's Choice]
 Выбор сервера
-[&Convert to Contact]
-&Конвертировать в контакт
-[&Convert to Chat Room]
-&Конвертировать в чат
 [Services...]
 Службы...
 [Registered Transports]
@@ -1380,8 +1370,8 @@ OMEMO: Новая сессия
 Необходимо подключиться к сети
 [Messaging]
 Сообщения
-[Send messages slower, but with full acknowledgment]
-Отправлять сообщения медленнее, но с подтверждением
+[Use message delivery receipts (XEP-0184)]
+Отправлять уведомления о прочтении сообщений (XEP-0184)
 [Enable avatars]
 Включить аватары
 [Log chat state changes]

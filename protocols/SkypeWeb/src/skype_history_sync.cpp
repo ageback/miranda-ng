@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -21,13 +21,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 void CSkypeProto::OnGetServerHistory(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr)
+	JsonReply reply(response);
+	if (reply.error())
 		return;
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		return;
-
+	auto &root = reply.data();
 	const JSONNode &metadata = root["_metadata"];
 	const JSONNode &conversations = root["messages"].as_array();
 
@@ -88,6 +86,9 @@ void CSkypeProto::OnGetServerHistory(const NETLIBHTTPREQUEST *response)
 			else if (messageType == "RichText/Contacts") {
 				ProcessContactRecv(hContact, timestamp, content.c_str(), szMessageId);
 			}
+			else if (messageType == "RichText/Media_Album") {
+				// do nothing
+			}
 			else {
 				AddDbEvent(SKYPE_DB_EVENT_TYPE_UNKNOWN, hContact, timestamp, iFlags, content.c_str(), szMessageId);
 			}
@@ -110,13 +111,11 @@ INT_PTR CSkypeProto::GetContactHistory(WPARAM hContact, LPARAM)
 
 void CSkypeProto::OnSyncHistory(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr || response->pData == nullptr)
+	JsonReply reply(response);
+	if (reply.error())
 		return;
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		return;
-
+	auto &root = reply.data();
 	const JSONNode &metadata = root["_metadata"];
 	const JSONNode &conversations = root["conversations"].as_array();
 

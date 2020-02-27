@@ -6,7 +6,7 @@ Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
 Copyright (c) 2007     Victor Pavlychko
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -25,12 +25,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
 #include "stdafx.h"
-
-#define JCPF_IN    0x01UL
-#define JCPF_OUT   0x02UL
-#define JCPF_ERROR 0x04UL
-
-#define JCPF_TCHAR 0x00UL
 
 #define WM_CREATECONSOLE  WM_USER+1000
 
@@ -196,8 +190,10 @@ static void sttRtfAppendXml(StringBuf *buf, const TiXmlElement *node, DWORD flag
 
 	sttAppendBufRaw(buf, RTF_BEGINTAG);
 	sttAppendBufRaw(buf, indentLevel);
-	if (flags&JCPF_IN)	sttAppendBufRaw(buf, "\\highlight3 ");
-	if (flags&JCPF_OUT)	sttAppendBufRaw(buf, "\\highlight4 ");
+	if (flags & JCPF_IN)
+		sttAppendBufRaw(buf, "\\highlight3 ");
+	if (flags & JCPF_OUT)
+		sttAppendBufRaw(buf, "\\highlight4 ");
 	sttAppendBufRaw(buf, "<");
 	sttAppendBufRaw(buf, RTF_BEGINTAGNAME);
 	sttAppendBufRaw(buf, node->Name());
@@ -451,7 +447,7 @@ public:
 
 					TiXmlDocument doc;
 					if (0 == doc.Parse(T2Utf(textToSend)))
-						m_proto->m_ThreadInfo->send(doc.ToElement());
+						m_proto->m_ThreadInfo->send(doc.RootElement());
 					else {
 						StringBuf buf = {};
 						sttAppendBufRaw(&buf, RTF_HEADER);
@@ -607,7 +603,7 @@ void CJabberProto::ConsoleUninit()
 		m_hThreadConsole = nullptr;
 	}
 
-	m_filterInfo.iq = m_filterInfo.msg = m_filterInfo.presence = FALSE;
+	m_filterInfo.iq = m_filterInfo.msg = m_filterInfo.presence = false;
 	m_filterInfo.type = TFilterInfo::T_OFF;
 }
 

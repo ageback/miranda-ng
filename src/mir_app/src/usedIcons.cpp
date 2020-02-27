@@ -1,7 +1,7 @@
 /*
 
 Copyright (C) 2009 Ricardo Pescuma Domenecci
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This is free software; you can redistribute it and/or
 modify it under the terms of the GNU Library General Public
@@ -84,10 +84,9 @@ void RemoveIcon(const char *icolibName)
 
 void ResetIcons()
 {
-	auto T = usedIcons.rev_iter();
-	for (auto &it : T) {
+	for (auto &it : usedIcons.rev_iter()) {
 		if (it->refCount <= 0)
-			usedIcons.remove(T.indexOf(&it));
+			usedIcons.removeItem(&it);
 		else
 			it->hImage = INVALID_HANDLE_VALUE;
 	}

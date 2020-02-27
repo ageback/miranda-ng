@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2014-17 Robert Pösel, 2017-19 Miranda NG team
+Copyright (c) 2014-17 Robert Pösel, 2017-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -16,24 +16,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "stdafx.h"
-
-void CDummyProto::SendMsgAck(void *p)
-{
-	if (p == nullptr)
-		return;
-
-	message_data *data = static_cast<message_data*>(p);
-
-	Sleep(100);
-
-	if (getByte(DUMMY_KEY_ALLOW_SENDING, 0))
-		ProtoBroadcastAck(data->hContact, ACKTYPE_MESSAGE, ACKRESULT_SUCCESS, (HANDLE)data->msgid);
-	else
-		ProtoBroadcastAck(data->hContact, ACKTYPE_MESSAGE, ACKRESULT_FAILED, (HANDLE)data->msgid, 
-			(LPARAM)TranslateT("This Dummy account has disabled sending messages. Enable it in account options."));
-
-	delete data;
-}
 
 void CDummyProto::SearchIdAckThread(void *targ)
 {
@@ -126,7 +108,10 @@ int CDummyProto::SendMsg(MCONTACT hContact, int, const char *msg)
 	std::string message = msg;
 	unsigned int id = InterlockedIncrement(&this->msgid);
 
-	ForkThread(&CDummyProto::SendMsgAck, new message_data(hContact, message, id));
+	if (getByte(DUMMY_KEY_ALLOW_SENDING, 0))
+		ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_SUCCESS, (HANDLE)id);
+	else
+		ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_FAILED, (HANDLE)id, (LPARAM)TranslateT("This Dummy account has disabled sending messages. Enable it in account options."));
 	return id;
 }
 

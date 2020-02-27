@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -55,7 +55,7 @@ public:
 private:
 	void tokenize(wchar_t *tszString, wchar_t** &patterns, UINT &nr);
 
-	DWORD     m_dwFlags = 0;
+	DWORD     m_iMode = 0; // combination of MATCH_* masks
 	UINT      m_iNickPatterns = 0;
 	UINT      m_iTextPatterns = 0;
 	bool      m_fInitialized = false;

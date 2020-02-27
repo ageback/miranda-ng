@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -107,7 +107,6 @@ private:
 
 extern SendQueue *sendQueue;
 
-int  TSAPI ActivateExistingTab(TContainerData *pContainer, HWND hwndChild);
 void TSAPI HandleIconFeedback(CMsgDialog *dat, HICON iIcon);
 
 #endif /* __SENDQUEUE_H */

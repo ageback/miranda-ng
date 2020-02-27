@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -80,7 +80,7 @@ void CSkypeProto::OnMessageSent(const NETLIBHTTPREQUEST *response, void *arg)
 int CSkypeProto::OnPreCreateMessage(WPARAM, LPARAM lParam)
 {
 	MessageWindowEvent *evt = (MessageWindowEvent*)lParam;
-	if (mir_strcmp(GetContactProto(evt->hContact), m_szModuleName))
+	if (mir_strcmp(Proto_GetBaseAccountName(evt->hContact), m_szModuleName))
 		return 0;
 
 	char *message = (char*)evt->dbei->pBlob;
@@ -169,8 +169,9 @@ void CSkypeProto::OnPrivateMessageEvent(const JSONNode &node)
 	else if (strMessageType == "RichText/Media_GenericFile") {
 		AddDbEvent(SKYPE_DB_EVENT_TYPE_FILE, hContact, timestamp, DBEF_UTF, strContent.c_str(), szMessageId);
 	}
-	//else if (messageType == "Event/SkypeVideoMessage") {}
-	//else if (messageType.c_str() == "RichText/Location") {}
+	else if (strMessageType == "RichText/Media_Album") {
+		// do nothing
+	}
 	else {
 		AddDbEvent(SKYPE_DB_EVENT_TYPE_UNKNOWN, hContact, timestamp, DBEF_UTF, strContent.c_str(), szMessageId);
 	}
@@ -178,7 +179,7 @@ void CSkypeProto::OnPrivateMessageEvent(const JSONNode &node)
 
 int CSkypeProto::OnDbEventRead(WPARAM hContact, LPARAM hDbEvent)
 {
-	if (IsOnline() && !isChatRoom(hContact) && !mir_strcmp(GetContactProto(hContact), m_szModuleName))
+	if (IsOnline() && !isChatRoom(hContact) && !mir_strcmp(Proto_GetBaseAccountName(hContact), m_szModuleName))
 		MarkMessagesRead(hContact, hDbEvent);
 	return 0;
 }

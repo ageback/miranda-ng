@@ -2,7 +2,7 @@
 UserinfoEx plugin for Miranda IM
 
 Copyright:
-Â© 2006-2010 DeathAxe, Yasnovidyashii, Merlin, K. Romanov, Kreol
+© 2006-2010 DeathAxe, Yasnovidyashii, Merlin, K. Romanov, Kreol
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -19,12 +19,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 */
 
-#ifndef _UINFOEX_SVCEMAIL_H_INCLUDED_
-#define _UINFOEX_SVCEMAIL_H_INCLUDED_
+#ifndef _UINFOEX_SVCEMAIL_H_INCLUDED_	
+#define _UINFOEX_SVCEMAIL_H_INCLUDED_	
 
-void SvcEMailRebuildMenu();
-bool SvcEMailEnableExtraIcons(bool bEnable = false, bool bUpdateDB = false);
-void SvcEMailLoadModule();
-void SvcEMailUnloadModule();
+void SvcEMailRebuildMenu();	
+void SvcEMailLoadModule();	
 
-#endif /* _UINFOEX_SVCEMAIL_H_INCLUDED_ */
+#endif /* _UINFOEX_SVCEMAIL_H_INCLUDED_ */ 

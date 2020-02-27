@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -176,12 +176,9 @@ void CJabberProto::ListRemove(JABBER_LIST list, const char *jid)
 void CJabberProto::ListRemoveList(JABBER_LIST list)
 {
 	mir_cslock lck(m_csLists);
-	for (auto &it : m_lstRoster.rev_iter()) {
-		if (it->list == list) {
-			delete it;
-			m_lstRoster.remove(m_lstRoster.indexOf(&it));
-		}
-	}
+	for (auto &it : m_lstRoster.rev_iter())
+		if (it->list == list)
+			delete m_lstRoster.removeItem(&it);
 }
 
 void CJabberProto::ListRemoveByIndex(int index)

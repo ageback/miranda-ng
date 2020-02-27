@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: Discord.dll
 ;  Plugin: Discord protocol
-;  Version: 0.6.2.1
+;  Version: 0.6.2.3
 ;  Authors: George Hazan
 ;============================================================
 [Discord support for Miranda NG.]
@@ -17,6 +17,8 @@
 [Use subgroups for server channels (requires restart)]
 [Nick:]
 ;file \protocols\Discord\src\dispatch.cpp
+[Incoming call]
+[Call ended, %d seconds long]
 [edited at]
 ;file \protocols\Discord\src\groupchat.cpp
 [Change &nickname]
@@ -31,6 +33,8 @@
 ;file \protocols\Discord\src\main.cpp
 [Main icon]
 [Group chats]
+[Call]
+[Call ended]
 ;file \protocols\Discord\src\menus.cpp
 [Enter channel name]
 [Enter invitation code you received]
@@ -53,6 +57,8 @@
 [User ID]
 [Protocol is offline or user isn't authorized yet]
 ;file \protocols\Discord\src\utils.cpp
+[Owners]
+[Participants]
 [Attachment]
 [Embed]
 [Preview]

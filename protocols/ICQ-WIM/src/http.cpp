@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // ICQ plugin for Miranda NG
 // -----------------------------------------------------------------------------
-// Copyright © 2018-19 Miranda NG team
+// Copyright © 2018-20 Miranda NG team
 // 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -144,7 +144,8 @@ bool CIcqProto::ExecuteRequest(AsyncHttpRequest *pReq)
 		}
 	}
 
-	if (pReq->m_conn == CONN_RAPI) {
+	// replace credentials inside JSON body for pure RAPI requests
+	if (pReq->m_conn == CONN_RAPI && !mir_strcmp(pReq->szUrl, ICQ_ROBUST_SERVER)) {
 		CMStringA szAgent(FORMAT, "%S Mail.ru Windows ICQ (version 10.0.1999)", (wchar_t*)m_szOwnId);
 		pReq->AddHeader("User-Agent", szAgent);
 		pReq->AddHeader("Content-Type", "application/json");
@@ -178,13 +179,10 @@ bool CIcqProto::ExecuteRequest(AsyncHttpRequest *pReq)
 			auto &conn = m_ConnPool[pReq->m_conn];
 			conn.s = reply->nlc;
 			conn.timeout = 0;
-			for (int i = 0; i < reply->headersCount; i++) {
-				if (!mir_strcmp(reply->headers[i].szName, "Keep-Alive")) {
-					int timeout;
-					if (1 == sscanf(reply->headers[i].szValue, "timeout=%d", &timeout))
-						conn.timeout = timeout;
-					break;
-				}
+			if (auto *pszHdr = Netlib_GetHeader(reply, "Keep-Alive")) {
+				int timeout;
+				if (1 == sscanf(pszHdr, "timeout=%d", &timeout))
+					conn.timeout = timeout;
 			}
 		}
 
@@ -338,6 +336,7 @@ RobustReply::RobustReply(NETLIBHTTPREQUEST *pReply)
 	}
 
 	m_errorCode = (*m_root)["status"]["code"].as_int();
+	m_result = &(*m_root)["result"];
 	m_results = &(*m_root)["results"];
 }
 

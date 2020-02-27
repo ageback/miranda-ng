@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // ICQ plugin for Miranda NG
 // -----------------------------------------------------------------------------
-// Copyright © 2018-19 Miranda NG team
+// Copyright © 2018-20 Miranda NG team
 // 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -215,7 +215,7 @@ class CIcqOptionsDlg : public CIcqDlgBase
 	CCtrlEdit edtUin, edtPassword;
 	CCtrlCheck chkHideChats, chkTrayIcon, chkLaunchMailbox, chkShowErrorPopups;
 	CCtrlButton btnCreate;
-	CMStringA wszOldPass;
+	CMStringW wszOldPass;
 
 public:
 	CIcqOptionsDlg(CIcqProto *ppro, int iDlgID, bool bFullDlg) :
@@ -239,13 +239,13 @@ public:
 
 			chkTrayIcon.OnChange = Callback(this, &CIcqOptionsDlg::onChange_Tray);
 		}
-
-		edtPassword.SetText(Utf2T(ppro->m_szPassword));
-		wszOldPass = ppro->m_szPassword;
 	}
 
 	bool OnInitDialog() override
 	{
+		wszOldPass = m_proto->getMStringW("Password");
+		edtPassword.SetText(wszOldPass);
+
 		onChange_Tray(0);
 		return true;
 	}

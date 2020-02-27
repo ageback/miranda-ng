@@ -2,7 +2,7 @@
 
 Import plugin for Miranda NG
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -94,7 +94,6 @@ struct CDbxSQLite : public MDatabaseCommon, public MZeroedObject
 {
 private:
 	sqlite3 *m_sqlite;
-	HWND m_hAPCWindow;
 	
 	int sql_prepare_len;
 	char **sql_prepare_text;
@@ -134,7 +133,7 @@ public:
 
 	STDMETHODIMP_(LONG)     GetEventCount(MCONTACT contactID) override;
 	STDMETHODIMP_(MEVENT)   AddEvent(MCONTACT contactID, DBEVENTINFO *dbe) override;
-	STDMETHODIMP_(BOOL)     DeleteEvent(MCONTACT contactID, MEVENT hDbEvent) override;
+	STDMETHODIMP_(BOOL)     DeleteEvent(MEVENT hDbEvent) override;
 	STDMETHODIMP_(BOOL)     EditEvent(MCONTACT contactID, MEVENT hDbEvent, DBEVENTINFO *dbe) override;
 	STDMETHODIMP_(LONG)     GetBlobSize(MEVENT hDbEvent) override;
 	STDMETHODIMP_(BOOL)     GetEvent(MEVENT hDbEvent, DBEVENTINFO *dbe) override;

@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // ICQ plugin for Miranda NG
 // -----------------------------------------------------------------------------
-// Copyright © 2018-19 Miranda NG team
+// Copyright © 2018-20 Miranda NG team
 // 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -132,10 +132,15 @@ void CIcqProto::Json2int(MCONTACT hContact, const JSONNode &node, const char *sz
 void CIcqProto::Json2string(MCONTACT hContact, const JSONNode &node, const char *szJson, const char *szSetting)
 {
 	const JSONNode &var = node[szJson];
-	if (var)
-		setWString(hContact, szSetting, var.as_mstring());
-	else
-		delSetting(hContact, szSetting);
+	if (var) {
+		CMStringW wszStr(var.as_mstring());
+		if (wszStr == L"[deleted]") {
+			setByte(hContact, "IcqDeleted", 1);
+			Contact_PutOnList(hContact);
+		}
+		else setWString(hContact, szSetting, wszStr);
+	}
+	else delSetting(hContact, szSetting);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -144,11 +149,7 @@ void CIcqProto::Json2string(MCONTACT hContact, const JSONNode &node, const char 
 void CIcqProto::GetAvatarFileName(MCONTACT hContact, wchar_t* pszDest, size_t cbLen)
 {
 	int tPathLen = mir_snwprintf(pszDest, cbLen, L"%s\\%S", VARSW(L"%miranda_avatarcache%").get(), m_szModuleName);
-
-	DWORD dwAttributes = GetFileAttributes(pszDest);
-	if (dwAttributes == 0xffffffff || (dwAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0)
-		CreateDirectoryTreeW(pszDest);
-
+	CreateDirectoryTreeW(pszDest);
 	pszDest[tPathLen++] = '\\';
 
 	CMStringW wszFileName(getMStringW(hContact, "IconId"));

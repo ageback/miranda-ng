@@ -1,5 +1,5 @@
 /*
-Copyright © 2016-19 Miranda NG team
+Copyright © 2016-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,10 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 CMStringW CDiscordProto::GetAvatarFilename(MCONTACT hContact)
 {
 	CMStringW wszResult(FORMAT, L"%s\\%S", VARSW(L"%miranda_avatarcache%"), m_szModuleName);
-
-	DWORD dwAttributes = GetFileAttributes(wszResult);
-	if (dwAttributes == 0xffffffff || (dwAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0)
-		CreateDirectoryTreeW(wszResult);
+	CreateDirectoryTreeW(wszResult);
 
 	wszResult.AppendChar('\\');
 
@@ -69,17 +66,15 @@ LBL_Error:
 		return;
 	}
 
-	for (int i = 0; i < reply->headersCount; i++)
-		if (!mir_strcmp(reply->headers[i].szName, "Content-Type")) {
-			ai.format = ProtoGetAvatarFormatByMimeType(reply->headers[i].szValue);
-			break;
-		}
+	if (auto *pszHdr = Netlib_GetHeader(reply, "Content-Type"))
+		ai.format = ProtoGetAvatarFormatByMimeType(pszHdr);
 
 	if (ai.format == PA_FORMAT_UNKNOWN) {
 		debugLogA("unknown avatar mime type");
 		goto LBL_Error;
 	}
 
+	setByte(ai.hContact, "AvatarType", ai.format);
 	mir_wstrncpy(ai.filename, GetAvatarFilename(ai.hContact), _countof(ai.filename));
 
 	FILE *out = _wfopen(ai.filename, L"wb");
@@ -104,7 +99,7 @@ bool CDiscordProto::RetrieveAvatar(MCONTACT hContact)
 	if (id == 0 || szAvatarHash == nullptr)
 		return false;
 
-	CMStringA szUrl(FORMAT, "https://cdn.discordapp.com/avatars/%lld/%s.jpg", id, szAvatarHash);
+	CMStringA szUrl(FORMAT, "https://cdn.discordapp.com/avatars/%lld/%s.jpg", id, szAvatarHash.get());
 	AsyncHttpRequest *pReq = new AsyncHttpRequest(this, REQUEST_GET, szUrl, &CDiscordProto::OnReceiveAvatar);
 	pReq->pUserInfo = (void*)hContact;
 	Push(pReq);

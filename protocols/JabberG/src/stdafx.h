@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -73,6 +73,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #include <m_json.h>
 #include <m_langpack.h>
 #include <m_message.h>
+#include <m_messagestate.h>
 #include <m_netlib.h>
 #include <m_options.h>
 #include <m_protosvc.h>
@@ -117,6 +118,7 @@ struct CJabberProto;
 
 struct CMPlugin : public ACCPROTOPLUGIN<CJabberProto>
 {
+	bool bMessageState = false, bSecureIM = false, bMirOTR = false, bNewGPG = false, bPlatform = false;
 	char szRandom[17];
 
 	CMPlugin();
@@ -361,7 +363,7 @@ struct ThreadData
 
 	void     xmpp_client_query(void);
 
-	BOOL     zlibInit(void);
+	bool     zlibInit(void);
 	void     zlibUninit();
 	int      zlibSend(char* data, int datalen);
 	int      zlibRecv(char* data, long datalen);
@@ -573,7 +575,6 @@ extern int g_cbCountries;
 extern struct CountryListEntry* g_countries;
 
 extern HANDLE hExtListInit, hDiscoInfoResult;
-extern bool bSecureIM, bMirOTR, bNewGPG, bPlatform;
 
 /*******************************************************************
  * Function declarations

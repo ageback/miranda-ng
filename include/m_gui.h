@@ -6,7 +6,7 @@ Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007-09  Maxim Mluhov
 Copyright (c) 2007-09  Victor Pavlychko
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -31,6 +31,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #include <CommCtrl.h>
 
+#include <m_system.h>
 #include <m_protoint.h>
 #include <m_clc.h>
 
@@ -49,11 +50,11 @@ struct CMDBTraits<1>
 {
 	typedef BYTE DBType;
 	enum { DBTypeId = DBVT_BYTE };
-	static __forceinline DBType Get(char *szModule, char *szSetting, DBType value)
+	static __forceinline DBType Get(const char *szModule, const char *szSetting, DBType value)
 	{
 		return db_get_b(0, szModule, szSetting, value);
 	}
-	static __forceinline void Set(char *szModule, char *szSetting, DBType value)
+	static __forceinline void Set(const char *szModule, const char *szSetting, DBType value)
 	{
 		db_set_b(0, szModule, szSetting, value);
 	}
@@ -64,11 +65,11 @@ struct CMDBTraits<2>
 {
 	typedef WORD DBType;
 	enum { DBTypeId = DBVT_WORD };
-	static __forceinline DBType Get(char *szModule, char *szSetting, DBType value)
+	static __forceinline DBType Get(const char *szModule, const char *szSetting, DBType value)
 	{
 		return db_get_w(0, szModule, szSetting, value);
 	}
-	static __forceinline void Set(char *szModule, char *szSetting, DBType value)
+	static __forceinline void Set(const char *szModule, const char *szSetting, DBType value)
 	{
 		db_set_w(0, szModule, szSetting, value);
 	}
@@ -79,11 +80,11 @@ struct CMDBTraits<4>
 {
 	typedef DWORD DBType;
 	enum { DBTypeId = DBVT_DWORD };
-	static __forceinline DBType Get(char *szModule, char *szSetting, DBType value)
+	static __forceinline DBType Get(const char *szModule, const char *szSetting, DBType value)
 	{
 		return db_get_dw(0, szModule, szSetting, value);
 	}
-	static __forceinline void Set(char *szModule, char *szSetting, DBType value)
+	static __forceinline void Set(const char *szModule, const char *szSetting, DBType value)
 	{
 		db_set_dw(0, szModule, szSetting, value);
 	}
@@ -94,11 +95,11 @@ struct CMDBTraits<8>
 {
 	typedef DWORD DBType;
 	enum { DBTypeId = DBVT_DWORD };
-	static __forceinline DBType Get(char *szModule, char *szSetting, DBType value)
+	static __forceinline DBType Get(const char *szModule, const char *szSetting, DBType value)
 	{
 		return db_get_dw(0, szModule, szSetting, value);
 	}
-	static __forceinline void Set(char *szModule, char *szSetting, DBType value)
+	static __forceinline void Set(const char *szModule, const char *szSetting, DBType value)
 	{
 		db_set_dw(0, szModule, szSetting, value);
 	}
@@ -111,16 +112,16 @@ public:
 	__forceinline const char* GetDBSettingName() const { return m_szSetting; }
 
 protected:
-	__forceinline CMOptionBase(PROTO_INTERFACE *proto, char *szSetting) :
+	__forceinline CMOptionBase(PROTO_INTERFACE *proto, const char *szSetting) :
 		m_szModuleName(proto->m_szModuleName), m_szSetting(szSetting)
 	{}
 
-	__forceinline CMOptionBase(char *module, char *szSetting) :
+	__forceinline CMOptionBase(const char *module, const char *szSetting) :
 		m_szModuleName(module), m_szSetting(szSetting)
 	{}
 
-	char *m_szModuleName;
-	char *m_szSetting;
+	const char *m_szModuleName;
+	const char *m_szSetting;
 };
 
 template<class T>
@@ -129,11 +130,11 @@ class CMOption : public CMOptionBase
 public:
 	typedef T Type;
 
-	__forceinline CMOption(PROTO_INTERFACE *proto, char *szSetting, Type defValue) :
+	__forceinline CMOption(PROTO_INTERFACE *proto, const char *szSetting, Type defValue) :
 		CMOptionBase(proto, szSetting), m_default(defValue)
 	{}
 
-	__forceinline CMOption(char *szModule, char *szSetting, Type defValue) :
+	__forceinline CMOption(const char *szModule, const char *szSetting, Type defValue) :
 		CMOptionBase(szModule, szSetting), m_default(defValue)
 	{}
 
@@ -157,8 +158,6 @@ private:
 	Type m_default;
 };
 
-#ifdef M_SYSTEM_CPP_H__
-
 template<>
 class CMOption<char*> : public CMOptionBase
 {
@@ -166,11 +165,11 @@ public:
 	
 	typedef char Type;
 
-	__forceinline CMOption(PROTO_INTERFACE *proto, char *szSetting, const Type *defValue = nullptr) :
+	__forceinline CMOption(PROTO_INTERFACE *proto, const char *szSetting, const Type *defValue = nullptr) :
 		CMOptionBase(proto, szSetting), m_default(defValue)
 	{}
 
-	__forceinline CMOption(char *szModule, char *szSetting, const Type *defValue = nullptr) :
+	__forceinline CMOption(const char *szModule, const char *szSetting, const Type *defValue = nullptr) :
 		CMOptionBase(szModule, szSetting), m_default(defValue)
 	{}
 
@@ -204,11 +203,11 @@ public:
 
 	typedef wchar_t Type;
 
-	__forceinline CMOption(PROTO_INTERFACE *proto, char *szSetting, const Type *defValue = nullptr) :
+	__forceinline CMOption(PROTO_INTERFACE *proto, const char *szSetting, const Type *defValue = nullptr) :
 		CMOptionBase(proto, szSetting), m_default(defValue)
 	{}
 
-	__forceinline CMOption(char *szModule, char *szSetting, const Type *defValue = nullptr) :
+	__forceinline CMOption(const char *szModule, const char *szSetting, const Type *defValue = nullptr) :
 		CMOptionBase(szModule, szSetting), m_default(defValue)
 	{}
 
@@ -235,7 +234,6 @@ private:
 	mir_ptr<Type> m_value;
 };
 
-#endif
 /////////////////////////////////////////////////////////////////////////////////////////
 // Callbacks
 
@@ -448,6 +446,7 @@ protected:
 
 	// timers
 	void AddTimer(CTimer *timer);
+	void RemoveTimer(UINT_PTR idEvent);
 
 	// options support
 	void CreateLink(CCtrlData& ctrl, const char *szSetting, BYTE type, DWORD iValue);
@@ -485,19 +484,24 @@ class MIR_CORE_EXPORT CTimer
 	friend class CDlgBase;
 
 public:
-	CTimer(CDlgBase* wnd, int idEvent);
+	CTimer(CDlgBase* wnd, UINT_PTR idEvent);
+	~CTimer();
 
-	__forceinline int GetEventId() const { return m_idEvent; }
+	__forceinline UINT_PTR GetEventId() const { return m_idEvent; }
+	__forceinline HWND GetHwnd() const { return m_wnd->GetHwnd(); }
 
 	virtual BOOL OnTimer();
 
 	void Start(int elapse);
 	void Stop();
 
+	void StartSafe(int elapse);
+	void StopSafe();
+
 	CCallback<CTimer> OnEvent;
 
 protected:
-	int m_idEvent;
+	UINT_PTR  m_idEvent;
 	CDlgBase* m_wnd;
 };
 
@@ -1467,7 +1471,7 @@ class MIR_APP_EXPORT CProtoIntDlgBase : public CDlgBase
 public:
 	CProtoIntDlgBase(PROTO_INTERFACE *proto, int idDialog);
 
-	void CreateLink(CCtrlData& ctrl, char *szSetting, BYTE type, DWORD iValue);
+	void CreateLink(CCtrlData& ctrl, const char *szSetting, BYTE type, DWORD iValue);
 	void CreateLink(CCtrlData& ctrl, const char *szSetting, wchar_t *szValue);
 
 	template<class T>

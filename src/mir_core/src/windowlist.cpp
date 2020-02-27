@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -87,7 +87,7 @@ MIR_CORE_DLL(HWND) WindowList_Find(MWindowList hList, UINT_PTR param)
 MIR_CORE_DLL(int) WindowList_Broadcast(MWindowList hList, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if (hList == nullptr)
-		return NULL;
+		return 0;
 
 	for (auto &it : hList->rev_iter())
 		SendMessage(it->hWnd, message, wParam, lParam);
@@ -97,7 +97,7 @@ MIR_CORE_DLL(int) WindowList_Broadcast(MWindowList hList, UINT message, WPARAM w
 MIR_CORE_DLL(int) WindowList_BroadcastAsync(MWindowList hList, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if (hList == nullptr)
-		return NULL;
+		return 0;
 
 	for (auto &it : hList->rev_iter())
 		PostMessage(it->hWnd, message, wParam, lParam);

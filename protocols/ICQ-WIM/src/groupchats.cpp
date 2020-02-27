@@ -1,7 +1,7 @@
 // -----------------------------------------------------------------------------
 // ICQ plugin for Miranda NG
 // -----------------------------------------------------------------------------
-// Copyright © 2018-19 Miranda NG team
+// Copyright © 2018-20 Miranda NG team
 // 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -91,7 +91,7 @@ class CGroupchatInviteDlg : public CIcqDlgBase
 	void FilterList(CCtrlClc*)
 	{
 		for (auto &hContact : Contacts()) {
-			char *proto = GetContactProto(hContact);
+			char *proto = Proto_GetBaseAccountName(hContact);
 			if (mir_strcmp(proto, m_proto->m_szModuleName) || m_proto->isChatRoom(hContact))
 				if (HANDLE hItem = m_clc.FindContact(hContact))
 					m_clc.DeleteItem(hItem);
@@ -206,12 +206,12 @@ int CIcqProto::GroupchatEventHook(WPARAM, LPARAM lParam)
 	if (gch == nullptr)
 		return 0;
 
-	if (mir_strcmpi(gch->pszModule, m_szModuleName))
+	if (mir_strcmpi(gch->si->pszModule, m_szModuleName))
 		return 0;
 
-	SESSION_INFO *si = g_chatApi.SM_FindSession(gch->ptszID, gch->pszModule);
+	SESSION_INFO *si = g_chatApi.SM_FindSession(gch->si->ptszID, gch->si->pszModule);
 	if (si == nullptr)
-		return 0;
+		return 1;
 
 	switch (gch->iType) {
 	case GC_USER_MESSAGE:
@@ -235,7 +235,7 @@ int CIcqProto::GroupchatEventHook(WPARAM, LPARAM lParam)
 		break;
 	}
 
-	return 0;
+	return 1;
 }
 
 void CIcqProto::Chat_ProcessLogMenu(SESSION_INFO *si, int iChoice)

@@ -3,7 +3,7 @@
 Omegle plugin for Miranda Instant Messenger
 _____________________________________________
 
-Copyright © 2011-17 Robert Pösel, 2017-19 Miranda NG team
+Copyright © 2011-17 Robert Pösel, 2017-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -71,8 +71,7 @@ void OmegleProto::UpdateChat(const wchar_t *name, const wchar_t *message, bool a
 int OmegleProto::OnChatEvent(WPARAM, LPARAM lParam)
 {
 	GCHOOK *hook = reinterpret_cast<GCHOOK*>(lParam);
-
-	if (mir_strcmp(hook->pszModule, m_szModuleName))
+	if (mir_strcmp(hook->si->pszModule, m_szModuleName))
 		return 0;
 
 	switch (hook->iType) {
@@ -182,7 +181,7 @@ int OmegleProto::OnChatEvent(WPARAM, LPARAM lParam)
 		break;
 	}
 
-	return 0;
+	return 1;
 }
 
 void OmegleProto::SendChatMessage(std::string text)

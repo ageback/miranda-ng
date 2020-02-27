@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -129,7 +129,7 @@ void CContactCache::updateMeta()
 	if (m_isValid) {
 		MCONTACT hOldSub = m_hSub;
 		m_hSub = db_mc_getSrmmSub(cc->contactID);
-		m_szMetaProto = GetContactProto(m_hSub);
+		m_szMetaProto = Proto_GetBaseAccountName(m_hSub);
 		m_iMetaStatus = (WORD)db_get_w(m_hSub, m_szMetaProto, "Status", ID_STATUS_OFFLINE);
 		PROTOACCOUNT *pa = Proto_GetAccount(m_szMetaProto);
 		if (pa)
@@ -431,7 +431,7 @@ HICON CContactCache::getIcon(int &iSize) const
 	if (!m_dat)
 		return Skin_LoadProtoIcon(cc->szProto, getStatus());
 
-	if (m_dat->m_dwFlags & MWF_ERRORSTATE)
+	if (m_dat->m_bErrorState)
 		return PluginConfig.g_iconErr;
 	if (m_dat->m_bCanFlashTab)
 		return m_dat->m_iFlashIcon;

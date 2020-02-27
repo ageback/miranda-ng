@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -37,6 +37,7 @@ bool CVkProto::ExecuteRequest(AsyncHttpRequest *pReq)
 	CMStringA str;
 	do {
 		pReq->bNeedsRestart = false;
+		pReq->m_iErrorCode = 0;
 		pReq->szUrl = pReq->m_szUrl.GetBuffer();
 		if (!pReq->m_szParam.IsEmpty()) {
 			if (pReq->requestType == REQUEST_GET) {

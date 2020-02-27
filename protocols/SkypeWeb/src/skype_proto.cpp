@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -50,9 +50,7 @@ CSkypeProto::CSkypeProto(const char* protoName, const wchar_t* userName) :
 	HookProtoEvent(ME_DB_EVENT_MARKED_READ, &CSkypeProto::OnDbEventRead);
 
 	m_tszAvatarFolder = std::wstring(VARSW(L"%miranda_avatarcache%")) + L"\\" + m_tszUserName;
-	DWORD dwAttributes = GetFileAttributes(m_tszAvatarFolder.c_str());
-	if (dwAttributes == 0xffffffff || (dwAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0)
-		CreateDirectoryTreeW(m_tszAvatarFolder.c_str());
+	CreateDirectoryTreeW(m_tszAvatarFolder.c_str());
 
 	//sounds
 	g_plugin.addSound("skype_inc_call", L"SkypeWeb", LPGENW("Incoming call"));
@@ -134,11 +132,11 @@ int CSkypeProto::SetAwayMsg(int, const wchar_t *msg)
 HANDLE CSkypeProto::GetAwayMsg(MCONTACT hContact)
 {
 	PushRequest(new GetProfileRequest(this, Contacts[hContact]), [this, hContact](const NETLIBHTTPREQUEST *response) {
-		if (!response || !response->pData)
+		JsonReply reply(response);
+		if (reply.error())
 			return;
 
-		JSONNode root = JSONNode::parse(response->pData);
-
+		auto &root = reply.data();
 		if (JSONNode &mood = root["mood"]) {
 			CMStringW str = mood.as_mstring();
 			this->ProtoBroadcastAck(hContact, ACKTYPE_AWAYMSG, ACKRESULT_SUCCESS, (HANDLE)1, (LPARAM)str.c_str());

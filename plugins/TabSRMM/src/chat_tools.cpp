@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -167,14 +167,14 @@ BOOL DoPopup(SESSION_INFO *si, GCEVENT *gce)
 				goto passed;
 			return 0;
 		}
-		if (pContainer->m_dwFlags & CNT_DONTREPORT && IsIconic(pContainer->m_hwnd))        // in tray counts as "minimised"
+		if (pContainer->m_flags.m_bDontReport && IsIconic(pContainer->m_hwnd))        // in tray counts as "minimised"
 			goto passed;
-		if (pContainer->m_dwFlags & CNT_DONTREPORTUNFOCUSED) {
+		if (pContainer->m_flags.m_bDontReportUnfocused) {
 			if (!IsIconic(pContainer->m_hwnd) && !pContainer->IsActive())
 				goto passed;
 		}
-		if (pContainer->m_dwFlags & CNT_ALWAYSREPORTINACTIVE) {
-			if (pContainer->m_dwFlags & CNT_DONTREPORTFOCUSED)
+		if (pContainer->m_flags.m_bAlwaysReportInactive) {
+			if (pContainer->m_flags.m_bDontReportFocused)
 				goto passed;
 
 			if (pContainer->m_hwndActive == si->pDlg->GetHwnd())
@@ -222,7 +222,6 @@ void DoFlashAndSoundWorker(FLASH_PARAMS *p)
 		Skin_PlaySound(p->sound);
 
 	if (dat) {
-		HWND hwndTab = GetParent(si->pDlg->GetHwnd());
 		BOOL bForcedIcon = (p->hNotifyIcon == g_chatApi.hIcons[ICON_HIGHLIGHT] || p->hNotifyIcon == g_chatApi.hIcons[ICON_MESSAGE]);
 
 		if ((p->iEvent & si->iLogTrayFlags) || bForcedIcon) {
@@ -245,21 +244,21 @@ void DoFlashAndSoundWorker(FLASH_PARAMS *p)
 		// autoswitch tab..
 		if (p->bMustAutoswitch) {
 			if ((IsIconic(dat->m_pContainer->m_hwnd)) && !IsZoomed(dat->m_pContainer->m_hwnd) && PluginConfig.m_bAutoSwitchTabs && dat->m_pContainer->m_hwndActive != si->pDlg->GetHwnd()) {
-				int iItem = GetTabIndexFromHWND(hwndTab, si->pDlg->GetHwnd());
+				int iItem = GetTabIndexFromHWND(dat->m_pContainer->m_hwndTabs, si->pDlg->GetHwnd());
 				if (iItem >= 0) {
-					TabCtrl_SetCurSel(hwndTab, iItem);
+					TabCtrl_SetCurSel(dat->m_pContainer->m_hwndTabs, iItem);
 					ShowWindow(dat->m_pContainer->m_hwndActive, SW_HIDE);
 					dat->m_pContainer->m_hwndActive = si->pDlg->GetHwnd();
 					dat->m_pContainer->UpdateTitle(dat->m_hContact);
-					dat->m_pContainer->m_dwFlags |= CNT_DEFERREDTABSELECT;
+					dat->m_pContainer->m_flags.m_bDeferredTabSelect = true;
 				}
 			}
 		}
 
 		// flash window if it is not focused
 		if (p->bMustFlash && p->bInactive)
-			if (!(dat->m_pContainer->m_dwFlags & CNT_NOFLASH))
-				FlashContainer(dat->m_pContainer, 1, 0);
+			if (!dat->m_pContainer->m_flags.m_bNoFlash)
+				dat->m_pContainer->FlashContainer(1, 0);
 
 		if (p->hNotifyIcon && p->bInactive && ((p->iEvent & si->iLogTrayFlags) || bForcedIcon)) {
 			if (p->bMustFlash)
@@ -276,15 +275,15 @@ void DoFlashAndSoundWorker(FLASH_PARAMS *p)
 			HICON hIcon = (HICON)SendMessage(dat->m_pContainer->m_hwnd, WM_GETICON, ICON_BIG, 0);
 			if (p->hNotifyIcon == g_chatApi.hIcons[ICON_HIGHLIGHT] || (hIcon != g_chatApi.hIcons[ICON_MESSAGE] && hIcon != g_chatApi.hIcons[ICON_HIGHLIGHT])) {
 				dat->m_pContainer->SetIcon(dat, p->hNotifyIcon);
-				dat->m_pContainer->m_dwFlags |= CNT_NEED_UPDATETITLE;
+				dat->m_pContainer->m_flags.m_bNeedsUpdateTitle = true;
 			}
 		}
 
 		if (p->bMustFlash && p->bInactive)
-			UpdateTrayMenu(dat, si->wStatus, si->pszModule, dat->m_wszStatus, si->hContact, 1);
+			AddUnreadContact(dat->m_hContact);
 	}
 
-	mir_free(p);
+	delete p;
 }
 
 BOOL DoSoundsFlashPopupTrayStuff(SESSION_INFO *si, GCEVENT *gce, BOOL bHighlight, int bManyFix)
@@ -293,15 +292,15 @@ BOOL DoSoundsFlashPopupTrayStuff(SESSION_INFO *si, GCEVENT *gce, BOOL bHighlight
 		return FALSE;
 
 	CMsgDialog *dat = nullptr;
-	FLASH_PARAMS *params = (FLASH_PARAMS*)mir_calloc(sizeof(FLASH_PARAMS));
+	auto *params = new FLASH_PARAMS();
 	params->hContact = si->hContact;
-	params->bInactive = TRUE;
+	params->bInactive = true;
 	if (si->pDlg) {
 		dat = si->pDlg;
 		if ((si->pDlg->GetHwnd() == si->pDlg->m_pContainer->m_hwndActive) && GetForegroundWindow() == si->pDlg->m_pContainer->m_hwnd)
-			params->bInactive = FALSE;
+			params->bInactive = false;
 	}
-	params->bActiveTab = params->bMustFlash = params->bMustAutoswitch = FALSE;
+	params->bActiveTab = params->bMustFlash = params->bMustAutoswitch = false;
 	params->iEvent = gce->iType;
 
 	WPARAM wParamForHighLight = 0;
@@ -327,8 +326,8 @@ BOOL DoSoundsFlashPopupTrayStuff(SESSION_INFO *si, GCEVENT *gce, BOOL bHighlight
 		if (dat || !nen_options.iMUCDisable)
 			DoPopup(si, gce);
 		if (g_Settings.bFlashWindowHighlight && params->bInactive)
-			params->bMustFlash = TRUE;
-		params->bMustAutoswitch = TRUE;
+			params->bMustFlash = true;
+		params->bMustAutoswitch = true;
 		params->hNotifyIcon = g_chatApi.hIcons[ICON_HIGHLIGHT];
 	}
 	else {
@@ -437,9 +436,9 @@ BOOL DoSoundsFlashPopupTrayStuff(SESSION_INFO *si, GCEVENT *gce, BOOL bHighlight
 		}
 
 		if (params->iEvent == GC_EVENT_MESSAGE) {
-			params->bMustAutoswitch = TRUE;
+			params->bMustAutoswitch = true;
 			if (g_Settings.bFlashWindow)
-				params->bMustFlash = TRUE;
+				params->bMustFlash = true;
 			params->hNotifyIcon = g_chatApi.hIcons[ICON_MESSAGE];
 		}
 	}

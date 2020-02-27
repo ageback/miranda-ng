@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-08 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -269,7 +269,7 @@ static void _AniAva_ReduceAvatarImages(int startY, int dY, BOOL bDestroyWindow)
 	for (auto &it : T) {
 		int res = SendMessage(it->hWindow, AAM_REMOVEAVATAR, (WPARAM)startY, (LPARAM)dY);
 		if (res == 0xDEAD && bDestroyWindow)
-			s_Objects.remove(T.indexOf(&it));
+			s_Objects.removeItem(&it);
 	}
 }
 

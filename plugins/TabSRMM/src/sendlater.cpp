@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -438,7 +438,7 @@ HANDLE CSendLater::processAck(const ACKDATA *ack)
 				DBEVENTINFO dbei = {};
 				dbei.eventType = EVENTTYPE_MESSAGE;
 				dbei.flags = DBEF_SENT | DBEF_UTF;
-				dbei.szModule = GetContactProto((p->hContact));
+				dbei.szModule = Proto_GetBaseAccountName((p->hContact));
 				dbei.timestamp = time(0);
 				dbei.cbBlob = (int)mir_strlen(p->sendBuffer) + 1;
 				dbei.pBlob = (PBYTE)(p->sendBuffer);
@@ -686,14 +686,11 @@ INT_PTR CALLBACK CSendLater::DlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM 
 		if (((LPNMHDR)lParam)->hwndFrom == m_hwndList) {
 			switch (((LPNMHDR)lParam)->code) {
 			case NM_RCLICK:
-				HMENU hMenu = ::LoadMenu(g_plugin.getInst(), MAKEINTRESOURCE(IDR_TABCONTEXT));
-				HMENU hSubMenu = ::GetSubMenu(hMenu, 9);
-				::TranslateMenu(hSubMenu);
-
 				POINT pt;
 				::GetCursorPos(&pt);
 
 				// copy to clipboard only allowed with a single selection
+				HMENU hSubMenu = ::GetSubMenu(PluginConfig.g_hMenuContext, 7);
 				if (::SendMessage(m_hwndList, LVM_GETSELECTEDCOUNT, 0, 0) == 1)
 					::EnableMenuItem(hSubMenu, ID_QUEUEMANAGER_COPYMESSAGETOCLIPBOARD, MF_ENABLED);
 
@@ -711,7 +708,6 @@ INT_PTR CALLBACK CSendLater::DlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM 
 					::SendMessage(hwnd, WM_COMMAND, MAKEWPARAM(IDC_QMGR_REMOVE, LOWORD(selection)), 0);
 					m_last_sendlater_processed = 0;			// force a queue check
 				}
-				::DestroyMenu(hMenu);
 				m_fIsInteractive = false;
 				break;
 			}

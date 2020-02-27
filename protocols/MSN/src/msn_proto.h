@@ -1,7 +1,7 @@
 /*
 Plugin of Miranda IM for communicating with users of the MSN Messenger protocol.
 
-Copyright (c) 2012-2019 Miranda NG team
+Copyright (c) 2012-2020 Miranda NG team
 Copyright (c) 2009-2012 Boris Krasnovskiy.
 
 This program is free software; you can redistribute it and/or
@@ -246,8 +246,6 @@ struct CMsnProto : public PROTO<CMsnProto>
 
 	void __cdecl MsnFileAckThread(void* arg);
 	void __cdecl MsnSearchAckThread(void* arg);
-	void __cdecl sttFakeAvatarAck(void* arg);
-	void __cdecl MsnFakeAck(void* arg);
 
 	void __cdecl MsnGetAwayMsgThread(void* arg);
 

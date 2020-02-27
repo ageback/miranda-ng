@@ -6,7 +6,7 @@ Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
 Copyright (c) 2007     Victor Pavlychko
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -41,7 +41,7 @@ CCtrlTreeOpts::~CCtrlTreeOpts()
 		delete it;
 }
 
-void CCtrlTreeOpts::AddOption(wchar_t *szOption, CMOption<BYTE> &option)
+void CCtrlTreeOpts::AddOption(wchar_t *szOption, CMOption<bool> &option)
 {
 	m_options.insert(new COptionsItem(szOption, option), m_options.getCount());
 }
@@ -226,8 +226,9 @@ void CCtrlTreeOpts::ProcessItemClick(HTREEITEM hti)
 	SetItem(&tvi);
 }
 
-CCtrlTreeOpts::COptionsItem::COptionsItem(wchar_t *szOption, CMOption<BYTE> &option) :
-m_option(&option), m_groupId(OPTTREE_CHECK), m_hItem(nullptr)
+CCtrlTreeOpts::COptionsItem::COptionsItem(wchar_t *szOption, CMOption<bool> &option) :
+	m_option(&option),
+	m_groupId(OPTTREE_CHECK)
 {
 	m_szOptionName = mir_wstrdup(szOption);
 }

@@ -1,7 +1,7 @@
 /*
 former MetaContacts Plugin for Miranda IM.
 
-Copyright © 2014-19 Miranda NG team
+Copyright © 2014-20 Miranda NG team
 Copyright © 2004-07 Scott Ellis
 Copyright © 2004 Universite Louis PASTEUR, STRASBOURG.
 
@@ -289,7 +289,7 @@ int Meta_ModifyMenu(WPARAM hMeta, LPARAM)
 
 		// show hide nudge menu item
 		char serviceFunc[256];
-		mir_snprintf(serviceFunc, "%s%s", GetContactProto(Meta_GetMostOnline(cc)), PS_SEND_NUDGE);
+		mir_snprintf(serviceFunc, "%s%s", Proto_GetBaseAccountName(Meta_GetMostOnline(cc)), PS_SEND_NUDGE);
 		CallService(MS_NUDGE_SHOWMENU, (WPARAM)META_PROTO, ServiceExists(serviceFunc));
 		return 0;
 	}

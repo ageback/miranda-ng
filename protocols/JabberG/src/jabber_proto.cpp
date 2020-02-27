@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -54,7 +54,9 @@ static int compareListItems(const JABBER_LIST_ITEM *p1, const JABBER_LIST_ITEM *
 
 CJabberProto::CJabberProto(const char *aProtoName, const wchar_t *aUserName) :
 	PROTO<CJabberProto>(aProtoName, aUserName),
+	m_impl(*this),
 	m_omemo(this),
+	m_arChatMarks(50, NumericKeySortT),
 	m_lstTransports(50, compareTransports),
 	m_lstRoster(50, compareListItems),
 	m_iqManager(this),
@@ -73,64 +75,63 @@ CJabberProto::CJabberProto(const char *aProtoName, const wchar_t *aUserName) :
 	m_uEnabledFeatCapsDynamic(0),
 	m_StrmMgmt(this),
 
-	m_bBsDirect(this, "BsDirect", true),
-	m_bAllowVersionRequests(this, "m_bAllowVersionRequests", true),
 	m_bAcceptHttpAuth(this, "m_bAcceptHttpAuth", true),
-	m_bAddRoster2Bookmarks(this, "m_bAddRoster2Bookmarks", true),
+	m_bAcceptNotes(this, "AcceptNotes", true),
+	m_bAllowVersionRequests(this, "m_bAllowVersionRequests", true),
 	m_bAutoAcceptAuthorization(this, "AutoAcceptAuthorization", false),
 	m_bAutoAcceptMUC(this, "AutoAcceptMUC", false),
 	m_bAutoAdd(this, "AutoAdd", true),
 	m_bAutoJoinBookmarks(this, "AutoJoinBookmarks", true),
-	m_bAutoJoinConferences(this, "AutoJoinConferences", 0),
+	m_bAutoJoinConferences(this, "AutoJoinConferences", false),
 	m_bAutoJoinHidden(this, "AutoJoinHidden", true),
-	m_bAvatarType(this, "AvatarType", PA_FORMAT_UNKNOWN),
+	m_bAutosaveNotes(this, "AutosaveNotes", false),
+	m_bBsDirect(this, "BsDirect", true),
 	m_bBsDirectManual(this, "BsDirectManual", false),
 	m_bBsOnlyIBB(this, "BsOnlyIBB", false),
 	m_bBsProxyManual(this, "BsProxyManual", false),
 	m_bDisable3920auth(this, "Disable3920auth", false),
 	m_bDisableFrame(this, "DisableFrame", true),
 	m_bEnableAvatars(this, "EnableAvatars", true),
-	m_bEnableRemoteControl(this, "EnableRemoteControl", false),
+	m_bEnableCarbons(this, "EnableCarbons", true),
 	m_bEnableMsgArchive(this, "EnableMsgArchive", false),
+	m_bEnableRemoteControl(this, "EnableRemoteControl", false),
+	m_bEnableStreamMgmt(this, "UseStreamMgmt", false),
 	m_bEnableUserActivity(this, "EnableUserActivity", true),
 	m_bEnableUserMood(this, "EnableUserMood", true),
 	m_bEnableUserTune(this, "EnableUserTune", false),
 	m_bEnableZlib(this, "EnableZlib", true),
-	m_bExtendedSearch(this, "ExtendedSearch", true),
 	m_bFixIncorrectTimestamps(this, "FixIncorrectTimestamps", true),
 	m_bGcLogAffiliations(this, "GcLogAffiliations", false),
 	m_bGcLogBans(this, "GcLogBans", true),
+	m_bGcLogChatHistory(this, "GcLogChatHistory", true),
 	m_bGcLogConfig(this, "GcLogConfig", false),
 	m_bGcLogRoles(this, "GcLogRoles", false),
 	m_bGcLogStatuses(this, "GcLogStatuses", false),
-	m_bGcLogChatHistory(this, "GcLogChatHistory", true),
 	m_bHostNameAsResource(this, "HostNameAsResource", false),
 	m_bIgnoreMUCInvites(this, "IgnoreMUCInvites", false),
+	m_bIgnoreRosterGroups(this, "IgnoreRosterGroups", false),
+	m_bInlinePictures(this, "InlinePictures", true),
 	m_bKeepAlive(this, "KeepAlive", true),
 	m_bLogChatstates(this, "LogChatstates", false),
 	m_bLogPresence(this, "LogPresence", true),
 	m_bLogPresenceErrors(this, "LogPresenceErrors", false),
 	m_bManualConnect(this, "ManualConnect", false),
-	m_bMsgAck(this, "MsgAck", false),
+	m_bMsgAck(this, "MsgAck", true),
+	m_bProcessXMPPLinks(this, "ProcessXMPPLinks", false),
+	m_bRcMarkMessagesAsRead(this, "RcMarkMessagesAsRead", true),
 	m_bRosterSync(this, "RosterSync", false),
 	m_bSavePassword(this, "SavePassword", true),
 	m_bShowForeignResourceInMirVer(this, "ShowForeignResourceInMirVer", false),
 	m_bShowOSVersion(this, "ShowOSVersion", true),
 	m_bShowTransport(this, "ShowTransport", true),
-	m_bUseSSL(this, "UseSSL", false),
-	m_bUseTLS(this, "UseTLS", true),
 	m_bUseDomainLogin(this, "UseDomainLogin", false),
-	m_bAcceptNotes(this, "AcceptNotes", true),
-	m_bAutosaveNotes(this, "AutosaveNotes", false),
-	m_bRcMarkMessagesAsRead(this, "RcMarkMessagesAsRead", 1),
-	m_iConnectionKeepAliveInterval(this, "ConnectionKeepAliveInterval", 60000),
-	m_iConnectionKeepAliveTimeout(this, "ConnectionKeepAliveTimeout", 50000),
-	m_bProcessXMPPLinks(this, "ProcessXMPPLinks", false),
-	m_bIgnoreRosterGroups(this, "IgnoreRosterGroups", false),
-	m_bEnableCarbons(this, "EnableCarbons", true),
 	m_bUseHttpUpload(this, "UseHttpUpload", false),
 	m_bUseOMEMO(this, "UseOMEMO", false),
-	m_bEnableStreamMgmt(this, "UseStreamMgmt", false)
+	m_bUseSSL(this, "UseSSL", false),
+	m_bUseTLS(this, "UseTLS", true),
+
+	m_iConnectionKeepAliveInterval(this, "ConnectionKeepAliveInterval", 60000),
+	m_iConnectionKeepAliveTimeout(this, "ConnectionKeepAliveTimeout", 50000)
 {
 	debugLogA("Setting protocol/module name to '%s'", m_szModuleName);
 
@@ -183,6 +184,7 @@ CJabberProto::CJabberProto(const char *aProtoName, const wchar_t *aUserName) :
 	HookProtoEvent(ME_LANGPACK_CHANGED, &CJabberProto::OnLangChanged);
 	HookProtoEvent(ME_OPT_INITIALISE, &CJabberProto::OnOptionsInit);
 	HookProtoEvent(ME_SKIN_ICONSCHANGED, &CJabberProto::OnReloadIcons);
+	HookProtoEvent(ME_DB_EVENT_MARKED_READ, &CJabberProto::OnDbMarkedRead);
 	HookProtoEvent(ME_DB_CONTACT_SETTINGCHANGED, &CJabberProto::OnDbSettingChanged);
 
 	m_iqManager.FillPermanentHandlers();
@@ -216,7 +218,6 @@ CJabberProto::CJabberProto(const char *aProtoName, const wchar_t *aUserName) :
 	if ((m_tszSelectedLang = getUStringA("XmlLang")) == nullptr)
 		m_tszSelectedLang = mir_strdup("en");
 }
-
 
 CJabberProto::~CJabberProto()
 {
@@ -585,7 +586,7 @@ INT_PTR CJabberProto::GetCaps(int type, MCONTACT hContact)
 	case PFLAGNUM_3:
 		return PF2_ONLINE | PF2_SHORTAWAY | PF2_LONGAWAY | PF2_HEAVYDND | PF2_FREECHAT;
 	case PFLAGNUM_4:
-		return PF4_FORCEAUTH | PF4_NOCUSTOMAUTH | PF4_NOAUTHDENYREASON | PF4_SUPPORTTYPING | PF4_AVATARS;
+		return PF4_FORCEAUTH | PF4_NOCUSTOMAUTH | PF4_NOAUTHDENYREASON | PF4_SUPPORTTYPING | PF4_AVATARS | PF4_READNOTIFY;
 	case PFLAG_UNIQUEIDTEXT:
 		return (INT_PTR)Translate("JID");
 	case PFLAG_MAXCONTACTSPERPACKET:
@@ -689,7 +690,7 @@ void __cdecl CJabberProto::BasicSearchThread(JABBER_SEARCH_BASIC *jsb)
 	psr.id.w = jsb->jid;
 
 	ProtoBroadcastAck(0, ACKTYPE_SEARCH, ACKRESULT_DATA, (HANDLE)jsb->hSearch, (LPARAM)&psr);
-	ProtoBroadcastAck(0, ACKTYPE_SEARCH, ACKRESULT_SUCCESS, (HANDLE)jsb->hSearch, 0);
+	ProtoBroadcastAck(0, ACKTYPE_SEARCH, ACKRESULT_SUCCESS, (HANDLE)jsb->hSearch);
 	mir_free(jsb);
 }
 
@@ -753,36 +754,22 @@ HANDLE CJabberProto::SearchByName(const wchar_t *nick, const wchar_t *firstName,
 	if (!m_bJabberOnline || szServerName == nullptr)
 		return nullptr;
 
-	BOOL bIsExtFormat = m_bExtendedSearch;
-
-	CJabberIqInfo *pInfo = AddIQ((bIsExtFormat) ? &CJabberProto::OnIqResultExtSearch : &CJabberProto::OnIqResultSetSearch, JABBER_IQ_TYPE_SET, szServerName);
+	CJabberIqInfo *pInfo = AddIQ(&CJabberProto::OnIqResultExtSearch, JABBER_IQ_TYPE_SET, szServerName);
 	XmlNodeIq iq(pInfo);
 	TiXmlElement *query = iq << XQUERY(JABBER_FEAT_JUD);
 
-	if (bIsExtFormat) {
-		if (m_tszSelectedLang)
-			iq << XATTR("xml:lang", m_tszSelectedLang);
+	if (m_tszSelectedLang)
+		iq << XATTR("xml:lang", m_tszSelectedLang);
 
-		TiXmlElement *x = query << XCHILDNS("x", JABBER_FEAT_DATA_FORMS) << XATTR("type", "submit");
-		if (nick[0] != '\0')
-			x << XCHILD("field") << XATTR("var", "user") << XATTR("value", T2Utf(nick));
+	TiXmlElement *x = query << XCHILDNS("x", JABBER_FEAT_DATA_FORMS) << XATTR("type", "submit");
+	if (nick[0] != '\0')
+		x << XCHILD("field") << XATTR("var", "user") << XATTR("value", T2Utf(nick));
 
-		if (firstName[0] != '\0')
-			x << XCHILD("field") << XATTR("var", "fn") << XATTR("value", T2Utf(firstName));
+	if (firstName[0] != '\0')
+		x << XCHILD("field") << XATTR("var", "fn") << XATTR("value", T2Utf(firstName));
 
-		if (lastName[0] != '\0')
-			x << XCHILD("field") << XATTR("var", "given") << XATTR("value", T2Utf(lastName));
-	}
-	else {
-		if (nick[0] != '\0')
-			query << XCHILD("nick", T2Utf(nick));
-
-		if (firstName[0] != '\0')
-			query << XCHILD("first", T2Utf(firstName));
-
-		if (lastName[0] != '\0')
-			query << XCHILD("last", T2Utf(lastName));
-	}
+	if (lastName[0] != '\0')
+		x << XCHILD("field") << XATTR("var", "given") << XATTR("value", T2Utf(lastName));
 
 	m_ThreadInfo->send(iq);
 	return (HANDLE)pInfo->GetIqId();
@@ -842,7 +829,7 @@ HANDLE CJabberProto::SendFile(MCONTACT hContact, const wchar_t *szDescription, w
 
 	JabberCapsBits jcb = 0;
 	if (!m_bUseHttpUpload) {
-		GetResourceCapabilities(item->jid);
+		jcb = GetResourceCapabilities(item->jid);
 		if (jcb == JABBER_RESOURCE_CAPS_IN_PROGRESS) {
 			Sleep(600);
 			jcb = GetResourceCapabilities(item->jid);
@@ -896,7 +883,7 @@ HANDLE CJabberProto::SendFile(MCONTACT hContact, const wchar_t *szDescription, w
 	ft->szDescription = mir_wstrdup(szDescription);
 	ft->jid = mir_strdup(jid);
 
-	if (m_bUseHttpUpload || (jcb & JABBER_CAPS_SI_FT))
+	if ((m_bInlinePictures && ProtoGetAvatarFileFormat(ft->std.szCurrentFile.w)) || m_bUseHttpUpload || (jcb & JABBER_CAPS_SI_FT))
 		FtInitiate(item->jid, ft);
 	else if (jcb & JABBER_CAPS_OOB)
 		ForkThread((MyThreadFunc)&CJabberProto::FileServerThread, ft);
@@ -905,30 +892,19 @@ HANDLE CJabberProto::SendFile(MCONTACT hContact, const wchar_t *szDescription, w
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////
-// JabberSendMessage - sends a message
+// receives a message
 
-struct TFakeAckParams
+MEVENT CJabberProto::RecvMsg(MCONTACT hContact, PROTORECVEVENT *pre)
 {
-	inline TFakeAckParams(MCONTACT _hContact, const wchar_t *_msg, int _msgid = 0)
-		: hContact(_hContact), msg(_msg), msgid(_msgid)
-	{
-	}
-
-	MCONTACT hContact;
-	const wchar_t *msg;
-	int msgid;
-};
-
-void __cdecl CJabberProto::SendMessageAckThread(void* param)
-{
-	Thread_SetName("Jabber: SendMessageAckThread");
-	TFakeAckParams *par = (TFakeAckParams*)param;
-	Sleep(100);
-	debugLogA("Broadcast ACK");
-	ProtoBroadcastAck(par->hContact, ACKTYPE_MESSAGE, par->msg ? ACKRESULT_FAILED : ACKRESULT_SUCCESS, (HANDLE)par->msgid, (LPARAM)par->msg);
-	debugLogA("Returning from thread");
-	delete par;
+	MEVENT res = CSuper::RecvMsg(hContact, pre);
+	if (pre->szMsgId)
+		m_arChatMarks.insert(new CChatMark(res, pre->szMsgId, (const char*)pre->lParam));
+	
+	return res;
 }
+
+////////////////////////////////////////////////////////////////////////////////////////
+// JabberSendMessage - sends a message
 
 static char PGP_PROLOG[] = "-----BEGIN PGP MESSAGE-----\r\n\r\n";
 static char PGP_EPILOG[] = "\r\n-----END PGP MESSAGE-----\r\n";
@@ -937,8 +913,7 @@ int CJabberProto::SendMsg(MCONTACT hContact, int unused_unknown, const char *psz
 {
 	char szClientJid[JABBER_MAX_JID_LEN];
 	if (!m_bJabberOnline || !GetClientJID(hContact, szClientJid, _countof(szClientJid))) {
-		TFakeAckParams *param = new TFakeAckParams(hContact, TranslateT("Protocol is offline or no JID"));
-		ForkThread(&CJabberProto::SendMessageAckThread, param);
+		ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_FAILED, 0, (LPARAM)TranslateT("Protocol is offline or no JID"));
 		return 1;
 	}
 
@@ -946,8 +921,7 @@ int CJabberProto::SendMsg(MCONTACT hContact, int unused_unknown, const char *psz
 		if (!OmemoCheckSession(hContact)) {
 			OmemoPutMessageToOutgoingQueue(hContact, unused_unknown, pszSrc);
 			int id = SerialNext();
-			TFakeAckParams *param = new TFakeAckParams(hContact, nullptr, id);
-			ForkThread(&CJabberProto::SendMessageAckThread, param);
+			ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_SUCCESS, (HANDLE)id);
 			return id;
 		}
 	}
@@ -955,7 +929,7 @@ int CJabberProto::SendMsg(MCONTACT hContact, int unused_unknown, const char *psz
 	int isEncrypted, id = SerialNext();
 	if (!strncmp(pszSrc, PGP_PROLOG, mir_strlen(PGP_PROLOG))) {
 		const char *szEnd = strstr(pszSrc, PGP_EPILOG);
-		char *tempstring = (char*)alloca(mir_strlen(pszSrc) + 2);
+		char *tempstring = (char *)alloca(mir_strlen(pszSrc) + 2);
 		size_t nStrippedLength = mir_strlen(pszSrc) - mir_strlen(PGP_PROLOG) - (szEnd ? mir_strlen(szEnd) : 0) + 1;
 		strncpy_s(tempstring, nStrippedLength, pszSrc + mir_strlen(PGP_PROLOG), _TRUNCATE);
 		tempstring[nStrippedLength] = 0;
@@ -975,8 +949,7 @@ int CJabberProto::SendMsg(MCONTACT hContact, int unused_unknown, const char *psz
 	if (m_bUseOMEMO && OmemoIsEnabled(hContact) && !mir_strcmp(msgType, "chat")) {
 		// TODO: check if message encrypted for at least one session and return error if not
 		if (!OmemoEncryptMessage(m, pszSrc, hContact)) {
-			TFakeAckParams *param = new TFakeAckParams(hContact, TranslateT("No valid OMEMO session exists"));
-			ForkThread(&CJabberProto::SendMessageAckThread, param);
+			ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_FAILED, 0, (LPARAM)TranslateT("No valid OMEMO session exists"));
 			return 0;
 		}
 	}
@@ -986,7 +959,7 @@ int CJabberProto::SendMsg(MCONTACT hContact, int unused_unknown, const char *psz
 			m << XCHILD("body", pszSrc);
 		else {
 			m << XCHILD("body", "[This message is encrypted.]");
-			m << XCHILD("x", pszSrc) << XATTR("xmlns", "jabber:x:encrypted");
+			m << XCHILDNS("x", "jabber:x:encrypted");
 		}
 	}
 
@@ -1004,37 +977,34 @@ int CJabberProto::SendMsg(MCONTACT hContact, int unused_unknown, const char *psz
 
 	m << XATTR("to", szClientJid);
 
+	bool bSendReceipt = (m_bMsgAck || getByte(hContact, "MsgAck", false));
+	if (bSendReceipt) {
+		m << XCHILDNS("request", JABBER_FEAT_MESSAGE_RECEIPTS);
+		m << XCHILDNS("markable", JABBER_FEAT_CHAT_MARKERS);
+	}
+
 	if (
 		// if message delivery check disabled by entity caps manager
 		(jcb & JABBER_CAPS_MESSAGE_EVENTS_NO_DELIVERY) ||
 		// if client knows nothing about delivery
-		!(jcb & (JABBER_CAPS_MESSAGE_EVENTS | JABBER_CAPS_MESSAGE_RECEIPTS)) ||
+		!(jcb & JABBER_CAPS_MESSAGE_RECEIPTS) ||
 		// if message sent to groupchat
 		!mir_strcmp(msgType, "groupchat") ||
 		// if message delivery check disabled in settings
-		!m_bMsgAck || !getByte(hContact, "MsgAck", true))
+		!bSendReceipt)
 	{
-		if (mir_strcmp(msgType, "groupchat")) {
-			id = SerialNext();
+		if (mir_strcmp(msgType, "groupchat"))
 			XmlAddAttrID(m, id);
-		}
+
 		m_ThreadInfo->send(m);
 
-		ForkThread(&CJabberProto::SendMessageAckThread, new TFakeAckParams(hContact, nullptr, id));
+		ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_SUCCESS, (HANDLE)id);
 	}
 	else {
 		XmlAddAttrID(m, id);
-
-		// message receipts XEP priority
-		if (jcb & JABBER_CAPS_MESSAGE_RECEIPTS)
-			m << XCHILDNS("request", JABBER_FEAT_MESSAGE_RECEIPTS);
-		else if (jcb & JABBER_CAPS_MESSAGE_EVENTS) {
-			TiXmlElement *x = m << XCHILDNS("x", JABBER_FEAT_MESSAGE_EVENTS);
-			x << XCHILD("delivered"); x << XCHILD("offline");
-		}
-
 		m_ThreadInfo->send(m);
 	}
+
 	return id;
 }
 
@@ -1162,7 +1132,7 @@ void __cdecl CJabberProto::GetAwayMsgThread(void *param)
 		}
 	}
 
-	ProtoBroadcastAck(hContact, ACKTYPE_AWAYMSG, ACKRESULT_SUCCESS, (HANDLE)1, 0);
+	ProtoBroadcastAck(hContact, ACKTYPE_AWAYMSG, ACKRESULT_SUCCESS, (HANDLE)1);
 }
 
 HANDLE CJabberProto::GetAwayMsg(MCONTACT hContact)
@@ -1251,21 +1221,6 @@ int CJabberProto::UserIsTyping(MCONTACT hContact, int type)
 			break;
 		case PROTOTYPE_SELFTYPING_ON:
 			m << XCHILDNS("composing", JABBER_FEAT_CHATSTATES);
-			m_ThreadInfo->send(m);
-			break;
-		}
-	}
-	else if (jcb & JABBER_CAPS_MESSAGE_EVENTS) {
-		TiXmlElement *x = m << XCHILDNS("x", JABBER_FEAT_MESSAGE_EVENTS);
-		if (item->messageEventIdStr != nullptr)
-			x << XCHILD("id", item->messageEventIdStr);
-
-		switch (type) {
-		case PROTOTYPE_SELFTYPING_OFF:
-			m_ThreadInfo->send(m);
-			break;
-		case PROTOTYPE_SELFTYPING_ON:
-			x << XCHILD("composing");
 			m_ThreadInfo->send(m);
 			break;
 		}

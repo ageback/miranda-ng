@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -63,6 +63,14 @@ bool TSAPI IsCustomEvent(int eventType)
 		return false;
 
 	return true;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+void TSAPI AddUnreadContact(MCONTACT hContact)
+{
+	if (!g_arUnreadWindows.find(HANDLE(hContact)))
+		g_arUnreadWindows.insert(HANDLE(hContact));
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -213,7 +221,7 @@ void TSAPI HandleIconFeedback(CMsgDialog *dat, HICON iIcon)
 	TCITEM item = {};
 
 	if (iIcon == (HICON)-1) { // restore status image
-		if (dat->m_dwFlags & MWF_ERRORSTATE)
+		if (dat->m_bErrorState)
 			dat->m_hTabIcon = PluginConfig.g_iconErr;
 		else
 			dat->m_hTabIcon = dat->m_hTabStatusIcon;
@@ -222,10 +230,10 @@ void TSAPI HandleIconFeedback(CMsgDialog *dat, HICON iIcon)
 
 	item.iImage = 0;
 	item.mask = TCIF_IMAGE;
-	if (dat->m_pContainer->m_dwFlags & CNT_SIDEBAR)
+	if (dat->m_pContainer->m_flags.m_bSideBar)
 		dat->m_pContainer->m_pSideBar->updateSession(dat);
 	else
-		TabCtrl_SetItem(GetDlgItem(dat->m_pContainer->m_hwnd, IDC_MSGTABS), dat->m_iTabID, &item);
+		TabCtrl_SetItem(dat->m_pContainer->m_hwndTabs, dat->m_iTabID, &item);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

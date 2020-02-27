@@ -1,4 +1,5 @@
 /*
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (C) 2006 Ricardo Pescuma Domenecci, Nightwish
 
 This is free software; you can redistribute it and/or
@@ -71,7 +72,7 @@ CacheNode* FindAvatarInCache(MCONTACT hContact, bool add, bool findAny)
 	if (g_shutDown)
 		return nullptr;
 
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto == nullptr || !g_plugin.getByte(szProto, 1))
 		return nullptr;
 
@@ -144,7 +145,7 @@ void NotifyMetaAware(MCONTACT hContact, CacheNode *node, AVATARCACHEENTRY *ace)
 			wcsncpy_s(cacn.filename, node->szFilename, _TRUNCATE);
 
 			// Get hash
-			char *szProto = GetContactProto(hContact);
+			char *szProto = Proto_GetBaseAccountName(hContact);
 			if (szProto != nullptr) {
 				DBVARIANT dbv = { 0 };
 				if (!db_get_s(hContact, szProto, "AvatarHash", &dbv)) {
@@ -251,7 +252,7 @@ void PicLoader(LPVOID)
 
 			int result = CreateAvatarInCache(node->hContact, &ace_temp, nullptr);
 			if (result == -2) {
-				char *szProto = GetContactProto(node->hContact);
+				char *szProto = Proto_GetBaseAccountName(node->hContact);
 				if (szProto == nullptr || Proto_NeedDelaysForAvatars(szProto))
 					QueueAdd(node->hContact);
 				else if (FetchAvatarFor(node->hContact, szProto) == GAIR_SUCCESS) // Try to create again

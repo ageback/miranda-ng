@@ -1,7 +1,7 @@
 /*
 Chat module plugin for Miranda IM
 
-Copyright 2000-12 Miranda IM, 2012-19 Miranda NG team,
+Copyright 2000-12 Miranda IM, 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -558,7 +558,9 @@ MIR_APP_DLL(BOOL) Chat_DoEventHook(SESSION_INFO *si, int iType, const USERINFO *
 	if (si == nullptr)
 		return FALSE;
 
-	GCHOOK gch = { si->pszModule, si->ptszID, iType };
+	GCHOOK gch = {};
+	gch.iType = iType;
+	gch.si = si;
 	if (pUser != nullptr) {
 		gch.ptszUID = pUser->pszUID;
 		gch.ptszNick = pUser->pszNick;
@@ -567,7 +569,6 @@ MIR_APP_DLL(BOOL) Chat_DoEventHook(SESSION_INFO *si, int iType, const USERINFO *
 
 	gch.ptszText = (LPTSTR)pszText;
 	gch.dwData = dwItem;
-	gch.pDlg = si->pDlg;
 	NotifyEventHooks(hevSendEvent, 0, (WPARAM)&gch);
 	return TRUE;
 }

@@ -2,7 +2,7 @@
 
 Jabber Protocol Plugin for Miranda NG
 
-Copyright (c) 2018-19 Miranda NG team
+Copyright (c) 2018-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -276,7 +276,7 @@ void strm_mgmt::FinishLoginProcess(ThreadData *info)
 			<< XCHILD("resource", info->resource));
 
 		if (proto->m_AuthMechs.isSessionAvailable)
-			info->bIsSessionAvailable = TRUE;
+			info->bIsSessionAvailable = true;
 
 		return;
 	}

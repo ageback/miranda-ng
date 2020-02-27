@@ -394,7 +394,7 @@ INT_PTR HistoryWindow::DeleteAllUserHistory(WPARAM hContact, LPARAM)
 	MEVENT hDbEvent = db_event_last(hContact);
 	while (hDbEvent != NULL) {
 		MEVENT hPrevEvent = db_event_prev(hContact, hDbEvent);
-		hDbEvent = (db_event_delete(hContact, hDbEvent) == 0) ? hPrevEvent : NULL;
+		hDbEvent = (db_event_delete(hDbEvent) == 0) ? hPrevEvent : NULL;
 	}
 	db_set_safety_mode(TRUE);
 
@@ -1245,7 +1245,7 @@ void HistoryWindow::ReplaceIcons(HWND hwndDlg, int selStart, BOOL isSent)
 	SMADD_RICHEDIT3 smadd = { 0 };
 	smadd.cbSize = sizeof(smadd);
 	smadd.hwndRichEditControl = hwndDlg;
-	smadd.Protocolname = GetContactProto(m_hContact);
+	smadd.Protocolname = Proto_GetBaseAccountName(m_hContact);
 	smadd.hContact = m_hContact;
 	smadd.flags = isSent ? SAFLRE_OUTGOING : 0;
 	if (selStart > 0)

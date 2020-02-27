@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -162,7 +162,7 @@ bool CMsgDialog::DM_GenericHotkeysCheck(MSG *message)
 		return true;
 
 	case TABSRMM_HK_CLOSE_OTHER:
-		CloseOtherTabs(GetDlgItem(m_pContainer->m_hwnd, IDC_MSGTABS), *this);
+		CloseOtherTabs(m_pContainer->m_hwndTabs, *this);
 		return true;
 	}
 	return false;
@@ -257,8 +257,8 @@ LRESULT CMsgDialog::DM_MsgWindowCmdHandler(UINT cmd, WPARAM wParam, LPARAM lPara
 
 			GetWindowRect(GetDlgItem(m_hwnd, IDC_PROTOCOL), &rc);
 
-			CheckMenuItem(submenu, ID_MODE_GLOBAL, MF_BYCOMMAND | (!(m_dwFlagsEx & MWF_SHOW_SPLITTEROVERRIDE) ? MF_CHECKED : MF_UNCHECKED));
-			CheckMenuItem(submenu, ID_MODE_PRIVATE, MF_BYCOMMAND | (m_dwFlagsEx & MWF_SHOW_SPLITTEROVERRIDE ? MF_CHECKED : MF_UNCHECKED));
+			CheckMenuItem(submenu, ID_MODE_GLOBAL, MF_BYCOMMAND | (!m_bSplitterOverride ? MF_CHECKED : MF_UNCHECKED));
+			CheckMenuItem(submenu, ID_MODE_PRIVATE, MF_BYCOMMAND | (m_bSplitterOverride ? MF_CHECKED : MF_UNCHECKED));
 
 			// formatting menu..
 			CheckMenuItem(submenu, ID_GLOBAL_BBCODE, MF_BYCOMMAND | ((PluginConfig.m_SendFormat) ? MF_CHECKED : MF_UNCHECKED));
@@ -271,7 +271,7 @@ LRESULT CMsgDialog::DM_MsgWindowCmdHandler(UINT cmd, WPARAM wParam, LPARAM lPara
 			iSelection = TrackPopupMenu(submenu, TPM_RETURNCMD, rc.left, rc.bottom, 0, m_hwnd, nullptr);
 			switch (iSelection) {
 			case ID_MODE_GLOBAL:
-				m_dwFlagsEx &= ~(MWF_SHOW_SPLITTEROVERRIDE);
+				m_bSplitterOverride = false;
 				db_set_b(m_hContact, SRMSGMOD_T, "splitoverride", 0);
 				LoadSplitter();
 				AdjustBottomAvatarDisplay();
@@ -280,7 +280,7 @@ LRESULT CMsgDialog::DM_MsgWindowCmdHandler(UINT cmd, WPARAM wParam, LPARAM lPara
 				break;
 			
 			case ID_MODE_PRIVATE:
-				m_dwFlagsEx |= MWF_SHOW_SPLITTEROVERRIDE;
+				m_bSplitterOverride = true;
 				db_set_b(m_hContact, SRMSGMOD_T, "splitoverride", 1);
 				LoadSplitter();
 				AdjustBottomAvatarDisplay();
@@ -327,32 +327,10 @@ LRESULT CMsgDialog::DM_MsgWindowCmdHandler(UINT cmd, WPARAM wParam, LPARAM lPara
 
 	case IDC_TOGGLETOOLBAR:
 		if (lParam == 1)
-			ApplyContainerSetting(m_pContainer, CNT_NOMENUBAR, m_pContainer->m_dwFlags & CNT_NOMENUBAR ? 0 : 1, true);
+			m_pContainer->m_flags.m_bNoMenuBar = !m_pContainer->m_flags.m_bNoMenuBar;
 		else
-			ApplyContainerSetting(m_pContainer, CNT_HIDETOOLBAR, m_pContainer->m_dwFlags & CNT_HIDETOOLBAR ? 0 : 1, true);
-		break;
-
-	case IDC_INFOPANELMENU:
-		submenu = GetSubMenu(PluginConfig.g_hMenuContext, 7);
-		GetWindowRect(GetDlgItem(m_hwnd, IDC_NAME), &rc);
-		{
-			bool bIsFavorite = M.IsFavorite(m_hContact);
-			EnableMenuItem(submenu, ID_FAVORITES_ADDCONTACTTOFAVORITES, !bIsFavorite ? MF_ENABLED : MF_GRAYED);
-			EnableMenuItem(submenu, ID_FAVORITES_REMOVECONTACTFROMFAVORITES, bIsFavorite ? MF_ENABLED : MF_GRAYED);
-		}
-		iSelection = TrackPopupMenu(submenu, TPM_RETURNCMD, rc.left, rc.bottom, 0, m_hwnd, nullptr);
-
-		switch (iSelection) {
-		case ID_FAVORITES_ADDCONTACTTOFAVORITES:
-			M.SetFavorite(m_hContact, 1);
-			AddContactToFavorites(m_hContact, m_cache->getNick(), m_cache->getProto(), m_wszStatus, m_wStatus, Skin_LoadProtoIcon(m_cache->getProto(), m_cache->getStatus()), 1, PluginConfig.g_hMenuFavorites);
-			break;
-		
-		case ID_FAVORITES_REMOVECONTACTFROMFAVORITES:
-			M.SetFavorite(m_hContact, 0);
-			DeleteMenu(PluginConfig.g_hMenuFavorites, m_hContact, MF_BYCOMMAND);
-			break;
-		}
+			m_pContainer->m_flags.m_bHideToolbar = !m_pContainer->m_flags.m_bHideToolbar;
+		m_pContainer->ApplySetting(true);
 		break;
 
 	case IDC_SENDMENU:
@@ -632,7 +610,7 @@ void CMsgDialog::DM_SetDBButtonStates()
 				continue;
 			}
 			if (buttonItem->dwFlags & BUTTON_ISCONTACTDBACTION)
-				szModule = GetContactProto(m_hContact);
+				szModule = Proto_GetBaseAccountName(m_hContact);
 			hFinalContact = m_hContact;
 		}
 		else hFinalContact = 0;
@@ -660,11 +638,11 @@ void CMsgDialog::DM_SetDBButtonStates()
 
 void CMsgDialog::DM_ScrollToBottom(WPARAM wParam, LPARAM lParam)
 {
-	if (m_dwFlagsEx & MWF_SHOW_SCROLLINGDISABLED)
+	if (m_bScrollingDisabled)
 		return;
 
 	if (IsIconic(m_pContainer->m_hwnd))
-		m_dwFlags |= MWF_DEFERREDSCROLL;
+		m_bDeferredScroll = true;
 
 	if (m_iLogMode == 0)
 		((CLogWindow *)m_pLog)->ScrollToBottom(wParam != 0, lParam != 0);
@@ -702,12 +680,12 @@ void CMsgDialog::DM_UpdateLastMessage() const
 	else {
 		SendMessage(m_pContainer->m_hwndStatus, SB_SETICON, 0, 0);
 
-		if (m_pContainer->m_dwFlags & CNT_UINSTATUSBAR)
+		if (m_pContainer->m_flags.m_bUinStatusBar)
 			mir_snwprintf(szBuf, L"UID: %s", m_cache->getUIN());
 		else if (m_lastMessage) {
 			wchar_t date[64], time[64];
 			TimeZone_PrintTimeStamp(nullptr, m_lastMessage, L"d", date, _countof(date), 0);
-			if (m_pContainer->m_dwFlags & CNT_UINSTATUSBAR && mir_wstrlen(date) > 6)
+			if (m_pContainer->m_flags.m_bUinStatusBar && mir_wstrlen(date) > 6)
 				date[mir_wstrlen(date) - 5] = 0;
 			TimeZone_PrintTimeStamp(nullptr, m_lastMessage, L"t", time, _countof(time), 0);
 			mir_snwprintf(szBuf, TranslateT("Last received: %s at %s"), date, time);
@@ -756,21 +734,11 @@ LRESULT CMsgDialog::DM_MouseWheelHandler(WPARAM wParam, LPARAM lParam)
 	POINT pt;
 	GetCursorPos(&pt);
 
-	RECT rc, rc1;
+	RECT rc;
 	GetWindowRect(m_message.GetHwnd(), &rc);
 	if (PtInRect(&rc, pt))
 		return 1;
 
-	if (m_pContainer->m_dwFlags & CNT_SIDEBAR) {
-		GetWindowRect(GetDlgItem(m_pContainer->m_hwnd, IDC_SIDEBARUP), &rc);
-		GetWindowRect(GetDlgItem(m_pContainer->m_hwnd, IDC_SIDEBARDOWN), &rc1);
-		rc.bottom = rc1.bottom;
-		if (PtInRect(&rc, pt)) {
-			short amount = (short)(HIWORD(wParam));
-			SendMessage(m_pContainer->m_hwnd, WM_COMMAND, MAKELONG(amount > 0 ? IDC_SIDEBARUP : IDC_SIDEBARDOWN, 0), IDC_SRMM_MESSAGE);
-			return 0;
-		}
-	}
 	if (isChat()) {					// scroll nick list by just hovering it
 		RECT rcNicklist;
 		GetWindowRect(m_nickList.GetHwnd(), &rcNicklist);
@@ -794,9 +762,8 @@ LRESULT CMsgDialog::DM_MouseWheelHandler(WPARAM wParam, LPARAM lParam)
 		return 0;
 	}
 
-	HWND hwndTab = GetDlgItem(m_pContainer->m_hwnd, IDC_MSGTABS);
-	if (GetTabItemFromMouse(hwndTab, &pt) != -1) {
-		SendMessage(hwndTab, WM_MOUSEWHEEL, wParam, -1);
+	if (GetTabItemFromMouse(m_pContainer->m_hwndTabs, &pt) != -1) {
+		SendMessage(m_pContainer->m_hwndTabs, WM_MOUSEWHEEL, wParam, -1);
 		return 0;
 	}
 	return 1;
@@ -893,10 +860,10 @@ void CMsgDialog::DM_NotifyTyping(int mode)
 	CallService(MS_PROTO_SELFISTYPING, hContact, m_nTypeMode);
 }
 
-void CMsgDialog::DM_OptionsApplied(WPARAM, LPARAM lParam)
+void CMsgDialog::DM_OptionsApplied(bool bRemakeLog)
 {
 	m_szMicroLf[0] = 0;
-	if (!(m_pContainer->m_theme.isPrivate)) {
+	if (!m_pContainer->m_theme.isPrivate) {
 		m_pContainer->LoadThemeDefaults();
 		m_dwFlags = m_pContainer->m_theme.dwFlags;
 	}
@@ -904,9 +871,8 @@ void CMsgDialog::DM_OptionsApplied(WPARAM, LPARAM lParam)
 	LoadLocalFlags();
 	m_hTimeZone = TimeZone_CreateByContact(m_hContact, nullptr, TZF_KNOWNONLY);
 
-	m_bShowUIElements = (m_pContainer->m_dwFlags & CNT_HIDETOOLBAR) == 0;
-
-	m_dwFlagsEx = M.GetByte(m_hContact, "splitoverride", 0) ? MWF_SHOW_SPLITTEROVERRIDE : 0;
+	m_bShowUIElements = (m_pContainer->m_flags.m_bHideToolbar) == 0;
+	m_bSplitterOverride = M.GetByte(m_hContact, "splitoverride", 0) != 0;
 	m_pPanel.getVisibility();
 
 	// small inner margins (padding) for the text areas
@@ -920,9 +886,9 @@ void CMsgDialog::DM_OptionsApplied(WPARAM, LPARAM lParam)
 	if (m_hwnd == m_pContainer->m_hwndActive)
 		SendMessage(m_pContainer->m_hwnd, WM_SIZE, 0, 0);
 	InvalidateRect(m_message.GetHwnd(), nullptr, FALSE);
-	if (!lParam) {
+	if (bRemakeLog) {
 		if (IsIconic(m_pContainer->m_hwnd))
-			m_dwFlags |= MWF_DEFERREDREMAKELOG;
+			m_bDeferredRemakeLog = true;
 		else
 			RemakeLog();
 	}
@@ -963,8 +929,8 @@ void CMsgDialog::DM_Typing(bool fForceOff)
 				m_pContainer->UpdateTitle(0);
 			else
 				m_pContainer->UpdateTitle(0, dat_active);
-			if (!(m_pContainer->m_dwFlags & CNT_NOFLASH) && PluginConfig.m_FlashOnMTN)
-				ReflashContainer(m_pContainer);
+			if (!m_pContainer->m_flags.m_bNoFlash && PluginConfig.m_FlashOnMTN)
+				m_pContainer->ReflashContainer();
 		}
 	}
 	else if (m_bShowTyping == 2) {
@@ -986,9 +952,9 @@ void CMsgDialog::DM_Typing(bool fForceOff)
 		}
 		if (IsIconic(hwndContainer) || !IsActive()) {
 			SetWindowText(hwndContainer, m_wszStatusBar);
-			m_pContainer->m_dwFlags |= CNT_NEED_UPDATETITLE;
-			if (!(m_pContainer->m_dwFlags & CNT_NOFLASH) && PluginConfig.m_FlashOnMTN)
-				ReflashContainer(m_pContainer);
+			m_pContainer->m_flags.m_bNeedsUpdateTitle = true;
+			if (!m_pContainer->m_flags.m_bNoFlash && PluginConfig.m_FlashOnMTN)
+				m_pContainer->ReflashContainer();
 		}
 
 		if (m_pContainer->m_hwndActive != m_hwnd) {
@@ -998,7 +964,7 @@ void CMsgDialog::DM_Typing(bool fForceOff)
 		}
 		else { // active tab may show icon if status bar is disabled
 			if (!hwndStatus) {
-				if (TabCtrl_GetItemCount(m_hwndParent) > 1 || !(m_pContainer->m_dwFlags & CNT_HIDETABS))
+				if (TabCtrl_GetItemCount(m_hwndParent) > 1 || !m_pContainer->m_flags.m_bHideTabs)
 					HandleIconFeedback(this, PluginConfig.g_IconTypingEvent);
 			}
 		}
@@ -1028,7 +994,7 @@ int CMsgDialog::DM_SplitterGlobalEvent(WPARAM wParam, LPARAM lParam)
 
 	LONG newPos;
 	if (wParam == 0 && lParam == 0) {
-		if ((m_dwFlagsEx & MWF_SHOW_SPLITTEROVERRIDE) && this != srcDat)
+		if (m_bSplitterOverride && this != srcDat)
 			return 0;
 
 		if (srcDat->isChat() == isChat())
@@ -1055,7 +1021,7 @@ int CMsgDialog::DM_SplitterGlobalEvent(WPARAM wParam, LPARAM lParam)
 		// for inactive sessions, delay the splitter repositioning until they become
 		// active (faster, avoid redraw/resize problems for minimized windows)
 		if (IsIconic(m_pContainer->m_hwnd) || m_pContainer->m_hwndActive != m_hwnd) {
-			m_dwFlagsEx |= MWF_EX_DELAYEDSPLITTER;
+			m_bDelayedSplitter = true;
 			m_wParam = newPos;
 			m_lParam = PluginConfig.lastSPlitterPos.lParam;
 			return 0;
@@ -1075,9 +1041,9 @@ int CMsgDialog::DM_SplitterGlobalEvent(WPARAM wParam, LPARAM lParam)
 
 void CMsgDialog::DM_AddDivider()
 {
-	if (!(m_dwFlags & MWF_DIVIDERSET) && PluginConfig.m_bUseDividers) {
+	if (!m_bDividerSet && PluginConfig.m_bUseDividers) {
 		if (GetWindowTextLength(m_pLog->GetHwnd()) > 0)
-			m_dwFlags |= MWF_DIVIDERWANTED | MWF_DIVIDERSET;
+			m_bDividerSet = m_bDividerWanted = true;
 	}
 }
 
@@ -1133,7 +1099,7 @@ void CMsgDialog::DM_EventAdded(WPARAM hContact, LPARAM lParam)
 	m_cache->updateStats(TSessionStats::UPDATE_WITH_LAST_RCV, 0);
 
 	if (hDbEvent != m_hDbEventFirst) {
-		if (!(m_dwFlagsEx & MWF_SHOW_SCROLLINGDISABLED))
+		if (!m_bScrollingDisabled)
 			StreamEvents(hDbEvent, 1, 1);
 		else {
 			if (m_iNextQueuedEvent >= m_iEventQueueSize) {
@@ -1183,7 +1149,7 @@ void CMsgDialog::DM_EventAdded(WPARAM hContact, LPARAM lParam)
 					ShowWindow(m_pContainer->m_hwndActive, SW_HIDE);
 					m_pContainer->m_hwndActive = m_hwnd;
 					m_pContainer->UpdateTitle(m_hContact);
-					m_pContainer->m_dwFlags |= CNT_DEFERREDTABSELECT;
+					m_pContainer->m_flags.m_bDeferredTabSelect = true;
 				}
 			}
 		}
@@ -1192,10 +1158,10 @@ void CMsgDialog::DM_EventAdded(WPARAM hContact, LPARAM lParam)
 	// flash window if it is not focused
 	if (!bDisableNotify && !bIsStatusChangeEvent)
 		if (!IsActive() && !(dbei.flags & DBEF_SENT)) {
-			if (!(m_pContainer->m_dwFlags & CNT_NOFLASH) && !m_pContainer->IsActive())
-				FlashContainer(m_pContainer, 1, 0);
+			if (!m_pContainer->m_flags.m_bNoFlash && !m_pContainer->IsActive())
+				m_pContainer->FlashContainer(1, 0);
 			m_pContainer->SetIcon(this, Skin_LoadIcon(SKINICON_EVENT_MESSAGE));
-			m_pContainer->m_dwFlags |= CNT_NEED_UPDATETITLE;
+			m_pContainer->m_flags.m_bNeedsUpdateTitle = true;
 		}
 
 	// play a sound
@@ -1235,7 +1201,7 @@ void CMsgDialog::DM_HandleAutoSizeRequest(REQRESIZE* rr)
 		iNewHeight = (cy - panelHeight) / 2;
 
 	m_dynaSplitter = iNewHeight - DPISCALEY_S(2);
-	if (m_pContainer->m_dwFlags & CNT_BOTTOMTOOLBAR)
+	if (m_pContainer->m_flags.m_bBottomToolbar)
 		m_dynaSplitter += DPISCALEY_S(22);
 	m_iSplitterY = m_dynaSplitter + DPISCALEY_S(34);
 	DM_RecalcPictureSize();
@@ -1276,7 +1242,7 @@ void CMsgDialog::DrawStatusIcons(HDC hDC, const RECT &rc, int gap)
 				DrawIconEx(hDC, x, y, PluginConfig.g_buttonBarIcons[ICON_DEFAULT_SOUNDS],
 					PluginConfig.m_smcxicon, PluginConfig.m_smcyicon, 0, nullptr, DI_NORMAL);
 
-				DrawIconEx(hDC, x, y, m_pContainer->m_dwFlags & CNT_NOSOUND ?
+				DrawIconEx(hDC, x, y, m_pContainer->m_flags.m_bNoSound ?
 					PluginConfig.g_iconOverlayDisabled : PluginConfig.g_iconOverlayEnabled,
 					PluginConfig.m_smcxicon, PluginConfig.m_smcyicon, 0, nullptr, DI_NORMAL);
 			}
@@ -1329,24 +1295,18 @@ void CMsgDialog::CheckStatusIconClick(POINT pt, const RECT &rc, int gap, int cod
 		if (sid->dwId == MSG_ICON_SOUND && code != NM_RCLICK) {
 			if (GetKeyState(VK_SHIFT) & 0x8000) {
 				for (TContainerData *p = pFirstContainer; p; p = p->pNext) {
-					p->m_dwFlags = ((m_pContainer->m_dwFlags & CNT_NOSOUND) ? p->m_dwFlags | CNT_NOSOUND : p->m_dwFlags & ~CNT_NOSOUND);
+					p->m_flags.m_bNoSound = m_pContainer->m_flags.m_bNoSound;
 					InvalidateRect(m_pContainer->m_hwndStatus, nullptr, TRUE);
 				}
 			}
 			else {
-				m_pContainer->m_dwFlags ^= CNT_NOSOUND;
+				m_pContainer->m_flags.m_bNoSound = !m_pContainer->m_flags.m_bNoSound;
 				InvalidateRect(m_pContainer->m_hwndStatus, nullptr, TRUE);
 			}
 		}
 		else if (sid->dwId == MSG_ICON_UTN && code != NM_RCLICK && (!isChat() || m_si->iType == GCW_PRIVMESS)) {
 			SendMessage(m_pContainer->m_hwndActive, WM_COMMAND, IDC_SELFTYPING, 0);
 			InvalidateRect(m_pContainer->m_hwndStatus, nullptr, TRUE);
-		}
-		else if (sid->dwId == MSG_ICON_SESSION) {
-			if (code == NM_CLICK)
-				PostMessage(PluginConfig.g_hwndHotkeyHandler, DM_TRAYICONNOTIFY, 101, WM_LBUTTONUP);
-			else if (code == NM_RCLICK)
-				PostMessage(PluginConfig.g_hwndHotkeyHandler, DM_TRAYICONNOTIFY, 101, WM_RBUTTONUP);
 		}
 	}
 	else {
@@ -1365,7 +1325,7 @@ void CMsgDialog::DM_ErrorDetected(int type, int flag)
 	switch (type) {
 	case MSGERROR_CANCEL:
 	case MSGERROR_SENDLATER:
-		if (m_dwFlags & MWF_ERRORSTATE) {
+		if (m_bErrorState) {
 			m_cache->saveHistory();
 			if (type == MSGERROR_SENDLATER)
 				sendQueue->doSendLater(m_iCurrentQueueError, this); // to be implemented at a later time
@@ -1385,7 +1345,7 @@ void CMsgDialog::DM_ErrorDetected(int type, int flag)
 		break;
 
 	case MSGERROR_RETRY:
-		if (m_dwFlags & MWF_ERRORSTATE) {
+		if (m_bErrorState) {
 			int resent = 0;
 
 			m_cache->saveHistory();

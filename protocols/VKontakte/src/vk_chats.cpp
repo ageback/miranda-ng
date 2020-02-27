@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -182,26 +182,23 @@ void CVkProto::OnReceiveChatInfo(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pRe
 			}
 		}
 
-		auto T = cc->m_users.rev_iter();
-		for (auto &cu : T) {
+		for (auto &cu : cc->m_users.rev_iter()) {
 			if (!cu->m_bDel)
 				continue;
 
 			wchar_t wszId[20];
 			_itow(cu->m_uid, wszId, 10);
+			CMStringW wszNick(FORMAT, L"%s (%s)", cu->m_wszNick.get(), UserProfileUrl(cu->m_uid).c_str());
 
 			GCEVENT gce = { m_szModuleName, 0, GC_EVENT_PART };
 			gce.pszID.w = cc->m_wszId;
 			gce.pszUID.w = wszId;
 			gce.dwFlags = GCEF_NOTNOTIFY;
 			gce.time = time(0);
-			gce.pszNick.w = mir_wstrdup(CMStringW(FORMAT, L"%s (%s)",
-				cu->m_wszNick,
-				UserProfileUrl(cu->m_uid).c_str()
-			));
+			gce.pszNick.w = wszNick;
 			Chat_Event(&gce);
 
-			cc->m_users.remove(T.indexOf(&cu));
+			cc->m_users.removeItem(&cu);
 		}
 	}
 
@@ -453,12 +450,12 @@ int CVkProto::OnChatEvent(WPARAM, LPARAM lParam)
 	if (gch == nullptr)
 		return 0;
 
-	if (mir_strcmpi(gch->pszModule, m_szModuleName))
+	if (mir_strcmpi(gch->si->pszModule, m_szModuleName))
 		return 0;
 
-	CVkChatInfo *cc = GetChatById(gch->ptszID);
+	CVkChatInfo *cc = GetChatById(gch->si->ptszID);
 	if (cc == nullptr)
-		return 0;
+		return 1;
 
 	switch (gch->iType) {
 	case GC_USER_MESSAGE:
@@ -492,7 +489,7 @@ int CVkProto::OnChatEvent(WPARAM, LPARAM lParam)
 		NickMenuHook(cc, gch);
 		break;
 	}
-	return 0;
+	return 1;
 }
 
 void CVkProto::OnSendChatMsg(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pReq)

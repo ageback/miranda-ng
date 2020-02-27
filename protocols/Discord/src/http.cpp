@@ -1,5 +1,5 @@
 /*
-Copyright © 2016-19 Miranda NG team
+Copyright © 2016-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -25,6 +25,13 @@ void CDiscordProto::Push(AsyncHttpRequest *pReq, int iTimeout)
 		m_arHttpQueue.insert(pReq);
 	}
 	SetEvent(m_evRequestsQueue);
+}
+
+void CDiscordProto::SaveToken(const JSONNode &data)
+{
+	CMStringA szToken = data["token"].as_mstring();
+	if (!szToken.IsEmpty())
+		m_szTempToken = szToken.Detach();
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -54,13 +61,35 @@ AsyncHttpRequest::AsyncHttpRequest(CDiscordProto *ppro, int iRequestType, LPCSTR
 		ptrW text(json_write(pRoot));
 		pData = mir_utf8encodeW(text);
 		dataLength = (int)mir_strlen(pData);
+
+		AddHeader("Content-Type", "application/json");
 	}
-	AddHeader("Content-Type", "application/json");
 
 	m_pFunc = pFunc;
 	requestType = iRequestType;
 	m_iErrorCode = 0;
 	m_iReqNum = ::InterlockedIncrement(&g_reqNum);
+}
+
+JsonReply::JsonReply(NETLIBHTTPREQUEST *pReply)
+{
+	if (pReply == nullptr) {
+		m_errorCode = 500;
+		return;
+	}
+
+	m_errorCode = pReply->resultCode;
+	if (m_errorCode != 200)
+		return;
+
+	m_root = json_parse(pReply->pData);
+	if (m_root == nullptr)
+		m_errorCode = 500;
+}
+
+JsonReply::~JsonReply()
+{
+	json_delete(m_root);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

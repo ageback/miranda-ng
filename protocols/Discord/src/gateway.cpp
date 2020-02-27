@@ -1,5 +1,5 @@
 /*
-Copyright © 2016-19 Miranda NG team
+Copyright © 2016-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26,6 +26,7 @@ void CDiscordProto::GatewaySend(const JSONNode &pRoot)
 		return;
 
 	json_string szText = pRoot.write();
+	debugLogA("Gateway send: %s", szText.c_str());
 	WebSocket_Send(m_hGatewayConnection, szText.c_str(), szText.length());
 }
 
@@ -47,13 +48,15 @@ bool CDiscordProto::GatewayThreadWorker()
 		{ 0, 0 }
 	};
 
-	m_hGatewayConnection = WebSocket_Connect(m_hGatewayNetlibUser, m_szGateway + "/?encoding=json&v=6", hdrs);
-	if (m_hGatewayConnection == nullptr) {
+	auto *pReply = WebSocket_Connect(m_hGatewayNetlibUser, m_szGateway + "/?encoding=json&v=6", hdrs);
+	if (pReply == nullptr) {
 		debugLogA("Gateway connection failed, exiting");
 		return false;
 	}
 	
 	debugLogA("Gateway connection succeeded");
+	m_hGatewayConnection = pReply->nlc;
+	Netlib_FreeHttpRequest(pReply);
 
 	bool bExit = false;
 	int offset = 0;
@@ -243,16 +246,6 @@ void CDiscordProto::GatewaySendIdentify()
 
 	JSONNode root;
 	root << INT_PARAM("op", 2) << payload;
-	GatewaySend(root);
-}
-
-void CDiscordProto::GatewaySendGuildInfo(SnowFlake id)
-{
-	JSONNode payload(JSON_ARRAY); payload.set_name("d");
-	payload << INT64_PARAM("", id);
-
-	JSONNode root;
-	root << INT_PARAM("op", 12) << payload;
 	GatewaySend(root);
 }
 

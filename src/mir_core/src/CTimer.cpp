@@ -2,7 +2,7 @@
 
 Object UI extensions
 Copyright (c) 2008  Victor Pavlychko, George Hazan
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -25,11 +25,17 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 /////////////////////////////////////////////////////////////////////////////////////////
 // CTimer
 
-CTimer::CTimer(CDlgBase *wnd, int idEvent)
+CTimer::CTimer(CDlgBase *wnd, UINT_PTR idEvent)
 	: m_wnd(wnd), m_idEvent(idEvent)
 {
 	if (wnd)
 		wnd->AddTimer(this);
+}
+
+CTimer::~CTimer()
+{
+	if (m_wnd)
+		m_wnd->RemoveTimer(m_idEvent);
 }
 
 BOOL CTimer::OnTimer()
@@ -38,12 +44,47 @@ BOOL CTimer::OnTimer()
 	return FALSE;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
 void CTimer::Start(int elapse)
 {
-	SetTimer(m_wnd->GetHwnd(), m_idEvent, elapse, nullptr);
+	::SetTimer(m_wnd->GetHwnd(), m_idEvent, elapse, nullptr);
 }
 
 void CTimer::Stop()
 {
-	KillTimer(m_wnd->GetHwnd(), m_idEvent);
+	::KillTimer(m_wnd->GetHwnd(), m_idEvent);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+struct TStartParam
+{
+	CTimer *pTimer;
+	int period;
+};
+
+static INT_PTR CALLBACK stubStart(void *param)
+{
+	auto *p = (TStartParam *)param;
+	return ::SetTimer(p->pTimer->GetHwnd(), p->pTimer->GetEventId(), p->period, nullptr);
+}
+
+void CTimer::StartSafe(int elapse)
+{
+	TStartParam param = { this, elapse };
+	CallFunctionSync(stubStart, &param);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+static INT_PTR CALLBACK stubStop(void *param)
+{
+	auto *p = (CTimer*)param;
+	return ::KillTimer(p->GetHwnd(), p->GetEventId());
+}
+
+void CTimer::StopSafe()
+{
+	CallFunctionSync(stubStop, this);
 }

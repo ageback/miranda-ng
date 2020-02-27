@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -248,7 +248,7 @@ MIR_CORE_DLL(HANDLE) TimeZone_CreateByContact(MCONTACT hContact, LPCSTR szModule
 
 	signed char timezone = (signed char)db_get_b(hContact, szModule, "Timezone", -1);
 	if (timezone == -1) {
-		char *szProto = GetContactProto(hContact);
+		char *szProto = Proto_GetBaseAccountName(hContact);
 		if (!db_get_ws(hContact, szProto, "TzName", &dbv)) {
 			HANDLE res = TimeZone_CreateByName(dbv.pwszVal, dwFlags);
 			db_free(&dbv);

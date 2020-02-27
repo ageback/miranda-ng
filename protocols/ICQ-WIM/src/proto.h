@@ -6,7 +6,7 @@
 // Copyright © 2001-2002 Jon Keating, Richard Hughes
 // Copyright © 2002-2004 Martin Öberg, Sam Kothari, Robert Rainwater
 // Copyright © 2004-2010 Joe Kucera, George Hazan
-// Copyright © 2012-2019 Miranda NG team
+// Copyright © 2012-2020 Miranda NG team
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -35,6 +35,7 @@
 
 #define ICQ_APP_ID "ic1nmMjqg7Yu-0hL"
 #define ICQ_API_SERVER "https://u.icq.net/wim"
+#define ICQ_FILE_SERVER "https://u.icq.net/files/api/v1.1"
 #define ICQ_FAKE_EVENT_ID 0xBABAEB
 #define ICQ_ROBUST_SERVER "https://u.icq.net/rapi"
 
@@ -126,6 +127,24 @@ struct IcqConn
 
 struct IcqFileTransfer : public MZeroedObject
 {
+	// create an object for receiving
+	IcqFileTransfer(MCONTACT hContact, const char *pszUrl) :
+		m_szHost(pszUrl)
+	{
+		pfts.hContact = hContact;
+		pfts.totalFiles = 1;
+		pfts.flags = PFTS_UNICODE | PFTS_RECEIVING;
+
+		ptrW pwszFileName(mir_utf8decodeW(pszUrl));
+		if (pwszFileName == nullptr)
+			pwszFileName = mir_a2u(pszUrl);
+
+		const wchar_t *p = wcsrchr(pwszFileName, '/');
+		m_wszFileName = (p == nullptr) ? pwszFileName : p + 1;
+		m_wszShortName = m_wszFileName;
+	}
+
+	// create an object for sending
 	IcqFileTransfer(MCONTACT hContact, const wchar_t *pwszFileName) :
 		m_wszFileName(pwszFileName)
 	{
@@ -177,6 +196,32 @@ struct IcqFileTransfer : public MZeroedObject
 
 class CIcqProto : public PROTO<CIcqProto>
 {
+	class CIcqProtoImpl
+	{
+		friend class CIcqProto;
+
+		CIcqProto &m_proto;
+		CTimer m_heartBeat, m_markRead;
+		
+		void OnHeartBeat(CTimer *) {
+			m_proto.CheckStatus();
+		}
+
+		void OnMarkRead(CTimer *pTimer) {
+			m_proto.SendMarkRead();
+			pTimer->Stop();
+		}
+
+		CIcqProtoImpl(CIcqProto &pro) :
+			m_proto(pro),
+			m_markRead(Miranda_GetSystemWindow(), UINT_PTR(this)),
+			m_heartBeat(Miranda_GetSystemWindow(), UINT_PTR(this) + 1)
+		{
+			m_markRead.OnEvent = Callback(this, &CIcqProtoImpl::OnMarkRead);
+			m_heartBeat.OnEvent = Callback(this, &CIcqProtoImpl::OnHeartBeat);
+		}
+	} m_impl;
+
 	friend struct CIcqRegistrationDlg;
 	friend class CGroupchatInviteDlg;
 	friend class CEditIgnoreListDlg;
@@ -195,6 +240,7 @@ class CIcqProto : public PROTO<CIcqProto>
 	void      EmailNotification(const wchar_t *pwszText);
 	void      GetPermitDeny();
 	wchar_t*  GetUIN(MCONTACT hContact);
+	void      MarkAsRead(MCONTACT hContact);
 	void      MoveContactToGroup(MCONTACT hContact, const wchar_t *pwszGroup, const wchar_t *pwszNewGroup);
 	bool      RetrievePassword();
 	void      RetrieveUserHistory(MCONTACT, __int64 startMsgId, __int64 endMsgId = -1);
@@ -215,44 +261,47 @@ class CIcqProto : public PROTO<CIcqProto>
 
 	mir_cs    m_csMarkReadQueue;
 	LIST<IcqCacheItem> m_arMarkReadQueue;
-	static    void CALLBACK MarkReadTimerProc(HWND hwnd, UINT, UINT_PTR id, DWORD);
+	void      SendMarkRead();
 
 	AsyncHttpRequest* UserInfoRequest(MCONTACT);
 
 	__int64   getId(MCONTACT hContact, const char *szSetting);
 	void      setId(MCONTACT hContact, const char *szSetting, __int64 iValue);
 
-	void      OnAddBuddy(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnAddClient(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnCheckPassword(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnCheckPhone(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnFetchEvents(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnGetChatInfo(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnGetPermitDeny(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnGetUserHistory(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnGetUserInfo(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnFileContinue(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnFileInit(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnLoginViaPhone(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnNormalizePhone(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnReceiveAvatar(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnSearchResults(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnSendMessage(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnStartSession(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
-	void      OnValidateSms(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
+	void      OnAddBuddy(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnAddClient(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnCheckPassword(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnCheckPhone(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnFetchEvents(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnFileContinue(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnFileInit(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnFileInfo(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnFileRecv(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnGenToken(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnGetChatInfo(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnGetPermitDeny(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnGetUserHistory(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnGetUserInfo(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnLoginViaPhone(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnNormalizePhone(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnReceiveAvatar(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnSearchResults(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnSendMessage(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnStartSession(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
+	void      OnValidateSms(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest *pReq);
 
-	void      ProcessBuddyList(const JSONNode&);
-	void      ProcessDiff(const JSONNode&);
-	void      ProcessEvent(const JSONNode&);
-	void      ProcessGroupChat(const JSONNode&);
-	void      ProcessHistData(const JSONNode&);
-	void      ProcessImState(const JSONNode&);
-	void      ProcessMyInfo(const JSONNode&);
-	void      ProcessNotification(const JSONNode&);
-	void      ProcessPermissions(const JSONNode&);
-	void      ProcessPresence(const JSONNode&);
-	void      ProcessSessionEnd(const JSONNode&);
-	void      ProcessTyping(const JSONNode&);
+	void      ProcessBuddyList(const JSONNode &pRoot);
+	void      ProcessDiff(const JSONNode &pRoot);
+	void      ProcessEvent(const JSONNode &pRoot);
+	void      ProcessGroupChat(const JSONNode &pRoot);
+	void      ProcessHistData(const JSONNode &pRoot);
+	void      ProcessImState(const JSONNode &pRoot);
+	void      ProcessMyInfo(const JSONNode &pRoot);
+	void      ProcessNotification(const JSONNode &pRoot);
+	void      ProcessPermissions(const JSONNode &pRoot);
+	void      ProcessPresence(const JSONNode &pRoot);
+	void      ProcessSessionEnd(const JSONNode &pRoot);
+	void      ProcessTyping(const JSONNode &pRoot);
 
 	IcqConn   m_ConnPool[CONN_LAST];
 	CMStringA m_szPassword;
@@ -269,8 +318,6 @@ class CIcqProto : public PROTO<CIcqProto>
 	OBJLIST<IcqOwnMessage> m_arOwnIds;
 
 	OBJLIST<IcqGroup> m_arGroups;
-
-	CIcqDlgBase *m_pdlgEditIgnore;	
 
 	int       m_unreadEmails = -1;
 	CMStringA m_szMailBox;
@@ -359,16 +406,15 @@ class CIcqProto : public PROTO<CIcqProto>
 	int       GetInfo(MCONTACT hContact, int infoType) override;
 			    
 	HANDLE    SearchBasic(const wchar_t *id) override;
-			    
+
+	HANDLE    FileAllow(MCONTACT hContact, HANDLE hTransfer, const wchar_t *szPath) override;
+	int       FileCancel(MCONTACT hContact, HANDLE hTransfer) override;
+
 	HANDLE    SendFile(MCONTACT hContact, const wchar_t *szDescription, wchar_t **ppszFiles) override;
 	int       SendMsg(MCONTACT hContact, int flags, const char *msg) override;
 			    
 	int       SetApparentMode(MCONTACT hContact, int mode) override;
 	int       SetStatus(int iNewStatus) override;
-			    
-	HANDLE    GetAwayMsg(MCONTACT hContact) override;
-	int       RecvAwayMsg(MCONTACT hContact, int mode, PROTORECVEVENT *evt) override;
-	int       SetAwayMsg(int m_iStatus, const wchar_t *msg) override;
 			    
 	int       UserIsTyping(MCONTACT hContact, int type) override;
 			    
@@ -406,7 +452,6 @@ struct CMPlugin : public ACCPROTOPLUGIN<CIcqProto>
 	CMPlugin();
 
 	int Load() override;
-	int Unload() override;
 };
 
 #endif

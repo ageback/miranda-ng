@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -211,7 +211,7 @@ void ShowRoom(TContainerData *pContainer, SESSION_INFO *si)
 		return;
 
 	if (si->pDlg != nullptr) {
-		ActivateExistingTab(si->pDlg->m_pContainer, si->pDlg->GetHwnd());
+		si->pDlg->ActivateTab();
 		return;
 	}
 
@@ -255,19 +255,17 @@ void ShowRoom(TContainerData *pContainer, SESSION_INFO *si)
 	}
 	else wcsncpy_s(newcontactname, L"_U_", _TRUNCATE);
 
-	HWND hwndTab = GetDlgItem(pContainer->m_hwnd, IDC_MSGTABS);
-
 	// hide the active tab
 	if (pContainer->m_hwndActive)
 		ShowWindow(pContainer->m_hwndActive, SW_HIDE);
 
 	int iTabIndex_wanted = M.GetDword(hContact, "tabindex", pContainer->m_iChilds * 100);
-	int iCount = TabCtrl_GetItemCount(hwndTab);
+	int iCount = TabCtrl_GetItemCount(pContainer->m_hwndTabs);
 
 	pContainer->m_iTabIndex = iCount;
 	if (iCount > 0) {
 		for (int i = iCount - 1; i >= 0; i--) {
-			HWND hwnd = GetTabWindow(hwndTab, i);
+			HWND hwnd = GetTabWindow(pContainer->m_hwndTabs, i);
 			CMsgDialog *dat = (CMsgDialog *)GetWindowLongPtr(hwnd, GWLP_USERDATA);
 			if (dat) {
 				int relPos = M.GetDword(dat->m_hContact, "tabindex", i * 100);
@@ -280,23 +278,23 @@ void ShowRoom(TContainerData *pContainer, SESSION_INFO *si)
 	TCITEM item = {};
 	item.pszText = newcontactname;
 	item.mask = TCIF_TEXT | TCIF_IMAGE;
-	int iTabId = TabCtrl_InsertItem(hwndTab, pContainer->m_iTabIndex, &item);
+	int iTabId = TabCtrl_InsertItem(pContainer->m_hwndTabs, pContainer->m_iTabIndex, &item);
 
-	SendMessage(hwndTab, EM_REFRESHWITHOUTCLIP, 0, 0);
-	TabCtrl_SetCurSel(hwndTab, iTabId);
+	SendMessage(pContainer->m_hwndTabs, EM_REFRESHWITHOUTCLIP, 0, 0);
+	TabCtrl_SetCurSel(pContainer->m_hwndTabs, iTabId);
 	pContainer->m_iChilds++;
 
 	CMsgDialog *pDlg = new CMsgDialog(si);
 	pDlg->m_iTabID = iTabId;
 	pDlg->m_pContainer = pContainer;
-	pDlg->SetParent(hwndTab);
+	pDlg->SetParent(pContainer->m_hwndTabs);
 	pDlg->Create();
 
 	HWND hwndNew = pDlg->GetHwnd();
 	item.lParam = (LPARAM)hwndNew;
-	TabCtrl_SetItem(hwndTab, iTabId, &item);
+	TabCtrl_SetItem(pContainer->m_hwndTabs, iTabId, &item);
 
-	if (pContainer->m_dwFlags & CNT_SIDEBAR)
+	if (pContainer->m_flags.m_bSideBar)
 		pContainer->m_pSideBar->addSession(pDlg, pContainer->m_iTabIndex);
 
 	SendMessage(pContainer->m_hwnd, WM_SIZE, 0, 0);
@@ -311,7 +309,7 @@ void ShowRoom(TContainerData *pContainer, SESSION_INFO *si)
 		wp.length = sizeof(wp);
 		GetWindowPlacement(pContainer->m_hwnd, &wp);
 
-		BroadCastContainer(pContainer, DM_CHECKSIZE, 0, 0);			// make sure all tabs will re-check layout on activation
+		pContainer->BroadCastContainer(DM_CHECKSIZE, 0, 0);			// make sure all tabs will re-check layout on activation
 		if (wp.showCmd == SW_SHOWMAXIMIZED)
 			ShowWindow(pContainer->m_hwnd, SW_SHOWMAXIMIZED);
 		else {

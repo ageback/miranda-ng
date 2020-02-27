@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -23,6 +23,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 */
 
 #pragma once
+
+#define ICOLIB_MAGIC 0xDEADBEEF
 
 #define SECTIONPARAM_MAKE(index, level, flags) MAKELONG((index)&0xFFFF, MAKEWORD(level, flags))
 #define SECTIONPARAM_INDEX(lparam) LOWORD(lparam)
@@ -78,6 +80,7 @@ public:
 struct IcolibItem : public MZeroedObject
 {
 	char*           name;
+	DWORD           signature = ICOLIB_MAGIC;
 	SectionItem*    section;
 	int             orderID;
 	wchar_t*        description;

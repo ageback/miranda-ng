@@ -1,5 +1,5 @@
-﻿/*
- * Copyright 2017-2019 Leonid Yuriev <leo@yuriev.ru>
+/*
+ * Copyright 2017-2020 Leonid Yuriev <leo@yuriev.ru>
  * and other libmdbx authors: please see AUTHORS file.
  * All rights reserved.
  *
@@ -25,6 +25,8 @@ actor_status osal_actor_info(const mdbx_pid_t pid);
 void osal_killall_actors(void);
 int osal_actor_poll(mdbx_pid_t &pid, unsigned timeout);
 void osal_wait4barrier(void);
+
+bool osal_progress_push(bool active);
 
 mdbx_pid_t osal_getpid(void);
 int osal_delay(unsigned seconds);

@@ -1,7 +1,7 @@
 /*
 Plugin of Miranda IM for communicating with users of the MSN Messenger protocol.
 
-Copyright (c) 2012-2019 Miranda NG team
+Copyright (c) 2012-2020 Miranda NG team
 Copyright (c) 2006-2012 Boris Krasnovskiy.
 Copyright (c) 2003-2005 George Hazan.
 Copyright (c) 2002-2003 Richard Hughes (original version).
@@ -147,8 +147,7 @@ void CMsnProto::MSN_GetAvatarFileName(MCONTACT hContact, wchar_t* pszDest, size_
 {
 	size_t tPathLen = mir_snwprintf(pszDest, cbLen, L"%s\\%S", VARSW(L"%miranda_avatarcache%").get(), m_szModuleName);
 
-	if (_waccess(pszDest, 0))
-		CreateDirectoryTreeW(pszDest);
+	CreateDirectoryTreeW(pszDest);
 
 	size_t tPathLen2 = tPathLen;
 	if (hContact != NULL) {
@@ -1019,7 +1018,7 @@ char* TWinErrorCode::getText()
 
 bool CMsnProto::MSN_IsMyContact(MCONTACT hContact)
 {
-	const char* szProto = GetContactProto(hContact);
+	const char* szProto = Proto_GetBaseAccountName(hContact);
 	return szProto != nullptr && mir_strcmp(m_szModuleName, szProto) == 0;
 }
 

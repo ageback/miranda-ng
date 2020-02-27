@@ -36,10 +36,11 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #define HM_SETTING_CHANGED		(WM_USER + 12)
 #define HM_RELOADICONS			(WM_USER + 13)
 #define HM_SETWINDOWTITLE		(WM_USER + 14)
+#define HM_UNLOADED           (WM_USER + 15)
 
-#define TIMERID_UPDATING		1
+#define TIMERID_UPDATING      1
 #ifndef TIMERID_RENAME
-#define TIMERID_RENAME		2
+#define TIMERID_RENAME        2
 #endif
 
 // flags for the PS structure
@@ -61,17 +62,9 @@ static HANDLE g_hDetailsInitEvent = nullptr;
 
 static INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-CPsHdr::CPsHdr()
-	: _ignore(10, wcscmp)
+CPsHdr::CPsHdr() :
+	_ignore(10, wcscmp)
 {
-	_dwSize = sizeof(*this);
-	_hContact = NULL;
-	_pszProto = nullptr;
-	_pszPrefix = nullptr;
-	_pPages = nullptr;
-	_numPages = 0;
-	_dwFlags = 0;
-	_hImages = nullptr;
 }
 
 CPsHdr::~CPsHdr()
@@ -314,7 +307,7 @@ static INT_PTR AddPage(WPARAM wParam, LPARAM lParam)
 	OPTIONSDIALOGPAGE *odp = (OPTIONSDIALOGPAGE *)lParam;
 
 	// check size of the handled structures
-	if (pPsh == nullptr || odp == nullptr || pPsh->_dwSize != sizeof(CPsHdr))
+	if (pPsh == nullptr || odp == nullptr)
 		return 1;
 
 	// try to check whether the flag member is initialized or not
@@ -522,9 +515,9 @@ void DlgContactInfoInitTreeIcons()
 			psh._hContact = NULL;
 			psh._pszProto = nullptr;
 			NotifyEventHooks(g_hDetailsInitEvent, (WPARAM)&psh, (LPARAM)psh._hContact);
-			if (psh._pPages) {
+			if (psh._pPages)
 				psh.Free_pPages();
-			}
+
 			bInitIcons |= INIT_ICONS_OWNER;
 		}
 		ImageList_Destroy(psh._hImages);
@@ -557,15 +550,11 @@ static INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 
 	switch (uMsg) {
 	case WM_INITDIALOG:
+		TranslateDialogDefault(hDlg);
 		{
-			CPsHdr* pPsh = (CPsHdr *)lParam;
-			WORD needWidth = 0;
-			RECT rc;
-
-			if (!pPsh || pPsh->_dwSize != sizeof(CPsHdr))
+			CPsHdr *pPsh = (CPsHdr *)lParam;
+			if (!pPsh)
 				return FALSE;
-
-			TranslateDialogDefault(hDlg);
 
 			// create data structures
 			if (!(pPs = (LPPS)mir_alloc(sizeof(PS))))
@@ -583,6 +572,7 @@ static INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 			pPs->dwFlags |= PSF_LOCKED;
 			pPs->hContact = pPsh->_hContact;
 			pPs->hProtoAckEvent = HookEventMessage(ME_PROTO_ACK, hDlg, HM_PROTOACK);
+			pPs->hModuleUnloaded = HookEventMessage(ME_SYSTEM_MODULEUNLOAD, hDlg, HM_UNLOADED);
 			pPs->hSettingChanged = HookEventMessage(ME_DB_CONTACT_SETTINGCHANGED, hDlg, HM_SETTING_CHANGED);
 			pPs->hIconsChanged = HookEventMessage(ME_SKIN_ICONSCHANGED, hDlg, HM_RELOADICONS);
 
@@ -623,7 +613,8 @@ static INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 			pPs->hBoldFont = CreateFontIndirect(&lf);
 
 			// initialize the optionpages and tree control
-			if (!pPs->pTree->InitTreeItems((LPWORD)&needWidth))
+			WORD needWidth = 0;
+			if (!pPs->pTree->InitTreeItems(&needWidth))
 				return FALSE;
 
 			// move and resize dialog and its controls
@@ -658,7 +649,10 @@ static INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 						pPs->rcDisplay.bottom - pPs->rcDisplay.top, FALSE);
 
 				}
+
+				RECT rc;
 				GetClientRect(GetDlgItem(hDlg, IDC_PAGETITLEBG), &rc);
+
 				// calculate dislpay area for pages
 				OffsetRect(&pPs->rcDisplay, -pt.x, -pt.y);
 				pPs->rcDisplay.bottom = rcTree.bottom;
@@ -936,16 +930,18 @@ static INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 		}
 
 	case M_CHECKONLINE: // determines whether miranda is online or not
-		{
-			if (IsProtoOnline(pPs->pszProto)) {
-				EnableWindow(GetDlgItem(hDlg, BTN_UPDATE), !IsWindowVisible(GetDlgItem(hDlg, TXT_UPDATING)));
-				return TRUE;
-			}
-
-			EnableWindow(GetDlgItem(hDlg, BTN_UPDATE), FALSE);
-			EnableWindow(GetDlgItem(hDlg, TXT_UPDATING), FALSE);
-			break;
+		if (IsProtoOnline(pPs->pszProto)) {
+			EnableWindow(GetDlgItem(hDlg, BTN_UPDATE), !IsWindowVisible(GetDlgItem(hDlg, TXT_UPDATING)));
+			return TRUE;
 		}
+
+		EnableWindow(GetDlgItem(hDlg, BTN_UPDATE), FALSE);
+		EnableWindow(GetDlgItem(hDlg, TXT_UPDATING), FALSE);
+		break;
+
+	case HM_UNLOADED:
+		pPs->pTree->Remove((HINSTANCE)lParam);
+		break;
 
 	case HM_PROTOACK: // handles all acks from the protocol plugin
 		{
@@ -1370,6 +1366,7 @@ static INT_PTR CALLBACK DlgProc(HWND hDlg, UINT uMsg, WPARAM wParam, LPARAM lPar
 		UnhookEvent(pPs->hProtoAckEvent);
 		UnhookEvent(pPs->hSettingChanged);
 		UnhookEvent(pPs->hIconsChanged);
+		UnhookEvent(pPs->hModuleUnloaded);
 
 		// save my window position
 		Utils_SaveWindowPosition(hDlg, NULL, MODULENAME, "DetailsDlg");

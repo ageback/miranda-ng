@@ -2,7 +2,7 @@
 
 Import plugin for Miranda NG
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -408,7 +408,7 @@ bool CImportBatch::ImportAccounts(OBJLIST<char> &arSkippedModules)
 	else {
 		AccountMap *pNew = new AccountMap("Pattern", 0, m_pPattern->wszName);
 		if (m_hContact)
-			pNew->pa = Proto_GetAccount(GetContactProto(m_hContact));
+			pNew->pa = Proto_GetAccount(Proto_GetBaseAccountName(m_hContact));
 		m_accounts.insert(pNew);
 
 		bNeedManualMerge = pNew->pa == nullptr;

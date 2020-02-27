@@ -962,13 +962,13 @@ db_get_current @1169
 CallFunctionSync @1170
 ??0CProgress@@QAE@PAVCDlgBase@@H@Z @1172 NONAME
 ??0CTimer@@QAE@ABV0@@Z @1173 NONAME
-??0CTimer@@QAE@PAVCDlgBase@@H@Z @1174 NONAME
+??0CTimer@@QAE@PAVCDlgBase@@I@Z @1174 NONAME
 ??1CProgress@@UAE@XZ @1175 NONAME
 ??4CTimer@@QAEAAV0@ABV0@@Z @1177 NONAME
 ??_7CProgress@@6B@ @1178 NONAME
 ??_7CTimer@@6B@ @1179 NONAME
 ?FindTimer@CDlgBase@@AAEPAVCTimer@@H@Z @1180 NONAME
-?GetEventId@CTimer@@QBEHXZ @1181 NONAME
+?GetEventId@CTimer@@QBEIXZ @1181 NONAME
 ?Move@CProgress@@QAEGG@Z @1182 NONAME
 ?OnTimer@CDlgBase@@MAEXPAVCTimer@@@Z @1183 NONAME
 ?OnTimer@CTimer@@UAEHXZ @1184 NONAME
@@ -1025,8 +1025,8 @@ CallFunctionSync @1170
 Utils_IsRtl @1240
 HookTemporaryEvent @1241
 ?Click@CCtrlButton@@QAEXXZ @1242 NONAME
-??0CTimer@@QAE@$$QAV0@@Z @1243 NONAME
-??4CTimer@@QAEAAV0@$$QAV0@@Z @1244 NONAME
+??1CTimer@@QAE@XZ @1243 NONAME
+?RemoveTimer@CDlgBase@@IAEXI@Z @1244 NONAME
 IsTerminalDisconnected @1245
 ?FindControl@CDlgBase@@QAEPAVCCtrlBase@@H@Z @1246 NONAME
 ?FindControl@CDlgBase@@QAEPAVCCtrlBase@@PAUHWND__@@@Z @1247 NONAME
@@ -1451,3 +1451,11 @@ XmlGetChildText @1645
 ?Unsigned64Value@XMLAttribute@tinyxml2@@QBE_KXZ @1666 NONAME
 ?RemoveControl@CDlgBase@@IAEXPAVCCtrlBase@@@Z @1667 NONAME
 ?assign@MBinBuffer@@QAEXPAXI@Z @1668 NONAME
+?GetHwnd@CTimer@@QBEPAUHWND__@@XZ @1669 NONAME
+??0MNonCopyable@@QAE@XZ @1670 NONAME
+??0mir_cs@@QAE@XZ @1671 NONAME
+??1mir_cs@@QAE@XZ @1672 NONAME
+?Lock@mir_cs@@QAEXXZ @1673 NONAME
+?Unlock@mir_cs@@QAEXXZ @1674 NONAME
+?StartSafe@CTimer@@QAEXH@Z @1675 NONAME
+?StopSafe@CTimer@@QAEXXZ @1676 NONAME

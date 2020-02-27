@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -40,51 +40,23 @@
 #define CONTAINER_NAMELEN 25
 #define TITLE_FORMATLEN 30
 
-#define MWF_SAVEBTN_SAV 2
-
-#define MWF_DEFERREDSCROLL 4
-#define MWF_WASBACKGROUNDCREATE 16
-//#define MWF_MOUSEDOWN 32
-#define MWF_ERRORSTATE 128
-#define MWF_DEFERREDREMAKELOG 256
-
-#define MWF_LOG_NORMALTEMPLATES 512
-#define MWF_LOG_SHOWTIME 1024
-#define MWF_LOG_SHOWSECONDS 2048
-#define MWF_LOG_SHOWDATES 4096
-
-#define MWF_LOG_INDENT 16384
-#define MWF_LOG_RTL 32768
-
-// ieview still mistakenly uses these...
-#define MWF_LOG_NEWLINE   8192
-#define MWF_LOG_UNDERLINE 65536
-#define MWF_LOG_SWAPNICK  131072
-
-#define MWF_LOG_BBCODE		 1
-#define MWF_LOG_LOCALTIME	 64
-
-#define MWF_LOG_SHOWICONS 262144
-#define MWF_LOG_SYMBOLS 0x200000
-#define MWF_INITMODE  0x400000
-#define MWF_NEEDCHECKSIZE 0x800000
-#define MWF_DIVIDERSET 0x1000000
-#define MWF_LOG_TEXTFORMAT 0x2000000
-#define MWF_LOG_GRID 0x4000000
-// #define MWF_LOG_INDIVIDUALBKG 0x8000000 * FREE *
-#define MWF_LOG_INOUTICONS 0x10000000
-#define MWF_SMBUTTONSELECTED 0x20000000
-#define MWF_DIVIDERWANTED 0x40000000
-#define MWF_LOG_GROUPMODE 0x80000000
-
-#define MWF_SHOW_FLASHCLIST 64
-#define MWF_SHOW_SPLITTEROVERRIDE 128
-#define MWF_SHOW_SCROLLINGDISABLED 256
-#define MWF_SHOW_ISIDLE 4096
-#define MWF_SHOW_AWAYMSGTIMER 8192
-#define MWF_EX_DELAYEDSPLITTER 32768
-#define MWF_EX_AVATARCHANGED 65536
-#define MWF_EX_WARNCLOSE     0x20000
+#define MWF_LOG_BBCODE		       0x01
+#define MWF_LOG_LOCALTIME	       0x40
+#define MWF_LOG_NORMALTEMPLATES  0x200
+#define MWF_LOG_SHOWTIME         0x400
+#define MWF_LOG_SHOWSECONDS      0x800
+#define MWF_LOG_SHOWDATES       0x1000
+#define MWF_LOG_NEWLINE         0x2000
+#define MWF_LOG_INDENT          0x4000
+#define MWF_LOG_RTL             0x8000
+#define MWF_LOG_UNDERLINE      0x10000
+#define MWF_LOG_SWAPNICK       0x20000
+#define MWF_LOG_SHOWICONS      0x40000
+#define MWF_LOG_SYMBOLS       0x200000
+#define MWF_LOG_TEXTFORMAT   0x2000000
+#define MWF_LOG_GRID         0x4000000
+#define MWF_LOG_INOUTICONS  0x10000000
+#define MWF_LOG_GROUPMODE   0x80000000
 
 #define SMODE_DEFAULT 0
 #define SMODE_MULTIPLE 1
@@ -133,6 +105,7 @@ struct TitleBtn {
 
 class CContactCache;
 class CMenuBar;
+class CMsgDialog;
 class CProxyWindow;
 class CSideBar;
 class CTaskbarInteract;
@@ -153,10 +126,73 @@ struct TLogTheme
 	bool      isPrivate;
 };
 
+union TContainerFlags
+{
+	DWORD dw;
+	struct {
+		bool m_bUnused1 : 1;
+		bool m_bNoTitle : 1;
+		bool m_bHideTabs : 1;
+		bool m_bSideBar : 1;
+		bool m_bNoFlash : 1;
+		bool m_bSticky : 1;
+		bool m_bDontReport : 1;
+		bool m_bFlashAlways : 1;
+		bool m_bTransparent : 1;
+		bool m_bAvatarsOnTaskbar : 1;
+		bool m_bDontReportFocused : 1;
+		bool m_bGlobalSize : 1;
+		bool m_bInfoPanel : 1;
+		bool m_bNoSound : 1;
+		bool m_bAutoSplitter : 1;
+		bool m_bDeferredConfigure : 1;
+		bool m_bCreateMinimized : 1;
+		bool m_bNeedsUpdateTitle : 1;
+		bool m_bDeferredResize : 1;
+		bool m_bDontReportUnfocused : 1;
+		bool m_bAlwaysReportInactive : 1;
+		bool m_bNewContainerFlags : 1;
+		bool m_bDeferredTabSelect : 1;
+		bool m_bCreateCloned : 1;
+		bool m_bNoStatusBar : 1;
+		bool m_bNoMenuBar : 1;
+		bool m_bTabsBottom : 1;
+		bool m_bUnused2 : 1;
+		bool m_bBottomToolbar : 1;
+		bool m_bHideToolbar : 1;
+		bool m_bUinStatusBar : 1;
+		bool m_bVerticalMax : 1;
+	};
+};
+
+union TContainerFlagsEx
+{
+	DWORD dw;
+	struct
+	{
+		bool m_bTabFlat : 1;
+		bool m_bUnused1 : 1;
+		bool m_bTabCloseButton : 1;
+		bool m_bTabFlashIcon : 1;
+		bool m_bTabFlashLabel : 1;
+		bool m_bTabSingleRow : 1;
+		bool m_bUnused2 : 1;
+		bool m_bUnused3 : 1;
+		bool m_bTabSBarLeft : 1;
+		bool m_bTabSBarRight : 1;
+
+		bool m_bSoundMinimized : 1;
+		bool m_bSoundUnfocused : 1;
+		bool m_bSoundInactive : 1;
+		bool m_bSoundFocused : 1;
+	};
+};
+
 struct TContainerSettings
 {
-	DWORD   dwFlags;
-	DWORD   dwFlagsEx;
+	TContainerFlags flags;
+	TContainerFlagsEx flagsEx;
+
 	DWORD   dwTransparency;
 	DWORD   panelheight;
 	int     iSplitterX, iSplitterY;
@@ -175,18 +211,18 @@ struct TContainerData : public MZeroedObject
 	~TContainerData();
 
 	TContainerData *pNext;
+	TContainerFlags m_flags;
+	TContainerFlagsEx m_flagsEx;
 
-	wchar_t  m_wszName[CONTAINER_NAMELEN + 4];		// container name
-	HWND     m_hwndActive;		// active message window
-	HWND     m_hwnd;				// the container handle
-	int      m_iTabIndex;			// next tab id
+	HWND     m_hwndActive; // active message window
+	HWND     m_hwnd;       // the container handle
+	HWND     m_hwndTabs;   // tab control handle
+	int      m_iTabIndex;  // next tab id
 	int	   m_iChilds;
 	int      m_iContainerIndex;
 	bool	   m_bHidden;
-	HWND     m_hwndTip;			// tab - tooltips...
-	BOOL     m_bDontSmartClose;      // if set, do not search and select the next possible tab after closing one.
-	DWORD    m_dwFlags;
-	DWORD    m_dwFlagsEx;
+	HWND     m_hwndTip;         // tab - tooltips...
+	BOOL     m_bDontSmartClose; // if set, do not search and select the next possible tab after closing one.
 	LONG     m_uChildMinHeight;
 	int      m_tBorder;
 	int	   m_tBorder_outer_left, m_tBorder_outer_right, m_tBorder_outer_top, m_tBorder_outer_bottom;
@@ -195,12 +231,11 @@ struct TContainerData : public MZeroedObject
 	HWND     m_hwndStatus;
 	int      m_statusBarHeight;
 	DWORD    m_dwLastActivity;
-	int      m_hIcon;                	// current window icon stick indicator
-	HICON	   m_hIconTaskbarOverlay;	// contains a "sticky" taskbar overlay (e.g. new message icon)
+	int      m_hIcon;               // current window icon stick indicator
+	HICON	   m_hIconTaskbarOverlay; // contains a "sticky" taskbar overlay (e.g. new message icon)
 	DWORD    m_dwFlashingStarted;
 	HWND     m_hWndOptions;
 	BOOL     m_bSizingLoop;
-	wchar_t  m_szRelThemeFile[MAX_PATH], m_szAbsThemeFile[MAX_PATH];
 	HDC      m_cachedDC;
 	HBITMAP  m_cachedHBM, m_oldHBM;
 	SIZE     m_oldDCSize;
@@ -228,17 +263,29 @@ struct TContainerData : public MZeroedObject
 	CTaskbarInteract *m_pTaskBar;
 	TContainerSettings *m_pSettings;
 
-	void InitRedraw(void);
+	wchar_t m_wszName[CONTAINER_NAMELEN + 4];		// container name
+	wchar_t m_szRelThemeFile[MAX_PATH], m_szAbsThemeFile[MAX_PATH];
+
+	void ActivateExistingTab(CMsgDialog *dat);
+	void AdjustTabClientRect(RECT &rc);
+	void ApplySetting(bool fForceResize = false);
+	void BroadCastContainer(UINT message, WPARAM wParam, LPARAM lParam) const;
 	void CloseTabByMouse(POINT *);
 	void Configure();
+	void FlashContainer(int iMode, int iCount);
+	void InitDialog(HWND);
+	void InitRedraw(void);
 	void LoadOverrideTheme(void);
 	void LoadThemeDefaults(void);
 	void QueryPending();
+	void ReflashContainer(void);
+	void Resize(bool, int newWidth);
 	void RestoreWindowPos(void);
 	void SelectTab(int iCommand, int idx = 0);
+	void SetAeroMargins(void);
 	void SetIcon(CMsgDialog *pDlg, HICON hIcon);
 	void UpdateTabs(void);
-	void UpdateTitle(MCONTACT, class CMsgDialog* = nullptr);
+	void UpdateTitle(MCONTACT, CMsgDialog* = nullptr);
 
 	void ClearMargins()
 	{	memset(&m_mOld, 0xfe, sizeof(m_mOld));
@@ -375,11 +422,15 @@ class CMsgDialog : public CSrmmBaseDialog
 	bool    m_bStatusSet;
 			  
 	bool    m_bShowInfoAvatar, m_bShowUIElements;
+	bool    m_bFlashClist, m_bScrollingDisabled, m_bAwayMsgTimer;
+	bool    m_bDelayedSplitter, m_bWarnClose;
 	bool    m_bUseOffset;
 	bool    m_bkeyProcessed;
 	bool    m_fLimitedUpdate;
 	bool    m_bClrAdded;
-	bool    m_bInsertMode;
+	bool    m_bInsertMode, m_bInitMode = true;
+	bool    m_bDeferredScroll, m_bDeferredRemakeLog;
+	bool    m_bWasBackgroundCreate;
 
 	MEVENT *m_hQueuedEvents;
 	int     m_iNextQueuedEvent;
@@ -411,17 +462,21 @@ public:
 	char   *m_szProto;
 	int     m_iTabID;
 	BYTE    m_bShowTyping;
-	bool    m_bIsHistory, m_bNotOnList;
+	bool    m_bIsHistory, m_bNotOnList, m_bIsIdle;
 	bool    m_bActualHistory;
 	bool    m_bIsAutosizingInput;
 	bool    m_bCanFlashTab, m_bTabFlash;
 	bool    m_bEditNotesActive;
 	bool    m_bShowAvatar;
+	bool    m_bSaveBtn, m_bNeedCheckSize;
+	bool    m_bErrorState;
+	bool    m_bDividerWanted, m_bDividerSet;
+	bool    m_bSplitterOverride;
 	int     m_sendMode;
 	HKL     m_hkl;                                    // keyboard layout identifier
 	DWORD   m_isAutoRTL;
 	DWORD   m_idle;
-	DWORD   m_dwFlags = MWF_INITMODE, m_dwFlagsEx;
+	DWORD   m_dwFlags;
 	DWORD   m_dwUnread;
 	HANDLE  m_hTheme, m_hThemeIP, m_hThemeToolbar;
 	HICON   m_hXStatusIcon, m_hTabStatusIcon, m_hTabIcon, m_iFlashIcon, m_hTaskbarIcon, m_hClientIcon;
@@ -514,6 +569,10 @@ public:
 
 	__forceinline CCtrlRichEdit& GetEntry() { return m_message; }
 
+	__forceinline void ActivateTab() {
+		m_pContainer->ActivateExistingTab(this);
+	}
+
 	__forceinline CLogWindow* LOG() {
 		return ((CLogWindow *)m_pLog);
 	}
@@ -527,7 +586,7 @@ public:
 		return m_pContainer->IsActive() && m_pContainer->m_hwndActive == m_hwnd;
 	}
 
-	void  DM_OptionsApplied(WPARAM wParam, LPARAM lParam);
+	void  DM_OptionsApplied(bool bRemakeLog = true);
 	void  DM_RecalcPictureSize(void);
 	void  DM_ScrollToBottom(WPARAM wParam, LPARAM lParam);
 
@@ -546,7 +605,7 @@ public:
 	void  KbdState(bool &isShift, bool &isControl, bool &isAlt);
 	void  LimitMessageText(int iLen);
 	int   LoadLocalFlags(void);
-	int   MustPlaySound(void) const;
+	bool  MustPlaySound(void) const;
 	void  NotifyDeliveryFailure(void) const;
 	void  RemakeLog(void);
 	void  SaveSplitter(void);
@@ -601,6 +660,8 @@ public:
 	void onSelChange_List(CCtrlListBox*);
 };
 
+extern LIST<void> g_arUnreadWindows;
+
 #define MESSAGE_WINDOW_DATA_SIZE offsetof(_MessageWindowData, hdbEventFirst);
 
 /*
@@ -649,63 +710,11 @@ struct TIconDescW
  * tab config flags
  */
 
-#define TCF_FLAT 1
-//#define TCF_STYLED 2
-#define TCF_CLOSEBUTTON 4
-#define TCF_FLASHICON 8
-#define TCF_FLASHLABEL 16
-#define TCF_SINGLEROWTABCONTROL 32
-//#define TCF_LABELUSEWINCOLORS 64
-//#define TCF_BKGUSEWINCOLORS 128
-#define TCF_SBARLEFT 256
-#define TCF_SBARRIGHT 512
-
-#define TCF_DEFAULT (TCF_FLASHICON)
-
 #define MIN_PANELHEIGHT 20
 
-// flags for the container dwFlags
-#define CNT_MOUSEDOWN                   1
-#define CNT_NOTITLE                     2
-#define CNT_HIDETABS                    4
-#define CNT_SIDEBAR                     8
-#define CNT_NOFLASH                  0x10
-#define CNT_STICKY                   0x20
-#define CNT_DONTREPORT               0x40
-#define CNT_FLASHALWAYS              0x80
-#define CNT_TRANSPARENCY            0x100
-#define CNT_AVATARSONTASKBAR        0x200
-#define CNT_DONTREPORTFOCUSED       0x400
-#define CNT_GLOBALSIZE              0x800
-#define CNT_INFOPANEL              0x1000
-#define CNT_NOSOUND                0x2000
-#define CNT_AUTOSPLITTER           0x4000
-#define CNT_DEFERREDCONFIGURE      0x8000
-#define CNT_CREATE_MINIMIZED      0x10000
-#define CNT_NEED_UPDATETITLE      0x20000
-#define CNT_DEFERREDSIZEREQUEST   0x40000
-#define CNT_DONTREPORTUNFOCUSED   0x80000
-#define CNT_ALWAYSREPORTINACTIVE 0x100000
-#define CNT_NEWCONTAINERFLAGS    0x200000
-#define CNT_DEFERREDTABSELECT    0x400000
-#define CNT_CREATE_CLONED        0x800000
-#define CNT_NOSTATUSBAR         0x1000000
-#define CNT_NOMENUBAR           0x2000000
-#define CNT_TABSBOTTOM          0x4000000
-#define CNT_BOTTOMTOOLBAR      0x10000000
-#define CNT_HIDETOOLBAR        0x20000000
-#define CNT_UINSTATUSBAR       0x40000000
-#define CNT_VERTICALMAX        0x80000000
-
-#define CNT_EX_SOUNDS_MINIMIZED      1024
-#define CNT_EX_SOUNDS_UNFOCUSED      2048
-#define CNT_EX_SOUNDS_INACTIVETABS   4096
-#define CNT_EX_SOUNDS_FOCUSED	       8192
-
-#define CNT_FLAGS_DEFAULT (CNT_DONTREPORT | CNT_DONTREPORTUNFOCUSED | CNT_ALWAYSREPORTINACTIVE | CNT_HIDETABS | CNT_NEWCONTAINERFLAGS | CNT_NOMENUBAR | CNT_INFOPANEL)
 #define CNT_TRANS_DEFAULT 0x00ff00ff
 
-#define CNT_FLAGSEX_DEFAULT (TCF_FLASHICON | CNT_EX_SOUNDS_MINIMIZED | CNT_EX_SOUNDS_UNFOCUSED | CNT_EX_SOUNDS_INACTIVETABS | CNT_EX_SOUNDS_FOCUSED)
+#define CNT_FLAGSEX_DEFAULT (m_bTabFlashIcon | m_bSoundMinimized | m_bSoundUnfocused | m_bSoundInactive | m_bSoundFocused)
 
 #define CNT_CREATEFLAG_CLONED 1
 #define CNT_CREATEFLAG_MINIMIZED 2
@@ -763,7 +772,6 @@ struct TIconDescW
 #define DM_CHECKQUEUEFORCLOSE    (TM_USER+70)
 #define DM_CHECKAUTOHIDE         (TM_USER+71)
 #define DM_HANDLECLISTEVENT      (TM_USER+73)
-#define DM_TRAYICONNOTIFY        (TM_USER+74)
 #define DM_REMOVECLISTEVENT      (TM_USER+75)
 #define DM_DOCREATETAB           (TM_USER+77)
 #define DM_SMILEYOPTIONSCHANGED  (TM_USER+85)
@@ -1010,14 +1018,8 @@ struct SIDEBARITEM
 
 // callback for the user menu entry
 
-#define MS_TABMSG_SETUSERPREFS	"SRMsg_MOD/SetUserPrefs"
-#define MS_TABMSG_SLQMGR		"SRMsg_MOD/InvokeQmgr"
-
-// show one of the tray menus
-// wParam = 0 -> session list
-// wParam = 1 -> tray menu
-// lParam must be 0
-#define MS_TABMSG_TRAYSUPPORT "SRMsg_MOD/Show_TrayMenu"
+#define MS_TABMSG_SETUSERPREFS  "SRMsg_MOD/SetUserPrefs"
+#define MS_TABMSG_SLQMGR        "SRMsg_MOD/InvokeQmgr"
 
 // the service which processes globally registered hotkeys
 #define MS_TABMSG_HOTKEYPROCESS "SRMsg_MOD/ProcessHotkey"

@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -28,7 +28,8 @@
 
 #include "stdafx.h"
 
-TSideBarLayout CSideBar::m_layouts[CSideBar::NR_LAYOUTS] = {
+TSideBarLayout CSideBar::m_layouts[CSideBar::NR_LAYOUTS] =
+{
 	{
 		LPGENW("Like tabs, vertical text orientation"),
 		26, 30,
@@ -87,7 +88,9 @@ CSideBarButton::CSideBarButton(const UINT id, CSideBar *sideBar)
 	_create();
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////
 // Internal method to create the button item and configure the associated button control
+
 void CSideBarButton::_create()
 {
 	m_hwnd = nullptr;
@@ -106,9 +109,7 @@ void CSideBarButton::_create()
 		if (m_id == IDC_SIDEBARUP || m_id == IDC_SIDEBARDOWN)
 			::SetParent(m_hwnd, m_sideBar->getContainer()->m_hwnd);
 	}
-	else
-		delete this;
-
+	else delete this;
 }
 
 CSideBarButton::~CSideBarButton()
@@ -124,31 +125,29 @@ void CSideBarButton::Show(const int showCmd) const
 	::ShowWindow(m_hwnd, showCmd);
 }
 
-/**
- * Measure the metrics for the current item. The side bar layouting will call this
- * whenever a layout with a dynamic height is active). For fixed dimension layouts,
- * m_elementWidth and m_elementHeight will be used.
- *
- * @return SIZE&: reference to the item's size member. The caller may use cx and cy values
- * to determine further layouting actions.
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// Measure the metrics for the current item. The side bar layouting will call this
+// whenever a layout with a dynamic height is active). For fixed dimension layouts,
+// m_elementWidth and m_elementHeight will be used.
+//
+// @return SIZE&: reference to the item's size member. The caller may use cx and cy values
+// to determine further layouting actions.
+
 const SIZE& CSideBarButton::measureItem()
 {
-	SIZE	 sz;
-
 	if (m_sideBarLayout->pfnMeasureItem)
 		m_sideBarLayout->pfnMeasureItem(this);        // use the current layout's function, if available, else use default
 	else {
 		HDC dc = ::GetDC(m_hwnd);
-		wchar_t	 tszLabel[255];
-
 		HFONT oldFont = reinterpret_cast<HFONT>(::SelectObject(dc, ::GetStockObject(DEFAULT_GUI_FONT)));
 
+		wchar_t tszLabel[255];
 		wcsncpy_s(tszLabel, m_dat->m_wszTitle, _TRUNCATE);
-		::GetTextExtentPoint32(dc, tszLabel, (int)mir_wstrlen(tszLabel), &sz);
 
+		SIZE sz;
+		::GetTextExtentPoint32(dc, tszLabel, (int)mir_wstrlen(tszLabel), &sz);
 		sz.cx += 28;
-		if (m_dat->m_pContainer->m_dwFlagsEx & TCF_CLOSEBUTTON)
+		if (m_dat->m_pContainer->m_flagsEx.m_bTabCloseButton)
 			sz.cx += 20;
 
 		if (m_sideBarLayout->dwFlags & CSideBar::SIDEBARLAYOUT_VERTICALORIENTATION)
@@ -159,27 +158,26 @@ const SIZE& CSideBarButton::measureItem()
 		::SelectObject(dc, oldFont);
 		::ReleaseDC(m_hwnd, dc);
 	}
-	return(m_sz);
+	return m_sz;
 }
-/**
- * Render the button item. Callback from the button window procedure
- *
- * @param ctl    TSButtonCtrl *: pointer to the private button data structure
- * @param hdc    HDC: device context for painting
- */
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Render the button item. Callback from the button window procedure
+//
+// @param ctl    TSButtonCtrl *: pointer to the private button data structure
+// @param hdc    HDC: device context for painting
+
 void CSideBarButton::RenderThis(const HDC hdc) const
 {
 	RECT rc;
-	LONG cx, cy;
-	bool fVertical = (m_sideBarLayout->dwFlags & CSideBar::SIDEBARLAYOUT_VERTICALORIENTATION) ? true : false;
-	HBITMAP hbmMem, hbmOld;
-
 	::GetClientRect(m_hwnd, &rc);
 
+	bool bVertical = (m_sideBarLayout->dwFlags & CSideBar::SIDEBARLAYOUT_VERTICALORIENTATION) ? true : false;
 	if (m_id == IDC_SIDEBARUP || m_id == IDC_SIDEBARDOWN)
-		fVertical = false;
+		bVertical = false;
 
-	if (fVertical) {
+	int cx, cy;
+	if (bVertical) {
 		cx = rc.bottom;
 		cy = rc.right;
 	}
@@ -190,15 +188,15 @@ void CSideBarButton::RenderThis(const HDC hdc) const
 
 	HDC hdcMem = ::CreateCompatibleDC(hdc);
 
-	if (fVertical) {
+	HBITMAP hbmMem;
+	if (bVertical) {
 		RECT	rcFlipped = { 0, 0, cx, cy };
 		hbmMem = CSkin::CreateAeroCompatibleBitmap(rcFlipped, hdcMem);
 		rc = rcFlipped;
 	}
 	else hbmMem = CSkin::CreateAeroCompatibleBitmap(rc, hdcMem);
 
-	hbmOld = reinterpret_cast<HBITMAP>(::SelectObject(hdcMem, hbmMem));
-
+	HBITMAP hbmOld = reinterpret_cast<HBITMAP>(::SelectObject(hdcMem, hbmMem));
 	HFONT hFontOld = reinterpret_cast<HFONT>(::SelectObject(hdcMem, ::GetStockObject(DEFAULT_GUI_FONT)));
 
 	m_sideBarLayout->pfnBackgroundRenderer(hdcMem, &rc, this);
@@ -206,12 +204,9 @@ void CSideBarButton::RenderThis(const HDC hdc) const
 
 	::SelectObject(hdcMem, hFontOld);
 
-	/*
-	 * for vertical tabs, we did draw to a rotated rectangle, so we now must rotate the
-	 * final bitmap back to it's original orientation
-	 */
-
-	if (fVertical) {
+	// for vertical tabs, we did draw to a rotated rectangle, so we now must rotate the
+	// final bitmap back to it's original orientation
+	if (bVertical) {
 		::SelectObject(hdcMem, hbmOld);
 
 		FIBITMAP *fib = FreeImage_CreateDIBFromHBITMAP(hbmMem);
@@ -220,7 +215,7 @@ void CSideBarButton::RenderThis(const HDC hdc) const
 		::DeleteObject(hbmMem);
 		hbmMem = FreeImage_CreateHBITMAPFromDIB(fib_new);
 		FreeImage_Unload(fib_new);
-		
+
 		hbmOld = reinterpret_cast<HBITMAP>(::SelectObject(hdcMem, hbmMem));
 		::BitBlt(hdc, 0, 0, cy, cx, hdcMem, 0, 0, SRCCOPY);
 		::SelectObject(hdcMem, hbmOld);
@@ -233,81 +228,76 @@ void CSideBarButton::RenderThis(const HDC hdc) const
 		::DeleteObject(hbmMem);
 		::DeleteDC(hdcMem);
 	}
-	return;
 }
 
-/**
- * render basic button content like nickname and icon. Used for the basic layouts
- * only. Pretty much the same code as used for the tabs.
- *
- * @param hdc	 : target device context
- * @param rcItem : rectangle to render into
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// render basic button content like nickname and icon. Used for the basic layouts
+// only. Pretty much the same code as used for the tabs.
+//
+// @param hdc	 : target device context
+// @param rcItem : rectangle to render into
+
 void CSideBarButton::renderIconAndNick(const HDC hdc, const RECT *rcItem) const
 {
-	HICON	hIcon;
+	const TContainerData *pContainer = m_sideBar->getContainer();
+	if (!m_dat || !pContainer)
+		return;
+
+	int   iSize = 16;
+	HICON	hIcon = m_dat->m_cache->getIcon(iSize);
 	RECT	rc = *rcItem;
-	DWORD	dwTextFlags = DT_SINGLELINE | DT_VCENTER;
-	int		stateId = m_buttonControl->stateId;
-	int		iSize = 16;
-	const 	TContainerData *pContainer = m_sideBar->getContainer();
 
-	if (m_dat && pContainer) {
-		hIcon = m_dat->m_cache->getIcon(iSize);
+	if (!m_dat->m_bCanFlashTab || (m_dat->m_bCanFlashTab == TRUE && m_dat->m_bTabFlash) || !pContainer->m_flagsEx.m_bTabFlashIcon) {
+		DWORD ix = rc.left + 4;
+		DWORD iy = (rc.bottom + rc.top - iSize) / 2;
+		if (m_dat->m_bIsIdle && PluginConfig.m_bIdleDetect)
+			CSkin::DrawDimmedIcon(hdc, ix, iy, iSize, iSize, hIcon, 180);
+		else
+			::DrawIconEx(hdc, ix, iy, hIcon, iSize, iSize, 0, nullptr, DI_NORMAL | DI_COMPAT);
+	}
 
-		if (!m_dat->m_bCanFlashTab || (m_dat->m_bCanFlashTab == TRUE && m_dat->m_bTabFlash) || !(pContainer->m_dwFlagsEx & TCF_FLASHICON)) {
-			DWORD ix = rc.left + 4;
-			DWORD iy = (rc.bottom + rc.top - iSize) / 2;
-			if (m_dat->m_dwFlagsEx & MWF_SHOW_ISIDLE && PluginConfig.m_bIdleDetect)
-				CSkin::DrawDimmedIcon(hdc, ix, iy, iSize, iSize, hIcon, 180);
-			else
-				::DrawIconEx(hdc, ix, iy, hIcon, iSize, iSize, 0, nullptr, DI_NORMAL | DI_COMPAT);
-		}
+	rc.left += (iSize + 7);
 
-		rc.left += (iSize + 7);
+	// draw the close button if enabled
+	if (m_sideBar->getContainer()->m_flagsEx.m_bTabCloseButton) {
+		if (m_sideBar->getHoveredClose() != this)
+			CSkin::m_default_bf.SourceConstantAlpha = 150;
 
-		/*
-		 * draw the close button if enabled
-		 */
-		if (m_sideBar->getContainer()->m_dwFlagsEx & TCF_CLOSEBUTTON) {
-			if (m_sideBar->getHoveredClose() != this)
-				CSkin::m_default_bf.SourceConstantAlpha = 150;
+		GdiAlphaBlend(hdc, rc.right - 20, (rc.bottom + rc.top - 16) / 2, 16, 16, CSkin::m_tabCloseHDC, 0, 0, 16, 16, CSkin::m_default_bf);
 
-			GdiAlphaBlend(hdc, rc.right - 20, (rc.bottom + rc.top - 16) / 2, 16, 16, CSkin::m_tabCloseHDC, 0, 0, 16, 16, CSkin::m_default_bf);
+		rc.right -= 19;
+		CSkin::m_default_bf.SourceConstantAlpha = 255;
+	}
 
-			rc.right -= 19;
-			CSkin::m_default_bf.SourceConstantAlpha = 255;
-		}
+	::SetBkMode(hdc, TRANSPARENT);
 
-		::SetBkMode(hdc, TRANSPARENT);
+	if (!m_dat->m_bCanFlashTab || (m_dat->m_bCanFlashTab == TRUE && m_dat->m_bTabFlash) || !pContainer->m_flagsEx.m_bTabFlashLabel) {
+		bool fIsActive = (m_sideBar->getActiveItem() == this);
+		
+		COLORREF clr;
+		int stateId = m_buttonControl->stateId;
+		if (fIsActive || stateId == PBS_PRESSED)
+			clr = PluginConfig.tabConfig.colors[1];
+		else if (stateId == PBS_HOT)
+			clr = PluginConfig.tabConfig.colors[3];
+		else
+			clr = PluginConfig.tabConfig.colors[0];
 
-		if (!m_dat->m_bCanFlashTab || (m_dat->m_bCanFlashTab == TRUE && m_dat->m_bTabFlash) || !(pContainer->m_dwFlagsEx & TCF_FLASHLABEL)) {
-			bool  	 fIsActive = (m_sideBar->getActiveItem() == this ? true : false);
-			COLORREF clr = 0;
-			dwTextFlags |= DT_WORD_ELLIPSIS;
-
-			if (fIsActive || stateId == PBS_PRESSED)
-				clr = PluginConfig.tabConfig.colors[1];
-			else if (stateId == PBS_HOT)
-				clr = PluginConfig.tabConfig.colors[3];
-			else
-				clr = PluginConfig.tabConfig.colors[0];
-
-			CSkin::RenderText(hdc, m_buttonControl->hThemeButton, m_dat->m_wszTitle, &rc, dwTextFlags, CSkin::m_glowSize, clr);
-		}
+		DWORD	dwTextFlags = DT_SINGLELINE | DT_VCENTER | DT_WORD_ELLIPSIS;
+		CSkin::RenderText(hdc, m_buttonControl->hThemeButton, m_dat->m_wszTitle, &rc, dwTextFlags, CSkin::m_glowSize, clr);
 	}
 }
 
-/**
- * test if we have the mouse pointer over our close button.
- * @return: 1 if the pointer is inside the button's rect, -1 otherwise
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// test if we have the mouse pointer over our close button.
+// @return: 1 if the pointer is inside the button's rect, -1 otherwise
+
 int CSideBarButton::testCloseButton() const
 {
 	if (m_id == IDC_SIDEBARUP || m_id == IDC_SIDEBARDOWN)							// scroller buttons don't have a close button
 		return -1;
 
-	if (m_sideBar->getContainer()->m_dwFlagsEx & TCF_CLOSEBUTTON && !(getLayout()->dwFlags & CSideBar::SIDEBARLAYOUT_NOCLOSEBUTTONS)) {
+	if (m_sideBar->getContainer()->m_flagsEx.m_bTabCloseButton && !(getLayout()->dwFlags & CSideBar::SIDEBARLAYOUT_NOCLOSEBUTTONS)) {
 		POINT pt;
 		::GetCursorPos(&pt);
 		::ScreenToClient(m_hwnd, &pt);
@@ -330,14 +320,18 @@ int CSideBarButton::testCloseButton() const
 	return -1;
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////
 // call back from the button window procedure. Activate my session
+
 void CSideBarButton::activateSession() const
 {
 	if (m_dat)
 		::SendMessage(m_dat->GetHwnd(), DM_ACTIVATEME, 0, 0);
 }
 
+/////////////////////////////////////////////////////////////////////////////////////////
 // show the context menu (same as on tabs
+
 void CSideBarButton::invokeContextMenu()
 {
 	const TContainerData *pContainer = m_sideBar->getContainer();
@@ -379,30 +373,29 @@ void CSideBar::Init()
 	m_firstVisibleOffset = 0;
 	m_totalItemHeight = 0;
 
-	m_uLayout = (m_pContainer->m_dwFlagsEx & 0xff000000) >> 24;
+	m_uLayout = (m_pContainer->m_flagsEx.dw & 0xff000000) >> 24;
 	m_uLayout = ((m_uLayout < NR_LAYOUTS) ? m_uLayout : 0);
 
 	m_currentLayout = &m_layouts[m_uLayout];
 
 	m_dwFlags = m_currentLayout->dwFlags;
 
-	m_dwFlags = (m_pContainer->m_dwFlagsEx & TCF_SBARLEFT ? m_dwFlags | SIDEBARORIENTATION_LEFT : m_dwFlags & ~SIDEBARORIENTATION_LEFT);
-	m_dwFlags = (m_pContainer->m_dwFlagsEx & TCF_SBARRIGHT ? m_dwFlags | SIDEBARORIENTATION_RIGHT : m_dwFlags & ~SIDEBARORIENTATION_RIGHT);
+	m_dwFlags = (m_pContainer->m_flagsEx.m_bTabSBarLeft ? m_dwFlags | SIDEBARORIENTATION_LEFT : m_dwFlags & ~SIDEBARORIENTATION_LEFT);
+	m_dwFlags = (m_pContainer->m_flagsEx.m_bTabSBarRight ? m_dwFlags | SIDEBARORIENTATION_RIGHT : m_dwFlags & ~SIDEBARORIENTATION_RIGHT);
 
-	if (m_pContainer->m_dwFlags & CNT_SIDEBAR) {
+	if (m_pContainer->m_flags.m_bSideBar) {
 		if (m_hwndScrollWnd == nullptr)
 			m_hwndScrollWnd = ::CreateWindowEx(0, L"TS_SideBarClass", L"", WS_CLIPCHILDREN | WS_CLIPSIBLINGS | WS_VISIBLE | WS_CHILD,
-				0, 0, m_width, 40, m_pContainer->m_hwnd, reinterpret_cast<HMENU>(5000), g_plugin.getInst(), this);
+			0, 0, m_width, 40, m_pContainer->m_hwnd, reinterpret_cast<HMENU>(5000), g_plugin.getInst(), this);
 
-		m_isActive = true;
-		m_isVisible = m_isActive ? m_isVisible : true;
+		m_isActive = m_isVisible = true;
 		createScroller();
 		m_elementHeight = m_currentLayout->height;
 		m_elementWidth = m_currentLayout->width;
 		m_width = m_elementWidth + 4;
 		populateAll();
 		if (m_activeItem)
-			setActiveItem(m_activeItem);
+			setActiveItem(m_activeItem, true);
 	}
 	else {
 		destroyScroller();
@@ -417,21 +410,18 @@ void CSideBar::Init()
 	}
 }
 
-/**
- * sets visibility status for the sidebar. An invisible sidebar (collapsed
- * by the button in the message dialog) will remain active, it will, however
- * not do any drawing or other things that are only visually important.
- *
- * @param fNewVisible : set the new visibility status
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// sets visibility status for the sidebar. An invisible sidebar (collapsed
+// by the button in the message dialog) will remain active, it will, however
+// not do any drawing or other things that are only visually important.
+//
+// @param fNewVisible : set the new visibility status
+
 void CSideBar::setVisible(bool fNewVisible)
 {
 	m_isVisible = fNewVisible;
 
-	/*
-	 * only needed on hiding. Layout() will do it when showing it
-	 */
-
+	// only needed on hiding. Layout() will do it when showing it
 	if (!m_isVisible)
 		showAll(SW_HIDE);
 	else {
@@ -440,10 +430,10 @@ void CSideBar::setVisible(bool fNewVisible)
 	}
 }
 
-/**
- * Create both scrollbar buttons which can be used to scroll the switchbar
- * up and down.
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// Create both scrollbar buttons which can be used to scroll the switchbar
+// up and down.
+
 void CSideBar::createScroller()
 {
 	if (m_up == nullptr)
@@ -455,9 +445,9 @@ void CSideBar::createScroller()
 	m_down->setLayout(m_currentLayout);
 }
 
-/**
- * Destroy the scroller buttons.
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// Destroy the scroller buttons.
+
 void CSideBar::destroyScroller()
 {
 	if (m_up) {
@@ -470,40 +460,36 @@ void CSideBar::destroyScroller()
 	}
 }
 
-/**
- * remove all buttons from the current list
- * Does not remove the sessions. This is basically only used when switching
- * from a sidebar to a tabbed interface
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// remove all buttons from the current list
+// Does not remove the sessions. This is basically only used when switching
+// from a sidebar to a tabbed interface
+
 void CSideBar::removeAll()
 {
 	m_buttonlist.destroy();
 }
 
-/**
- * popuplate the side bar with all sessions inside the current window. Information
- * is gathered from the tab control, which remains active (but invisible) when the
- * switch bar is in use.
- *
- * This is needed when the user switches from tabs to a switchbar layout while a
- * window is open.
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// popuplate the side bar with all sessions inside the current window. Information
+// is gathered from the tab control, which remains active (but invisible) when the
+// switch bar is in use.
+//
+// This is needed when the user switches from tabs to a switchbar layout while a
+// window is open.
+
 void CSideBar::populateAll()
 {
-	HWND	hwndTab = ::GetDlgItem(m_pContainer->m_hwnd, IDC_MSGTABS);
-	if (hwndTab == nullptr)
-		return;
-
-	int iItems = (int)TabCtrl_GetItemCount(hwndTab);
+	int iItems = (int)TabCtrl_GetItemCount(m_pContainer->m_hwndTabs);
 
 	m_iTopButtons = 0;
 
 	for (int i = 0; i < iItems; i++) {
-		HWND hDlg = GetTabWindow(hwndTab, i);
+		HWND hDlg = GetTabWindow(m_pContainer->m_hwndTabs, i);
 		if (hDlg == 0 || !IsWindow(hDlg))
 			continue;
 
-		CMsgDialog *dat = (CMsgDialog*)::GetWindowLongPtr(hDlg, GWLP_USERDATA);
+		CMsgDialog *dat = (CMsgDialog *)::GetWindowLongPtr(hDlg, GWLP_USERDATA);
 		if (dat == nullptr)
 			continue;
 
@@ -521,13 +507,13 @@ void CSideBar::populateAll()
 	}
 }
 
-/**
- * Add a new session to the switchbar.
- *
- * @param dat    _MessageWindowData *: session data for a client session. Must be fully initialized
- *    (that is, it can only be used after WM_INITIALOG completed).
- *position: -1 = append, otherwise insert it at the given position
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// Add a new session to the switchbar.
+//
+// @param dat    _MessageWindowData *: session data for a client session. Must be fully initialized
+//    (that is, it can only be used after WM_INITIALOG completed).
+// position: -1 = append, otherwise insert it at the given position
+
 void CSideBar::addSession(CMsgDialog *dat, int position)
 {
 	if (!m_isActive)
@@ -553,14 +539,14 @@ void CSideBar::addSession(CMsgDialog *dat, int position)
 	SendDlgItemMessage(dat->GetHwnd(), IDC_TOGGLESIDEBAR, BM_SETIMAGE, IMAGE_ICON,
 		(LPARAM)(m_dwFlags & SIDEBARORIENTATION_LEFT ? PluginConfig.g_buttonBarIcons[ICON_DEFAULT_LEFT] : PluginConfig.g_buttonBarIcons[ICON_DEFAULT_RIGHT]));
 
-	Invalidate();
+	moveButtons();
 }
 
-/**
- * Remove a new session from the switchbar.
- *
- * @param dat    _MessageWindowData *: session data for a client session.
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// Remove a new session from the switchbar.
+//
+// @param dat    _MessageWindowData *: session data for a client session.
+
 HRESULT CSideBar::removeSession(CMsgDialog *dat)
 {
 	if (dat) {
@@ -575,18 +561,18 @@ HRESULT CSideBar::removeSession(CMsgDialog *dat)
 			else m_topHeight -= (m_elementHeight + 1);
 
 			m_buttonlist.remove(item);
-			Invalidate();
+			moveButtons();
 			return(S_OK);
 		}
 	}
 	return(S_FALSE);
 }
 
-/**
- * make sure the given item is visible in a scrolled switch bar
- *
- * @param item   CSideBarButtonItem*: the item which must be visible in the switch bar
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// make sure the given item is visible in a scrolled switch bar
+//
+// @param item   CSideBarButtonItem*: the item which must be visible in the switch bar
+
 void CSideBar::scrollIntoView(const CSideBarButton *item)
 {
 	LONG spaceUsed = 0, itemHeight = 0;
@@ -615,7 +601,7 @@ void CSideBar::scrollIntoView(const CSideBarButton *item)
 	else if (!bFound || (item == &m_buttonlist[0] && m_firstVisibleOffset == 0))
 		; // do nothing for the first item and .end() should not really happen
 
-	else if (spaceUsed <= rc.bottom && spaceUsed - (itemHeight +1) >= m_firstVisibleOffset)
+	else if (spaceUsed <= rc.bottom && spaceUsed - (itemHeight + 1) >= m_firstVisibleOffset)
 		; // item fully visible, do nothing
 
 	else { // button partially or not at all visible at the top
@@ -624,20 +610,21 @@ void CSideBar::scrollIntoView(const CSideBarButton *item)
 			fNeedLayout = true;
 		}
 		else {
-			if (spaceUsed > rc.bottom) {				// partially or not at all visible at the bottom
+			if (spaceUsed > rc.bottom) { // partially or not at all visible at the bottom
 				fNeedLayout = true;
 				m_firstVisibleOffset = spaceUsed - rc.bottom;
 			}
 		}
 	}
 
-	Layout();
+	moveButtons();
 }
-/**
- * Invalidate the button associated with the given session.
- *
- * @param dat    _MessageWindowData*: Session data
- */
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Invalidate the button associated with the given session.
+//
+// @param dat    _MessageWindowData*: Session data
+
 void CSideBar::updateSession(CMsgDialog *dat)
 {
 	if (!m_isVisible || !m_isActive)
@@ -653,7 +640,7 @@ void CSideBar::updateSession(CMsgDialog *dat)
 		SIZE sz = item->measureItem();
 		m_topHeight += (sz.cy + 1);
 		if (sz.cy != oldHeight) {
-			Invalidate();
+			moveButtons();
 			::InvalidateRect(item->getHwnd(), nullptr, TRUE);
 		}
 		else ::InvalidateRect(item->getHwnd(), nullptr, FALSE);
@@ -661,37 +648,45 @@ void CSideBar::updateSession(CMsgDialog *dat)
 	else ::InvalidateRect(item->getHwnd(), nullptr, FALSE);
 }
 
-/**
- * Sets the active session item
- * called from the global update handler in msgdialog/group room window
- * on every tab activation to ensure consistency
- *
- * @param dat    _MessageWindowData*: session data
- *
- * @return The previously active item (that can be zero)
- */
-const CSideBarButton* CSideBar::setActiveItem(const CMsgDialog *dat)
-{
-	CSideBarButton *item = findSession(dat);
-	if (item != nullptr)
-		return setActiveItem(item);
+/////////////////////////////////////////////////////////////////////////////////////////
+// Sets the active session item
+// called from the global update handler in msgdialog/group room window
+// on every tab activation to ensure consistency
+//
+// @param dat    _MessageWindowData*: session data
+//
+// @return The previously active item (that can be zero)
 
-	return nullptr;
+void CSideBar::setActiveItem(const CMsgDialog *dat, bool bScroll)
+{
+	if (auto *item = findSession(dat))
+		setActiveItem(item, bScroll);
 }
 
-/**
- * Layout the buttons within the available space... ensure that buttons are
- * set to invisible if there is not enough space. Also, update the state of
- * the scroller buttons
- *
- * @param rc        RECT*:the window rectangle
- *
- * @param fOnlyCalc bool: if false (default), window positions will be updated, otherwise,
- * the method will only calculate the layout parameters. A final call to
- * Layout() with the parameter set to false is required to perform the
- * position update.
- */
-void CSideBar::Layout()
+void CSideBar::setActiveItem(CSideBarButton *newItem, bool bScroll)
+{
+	CSideBarButton *oldItem = m_activeItem;
+	m_activeItem = newItem;
+	if (oldItem)
+		::InvalidateRect(oldItem->getHwnd(), nullptr, FALSE);
+	::InvalidateRect(m_activeItem->getHwnd(), nullptr, FALSE);
+	if (bScroll)
+		scrollIntoView(m_activeItem);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Layout the buttons within the available space... ensure that buttons are
+// set to invisible if there is not enough space. Also, update the state of
+// the scroller buttons
+//
+// @param rc        RECT*:the window rectangle
+//
+// @param fOnlyCalc bool: if false (default), window positions will be updated, otherwise,
+// the method will only calculate the layout parameters. A final call to
+// Layout() with the parameter set to false is required to perform the
+// position update.
+
+void CSideBar::moveButtons()
 {
 	if (!m_isVisible)
 		return;
@@ -707,19 +702,15 @@ void CSideBar::Layout()
 	HDWP hdwp = ::BeginDeferWindowPos(1);
 
 	BOOL 	topEnabled = FALSE, bottomEnabled = FALSE;
-	HWND 	hwnd;
-	LONG 	spaceUsed = 0;
-	DWORD dwFlags = SWP_NOZORDER | SWP_NOACTIVATE;
-	LONG	iSpaceAvail = rcWnd.bottom;
+	DWORD dwFlags = SWP_NOZORDER | SWP_NOACTIVATE | SWP_SHOWWINDOW;
 
 	m_firstVisibleOffset = max(0, m_firstVisibleOffset);
-
 	m_totalItemHeight = 0;
 
-	LONG height = m_elementHeight;
+	int height = m_elementHeight, spaceUsed = 0, iSpaceAvail = rcWnd.bottom;
 
 	for (auto &p : m_buttonlist) {
-		hwnd = p->getHwnd();
+		HWND hwnd = p->getHwnd();
 
 		if (m_dwFlags & SIDEBARLAYOUT_DYNHEIGHT)
 			height = p->getHeight();
@@ -733,14 +724,13 @@ void CSideBar::Layout()
 		if (p->isTopAligned()) {
 			if (m_totalItemHeight <= m_firstVisibleOffset) {				// partially visible
 				if (nullptr != hwnd) /* Wine fix. */
-					hdwp = ::DeferWindowPos(hdwp, hwnd, nullptr, 2, -(m_firstVisibleOffset - m_totalItemHeight),
-						m_elementWidth, height, SWP_SHOWWINDOW | dwFlags);
+					hdwp = ::DeferWindowPos(hdwp, hwnd, nullptr, 2, -(m_firstVisibleOffset - m_totalItemHeight), m_elementWidth, height, dwFlags);
 				spaceUsed += ((height + 1) - (m_firstVisibleOffset - m_totalItemHeight));
 				m_totalItemHeight += (height + 1);
 			}
 			else {
 				if (nullptr != hwnd) /* Wine fix. */
-					hdwp = ::DeferWindowPos(hdwp, hwnd, nullptr, 2, spaceUsed, m_elementWidth, height, SWP_SHOWWINDOW | dwFlags);
+					hdwp = ::DeferWindowPos(hdwp, hwnd, nullptr, 2, spaceUsed, m_elementWidth, height, dwFlags);
 				spaceUsed += (height + 1);
 				m_totalItemHeight += (height + 1);
 			}
@@ -750,25 +740,17 @@ void CSideBar::Layout()
 	bottomEnabled = (m_totalItemHeight - m_firstVisibleOffset > rcWnd.bottom);
 	::EndDeferWindowPos(hdwp);
 
-	RECT	rcContainer;
+	RECT rcContainer;
 	::GetClientRect(m_pContainer->m_hwnd, &rcContainer);
 
-	LONG dx = m_dwFlags & SIDEBARORIENTATION_LEFT ? m_pContainer->m_tBorder_outer_left :
-		rcContainer.right - m_pContainer->m_tBorder_outer_right - (m_elementWidth + 4);
+	LONG dx = m_dwFlags & SIDEBARORIENTATION_LEFT ? m_pContainer->m_tBorder_outer_left : rcContainer.right - m_pContainer->m_tBorder_outer_right - (m_elementWidth + 4);
+	::SetWindowPos(m_up->getHwnd(), nullptr, dx, m_pContainer->m_tBorder_outer_top + m_pContainer->m_pMenuBar->getHeight(), m_elementWidth + 4, 14, dwFlags);
+	::SetWindowPos(m_down->getHwnd(), nullptr, dx, (rcContainer.bottom - 14 - m_pContainer->m_statusBarHeight - 1), m_elementWidth + 4, 14, dwFlags);
 
-	::SetWindowPos(m_up->getHwnd(), nullptr, dx, m_pContainer->m_tBorder_outer_top + m_pContainer->m_pMenuBar->getHeight(),
-		m_elementWidth + 4, 14, dwFlags | SWP_SHOWWINDOW);
-	::SetWindowPos(m_down->getHwnd(), nullptr, dx, (rcContainer.bottom - 14 - m_pContainer->m_statusBarHeight - 1),
-		m_elementWidth + 4, 14, dwFlags | SWP_SHOWWINDOW);
 	::EnableWindow(m_up->getHwnd(), topEnabled);
 	::EnableWindow(m_down->getHwnd(), bottomEnabled);
 	::InvalidateRect(m_up->getHwnd(), nullptr, FALSE);
 	::InvalidateRect(m_down->getHwnd(), nullptr, FALSE);
-}
-
-inline void CSideBar::Invalidate()
-{
-	Layout();
 }
 
 void CSideBar::showAll(int showCmd)
@@ -780,15 +762,14 @@ void CSideBar::showAll(int showCmd)
 		::ShowWindow(it->getHwnd(), showCmd);
 }
 
-/**
- * Helper function: find a button item associated to the given
- * session data
- *
- * @param dat    _MessageWindowData*: session information
- *
- * @return CSideBarButtonItem*: pointer to the found item. Zero, if none was found
- */
-
+/////////////////////////////////////////////////////////////////////////////////////////
+// Helper function: find a button item associated to the given
+// session data
+//
+// @param dat    _MessageWindowData*: session information
+//
+// @return CSideBarButtonItem*: pointer to the found item. Zero, if none was found
+ 
 CSideBarButton* CSideBar::findSession(const CMsgDialog *dat)
 {
 	if (dat == nullptr)
@@ -801,14 +782,13 @@ CSideBarButton* CSideBar::findSession(const CMsgDialog *dat)
 	return nullptr;
 }
 
-/**
- * Helper function: find a button item associated to the given
- * contact handle
- *
- * @param hContact  HANDLE: contact's handle to look for
- *
- * @return CSideBarButtonItem*: pointer to the found item. Zero, if none was found
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// Helper function: find a button item associated to the given
+// contact handle
+//
+// @param hContact  HANDLE: contact's handle to look for
+//
+// @return CSideBarButtonItem*: pointer to the found item. Zero, if none was found
 
 CSideBarButton* CSideBar::findSession(const MCONTACT hContact)
 {
@@ -832,7 +812,7 @@ void CSideBar::processScrollerButtons(UINT commandID)
 	else if (commandID == IDC_SIDEBARUP && ::IsWindowEnabled(m_up->getHwnd()))
 		m_firstVisibleOffset = max(0, m_firstVisibleOffset - 10);
 
-	Layout();
+	moveButtons();
 }
 
 void CSideBar::resizeScrollWnd(LONG x, LONG y, LONG, LONG height) const
@@ -854,11 +834,11 @@ void CSideBar::invalidateButton(CMsgDialog *dat)
 	}
 }
 
-/**
- * the window procedure for the sidebar container window (the window which
- * acts as a parent for the actual buttons). itself, this window is a child
- * of the container window.
- */
+/////////////////////////////////////////////////////////////////////////////////////////
+// the window procedure for the sidebar container window (the window which
+// acts as a parent for the actual buttons). itself, this window is a child
+// of the container window.
+
 LRESULT CALLBACK CSideBar::wndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg) {
@@ -869,6 +849,7 @@ LRESULT CALLBACK CSideBar::wndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lP
 		HDC hdc = (HDC)wParam;
 		RECT rc;
 		::GetClientRect(hwnd, &rc);
+
 		if (CSkin::m_skinEnabled) {
 			CSkinItem *item = &SkinItems[ID_EXTBKSIDEBARBG];
 
@@ -878,8 +859,8 @@ LRESULT CALLBACK CSideBar::wndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lP
 				CSkin::DrawItem(hdc, &rc, item);
 		}
 		else if (M.isAero() || M.isVSThemed()) {
-			HDC		hdcMem;
-			HANDLE  hbp = nullptr;
+			HDC hdcMem;
+			HANDLE hbp = nullptr;
 			HBITMAP hbm, hbmOld;
 
 			if (CMimAPI::m_haveBufferedPaint) {
@@ -927,14 +908,15 @@ LRESULT CALLBACK CSideBar::wndProcStub(HWND hwnd, UINT msg, WPARAM wParam, LPARA
 	}
 	return ::DefWindowProc(hwnd, msg, wParam, lParam);
 }
-/**
- * paints the background for a switchbar item. It can paint aero, visual styles, skins or
- * classic buttons (depending on os and current plugin settings).
- *
- * @param hdc     HDC: target device context
- * @param rc      RECT*: target rectangle
- * @param stateId the state identifier (normal, pressed, hot, disabled etc.)
- */
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// paints the background for a switchbar item. It can paint aero, visual styles, skins or
+// classic buttons (depending on os and current plugin settings).
+//
+// @param hdc     HDC: target device context
+// @param rc      RECT*: target rectangle
+// @param stateId the state identifier (normal, pressed, hot, disabled etc.)
+
 void __fastcall CSideBar::m_DefaultBackgroundRenderer(const HDC hdc, const RECT *rc, const CSideBarButton *item)
 {
 	UINT  id = item->getID();
@@ -958,18 +940,15 @@ void __fastcall CSideBar::m_DefaultBackgroundRenderer(const HDC hdc, const RECT 
 				CSkin::FillBack(hdc, const_cast<RECT *>(rc));
 
 			if (stateId == PBS_HOT || stateId == PBS_PRESSED)
-				DrawAlpha(hdc, const_cast<RECT *>(rc), 0xf0f0f0, 70, 0x000000, 0, 9,
-					31, 4, nullptr);
+				DrawAlpha(hdc, const_cast<RECT *>(rc), 0xf0f0f0, 70, 0x000000, 0, 9, 31, 4, nullptr);
 			else
-				DrawAlpha(hdc, const_cast<RECT *>(rc), 0xf0f0f0, 30, 0x707070, 0, 9,
-					31, 4, nullptr);
+				DrawAlpha(hdc, const_cast<RECT *>(rc), 0xf0f0f0, 30, 0x707070, 0, 9, 31, 4, nullptr);
 		}
 		else {
 			if (PluginConfig.m_fillColor)
 				FillTabBackground(hdc, stateId, item->getDat(), const_cast<RECT *>(rc));
 
-			CSkin::m_switchBarItem->setAlphaFormat(AC_SRC_ALPHA,
-				(stateId == PBS_HOT && !fIsActiveItem) ? 250 : (fIsActiveItem || stateId == PBS_PRESSED ? 250 : 230));
+			CSkin::m_switchBarItem->setAlphaFormat(AC_SRC_ALPHA, (stateId == PBS_HOT && !fIsActiveItem) ? 250 : (fIsActiveItem || stateId == PBS_PRESSED ? 250 : 230));
 			CSkin::m_switchBarItem->Render(hdc, rc, true);
 			if (stateId == PBS_HOT || stateId == PBS_PRESSED || fIsActiveItem) {
 				RECT rcGlow = *rc;
@@ -1034,12 +1013,11 @@ void __fastcall CSideBar::m_DefaultContentRenderer(const HDC hdc, const RECT *rc
 		item->renderIconAndNick(hdc, rcBox);
 }
 
-/**
- * content renderer for the advanced side bar button layout. includes
- * avatars
- */
-void __fastcall CSideBar::m_AdvancedContentRenderer(const HDC hdc, const RECT *rcBox,
-	const CSideBarButton *item)
+/////////////////////////////////////////////////////////////////////////////////////////
+// content renderer for the advanced side bar button layout. includes
+// avatars
+
+void __fastcall CSideBar::m_AdvancedContentRenderer(const HDC hdc, const RECT *rcBox, const CSideBarButton *item)
 {
 	const CMsgDialog *dat = item->getDat();
 	UINT id = item->getID();
@@ -1111,13 +1089,13 @@ void __fastcall CSideBar::m_AdvancedContentRenderer(const HDC hdc, const RECT *r
 	}
 }
 
-/**
- * measure callback for the advanced sidebar button layout (vertical mode
- * with variable height buttons)
- */
-const SIZE& __fastcall CSideBar::m_measureAdvancedVertical(CSideBarButton* item)
+/////////////////////////////////////////////////////////////////////////////////////////
+// measure callback for the advanced sidebar button layout (vertical mode
+// with variable height buttons)
+
+const SIZE &__fastcall CSideBar::m_measureAdvancedVertical(CSideBarButton *item)
 {
-	SIZE sz = { 0 };
+	SIZE sz = {};
 
 	const CMsgDialog *dat = item->getDat();
 	if (dat) {

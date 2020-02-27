@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -2144,7 +2144,7 @@ void CSkin::MapClientToParent(HWND hwndClient, HWND hwndParent, RECT &rc)
 
 void CMsgDialog::RenderToolbarBG(HDC hdc, const RECT &rcWindow) const
 {
-	if (m_pContainer->m_dwFlags & CNT_HIDETOOLBAR)
+	if (m_pContainer->m_flags.m_bHideToolbar)
 		return;
 
 	bool	 bAero = M.isAero();
@@ -2154,7 +2154,7 @@ void CMsgDialog::RenderToolbarBG(HDC hdc, const RECT &rcWindow) const
 	RECT 	rc, rcToolbar;
 	POINT	pt;
 
-	if (!(m_pContainer->m_dwFlags & CNT_BOTTOMTOOLBAR)) {
+	if (!m_pContainer->m_flags.m_bBottomToolbar) {
 		::GetWindowRect(m_pLog->GetHwnd(), &rc);
 		pt.y = rc.bottom + 0;
 		::ScreenToClient(m_hwnd, &pt);
@@ -2163,9 +2163,9 @@ void CMsgDialog::RenderToolbarBG(HDC hdc, const RECT &rcWindow) const
 		rcToolbar.right = rcWindow.right;
 
 		if (!isChat()) {
-			if (m_dwFlags & MWF_ERRORSTATE)
+			if (m_bErrorState)
 				rcToolbar.top += ERRORPANEL_HEIGHT;
-			if (m_dwFlagsEx & MWF_SHOW_SCROLLINGDISABLED || m_bNotOnList) {
+			if (m_bScrollingDisabled || m_bNotOnList) {
 				rcToolbar.top += 20;
 				RECT	rcAdd;
 				rcAdd.left = 0; rcAdd.right = rcToolbar.right - rcToolbar.left;
@@ -2356,7 +2356,7 @@ void CSkin::initAeroEffect()
 	}
 
 	for (TContainerData *p = pFirstContainer; p; p = p->pNext) {
-		InvalidateRect(GetDlgItem(p->m_hwnd, IDC_MSGTABS), nullptr, TRUE);
+		InvalidateRect(p->m_hwndTabs, nullptr, TRUE);
 		InvalidateRect(p->m_hwnd, nullptr, TRUE);
 		if (IsWindow(GetDlgItem(p->m_hwnd, 5000)))
 			InvalidateRect(GetDlgItem(p->m_hwnd, 5000), nullptr, TRUE);

@@ -42,34 +42,28 @@ void FreeXSC(XSTATUSCHANGE *xsc)
 
 void RemoveLoggedEventsXStatus(MCONTACT hContact)
 {
-	auto T = eventListXStatus.rev_iter();
-	for (auto &it : T)
+	for (auto &it : eventListXStatus.rev_iter())
 		if (it->hContact == hContact) {
-			db_event_delete(it->hContact, it->hDBEvent);
-			mir_free(it);
-			eventListXStatus.remove(T.indexOf(&it));
+			db_event_delete(it->hDBEvent);
+			mir_free(eventListXStatus.removeItem(&it));
 		}
 }
 
 void RemoveLoggedEventsStatus(MCONTACT hContact)
 {
-	auto T = eventListStatus.rev_iter();
-	for (auto &it : T)
+	for (auto &it : eventListStatus.rev_iter())
 		if (it->hContact == hContact) {
-			db_event_delete(it->hContact, it->hDBEvent);
-			mir_free(it);
-			eventListStatus.remove(T.indexOf(&it));
+			db_event_delete(it->hDBEvent);
+			mir_free(eventListStatus.removeItem(&it));
 		}
 }
 
 void RemoveLoggedEventsSMsg(MCONTACT hContact)
 {
-	auto T = eventListSMsg.rev_iter();
-	for (auto &it : T)
+	for (auto &it : eventListSMsg.rev_iter())
 		if (it->hContact == hContact) {
-			db_event_delete(it->hContact, it->hDBEvent);
-			mir_free(it);
-			eventListSMsg.remove(T.indexOf(&it));
+			db_event_delete(it->hDBEvent);
+			mir_free(eventListSMsg.removeItem(&it));
 		}
 }
 
@@ -470,7 +464,7 @@ void AddXStatusEventThread(void *arg)
 {
 	MCONTACT hContact = (MCONTACT)(DWORD_PTR)arg;
 
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto == nullptr)
 		return;
 
@@ -503,7 +497,7 @@ void AddSMsgEventThread(void *arg)
 
 	STATUSMSGINFO smi;
 	smi.hContact = hContact;
-	smi.proto = GetContactProto(hContact);
+	smi.proto = Proto_GetBaseAccountName(hContact);
 	if (smi.proto == nullptr)
 		return;
 

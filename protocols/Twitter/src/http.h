@@ -1,6 +1,6 @@
 /*
 
-Copyright © 2012-19 Miranda NG team
+Copyright © 2012-20 Miranda NG team
 Copyright © 2009 Jim Porter
 
 This program is free software: you can redistribute it and/or modify
@@ -19,20 +19,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-#include <string>
+#define TWITTER_BASE_URL "https://api.twitter.com/1.1"
 
 namespace http
 {
-	enum method
-	{
-		get,
-		post
-	};
-
 	struct response
 	{
 		response() : code(0) {}
 		int code;
-		std::string data;
+		CMStringA data;
 	};
 }

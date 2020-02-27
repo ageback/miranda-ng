@@ -39,7 +39,7 @@ Button_SetSkin_IcoLib      @24
 ?AuthRequest@PROTO_INTERFACE@@UEAAHIPEB_W@Z @38 NONAME
 ?Authorize@PROTO_INTERFACE@@UEAAHI@Z @39 NONAME
 ?CreateExtendedSearchUI@PROTO_INTERFACE@@UEAAPEAUHWND__@@PEAU2@@Z @40 NONAME
-?CreateLink@CProtoIntDlgBase@@QEAAXAEAVCCtrlData@@PEADEK@Z @41 NONAME
+?CreateLink@CProtoIntDlgBase@@QEAAXAEAVCCtrlData@@PEBDEK@Z @41 NONAME
 ?CreateLink@CProtoIntDlgBase@@QEAAXAEAVCCtrlData@@PEBDPEA_W@Z @42 NONAME
 ?DlgProc@CProtoIntDlgBase@@MEAA_JI_K_J@Z @43 NONAME
 ?FileAllow@PROTO_INTERFACE@@UEAAPEAXIPEAXPEB_W@Z @44 NONAME
@@ -122,7 +122,6 @@ Proto_GetAccount @130
 Proto_EnumProtocols @131
 Proto_EnumAccounts @132
 Proto_GetBaseAccountName @135
-GetContactProto @136
 Proto_AddToContact @137
 Proto_ChainRecv @138
 Proto_ChainSend @139
@@ -257,6 +256,7 @@ Font_RegisterW @326
 Options_AddPage @327
 Options_Open @328
 Options_OpenPage @329
+Netlib_GetHeader @330
 Srmm_ModifyButton @331
 Srmm_AddButton @332
 Srmm_GetButtonState @333
@@ -330,6 +330,7 @@ ProtoGetAvatarFormatByMimeType @400
 ProtoGetAvatarMimeType @401
 ?set_uin@DB_AUTH_BLOB@@QEAAXK@Z @402 NONAME
 ??0CSrmmBaseDialog@@IEAA@AEAVCMPluginBase@@HPEAUSESSION_INFO@@@Z @403 NONAME
+Miranda_GetSystemWindow @404 NONAME
 ??1CSrmmBaseDialog@@UEAA@XZ @405 NONAME
 Srmm_FindDialog @406 NONAME
 ??_7CSrmmBaseDialog@@6B@ @407 NONAME
@@ -577,7 +578,7 @@ Miranda_WaitOnHandleEx @663
 ?AddEvent@MDatabaseReadonly@@UEAAIIPEAUDBEVENTINFO@@@Z @666 NONAME
 ?DeleteContact@MDatabaseReadonly@@UEAAJI@Z @667 NONAME
 ?DeleteContactSetting@MDatabaseReadonly@@UEAAHIPEBD0@Z @668 NONAME
-?DeleteEvent@MDatabaseReadonly@@UEAAHII@Z @669 NONAME
+?DeleteEvent@MDatabaseReadonly@@UEAAHI@Z @669 NONAME
 ?EnumContactSettings@MDatabaseReadonly@@UEAAHIP6AHPEBDPEAX@Z01@Z @670 NONAME
 ?EnumModuleNames@MDatabaseReadonly@@UEAAHP6AHPEBDPEAX@Z1@Z @671 NONAME
 ?FindFirstUnreadEvent@MDatabaseReadonly@@UEAAII@Z @672 NONAME
@@ -719,3 +720,7 @@ UnregisterSrmmLog @806 NONAME
 WebSocket_Send @808 NONAME
 WebSocket_InitHeader @809 NONAME
 WebSocket_Connect @810 NONAME
+?log@CSrmmBaseDialog@@QEBAPEAVCSrmmLogWindow@@XZ @811 NONAME
+Netlib_Dump @812 NONAME
+?ProtoBroadcastAsync@PROTO_INTERFACE@@QEAAXIHHPEAX_J@Z @813 NONAME
+ProtoBroadcastAsync @814 NONAME

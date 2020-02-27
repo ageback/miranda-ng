@@ -576,7 +576,7 @@ begin
   if CurContact = 0 then
     CurProto := 'ICQ'
   else
-    CurProto := GetContactProto(CurContact);
+    CurProto := Proto_GetBaseAccountName(CurContact);
   laProgress.Caption := Format(TranslateW('Searching "%s"...'),
     [GetContactDisplayName(CurContact, CurProto, True)]);
 end;
@@ -1105,7 +1105,7 @@ var
 begin
   si := GetSearchItem(Index);
   if (FormState = gsDelete) and (si.hDBEvent <> 0) then
-    db_event_delete(si.Contact.Handle, si.hDBEvent);
+    db_event_delete(si.hDBEvent);
   if FFiltered then
     Index := FilterHistory[Index];
   DeleteEventFromLists(Index);

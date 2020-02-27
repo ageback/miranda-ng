@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-04 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -587,7 +587,7 @@ INT_PTR CALLBACK DlgProcAvatarOptions(HWND hwndDlg, UINT msg, WPARAM wParam, LPA
 			db_unset(hContact, "ContactPhoto", "File");
 			db_unset(hContact, "ContactPhoto", "Format");
 			{
-				char *szProto = GetContactProto(hContact);
+				char *szProto = Proto_GetBaseAccountName(hContact);
 				db_unset(hContact, szProto, "AvatarHash");
 				DeleteAvatarFromCache(hContact, FALSE);
 
@@ -830,7 +830,7 @@ static INT_PTR CALLBACK DlgProcAvatarUserInfo(HWND hwndDlg, UINT msg, WPARAM wPa
 			db_unset(hContact, "ContactPhoto", "File");
 			db_unset(hContact, "ContactPhoto", "Format");
 			{
-				char *szProto = GetContactProto(hContact);
+				char *szProto = Proto_GetBaseAccountName(hContact);
 				db_unset(hContact, szProto, "AvatarHash");
 				DeleteAvatarFromCache(hContact, FALSE);
 
@@ -1104,7 +1104,7 @@ int OnDetailsInit(WPARAM wParam, LPARAM hContact)
 		g_plugin.addUserInfo(wParam, &odp);
 	}
 	else {
-		char *szProto = GetContactProto(hContact);
+		char *szProto = Proto_GetBaseAccountName(hContact);
 		if (szProto == nullptr || g_plugin.getByte(szProto, 1)) {
 			// Contact dialog
 			odp.pfnDlgProc = DlgProcAvatarUserInfo;

@@ -4,7 +4,7 @@ Jabber Protocol Plugin for Miranda NG
 
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -165,14 +165,14 @@ struct JabberGcRecentInfo
 	}
 
 private:
-	BOOL null_strequals(const char *str1, const char *str2)
+	bool null_strequals(const char *str1, const char *str2)
 	{
-		if (!str1 && !str2) return TRUE;
-		if (!str1 && str2 && !*str2) return TRUE;
-		if (!str2 && str1 && !*str1) return TRUE;
+		if (!str1 && !str2) return true;
+		if (!str1 && str2 && !*str2) return true;
+		if (!str2 && str1 && !*str1) return true;
 
-		if (!str1 && str2) return FALSE;
-		if (!str2 && str1) return FALSE;
+		if (!str1 && str2) return false;
+		if (!str2 && str1) return false;
 
 		return !mir_strcmp(str1, str2);
 	}
@@ -255,11 +255,10 @@ void CJabberProto::GroupchatJoinRoom(const char *server, const char *room, const
 	replaceStr(item->password, info.m_password);
 
 	int status = (m_iStatus == ID_STATUS_INVISIBLE) ? ID_STATUS_ONLINE : m_iStatus;
-	if (mir_strlen(info.m_password)) {
-		XmlNode x("x"); x << XATTR("xmlns", JABBER_FEAT_MUC) << XCHILD("password", info.m_password);
-		SendPresenceTo(status, text, x);
-	}
-	else SendPresenceTo(status, text);
+	XmlNode x("x"); x << XATTR("xmlns", JABBER_FEAT_MUC);
+	if (mir_strlen(info.m_password))
+		x << XCHILD("password", info.m_password);
+	SendPresenceTo(status, text, x);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -882,9 +881,10 @@ void CJabberProto::GroupchatProcessPresence(const TiXmlElement *node)
 					else                                      role = ROLE_NONE;
 				}
 
-				if ((role != ROLE_NONE) && (JabberGcGetStatus(r) != JabberGcGetStatus(affiliation, role))) {
+				if (r->m_role != ROLE_NONE && JabberGcGetStatus(r) != JabberGcGetStatus(affiliation, role)) {
 					GcLogUpdateMemberStatus(item, resource, nick, nullptr, GC_EVENT_REMOVESTATUS, nullptr);
-					if (!newRes) newRes = GC_EVENT_ADDSTATUS;
+					if (!newRes)
+						newRes = GC_EVENT_ADDSTATUS;
 				}
 
 				if (affiliation != r->m_affiliation) {
@@ -1121,16 +1121,13 @@ void CJabberProto::GroupchatProcessMessage(const TiXmlElement *node)
 class CGroupchatInviteAcceptDlg : public CJabberDlgBase
 {
 	typedef CJabberDlgBase CSuper;
-	CCtrlButton m_accept;
 	CMStringA m_roomJid, m_from, m_reason, m_password;
 
 public:
 	CGroupchatInviteAcceptDlg(CJabberProto *ppro, const char *roomJid, const char *from, const char *reason, const char *password) :
 		CSuper(ppro, IDD_GROUPCHAT_INVITE_ACCEPT),
-		m_roomJid(roomJid), m_from(from), m_reason(reason), m_password(password),
-		m_accept(this, IDC_ACCEPT)
+		m_roomJid(roomJid), m_from(from), m_reason(reason), m_password(password)
 	{
-		m_accept.OnClick = Callback(this, &CGroupchatInviteAcceptDlg::OnCommand_Accept);
 	}
 
 	bool OnInitDialog() override
@@ -1151,12 +1148,12 @@ public:
 		return true;
 	}
 
-	void OnCommand_Accept(CCtrlButton*)
+	bool OnApply() override
 	{
 		wchar_t text[128];
 		GetDlgItemText(m_hwnd, IDC_NICK, text, _countof(text));
 		m_proto->AcceptGroupchatInvite(m_roomJid, T2Utf(text), m_password);
-		EndDialog(m_hwnd, 0);
+		return true;
 	}
 };
 

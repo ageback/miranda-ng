@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team,
+Copyright (C) 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -60,6 +60,21 @@ MIR_APP_DLL(void) Proto_EnumProtocols(int *nProtos, PROTOCOLDESCRIPTOR ***pProto
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+static void __cdecl sttFakeAckThread(ACKDATA *ack)
+{
+	Sleep(100);
+	NotifyEventHooks(hAckEvent, 0, (LPARAM)ack);
+	delete ack;
+}
+
+MIR_APP_DLL(void) ProtoBroadcastAsync(const char *szModule, MCONTACT hContact, int type, int result, HANDLE hProcess, LPARAM lParam)
+{
+	ACKDATA ack = { szModule, hContact, type, result, hProcess, lParam };
+	mir_forkThread<ACKDATA>(sttFakeAckThread, new ACKDATA(ack));
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 MIR_APP_DLL(INT_PTR) ProtoBroadcastAck(const char *szModule, MCONTACT hContact, int type, int result, HANDLE hProcess, LPARAM lParam)
 {
 	ACKDATA ack = { szModule, hContact, type, result, hProcess, lParam };
@@ -89,7 +104,7 @@ static HGENMENU hReqAuth = nullptr, hGrantAuth = nullptr, hRevokeAuth = nullptr;
 
 static INT_PTR __cdecl stubRequestAuth(WPARAM hContact, LPARAM)
 {
-	const char *szProto = GetContactProto(hContact);
+	const char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto)
 		ProtoCallService(szProto, PS_MENU_REQAUTH, hContact, 0);
 	return 0;
@@ -97,7 +112,7 @@ static INT_PTR __cdecl stubRequestAuth(WPARAM hContact, LPARAM)
 
 static INT_PTR __cdecl stubGrantAuth(WPARAM hContact, LPARAM)
 {
-	const char *szProto = GetContactProto(hContact);
+	const char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto)
 		ProtoCallService(szProto, PS_MENU_GRANTAUTH, hContact, 0);
 	return 0;
@@ -105,7 +120,7 @@ static INT_PTR __cdecl stubGrantAuth(WPARAM hContact, LPARAM)
 
 static INT_PTR __cdecl stubRevokeAuth(WPARAM hContact, LPARAM)
 {
-	const char *szProto = GetContactProto(hContact);
+	const char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto)
 		ProtoCallService(szProto, PS_MENU_REVOKEAUTH, hContact, 0);
 	return 0;
@@ -511,7 +526,7 @@ MEVENT PROTO_INTERFACE::RecvMsg(MCONTACT hContact, PROTORECVEVENT *pre)
 
 	DBEVENTINFO dbei = {};
 	dbei.flags = DBEF_UTF;
-	dbei.szModule = GetContactProto(hContact);
+	dbei.szModule = Proto_GetBaseAccountName(hContact);
 	dbei.timestamp = pre->timestamp;
 	dbei.eventType = EVENTTYPE_MESSAGE;
 	dbei.cbBlob = (DWORD)mir_strlen(pre->szMessage) + 1;

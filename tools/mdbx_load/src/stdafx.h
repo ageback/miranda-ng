@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2018-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2018-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -21,7 +21,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <stdint.h>
 #include <windows.h>
 
-#include "../../libs/libmdbx/src/src/bits.h"
+#define MDBX_TOOLS /* Avoid using internal mdbx_assert() */
+#include "../../libs/libmdbx/src/src/elements/internals.h"
 
 #define CMP_UINT(x, y) { if ((x) != (y)) return (x) < (y) ? -1 : 1; }
 

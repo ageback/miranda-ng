@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -52,8 +52,6 @@ HANDLE hExtListInit, hDiscoInfoResult;
 void JabberUserInfoInit(void);
 void JabberUserInfoUninit(void);
 
-bool bSecureIM, bMirOTR, bNewGPG, bPlatform;
-
 /////////////////////////////////////////////////////////////////////////////////////////
 
 static PLUGININFOEX pluginInfoEx = {
@@ -94,9 +92,10 @@ static INT_PTR g_SvcParseXmppUri(WPARAM w, LPARAM l)
 
 static int OnLoadModule(WPARAM, LPARAM)
 {
-	bSecureIM = ServiceExists("SecureIM/IsContactSecured") != 0;
-	bMirOTR = GetModuleHandle(L"mirotr.dll") != nullptr;
-	bNewGPG = GetModuleHandle(L"new_gpg.dll") != nullptr;
+	g_plugin.bMessageState = ServiceExists(MS_MESSAGESTATE_UPDATE);
+	g_plugin.bSecureIM = ServiceExists("SecureIM/IsContactSecured") != 0;
+	g_plugin.bMirOTR = GetModuleHandle(L"mirotr.dll") != nullptr;
+	g_plugin.bNewGPG = GetModuleHandle(L"new_gpg.dll") != nullptr;
 	return 0;
 }
 
@@ -155,9 +154,9 @@ static int OnModulesLoaded(WPARAM, LPARAM)
 int CMPlugin::Load()
 {
 	#ifdef _WIN64
-	bPlatform = 1;
+	bPlatform = true;
 	#else
-	bPlatform = 0;
+	bPlatform = false;
 	#endif
 
 	Miranda_GetVersionText(szCoreVersion, _countof(szCoreVersion));

@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 // 
-// Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+// Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 // Copyright (c) 2000-08 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -290,7 +290,7 @@ EXTERN_C MIR_CORE_DLL(int) db_event_count(MCONTACT hContact);
 // Returns 0 on success, or nonzero if hDbEvent was invalid
 // Triggers a db/event/deleted event just *before* the event is deleted
 
-EXTERN_C MIR_CORE_DLL(int) db_event_delete(MCONTACT hContact, MEVENT hDbEvent);
+EXTERN_C MIR_CORE_DLL(int) db_event_delete(MEVENT hDbEvent);
 
 // Edits an event in the database
 // Returns 0 on success, or nonzero on error

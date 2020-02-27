@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -43,5 +43,17 @@ struct CFileUploadParam : public MZeroedObject {
 	__forceinline bool IsAccess() { return ::_waccess(tszFileName, 0) == 0; }
 };
 
+class JsonReply
+{
+	JSONNode *m_root = nullptr;
+	int m_errorCode = 0;
+
+public:
+	JsonReply(const NETLIBHTTPREQUEST *response);
+	~JsonReply();
+
+	__forceinline JSONNode &data() const { return *m_root; }
+	__forceinline int error() const { return m_errorCode; }
+};
 
 #endif //_UTILS_H_

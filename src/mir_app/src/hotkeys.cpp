@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -220,12 +220,9 @@ MIR_APP_DLL(int) Hotkey_Unregister(const char *pszName)
 	if (g_hwndHkOptions)
 		SendMessage(g_hwndHkOptions, WM_HOTKEYUNREGISTERED, 0, 0);
 
-	auto T = hotkeys.rev_iter();
-	for (auto &it : T)
-		if (it->UnregisterHotkey) {
-			FreeHotkey(it);
-			hotkeys.remove(T.indexOf(&it));
-		}
+	for (auto &it : hotkeys.rev_iter())
+		if (it->UnregisterHotkey)
+			FreeHotkey(hotkeys.removeItem(&it));
 
 	return 0;
 }
@@ -288,12 +285,9 @@ void RegisterHotkeys()
 
 MIR_APP_DLL(void) KillModuleHotkeys(HPLUGIN pPlugin)
 {
-	auto T = hotkeys.rev_iter();
-	for (auto &it : T)
-		if (it->pPlugin == pPlugin) {
-			FreeHotkey(it);
-			hotkeys.remove(T.indexOf(&it));
-		}
+	for (auto &it : hotkeys.rev_iter())
+		if (it->pPlugin == pPlugin)
+			FreeHotkey(hotkeys.removeItem(&it));
 }
 
 void UnregisterHotkeys()

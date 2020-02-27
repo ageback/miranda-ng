@@ -1,6 +1,6 @@
 /*
 
-Copyright © 2009-11 Michal Zelinka, 2011-17 Robert Pösel, 2017-19 Miranda NG team
+Copyright © 2009-11 Michal Zelinka, 2011-17 Robert Pösel, 2017-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <windows.h>
 #include <time.h>
 
-#include <m_system_cpp.h>
+#include <m_system.h>
 
 // C++ bool type
 #define UTILS_CONV_BOOLEAN              0x0001 // true | false

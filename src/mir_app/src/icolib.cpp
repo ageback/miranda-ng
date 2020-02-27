@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -71,6 +71,22 @@ void __fastcall SafeDestroyIcon(HICON &hIcon)
 }
 
 // Helper functions to manage Icon resources
+
+static IcolibItem *Handle2Ptr(HANDLE hIcoLib)
+{
+	IcolibItem *p = (IcolibItem *)hIcoLib;
+	if (p == nullptr)
+		return nullptr;
+
+	__try {
+		if (p->signature != ICOLIB_MAGIC)
+			p = nullptr;
+	}
+	__except (EXCEPTION_EXECUTE_HANDLER) {
+		p = nullptr;
+	}
+	return p;
+}
 
 static IconSourceFile* IconSourceFile_Get(const wchar_t *file, bool isPath)
 {
@@ -581,9 +597,10 @@ MIR_APP_DLL(void) IcoLib_RemoveIcon(const char *pszIconName)
 
 MIR_APP_DLL(void) IcoLib_RemoveIconByHandle(HANDLE hIcoLib)
 {
-	mir_cslock lck(csIconList);
+	auto *pItem = Handle2Ptr(hIcoLib);
 
-	int i = iconList.getIndex((IcolibItem*)hIcoLib);
+	mir_cslock lck(csIconList);
+	int i = iconList.getIndex(pItem);
 	if (i != -1) {
 		iconList.remove(i);
 		delete iconList[i];
@@ -596,12 +613,9 @@ MIR_APP_DLL(void) KillModuleIcons(HPLUGIN pPlugin)
 		return;
 
 	mir_cslock lck(csIconList);
-	auto T = iconList.rev_iter();
-	for (auto &it : T)
-		if (it->pPlugin == pPlugin) {
-			delete it;
-			iconList.remove(T.indexOf(&it));
-		}
+	for (auto &it : iconList.rev_iter())
+		if (it->pPlugin == pPlugin)
+			delete iconList.removeItem(&it);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -655,7 +669,7 @@ HICON IconItem_GetDefaultIcon(IcolibItem *item, bool big)
 
 HICON IconItem_GetIcon(HANDLE hIcoLib, bool big)
 {
-	IcolibItem *item = (IcolibItem*)hIcoLib;
+	auto *item = Handle2Ptr(hIcoLib);
 	if (item == nullptr)
 		return nullptr;
 
@@ -724,11 +738,11 @@ MIR_APP_DLL(HANDLE) IcoLib_GetIconHandle(const char *pszIconName)
 
 MIR_APP_DLL(HICON) IcoLib_GetIconByHandle(HANDLE hItem, bool big)
 {
-	if (hItem == nullptr)
+	IcolibItem *pi = Handle2Ptr(hItem);
+	if (pi == nullptr)
 		return nullptr;
 
 	mir_cslock lck(csIconList);
-	IcolibItem *pi = (IcolibItem*)hItem;
 	if (iconList.getIndex(pi) != -1)
 		return IconItem_GetIcon(pi, big);
 

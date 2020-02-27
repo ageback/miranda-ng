@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -866,7 +866,7 @@ void CVkProto::NewsClearHistory()
 		DBEVENTINFO dbei = {};
 		db_event_get(hDBEvent, &dbei);
 		if (dbei.timestamp < tTime)
-			db_event_delete(hContact, hDBEvent);
+			db_event_delete(hDBEvent);
 		hDBEvent = hDBEventNext;
 	}
 }

@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -217,10 +217,10 @@ void CJabberProto::OnIqResultServiceDiscoveryRootItems(const TiXmlElement *iqNod
 		m_ThreadInfo->send(packet.RootElement());
 }
 
-BOOL CJabberProto::SendInfoRequest(CJabberSDNode *pNode, TiXmlNode *parent)
+bool CJabberProto::SendInfoRequest(CJabberSDNode *pNode, TiXmlNode *parent)
 {
 	if (!pNode || !m_bJabberOnline)
-		return FALSE;
+		return false;
 
 	// disco#info
 	if (!pNode->GetInfoRequestId()) {
@@ -244,13 +244,13 @@ BOOL CJabberProto::SendInfoRequest(CJabberSDNode *pNode, TiXmlNode *parent)
 		PostMessage(m_pDlgServiceDiscovery->GetHwnd(), WM_JABBER_REFRESH, 0, 0);
 	}
 
-	return TRUE;
+	return true;
 }
 
-BOOL CJabberProto::SendBothRequests(CJabberSDNode *pNode, TiXmlNode *parent)
+bool CJabberProto::SendBothRequests(CJabberSDNode *pNode, TiXmlNode *parent)
 {
 	if (!pNode || !m_bJabberOnline)
-		return FALSE;
+		return false;
 
 	// disco#info
 	if (!pNode->GetInfoRequestId()) {
@@ -291,7 +291,7 @@ BOOL CJabberProto::SendBothRequests(CJabberSDNode *pNode, TiXmlNode *parent)
 		PostMessage(m_pDlgServiceDiscovery->GetHwnd(), WM_JABBER_REFRESH, 0, 0);
 	}
 
-	return TRUE;
+	return true;
 }
 
 void CJabberProto::PerformBrowse(HWND hwndDlg)
@@ -373,19 +373,19 @@ void CJabberProto::PerformBrowse(HWND hwndDlg)
 	PostMessage(hwndDlg, WM_JABBER_REFRESH, 0, 0);
 }
 
-BOOL CJabberProto::IsNodeRegistered(CJabberSDNode *pNode)
+bool CJabberProto::IsNodeRegistered(CJabberSDNode *pNode)
 {
 	if (pNode->GetNode())
-		return FALSE;
+		return false;
 
 	JABBER_LIST_ITEM *item;
 	if (item = ListGetItemPtr(LIST_ROSTER, pNode->GetJid()))
-		return (item->subscription != SUB_NONE) ? TRUE : FALSE;
+		return item->subscription != SUB_NONE;
 
 	if (item = ListGetItemPtr(LIST_BOOKMARK, pNode->GetJid()))
-		return TRUE;
+		return true;
 
-	return FALSE;
+	return false;
 }
 
 void CJabberProto::ApplyNodeIcon(HTREELISTITEM hItem, CJabberSDNode *pNode)
@@ -444,9 +444,10 @@ void CJabberProto::ApplyNodeIcon(HTREELISTITEM hItem, CJabberSDNode *pNode)
 	TreeList_SetIcon(pNode->GetTreeItemHandle(), iIcon, iOverlay);
 }
 
-BOOL CJabberProto::SyncTree(HTREELISTITEM hIndex, CJabberSDNode *pNode)
+bool CJabberProto::SyncTree(HTREELISTITEM hIndex, CJabberSDNode *pNode)
 {
-	if (!m_pDlgServiceDiscovery) return FALSE;
+	if (!m_pDlgServiceDiscovery)
+		return false;
 
 	CJabberSDNode* pTmp = pNode;
 	while (pTmp) {
@@ -471,7 +472,7 @@ BOOL CJabberProto::SyncTree(HTREELISTITEM hIndex, CJabberSDNode *pNode)
 
 		pTmp = pTmp->GetNext();
 	}
-	return TRUE;
+	return true;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -865,7 +866,8 @@ public:
 				m_proto->m_dwSDLastRefresh = GetTickCount();
 				return TRUE;
 			}
-			else if (wParam == AUTODISCO_TIMER) {
+			
+			if (wParam == AUTODISCO_TIMER) {
 				HWND hwndList = GetDlgItem(m_hwnd, IDC_TREE_DISCO);
 				RECT rcCtl; GetClientRect(hwndList, &rcCtl);
 				RECT rcHdr; GetClientRect(ListView_GetHeader(hwndList), &rcHdr);
@@ -915,7 +917,8 @@ public:
 				if ((pt.x == -1) && (pt.y == -1)) {
 					LVITEM lvi = { 0 };
 					lvi.iItem = ListView_GetNextItem(hwndList, -1, LVNI_SELECTED);
-					if (lvi.iItem < 0) return FALSE;
+					if (lvi.iItem < 0)
+						return FALSE;
 
 					RECT rc;
 					ListView_GetItemRect(hwndList, lvi.iItem, &rc, LVIR_LABEL);
@@ -1026,7 +1029,7 @@ void CJabberProto::ServiceDiscoveryShowMenu(CJabberSDNode *pNode, HTREELISTITEM 
 		SD_ACT_LOGON = 100, SD_ACT_LOGOFF, SD_ACT_UNREGISTER,
 
 		SD_ACT_REGISTER = 200, SD_ACT_ADHOC, SD_ACT_ADDDIRECTORY,
-		SD_ACT_JOIN, SD_ACT_BOOKMARK, SD_ACT_PROXY, SD_ACT_VCARD, SD_ACT_UPLOAD
+		SD_ACT_JOIN, SD_ACT_BOOKMARK, SD_ACT_PROXY, SD_ACT_VCARD, SD_ACT_UPLOAD, SD_ACT_UPLOAD0
 	};
 
 	enum
@@ -1064,6 +1067,7 @@ void CJabberProto::ServiceDiscoveryShowMenu(CJabberSDNode *pNode, HTREELISTITEM 
 		{ JABBER_FEAT_JUD,           LPGENW("Add search directory"),  SD_ACT_ADDDIRECTORY},
 		{ JABBER_FEAT_BYTESTREAMS,   LPGENW("Use this proxy"),        SD_ACT_PROXY},
 		{ JABBER_FEAT_UPLOAD,        LPGENW("Use for uploads"),       SD_ACT_UPLOAD},
+		{ JABBER_FEAT_UPLOAD0,       LPGENW("Use for uploads"),       SD_ACT_UPLOAD0},
 		{ nullptr },
 		{ JABBER_FEAT_REGISTER,      LPGENW("Register"),              SD_ACT_REGISTER},
 		{ "jabber:iq:gateway",       LPGENW("Unregister"),            SD_ACT_UNREGISTER,       SD_FLG_ONROSTER | SD_FLG_SUBSCRIBED},
@@ -1078,7 +1082,7 @@ void CJabberProto::ServiceDiscoveryShowMenu(CJabberSDNode *pNode, HTREELISTITEM 
 	};
 
 	HMENU hMenu = CreatePopupMenu();
-	BOOL lastSeparator = TRUE;
+	bool lastSeparator = true;
 	bool bFilterItems = !GetAsyncKeyState(VK_CONTROL);
 	for (auto &it : items) {
 		JABBER_LIST_ITEM *rosterItem = nullptr;
@@ -1111,11 +1115,11 @@ void CJabberProto::ServiceDiscoveryShowMenu(CJabberSDNode *pNode, HTREELISTITEM 
 					AppendMenu(hMenu, MF_STRING | MF_POPUP, (UINT_PTR)hContactMenu, TranslateW(it.title));
 				}
 				else AppendMenu(hMenu, MF_STRING, it.action, TranslateW(it.title));
-				lastSeparator = FALSE;
+				lastSeparator = false;
 			}
 			else if (!lastSeparator) {
 				AppendMenu(hMenu, MF_SEPARATOR, 0, nullptr);
-				lastSeparator = TRUE;
+				lastSeparator = true;
 			}
 			continue;
 		}
@@ -1138,17 +1142,18 @@ void CJabberProto::ServiceDiscoveryShowMenu(CJabberSDNode *pNode, HTREELISTITEM 
 					break;
 
 				case SD_ACT_UPLOAD:
+				case SD_ACT_UPLOAD0:
 					if (m_bUseHttpUpload)
 						dwFlags += MF_CHECKED;
 					break;
 				}
 
 				AppendMenu(hMenu, dwFlags, it.action, TranslateW(it.title));
-				lastSeparator = FALSE;
+				lastSeparator = false;
 			}
 			else if (!lastSeparator) {
 				AppendMenu(hMenu, MF_SEPARATOR, 0, nullptr);
-				lastSeparator = TRUE;
+				lastSeparator = true;
 			}
 		}
 	}
@@ -1252,6 +1257,13 @@ void CJabberProto::ServiceDiscoveryShowMenu(CJabberSDNode *pNode, HTREELISTITEM 
 	case SD_ACT_UPLOAD:
 		m_bUseHttpUpload = !m_bUseHttpUpload;
 		setUString("HttpUpload", pNode->GetJid());
+		setByte("HttpUploadVer", 1);
+		break;
+
+	case SD_ACT_UPLOAD0:
+		m_bUseHttpUpload = !m_bUseHttpUpload;
+		setUString("HttpUpload", pNode->GetJid());
+		setByte("HttpUploadVer", 0);
 		break;
 
 	case SD_ACT_JOIN:

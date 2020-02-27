@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -34,7 +34,7 @@ void CB_InitCustomButtons();
 
 CGlobals PluginConfig;
 
-static TContainerSettings _cnt_default = { CNT_FLAGS_DEFAULT, CNT_FLAGSEX_DEFAULT, 255, CInfoPanel::DEGRADE_THRESHOLD, 60, 60, L"%n (%s)", 1, 0 };
+static TContainerSettings _cnt_default = { 0, 0, 255, CInfoPanel::DEGRADE_THRESHOLD, 60, 60, L"%n (%s)", 1, 0 };
 
 wchar_t* CGlobals::m_default_container_name = L"default";
 
@@ -145,7 +145,6 @@ void CGlobals::reloadSettings(bool fReloadSkins)
 	m_bAlwaysFullToolbarWidth = M.GetBool("alwaysfulltoolbar", true);
 	m_LimitStaticAvatarHeight = M.GetDword("avatarheight", 96);
 	m_SendFormat = M.GetByte("sendformat", 0);
-	m_TabAppearance = M.GetDword("tabconfig", TCF_FLASHICON | TCF_SINGLEROWTABCONTROL);
 	m_panelHeight = (DWORD)M.GetDword("panelheight", CInfoPanel::DEGRADE_THRESHOLD);
 	m_MUCpanelHeight = db_get_dw(0, CHAT_MODULE, "panelheight", CInfoPanel::DEGRADE_THRESHOLD);
 	m_bIdleDetect = M.GetBool("dimIconsForIdleContacts", true);
@@ -178,7 +177,11 @@ void CGlobals::reloadSettings(bool fReloadSkins)
 	m_genericTxtColor = db_get_dw(0, FONTMODULE, "genericTxtClr", GetSysColor(COLOR_BTNTEXT));
 	m_cRichBorders = db_get_dw(0, FONTMODULE, "cRichBorders", 0);
 
+	TContainerFlags f; f.dw = 0;
+	f.m_bDontReport = f.m_bDontReportUnfocused = f.m_bAlwaysReportInactive = f.m_bHideTabs = f.m_bNewContainerFlags = f.m_bNoMenuBar = f.m_bInfoPanel = true;
+
 	::memcpy(&globalContainerSettings, &_cnt_default, sizeof(TContainerSettings));
+	globalContainerSettings.flags = f;
 	Utils::ReadContainerSettingsFromDB(0, &globalContainerSettings);
 	globalContainerSettings.fPrivate = false;
 	if (fReloadSkins)
@@ -226,25 +229,6 @@ void CGlobals::hookSystemEvents()
 	HookEvent(ME_AV_MYAVATARCHANGED, ::MyAvatarChanged);
 }
 
-int CGlobals::TopToolbarLoaded(WPARAM, LPARAM)
-{
-	TTBButton ttb = {};
-	ttb.dwFlags = TTBBF_SHOWTOOLTIP | TTBBF_VISIBLE;
-	ttb.pszService = MS_TABMSG_TRAYSUPPORT;
-	ttb.name = "TabSRMM session list";
-	ttb.pszTooltipUp = LPGEN("TabSRMM session list");
-	ttb.hIconHandleUp = IcoLib_GetIcon("tabSRMM_sb_slist");
-	g_plugin.addTTB(&ttb);
-
-	ttb.name = "TabSRMM Menu";
-	ttb.pszTooltipUp = LPGEN("TabSRMM menu");
-	ttb.lParamUp = ttb.lParamDown = 1;
-	ttb.hIconHandleUp = IcoLib_GetIcon("tabSRMM_container");
-	g_plugin.addTTB(&ttb);
-
-	return 0;
-}
-
 /////////////////////////////////////////////////////////////////////////////////////////
 // second part of the startup initialisation.All plugins are now fully loaded
 
@@ -272,10 +256,6 @@ int CGlobals::ModulesLoaded(WPARAM, LPARAM)
 		db_set_b(0, SRMSGMOD_T, "avatarmode", 2);
 
 	PluginConfig.g_hwndHotkeyHandler = CreateWindowEx(0, L"TSHK", L"", WS_POPUP, 0, 0, 40, 40, nullptr, nullptr, g_plugin.getInst(), nullptr);
-
-	::CreateTrayMenus(TRUE);
-	if (nen_options.bTraySupport)
-		::CreateSystrayIcon(TRUE);
 
 	CMenuItem mi(&g_plugin);
 	SET_UID(mi, 0x9f68b822, 0xff97, 0x477d, 0xb7, 0x6d, 0xa5, 0x59, 0x33, 0x1c, 0x54, 0x40);
@@ -309,7 +289,6 @@ int CGlobals::ModulesLoaded(WPARAM, LPARAM)
 	HookEvent(ME_DB_EVENT_EDITED, CMimAPI::MessageEventAdded);
 
 	HookEvent(ME_FONT_RELOAD, ::FontServiceFontsChanged);
-	HookEvent(ME_TTB_MODULELOADED, TopToolbarLoaded);
 
 	HookEvent(ME_MC_ENABLED, &CContactCache::cacheUpdateMetaChanged);
 	HookEvent(ME_MC_DEFAULTTCHANGED, MetaContactEvent);
@@ -453,9 +432,6 @@ int CGlobals::PreshutdownSendRecv(WPARAM, LPARAM)
 
 int CGlobals::OkToExit(WPARAM, LPARAM)
 {
-	::CreateSystrayIcon(0);
-	::CreateTrayMenus(0);
-
 	CWarning::destroyAll();
 
 	CMimAPI::m_shutDown = true;

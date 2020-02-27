@@ -1,7 +1,7 @@
 /*
 
 Copyright (C) 2009 Ricardo Pescuma Domenecci
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This is free software; you can redistribute it and/or
 modify it under the terms of the GNU Library General Public
@@ -157,7 +157,7 @@ void RebuildListsBasedOnGroups(LIST<ExtraIconGroup> &groups)
 
 ///////////////////////////////////////////////////////////////////////////////
 
-static void ResetSlots(BaseExtraIcon *extra, ExtraIconGroup *group)
+static void ResetSlots(BaseExtraIcon *extra, ExtraIconGroup *group, int iOldSlot = -1)
 {
 	int slot = 0, oldMaxSlot = -1;
 	for (auto &ex : extraIconsBySlot) {
@@ -173,6 +173,9 @@ static void ResetSlots(BaseExtraIcon *extra, ExtraIconGroup *group)
 		if (clistApplyAlreadyCalled && (ex == group || ex == extra || oldSlot != slot))
 			ex->applyIcons();
 	}
+
+	if (iOldSlot > oldMaxSlot)
+		oldMaxSlot = iOldSlot + 1;
 
 	// slots were freed, we need to clear one or more items
 	if (extra == nullptr)
@@ -190,20 +193,24 @@ MIR_APP_DLL(void) KillModuleExtraIcons(HPLUGIN pPlugin)
 {
 	LIST<ExtraIcon> arIcons(1);
 
-	auto T = registeredExtraIcons.rev_iter();
-	for (auto &it : T)
+	for (auto &it : registeredExtraIcons.rev_iter())
 		if (it->m_pPlugin == pPlugin) {
 			arIcons.insert(it);
-			registeredExtraIcons.remove(T.indexOf(&it));
+			registeredExtraIcons.removeItem(&it);
 		}
 
 	if (arIcons.getCount() == 0)
 		return;
 
+	int iOldSlot = -1;
+	for (auto &it : arIcons)
+		if (it->getSlot() > iOldSlot)
+			iOldSlot = it->getSlot() + 1;
+
 	LIST<ExtraIconGroup> groups(1);
 	LoadGroups(groups);
 	RebuildListsBasedOnGroups(groups);
-	ResetSlots(0, 0);
+	ResetSlots(0, 0, iOldSlot);
 
 	for (auto &it : arIcons)
 		delete it;

@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -48,7 +48,7 @@ LONG CDbxMDBX::DeleteContact(MCONTACT contactID)
 		OBJLIST<EventItem> events(50);
 		GatherContactHistory(contactID, events);
 		while (events.getCount()) {
-			DeleteEvent(contactID, events[0].eventId);
+			DeleteEvent(events[0].eventId);
 			events.remove(0);
 		}
 	}

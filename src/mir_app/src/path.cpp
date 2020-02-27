@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -34,7 +34,7 @@ static wchar_t tszAvatarRoot[MAX_PATH];
 
 wchar_t* GetContactID(MCONTACT hContact)
 {
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (db_get_b(hContact, szProto, "ChatRoom", 0) == 1)
 		return db_get_wsa(hContact, szProto, "ChatRoomID");
 
@@ -229,9 +229,9 @@ XCHAR *GetInternalVariable(const XCHAR *key, size_t keyLength, MCONTACT hContact
 		if (!_xcscmp(theKey, XSTR(key, "nick")))
 			theValue = GetContactNickX(key, hContact);
 		else if (!_xcscmp(theKey, XSTR(key, "proto")))
-			theValue = mir_a2x(key, GetContactProto(hContact));
+			theValue = mir_a2x(key, Proto_GetBaseAccountName(hContact));
 		else if (!_xcscmp(theKey, XSTR(key, "accountname"))) {
-			PROTOACCOUNT *acc = Proto_GetAccount(GetContactProto(hContact));
+			PROTOACCOUNT *acc = Proto_GetAccount(Proto_GetBaseAccountName(hContact));
 			if (acc != nullptr)
 				theValue = mir_a2x(key, _T2A(acc->tszAccountName));
 		}

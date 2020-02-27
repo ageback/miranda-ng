@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -252,7 +252,7 @@ int CMimAPI::TypingMessage(WPARAM hContact, LPARAM mode)
 	}
 	else fShowOnClist = false;
 
-	if ((!foundWin || !(pContainer->m_dwFlags & CNT_NOSOUND)) && preTyping != (mode != 0))
+	if ((!foundWin || !pContainer->m_flags.m_bNoSound) && preTyping != (mode != 0))
 		Skin_PlaySound(mode ? "TNStart" : "TNStop");
 
 	if (g_plugin.getByte("ShowTypingPopup", 0)) {
@@ -349,7 +349,7 @@ int CMimAPI::PrebuildContactMenu(WPARAM hContact, LPARAM)
 		return 0;
 
 	bool bEnabled = false;
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto) {
 		// leave this menu item hidden for chats
 		if (!db_get_b(hContact, szProto, "ChatRoom", 0))
@@ -472,9 +472,9 @@ int CMimAPI::MessageEventAdded(WPARAM hContact, LPARAM hDbEvent)
 	if (dwStatusMask == -1)
 		bAllowAutoCreate = true;
 	else {
-		char *szProto = GetContactProto(hContact);
+		char *szProto = Proto_GetBaseAccountName(hContact);
 		if (szProto && !mir_strcmp(szProto, META_PROTO))
-			szProto = GetContactProto(db_mc_getSrmmSub(hContact));
+			szProto = Proto_GetBaseAccountName(db_mc_getSrmmSub(hContact));
 
 		if (szProto) {
 			int dwStatus = Proto_GetStatus(szProto);
@@ -520,21 +520,20 @@ nowindowcreate:
 	// for tray support, we add the event to the tray menu. otherwise we send it back to
 	// the contact list for flashing
 	if (!(dbei.flags & DBEF_READ)) {
-		UpdateTrayMenu(nullptr, 0, dbei.szModule, nullptr, hContact, 1);
+		AddUnreadContact(hContact);
 
-		if (!nen_options.bTraySupport) {
-			wchar_t toolTip[256];
-			mir_snwprintf(toolTip, TranslateT("Message from %s"), Clist_GetContactDisplayName(hContact));
+		wchar_t toolTip[256];
+		mir_snwprintf(toolTip, TranslateT("Message from %s"), Clist_GetContactDisplayName(hContact));
 
-			CLISTEVENT cle = {};
-			cle.hContact = hContact;
-			cle.hDbEvent = hDbEvent;
-			cle.flags = CLEF_UNICODE;
-			cle.hIcon = Skin_LoadIcon(SKINICON_EVENT_MESSAGE);
-			cle.pszService = MS_MSG_READMESSAGE;
-			cle.szTooltip.w = toolTip;
-			g_clistApi.pfnAddEvent(&cle);
-		}
+		CLISTEVENT cle = {};
+		cle.hContact = hContact;
+		cle.hDbEvent = hDbEvent;
+		cle.flags = CLEF_UNICODE;
+		cle.hIcon = Skin_LoadIcon(SKINICON_EVENT_MESSAGE);
+		cle.pszService = MS_MSG_READMESSAGE;
+		cle.szTooltip.w = toolTip;
+		g_clistApi.pfnAddEvent(&cle);
+
 		tabSRMM_ShowPopup(hContact, hDbEvent, dbei.eventType, 0, nullptr, nullptr, dbei.szModule);
 	}
 	return 0;

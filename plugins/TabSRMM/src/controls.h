@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -36,7 +36,7 @@ public:
 		NR_BUTTONS = 8
 	};
 
-	CMenuBar(HWND hwndParent, const TContainerData *pContainer);
+	CMenuBar(const TContainerData *pContainer);
 	~CMenuBar();
 
 	const RECT&  getClientRect();

@@ -39,7 +39,7 @@ Button_SetSkin_IcoLib      @24
 ?AuthRequest@PROTO_INTERFACE@@UAEHIPB_W@Z @38 NONAME
 ?Authorize@PROTO_INTERFACE@@UAEHI@Z @39 NONAME
 ?CreateExtendedSearchUI@PROTO_INTERFACE@@UAEPAUHWND__@@PAU2@@Z @40 NONAME
-?CreateLink@CProtoIntDlgBase@@QAEXAAVCCtrlData@@PADEK@Z @41 NONAME
+?CreateLink@CProtoIntDlgBase@@QAEXAAVCCtrlData@@PBDEK@Z @41 NONAME
 ?CreateLink@CProtoIntDlgBase@@QAEXAAVCCtrlData@@PBDPA_W@Z @42 NONAME
 ?DlgProc@CProtoIntDlgBase@@MAEHIIJ@Z @43 NONAME
 ?FileAllow@PROTO_INTERFACE@@UAEPAXIPAXPB_W@Z @44 NONAME
@@ -122,7 +122,6 @@ Proto_GetAccount @130
 Proto_EnumProtocols @131
 Proto_EnumAccounts @132
 Proto_GetBaseAccountName @135
-GetContactProto @136
 Proto_AddToContact @137
 Proto_ChainRecv @138
 Proto_ChainSend @139
@@ -257,6 +256,7 @@ Font_RegisterW @326
 Options_AddPage @327
 Options_Open @328
 Options_OpenPage @329
+Netlib_GetHeader @330
 Srmm_ModifyButton @331
 Srmm_AddButton @332
 Srmm_GetButtonState @333
@@ -330,6 +330,7 @@ ProtoGetAvatarFormatByMimeType @400
 ProtoGetAvatarMimeType @401
 ?set_uin@DB_AUTH_BLOB@@QAEXK@Z @402 NONAME
 ??0CSrmmBaseDialog@@IAE@AAVCMPluginBase@@HPAUSESSION_INFO@@@Z @403 NONAME
+Miranda_GetSystemWindow @404 NONAME
 ??1CSrmmBaseDialog@@UAE@XZ @405 NONAME
 Srmm_FindDialog @406 NONAME
 ??_7CSrmmBaseDialog@@6B@ @407 NONAME
@@ -577,7 +578,7 @@ Miranda_WaitOnHandleEx @663
 ?AddEvent@MDatabaseReadonly@@UAGIIPAUDBEVENTINFO@@@Z @666 NONAME
 ?DeleteContact@MDatabaseReadonly@@UAGJI@Z @667 NONAME
 ?DeleteContactSetting@MDatabaseReadonly@@UAGHIPBD0@Z @668 NONAME
-?DeleteEvent@MDatabaseReadonly@@UAGHII@Z @669 NONAME
+?DeleteEvent@MDatabaseReadonly@@UAGHI@Z @669 NONAME
 ?EnumContactSettings@MDatabaseReadonly@@UAGHIP6AHPBDPAX@Z01@Z @670 NONAME
 ?EnumModuleNames@MDatabaseReadonly@@UAGHP6AHPBDPAX@Z1@Z @671 NONAME
 ?FindFirstUnreadEvent@MDatabaseReadonly@@UAGII@Z @672 NONAME
@@ -719,3 +720,7 @@ _UnregisterSrmmLog@4 @806 NONAME
 _WebSocket_Send@12 @808 NONAME
 _WebSocket_InitHeader@12 @809 NONAME
 _WebSocket_Connect@12 @810 NONAME
+?log@CSrmmBaseDialog@@QBEPAVCSrmmLogWindow@@XZ @811 NONAME
+Netlib_Dump @812 NONAME
+?ProtoBroadcastAsync@PROTO_INTERFACE@@QAEXIHHPAXJ@Z @813 NONAME
+ProtoBroadcastAsync @814 NONAME

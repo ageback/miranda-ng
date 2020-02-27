@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-04 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -418,7 +418,7 @@ static LRESULT CALLBACK ACCWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lP
 			DestroyAnimation(data);
 
 			data->hContact = lParam;
-			mir_strncpy(data->proto, GetContactProto(data->hContact), sizeof(data->proto));
+			mir_strncpy(data->proto, Proto_GetBaseAccountName(data->hContact), sizeof(data->proto));
 
 			StartAnimation(data);
 

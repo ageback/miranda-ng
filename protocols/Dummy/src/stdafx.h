@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2014-17 Robert Pösel, 2017-19 Miranda NG team
+Copyright (c) 2014-17 Robert Pösel, 2017-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -29,7 +29,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <m_system.h>
 
 #include <m_avatars.h>
-#include <m_chat.h>
 #include <m_clistint.h>
 #include <m_contacts.h>
 #include <m_database.h>

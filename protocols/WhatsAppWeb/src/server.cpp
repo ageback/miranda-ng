@@ -1,7 +1,7 @@
 /*
 
 WhatsAppWeb plugin for Miranda NG
-Copyright © 2019 George Hazan
+Copyright © 2019-20 George Hazan
 
 */
 
@@ -372,13 +372,15 @@ bool WhatsAppProto::ServerThreadWorker()
 		{ 0, 0 }
 	};
 
-	m_hServerConn = WebSocket_Connect(m_hNetlibUser, "web.whatsapp.com/ws", hdrs);
-	if (m_hServerConn == nullptr) {
+	auto *pReply = WebSocket_Connect(m_hNetlibUser, "web.whatsapp.com/ws", hdrs);
+	if (pReply == nullptr) {
 		debugLogA("Server connection failed, exiting");
 		return false;
 	}
 
 	debugLogA("Server connection succeeded");
+	m_hServerConn = pReply->nlc;
+	Netlib_FreeHttpRequest(pReply);
 
 	m_iLoginTime = time(0);
 	m_szClientToken = getMStringA(DBKEY_CLIENT_TOKEN);

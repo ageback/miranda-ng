@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -45,19 +45,18 @@ struct JABBER_BYTE_TRANSFER : public MZeroedObject
 	HANDLE hEvent;
 	TiXmlDocument doc;
 	TiXmlElement *iqNode;
-	BOOL (CJabberProto::*pfnSend)(HNETLIBCONN hConn, filetransfer *ft);
-	int (CJabberProto::*pfnRecv)(HNETLIBCONN hConn, filetransfer *ft, char* buffer, int datalen);
+	bool (CJabberProto::*pfnSend)(HNETLIBCONN hConn, filetransfer *ft);
+	int  (CJabberProto::*pfnRecv)(HNETLIBCONN hConn, filetransfer *ft, char* buffer, int datalen);
 	void (CJabberProto::*pfnFinal)(BOOL success, filetransfer *ft);
 	filetransfer *ft;
 
 	// XEP-0065 proxy support
-	BOOL bProxyDiscovered;
+	bool bProxyDiscovered, bStreamActivated;
 	HANDLE hProxyEvent;
 	char *szProxyHost;
 	char *szProxyPort;
 	char *szProxyJid;
 	char *szStreamhostUsed;
-	BOOL bStreamActivated;
 	HANDLE hSendEvent;
 };
 

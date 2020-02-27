@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -115,25 +115,25 @@ void CJabberProto::ExternalTempIqHandler(const TiXmlElement *node, CJabberIqInfo
 	free(d); // free IqHandlerData allocated in CJabberProto::AddIqHandler below
 }
 
-BOOL CJabberProto::ExternalIqHandler(const TiXmlElement *node, CJabberIqInfo *pInfo)
+bool CJabberProto::ExternalIqHandler(const TiXmlElement *node, CJabberIqInfo *pInfo)
 {
 	sHandlerData *d = (sHandlerData*)pInfo->GetUserData();
 	return d->Func(this, node, d->pUserData);
 }
 
-BOOL CJabberProto::ExternalMessageHandler(const TiXmlElement *node, ThreadData*, CJabberMessageInfo* pInfo)
+bool CJabberProto::ExternalMessageHandler(const TiXmlElement *node, ThreadData*, CJabberMessageInfo* pInfo)
 {
 	sHandlerData *d = (sHandlerData*)pInfo->GetUserData();
 	return d->Func(this, node, d->pUserData);
 }
 
-BOOL CJabberProto::ExternalPresenceHandler(const TiXmlElement *node, ThreadData*, CJabberPresenceInfo* pInfo)
+bool CJabberProto::ExternalPresenceHandler(const TiXmlElement *node, ThreadData*, CJabberPresenceInfo* pInfo)
 {
 	sHandlerData *d = (sHandlerData*)pInfo->GetUserData();
 	return d->Func(this, node, d->pUserData);
 }
 
-BOOL CJabberProto::ExternalSendHandler(const TiXmlElement *node, ThreadData*, CJabberSendInfo* pInfo)
+bool CJabberProto::ExternalSendHandler(const TiXmlElement *node, ThreadData*, CJabberSendInfo* pInfo)
 {
 	sHandlerData *d = (sHandlerData*)pInfo->GetUserData();
 	return d->Func(this, node, d->pUserData);

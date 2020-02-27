@@ -1,5 +1,8 @@
 #pragma once
 
+#define EVENT_INCOMING_CALL 10001
+#define EVENT_CALL_FINISHED 10002
+
 typedef __int64 SnowFlake;
 
 __forceinline int compareInt64(const SnowFlake i1, const SnowFlake i2)
@@ -16,6 +19,19 @@ struct AsyncHttpRequest : public MTHttpRequest<CDiscordProto>
 
 	int m_iErrorCode, m_iReqNum;
 	bool m_bMainSite;
+};
+
+class JsonReply
+{
+	JSONNode *m_root = nullptr;
+	int m_errorCode = 0;
+
+public:
+	JsonReply(NETLIBHTTPREQUEST *);
+	~JsonReply();
+
+	__forceinline JSONNode& data() const { return *m_root; }
+	__forceinline operator bool() const { return m_errorCode == 200; }
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -111,6 +127,13 @@ struct CDiscordGuild : public MZeroedObject
 	OBJLIST<CDiscordRole> arRoles; // guild roles
 };
 
+struct CDiscordVoiceCall
+{
+	CMStringA szId;
+	SnowFlake channelId;
+	time_t    startTime;
+};
+
 /////////////////////////////////////////////////////////////////////////////////////////
 
 class CDiscordProto : public PROTO<CDiscordProto>
@@ -118,14 +141,39 @@ class CDiscordProto : public PROTO<CDiscordProto>
 	friend struct AsyncHttpRequest;
 	friend class CDiscardAccountOptions;
 
+	class CDiscordProtoImpl
+	{
+		friend class CDiscordProto;
+		CDiscordProto &m_proto;
+
+		CTimer m_heartBeat, m_markRead;
+		void OnHeartBeat(CTimer *) {
+			m_proto.GatewaySendHeartbeat();
+		}
+		
+		void OnMarkRead(CTimer *pTimer) {
+			m_proto.SendMarkRead();
+			pTimer->Stop();
+		}
+
+		CDiscordProtoImpl(CDiscordProto &pro) :
+			m_proto(pro),
+			m_markRead(Miranda_GetSystemWindow(), UINT_PTR(this)),
+			m_heartBeat(Miranda_GetSystemWindow(), UINT_PTR(this) + 1)
+		{
+			m_markRead.OnEvent = Callback(this, &CDiscordProtoImpl::OnMarkRead);
+			m_heartBeat.OnEvent = Callback(this, &CDiscordProtoImpl::OnHeartBeat);
+		}
+	} m_impl;
+
 	//////////////////////////////////////////////////////////////////////////////////////
 	// threads
 
 	void __cdecl SendFileThread(void*);
 	void __cdecl ServerThread(void*);
 	void __cdecl SearchThread(void *param);
-	void __cdecl SendMessageAckThread(void* param);
 	void __cdecl BatchChatCreate(void* param);
+	void __cdecl GetAwayMsgThread(void *param);
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// session control
@@ -133,7 +181,9 @@ class CDiscordProto : public PROTO<CDiscordProto>
 	void ConnectionFailed(int iReason);
 	void ShutdownSession(void);
 
-	ptrA m_szAccessToken, m_szAccessCookie;
+	wchar_t *m_wszStatusMsg[MAX_STATUS_COUNT];
+
+	ptrA m_szAccessToken, m_szTempToken;
 
 	mir_cs m_csHttpQueue;
 	HANDLE m_evRequestsQueue;
@@ -141,6 +191,7 @@ class CDiscordProto : public PROTO<CDiscordProto>
 	
 	void ExecuteRequest(AsyncHttpRequest *pReq);
 	void Push(AsyncHttpRequest *pReq, int iTimeout = 10000);
+	void SaveToken(const JSONNode &data);
 
 	HANDLE m_hWorkerThread;       // worker thread handle
 	HNETLIBCONN m_hAPIConnection; // working connection
@@ -154,7 +205,8 @@ class CDiscordProto : public PROTO<CDiscordProto>
 
 	CMStringA
 		m_szGateway,           // gateway url
-		m_szGatewaySessionId;  // current session id
+		m_szGatewaySessionId,  // current session id
+		m_szCookie;            // cookie used for all http queries
 	
 	HNETLIBUSER m_hGatewayNetlibUser; // the separate netlib user handle for gateways
 	HNETLIBCONN m_hGatewayConnection;      // gateway connection
@@ -167,7 +219,6 @@ class CDiscordProto : public PROTO<CDiscordProto>
 
 	void  GatewaySendHeartbeat(void);
 	void  GatewaySendIdentify(void);
-	void  GatewaySendGuildInfo(SnowFlake id);
 	void  GatewaySendResume(void);
 
 	GatewayHandlerFunc GetHandler(const wchar_t*);
@@ -194,11 +245,14 @@ class CDiscordProto : public PROTO<CDiscordProto>
 
 	OBJLIST<CDiscordUser> arUsers;
 	OBJLIST<COwnMessage> arOwnMessages;
+	OBJLIST<CDiscordVoiceCall> arVoiceCalls;
 
 	CDiscordUser* FindUser(SnowFlake id);
 	CDiscordUser* FindUser(const wchar_t *pwszUsername, int iDiscriminator);
 	CDiscordUser* FindUserByChannel(SnowFlake channelId);
-	CDiscordUser* PrepareUser(const JSONNode&);
+
+	void          PreparePrivateChannel(const JSONNode &);
+	CDiscordUser* PrepareUser(const JSONNode &);
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// menu items
@@ -226,12 +280,13 @@ class CDiscordProto : public PROTO<CDiscordProto>
 		return arGuilds.find((CDiscordGuild*)&id);
 	}
 
-	void ProcessGuild(const JSONNode&);
 	void AddGuildUser(CDiscordGuild *guild, const CDiscordGuildMember &pUser);
-	void ParseGuildContents(CDiscordGuild *guild, const JSONNode &);
-	CDiscordUser* ProcessGuildChannel(CDiscordGuild *guild, const JSONNode&);
-	void ProcessRole(CDiscordGuild *guild, const JSONNode&);
-	void ProcessType(CDiscordUser *pUser, const JSONNode&);
+	void LoadGuildInfo(CDiscordGuild *guild);
+
+	void ProcessGuild(const JSONNode &json);
+	CDiscordUser* ProcessGuildChannel(CDiscordGuild *guild, const JSONNode &json);
+	void ProcessRole(CDiscordGuild *guild, const JSONNode &json);
+	void ProcessType(CDiscordUser *pUser, const JSONNode &json);
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// group chats
@@ -261,31 +316,34 @@ public:
 	//////////////////////////////////////////////////////////////////////////////////////
 	// PROTO_INTERFACE
 
-	INT_PTR GetCaps(int, MCONTACT = 0) override;
+	INT_PTR  GetCaps(int, MCONTACT = 0) override;
 
-	HWND CreateExtendedSearchUI(HWND owner) override;
-	HWND SearchAdvanced(HWND owner) override;
+	HWND     CreateExtendedSearchUI(HWND owner) override;
+	HWND     SearchAdvanced(HWND owner) override;
 
-	HANDLE SearchBasic(const wchar_t *id) override;
+	HANDLE   SearchBasic(const wchar_t *id) override;
 	MCONTACT AddToList(int flags, PROTOSEARCHRESULT *psr) override;
 	
-	int AuthRecv(MCONTACT, PROTORECVEVENT *pre) override;
-	int Authorize(MEVENT hDbEvent) override;
-	int AuthDeny(MEVENT hDbEvent, const wchar_t* szReason) override;
-	int AuthRequest(MCONTACT hContact, const wchar_t*) override;
+	int      AuthRecv(MCONTACT, PROTORECVEVENT *pre) override;
+	int      Authorize(MEVENT hDbEvent) override;
+	int      AuthDeny(MEVENT hDbEvent, const wchar_t* szReason) override;
+	int      AuthRequest(MCONTACT hContact, const wchar_t*) override;
 
-	int SendMsg(MCONTACT hContact, int flags, const char *pszSrc) override;
+	HANDLE   GetAwayMsg(MCONTACT hContact) override;
+	int      SetAwayMsg(int iStatus, const wchar_t *msg) override;
 
-	HANDLE SendFile(MCONTACT hContact, const wchar_t *szDescription, wchar_t **ppszFiles) override;
+	int      SendMsg(MCONTACT hContact, int flags, const char *pszSrc) override;
 
-	int UserIsTyping(MCONTACT hContact, int type) override;
+	HANDLE   SendFile(MCONTACT hContact, const wchar_t *szDescription, wchar_t **ppszFiles) override;
 
-	int SetStatus(int iNewStatus) override;
+	int      UserIsTyping(MCONTACT hContact, int type) override;
 
-	void OnBuildProtoMenu() override;
-	void OnContactDeleted(MCONTACT) override;
-	void OnModulesLoaded() override;
-	void OnShutdown() override;
+	int      SetStatus(int iNewStatus) override;
+
+	void     OnBuildProtoMenu() override;
+	void     OnContactDeleted(MCONTACT) override;
+	void     OnModulesLoaded() override;
+	void     OnShutdown() override;
 
 	//////////////////////////////////////////////////////////////////////////////////////
 	// Services
@@ -308,28 +366,31 @@ public:
 	//////////////////////////////////////////////////////////////////////////////////////
 	// dispatch commands
 
-	void OnCommandChannelCreated(const JSONNode&);
-	void OnCommandChannelDeleted(const JSONNode&);
-	void OnCommandChannelUpdated(const JSONNode&);
-	void OnCommandGuildCreated(const JSONNode&);
-	void OnCommandGuildDeleted(const JSONNode&);
-	void OnCommandGuildMemberAdded(const JSONNode&);
-	void OnCommandGuildMemberRemoved(const JSONNode&);
-	void OnCommandGuildMemberUpdated(const JSONNode&);
-	void OnCommandGuildSync(const JSONNode&);
-	void OnCommandFriendAdded(const JSONNode&);
-	void OnCommandFriendRemoved(const JSONNode&);
+	void OnCommandCallCreated(const JSONNode &json);
+	void OnCommandCallDeleted(const JSONNode &json);
+	void OnCommandCallUpdated(const JSONNode &json);
+	void OnCommandChannelCreated(const JSONNode &json);
+	void OnCommandChannelDeleted(const JSONNode &json);
+	void OnCommandChannelUpdated(const JSONNode &json);
+	void OnCommandGuildCreated(const JSONNode &json);
+	void OnCommandGuildDeleted(const JSONNode &json);
+	void OnCommandGuildMemberAdded(const JSONNode &json);
+	void OnCommandGuildMemberRemoved(const JSONNode &json);
+	void OnCommandGuildMemberUpdated(const JSONNode &json);
+	void OnCommandFriendAdded(const JSONNode &json);
+	void OnCommandFriendRemoved(const JSONNode &json);
 	void OnCommandMessage(const JSONNode&, bool);
-	void OnCommandMessageCreate(const JSONNode&);
-	void OnCommandMessageUpdate(const JSONNode&);
-	void OnCommandMessageAck(const JSONNode&);
-	void OnCommandPresence(const JSONNode&);
-	void OnCommandReady(const JSONNode&);
-	void OnCommandRoleCreated(const JSONNode&);
-	void OnCommandRoleDeleted(const JSONNode&);
-	void OnCommandTyping(const JSONNode&);
-	void OnCommandUserUpdate(const JSONNode&);
-	void OnCommandUserSettingsUpdate(const JSONNode&);
+	void OnCommandMessageCreate(const JSONNode &json);
+	void OnCommandMessageDelete(const JSONNode &json);
+	void OnCommandMessageUpdate(const JSONNode &json);
+	void OnCommandMessageAck(const JSONNode &json);
+	void OnCommandPresence(const JSONNode &json);
+	void OnCommandReady(const JSONNode &json);
+	void OnCommandRoleCreated(const JSONNode &json);
+	void OnCommandRoleDeleted(const JSONNode &json);
+	void OnCommandTyping(const JSONNode &json);
+	void OnCommandUserUpdate(const JSONNode &json);
+	void OnCommandUserSettingsUpdate(const JSONNode &json);
 
 	void OnLoggedIn();
 	void OnLoggedOut();
@@ -337,6 +398,7 @@ public:
 	void OnReceiveCreateChannel(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
 	void OnReceiveFile(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
 	void OnReceiveGateway(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
+	void OnReceiveMarkRead(NETLIBHTTPREQUEST *, AsyncHttpRequest *);
 	void OnReceiveMessageAck(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
 	void OnReceiveToken(NETLIBHTTPREQUEST*, AsyncHttpRequest*);
 
@@ -352,16 +414,12 @@ public:
 	//////////////////////////////////////////////////////////////////////////////////////
 	// Misc
 
+	void SendMarkRead(void);
 	void SetServerStatus(int iStatus);
 	void RemoveFriend(SnowFlake id);
 
 	CMStringW GetAvatarFilename(MCONTACT hContact);
 	void CheckAvatarChange(MCONTACT hContact, const CMStringW &wszNewHash);
-
-	__forceinline int getHeartbeatInterval() const { return m_iHartbeatInterval; }
-
-	static void CALLBACK HeartbeatTimerProc(HWND hwnd, UINT msg, UINT_PTR id, DWORD);
-	static void CALLBACK MarkReadTimerProc(HWND hwnd, UINT msg, UINT_PTR id, DWORD);
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -371,5 +429,4 @@ struct CMPlugin : public ACCPROTOPLUGIN<CDiscordProto>
 	CMPlugin();
 
 	int Load() override;
-	int Unload() override;
 };

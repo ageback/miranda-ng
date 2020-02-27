@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-03 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -44,7 +44,7 @@ static int GetContactStatus(MCONTACT hContact)
 {
 	char *szProto;
 
-	szProto = GetContactProto(hContact);
+	szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto == nullptr)
 		return ID_STATUS_OFFLINE;
 	return db_get_w(hContact, szProto, "Status", ID_STATUS_OFFLINE);

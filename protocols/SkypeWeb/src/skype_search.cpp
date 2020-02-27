@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -33,23 +33,14 @@ void CSkypeProto::SearchBasicThread(void* id)
 void CSkypeProto::OnSearch(const NETLIBHTTPREQUEST *response)
 {
 	debugLogA(__FUNCTION__);
-	if (response == nullptr) {
+	
+	JsonReply reply(response);
+	if (reply.error()) {
 		ProtoBroadcastAck(0, ACKTYPE_SEARCH, ACKRESULT_SUCCESS, (HANDLE)1, 0);
 		return;
 	}
 
-	debugLogA("CSkypeProto::OnSearch %d", response->resultCode);
-	if (response->resultCode != 200) {
-		ProtoBroadcastAck(0, ACKTYPE_SEARCH, ACKRESULT_SUCCESS, (HANDLE)1, 0);
-		return;
-	}
-
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root) {
-		ProtoBroadcastAck(0, ACKTYPE_SEARCH, ACKRESULT_SUCCESS, (HANDLE)1, 0);
-		return;
-	}
-
+	auto &root = reply.data();
 	const JSONNode &items = root["results"].as_array();
 	for (auto &it : items) {
 		const JSONNode &item = it["nodeProfileData"];

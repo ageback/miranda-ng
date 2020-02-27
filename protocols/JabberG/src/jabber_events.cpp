@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -152,6 +152,28 @@ void __cdecl CJabberProto::OnAddContactForever(MCONTACT hContact)
 	SendGetVcard(hContact);
 
 	Contact_Hide(hContact, false);
+}
+
+int __cdecl CJabberProto::OnDbMarkedRead(WPARAM, LPARAM hDbEvent)
+{
+	MCONTACT hContact = db_event_getContact(hDbEvent);
+	if (!hContact)
+		return 0;
+
+	// filter out only events of my protocol
+	const char *szProto = Proto_GetBaseAccountName(hContact);
+	if (mir_strcmp(szProto, m_szModuleName))
+		return 0;
+
+	auto *pMark = m_arChatMarks.find((CChatMark *)&hDbEvent);
+	if (pMark) {
+		XmlNode reply("message"); reply << XATTR("to", pMark->szFrom) << XATTR("id", pMark->szId) 
+			<< XCHILDNS("displayed", JABBER_FEAT_CHAT_MARKERS) << XATTR("id", pMark->szId);
+		m_ThreadInfo->send(reply);
+
+		m_arChatMarks.remove(pMark);
+	}
+	return 0;
 }
 
 int __cdecl CJabberProto::OnDbSettingChanged(WPARAM hContact, LPARAM lParam)

@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -79,11 +79,6 @@ public:
 		cmbTextFormat.AddString(TranslateT("Force off"));
 		cmbTextFormat.SetCurSel(iLocalFormat == 0 ? 0 : (iLocalFormat == -1 ? 2 : 1));
 
-		if (CheckMenuItem(PluginConfig.g_hMenuFavorites, m_hContact, MF_BYCOMMAND | MF_UNCHECKED) == -1)
-			CheckDlgButton(m_hwnd, IDC_ISFAVORITE, BST_UNCHECKED);
-		else
-			CheckDlgButton(m_hwnd, IDC_ISFAVORITE, BST_CHECKED);
-
 		CheckDlgButton(m_hwnd, IDC_PRIVATESPLITTER, bSplit);
 		CheckDlgButton(m_hwnd, IDC_TEMPLOVERRIDE, db_get_b(m_hContact, TEMPLATES_MODULE, "enabled", 0) ? BST_CHECKED : BST_UNCHECKED);
 		CheckDlgButton(m_hwnd, IDC_RTLTEMPLOVERRIDE, db_get_b(m_hContact, RTLTEMPLATES_MODULE, "enabled", 0) ? BST_CHECKED : BST_UNCHECKED);
@@ -114,13 +109,6 @@ public:
 				db_set_dw(m_hContact, SRMSGMOD_T, "sendformat", iIndex == 2 ? -1 : 1);
 		}
 
-		if (IsDlgButtonChecked(m_hwnd, IDC_ISFAVORITE)) {
-			if (!M.IsFavorite(m_hContact))
-				AddContactToFavorites(m_hContact, nullptr, nullptr, nullptr, 0, nullptr, 1, PluginConfig.g_hMenuFavorites);
-		}
-		else DeleteMenu(PluginConfig.g_hMenuFavorites, m_hContact, MF_BYCOMMAND);
-
-		M.SetFavorite(m_hContact, IsDlgButtonChecked(m_hwnd, IDC_ISFAVORITE) != 0);
 		db_set_b(m_hContact, SRMSGMOD_T, "splitoverride", (BYTE)(IsDlgButtonChecked(m_hwnd, IDC_PRIVATESPLITTER) ? 1 : 0));
 
 		db_set_b(m_hContact, TEMPLATES_MODULE, "enabled", (BYTE)(IsDlgButtonChecked(m_hwnd, IDC_TEMPLOVERRIDE)));
@@ -362,7 +350,7 @@ public:
 					fShouldHide = false;
 				else
 					ShowWindow(dat->m_pContainer->m_hwnd, SW_HIDE);
-				dat->DM_OptionsApplied(0, 0);
+				dat->DM_OptionsApplied();
 				dat->RemakeLog();
 				if (fShouldHide)
 					ShowWindow(dat->m_pContainer->m_hwnd, SW_SHOWNORMAL);

@@ -76,8 +76,6 @@ TLS
 Падтрымліваць злучэнне
 [Automatically delete contacts not in my roster]
 Аўтаматычна выдаляць кантакты, якія не ў спісе
-[User directory:]
-Дырэкторыя кантактаў:
 [Language for human-readable resources:]
 Мова для бачных чалавеку рэсурсаў:
 [File Transfer]
@@ -86,8 +84,6 @@ TLS
 Перадача файлаў праз прамое злучэнне (peer-to-peer)
 [Specify external address:]
 Вонкавы адрас:
-[Allow file sending through bytestream proxy server:]
-Перадача праз струменевы проксі (bytestream):
 [Miscellaneous]
 Іншае
 [Hint:]
@@ -470,8 +466,6 @@ Bytestream проксі недасяжны.
 Прыём і адпраўка пінгаў
 [Supports data forms]
 Формы дадзеных
-[Can request and respond to events relating to the delivery, display, and composition of messages]
-Запыт і адказ на падзеі - дастаўка, адлюстраванне, складанне паведамленняў
 [Supports vCard]
 Падтрымка vCard
 [Supports XHTML formatting of chat messages]
@@ -544,14 +538,14 @@ xHTML фармат чат-паведамленняў
 Удзельнік
 [Moderator]
 Мадэратар
-[Owners]
-Уладальнікі
-[Moderators]
-адэратары
-[Participants]
-Удзельнікі
 [Visitors]
 Наведвальнікі
+[Participants]
+Удзельнікі
+[Moderators]
+Мадэратары
+[Owners]
+Уладальнікі
 [User %s is now banned.]
 
 [User %s changed status to %s with message: %s]
@@ -730,6 +724,8 @@ Jabber памылка
 Дадаць тэчку пошуку
 [Use this proxy]
 Выкарыстоўваць гэты проксі
+[Use for uploads]
+
 [Commands...]
 Каманды...
 [Logon]
@@ -911,8 +907,6 @@ Jabber памылка
 ;file \protocols\JabberG\src\jabber_menu.cpp
 [Jabber account chooser]
 Выбар конту Jabber
-[Convert]
-Канвертаваць
 [Add to Bookmarks]
 Дадаць у закладкі
 [Commands]
@@ -927,10 +921,6 @@ Jabber Рэсурс
 Апошні актыўны
 [Server's Choice]
 Выбар сервера
-[&Convert to Contact]
-Канвертаваць у кантакт
-[&Convert to Chat Room]
-&Канвертаваць у чат
 [Services...]
 Службы...
 [Registered Transports]
@@ -1380,8 +1370,8 @@ Jabber Рэсурс
 Вам трэба далучыцца
 [Messaging]
 Паведамленні
-[Send messages slower, but with full acknowledgment]
-Адсылаць паведамленні павольней, але з пацверджаннем
+[Use message delivery receipts (XEP-0184)]
+
 [Enable avatars]
 Уключыць аватары
 [Log chat state changes]
@@ -1781,7 +1771,7 @@ XML для MS Excel (кадзіроўка UTF-8)
 Версія
 [System]
 Сістэма
-[<currenty online>]
+[<currently online>]
 
 [Last activity]
 
@@ -1811,8 +1801,6 @@ XML для MS Excel (кадзіроўка UTF-8)
 ад
 [none]
 няма
-[<currently online>]
-
 [Last logoff time]
 Адключаны:
 [Uptime]

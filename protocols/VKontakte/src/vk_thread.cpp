@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -199,7 +199,7 @@ void CVkProto::OnOAuthAuthorize(NETLIBHTTPREQUEST *reply, AsyncHttpRequest*)
 	GrabCookies(reply);
 
 	if (reply->resultCode == 302) { // manual redirect
-		LPCSTR pszLocation = findHeader(reply, "Location");
+		LPCSTR pszLocation = Netlib_GetHeader(reply, "Location");
 		if (pszLocation) {
 			if (!_strnicmp(pszLocation, szBlankUrl, sizeof(szBlankUrl) - 1)) {
 				m_szAccessToken = nullptr;
@@ -328,7 +328,7 @@ void CVkProto::OnReceiveMyInfo(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pReq)
 	RetrieveUserInfo(m_myUserId);
 	TrackVisitor();
 	RetrieveUnreadMessages();
-	RetrieveFriends();
+	RetrieveFriends(m_vkOptions.bLoadOnlyFriends);
 	RetrievePollingInfo();
 }
 
@@ -672,7 +672,7 @@ void CVkProto::OnReceiveUserInfo(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pRe
 
 	if (jnResponse["freeoffline"].as_bool())
 		for (auto &it : arContacts) {
-			MCONTACT cc = (MCONTACT)it;
+			MCONTACT cc = (UINT_PTR)it;
 			LONG userID = getDword(cc, "ID", VK_INVALID_USER);
 			if (userID == m_myUserId || userID == VK_FEED_USER)
 				continue;
@@ -706,9 +706,9 @@ void CVkProto::OnReceiveUserInfo(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pRe
 			break;
 
 		MCONTACT hContact = FindUser(userid, true);
-		if (!getBool(hContact, "ReqAuth")) {
+		if (!IsAuthContactLater(hContact)) {
 			RetrieveUserInfo(userid);
-			setByte(hContact, "ReqAuth", 1);
+			AddAuthContactLater(hContact);
 			CVkDBAddAuthRequestThreadParam *param = new CVkDBAddAuthRequestThreadParam(hContact, false);
 			ForkThread(&CVkProto::DBAddAuthRequestThread, (void *)param);
 		}
@@ -817,7 +817,6 @@ void CVkProto::OnReceiveFriends(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pReq
 	for (auto &hContact : AccContacts()) {
 		if (!isChatRoom(hContact) && !IsGroupUser(hContact))
 			setByte(hContact, "Auth", 1);
-		db_unset(hContact, m_szModuleName, "ReqAuth");
 		SetMirVer(hContact, -1);
 		if (bCleanContacts && !isChatRoom(hContact))
 			arContacts.insert((HANDLE)hContact);
@@ -834,16 +833,18 @@ void CVkProto::OnReceiveFriends(NETLIBHTTPREQUEST *reply, AsyncHttpRequest *pReq
 
 			arContacts.remove((HANDLE)hContact);
 			setByte(hContact, "Auth", 0);
+			db_unset(hContact, m_szModuleName, "ReqAuthTime");
 		}
 
 	if (bCleanContacts)
 		for (auto &it : arContacts) {
-			MCONTACT hContact = (MCONTACT)it;
+			MCONTACT hContact = (UINT_PTR)it;
 			LONG userID = getDword(hContact, "ID", VK_INVALID_USER);
 			bool bIsFriendGroup = IsGroupUser(hContact) && getBool(hContact, "friend");
 			if (userID == m_myUserId || userID == VK_FEED_USER || bIsFriendGroup)
 				continue;
-			DeleteContact(hContact);
+			if (!IsAuthContactLater(hContact))
+				DeleteContact(hContact);
 		}
 
 	arContacts.destroy();

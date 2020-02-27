@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -343,6 +343,8 @@ private:
 	CMStringW RunRenameNick(LPCWSTR pwszOldName);
 	void GrabCookies(NETLIBHTTPREQUEST *nhr);
 	void ApplyCookies(AsyncHttpRequest*);
+	bool IsAuthContactLater(MCONTACT hContact);
+	bool AddAuthContactLater(MCONTACT hContact);
 	void __cdecl DBAddAuthRequestThread(void *p);
 	void DBAddAuthRequest(const MCONTACT hContact, bool bAdded = false);
 	MCONTACT MContactFromDbEvent(MEVENT hDbEvent);
@@ -383,7 +385,6 @@ private:
 	void SetAvatarUrl(MCONTACT hContact, CMStringW &wszUrl);
 	void GetAvatarFileName(MCONTACT hContact, wchar_t *pwszDest, size_t cbLen);
 	void ReloadAvatarInfo(MCONTACT hContact);
-	void __cdecl SendMsgAck(void *param);
 	void __cdecl ChatContactTypingThread(void *p);
 	void StopChatContactTyping(int iChatId, LONG iUserId);
 	void OnCreateNewChat(NETLIBHTTPREQUEST*, AsyncHttpRequest*);

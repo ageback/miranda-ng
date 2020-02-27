@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -35,15 +35,6 @@ bool IsEmpty(LPCWSTR str)
 bool IsEmpty(LPCSTR str)
 {
 	return (str == nullptr || str[0] == 0);
-}
-
-LPCSTR findHeader(NETLIBHTTPREQUEST *pReq, LPCSTR szField)
-{
-	for (int i = 0; i < pReq->headersCount; i++)
-		if (!_stricmp(pReq->headers[i].szName, szField))
-			return pReq->headers[i].szValue;
-
-	return nullptr;
 }
 
 bool wlstrstr(wchar_t *_s1, wchar_t *_s2)
@@ -221,7 +212,7 @@ bool CVkProto::CheckMid(LIST<void> &lList, int guid)
 {
 	for (auto &it : lList)
 		if ((INT_PTR)it == guid) {
-			lList.remove(lList.indexOf(&it));
+			lList.removeItem(&it);
 			return true;
 		}
 
@@ -545,6 +536,38 @@ void CVkProto::ApplyCookies(AsyncHttpRequest *pReq)
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
+bool CVkProto::IsAuthContactLater(MCONTACT hContact)
+{
+	if (hContact == 0
+		|| hContact == INVALID_CONTACT_ID
+		|| isChatRoom(hContact)
+		|| IsGroupUser(hContact)
+		|| getDword(hContact, "ReqAuthTime") == 0
+		|| getBool(hContact, "friend"))
+		return false;
+
+	if (time(0) - getDword(hContact, "ReqAuthTime") >= m_vkOptions.iReqAuthTimeLater) {
+		db_unset(hContact, m_szModuleName, "ReqAuthTime");
+		return false;
+	}
+
+	return true;
+}
+
+bool CVkProto::AddAuthContactLater(MCONTACT hContact)
+{
+	if (hContact == 0
+		|| hContact == INVALID_CONTACT_ID
+		|| isChatRoom(hContact)
+		|| IsGroupUser(hContact)
+		|| getDword(hContact, "ReqAuthTime") != 0
+		|| getBool(hContact, "friend"))
+		return false;
+
+	setDword(hContact, "ReqAuthTime", (DWORD)time(0));
+	return true;
+}
+
 void __cdecl CVkProto::DBAddAuthRequestThread(void *p)
 {
 	CVkDBAddAuthRequestThreadParam *param = (CVkDBAddAuthRequestThreadParam *)p;
@@ -599,7 +622,7 @@ MCONTACT CVkProto::MContactFromDbEvent(MEVENT hDbEvent)
 		return INVALID_CONTACT_ID;
 
 	MCONTACT hContact = DbGetAuthEventContact(&dbei);
-	db_unset(hContact, m_szModuleName, "ReqAuth");
+	db_unset(hContact, m_szModuleName, "ReqAuthTime");
 	return hContact;
 }
 
@@ -722,7 +745,7 @@ int CVkProto::OnProcessSrmmEvent(WPARAM, LPARAM lParam)
 	MessageWindowEventData *event = (MessageWindowEventData *)lParam;
 
 
-	CMStringA szProto(GetContactProto(event->hContact));
+	CMStringA szProto(Proto_GetBaseAccountName(event->hContact));
 	if (szProto.IsEmpty() || szProto != m_szModuleName)
 		return 0;
 

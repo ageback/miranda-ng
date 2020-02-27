@@ -36,7 +36,7 @@ static int CountStatusModes(DWORD flags)
 	if (flags & PF2_LIGHTDND) ++res;
 	if (flags & PF2_HEAVYDND) ++res;
 	if (flags & PF2_FREECHAT) ++res;
-	if (res) ++res; //  Offline
+	++res; //  Offline
 	return res;
 }
 
@@ -341,8 +341,9 @@ INT_PTR CALLBACK DlgProcPopupGeneral(HWND hwnd, UINT msg, WPARAM wParam, LPARAM 
 					int chk = IsDlgButtonChecked(hwnd, IDC_POPUPENABLED);
 					if (bEnabled && chk || !bEnabled && !chk)
 						svcEnableDisableMenuCommand(0, 0);
-					EnableWindow(GetDlgItem(hwnd, IDC_STATUSES), bEnabled);
-					EnableWindow(GetDlgItem(hwnd, IDC_DISABLEINFS), bEnabled);
+					EnableWindow(GetDlgItem(hwnd, IDC_STATUSES), !bEnabled);
+					EnableWindow(GetDlgItem(hwnd, IDC_DISABLEINFS), !bEnabled);
+					SendMessage(GetParent(hwnd), PSM_CHANGED, 0, 0);
 				}
 				break;
 

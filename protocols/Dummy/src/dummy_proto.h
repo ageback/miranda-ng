@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2014-17 Robert Pösel, 2017-19 Miranda NG team
+Copyright (c) 2014-17 Robert Pösel, 2017-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -42,7 +42,6 @@ struct CDummyProto : public PROTO<CDummyProto>
 
 	INT_PTR __cdecl SvcCreateAccMgrUI(WPARAM, LPARAM);
 	
-	void __cdecl SendMsgAck(void *param);
 	void __cdecl SearchIdAckThread(void*);
 	
 	char uniqueIdText[100];

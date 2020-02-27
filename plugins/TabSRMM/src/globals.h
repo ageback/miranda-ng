@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -72,8 +72,7 @@ public:
 	HIMAGELIST  g_hImageList;
 	HICON       g_IconMsgEvent, g_IconTypingEvent, g_IconFileEvent, g_IconSend;
 	HICON       g_IconMsgEventBig, g_IconTypingEventBig;
-	HMENU       g_hMenuContext, g_hMenuContainer, g_hMenuTrayUnread;
-	HMENU       g_hMenuFavorites, g_hMenuRecent, g_hMenuTrayContext;
+	HMENU       g_hMenuContext, g_hMenuContainer;
 	HICON       g_buttonBarIcons[NR_BUTTONBARICONS];
 	HICON       g_sideBarIcons[NR_SIDEBARICONS];
 	HANDLE      g_buttonBarIconHandles[23];
@@ -109,7 +108,6 @@ public:
 	double      m_DPIscaleY;
 	HBITMAP     m_hbmMsgArea;
 	HWND        m_hwndClist;
-	int         m_TabAppearance;
 	myTabCtrl   tabConfig;
 	int         m_panelHeight, m_MUCpanelHeight;
 	int         m_smcxicon, m_smcyicon;
@@ -153,7 +151,6 @@ private:
 	static int     m_exLine;
 	static bool    m_exAllowContinue;
 private:
-	static int     TopToolbarLoaded(WPARAM, LPARAM);
 	static int     ModulesLoaded(WPARAM wParam, LPARAM lParam);
 	static int     DBSettingChanged(WPARAM wParam, LPARAM lParam);
 	static int     DBContactDeleted(WPARAM wParam, LPARAM lParam);

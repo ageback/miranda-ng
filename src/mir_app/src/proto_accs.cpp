@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -373,7 +373,7 @@ void KillModuleAccounts(HINSTANCE hInst)
 			}
 		}
 
-		g_arProtos.remove(g_arProtos.indexOf(&pd));
+		g_arProtos.removeItem(&pd);
 	}
 }
 
@@ -418,7 +418,7 @@ void UnloadAccountsModule()
 	auto T = accounts.rev_iter();
 	for (auto &it : T) {
 		UnloadAccount(it, 0);
-		accounts.remove(T.indexOf(&it));
+		accounts.removeItem(&it);
 	}
 	accounts.destroy();
 

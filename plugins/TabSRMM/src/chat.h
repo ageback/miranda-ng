@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -80,13 +80,13 @@ struct TMUCSettings : public GlobalLogSettingsBase
 	CMUCHighlight *Highlight;
 };
 
-struct FLASH_PARAMS
+struct FLASH_PARAMS : public MZeroedObject
 {
 	MCONTACT hContact;
 	const char* sound;
 	int   iEvent;
 	HICON hNotifyIcon;
-	bool  bActiveTab, bHighlight, bInactive, bMustFlash, bMustAutoswitch;
+	bool  bActiveTab, bInactive, bMustFlash, bMustAutoswitch;
 	HWND  hWnd;
 };
 

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -401,17 +401,13 @@ void CSkypeProto::LoadProfile(const NETLIBHTTPREQUEST *response, void *arg)
 {
 	MCONTACT hContact = (DWORD_PTR)arg;
 
-	if (response == nullptr) {
+	JsonReply reply(response);
+	if (reply.error()) {
 		ProtoBroadcastAck(hContact, ACKTYPE_GETINFO, ACKRESULT_FAILED, 0);
 		return;
 	}
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root) {
-		ProtoBroadcastAck(hContact, ACKTYPE_GETINFO, ACKRESULT_FAILED, 0);
-		return;
-	}
-
+	auto &root = reply.data();
 	std::string username = root["username"].as_string();
 	if (username.empty()) {
 		ProtoBroadcastAck(hContact, ACKTYPE_GETINFO, ACKRESULT_FAILED, 0);

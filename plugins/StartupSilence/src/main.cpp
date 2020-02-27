@@ -1,6 +1,6 @@
 /*
 Copyright (c) 2012-13 Vladimir Lyubimov
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -129,7 +129,7 @@ int DisablePopup(WPARAM wParam, LPARAM)
 	{
 		MCONTACT hContact = wParam;
 		if (hContact != NULL) {
-			char* cp = GetContactProto(hContact);
+			char* cp = Proto_GetBaseAccountName(hContact);
 			if (!mir_strcmp(cp, "Weather") || !mir_strcmp(cp, "mRadio"))
 				return 0;
 			return 1;

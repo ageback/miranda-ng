@@ -6,7 +6,7 @@ Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007-09  Maxim Mluhov
 Copyright (c) 2007-09  Victor Pavlychko
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -691,10 +691,6 @@ void CJabberProto::ProcessOutgoingNote(CNoteItem *pNote, bool ok)
 	// message receipts XEP priority
 	if (jcb & JABBER_CAPS_MESSAGE_RECEIPTS)
 		m << XCHILDNS("request", JABBER_FEAT_MESSAGE_RECEIPTS);
-	else if (jcb & JABBER_CAPS_MESSAGE_EVENTS) {
-		TiXmlElement *x = m << XCHILDNS("x", JABBER_FEAT_MESSAGE_EVENTS);
-		x << XCHILD("delivered"); x << XCHILD("offline");
-	}
 	else
 		nMsgId = -1;
 

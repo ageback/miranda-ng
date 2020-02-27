@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -164,7 +164,6 @@ void NetlibConnFromUrl(const char* szUrl, bool secur, NETLIBOPENCONNECTION &nloc
 
 // netliblog.c
 void NetlibLogShowOptions(void);
-void NetlibDumpData(NetlibConnection *nlc, PBYTE buf, int len, int sent, int flags);
 void NetlibLogInit(void);
 void NetlibLogShutdown(void);
 

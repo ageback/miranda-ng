@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-08 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -37,7 +37,7 @@ void AddSubcontacts(ClcData *dat, ClcContact *cont, BOOL showOfflineHereGroup)
 
 	cont->iSubNumber = 0;
 	mir_free(cont->subcontacts);
-	cont->subcontacts = (ClcContact *)mir_calloc(sizeof(ClcContact)*subcount);
+	cont->subcontacts = (ClcContact *)mir_calloc(sizeof(ClcContact) * subcount);
 	cont->iSubAllocated = subcount;
 	int i = 0;
 	int bHideOffline = g_plugin.getByte("HideOffline", SETTING_HIDEOFFLINE_DEFAULT);
@@ -54,7 +54,7 @@ void AddSubcontacts(ClcData *dat, ClcContact *cont, BOOL showOfflineHereGroup)
 		if (!showOfflineHereGroup && bHideOffline && !pdnce->m_bNoHiddenOffline && wStatus == ID_STATUS_OFFLINE)
 			continue;
 
-		ClcContact& p = cont->subcontacts[i];
+		ClcContact &p = cont->subcontacts[i];
 		p.hContact = pdnce->hContact;
 		p.pce = pdnce;
 
@@ -310,7 +310,7 @@ int GetNewSelection(ClcGroup *group, int selection, int direction)
 
 ClcContact* cliCreateClcContact()
 {
-	ClcContact *contact = (ClcContact*)mir_calloc(sizeof(ClcContact));
+	ClcContact *contact = (ClcContact *)mir_calloc(sizeof(ClcContact));
 	memset(contact->iExtraImage, 0xFF, sizeof(contact->iExtraImage));
 	return contact;
 }
@@ -325,7 +325,7 @@ ClcCacheEntry* cliCreateCacheItem(MCONTACT hContact)
 		return nullptr;
 
 	pdnce->hContact = hContact;
-	pdnce->szProto = GetContactProto(hContact);
+	pdnce->szProto = Proto_GetBaseAccountName(hContact);
 	pdnce->bIsHidden = Contact_IsHidden(hContact);
 	pdnce->m_bIsSub = db_mc_isSub(hContact) != 0;
 	pdnce->m_bNoHiddenOffline = g_plugin.getByte(hContact, "noOffline");
@@ -373,7 +373,7 @@ int cliGetGroupContentsCount(ClcGroup *group, int visibleOnly)
 			group->scanIndex++;
 			continue;
 		}
-		
+
 		ClcContact *cc = group->cl[group->scanIndex];
 		if (cc->type == CLCIT_GROUP && (!(visibleOnly & 0x01) || cc->group->expanded)) {
 			group = cc->group;
@@ -414,10 +414,10 @@ int CLVM_GetContactHiddenStatus(MCONTACT hContact, char *szProto, ClcData *dat)
 		wchar_t *lowered_search = CharLowerW(NEWWSTR_ALLOCA(dat->szQuickSearch));
 		searchResult = wcsstr(lowered_name, lowered_search) ? 0 : 1;
 	}
-	
+
 	if (pdnce && g_CluiData.bFilterEffective && dat != nullptr && !dat->bForceInDialog) {
 		if (szProto == nullptr)
-			szProto = GetContactProto(hContact);
+			szProto = Proto_GetBaseAccountName(hContact);
 		// check stickies first (priority), only if we really have stickies defined (CLVM_STICKY_CONTACTS is set).
 		if (g_CluiData.bFilterEffective & CLVM_STICKY_CONTACTS) {
 			if (DWORD dwLocalMask = db_get_dw(hContact, CLVM_MODULE, g_CluiData.current_viewmode, 0)) {
@@ -435,7 +435,7 @@ int CLVM_GetContactHiddenStatus(MCONTACT hContact, char *szProto, ClcData *dat)
 			mir_snprintf(szTemp, "%s|", szProto);
 			if (db_mc_isMeta(hContact)) {
 				for (int i = db_mc_getSubCount(hContact) - 1; i >= 0; i--) {
-					mir_snprintf(szTemp, "%s|", GetContactProto(db_mc_getSub(hContact, i)));
+					mir_snprintf(szTemp, "%s|", Proto_GetBaseAccountName(db_mc_getSub(hContact, i)));
 					if (strstr(g_CluiData.protoFilter, szTemp) != 0) {
 						filterResult = 1;
 						break;

@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -371,9 +371,9 @@ MIR_CORE_DLL(int) db_event_count(MCONTACT hContact)
 	return (currDb == nullptr) ? 0 : currDb->GetEventCount(hContact);
 }
 
-MIR_CORE_DLL(int) db_event_delete(MCONTACT hContact, MEVENT hDbEvent)
+MIR_CORE_DLL(int) db_event_delete(MEVENT hDbEvent)
 {
-	return (currDb == nullptr) ? 0 : currDb->DeleteEvent(hContact, hDbEvent);
+	return (currDb == nullptr) ? 0 : currDb->DeleteEvent(hDbEvent);
 }
 
 MIR_CORE_DLL(int) db_event_edit(MCONTACT hContact, MEVENT hDbEvent, DBEVENTINFO *dbei)

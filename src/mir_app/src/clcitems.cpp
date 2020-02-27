@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -182,7 +182,7 @@ ClcContact* fnAddContactToGroup(ClcData *dat, ClcGroup *group, MCONTACT hContact
 				index = i;
 	}
 
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 
 	ClcCacheEntry *pce = Clist_GetCacheEntry(hContact);
 	replaceStrW(pce->tszGroup, nullptr);
@@ -214,7 +214,7 @@ void fnAddContactToTree(HWND hwnd, ClcData *dat, MCONTACT hContact, int updateTo
 {
 	DWORD style = GetWindowLongPtr(hwnd, GWL_STYLE);
 	WORD status = ID_STATUS_OFFLINE;
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 
 	dat->bNeedsResort = true;
 	if (style & CLS_NOHIDEOFFLINE)
@@ -392,7 +392,7 @@ void fnRebuildEntireList(HWND hwnd, ClcData *dat)
 						g_clistApi.pfnAddContactToGroup(dat, group, hContact);
 				}
 				else if (!(style & CLS_NOHIDEOFFLINE) && (style & CLS_HIDEOFFLINE || group->hideOffline)) {
-					char *szProto = GetContactProto(hContact);
+					char *szProto = Proto_GetBaseAccountName(hContact);
 					if (szProto == nullptr) {
 						if (!Clist_IsHiddenMode(dat, ID_STATUS_OFFLINE) || g_clistApi.pfnIsVisibleContact(pce, group))
 							g_clistApi.pfnAddContactToGroup(dat, group, hContact);

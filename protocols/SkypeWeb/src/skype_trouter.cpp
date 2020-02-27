@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -19,16 +19,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 void CSkypeProto::OnCreateTrouter(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr || response->pData == nullptr) {
+	JsonReply reply(response);
+	if (reply.error()) {
 LBL_Error:
 		debugLogA("Failed to establish a TRouter connection.");
 		return;
 	}
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		goto LBL_Error;
-
+	auto &root = reply.data();
 	const JSONNode &ccid = root["ccid"];
 	const JSONNode &connId = root["connId"];
 	const JSONNode &instance = root["instance"];
@@ -49,16 +47,14 @@ LBL_Error:
 
 void CSkypeProto::OnTrouterPoliciesCreated(const NETLIBHTTPREQUEST *response)
 {
-	if (response == nullptr || response->pData == nullptr) {
+	JsonReply reply(response);
+	if (reply.error()) {
 LBL_Error:
 		debugLogA("Failed to establish a TRouter connection.");
 		return;
 	}
 
-	JSONNode root = JSONNode::parse(response->pData);
-	if (!root)
-		goto LBL_Error;
-
+	auto &root = reply.data();
 	const JSONNode &st = root["st"];
 	const JSONNode &se = root["se"];
 	const JSONNode &sig = root["sig"];
@@ -196,7 +192,7 @@ void CSkypeProto::OnTrouterEvent(const JSONNode &body, const JSONNode &)
 				cle.lParam = SKYPE_DB_EVENT_TYPE_INCOMING_CALL;
 				cle.hIcon = g_plugin.getIcon(IDI_CALL);
 
-				CMStringA service(FORMAT, "%s/IncomingCallCLE", GetContactProto(hContact));
+				CMStringA service(FORMAT, "%s/IncomingCallCLE", Proto_GetBaseAccountName(hContact));
 				cle.pszService = service.GetBuffer();
 
 				CMStringW tooltip(FORMAT, TranslateT("Incoming call from %s"), Clist_GetContactDisplayName(hContact));

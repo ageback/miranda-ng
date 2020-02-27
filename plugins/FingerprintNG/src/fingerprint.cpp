@@ -1,6 +1,6 @@
 fv/*
 Fingerprint NG (client version) icons module for Miranda NG
-Copyright © 2006-19 ghazan, mataes, HierOS, FYR, Bio, nullbie, faith_healer and all respective contributors.
+Copyright © 2006-20 ghazan, mataes, HierOS, FYR, Bio, nullbie, faith_healer and all respective contributors.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -803,7 +803,7 @@ int OnExtraImageApply(WPARAM hContact, LPARAM)
 		return 0;
 
 	ptrW tszMirver;
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto != nullptr)
 		tszMirver = db_get_wsa(hContact, szProto, "MirVer");
 
@@ -856,7 +856,7 @@ static int OnSrmmWindowEvent(WPARAM, LPARAM lParam)
 
 	if (event->uType == MSG_WINDOW_EVT_OPEN) {
 		ptrW ptszMirVer;
-		char *szProto = GetContactProto(event->hContact);
+		char *szProto = Proto_GetBaseAccountName(event->hContact);
 		if (szProto != nullptr)
 			ptszMirVer = db_get_wsa(event->hContact, szProto, "MirVer");
 		SetSrmmIcon(event->hContact, ptszMirVer);

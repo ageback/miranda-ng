@@ -6,7 +6,7 @@ XEP-0138 (Stream Compression) implementation
 
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Kostya Chukavin, Taras Zackrepa
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 #include "stdafx.h"
 
-BOOL ThreadData::zlibInit(void)
+bool ThreadData::zlibInit(void)
 {
 	proto->debugLogA("Zlib init...");
 	zStreamIn.zalloc = Z_NULL;
@@ -39,11 +39,11 @@ BOOL ThreadData::zlibInit(void)
 	zStreamOut.zfree = Z_NULL;
 	zStreamOut.opaque = Z_NULL;
 
-	if (deflateInit(&zStreamOut, Z_BEST_COMPRESSION) != Z_OK) return FALSE;
-	if (inflateInit(&zStreamIn) != Z_OK) return FALSE;
+	if (deflateInit(&zStreamOut, Z_BEST_COMPRESSION) != Z_OK) return false;
+	if (inflateInit(&zStreamIn) != Z_OK) return false;
 
 	zRecvReady = true;
-	return TRUE;
+	return true;
 }
 
 void ThreadData::zlibUninit(void)

@@ -1,7 +1,7 @@
 /*
 Plugin of Miranda IM for communicating with users of the MSN Messenger protocol.
 
-Copyright (c) 2012-2019 Miranda NG team
+Copyright (c) 2012-2020 Miranda NG team
 Copyright (c) 2006-2012 Boris Krasnovskiy.
 Copyright (c) 2003-2005 George Hazan.
 Copyright (c) 2002-2003 Richard Hughes (original version).
@@ -121,10 +121,9 @@ void CMsnProto::MSN_ChatStart(ezxml_t xmli)
 	}
 
 	// Remove contacts not on list (not tagged)
-	auto T = info->mJoinedContacts.rev_iter();
-	for (auto &it : T) {
+	for (auto &it : info->mJoinedContacts.rev_iter()) {
 		if (!it->btag)
-			info->mJoinedContacts.remove(T.indexOf(&it));
+			info->mJoinedContacts.removeItem(&it);
 		else
 			it->btag = 0;
 	}
@@ -138,7 +137,7 @@ void CMsnProto::MSN_KillChatSession(const wchar_t* id)
 
 void CMsnProto::MSN_Kickuser(GCHOOK *gch)
 {
-	GCThreadData *thread = MSN_GetThreadByChatId(gch->ptszID);
+	GCThreadData *thread = MSN_GetThreadByChatId(gch->si->ptszID);
 	msnNsThread->sendPacketPayload("DEL", "MSGR\\THREAD", 
 		"<thread><id>%d:%s</id><members><member><mri>%s</mri></member></members></thread>",
 		thread->netId, thread->szEmail, _T2A(gch->ptszUID).get());
@@ -146,7 +145,7 @@ void CMsnProto::MSN_Kickuser(GCHOOK *gch)
 
 void CMsnProto::MSN_Promoteuser(GCHOOK *gch, const char *pszRole)
 {
-	GCThreadData *thread = MSN_GetThreadByChatId(gch->ptszID);
+	GCThreadData *thread = MSN_GetThreadByChatId(gch->si->ptszID);
 	msnNsThread->sendPacketPayload("PUT", "MSGR\\THREAD", 
 		"<thread><id>%d:%s</id><members><member><mri>%s</mri><role>%s</role></member></members></thread>",
 		thread->netId, thread->szEmail, _T2A(gch->ptszUID).get(), pszRole);
@@ -456,14 +455,14 @@ int CMsnProto::MSN_GCEventHook(WPARAM, LPARAM lParam)
 {
 	GCHOOK *gch = (GCHOOK*)lParam;
 	if (!gch)
-		return 1;
+		return 0;
 
-	if (_stricmp(gch->pszModule, m_szModuleName)) return 0;
+	if (_stricmp(gch->si->pszModule, m_szModuleName)) return 0;
 
 	switch (gch->iType) {
 	case GC_SESSION_TERMINATE:
 		{
-			GCThreadData* thread = MSN_GetThreadByChatId(gch->ptszID);
+			GCThreadData* thread = MSN_GetThreadByChatId(gch->si->ptszID);
 			if (thread == nullptr)
 				break;
 
@@ -476,7 +475,7 @@ int CMsnProto::MSN_GCEventHook(WPARAM, LPARAM lParam)
 
 	case GC_USER_MESSAGE:
 		if (gch->ptszText && gch->ptszText[0]) {
-			GCThreadData* thread = MSN_GetThreadByChatId(gch->ptszID);
+			GCThreadData* thread = MSN_GetThreadByChatId(gch->si->ptszID);
 			if (thread) {
 				wchar_t* pszMsg = Chat_UnescapeTags(NEWWSTR_ALLOCA(gch->ptszText));
 				rtrimw(pszMsg); // remove the ending linebreak
@@ -486,7 +485,7 @@ int CMsnProto::MSN_GCEventHook(WPARAM, LPARAM lParam)
 				int bError = getWString("Nick", &dbv);
 
 				GCEVENT gce = { m_szModuleName, 0, GC_EVENT_MESSAGE };
-				gce.pszID.w = gch->ptszID;
+				gce.pszID.w = gch->si->ptszID;
 				gce.dwFlags = GCEF_ADDTOLOG;
 				gce.pszNick.w = bError ? L"" : dbv.pwszVal;
 				gce.pszUID.w = mir_a2u(MyOptions.szEmail);
@@ -504,7 +503,7 @@ int CMsnProto::MSN_GCEventHook(WPARAM, LPARAM lParam)
 
 	case GC_USER_CHANMGR:
 		DialogBoxParam(g_plugin.getInst(), MAKEINTRESOURCE(IDD_CHATROOM_INVITE), nullptr, DlgInviteToChat,
-			LPARAM(new InviteChatParam(gch->ptszID, NULL, this)));
+			LPARAM(new InviteChatParam(gch->si->ptszID, NULL, this)));
 		break;
 
 	case GC_USER_PRIVMESS:
@@ -515,11 +514,11 @@ int CMsnProto::MSN_GCEventHook(WPARAM, LPARAM lParam)
 		switch (gch->dwData) {
 		case 10:
 			DialogBoxParam(g_plugin.getInst(), MAKEINTRESOURCE(IDD_CHATROOM_INVITE), nullptr, DlgInviteToChat,
-				LPARAM(new InviteChatParam(gch->ptszID, NULL, this)));
+				LPARAM(new InviteChatParam(gch->si->ptszID, NULL, this)));
 			break;
 
 		case 20:
-			MSN_KillChatSession(gch->ptszID);
+			MSN_KillChatSession(gch->si->ptszID);
 			break;
 		}
 		break;
@@ -539,18 +538,18 @@ int CMsnProto::MSN_GCEventHook(WPARAM, LPARAM lParam)
 			break;
 
 		case 110:
-			MSN_KillChatSession(gch->ptszID);
+			MSN_KillChatSession(gch->si->ptszID);
 			break;
 
 		case 40:
-			const wchar_t *pszRole = MSN_GCGetRole(MSN_GetThreadByChatId(gch->ptszID), _T2A(gch->ptszUID));
+			const wchar_t *pszRole = MSN_GCGetRole(MSN_GetThreadByChatId(gch->si->ptszID), _T2A(gch->ptszUID));
 			MSN_Promoteuser(gch, (pszRole && !mir_wstrcmp(pszRole, L"admin")) ? "user" : "admin");
 			break;
 		}
 		break;
 	}
 
-	return 0;
+	return 1;
 }
 
 int CMsnProto::MSN_GCMenuHook(WPARAM, LPARAM lParam)

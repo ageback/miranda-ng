@@ -1,4 +1,5 @@
 /*
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (C) 2006 Ricardo Pescuma Domenecci, Nightwish
 
 This is free software; you can redistribute it and/or
@@ -102,10 +103,9 @@ static void QueueRemove(MCONTACT hContact)
 {
 	mir_cslock lck(cs);
 
-	auto T = queue.rev_iter();
-	for (auto &it : T)
+	for (auto &it : queue.rev_iter())
 		if (it->hContact == hContact)
-			queue.remove(T.indexOf(&it));
+			queue.removeItem(&it);
 }
 
 // Add an contact to a queue
@@ -184,7 +184,7 @@ int FetchAvatarFor(MCONTACT hContact, char *szProto)
 	int result = GAIR_NOAVATAR;
 
 	if (szProto == nullptr)
-		szProto = GetContactProto(hContact);
+		szProto = Proto_GetBaseAccountName(hContact);
 
 	if (szProto != nullptr && PollProtocolCanHaveAvatar(szProto) && PollContactCanHaveAvatar(hContact, szProto)) {
 		// Can have avatar, but must request it?

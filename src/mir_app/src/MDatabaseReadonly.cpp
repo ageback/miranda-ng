@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team,
+Copyright (C) 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -71,7 +71,7 @@ MEVENT MDatabaseReadonly::AddEvent(MCONTACT, DBEVENTINFO*)
 	return 0;
 }
 
-BOOL MDatabaseReadonly::DeleteEvent(MCONTACT, MEVENT)
+BOOL MDatabaseReadonly::DeleteEvent(MEVENT)
 {
 	return 1;
 }

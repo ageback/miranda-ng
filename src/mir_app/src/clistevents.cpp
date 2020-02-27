@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -69,7 +69,7 @@ OBJLIST<CListEvent> g_cliEvents(10, CompareEvents);
 static const char* GetEventProtocol(const CListEvent &ev)
 {
 	if (ev.hContact != 0)
-		return GetContactProto(ev.hContact);
+		return Proto_GetBaseAccountName(ev.hContact);
 
 	return (ev.flags & CLEF_PROTOCOLGLOBAL) ? ev.moduleName : nullptr;
 }
@@ -205,7 +205,7 @@ int fnRemoveEvent(MCONTACT hContact, MEVENT dbEvent)
 		return 1;
 
 	// Update contact's icon
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	Clist_ChangeContactIcon(pEvent->hContact, Clist_GetContactIcon(pEvent->hContact));
 
 	// Free any memory allocated to the event
@@ -228,7 +228,7 @@ int fnRemoveEvent(MCONTACT hContact, MEVENT dbEvent)
 		if (g_cliEvents[0].hContact == 0)
 			szProto = nullptr;
 		else
-			szProto = GetContactProto(g_cliEvents[0].hContact);
+			szProto = Proto_GetBaseAccountName(g_cliEvents[0].hContact);
 		TrayIconUpdateWithImageList(iconsOn ? g_cliEvents[0].imlIconIndex : 0, g_cliEvents[0].szTooltip.w, szProto);
 	}
 

@@ -1,40 +1,73 @@
-### The [repository now only mirrored on the Github](https://abf.io/erthink/libmdbx) due to illegal discriminatory restrictions for Russian Crimea and for sovereign crimeans.
 <!-- Required extensions: pymdownx.betterem, pymdownx.tilde, pymdownx.emoji, pymdownx.tasklist, pymdownx.superfences -->
------
 
 libmdbx
-======================================
-Revised and extended descendant of [Lightning Memory-Mapped Database](https://en.wikipedia.org/wiki/Lightning_Memory-Mapped_Database) (aka _LMDB_).
-Русскоязычная версия [здесь](README-RU.md).
+=======
 
-_libmdbx_ is superior to LMDB in terms of features and reliability, not
-inferior in performance. _libmdbx_ works on Linux, FreeBSD, MacOS X and
-other systems compliant with POSIX.1-2008, but also support Windows as a
-complementary platform.
+_libmdbx_ is an extremely fast, compact, powerful, embedded,
+transactional [key-value store](https://en.wikipedia.org/wiki/Key-value_database)
+database, with [permissive license](LICENSE).
+_MDBX_ has a specific set of properties and capabilities,
+focused on creating unique lightweight solutions with extraordinary performance.
 
-The next version is under active non-public development, which will
-radically change both the API and the database format. The goal of this
-revolution is to provide a clearer and more reliable API, add more
-features and new database properties.
+1. Allows **swarm of multi-threaded processes to [ACID]((https://en.wikipedia.org/wiki/ACID))ly read and update** several key-value [maps](https://en.wikipedia.org/wiki/Associative_array) and [multimaps](https://en.wikipedia.org/wiki/Multimap) in a localy-shared database.
+
+2. Provides **extraordinary performance**, minimal overhead through [Memory-Mapping](https://en.wikipedia.org/wiki/Memory-mapped_file) and `Olog(N)` operations costs by virtue of [B+ tree](https://en.wikipedia.org/wiki/B%2B_tree).
+
+3. Requires **no maintenance and no crash recovery** since doesn't use [WAL](https://en.wikipedia.org/wiki/Write-ahead_logging), but that might be a caveat for write-intensive workloads.
+
+4. **Compact and friendly for fully embeddeding**. Only 25KLOC of `C11`, 64K x86 binary code,
+no internal threads neither processes, but implements a simplified variant of the
+[Berkeley DB](https://en.wikipedia.org/wiki/Berkeley_DB) and
+[dbm](https://en.wikipedia.org/wiki/DBM_(computing)) API.
+
+5. Enforces [serializability](https://en.wikipedia.org/wiki/Serializability) for
+writers just by single
+[mutex](https://en.wikipedia.org/wiki/Mutual_exclusion) and affords
+[wait-free](https://en.wikipedia.org/wiki/Non-blocking_algorithm#Wait-freedom)
+for parallel readers without atomic/interlocked operations, while
+**writing and reading transactions do not block each other**.
+
+6. **Guarantee data integrity** after crash unless this was explicitly
+neglected in favour of write performance.
+
+7. Supports Linux, Windows, MacOS, FreeBSD, DragonFly, Solaris,
+OpenSolaris, OpenIndiana, NetBSD, OpenBSD and other systems compliant with
+**POSIX.1-2008**.
+
+Historically, _MDBX_ is deeply revised and extended descendant of amazing
+[Lightning Memory-Mapped Database](https://en.wikipedia.org/wiki/Lightning_Memory-Mapped_Database).
+_MDBX_ inherits all benefits from _LMDB_, but resolves some issues and adds set of improvements.
+
+The next version is under active non-public development from scratch and will be
+released as **_MithrilDB_** and `libmithrildb` for libraries & packages.
+Admittedly mythical [Mithril](https://en.wikipedia.org/wiki/Mithril) is
+resembling silver but being stronger and lighter than steel. Therefore
+_MithrilDB_ is rightly relevant name.
+  > _MithrilDB_ will be radically different from _libmdbx_ by the new
+  > database format and API based on C++17, as well as the [Apache 2.0
+  > License](https://www.apache.org/licenses/LICENSE-2.0). The goal of this
+  > revolution is to provide a clearer and robust API, add more features and
+  > new valuable properties of database.
+
+[![Build Status](https://travis-ci.org/erthink/libmdbx.svg?branch=master)](https://travis-ci.org/erthink/libmdbx)
+[![Build status](https://ci.appveyor.com/api/projects/status/ue94mlopn50dqiqg/branch/master?svg=true)](https://ci.appveyor.com/project/erthink/libmdbx/branch/master)
+[![Coverity Scan Status](https://scan.coverity.com/projects/12915/badge.svg)](https://scan.coverity.com/projects/reopen-libmdbx)
 
 *The Future will (be) [Positive](https://www.ptsecurity.com). Всё будет хорошо.*
 
-[![Build Status](https://travis-ci.org/leo-yuriev/libmdbx.svg?branch=master)](https://travis-ci.org/leo-yuriev/libmdbx)
-[![Build status](https://ci.appveyor.com/api/projects/status/ue94mlopn50dqiqg/branch/master?svg=true)](https://ci.appveyor.com/project/leo-yuriev/libmdbx/branch/master)
-[![Coverity Scan Status](https://scan.coverity.com/projects/12915/badge.svg)](https://scan.coverity.com/projects/reopen-libmdbx)
+-----
 
 ## Table of Contents
 - [Overview](#overview)
+    - [Features](#features)
+    - [Limitations](#limitations)
+    - [Caveats & Gotchas](#caveats--gotchas)
     - [Comparison with other databases](#comparison-with-other-databases)
+    - [Improvements beyond LMDB](#improvements-beyond-lmdb)
     - [History & Acknowledgments](#history)
-- [Description](#description)
-    - [Key features](#key-features)
-    - [Improvements over LMDB](#improvements-over-lmdb)
-    - [Gotchas](#gotchas)
-        - [Problem of long-time reading](#problem-of-long-time-reading)
-        - [Durability in asynchronous writing mode](#durability-in-asynchronous-writing-mode)
 - [Usage](#usage)
     - [Building](#building)
+    - [API description](#api-description)
     - [Bindings](#bindings)
 - [Performance comparison](#performance-comparison)
     - [Integral performance](#integral-performance)
@@ -44,250 +77,179 @@ features and new database properties.
     - [Async-write mode](#async-write-mode)
     - [Cost comparison](#cost-comparison)
 
------
+# Overview
 
-## Overview
-_libmdbx_ is an embedded lightweight key-value database engine oriented
-for performance.
+## Features
 
-_libmdbx_ allows multiple processes to read and update several key-value
-tables concurrently, while being
-[ACID](https://en.wikipedia.org/wiki/ACID)-compliant, with minimal
-overhead and Olog(N) operation cost.
+- Key-value data model, keys are always sorted.
 
-_libmdbx_ enforce
-[serializability](https://en.wikipedia.org/wiki/Serializability) for
-writers by single
-[mutex](https://en.wikipedia.org/wiki/Mutual_exclusion) and affords
-[wait-free](https://en.wikipedia.org/wiki/Non-blocking_algorithm#Wait-freedom)
-for parallel readers without atomic/interlocked operations, while
-writing and reading transactions do not block each other.
+- Fully [ACID](https://en.wikipedia.org/wiki/ACID)-compliant, through to
+[MVCC](https://en.wikipedia.org/wiki/Multiversion_concurrency_control)
+and [CoW](https://en.wikipedia.org/wiki/Copy-on-write).
 
-_libmdbx_ can guarantee consistency after crash depending of operation
-mode.
+- Multiple key-value sub-databases within a single datafile.
 
-_libmdbx_ uses [B+Trees](https://en.wikipedia.org/wiki/B%2B_tree) and
-[Memory-Mapping](https://en.wikipedia.org/wiki/Memory-mapped_file),
-doesn't use [WAL](https://en.wikipedia.org/wiki/Write-ahead_logging)
-which might be a caveat for some workloads.
+- Range lookups, including range query estimation.
+
+- Efficient support for short fixed length keys, including native 32/64-bit integers.
+
+- Ultra-efficient support for [multimaps](https://en.wikipedia.org/wiki/Multimap). Multi-values sorted, searchable and iterable. Keys stored without duplication.
+
+- Data is [memory-mapped](https://en.wikipedia.org/wiki/Memory-mapped_file) and accessible directly/zero-copy. Traversal of database records is extremely-fast.
+
+- Transactions for readers and writers, ones do not block others.
+
+- Writes are strongly serialized. No transactions conflicts nor deadlocks.
+
+- Readers are [non-blocking](https://en.wikipedia.org/wiki/Non-blocking_algorithm), notwithstanding [snapshot isolation](https://en.wikipedia.org/wiki/Snapshot_isolation).
+
+- Nested write transactions.
+
+- Reads scales linearly across CPUs.
+
+- Continuous zero-overhead database compactification.
+
+- Automatic on-the-fly database size adjustment.
+
+- Customizable database page size.
+
+- `Olog(N)` cost of lookup, insert, update, and delete operations by virtue of [B+ tree characteristics](https://en.wikipedia.org/wiki/B%2B_tree#Characteristics).
+
+- Online hot backup.
+
+- Append operation for efficient bulk insertion of pre-sorted data.
+
+- No [WAL](https://en.wikipedia.org/wiki/Write-ahead_logging) nor any
+transaction journal. No crash recovery needed. No maintenance is required.
+
+- No internal cache and/or memory management, all done by basic OS services.
+
+## Limitations
+
+- **Page size**: a power of 2, maximum `65536` bytes, default `4096` bytes.
+- **Key size**: minimum 0, maximum ≈¼ pagesize (`1300` bytes for default 4K pagesize, `21780` bytes for 64K pagesize).
+- **Value size**: minimum 0, maximum `2146435072` (`0x7FF00000`) bytes for maps, ≈¼ pagesize for multimaps (`1348` bytes default 4K pagesize, `21828` bytes for 64K pagesize).
+- **Write transaction size**: up to `4194301` (`0x3FFFFD`) pages (16 [GiB](https://en.wikipedia.org/wiki/Gibibyte) for default 4K pagesize, 256 [GiB](https://en.wikipedia.org/wiki/Gibibyte) for 64K pagesize).
+- **Database size**: up to `2147483648` pages (8 [TiB](https://en.wikipedia.org/wiki/Tebibyte) for default 4K pagesize, 128 [TiB](https://en.wikipedia.org/wiki/Tebibyte) for 64K pagesize).
+- **Maximum sub-databases**: `32765`.
+
+## Caveats & Gotchas
+
+1. There cannot be more than one writer at a time, i.e. no more than one write transaction at a time.
+
+2. MDBX is based on [B+ tree](https://en.wikipedia.org/wiki/B%2B_tree), so access to database pages is mostly random.
+Thus SSDs provide a significant performance boost over spinning disks for large databases.
+
+3. MDBX uses [shadow paging](https://en.wikipedia.org/wiki/Shadow_paging) instead of [WAL](https://en.wikipedia.org/wiki/Write-ahead_logging). Thus syncing data to disk might be bottleneck for write intensive workload.
+
+4. MDBX uses [copy-on-write](https://en.wikipedia.org/wiki/Copy-on-write) for [snapshot isolation](https://en.wikipedia.org/wiki/Snapshot_isolation) during updates, but read transactions prevents recycling an old retired/freed pages, since it read ones. Thus altering of data during a parallel
+long-lived read operation will increase the process work set, may exhaust entire free database space,
+the database can grow quickly, and result in performance degradation.
+Try to avoid long running read transactions.
+
+5. MDBX is extraordinarily fast and provides minimal overhead for data access,
+so you should reconsider about use brute force techniques and double check your code.
+On the one hand, in the case of MDBX, a simple linear search may be more profitable than complex indexes.
+On the other hand, if you make something suboptimally, you can notice a detrimentally only on sufficiently large data.
 
 ### Comparison with other databases
 For now please refer to [chapter of "BoltDB comparison with other
 databases"](https://github.com/coreos/bbolt#comparison-with-other-databases)
-which is also (mostly) applicable to MDBX.
+which is also (mostly) applicable to _libmdbx_.
 
-### History
-The _libmdbx_ design is based on [Lightning Memory-Mapped
-Database](https://en.wikipedia.org/wiki/Lightning_Memory-Mapped_Database).
-Initial development was going in
-[ReOpenLDAP](https://github.com/leo-yuriev/ReOpenLDAP) project. About a
-year later libmdbx was isolated to separate project, which was
-[presented at Highload++ 2015
-conference](http://www.highload.ru/2015/abstracts/1831.html).
+Improvements beyond LMDB
+========================
 
-Since early 2017 _libmdbx_ is used in [Fast Positive Tables](https://github.com/leo-yuriev/libfpta),
-and development is funded by [Positive Technologies](https://www.ptsecurity.com).
+_libmdbx_ is superior to legendary _[LMDB](https://symas.com/lmdb/)_ in
+terms of features and reliability, not inferior in performance. In
+comparison to _LMDB_, _libmdbx_ make things "just work" perfectly and
+out-of-the-box, not silently and catastrophically break down. The list
+below is pruned down to the improvements most notable and obvious from
+the user's point of view.
 
-### Acknowledgments
-Howard Chu <hyc@openldap.org> is the author of LMDB, from which
-originated the MDBX in 2015.
+### Added Features:
 
-Martin Hedenfalk <martin@bzero.se> is the author of `btree.c` code, which
-was used for begin development of LMDB.
+1. Keys could be more than 2 times longer than _LMDB_.
+  > For DB with default page size _libmdbx_ support keys up to 1300 bytes
+  > and up to 21780 bytes for 64K page size. _LMDB_ allows key size up to
+  > 511 bytes and may silently loses data with large values.
 
------
+2. Up to 20% faster than _LMDB_ in [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) benchmarks.
+  > Benchmarks of the in-[tmpfs](https://en.wikipedia.org/wiki/Tmpfs) scenarios,
+  > that tests the speed of engine itself, shown that _libmdbx_ 10-20% faster than _LMDB_.
+  > These and other results could be easily reproduced with [ioArena](https://github.com/pmwkaa/ioarena) just by `make bench-quartet`,
+  > including comparisons with [RockDB](https://en.wikipedia.org/wiki/RocksDB)
+  > and [WiredTiger](https://en.wikipedia.org/wiki/WiredTiger).
 
-Description
-===========
+3. Automatic on-the-fly database size adjustment, both increment and reduction.
+  > _libmdbx_ manage the database size according to parameters specified
+  > by `mdbx_env_set_geometry()` function,
+  > ones include the growth step and the truncation threshold.
 
-## Key features
+4. Automatic continuous zero-overhead database compactification.
+  > During each commit _libmdbx_ merges suitable freeing pages into unallocated area
+  > at the end of file, and then truncate unused space when a lot enough of.
 
-_libmdbx_ inherits all features and characteristics from
-[LMDB](https://en.wikipedia.org/wiki/Lightning_Memory-Mapped_Database):
+5. The same database format for 32- and 64-bit builds.
+  > _libmdbx_ database format depends only on the [endianness](https://en.wikipedia.org/wiki/Endianness) but not on the [bitness](https://en.wiktionary.org/wiki/bitness).
 
-1. Key-value pairs are stored in ordered map(s), keys are always sorted,
-range lookups are supported.
+6. LIFO policy for Garbage Collection recycling. This can significantly increase write performance due write-back disk cache up to several times in a best case scenario.
+  > LIFO means that for reuse will be taken latest became unused pages.
+  > Therefore the loop of database pages circulation becomes as short as possible.
+  > In other words, the set of pages, that are (over)written in memory and on disk during a series of write transactions, will be as small as possible.
+  > Thus creates ideal conditions for the battery-backed or flash-backed disk cache efficiency.
 
-2. Data is [memory-mapped](https://en.wikipedia.org/wiki/Memory-mapped_file)
-into each worker DB process, and could be accessed zero-copy from transactions.
+7. Fast estimation of range query result volume, i.e. how many items can
+be found between a `KEY1` and a `KEY2`. This is prerequisite for build
+and/or optimize query execution plans.
+  > _libmdbx_ performs a rough estimate based on common B-tree  pages of the paths from root to corresponding keys.
 
-3. Transactions are
-[ACID](https://en.wikipedia.org/wiki/ACID)-compliant, through to
-[MVCC](https://en.wikipedia.org/wiki/Multiversion_concurrency_control)
-and [CoW](https://en.wikipedia.org/wiki/Copy-on-write). Writes are
-strongly serialized and aren't blocked by reads, transactions can't
-conflict with each other. Reads are guaranteed to get only commited data
-([relaxing serializability](https://en.wikipedia.org/wiki/Serializability#Relaxing_serializability)).
+8. `mdbx_chk` tool for database integrity check.
 
-4. Read transactions are
-[non-blocking](https://en.wikipedia.org/wiki/Non-blocking_algorithm),
-don't use [atomic operations](https://en.wikipedia.org/wiki/Linearizability#High-level_atomic_operations).
-Readers don't block each other and aren't blocked by writers. Read
-performance scales linearly with CPU core count.
-  > Nonetheless, "connect to DB" (starting the first read transaction in a thread) and
-  > "disconnect from DB" (closing DB or thread termination) requires a lock
-  > acquisition to register/unregister at the "readers table".
+9. Automated steady sync-to-disk upon several thresholds and/or timeout via cheap polling.
 
-5. Keys with multiple values are stored efficiently without key
-duplication, sorted by value, including integers (valuable for
-secondary indexes).
+10. Sequence generation and three persistent 64-bit markers.
 
-6. Efficient operation on short fixed length keys,
-including 32/64-bit integer types.
+11. Callback for lack-of-space condition of database that allows you to control and/or resolve such situations.
 
-7. [WAF](https://en.wikipedia.org/wiki/Write_amplification) (Write
-Amplification Factor) и RAF (Read Amplification Factor) are Olog(N).
+12. Support for opening database in the exclusive mode, including on a network share.
 
-8. No [WAL](https://en.wikipedia.org/wiki/Write-ahead_logging) and
-transaction journal. In case of a crash no recovery needed. No need for
-regular maintenance. Backups can be made on the fly on working DB
-without freezing writers.
+### Added Abilities:
 
-9. No additional memory management, all done by basic OS services.
+1. Zero-length for keys and values.
 
+2. Ability to determine whether the particular data is on a dirty page
+or not, that allows to avoid copy-out before updates.
 
-## Improvements over LMDB
+3. Ability to determine whether the cursor is pointed to a key-value
+pair, to the first, to the last, or not set to anything.
 
-1. Automatic dynamic DB size management according to the parameters
-specified by `mdbx_env_set_geometry()` function. Including
-growth step and truncation threshold, as well as the choice of page
-size.
+4. Extended information of whole-database, sub-databases, transactions, readers enumeration.
+  > _libmdbx_ provides a lot of information, including dirty and leftover pages
+  > for a write transaction, reading lag and holdover space for read transactions.
 
-2. Automatic returning of freed pages into unallocated space at the end
-of database file, with optionally automatic shrinking it. This reduces
-amount of pages resides in RAM and circulated in disk I/O. In fact
-_libmdbx_ constantly performs DB compactification, without spending
-additional resources for that.
+5. Extended update and delete operations.
+  > _libmdbx_ allows ones _at once_ with getting previous value
+  > and addressing the particular item from multi-value with the same key.
 
-3. `LIFO RECLAIM` mode:
+### Other fixes and specifics:
 
-    The newest pages are picked for reuse instead of the oldest. This allows
-    to minimize reclaim loop and make it execution time independent of total
-    page count.
+1. Fixed more than 10 significant errors, in particular: page leaks, wrong sub-database statistics, segfault in several conditions, unoptimal page merge strategy, updating an existing record with a change in data size (including for multimap), etc.
 
-    This results in OS kernel cache mechanisms working with maximum
-    efficiency. In case of using disk controllers or storages with
-    [BBWC](https://en.wikipedia.org/wiki/Disk_buffer#Write_acceleration)
-    this may greatly improve write performance.
+2. All cursors can be reused and should be closed explicitly, regardless ones were opened within write or read transaction.
 
-4. Fast estimation of range query result size via functions
-`mdbx_estimate_range()`, `mdbx_estimate_move()` and
-`mdbx_estimate_distance()`. E.g. for selection the optimal query
-execution plan.
+3. Opening database handles are spared from race conditions and
+pre-opening is not needed.
 
-5. `mdbx_chk` tool for DB integrity check.
+4. Returning `MDBX_EMULTIVAL` error in case of ambiguous update or delete.
 
-6. Support for keys and values of zero length, including multi-values
-(aka sorted duplicates).
+5. Guarantee of database integrity even in asynchronous unordered write-to-disk mode.
+  > _libmdbx_ propose additional trade-off by implementing append-like manner for updates
+  > in `MDBX_SAFE_NOSYNC` and `MDBX_WRITEMAP|MDBX_MAPASYNC` modes, that avoid database corruption after a system crash
+  > contrary to LMDB. Nevertheless, the `MDBX_UTTERLY_NOSYNC` mode available to match LMDB behaviour,
+  > and for a special use-cases.
 
-7. Ability to assign up to 3 persistent 64-bit markers to commiting
-transaction with `mdbx_canary_put()` and then get them in read
-transaction by `mdbx_canary_get()`.
-
-8. Ability to update or delete record and get previous value via
-`mdbx_replace()`. Also allows update the specific item from multi-value
-with the same key.
-
-9. Sequence generation via `mdbx_dbi_sequence()`.
-
-10. `OOM-KICK` callback.
-
-    `mdbx_env_set_oomfunc()` allows to set a callback, which will be called
-    in the event of DB space exhausting during long-time read transaction in
-    parallel with extensive updating. Callback will be invoked with PID and
-    pthread_id of offending thread as parameters. Callback can do any of
-    these things to remedy the problem:
-
-    * wait for read transaction to finish normally;
-
-    * kill the offending process (signal 9), if separate process is doing
-    long-time read;
-
-    * abort or restart offending read transaction if it's running in sibling
-    thread;
-
-    * abort current write transaction with returning error code.
-
-11. Ability to open DB in exclusive mode by `MDBX_EXCLUSIVE` flag.
-
-12. Ability to get how far current read-transaction snapshot lags
-from the latest version of the DB by `mdbx_txn_straggler()`.
-
-13. Ability to explicitly update the existing record, not insertion
-a new one. Implemented as `MDBX_CURRENT` flag for `mdbx_put()`.
-
-14. Fixed `mdbx_cursor_count()`, which returns correct count of
-duplicated (aka multi-value) for all cases and any cursor position.
-
-15. `mdbx_env_info()` to getting additional info, including number of
-the oldest snapshot of DB, which is used by someone of the readers.
-
-16. `mdbx_del()` doesn't ignore additional argument (specifier) `data`
-for tables without duplicates (without flag `MDBX_DUPSORT`), if `data`
-is not null then always uses it to verify record, which is being
-deleted.
-
-17. Ability to open dbi-table with simultaneous with race-free setup
-of comparators for keys and values, via `mdbx_dbi_open_ex()`.
-
-18. `mdbx_is_dirty()`to find out if given key or value is on dirty page, that
-useful to avoid copy-out before updates.
-
-19. Correct update of current record in `MDBX_CURRENT` mode of
-`mdbx_cursor_put()`, including sorted duplicated.
-
-20. Check if there is a row with data after current cursor position via
-`mdbx_cursor_eof()`.
-
-21. Additional error code `MDBX_EMULTIVAL`, which is returned by
-`mdbx_put()` and `mdbx_replace()` in case is ambiguous update or delete.
-
-22. Ability to get value by key and duplicates count by `mdbx_get_ex()`.
-
-23. Functions `mdbx_cursor_on_first()` and `mdbx_cursor_on_last()`,
-which allows to check cursor is currently on first or last position
-respectively.
-
-24. Automatic creation of steady commit-points (flushing data to the
-disk) when the volume of changes reaches a threshold, which can be
-set by `mdbx_env_set_syncbytes()`.
-
-25. Control over debugging and receiving of debugging messages via
-`mdbx_setup_debug()`.
-
-26. Function `mdbx_env_pgwalk()` for page-walking the DB.
-
-27. Three meta-pages instead of two, that allows to guarantee
-consistency of data when updating weak commit-points without the
-risk of damaging the last steady commit-point.
-
-28. Guarantee of DB integrity in `WRITEMAP+MAPSYNC` mode:
-  > Current _libmdbx_ gives a choice of safe async-write mode (default)
-  > and `UTTERLY_NOSYNC` mode which may result in full
-  > DB corruption during system crash as with LMDB. For details see
-  > [Data safety in async-write mode](#data-safety-in-async-write-mode).
-
-29. Ability to close DB in "dirty" state (without data flush and
-creation of steady synchronization point) via `mdbx_env_close_ex()`.
-
-30. If read transaction is aborted via `mdbx_txn_abort()` or
-`mdbx_txn_reset()` then DBI-handles, which were opened during it,
-will not be closed or deleted. In several cases this allows
-to avoid hard-to-debug errors.
-
-31. All cursors in all read and write transactions can be reused by
-`mdbx_cursor_renew()` and MUST be freed explicitly.
-  > ## Caution, please pay attention!
-  >
-  > This is the only change of API, which changes semantics of cursor management
-  > and can lead to memory leaks on misuse. This is a needed change as it eliminates ambiguity
-  > which helps to avoid such errors as:
-  >  - use-after-free;
-  >  - double-free;
-  >  - memory corruption and segfaults.
-
-
-32. On **Mac OS X** the `fcntl(F_FULLFSYNC)` syscall is used _by
+6. On **MacOS** the `fcntl(F_FULLFSYNC)` syscall is used _by
 default_ to synchronize data with the disk, as this is [the only way to
 guarantee data
 durability](https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/fsync.2.html)
@@ -297,163 +259,75 @@ compared to LMDB, where the `fsync()` syscall is used. Therefore,
 _libmdbx_ allows you to override this behavior by defining the
 `MDBX_OSX_SPEED_INSTEADOF_DURABILITY=1` option while build the library.
 
-33. On **Windows** the `LockFileEx()` syscall is used for locking, since
+7. On **Windows** the `LockFileEx()` syscall is used for locking, since
 it allows place the database on network drives, and provides protection
 against incompetent user actions (aka
 [poka-yoke](https://en.wikipedia.org/wiki/Poka-yoke)). Therefore
 _libmdbx_ may be a little lag in performance tests from LMDB where a
 named mutexes are used.
 
+### History
+At first the development was carried out within the
+[ReOpenLDAP](https://github.com/erthink/ReOpenLDAP) project. About a
+year later _libmdbx_ was separated into standalone project, which was
+[presented at Highload++ 2015
+conference](http://www.highload.ru/2015/abstracts/1831.html).
 
-## Gotchas
+Since 2017 _libmdbx_ is used in [Fast Positive Tables](https://github.com/erthink/libfpta),
+and development is funded by [Positive Technologies](https://www.ptsecurity.com).
 
-1. There cannot be more than one writer at a time. This allows serialize an
-updates and eliminate any possibility of conflicts, deadlocks or logical errors.
+### Acknowledgments
+Howard Chu <hyc@openldap.org> is the author of LMDB, from which
+originated the MDBX in 2015.
 
-2. No [WAL](https://en.wikipedia.org/wiki/Write-ahead_logging) means
-relatively big [WAF](https://en.wikipedia.org/wiki/Write_amplification)
-(Write Amplification Factor). Because of this syncing data to disk might
-be quite resource intensive and be main performance bottleneck during
-intensive write workload.
-  > As compromise _libmdbx_ allows several modes of lazy and/or periodic
-  > syncing, including `MAPASYNC` mode, which modificate data in memory and
-  > asynchronously syncs data to disk, moment to sync is picked by OS.
-  >
-  > Although this should be used with care, synchronous transactions in a DB
-  > with transaction journal will require 2 IOPS minimum (probably 3-4 in
-  > practice) because of filesystem overhead, overhead depends on
-  > filesystem, not on record count or record size. In _libmdbx_ IOPS count
-  > will grow logarithmically depending on record count in DB (height of B+
-  > tree) and will require at least 2 IOPS per transaction too.
-
-3. [CoW](https://en.wikipedia.org/wiki/Copy-on-write) for
-[MVCC](https://en.wikipedia.org/wiki/Multiversion_concurrency_control)
-is done on memory page level with
-[B+trees](https://ru.wikipedia.org/wiki/B-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE).
-Therefore altering data requires to copy about Olog(N) memory pages,
-which uses [memory bandwidth](https://en.wikipedia.org/wiki/Memory_bandwidth) and is main
-performance bottleneck in `MAPASYNC` mode.
-  > This is unavoidable, but isn't that bad. Syncing data to disk requires
-  > much more similar operations which will be done by OS, therefore this is
-  > noticeable only if data sync to persistent storage is fully disabled.
-  > _libmdbx_ allows to safely save data to persistent storage with minimal
-  > performance overhead. If there is no need to save data to persistent
-  > storage then it's much more preferable to use `std::map`.
-
-
-4. _LMDB_ has a problem of long-time readers which degrades performance
-and bloats DB.
-  > _libmdbx_ addresses that, details below.
-
-5. _LMDB_ is susceptible to DB corruption in `WRITEMAP+MAPASYNC` mode.
-_libmdbx_ in `WRITEMAP+MAPASYNC` guarantees DB integrity and consistency
-of data.
-  > Additionally there is an alternative: `UTTERLY_NOSYNC` mode.
-  > Details below.
-
-
-### Problem of long-time reading
-Garbage collection problem exists in all databases one way or another
-(e.g. VACUUM in PostgreSQL). But in _libmdbx_ and LMDB it's even more
-discernible because of high transaction rate and intentional internals
-simplification in favor of performance.
-
-Understanding the problem requires some explanation, but can be
-difficult for quick perception. So is is reasonable
-to simplify this as follows:
-
-* Massive altering of data during a parallel long read operation may
-exhaust the free DB space.
-
-* If the available space is exhausted, any attempt to update the data
-will cause a "MAP_FULL" error until a long read transaction is
-completed.
-
-* A good example of long readers is a hot backup or debugging of
-a client application while retaining an active read transaction.
-
-* In _LMDB_ this results in degraded performance of all operations of
-writing data to persistent storage.
-
-* _libmdbx_ has the `OOM-KICK` mechanism which allow to abort such
-operations and the `LIFO RECLAIM` mode which addresses performance
-degradation.
-
-### Durability in asynchronous writing mode
-In `WRITEMAP+MAPSYNC` mode updated (aka dirty) pages are written to
-persistent storage by the OS kernel. This means that if the application
-fails, the OS kernel will finish writing all updated data to disk and
-nothing will be lost. However, in the case of hardware malfunction or OS
-kernel fatal error, only some updated data can be written to disk and
-the database structure is likely to be destroyed. In such situation, DB
-is completely corrupted and can't be repaired.
-
-_libmdbx_ addresses this by fully reimplementing write path of data:
-
-* In `WRITEMAP+MAPSYNC` mode meta-data pages aren't updated in place,
-instead their shadow copies are used and their updates are synced after
-data is flushed to disk.
-
-* During transaction commit _libmdbx_ marks it as a steady or weak
-depending on synchronization status between RAM and persistent storage.
-For instance, in the `WRITEMAP+MAPSYNC` mode committed transactions
-are marked as weak by default, but as steady after explicit data flushes.
-
-* _libmdbx_ maintains three separate meta-pages instead of two. This
-allows to commit transaction as steady or weak without losing two
-previous commit points (one of them can be steady, and another
-weak). Thus, after a fatal system failure, it will be possible to
-rollback to the last steady commit point.
-
-* During DB open _libmdbx_ rollbacks to the last steady commit point,
-this guarantees database integrity after a crash. However, if the
-database opening in read-only mode, such rollback cannot be performed
-which will cause returning the MDBX_WANNA_RECOVERY error.
-
-For data integrity a pages which form database snapshot with steady
-commit point, must not be updated until next steady commit point.
-Therefore the last steady commit point creates an effect analogues to
-"long-time read". The only difference that now in case of space
-exhaustion the problem will be immediately addressed by writing changes
-to disk and forming the new steady commit point.
-
-So in async-write mode _libmdbx_ will always use new pages until the
-free DB space will be exhausted or `mdbx_env_sync()` will be invoked,
-and the total write traffic to the disk will be the same as in
-sync-write mode.
-
-Currently libmdbx gives a choice between a safe async-write mode
-(default) and `UTTERLY_NOSYNC` mode which may lead to DB corruption
-after a system crash, i.e. like the LMDB.
-
-Next version of _libmdbx_ will be automatically create steady commit
-points in async-write mode upon completion transfer data to the disk.
+Martin Hedenfalk <martin@bzero.se> is the author of `btree.c` code, which
+was used for begin development of LMDB.
 
 --------------------------------------------------------------------------------
 
 Usage
 =====
 
+## Source code embedding
+
+_libmdbx_ provides two official ways for integration in source code form:
+
+1. Using the amalgamated source code.
+  > The amalgamated source code includes all files requires to build and
+  > use _libmdbx_, but not for testing _libmdbx_ itself.
+
+2. Adding the complete original source code as a `git submodule`.
+  > This allows you to build as _libmdbx_ and testing tool.
+  >  On the other hand, this way requires you to pull git tags, and use C++11 compiler for test tool.
+
+**_Please, avoid using any other techniques._** Otherwise, at least
+don't ask for support and don't name such chimeras `libmdbx`.
+
+The amalgamated source code could be created from original clone of git
+repository on Linux by executing `make dist`. As a result, the desired
+set of files will be formed in the `dist` subdirectory.
+
 ## Building
 
-To build on all platforms except Windows the prerequirements are the
-same: non-obsolete versions of GNU Make,
-[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)), C and C++
-compilers compatible with GCC or CLANG. On Windows you will need only :
-Microsoft Visual Studio 2015 or later, Windows SDK for Windows 8 or
-later.
+Both amalgamated and original source code provides build through the use
+[CMake](https://cmake.org/) or [GNU
+Make](https://www.gnu.org/software/make/) with
+[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). All build ways
+are completely traditional and have minimal prerequirements like
+`build-essential`, i.e. the non-obsolete C/C++ compiler and a
+[SDK](https://en.wikipedia.org/wiki/Software_development_kit) for the
+target platform. Obviously you need building tools itself, i.e. `git`,
+`cmake` or GNU `make` with `bash`.
 
-Historically, the libmdbx builing is based on single
-[Makefile](https://en.wikipedia.org/wiki/Makefile) which assumes
-different recipes depending on target platform. In the next versions, it
-is planned to switch to [CMake](https://en.wikipedia.org/wiki/CMake),
-with the refusal to support other tools.
+So just use CMake or GNU Make in your habitual manner and feel free to
+fill an issue or make pull request in the case something will be
+unexpected or broken down.
 
 #### DSO/DLL unloading and destructors of Thread-Local-Storage objects
 When building _libmdbx_ as a shared library or use static _libmdbx_ as a
 part of another dynamic library, it is advisable to make sure that your
 system ensures the correctness of the call destructors of
-Thread-Local-Storage objects when unloading dynamic libraries'.
+Thread-Local-Storage objects when unloading dynamic libraries.
 
 If this is not the case, then unloading a dynamic-link library with
 _libmdbx_ code inside, can result in either a resource leak or a crash
@@ -495,22 +369,15 @@ directory with source code, and `gmake check` (or `make check`) to run
 the basic tests.
 
 ### Windows
-For building _libmdbx_ on Windows the [Microsoft Visual
-Studio](https://en.wikipedia.org/wiki/Microsoft_Visual_Studio) is
-recommended, but not tools such as MinGW, MSYS, or Cygwin. To do this,
-the libmdbx source code includes the set of appropriate project files
-that are compatible with Visual Studio 2015, the Windows SDK for Windows
-8.1, and later. Just open `mdbx.sln` in Visual Studio and build the
-library.
-
-To build with newer versions of the SDK or Visual Studio, it should be
-sufficient to execute "Retarget solution". To build for older versions
-of Windows (such as Windows XP) or by older compilers, you will need to
-convert or recreate the corresponding project files yourself.
+For build _libmdbx_ on Windows the _original_ CMake and [Microsoft Visual
+Studio](https://en.wikipedia.org/wiki/Microsoft_Visual_Studio) are
+recommended.
 
 Building by MinGW, MSYS or Cygwin is potentially possible. However,
 these scripts are not tested and will probably require you to modify the
-Makefile. It should be noted that in _libmdbx_ was efforts to resolve
+CMakeLists.txt or Makefile respectively.
+
+It should be noted that in _libmdbx_ was efforts to resolve
 runtime dependencies from CRT and other libraries Visual Studio.
 For this is enough define the `MDBX_AVOID_CRT` during build.
 
@@ -521,9 +388,9 @@ run the [long stochastic test scenario](test/long_stochastic.sh),
 the such testing is recommended with place the test data on the
 [RAM-disk](https://en.wikipedia.org/wiki/RAM_drive).
 
-### MacOS X
+### MacOS
 Current [native build tools](https://en.wikipedia.org/wiki/Xcode) for
-MacOS X include GNU Make, CLANG and an outdated version of bash.
+MacOS include GNU Make, CLANG and an outdated version of bash.
 Therefore, to build the library, it is enough to run `make all` in the
 directory with source code, and run `make check` to execute the base
 tests. If something goes wrong, it is recommended to install
@@ -535,29 +402,32 @@ will need to install the current (not outdated) version of
 recommend that you install [Homebrew](https://brew.sh/) and then execute
 `brew install bash`.
 
+## API description
+For more information and API description see the [mdbx.h](mdbx.h) header.
+
 ## Bindings
 
   | Runtime  | GitHub | Author |
   | -------- | ------ | ------ |
   | Java     | [mdbxjni](https://github.com/castortech/mdbxjni)   | [Castor Technologies](https://castortech.com/) |
   | .NET     | [mdbx.NET](https://github.com/wangjia184/mdbx.NET) | [Jerry Wang](https://github.com/wangjia184) |
-
+  | Rust     | [mdbx-rs](https://github.com/Kerollmops/mdbx-rs)   | [Clément Renault](https://github.com/Kerollmops) |
 
 --------------------------------------------------------------------------------
 
 Performance comparison
 ======================
 
-All benchmarks were done by [IOArena](https://github.com/pmwkaa/ioarena)
+All benchmarks were done in 2015 by [IOArena](https://github.com/pmwkaa/ioarena)
 and multiple [scripts](https://github.com/pmwkaa/ioarena/tree/HL%2B%2B2015)
-runs on Lenovo Carbon-2 laptop, i7-4600U 2.1 GHz, 8 Gb RAM,
+runs on Lenovo Carbon-2 laptop, i7-4600U 2.1 GHz (2 physical cores, 4 HyperThreading cores), 8 Gb RAM,
 SSD SAMSUNG MZNTD512HAGL-000L1 (DXT23L0Q) 512 Gb.
 
 ## Integral performance
 
 Here showed sum of performance metrics in 3 benchmarks:
 
- - Read/Search on 4 CPU cores machine;
+ - Read/Search on machine with 4 logical CPU in HyperThreading mode (i.e. actually 2 physical CPU cores);
 
  - Transactions with [CRUD](https://en.wikipedia.org/wiki/CRUD)
  operations in sync-write mode (fdatasync is called after each
@@ -575,7 +445,7 @@ Here showed sum of performance metrics in 3 benchmarks:
 
   2. Performance gap is too high to compare in any meaningful way.
 
-![Comparison #1: Integral Performance](https://raw.githubusercontent.com/wiki/leo-yuriev/libmdbx/img/perf-slide-1.png)
+![Comparison #1: Integral Performance](https://raw.githubusercontent.com/wiki/erthink/libmdbx/img/perf-slide-1.png)
 
 --------------------------------------------------------------------------------
 
@@ -584,7 +454,7 @@ Here showed sum of performance metrics in 3 benchmarks:
 Summary performance with concurrent read/search queries in 1-2-4-8
 threads on 4 CPU cores machine.
 
-![Comparison #2: Read Scalability](https://raw.githubusercontent.com/wiki/leo-yuriev/libmdbx/img/perf-slide-2.png)
+![Comparison #2: Read Scalability](https://raw.githubusercontent.com/wiki/erthink/libmdbx/img/perf-slide-2.png)
 
 --------------------------------------------------------------------------------
 
@@ -606,7 +476,7 @@ In the benchmark each transaction contains combined CRUD operations (2
 inserts, 1 read, 1 update, 1 delete). Benchmark starts on empty database
 and after full run the database contains 10,000 small key-value records.
 
-![Comparison #3: Sync-write mode](https://raw.githubusercontent.com/wiki/leo-yuriev/libmdbx/img/perf-slide-3.png)
+![Comparison #3: Sync-write mode](https://raw.githubusercontent.com/wiki/erthink/libmdbx/img/perf-slide-3.png)
 
 --------------------------------------------------------------------------------
 
@@ -633,7 +503,7 @@ and after full run the database contains 100,000 small key-value
 records.
 
 
-![Comparison #4: Lazy-write mode](https://raw.githubusercontent.com/wiki/leo-yuriev/libmdbx/img/perf-slide-4.png)
+![Comparison #4: Lazy-write mode](https://raw.githubusercontent.com/wiki/erthink/libmdbx/img/perf-slide-4.png)
 
 --------------------------------------------------------------------------------
 
@@ -657,7 +527,7 @@ In the benchmark each transaction contains combined CRUD operations (2
 inserts, 1 read, 1 update, 1 delete). Benchmark starts on empty database
 and after full run the database contains 10,000 small key-value records.
 
-![Comparison #5: Async-write mode](https://raw.githubusercontent.com/wiki/leo-yuriev/libmdbx/img/perf-slide-5.png)
+![Comparison #5: Async-write mode](https://raw.githubusercontent.com/wiki/erthink/libmdbx/img/perf-slide-5.png)
 
 --------------------------------------------------------------------------------
 
@@ -665,7 +535,7 @@ and after full run the database contains 10,000 small key-value records.
 
 Summary of used resources during lazy-write mode benchmarks:
 
- - Read and write IOPS;
+ - Read and write IOPs;
 
  - Sum of user CPU time and sys CPU time;
 
@@ -674,28 +544,15 @@ Summary of used resources during lazy-write mode benchmarks:
  compactification, etc).
 
 _ForestDB_ is excluded because benchmark showed it's resource
-consumption for each resource (CPU, IOPS) much higher than other engines
+consumption for each resource (CPU, IOPs) much higher than other engines
 which prevents to meaningfully compare it with them.
 
 All benchmark data is gathered by
 [getrusage()](http://man7.org/linux/man-pages/man2/getrusage.2.html)
 syscall and by scanning data directory.
 
-![Comparison #6: Cost comparison](https://raw.githubusercontent.com/wiki/leo-yuriev/libmdbx/img/perf-slide-6.png)
+![Comparison #6: Cost comparison](https://raw.githubusercontent.com/wiki/erthink/libmdbx/img/perf-slide-6.png)
 
 --------------------------------------------------------------------------------
 
-```
-$ objdump -f -h -j .text libmdbx.so
-
-libmdbx.so:     file format elf64-x86-64
-architecture: i386:x86-64, flags 0x00000150:
-HAS_SYMS, DYNAMIC, D_PAGED
-start address 0x0000000000003870
-
-Sections:
-Idx Name          Size      VMA               LMA               File off  Algn
- 11 .text         000173d4  0000000000003870  0000000000003870  00003870  2**4
-                  CONTENTS, ALLOC, LOAD, READONLY, CODE
-
-```
+#### This is a mirror of the origin repository that was moved to [abf.io](https://abf.io/erthink/) because of discriminatory restrictions for Russian Crimea.

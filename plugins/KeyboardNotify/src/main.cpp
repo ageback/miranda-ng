@@ -194,7 +194,7 @@ DBEVENTINFO createMsgEventInfo(MCONTACT hContact)
 {
 	DBEVENTINFO einfo = {};
 	einfo.eventType = EVENTTYPE_MESSAGE;
-	einfo.szModule = GetContactProto(hContact);
+	einfo.szModule = Proto_GetBaseAccountName(hContact);
 	return einfo;
 }
 
@@ -231,7 +231,7 @@ BOOL metaCheckProtocol(const char *szProto, MCONTACT hContact, WORD eventType)
 
 	if (bMetaProtoEnabled && szProto && !mir_strcmp(META_PROTO, szProto))
 		if (hSubContact = db_mc_getMostOnline(hContact))
-			szProto = GetContactProto(hSubContact);
+			szProto = Proto_GetBaseAccountName(hSubContact);
 
 	return checkProtocol(szProto) && checkIgnore(hSubContact ? hSubContact : hContact, eventType);
 }
@@ -407,10 +407,11 @@ static int PluginMessageEventHook(WPARAM hContact, LPARAM hEvent)
 // monitors group chat events
 static int OnGcEvent(WPARAM, LPARAM lParam)
 {
-	GCHOOK *gc = (GCHOOK *)lParam;
-	if (gc->iType == GC_USER_MESSAGE && bFlashOnGC) {
-		if (SESSION_INFO *si = g_chatApi.SM_FindSession(gc->ptszID, gc->pszModule))
-			if (contactCheckProtocol(gc->pszModule, si->hContact, EVENTTYPE_MESSAGE) && checkNotifyOptions() && checkStatus(gc->pszModule))
+	auto *gce = (GCEVENT *)lParam;
+	if (gce->iType == GC_EVENT_MESSAGE && bFlashOnGC) {
+		SESSION_INFO *si = g_chatApi.SM_FindSession(gce->pszID.w, gce->pszModule);
+		if (si)
+			if (contactCheckProtocol(si->pszModule, si->hContact, EVENTTYPE_MESSAGE) && checkNotifyOptions() && checkStatus(si->pszModule))
 				SetEvent(hFlashEvent);
 	}
 
@@ -915,7 +916,7 @@ int CMPlugin::Load()
 	OpenKeyboardDevice();
 
 	HookEvent(ME_MC_ENABLED, OnMetaChanged);
-	HookEvent(ME_GC_EVENT, OnGcEvent);
+	HookEvent(ME_GC_HOOK_EVENT, OnGcEvent);
 	HookEvent(ME_DB_EVENT_ADDED, PluginMessageEventHook);
 	HookEvent(ME_OPT_INITIALISE, InitializeOptions);
 	HookEvent(ME_SYSTEM_MODULESLOADED, ModulesLoaded);

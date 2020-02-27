@@ -2,7 +2,7 @@
 
 Chat module interface for Miranda NG
 
-Copyright (c) 2014-19 George Hazan
+Copyright (c) 2014-20 George Hazan
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -309,8 +309,6 @@ struct CHAT_MANAGER
 	wchar_t*      (*UM_FindUserAutoComplete)(SESSION_INFO *si, const wchar_t* pszOriginal, const wchar_t* pszCurrent);
 	BOOL          (*UM_RemoveUser)(SESSION_INFO *si, const wchar_t *pszUID);
 
-	LOGINFO*      (*LM_AddEvent)(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd);
-	BOOL          (*LM_TrimLog)(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd, int iCount);
 	BOOL          (*LM_RemoveAll)(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd);
 
 	BOOL          (*SetOffline)(MCONTACT hContact, BOOL bHide);

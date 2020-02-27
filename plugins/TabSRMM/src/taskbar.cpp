@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -278,7 +278,7 @@ void CProxyWindow::sendPreview()
 	HWND hwndRich = m_dat->m_pLog->GetHwnd();
 	POINT	ptOrigin = { 0 }, ptBottom;
 
-	if (m_dat->m_dwFlags & MWF_NEEDCHECKSIZE) {
+	if (m_dat->m_bNeedCheckSize) {
 		RECT	rcClient;
 		::SendMessage(m_dat->m_pContainer->m_hwnd, DM_QUERYCLIENTAREA, 0, (LPARAM)&rcClient);
 		::MoveWindow(m_dat->GetHwnd(), rcClient.left, rcClient.top, (rcClient.right - rcClient.left), (rcClient.bottom - rcClient.top), FALSE);
@@ -370,7 +370,7 @@ void CProxyWindow::sendPreview()
 	}
 	else pt.x = pt.y = 0;
 
-	CMimAPI::m_pfnDwmSetIconicLivePreviewBitmap(m_hwndProxy, hbm, &pt, m_dat->m_pContainer->m_dwFlags & CNT_CREATE_MINIMIZED ? 0 : DWM_SIT_DISPLAYFRAME);
+	CMimAPI::m_pfnDwmSetIconicLivePreviewBitmap(m_hwndProxy, hbm, &pt, m_dat->m_pContainer->m_flags.m_bCreateMinimized ? 0 : DWM_SIT_DISPLAYFRAME);
 	::ReleaseDC(m_dat->GetHwnd(), dc);
 	::DeleteObject(hbm);
 }

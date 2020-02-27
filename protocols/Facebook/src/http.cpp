@@ -1,7 +1,7 @@
 /*
 
 Facebook plugin for Miranda NG
-Copyright © 2019 Miranda NG team
+Copyright © 2019-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,7 +37,8 @@ void AsyncHttpRequest::CalcSig()
 	CMStringA buf;
 	for (auto &it : params)
 		buf.AppendFormat("%s=%s", it->key.c_str(), it->val.c_str());
-	buf.Append(FB_APP_SECRET);
+
+	buf.Append(FB_API_SECRET);
 
 	char szHash[33];
 	BYTE digest[16];
@@ -95,28 +96,66 @@ JsonReply::~JsonReply()
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-AsyncHttpRequest* FacebookProto::CreateRequest(const char *szName, const char *szMethod)
+AsyncHttpRequest* FacebookProto::CreateRequest(const char *szUrl, const char *szName, const char *szMethod)
 {
 	AsyncHttpRequest *pReq = new AsyncHttpRequest();
+	pReq->m_szUrl = szUrl;
 	pReq->requestType = REQUEST_POST;
-	pReq << CHAR_PARAM("api_key", FB_APP_KEY) << CHAR_PARAM("device_id", m_szDeviceID) << CHAR_PARAM("fb_api_req_friendly_name", szName)
-		<< CHAR_PARAM("format", "json") << CHAR_PARAM("method", szMethod);
+	pReq << CHAR_PARAM("api_key", FB_API_KEY) 
+		<< CHAR_PARAM("device_id", m_szDeviceID) 
+		<< CHAR_PARAM("fb_api_req_friendly_name", szName)
+		<< CHAR_PARAM("format", "json") 
+		<< CHAR_PARAM("method", szMethod);
 
 	CMStringA szLocale = getMStringA(DBKEY_LOCALE);
 	if (szLocale.IsEmpty())
 		szLocale = "en";
 	pReq << CHAR_PARAM("locale", szLocale);
 
-	if (!m_szAuthToken.IsEmpty())
+	if (!m_szAuthToken.IsEmpty()) {
+		pReq->flags |= NLHRF_NODUMPHEADERS;
 		pReq->AddHeader("Authorization", "OAuth " + m_szAuthToken);
+	}
 
 	pReq->AddHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
+	return pReq;
+}
 
-	unsigned int id;
-	Utils_GetRandom(&id, sizeof(id));
-	id &= ~0x80000000;
-	pReq << INT_PARAM("queryid", id);
+AsyncHttpRequest* FacebookProto::CreateRequestGQL(int64_t query_id) {
+	const char* szName;
 
+	switch (query_id) {
+		case FB_API_QUERY_CONTACT:
+			szName = "UsersQuery";
+			break;
+		case FB_API_QUERY_CONTACTS:
+			szName = "FetchContactsFullQuery";
+			break;
+		case FB_API_QUERY_CONTACTS_AFTER:
+			szName = "FetchContactsFullWithAfterQuery";
+			break;
+		case FB_API_QUERY_CONTACTS_DELTA:
+			szName = "FetchContactsDeltaQuery";
+			break;
+		case FB_API_QUERY_STICKER:
+			szName = "FetchStickersWithPreviewsQuery";
+			break;
+		case FB_API_QUERY_THREAD:
+			szName = "ThreadQuery";
+			break;
+		case FB_API_QUERY_SEQ_ID:
+		case FB_API_QUERY_THREADS:
+			szName = "ThreadListQuery";
+			break;
+		case FB_API_QUERY_XMA:
+			szName = "XMAQuery";
+			break;
+		default:
+			return nullptr;
+	}
+
+	AsyncHttpRequest* pReq = CreateRequest(FB_API_URL_GQL, szName, "get");
+	pReq << INT64_PARAM("query_id", query_id);
 	return pReq;
 }
 

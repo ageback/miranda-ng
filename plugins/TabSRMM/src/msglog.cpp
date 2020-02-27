@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -357,8 +357,7 @@ static void Build_RTF_Header(CMStringA &str, CMsgDialog *dat)
 	// paragraph header
 	str.AppendFormat("}");
 
-	// indent:
-	// real indent is set in msgdialog.c (DM_OPTIONSAPPLIED)
+	// indent
 	if (!(dat->m_dwFlags & MWF_LOG_INDENT))
 		str.AppendFormat("\\li%u\\ri%u\\fi%u\\tx%u", 2 * 15, 2 * 15, 0, 70 * 15);
 }
@@ -487,19 +486,21 @@ static char* Template_CreateRTFFromDbEvent(CMsgDialog *dat, MCONTACT hContact, M
 
 	g_groupBreak = TRUE;
 
-	if (dwEffectiveFlags & MWF_DIVIDERWANTED) {
+	if (dat->m_bDividerWanted) {
 		static char szStyle_div[128] = "\0";
 		if (szStyle_div[0] == 0)
 			mir_snprintf(szStyle_div, "\\f%u\\cf%u\\ul0\\b%d\\i%d\\fs%u", H_MSGFONTID_DIVIDERS, H_MSGFONTID_DIVIDERS, 0, 0, 5);
 
 		str.AppendFormat("\\sl-1\\slmult0\\highlight%d\\cf%d\\-\\par\\sl0", H_MSGFONTID_DIVIDERS, H_MSGFONTID_DIVIDERS);
-		dat->m_dwFlags &= ~MWF_DIVIDERWANTED;
+		dat->m_bDividerWanted = false;
 	}
+
 	if (dwEffectiveFlags & MWF_LOG_GROUPMODE && ((dbei.flags & (DBEF_SENT | DBEF_READ | DBEF_RTL)) == LOWORD(dat->m_iLastEventType)) && dbei.eventType == EVENTTYPE_MESSAGE && HIWORD(dat->m_iLastEventType) == EVENTTYPE_MESSAGE && (dbei.timestamp - dat->m_lastEventTime) < 86400) {
 		g_groupBreak = FALSE;
 		if ((time_t)dbei.timestamp > today && dat->m_lastEventTime < today)
 			g_groupBreak = TRUE;
 	}
+
 	if (!streamData->isEmpty && g_groupBreak && (dwEffectiveFlags & MWF_LOG_GRID))
 		str.AppendFormat("\\sl-1\\slmult0\\highlight%d\\cf%d\\-\\par\\sl0", MSGDLGFONTCOUNT + 4, MSGDLGFONTCOUNT + 4);
 
@@ -1625,7 +1626,7 @@ void CLogWindow::UpdateOptions()
 		PARAFORMAT2 pf2;
 		pf2.wEffects = PFE_RTLPARA;
 		pf2.dwMask |= PFM_OFFSET;
-		if (m_pDlg.m_dwFlags & MWF_INITMODE) {
+		if (m_pDlg.m_bInitMode) {
 			pf2.dwMask |= (PFM_RIGHTINDENT | PFM_OFFSETINDENT);
 			pf2.dxStartIndent = 30;
 			pf2.dxRightIndent = 30;

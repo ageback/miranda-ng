@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -99,7 +99,7 @@ static DATABASELINK dblink =
 
 int CMPlugin::Load()
 {
-	mdbx_setup_debug(MDBX_DBG_ASSERT | MDBX_DBG_PRINT, &logger);
+	mdbx_setup_debug(MDBX_DBG_ASSERT, MDBX_LOG_WARN, &logger);
 	RegisterDatabasePlugin(&dblink);
 	return 0;
 }

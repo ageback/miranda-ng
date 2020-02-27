@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-09 Miranda ICQ/IM project,
 
 This file is part of Send Screenshot Plus, a Miranda IM plugin.
@@ -65,7 +65,7 @@ void CSend::SetContact(MCONTACT hContact)
 {
 	m_hContact = hContact;
 	if (hContact) {
-		m_pszProto = GetContactProto(hContact);
+		m_pszProto = Proto_GetBaseAccountName(hContact);
 		m_ChatRoom = db_get_b(hContact, m_pszProto, "ChatRoom", 0);
 	}
 }

@@ -1,6 +1,6 @@
 /*
 Miranda NG SmileyAdd Plugin
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (C) 2005-11 Boris Krasnovskiy All Rights Reserved
 Copyright (C) 2003-04 Rein-Peter de Boer
 
@@ -231,7 +231,7 @@ void SmileyType::CallSmileyService(MCONTACT hContact)
 
 	const char *proto = "";
 	if (name[0] == '/') {
-		proto = (const char*)GetContactProto(hContact);
+		proto = (const char*)Proto_GetBaseAccountName(hContact);
 		if (proto == nullptr)
 			return;
 	}
@@ -865,7 +865,7 @@ void SmileyCategoryListType::DeleteAccountAsCategory(PROTOACCOUNT *acc)
 	CMStringW tname(_A2T(acc->szModuleName));
 
 	for (auto &hContact : Contacts()) {
-		char *proto = GetContactProto(hContact);
+		char *proto = Proto_GetBaseAccountName(hContact);
 		if (proto == nullptr)
 			continue;
 
@@ -888,7 +888,7 @@ void SmileyCategoryListType::DeleteAccountAsCategory(PROTOACCOUNT *acc)
 
 void SmileyCategoryListType::AddContactTransportAsCategory(MCONTACT hContact, const CMStringW &defaultFile)
 {
-	char *proto = GetContactProto(hContact);
+	char *proto = Proto_GetBaseAccountName(hContact);
 	if (proto == nullptr)
 		return;
 

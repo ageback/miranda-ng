@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -84,7 +84,6 @@ void CSkypeProto::OnMSLoginSecond(const NETLIBHTTPREQUEST *response)
 
 			CMStringA url(GetStringChunk(szContent, "urlPost:'", "'"));
 			CMStringA ppft(GetStringChunk(szContent, "sFT:'", "'"));
-
 
 			ptrA code(mir_utf8encodeW(RunConfirmationCode()));
 

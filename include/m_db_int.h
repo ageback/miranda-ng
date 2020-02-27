@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -96,7 +96,7 @@ interface MIR_APP_EXPORT MIDatabase
 
 	STDMETHOD_(LONG, GetEventCount)(MCONTACT contactID) PURE;
 	STDMETHOD_(MEVENT, AddEvent)(MCONTACT contactID, DBEVENTINFO *dbe) PURE;
-	STDMETHOD_(BOOL, DeleteEvent)(MCONTACT contactID, MEVENT hDbEvent) PURE;
+	STDMETHOD_(BOOL, DeleteEvent)(MEVENT hDbEvent) PURE;
 	STDMETHOD_(BOOL, EditEvent)(MCONTACT contactID, MEVENT hDbEvent, DBEVENTINFO *dbe) PURE;
 	STDMETHOD_(LONG, GetBlobSize)(MEVENT hDbEvent) PURE;
 	STDMETHOD_(BOOL, GetEvent)(MEVENT hDbEvent, DBEVENTINFO *dbe) PURE;
@@ -210,7 +210,7 @@ public:
 
 	////////////////////////////////////////////////////////////////////////////////////////
 	STDMETHODIMP_(MEVENT) AddEvent(MCONTACT, DBEVENTINFO*) override;
-	STDMETHODIMP_(BOOL) DeleteEvent(MCONTACT, MEVENT) override;
+	STDMETHODIMP_(BOOL) DeleteEvent(MEVENT) override;
 	STDMETHODIMP_(BOOL) EditEvent(MCONTACT contactID, MEVENT hDbEvent, DBEVENTINFO *dbe);
 	STDMETHODIMP_(LONG) GetBlobSize(MEVENT) override;
 	STDMETHODIMP_(BOOL) MarkEventRead(MCONTACT, MEVENT) override;

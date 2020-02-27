@@ -2,7 +2,7 @@
 
 Import plugin for Miranda NG
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -55,7 +55,7 @@ public:
 		CMStringW wszTitle(FORMAT, TranslateT("Import history for %s"), Clist_GetContactDisplayName(m_hContact));
 		SetWindowTextW(m_hwnd, wszTitle);
 
-		m_cmbFileType.AddString(TranslateT("Miranda NG database"), -1);
+		m_cmbFileType.AddString(TranslateT("Miranda NG database/mContacts"), -1);
 		m_cmbFileType.AddString(TranslateT("JSON file"), -2);
 
 		int iType = 1;

@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -754,15 +754,10 @@ static INT_PTR CALLBACK sttOptionsDlgProc(HWND hwndDlg, UINT msg, WPARAM wParam,
 					break;
 
 				UnregisterHotkeys();
-				{
-					auto T = hotkeys.rev_iter();
-					for (auto &p : T) {
-						if (p->OptNew && p->OptDeleted || p->rootHotkey && !p->OptHotkey || (lpnmhdr->code == PSN_APPLY) && p->OptDeleted || (lpnmhdr->code == PSN_RESET) && p->OptNew) {
-							FreeHotkey(p);
-							hotkeys.remove(T.indexOf(&p));
-						}
-					}
-				}
+
+				for (auto &p : hotkeys.rev_iter())
+					if (p->OptNew && p->OptDeleted || p->rootHotkey && !p->OptHotkey || (lpnmhdr->code == PSN_APPLY) && p->OptDeleted || (lpnmhdr->code == PSN_RESET) && p->OptNew)
+						FreeHotkey(hotkeys.removeItem(&p));
 
 				if (lpnmhdr->code == PSN_APPLY) {
 					LVITEM lvi = { 0 };

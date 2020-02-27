@@ -225,7 +225,7 @@ static INT_PTR CALLBACK AvatarDlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARA
 
 					if (blDelete) {
 						if (le->hDbEvent)
-							db_event_delete(hContact, le->hDbEvent);
+							db_event_delete(le->hDbEvent);
 						else
 							DeleteFile(le->filelink);
 
@@ -260,7 +260,7 @@ static INT_PTR CALLBACK AvatarDlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARA
 					DeleteFile(le->filename);
 
 					if (le->hDbEvent)
-						db_event_delete(hContact, le->hDbEvent);
+						db_event_delete(le->hDbEvent);
 					else
 						DeleteFile(le->filelink);
 
@@ -485,7 +485,7 @@ int CleanupAvatarPic(HWND hwnd)
 
 int PreBuildContactMenu(WPARAM wParam, LPARAM)
 {
-	char *proto = GetContactProto(wParam);
+	char *proto = Proto_GetBaseAccountName(wParam);
 	Menu_ShowItem(hMenu, 0 != ProtocolEnabled(proto));
 	return 0;
 }

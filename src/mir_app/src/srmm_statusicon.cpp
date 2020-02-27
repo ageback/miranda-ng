@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team,
+Copyright (C) 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -256,10 +256,9 @@ MIR_APP_DLL(void) Srmm_ClickStatusIcon(MCONTACT hContact, const StatusIconClickD
 
 void KillModuleSrmmIcons(HPLUGIN pPlugin)
 {
-	auto T = arIcons.rev_iter();
-	for (auto &it : T)
+	for (auto &it : arIcons.rev_iter())
 		if (it->pPlugin == pPlugin)
-			arIcons.remove(T.indexOf(&it));
+			arIcons.removeItem(&it);
 }
 
 int LoadSrmmModule()

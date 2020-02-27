@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2019 Leonid Yuriev <leo@yuriev.ru>
+ * Copyright 2017-2020 Leonid Yuriev <leo@yuriev.ru>
  * and other libmdbx authors: please see AUTHORS file.
  * All rights reserved.
  *
@@ -15,7 +15,6 @@
 #pragma once
 
 #include "base.h"
-#include "log.h"
 #include "utils.h"
 
 namespace chrono {
@@ -24,7 +23,7 @@ namespace chrono {
 
 typedef union time {
   uint64_t fixedpoint;
-  struct {
+  __anonymous_struct_extension__ struct {
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
     uint32_t fractional;
     union {

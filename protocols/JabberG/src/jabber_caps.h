@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -96,8 +96,8 @@ typedef unsigned __int64 JabberCapsBits;
 #define JABBER_FEAT_DATA_FORMS                  "jabber:x:data"
 #define JABBER_CAPS_DATA_FORMS                  ((JabberCapsBits)1<<16)
 
-#define JABBER_FEAT_MESSAGE_EVENTS              "jabber:x:event"
-#define JABBER_CAPS_MESSAGE_EVENTS              ((JabberCapsBits)1<<17)
+#define JABBER_FEAT_CHAT_MARKERS                "urn:xmpp:chat-markers:0"
+#define JABBER_CAPS_CHAT_MARKERS                ((JabberCapsBits)1<<17)
 
 #define JABBER_FEAT_VCARD_TEMP                  "vcard-temp"
 #define JABBER_CAPS_VCARD_TEMP                  ((JabberCapsBits)1<<18)
@@ -189,6 +189,9 @@ typedef unsigned __int64 JabberCapsBits;
 #define JABBER_FEAT_CARBONS                     "urn:xmpp:carbons:2"
 #define JABBER_CAPS_CARBONS                     ((JabberCapsBits)1<<49)
 
+#define JABBER_FEAT_BITS                        "urn:xmpp:bob"
+#define JABBER_CAPS_BITS                        ((JabberCapsBits)1<<50)
+
 #define JABBER_FEAT_ARCHIVE                     "urn:xmpp:archive"
 #define JABBER_FEAT_BIND                        "urn:ietf:params:xml:ns:xmpp-bind"
 #define JABBER_FEAT_CAPTCHA                     "urn:xmpp:captcha"
@@ -196,6 +199,7 @@ typedef unsigned __int64 JabberCapsBits;
 #define JABBER_FEAT_JUD									"jabber:iq:search"
 #define JABBER_FEAT_SERVER_AVATAR               "storage:client:avatar"
 #define JABBER_FEAT_UPLOAD                      "urn:xmpp:http:upload"
+#define JABBER_FEAT_UPLOAD0                     "urn:xmpp:http:upload:0"
 
 #define JABBER_FEAT_PUBSUB_EVENT                "http://jabber.org/protocol/pubsub#event"
 #define JABBER_FEAT_PUBSUB_NODE_CONFIG          "http://jabber.org/protocol/pubsub#node_config"
@@ -206,9 +210,9 @@ typedef unsigned __int64 JabberCapsBits;
 #define JABBER_CAPS_MIRANDA_NODE    "http://miranda-ng.org/caps"
 #define JABBER_CAPS_MIRANDA_PARTIAL (JABBER_CAPS_DISCO_INFO | JABBER_CAPS_DISCO_ITEMS | JABBER_CAPS_MUC | JABBER_CAPS_ENTITY_CAPS | JABBER_CAPS_SI | JABBER_CAPS_SI_FT | \
                                      JABBER_CAPS_BYTESTREAMS | JABBER_CAPS_IBB | JABBER_CAPS_OOB | JABBER_CAPS_CHATSTATES | JABBER_CAPS_AGENTS | JABBER_CAPS_BROWSE | \
-											    JABBER_CAPS_VERSION | JABBER_CAPS_LAST_ACTIVITY | JABBER_CAPS_DATA_FORMS | JABBER_CAPS_MESSAGE_EVENTS | JABBER_CAPS_VCARD_TEMP | \
+											    JABBER_CAPS_VERSION | JABBER_CAPS_LAST_ACTIVITY | JABBER_CAPS_DATA_FORMS | JABBER_CAPS_VCARD_TEMP | \
 												 JABBER_CAPS_ENTITY_TIME | JABBER_CAPS_PING | JABBER_CAPS_PRIVACY_LISTS | JABBER_CAPS_MESSAGE_RECEIPTS | JABBER_CAPS_PRIVATE_STORAGE | \
-												 JABBER_CAPS_ROSTER_EXCHANGE | JABBER_CAPS_DIRECT_MUC_INVITE)
+												 JABBER_CAPS_ROSTER_EXCHANGE | JABBER_CAPS_DIRECT_MUC_INVITE | JABBER_CAPS_CHAT_MARKERS | JABBER_CAPS_BITS | JABBER_CAPS_XHTML)
 
 #define JABBER_CAPS_MIRANDA_ALL     (JABBER_CAPS_MIRANDA_PARTIAL | JABBER_CAPS_COMMANDS | \
                                      JABBER_CAPS_USER_MOOD_NOTIFY | JABBER_CAPS_USER_TUNE_NOTIFY | JABBER_CAPS_USER_ACTIVITY_NOTIFY  \

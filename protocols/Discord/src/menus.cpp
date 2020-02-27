@@ -1,5 +1,5 @@
 /*
-Copyright © 2016-19 Miranda NG team
+Copyright © 2016-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -94,7 +94,8 @@ INT_PTR CDiscordProto::OnMenuToggleSync(WPARAM hContact, LPARAM)
 	setByte(hContact, "EnableSync", bEnabled);
 
 	if (bEnabled)
-		GatewaySendGuildInfo(getId(hContact, DB_KEY_CHANNELID));
+		if (auto *pGuild = FindGuild(getId(hContact, DB_KEY_CHANNELID)))
+			LoadGuildInfo(pGuild);
 	return 0;
 }
 

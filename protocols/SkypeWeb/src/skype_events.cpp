@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -100,9 +100,12 @@ INT_PTR CSkypeProto::GetEventText(WPARAM pEvent, LPARAM datatype)
 				break;
 
 			szText.Empty();
-			if (auto *pRoot = doc.FirstChildElement("URIObject"))
+			if (auto *pRoot = doc.FirstChildElement("URIObject")) {
 				if (auto *xmlA = pRoot->FirstChildElement("a"))
 					szText += xmlA->Attribute("href");
+				if (auto *xmlThumb = pRoot->Attribute("url_thumbnail"))
+					szText.AppendFormat("\r\n%s: %s", TranslateU("Preview"), xmlThumb);
+			}
 		}
 		break;
 

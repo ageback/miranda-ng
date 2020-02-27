@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -150,7 +150,7 @@ void CInfoPanel::setHeight(LONG newHeight, bool fBroadcast)
 			if (!m_dat->m_pContainer->m_pSettings->fPrivate)
 				Srmm_Broadcast(DM_SETINFOPANEL, (WPARAM)m_dat, (LPARAM)newHeight);
 			else
-				::BroadCastContainer(m_dat->m_pContainer, DM_SETINFOPANEL, (WPARAM)m_dat, (LPARAM)newHeight);
+				m_dat->m_pContainer->BroadCastContainer(DM_SETINFOPANEL, (WPARAM)m_dat, (LPARAM)newHeight);
 		}
 		saveHeight();
 	}
@@ -204,7 +204,7 @@ void CInfoPanel::showHide() const
 
 		::SendMessage(hwndDlg, WM_SIZE, 0, 0);
 	}
-	::SetAeroMargins(m_dat->m_pContainer);
+	m_dat->m_pContainer->SetAeroMargins();
 	if (M.isAero())
 		::InvalidateRect(GetParent(hwndDlg), nullptr, FALSE);
 	m_dat->DM_ScrollToBottom(0, 1);
@@ -223,7 +223,7 @@ bool CInfoPanel::getVisibility()
 		return false;
 	}
 
-	BYTE bDefault = (m_dat->m_pContainer->m_dwFlags & CNT_INFOPANEL) ? 1 : 0;
+	BYTE bDefault = (m_dat->m_pContainer->m_flags.m_bInfoPanel) ? 1 : 0;
 	BYTE bContact = M.GetByte(m_dat->m_hContact, "infopanel", 0);
 
 	BYTE visible = (bContact == 0 ? bDefault : (bContact == (BYTE)-1 ? 0 : 1));
@@ -775,7 +775,7 @@ void CInfoPanel::handleClick(const POINT& pt)
 
 	if (!m_isChat) {
 		::KillTimer(m_dat->GetHwnd(), TIMERID_AWAYMSG);
-		m_dat->m_dwFlagsEx &= ~MWF_SHOW_AWAYMSGTIMER;
+		m_dat->m_bAwayMsgTimer = false;
 	}
 	HMENU m = constructContextualMenu();
 	if (m) {
@@ -845,15 +845,15 @@ void CInfoPanel::trackMouse(POINT &pt)
 	}
 
 	if (m_hoverFlags) {
-		if (!(m_dat->m_dwFlagsEx & MWF_SHOW_AWAYMSGTIMER)) {
+		if (!m_dat->m_bAwayMsgTimer) {
 			::SetTimer(m_dat->GetHwnd(), TIMERID_AWAYMSG, 1000, nullptr);
-			m_dat->m_dwFlagsEx |= MWF_SHOW_AWAYMSGTIMER;
+			m_dat->m_bAwayMsgTimer = true;
 		}
 	}
 	if (dwOldHovering != m_hoverFlags)
 		Invalidate(TRUE);
 	if (m_hoverFlags == 0)
-		m_dat->m_dwFlagsEx &= ~MWF_SHOW_AWAYMSGTIMER;
+		m_dat->m_bAwayMsgTimer = false;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -1196,20 +1196,20 @@ INT_PTR CALLBACK CInfoPanel::ConfigDlgProc(HWND hwnd, UINT msg, WPARAM wParam, L
 					if (!m_dat->m_pContainer->m_pSettings->fPrivate)
 						Srmm_Broadcast(DM_SETINFOPANEL, (WPARAM)m_dat, (LPARAM)m_defaultHeight);
 					else
-						::BroadCastContainer(m_dat->m_pContainer, DM_SETINFOPANEL, (WPARAM)m_dat, (LPARAM)m_defaultHeight);
+						m_dat->m_pContainer->BroadCastContainer(DM_SETINFOPANEL, (WPARAM)m_dat, (LPARAM)m_defaultHeight);
 				}
 				else {
 					if (!m_dat->m_pContainer->m_pSettings->fPrivate)
 						Srmm_Broadcast(DM_SETINFOPANEL, (WPARAM)m_dat, 0);
 					else
-						::BroadCastContainer(m_dat->m_pContainer, DM_SETINFOPANEL, (WPARAM)m_dat, 0);
+						m_dat->m_pContainer->BroadCastContainer(DM_SETINFOPANEL, (WPARAM)m_dat, 0);
 				}
 				break;
 			}
 
 			if (m_height != lOldHeight) {
 				::SendMessage(m_dat->GetHwnd(), WM_SIZE, 0, 0);
-				::SetAeroMargins(m_dat->m_pContainer);
+				m_dat->m_pContainer->SetAeroMargins();
 				::RedrawWindow(m_dat->GetHwnd(), nullptr, nullptr, RDW_INVALIDATE | RDW_UPDATENOW);
 				::RedrawWindow(GetParent(m_dat->GetHwnd()), nullptr, nullptr, RDW_INVALIDATE | RDW_UPDATENOW);
 			}

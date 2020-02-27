@@ -4,7 +4,7 @@ Jabber Protocol Plugin for Miranda NG
 
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -63,14 +63,14 @@ struct TRoleOrAffiliationInfo
 
 	wchar_t *title;
 
-	BOOL check(JABBER_RESOURCE_STATUS *me, JABBER_RESOURCE_STATUS *him)
+	bool check(JABBER_RESOURCE_STATUS *me, JABBER_RESOURCE_STATUS *him)
 	{
-		if (me->m_affiliation == AFFILIATION_OWNER) return TRUE;
-		if (me == him) return FALSE;
-		if (me->m_affiliation <= him->m_affiliation) return FALSE;
-		if (me->m_role < min_role) return FALSE;
-		if (me->m_affiliation < min_affiliation) return FALSE;
-		return TRUE;
+		if (me->m_affiliation == AFFILIATION_OWNER) return true;
+		if (me == him) return false;
+		if (me->m_affiliation <= him->m_affiliation) return false;
+		if (me->m_role < min_role) return false;
+		if (me->m_affiliation < min_affiliation) return false;
+		return true;
 	}
 	
 	void translate()
@@ -97,7 +97,7 @@ static TRoleOrAffiliationInfo sttRoleItems[] =
 /////////////////////////////////////////////////////////////////////////////////////////
 // JabberGcInit - initializes the new chat
 
-static const char *sttStatuses[] = { LPGEN("Owners"), LPGEN("Moderators"),  LPGEN("Participants"), LPGEN("Visitors") };
+static const char *sttStatuses[] = { LPGEN("Visitors"), LPGEN("Participants"), LPGEN("Moderators"), LPGEN("Owners") };;
 
 int JabberGcGetStatus(JABBER_GC_AFFILIATION a, JABBER_GC_ROLE r)
 {
@@ -651,7 +651,7 @@ class CGroupchatInviteDlg : public CJabberDlgBase
 	void FilterList(CCtrlClc *)
 	{
 		for (auto &hContact : Contacts()) {
-			char *proto = GetContactProto(hContact);
+			char *proto = Proto_GetBaseAccountName(hContact);
 			if (mir_strcmp(proto, m_proto->m_szModuleName) || m_proto->isChatRoom(hContact))
 				if (HANDLE hItem = m_clc.FindContact(hContact))
 					m_clc.DeleteItem(hItem);
@@ -1212,35 +1212,35 @@ static void sttNickListHook(CJabberProto *ppro, JABBER_LIST_ITEM *item, GCHOOK* 
 static void sttLogListHook(CJabberProto *ppro, JABBER_LIST_ITEM *item, GCHOOK *gch)
 {
 	CMStringW szBuffer, szTitle;
-	T2Utf roomJid(gch->ptszID);
+	T2Utf roomJid(gch->si->ptszID);
 
 	switch (gch->dwData) {
 	case IDM_LST_PARTICIPANT:
-		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "role", "participant", &CJabberProto::OnIqResultMucGetVoiceList, gch->pDlg);
+		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "role", "participant", &CJabberProto::OnIqResultMucGetVoiceList, gch->si->pDlg);
 		break;
 
 	case IDM_LST_MEMBER:
-		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "member", &CJabberProto::OnIqResultMucGetMemberList, gch->pDlg);
+		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "member", &CJabberProto::OnIqResultMucGetMemberList, gch->si->pDlg);
 		break;
 
 	case IDM_LST_MODERATOR:
-		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "role", "moderator", &CJabberProto::OnIqResultMucGetModeratorList, gch->pDlg);
+		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "role", "moderator", &CJabberProto::OnIqResultMucGetModeratorList, gch->si->pDlg);
 		break;
 
 	case IDM_LST_BAN:
-		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "outcast", &CJabberProto::OnIqResultMucGetBanList, gch->pDlg);
+		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "outcast", &CJabberProto::OnIqResultMucGetBanList, gch->si->pDlg);
 		break;
 
 	case IDM_LST_ADMIN:
-		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "admin", &CJabberProto::OnIqResultMucGetAdminList, gch->pDlg);
+		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "admin", &CJabberProto::OnIqResultMucGetAdminList, gch->si->pDlg);
 		break;
 
 	case IDM_LST_OWNER:
-		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "owner", &CJabberProto::OnIqResultMucGetOwnerList, gch->pDlg);
+		ppro->AdminGet(roomJid, JABBER_FEAT_MUC_ADMIN, "affiliation", "owner", &CJabberProto::OnIqResultMucGetOwnerList, gch->si->pDlg);
 		break;
 
 	case IDM_TOPIC:
-		szTitle.Format(TranslateT("Set topic for %s"), gch->ptszID);
+		szTitle.Format(TranslateT("Set topic for %s"), gch->si->ptszID);
 		szBuffer = Utf2T(item->getTemp()->m_szStatusMessage);
 		szBuffer.Replace(L"\n", L"\r\n");
 		if (ppro->EnterString(szBuffer, szTitle, ESF_RICHEDIT, "gcTopic_"))
@@ -1249,7 +1249,7 @@ static void sttLogListHook(CJabberProto *ppro, JABBER_LIST_ITEM *item, GCHOOK *g
 		break;
 
 	case IDM_NICK:
-		szTitle.Format(TranslateT("Change nickname in %s"), gch->ptszID);
+		szTitle.Format(TranslateT("Change nickname in %s"), gch->si->ptszID);
 		if (item->nick)
 			szBuffer = Utf2T(item->nick);
 		if (ppro->EnterString(szBuffer, szTitle, ESF_COMBO, "gcNick_"))
@@ -1260,8 +1260,8 @@ static void sttLogListHook(CJabberProto *ppro, JABBER_LIST_ITEM *item, GCHOOK *g
 	case IDM_INVITE:
 		{
 			auto *pDlg = new CGroupchatInviteDlg(ppro, roomJid);
-			if (gch->pDlg)
-				pDlg->SetParent(gch->pDlg->GetHwnd());
+			if (gch->si->pDlg)
+				pDlg->SetParent(gch->si->pDlg->GetHwnd());
 			pDlg->Show();
 		}
 		break;
@@ -1286,7 +1286,7 @@ static void sttLogListHook(CJabberProto *ppro, JABBER_LIST_ITEM *item, GCHOOK *g
 		break;
 
 	case IDM_DESTROY:
-		szTitle.Format(TranslateT("Reason to destroy %s"), gch->ptszID);
+		szTitle.Format(TranslateT("Reason to destroy %s"), gch->si->ptszID);
 		if (ppro->EnterString(szBuffer, szTitle, ESF_MULTILINE, "gcReason_"))
 			ppro->m_ThreadInfo->send(
 				XmlNodeIq("set", ppro->SerialNext(), roomJid) << XQUERY(JABBER_FEAT_MUC_OWNER)
@@ -1362,13 +1362,13 @@ int CJabberProto::JabberGcEventHook(WPARAM, LPARAM lParam)
 	if (gch == nullptr)
 		return 0;
 
-	if (mir_strcmpi(gch->pszModule, m_szModuleName))
+	if (mir_strcmpi(gch->si->pszModule, m_szModuleName))
 		return 0;
 
-	T2Utf roomJid(gch->ptszID);
+	T2Utf roomJid(gch->si->ptszID);
 	JABBER_LIST_ITEM *item = ListGetItemPtr(LIST_CHATROOM, roomJid);
 	if (item == nullptr)
-		return 0;
+		return 1;
 
 	switch (gch->iType) {
 	case GC_USER_MESSAGE:
@@ -1408,7 +1408,7 @@ int CJabberProto::JabberGcEventHook(WPARAM, LPARAM lParam)
 		break;
 	}
 
-	return 0;
+	return 1;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////

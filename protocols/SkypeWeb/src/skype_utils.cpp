@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -601,4 +601,31 @@ INT_PTR CSkypeProto::GlobalParseSkypeUriService(WPARAM wParam, LPARAM lParam)
 			return it->ParseSkypeUriService(wParam, lParam);
 
 	return 1;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+JsonReply::JsonReply(const NETLIBHTTPREQUEST *pReply)
+{
+	if (pReply == nullptr) {
+		m_errorCode = 500;
+		return;
+	}
+
+	m_errorCode = pReply->resultCode;
+	if (m_errorCode != 200)
+		return;
+
+	m_root = json_parse(pReply->pData);
+	if (m_root == nullptr) {
+		m_errorCode = 500;
+		return;
+	}
+
+	m_errorCode = (*m_root)["status"]["code"].as_int();
+}
+
+JsonReply::~JsonReply()
+{
+	json_delete(m_root);
 }

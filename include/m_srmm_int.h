@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-08 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -249,9 +249,14 @@ public:
 	virtual LRESULT WndProc_Nicklist(UINT msg, WPARAM wParam, LPARAM lParam);
 
 	__forceinline bool isChat() const { return m_si != nullptr; }
+	__forceinline CSrmmLogWindow *log() const { return m_pLog; }
 
 	__inline void *operator new(size_t size) { return calloc(1, size); }
 	__inline void operator delete(void *p) { free(p); }
 };
+
+#ifndef SRMM_OWN_STRUCTURES
+class CMsgDialog : public CSrmmBaseDialog {};
+#endif 
 
 #endif // M_MESSAGE_H__

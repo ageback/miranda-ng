@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -34,7 +34,7 @@ static HGENMENU hSRFileMenuItem;
 
 wchar_t* GetContactID(MCONTACT hContact)
 {
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (db_get_b(hContact, szProto, "ChatRoom", 0) == 1)
 		if (wchar_t *theValue = db_get_wsa(hContact, szProto, "ChatRoomID"))
 			return theValue;
@@ -286,7 +286,7 @@ static void RemoveUnreadFileEvents(void)
 static int SRFilePreBuildMenu(WPARAM wParam, LPARAM)
 {
 	bool bEnabled = false;
-	char *szProto = GetContactProto(wParam);
+	char *szProto = Proto_GetBaseAccountName(wParam);
 	if (szProto != nullptr) {
 		bool isChat = db_get_b(wParam, szProto, "ChatRoom", false) != 0;
 		if (CallProtoService(szProto, PS_GETCAPS, isChat ? PFLAGNUM_4 : PFLAGNUM_1, 0) & (isChat ? PF4_GROUPCHATFILES : PF1_FILESEND)) {
@@ -359,7 +359,7 @@ static INT_PTR Proto_RecvFileT(WPARAM, LPARAM lParam)
 		return 0;
 
 	DBEVENTINFO dbei = {};
-	dbei.szModule = GetContactProto(ccs->hContact);
+	dbei.szModule = Proto_GetBaseAccountName(ccs->hContact);
 	dbei.timestamp = pre->timestamp;
 	dbei.eventType = EVENTTYPE_FILE;
 	dbei.flags = DBEF_UTF;

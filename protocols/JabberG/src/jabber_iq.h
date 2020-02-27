@@ -5,7 +5,7 @@ Jabber Protocol Plugin for Miranda NG
 Copyright (c) 2002-04  Santithorn Bunchua
 Copyright (c) 2005-12  George Hazan
 Copyright (c) 2007     Maxim Mluhov
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -37,7 +37,7 @@ typedef void (*IQ_USER_DATA_FREE_FUNC)(void *pUserData);
 #define JABBER_DEFAULT_IQ_REQUEST_TIMEOUT		120000
 
 typedef void (CJabberProto::*JABBER_IQ_HANDLER)(const TiXmlElement *iqNode, CJabberIqInfo *pInfo);
-typedef BOOL (CJabberProto::*JABBER_PERMANENT_IQ_HANDLER)(const TiXmlElement *iqNode, CJabberIqInfo *pInfo);
+typedef bool (CJabberProto::*JABBER_PERMANENT_IQ_HANDLER)(const TiXmlElement *iqNode, CJabberIqInfo *pInfo);
 
 #define JABBER_IQ_PARSE_CHILD_TAG_NODE  (1)
 #define JABBER_IQ_PARSE_CHILD_TAG_NAME  ((1<<1)|JABBER_IQ_PARSE_CHILD_TAG_NODE)

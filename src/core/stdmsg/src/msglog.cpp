@@ -1,6 +1,6 @@
 /*
 
-Copyright 2000-12 Miranda IM, 2012-19 Miranda NG team,
+Copyright 2000-12 Miranda IM, 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -527,7 +527,7 @@ void CLogWindow::LogEvents(MEVENT hDbEventFirst, int count, bool bAppend)
 		smre.hwndRichEditControl = m_rtf.GetHwnd();
 
 		MCONTACT hContact = db_mc_getSrmmSub(m_pDlg.m_hContact);
-		smre.Protocolname = (hContact != 0) ? GetContactProto(hContact) : m_pDlg.m_szProto;
+		smre.Protocolname = (hContact != 0) ? Proto_GetBaseAccountName(hContact) : m_pDlg.m_szProto;
 
 		if (fi.chrg.cpMin > 0) {
 			sel.cpMin = fi.chrg.cpMin;

@@ -1,4 +1,4 @@
-// Copyright © 2010-19 sss
+// Copyright © 2010-20 sss
 // 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -556,7 +556,7 @@ INT_PTR RecvMsgSvc(WPARAM w, LPARAM l)
 		return 0;
 	}
 	else if (!isContactHaveKey(ccs->hContact) && globals.bAutoExchange && globals.gpg_valid && globals.gpg_keyexist) {
-		char *proto = GetContactProto(ccs->hContact);
+		char *proto = Proto_GetBaseAccountName(ccs->hContact);
 		ptrA jid(db_get_utfa(ccs->hContact, proto, "jid", ""));
 		if (jid[0]) {
 			for (auto p : globals.Accounts) {
@@ -789,7 +789,7 @@ INT_PTR SendMsgSvc(WPARAM w, LPARAM l)
 
 	if (strstr(msg, "-----BEGIN PGP MESSAGE-----")) {
 		if (globals.bDebugLog)
-			globals.debuglog << std::string(time_str() + ": info: encrypted messge, let it go, name: " + toUTF8(Clist_GetContactDisplayName(ccs->hContact)));
+			globals.debuglog << std::string(time_str() + ": info: encrypted message, let it go, name: " + toUTF8(Clist_GetContactDisplayName(ccs->hContact)));
 		return Proto_ChainSend(w, ccs);
 	}
 
@@ -843,7 +843,7 @@ int HookSendMsg(WPARAM w, LPARAM l)
 			if (globals.bDebugLog)
 				globals.debuglog << std::string(time_str() + ": info: checking for autoexchange possibility, name: " + toUTF8(Clist_GetContactDisplayName(hContact)));
 
-			LPSTR proto = GetContactProto(hContact);
+			LPSTR proto = Proto_GetBaseAccountName(hContact);
 			ptrA jid(db_get_utfa(hContact, proto, "jid", ""));
 			if (jid[0]) {
 				if (globals.bDebugLog)

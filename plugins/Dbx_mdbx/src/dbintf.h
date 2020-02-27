@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -140,13 +140,30 @@ class CDbxMDBX : public MDatabaseCommon, public MZeroedObject
 {
 	friend class MDBXEventCursor;
 
-	__forceinline MDBX_txn* StartTran() const
+	struct Impl {
+		CDbxMDBX &pro;
+
+		CTimer m_timer;
+		void OnTimer(CTimer *pTimer)
+		{
+			pTimer->Stop();
+			pro.DBFlush(true);
+		}
+
+		Impl(CDbxMDBX &_p) :
+			pro(_p),
+			m_timer(Miranda_GetSystemWindow(), UINT_PTR(this))
+		{
+			m_timer.OnEvent = Callback(this, &Impl::OnTimer);
+		}
+	} m_impl;
+
+	__forceinline MDBX_txn* StartTran()
 	{
 		MDBX_txn *res = 0;
-		int rc = mdbx_txn_begin(m_env, nullptr, (m_bReadOnly) ? MDBX_RDONLY : 0, &res);
+		m_dbError = mdbx_txn_begin(m_env, nullptr, (m_bReadOnly) ? MDBX_RDONLY : 0, &res);
 		/* FIXME: throw an exception */
-		_ASSERT(rc == MDBX_SUCCESS);
-		UNREFERENCED_PARAMETER(rc);
+		_ASSERT(m_dbError == MDBX_SUCCESS);
 		return res;
 	}
 
@@ -163,19 +180,19 @@ class CDbxMDBX : public MDatabaseCommon, public MZeroedObject
 	TCHAR*   m_tszProfileName;
 	bool     m_safetyMode, m_bReadOnly, m_bShared, m_bEncrypted, m_bUsesPassword;
 
-	MDBX_env *m_env;
+	MDBX_env    *m_env;
 	CMDBX_txn_ro m_txn_ro;
+	int 			 m_dbError;
 
 	MDBX_dbi m_dbGlobal;
 	DBHeader m_header;
-	HWND     m_hwndTimer; // for flushing database
 
 	DBCachedContact m_ccDummy; // dummy contact to serve a cache item for MCONTACT = 0
 
 	////////////////////////////////////////////////////////////////////////////
 	// settings
 
-	MDBX_dbi  m_dbSettings;
+	MDBX_dbi     m_dbSettings;
 	MDBX_cursor *m_curSettings;
 
 	HANDLE   hService[2], hHook;
@@ -202,7 +219,7 @@ class CDbxMDBX : public MDatabaseCommon, public MZeroedObject
 	////////////////////////////////////////////////////////////////////////////
 	// modules
 
-	MDBX_dbi	m_dbModules;
+	MDBX_dbi	    m_dbModules;
 	MDBX_cursor *m_curModules;
 
 	std::map<uint32_t, std::string> m_Modules;
@@ -215,7 +232,7 @@ class CDbxMDBX : public MDatabaseCommon, public MZeroedObject
 	////////////////////////////////////////////////////////////////////////////
 	// encryption
 
-	MDBX_dbi  m_dbCrypto;
+	MDBX_dbi m_dbCrypto;
 
 	int      InitCrypt(void);
 	CRYPTO_PROVIDER* SelectProvider();
@@ -251,7 +268,7 @@ public:
 
 	STDMETHODIMP_(LONG)     GetEventCount(MCONTACT contactID) override;
 	STDMETHODIMP_(MEVENT)   AddEvent(MCONTACT contactID, DBEVENTINFO *dbe) override;
-	STDMETHODIMP_(BOOL)     DeleteEvent(MCONTACT contactID, MEVENT hDbEvent) override;
+	STDMETHODIMP_(BOOL)     DeleteEvent(MEVENT hDbEvent) override;
 	STDMETHODIMP_(BOOL)     EditEvent(MCONTACT contactID, MEVENT hDbEvent, DBEVENTINFO *dbe) override;
 	STDMETHODIMP_(LONG)     GetBlobSize(MEVENT hDbEvent) override;
 	STDMETHODIMP_(BOOL)     GetEvent(MEVENT hDbEvent, DBEVENTINFO *dbe) override;

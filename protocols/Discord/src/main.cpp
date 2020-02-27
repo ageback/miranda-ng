@@ -1,5 +1,5 @@
 /*
-Copyright © 2016-19 Miranda NG team
+Copyright © 2016-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -18,8 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "stdafx.h"
 
 CMPlugin g_plugin;
-
-HWND g_hwndHeartbeat;
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,22 +51,13 @@ extern "C" __declspec(dllexport) const MUUID MirandaInterfaces[] = { MIID_PROTOC
 IconItem g_iconList[] =
 {
 	{ LPGEN("Main icon"),   "main",      IDI_MAIN },
-	{ LPGEN("Group chats"), "groupchat", IDI_GROUPCHAT }
+	{ LPGEN("Group chats"), "groupchat", IDI_GROUPCHAT },
+	{ LPGEN("Call"),  "voicecall", IDI_VOICE_CALL },
+	{ LPGEN("Call ended"),  "voiceend",  IDI_VOICE_ENDED }
 };
 
 int CMPlugin::Load()
 {
-	g_hwndHeartbeat = CreateWindowEx(0, L"STATIC", nullptr, 0, 0, 0, 0, 0, nullptr, nullptr, nullptr, nullptr);
-
 	g_plugin.registerIcon("Protocols/Discord", g_iconList);
-	return 0;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// Unload
-
-int CMPlugin::Unload()
-{
-	DestroyWindow(g_hwndHeartbeat);
 	return 0;
 }

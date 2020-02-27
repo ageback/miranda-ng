@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -19,15 +19,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 //////////////////////////////////////////////////////////////////////////////
 
-void CVkProto::SendMsgAck(void *param)
-{
-	debugLogA("CVkProto::SendMsgAck");
-	CVkSendMsgParam *ack = (CVkSendMsgParam *)param;
-	Sleep(100);
-	ProtoBroadcastAck(ack->hContact, ACKTYPE_MESSAGE, ACKRESULT_SUCCESS, (HANDLE)ack->iMsgID);
-	delete ack;
-}
-
 int CVkProto::SendMsg(MCONTACT hContact, int, const char *szMsg)
 {
 	debugLogA("CVkProto::SendMsg");
@@ -38,7 +29,7 @@ int CVkProto::SendMsg(MCONTACT hContact, int, const char *szMsg)
 	LONG iUserID = getDword(hContact, bIsChat ? "vk_chat_id" : "ID", VK_INVALID_USER);
 
 	if (iUserID == VK_INVALID_USER || iUserID == VK_FEED_USER) {
-		ForkThread(&CVkProto::SendMsgAck, new CVkSendMsgParam(hContact));
+		ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_SUCCESS, 0);
 		return 0;
 	}
 
@@ -70,7 +61,7 @@ int CVkProto::SendMsg(MCONTACT hContact, int, const char *szMsg)
 	Push(pReq);
 
 	if (!m_vkOptions.bServerDelivery && !bIsChat)
-		ForkThread(&CVkProto::SendMsgAck, new CVkSendMsgParam(hContact, uMsgId));
+		ProtoBroadcastAsync(hContact, ACKTYPE_MESSAGE, ACKRESULT_SUCCESS, (HANDLE)uMsgId);
 
 	if (!IsEmpty(pszRetMsg))
 		SendMsg(hContact, 0, pszRetMsg);
@@ -147,7 +138,7 @@ int CVkProto::OnDbEventRead(WPARAM, LPARAM hDbEvent)
 	if (!hContact)
 		return 0;
 
-	CMStringA szProto(GetContactProto(hContact));
+	CMStringA szProto(Proto_GetBaseAccountName(hContact));
 	if (szProto.IsEmpty() || szProto != m_szModuleName)
 		return 0;
 

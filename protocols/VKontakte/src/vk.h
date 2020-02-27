@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -104,7 +104,6 @@ struct CVkProto;
 extern mir_cs csInstances;
 extern bool g_bMessageState;
 
-LPCSTR findHeader(NETLIBHTTPREQUEST *hdr, LPCSTR szField);
 bool wlstrstr(wchar_t *_s1, wchar_t *_s2);
 
 void InitIcons(void);

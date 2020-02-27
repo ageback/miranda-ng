@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -172,7 +172,7 @@ MIR_APP_DLL(void) Contact_Add(MCONTACT hContact, HWND hwndParent)
 		{	
 			m_hContact = hContact;
 			m_szName = Clist_GetContactDisplayName(hContact);
-			m_szProto = GetContactProto(hContact);
+			m_szProto = Proto_GetBaseAccountName(hContact);
 		}
 	};
 

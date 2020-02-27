@@ -13,13 +13,12 @@
 #include <string>
 
 #include <newpluginapi.h>
-#include <m_system_cpp.h>
+#include <m_system.h>
 #include <m_langpack.h>
 #include <m_avatars.h>
 #include <m_protocols.h>
 #include <m_popup_int.h>
 #include <m_message.h>
-#include <m_chat.h>
 #include <m_skin.h>
 #include <m_imgsrvc.h>
 #include <m_xml.h>

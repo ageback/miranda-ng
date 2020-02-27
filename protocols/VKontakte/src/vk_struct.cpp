@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2013-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -67,11 +67,8 @@ AsyncHttpRequest::AsyncHttpRequest(CVkProto *ppro, int iRequestType, LPCSTR _url
 
 void AsyncHttpRequest::Redirect(NETLIBHTTPREQUEST *nhr)
 {
-	for (int i = 0; i < nhr->headersCount; i++) {
-		LPCSTR szValue = nhr->headers[i].szValue;
-		if (!_stricmp(nhr->headers[i].szName, "Location"))
-			m_szUrl = szValue;
-	}
+	if (auto *pszHdr = Netlib_GetHeader(nhr, "Location"))
+		m_szUrl = pszHdr;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -149,7 +146,7 @@ CVkChatUser* CVkChatInfo::GetUserById(int user_id)
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-CVKOptions::CVKOptions(PROTO_INTERFACE *proto) :
+CVKOptions::CVKOptions(PROTO_INTERFACE* proto) :
 	bLoadLastMessageOnMsgWindowsOpen(proto, "LoadLastMessageOnMsgWindowsOpen", true),
 	bLoadOnlyFriends(proto, "LoadOnlyFriends", false),
 	bServerDelivery(proto, "BsDirect", true),
@@ -215,6 +212,7 @@ CVKOptions::CVKOptions(PROTO_INTERFACE *proto) :
 	iBBCForNews(proto, "BBCForNews", BBCSupport::bbcBasic),
 	iBBCForAttachments(proto, "BBCForAttachments", BBCSupport::bbcBasic),
 
+	iReqAuthTimeLater(proto, "ReqAuthTimeLater", 60 * 60 * 24),
 	iNewsInterval(proto, "NewsInterval", 15),
 	iNotificationsInterval(proto, "NotificationsInterval", 1),
 	iNewsAutoClearHistoryInterval(proto, "NewsAutoClearHistoryInterval", 60 * 60 * 24 * 3),

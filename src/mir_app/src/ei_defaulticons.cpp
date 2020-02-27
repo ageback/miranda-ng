@@ -1,7 +1,7 @@
 /*
 
 Copyright (C) 2009 Ricardo Pescuma Domenecci
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This is free software; you can redistribute it and/or
 modify it under the terms of the GNU Library General Public
@@ -35,7 +35,7 @@ static void SetVisibility(MCONTACT hContact, int apparentMode, bool clear)
 	if (hContact == 0)
 		return;
 
-	char *proto = GetContactProto(hContact);
+	char *proto = Proto_GetBaseAccountName(hContact);
 	if (IsEmpty(proto))
 		return;
 
@@ -68,7 +68,7 @@ static void SetGender(MCONTACT hContact, int gender, bool clear)
 	if (hContact == 0)
 		return;
 
-	char *proto = GetContactProto(hContact);
+	char *proto = Proto_GetBaseAccountName(hContact);
 	if (IsEmpty(proto))
 		return;
 
@@ -131,7 +131,7 @@ static void SetExtraIcons(MCONTACT hContact)
 	if (hContact == 0)
 		return;
 
-	char *proto = GetContactProto(hContact);
+	char *proto = Proto_GetBaseAccountName(hContact);
 	if ( IsEmpty(proto))
 		return;
 
@@ -154,7 +154,7 @@ static int SettingChanged(WPARAM hContact, LPARAM lParam)
 	if (hContact == 0)
 		return 0;
 
-	char *proto = GetContactProto(hContact);
+	char *proto = Proto_GetBaseAccountName(hContact);
 	if (IsEmpty(proto))
 		return 0;
 
@@ -199,7 +199,7 @@ static int DefaultOnClick(WPARAM hContact, LPARAM, LPARAM param)
 	if (hContact == 0)
 		return 0;
 
-	char *proto = GetContactProto(hContact);
+	char *proto = Proto_GetBaseAccountName(hContact);
 	if (IsEmpty(proto))
 		return 0;
 
@@ -265,7 +265,7 @@ static ProtoInfo* FindProto(const char *proto)
 
 static int ProtocolApplyIcon(WPARAM hContact, LPARAM)
 {
-	char *proto = GetContactProto(hContact);
+	char *proto = Proto_GetBaseAccountName(hContact);
 	if (IsEmpty(proto))
 		return 0;
 

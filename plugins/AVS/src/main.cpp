@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-04 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -88,7 +88,7 @@ static int ProtocolAck(WPARAM, LPARAM lParam)
 			ProcessAvatarInfo(ack->hContact, GAIR_FAILED, (PROTO_AVATAR_INFORMATION*)ack->hProcess, ack->szModule);
 		}
 		else if (ack->result == ACKRESULT_STATUS) {
-			char *szProto = GetContactProto(ack->hContact);
+			char *szProto = Proto_GetBaseAccountName(ack->hContact);
 			if (szProto == nullptr || Proto_NeedDelaysForAvatars(szProto)) {
 				// Queue
 				db_set_b(ack->hContact, "ContactPhoto", "NeedUpdate", 1);

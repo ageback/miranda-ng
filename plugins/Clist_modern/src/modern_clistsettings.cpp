@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-08 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -49,7 +49,7 @@ void cliCheckCacheItem(ClcCacheEntry *pdnce)
 	}
 
 	if (pdnce->szProto == nullptr) {
-		pdnce->szProto = GetContactProto(pdnce->hContact);
+		pdnce->szProto = Proto_GetBaseAccountName(pdnce->hContact);
 		if (pdnce->szProto && pdnce->tszName)
 			mir_free_and_nil(pdnce->tszName);
 	}
@@ -96,7 +96,7 @@ int GetContactCachedStatus(MCONTACT hContact)
 int ContactAdded(WPARAM hContact, LPARAM)
 {
 	if (!MirandaExiting())
-		Clist_ChangeContactIcon(hContact, g_clistApi.pfnIconFromStatusMode(GetContactProto(hContact), ID_STATUS_OFFLINE, hContact));
+		Clist_ChangeContactIcon(hContact, g_clistApi.pfnIconFromStatusMode(Proto_GetBaseAccountName(hContact), ID_STATUS_OFFLINE, hContact));
 
 	return 0;
 }
@@ -183,7 +183,7 @@ int ContactSettingChanged(WPARAM hContact, LPARAM lParam)
 	}
 	else if (!strcmp(cws->szModule, "Protocol")) {
 		if (!strcmp(cws->szSetting, "p")) {
-			pdnce->szProto = GetContactProto(hContact);
+			pdnce->szProto = Proto_GetBaseAccountName(hContact);
 			char *szProto = (cws->value.type == DBVT_DELETED) ? nullptr : cws->value.pszVal;
 			Clist_ChangeContactIcon(hContact, g_clistApi.pfnIconFromStatusMode(szProto, pdnce->getStatus(), hContact));
 		}

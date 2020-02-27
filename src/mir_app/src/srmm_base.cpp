@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team,
+Copyright (C) 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -557,7 +557,7 @@ void RedrawLog2(SESSION_INFO *si)
 {
 	si->LastTime = 0;
 	if (si->pLog)
-		si->pDlg->m_pLog->LogEvents(si->pLogEnd, TRUE);
+		si->pDlg->log()->LogEvents(si->pLogEnd, TRUE);
 }
 
 static void __cdecl phase2(SESSION_INFO *si)
@@ -753,7 +753,7 @@ bool CSrmmBaseDialog::ProcessHotkeys(int key, bool isShift, bool isCtrl, bool is
 			m_btnItalic.Click();
 			return true;
 
-		case 0x4b: // ctrl-k (paste clean text)
+		case 0x4b: // ctrl-k (text color)
 			m_btnColor.Push(!m_btnColor.IsPushed());
 			m_btnColor.Click();
 			return true;

@@ -1,5 +1,5 @@
 /*
-Copyright © 2016-19 Miranda NG team
+Copyright © 2016-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -36,8 +36,7 @@ void CDiscordProto::ExecuteRequest(AsyncHttpRequest *pReq)
 	if (pReq->m_bMainSite) {
 		pReq->flags |= NLHRF_PERSISTENT;
 		pReq->nlc = m_hAPIConnection;
-		if (m_szAccessCookie)
-			pReq->AddHeader("Cookie", m_szAccessCookie);
+		pReq->AddHeader("Cookie", m_szCookie);
 	}
 
 	debugLogA("Executing request #%d:\n%s", pReq->m_iReqNum, pReq->szUrl);
@@ -73,19 +72,16 @@ void CDiscordProto::OnLoggedIn()
 		ForkThread(&CDiscordProto::GatewayThread, nullptr);
 }
 
-static void __stdcall sttKillTimer(void *param)
-{
-	KillTimer(g_hwndHeartbeat, (UINT_PTR)param);
-}
-
 void CDiscordProto::OnLoggedOut()
 {
 	debugLogA("CDiscordProto::OnLoggedOut");
 	m_bOnline = false;
 	m_bTerminated = true;
 	m_iGatewaySeq = 0;
+	m_szTempToken = nullptr;
+	m_szCookie.Empty();
 
-	CallFunctionAsync(sttKillTimer, this);
+	m_impl.m_heartBeat.StopSafe();
 
 	ProtoBroadcastAck(0, ACKTYPE_STATUS, ACKRESULT_SUCCESS, (HANDLE)m_iStatus, ID_STATUS_OFFLINE);
 	m_iStatus = m_iDesiredStatus = ID_STATUS_OFFLINE;

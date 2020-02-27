@@ -1,6 +1,6 @@
 /*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -28,9 +28,7 @@ LIBJSON_DLL(JSONNode&) operator<<(JSONNode &json, const INT_PARAM &param)
 
 LIBJSON_DLL(JSONNode&) operator<<(JSONNode &json, const INT64_PARAM &param)
 {
-	char tmp[100];
-	_i64toa_s(param.iValue, tmp, _countof(tmp), 10);
-	json.push_back(JSONNode(param.szName, tmp));
+	json.push_back(JSONNode(param.szName, param.iValue));
 	return json;
 }
 
@@ -42,7 +40,11 @@ LIBJSON_DLL(JSONNode&) operator<<(JSONNode &json, const BOOL_PARAM &param)
 
 LIBJSON_DLL(JSONNode&) operator<<(JSONNode &json, const CHAR_PARAM &param)
 {
-	json.push_back(JSONNode(param.szName, param.szValue));
+	if (param.szValue == nullptr) {
+		JSONNode tmp(JSON_NULL); tmp.set_name(param.szName);
+		json.push_back(tmp);
+	}
+	else json.push_back(JSONNode(param.szName, param.szValue));
 	return json;
 }
 

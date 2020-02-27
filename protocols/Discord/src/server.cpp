@@ -1,5 +1,5 @@
 /*
-Copyright © 2016-19 Miranda NG team
+Copyright © 2016-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -52,10 +52,7 @@ void CDiscordProto::OnReceiveHistory(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest
 {
 	CDiscordUser *pUser = (CDiscordUser*)pReq->pUserInfo;
 
-	if (pReply->resultCode != 200)
-		return;
-
-	JSONNode root = JSONNode::parse(pReply->pData);
+	JsonReply root(pReply);
 	if (!root)
 		return;
 
@@ -72,9 +69,9 @@ void CDiscordProto::OnReceiveHistory(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest
 
 	LIST<JSONNode> arNodes(10, compareMsgHistory);
 	int iNumMessages = 0;
-	for (auto it = root.begin(); it != root.end(); ++it, ++iNumMessages) {
-		JSONNode &p = *it;
-		arNodes.insert(&p);
+	for (auto &it : root.data()) {
+		arNodes.insert(&it);
+		iNumMessages++;
 	}
 
 	for (auto &it : arNodes) {
@@ -153,37 +150,38 @@ void CDiscordProto::RetrieveMyInfo()
 
 void CDiscordProto::OnReceiveMyInfo(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest*)
 {
-	if (pReply->resultCode != 200) {
+	JsonReply root(pReply);
+	if (!root) {
 		ConnectionFailed(LOGINERR_WRONGPASSWORD);
 		return;
 	}
 
-	JSONNode root = JSONNode::parse(pReply->pData);
-	if (!root) {
-		ConnectionFailed(LOGINERR_NOSERVER);
-		return;
-	}
-
-	SnowFlake id = ::getId(root["id"]);
+	auto &data = root.data();
+	SnowFlake id = ::getId(data["id"]);
 	setId(0, DB_KEY_ID, id);
 
-	setByte(0, DB_KEY_MFA, root["mfa_enabled"].as_bool());
-	setDword(0, DB_KEY_DISCR, _wtoi(root["discriminator"].as_mstring()));
-	setWString(0, DB_KEY_NICK, root["username"].as_mstring());
-	m_wszEmail = root["email"].as_mstring();
+	setByte(0, DB_KEY_MFA, data["mfa_enabled"].as_bool());
+	setDword(0, DB_KEY_DISCR, _wtoi(data["discriminator"].as_mstring()));
+	setWString(0, DB_KEY_NICK, data["username"].as_mstring());
+	m_wszEmail = data["email"].as_mstring();
 
 	m_ownId = id;
-	for (int i = 0; i < pReply->headersCount; i++) {
-		if (!strcmp(pReply->headers[i].szName, "Set-Cookie")) {
+	
+	m_szCookie.Empty();
+	for (int i=0; i < pReply->headersCount; i++) {
+		if (!mir_strcmpi(pReply->headers[i].szName, "Set-Cookie")) {
 			char *p = strchr(pReply->headers[i].szValue, ';');
 			if (p) *p = 0;
-			m_szAccessCookie = mir_strdup(pReply->headers[i].szValue);
+			if (!m_szCookie.IsEmpty())
+				m_szCookie.Append("; ");
+
+			m_szCookie.Append(pReply->headers[i].szValue);
 		}
 	}
 
 	OnLoggedIn();
 
-	CheckAvatarChange(0, root["avatar"].as_mstring());
+	CheckAvatarChange(0, data["avatar"].as_mstring());
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -191,18 +189,14 @@ void CDiscordProto::OnReceiveMyInfo(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest*
 
 void CDiscordProto::OnReceiveGateway(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest*)
 {
-	if (pReply->resultCode != 200) {
-		ShutdownSession();
-		return;
-	}
-
-	JSONNode root = JSONNode::parse(pReply->pData);
+	JsonReply root(pReply);
 	if (!root) {
 		ShutdownSession();
 		return;
 	}
 
-	m_szGateway = root["url"].as_mstring();
+	auto &data = root.data();
+	m_szGateway = data["url"].as_mstring();
 	ForkThread(&CDiscordProto::GatewayThread, nullptr);
 }
 
@@ -241,30 +235,25 @@ void CDiscordProto::SetServerStatus(int iStatus)
 
 void CDiscordProto::OnReceiveCreateChannel(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest*)
 {
-	if (pReply->resultCode != 200)
-		return;
-
-	JSONNode root = JSONNode::parse(pReply->pData);
+	JsonReply root(pReply);
 	if (root)
-		OnCommandChannelCreated(root);
+		OnCommandChannelCreated(root.data());
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
 void CDiscordProto::OnReceiveMessageAck(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest*)
 {
-	if (pReply->resultCode != 200)
-		return;
-
-	JSONNode root = JSONNode::parse(pReply->pData);
+	JsonReply root(pReply);
 	if (!root)
 		return;
 
-	CMStringW wszToken(root["token"].as_mstring());
+	auto &data = root.data();
+	CMStringW wszToken(data["token"].as_mstring());
 	if (!wszToken.IsEmpty()) {
 		JSONNode props; props.set_name("properties");
 		JSONNode reply; reply << props;
-		reply << CHAR_PARAM("event", "ack_messages") << WCHAR_PARAM("token", root["token"].as_mstring());
+		reply << CHAR_PARAM("event", "ack_messages") << WCHAR_PARAM("token", data["token"].as_mstring());
 		Push(new AsyncHttpRequest(this, REQUEST_POST, "/track", nullptr, &reply));
 	}
 }
@@ -281,28 +270,29 @@ void CDiscordProto::OnReceiveToken(NETLIBHTTPREQUEST *pReply, AsyncHttpRequest*)
 		if (root) {
 			const JSONNode &captcha = root["captcha_key"].as_array();
 			if (captcha) {
-				for (auto& it : captcha)
-					if (it.as_mstring() == "captcha-required")
-						debugLogA("captcha required");
+				for (auto &it : captcha) {
+					if (it.as_mstring() == "captcha-required") {
+						MessageBoxW(NULL, TranslateT("The server requires you to enter the captcha. Miranda will redirect you to a browser now"), L"Discord", MB_OK | MB_ICONINFORMATION);
+						Utils_OpenUrl("https://discordapp.com/app");
+					}
+				}
 			}
 		}
 		ConnectionFailed(LOGINERR_WRONGPASSWORD);
 		return;
 	}
 
-	JSONNode root = JSONNode::parse(pReply->pData);
-	if (!root) {
-LBL_Error:
+	JsonReply root(pReply);
+	if (!root)
 		ConnectionFailed(LOGINERR_NOSERVER);
-		return;
+	else {
+		auto &data = root.data();
+		CMStringA szToken = data["token"].as_mstring();
+		if (szToken.IsEmpty())
+			return;
+
+		m_szAccessToken = szToken.Detach();
+		setString("AccessToken", m_szAccessToken);
+		RetrieveMyInfo();
 	}
-
-	CMStringA szToken = root["token"].as_mstring();
-	if (szToken.IsEmpty())
-		goto LBL_Error;
-
-	m_szAccessToken = szToken.Detach();
-	setString("AccessToken", m_szAccessToken);
-
-	RetrieveMyInfo();
 }

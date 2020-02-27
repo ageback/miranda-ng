@@ -113,7 +113,7 @@ wchar_t* getContactInfoT(BYTE type, MCONTACT hContact)
 	if (hContact == NULL)
 		return nullptr;
 
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto == nullptr)
 		return nullptr;
 
@@ -202,7 +202,7 @@ MCONTACT getContactFromString(const wchar_t *tszContact, DWORD dwFlags, int nMat
 		tmp.Format(L"<%s:%d>", _A2W(PROTOID_HANDLE), hContact);
 		bool bMatch = (tmp == tszContact);
 
-		char *szProto = GetContactProto(hContact);
+		char *szProto = Proto_GetBaseAccountName(hContact);
 		if (szProto == nullptr)
 			continue;
 
@@ -305,7 +305,7 @@ static int contactSettingChanged(WPARAM hContact, LPARAM lParam)
 {
 	DBCONTACTWRITESETTING *dbw = (DBCONTACTWRITESETTING*)lParam;
 
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto == nullptr)
 		return 0;
 
@@ -332,7 +332,7 @@ static int contactSettingChanged(WPARAM hContact, LPARAM lParam)
 			(isUid && (it->flags & CI_UNIQUEID))) {
 			/* remove from cache */
 			mir_free(it->tszContact);
-			arContactCache.remove(arContactCache.indexOf(&it));
+			arContactCache.removeItem(&it);
 			break;
 		}
 	}
@@ -357,7 +357,7 @@ int deinitContactModule()
 // result must be freed
 wchar_t* encodeContactToString(MCONTACT hContact)
 {
-	char *szProto = GetContactProto(hContact);
+	char *szProto = Proto_GetBaseAccountName(hContact);
 	if (szProto == nullptr)
 		return nullptr;
 

@@ -2,7 +2,7 @@
 
 Object UI extensions
 Copyright (c) 2008  Victor Pavlychko, George Hazan
-Copyright (C) 2012-19 Miranda NG team
+Copyright (C) 2012-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -450,6 +450,12 @@ CCtrlBase* CDlgBase::FindControl(HWND hwnd)
 void CDlgBase::AddTimer(CTimer *timer)
 {
 	m_timers.insert(timer);
+}
+
+void CDlgBase::RemoveTimer(UINT_PTR idEvent)
+{
+	CTimer search(nullptr, idEvent);
+	m_timers.remove(&search);
 }
 
 CTimer* CDlgBase::FindTimer(int idEvent)

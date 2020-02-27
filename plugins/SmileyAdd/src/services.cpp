@@ -1,6 +1,6 @@
 /*
 Miranda NG SmileyAdd Plugin
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (C) 2005-11 Boris Krasnovskiy All Rights Reserved
 Copyright (C) 2003-04 Rein-Peter de Boer
 
@@ -43,7 +43,7 @@ SmileyPackType* GetSmileyPack(const char *proto, MCONTACT hContact, SmileyPackCT
 		}
 
 		if (categoryName.IsEmpty() && !opt.UseOneForAll) {
-			char *protonam = GetContactProto(hContact);
+			char *protonam = Proto_GetBaseAccountName(hContact);
 			if (protonam != nullptr) {
 				DBVARIANT dbv;
 				if (db_get_ws(hContact, protonam, "Transport", &dbv) == 0) {
@@ -268,7 +268,7 @@ int RebuildContactMenu(WPARAM wParam, LPARAM)
 {
 	SmileyCategoryListType::SmileyCategoryVectorType &smc = *g_SmileyCategories.GetSmileyCategoryList();
 
-	char *protnam = GetContactProto(wParam);
+	char *protnam = Proto_GetBaseAccountName(wParam);
 	bool haveMenu = IsSmileyProto(protnam);
 	if (haveMenu && opt.UseOneForAll) {
 		unsigned cnt = 0;

@@ -717,6 +717,9 @@ Vista
 #  define CURL_DISABLE_LDAP 1
 #endif
 
+/* if SSL is enabled */
+#define USE_OPENSSL 1
+
 /* Define to use the Windows crypto library. */
 #define USE_WIN32_CRYPTO
 
@@ -739,8 +742,12 @@ Vista
 #define OS "i386-pc-win32"
 #elif defined(_M_X64) || defined(__x86_64__) /* x86_64 (MSVC >=2005 or gcc) */
 #define OS "x86_64-pc-win32"
-#elif defined(_M_IA64) /* Itanium */
+#elif defined(_M_IA64) || defined(__ia64__) /* Itanium */
 #define OS "ia64-pc-win32"
+#elif defined(_M_ARM_NT) || defined(__arm__) /* ARMv7-Thumb2 (Windows RT) */
+#define OS "thumbv7a-pc-win32"
+#elif defined(_M_ARM64) || defined(__aarch64__) /* ARM64 (Windows 10) */
+#define OS "aarch64-pc-win32"
 #else
 #define OS "unknown-pc-win32"
 #endif

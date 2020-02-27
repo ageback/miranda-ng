@@ -1,4 +1,4 @@
-// Copyright © 2010-19 sss
+// Copyright © 2010-20 sss
 // 
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -64,7 +64,7 @@ public:
 				int row = list_USERLIST.AddItem(L"", 0);
 				list_USERLIST.SetItemText(row, 0, name);
 
-				wchar_t *tmp = mir_a2u(GetContactProto(hContact));
+				wchar_t *tmp = mir_a2u(Proto_GetBaseAccountName(hContact));
 				list_USERLIST.SetItemText(row, 4, tmp);
 				mir_free(tmp);
 

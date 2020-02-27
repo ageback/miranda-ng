@@ -2,7 +2,7 @@
 
 Import plugin for Miranda NG
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -89,7 +89,7 @@ void CDbxSQLite::sql_server_sync(TSqlMessage *msg)
 {
 	msg->hDoneEvent = CreateEvent(NULL, FALSE, FALSE, NULL);
 	sql_server_sync_apc((UINT_PTR)msg);
-	PostMessage(m_hAPCWindow, WM_NULL, 0, 0);
+	PostMessage(Miranda_GetSystemWindow()->GetHwnd(), WM_NULL, 0, 0);
 	WaitForSingleObject(msg->hDoneEvent, INFINITE);
 	CloseHandle(msg->hDoneEvent);
 }

@@ -1,7 +1,7 @@
 /*
 Chat module plugin for Miranda IM
 
-Copyright 2000-12 Miranda IM, 2012-19 Miranda NG team,
+Copyright 2000-12 Miranda IM, 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -72,6 +72,69 @@ static SESSION_INFO* GetActiveSession(void)
 		return si;
 
 	return g_arSessions[0];
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////
+// Log manager functions
+//	Necessary to keep track of events in a window log
+
+static LOGINFO *LM_AddEvent(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd)
+{
+	if (!ppLogListStart || !ppLogListEnd)
+		return nullptr;
+
+	LOGINFO *node = (LOGINFO *)mir_calloc(sizeof(LOGINFO));
+	if (*ppLogListStart == nullptr) { // list is empty
+		*ppLogListStart = node;
+		*ppLogListEnd = node;
+		node->next = nullptr;
+		node->prev = nullptr;
+	}
+	else {
+		ppLogListStart[0]->prev = node;
+		node->next = *ppLogListStart;
+		*ppLogListStart = node;
+		ppLogListStart[0]->prev = nullptr;
+	}
+
+	return node;
+}
+
+static BOOL LM_TrimLog(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd, int iCount)
+{
+	LOGINFO *pTemp = *ppLogListEnd;
+	while (pTemp != nullptr && iCount > 0) {
+		*ppLogListEnd = pTemp->prev;
+		if (*ppLogListEnd == nullptr)
+			*ppLogListStart = nullptr;
+
+		mir_free(pTemp->ptszNick);
+		mir_free(pTemp->ptszUserInfo);
+		mir_free(pTemp->ptszText);
+		mir_free(pTemp->ptszStatus);
+		mir_free(pTemp);
+		pTemp = *ppLogListEnd;
+		iCount--;
+	}
+	ppLogListEnd[0]->next = nullptr;
+
+	return TRUE;
+}
+
+static BOOL LM_RemoveAll(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd)
+{
+	while (*ppLogListStart != nullptr) {
+		LOGINFO *pLast = ppLogListStart[0]->next;
+		mir_free(ppLogListStart[0]->ptszText);
+		mir_free(ppLogListStart[0]->ptszNick);
+		mir_free(ppLogListStart[0]->ptszStatus);
+		mir_free(ppLogListStart[0]->ptszUserInfo);
+		mir_free(*ppLogListStart);
+		*ppLogListStart = pLast;
+	}
+	*ppLogListStart = nullptr;
+	*ppLogListEnd = nullptr;
+	return TRUE;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -148,7 +211,7 @@ int SM_RemoveSession(const wchar_t *pszID, const char *pszModule, bool removeCon
 	for (auto &si : T) {
 		if (si->iType != GCW_SERVER && !mir_strcmpi(si->pszModule, pszModule)) {
 			SM_FreeSession(si, removeContact);
-			g_arSessions.remove(T.indexOf(&si));
+			g_arSessions.removeItem(&si);
 		}
 	}
 	return TRUE;
@@ -208,7 +271,7 @@ BOOL SM_AddEvent(const wchar_t *pszID, const char *pszModule, GCEVENT *gce, bool
 	if (si == nullptr)
 		return TRUE;
 
-	LOGINFO *li = g_chatApi.LM_AddEvent(&si->pLog, &si->pLogEnd);
+	LOGINFO *li = LM_AddEvent(&si->pLog, &si->pLogEnd);
 	si->iEventCount++;
 
 	li->iType = gce->iType;
@@ -222,7 +285,7 @@ BOOL SM_AddEvent(const wchar_t *pszID, const char *pszModule, GCEVENT *gce, bool
 	li->bIsHighlighted = bIsHighlighted;
 
 	if (g_Settings->iEventLimit > 0 && si->iEventCount > g_Settings->iEventLimit + 20) {
-		g_chatApi.LM_TrimLog(&si->pLog, &si->pLogEnd, si->iEventCount - g_Settings->iEventLimit);
+		LM_TrimLog(&si->pLog, &si->pLogEnd, si->iEventCount - g_Settings->iEventLimit);
 		si->bTrimmed = true;
 		si->iEventCount = g_Settings->iEventLimit;
 		return FALSE;
@@ -365,7 +428,7 @@ void SM_RemoveAll(void)
 {
 	for (auto &it : g_arSessions.rev_iter()) {
 		SM_FreeSession(it, false);
-		g_arSessions.remove(g_arSessions.indexOf(&it));
+		g_arSessions.removeItem(&it);
 	}
 }
 
@@ -758,7 +821,7 @@ static BOOL UM_RemoveUser(SESSION_INFO *si, const wchar_t *pszUID)
 		if (!mir_wstrcmpi(ui->pszUID, pszUID)) {
 			mir_free(ui->pszNick);
 			mir_free(ui->pszUID);
-			arUsers.remove(arUsers.indexOf(&ui));
+			arUsers.removeItem(&ui);
 			break;
 		}
 	}
@@ -778,69 +841,6 @@ BOOL UM_RemoveAll(SESSION_INFO *si)
 		si->arKeys.destroy();
 		si->arUsers.destroy();
 	}
-	return TRUE;
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// Log manager functions
-//	Necessary to keep track of events in a window log
-
-static LOGINFO* LM_AddEvent(LOGINFO **ppLogListStart, LOGINFO** ppLogListEnd)
-{
-	if (!ppLogListStart || !ppLogListEnd)
-		return nullptr;
-
-	LOGINFO *node = (LOGINFO*)mir_calloc(sizeof(LOGINFO));
-	if (*ppLogListStart == nullptr) { // list is empty
-		*ppLogListStart = node;
-		*ppLogListEnd = node;
-		node->next = nullptr;
-		node->prev = nullptr;
-	}
-	else {
-		ppLogListStart[0]->prev = node;
-		node->next = *ppLogListStart;
-		*ppLogListStart = node;
-		ppLogListStart[0]->prev = nullptr;
-	}
-
-	return node;
-}
-
-static BOOL LM_TrimLog(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd, int iCount)
-{
-	LOGINFO *pTemp = *ppLogListEnd;
-	while (pTemp != nullptr && iCount > 0) {
-		*ppLogListEnd = pTemp->prev;
-		if (*ppLogListEnd == nullptr)
-			*ppLogListStart = nullptr;
-
-		mir_free(pTemp->ptszNick);
-		mir_free(pTemp->ptszUserInfo);
-		mir_free(pTemp->ptszText);
-		mir_free(pTemp->ptszStatus);
-		mir_free(pTemp);
-		pTemp = *ppLogListEnd;
-		iCount--;
-	}
-	ppLogListEnd[0]->next = nullptr;
-
-	return TRUE;
-}
-
-static BOOL LM_RemoveAll(LOGINFO **ppLogListStart, LOGINFO **ppLogListEnd)
-{
-	while (*ppLogListStart != nullptr) {
-		LOGINFO *pLast = ppLogListStart[0]->next;
-		mir_free(ppLogListStart[0]->ptszText);
-		mir_free(ppLogListStart[0]->ptszNick);
-		mir_free(ppLogListStart[0]->ptszStatus);
-		mir_free(ppLogListStart[0]->ptszUserInfo);
-		mir_free(*ppLogListStart);
-		*ppLogListStart = pLast;
-	}
-	*ppLogListStart = nullptr;
-	*ppLogListEnd = nullptr;
 	return TRUE;
 }
 
@@ -877,8 +877,6 @@ static void ResetApi()
 	g_chatApi.UM_FindUserAutoComplete = ::UM_FindUserAutoComplete;
 	g_chatApi.UM_RemoveUser = ::UM_RemoveUser;
 
-	g_chatApi.LM_AddEvent = ::LM_AddEvent;
-	g_chatApi.LM_TrimLog = ::LM_TrimLog;
 	g_chatApi.LM_RemoveAll = ::LM_RemoveAll;
 
 	g_chatApi.SetOffline = ::SetOffline;

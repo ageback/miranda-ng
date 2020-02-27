@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -147,13 +147,10 @@ static BOOL dialogListPlugins(WIN32_FIND_DATA *fd, wchar_t *path, WPARAM, LPARAM
 	it.lParam = (LPARAM)dat;
 	pCtrl->InsertItem(&it);
 
-	if (bNoCheckbox) {
+	if (bNoCheckbox)
 		pCtrl->SetItemState(dat->iRow, 0x3000, LVIS_STATEIMAGEMASK);
-	}
-	else if (isPluginOnWhiteList(fd->cFileName)) {
-		if (!dat->bRequiresRestart)
-			dat->bWasChecked = true;
-	}
+	else if (isPluginOnWhiteList(fd->cFileName))
+		dat->bWasChecked = true;
 
 	if (dat->iRow != -1) {
 		// column 2: plugin short name
@@ -326,7 +323,7 @@ public:
 
 		// some plugins could be just loaded by Plugin Updater, load them first
 		for (auto &it : arPluginList)
-			if (!it->bWasLoaded && it->bWasChecked && !it->hInst)
+			if (!it->bWasLoaded && !it->bRequiresRestart && it->bWasChecked && !it->hInst)
 				LoadPluginDynamically(it);
 
 		// set checkboxes for all loaded plugins

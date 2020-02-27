@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org),
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org),
 Copyright (c) 2000-12 Miranda IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -371,7 +371,7 @@ MIR_APP_DLL(void) KillModuleSounds(HPLUGIN pPlugin)
 	auto T = arSounds.rev_iter();
 	for (auto &it : T)
 		if (it->pPlugin == pPlugin) {
-			arSounds.remove(T.indexOf(&it));
+			arSounds.removeItem(&it);
 			bFound = true;
 		}
 

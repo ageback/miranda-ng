@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 // Miranda NG: the free IM client for Microsoft* Windows*
 //
-// Copyright (C) 2012-19 Miranda NG team,
+// Copyright (C) 2012-20 Miranda NG team,
 // Copyright (c) 2000-09 Miranda ICQ/IM project,
 // all portions of this codebase are copyrighted to the people
 // listed in contributors.txt.
@@ -377,11 +377,11 @@ void SendQueue::showErrorControls(CMsgDialog *dat, const int showCmd) const
 		dat->m_hTabIcon = PluginConfig.g_iconErr;
 		item.mask = TCIF_IMAGE;
 		item.iImage = 0;
-		TabCtrl_SetItem(GetDlgItem(dat->m_pContainer->m_hwnd, IDC_MSGTABS), dat->m_iTabID, &item);
-		dat->m_dwFlags |= MWF_ERRORSTATE;
+		TabCtrl_SetItem(dat->m_pContainer->m_hwndTabs, dat->m_iTabID, &item);
+		dat->m_bErrorState = true;
 	}
 	else {
-		dat->m_dwFlags &= ~MWF_ERRORSTATE;
+		dat->m_bErrorState = false;
 		dat->m_hTabIcon = dat->m_hTabStatusIcon;
 	}
 
@@ -441,13 +441,13 @@ int SendQueue::ackMessage(CMsgDialog *dat, WPARAM wParam, LPARAM lParam)
 		if (dat) {
 			// "hard" errors are handled differently in multisend. There is no option to retry - once failed, they
 			// are discarded and the user is notified with a small log message.
-			if (!nen_options.iNoSounds && !(m_pContainer->m_dwFlags & CNT_NOSOUND))
+			if (!nen_options.iNoSounds && !m_pContainer->m_flags.m_bNoSound)
 				Skin_PlaySound("SendError");
 
 			mir_snwprintf(job.szErrorMsg, TranslateT("Delivery failure: %s"), (wchar_t*)ack->lParam);
 			job.iStatus = SQ_ERROR;
 			KillTimer(dat->GetHwnd(), TIMERID_MSGSEND + iFound);
-			if (!(dat->m_dwFlags & MWF_ERRORSTATE))
+			if (!dat->m_bErrorState)
 				handleError(dat, iFound);
 			return 0;
 		}
@@ -461,7 +461,7 @@ int SendQueue::ackMessage(CMsgDialog *dat, WPARAM wParam, LPARAM lParam)
 	DBEVENTINFO dbei = {};
 	dbei.eventType = EVENTTYPE_MESSAGE;
 	dbei.flags = DBEF_SENT | DBEF_UTF;
-	dbei.szModule = GetContactProto(job.hContact);
+	dbei.szModule = Proto_GetBaseAccountName(job.hContact);
 	dbei.timestamp = time(0);
 	dbei.cbBlob = (int)mir_strlen(job.szSendBuffer) + 1;
 
@@ -485,7 +485,7 @@ int SendQueue::ackMessage(CMsgDialog *dat, WPARAM wParam, LPARAM lParam)
 		db_event_setId(dbei.szModule, hNewEvent, (char*)ack->lParam);
 
 	if (m_pContainer)
-		if (!nen_options.iNoSounds && !(m_pContainer->m_dwFlags & CNT_NOSOUND))
+		if (!nen_options.iNoSounds && !m_pContainer->m_flags.m_bNoSound)
 			Skin_PlaySound("SendMsg");
 
 	Srmm_Broadcast(DM_APPENDMCEVENT, job.hContact, hNewEvent);
@@ -505,7 +505,7 @@ int SendQueue::ackMessage(CMsgDialog *dat, WPARAM wParam, LPARAM lParam)
 		checkQueue(dat);
 
 		int iNextFailed = findNextFailed(dat);
-		if (iNextFailed >= 0 && !(dat->m_dwFlags & MWF_ERRORSTATE))
+		if (iNextFailed >= 0 && !dat->m_bErrorState)
 			handleError(dat, iNextFailed);
 		else {
 			if (M.GetByte("AutoClose", 0)) {
@@ -553,7 +553,7 @@ int SendQueue::doSendLater(int iJobIndex, CMsgDialog *dat, MCONTACT hContact, bo
 		DBEVENTINFO dbei = {};
 		dbei.eventType = EVENTTYPE_MESSAGE;
 		dbei.flags = DBEF_SENT | DBEF_UTF;
-		dbei.szModule = GetContactProto(dat->m_hContact);
+		dbei.szModule = Proto_GetBaseAccountName(dat->m_hContact);
 		dbei.timestamp = time(0);
 		dbei.cbBlob = (int)mir_strlen(utfText) + 1;
 		dbei.pBlob = (PBYTE)(char*)utfText;
@@ -567,7 +567,7 @@ int SendQueue::doSendLater(int iJobIndex, CMsgDialog *dat, MCONTACT hContact, bo
 			dat->UpdateReadChars();
 		SendDlgItemMessage(dat->GetHwnd(), IDC_CLOSE, BM_SETIMAGE, IMAGE_ICON, (LPARAM)PluginConfig.g_buttonBarIcons[ICON_BUTTON_CANCEL]);
 		SendDlgItemMessage(dat->GetHwnd(), IDC_CLOSE, BUTTONADDTOOLTIP, (WPARAM)TranslateT("Close session"), BATF_UNICODE);
-		dat->m_dwFlags &= ~MWF_SAVEBTN_SAV;
+		dat->m_bSaveBtn = false;
 
 		if (!fAvail)
 			return 0;

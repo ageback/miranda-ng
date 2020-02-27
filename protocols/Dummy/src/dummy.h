@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2014-17 Robert Pösel, 2017-19 Miranda NG team
+Copyright (c) 2014-17 Robert Pösel, 2017-20 Miranda NG team
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -23,14 +23,6 @@ struct CDummyProto;
 #define DUMMY_ID_TEXT "UniqueIdText"
 #define DUMMY_ID_SETTING "UniqueIdSetting"
 #define DUMMY_KEY_ALLOW_SENDING "AllowSending"
-
-struct message_data
-{
-	message_data(MCONTACT hContact, const std::string &msg, int msgid) : hContact(hContact), msg(msg), msgid(msgid) {}
-	MCONTACT hContact;
-	std::string msg;
-	int msgid;
-};
 
 struct ttemplate
 {

@@ -2,7 +2,7 @@
 #define __MAJOR_VERSION          1
 #define __MINOR_VERSION          2
 #define __RELEASE_NUM            0
-#define __BUILD_NUM              5
+#define __BUILD_NUM              6
 
 // other stuff for Version resource
 #include <stdver.h>
@@ -13,4 +13,4 @@
 #define __DESCRIPTION           "A connection checker and auto away module. Also allows you to define the status Miranda should set on startup, configurable per protocol."
 #define __AUTHOR                "P Boon"
 #define __AUTHORWEB             "https://miranda-ng.org/p/StatusManager/"
-#define __COPYRIGHT             "© 2003-08 P. Boon, 2008-19 George Hazan"
+#define __COPYRIGHT             "© 2003-08 P. Boon, 2008-20 George Hazan"

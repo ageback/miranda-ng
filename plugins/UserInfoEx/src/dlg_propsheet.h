@@ -23,7 +23,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 typedef struct TPropSheet	PS, *LPPS;
 
-class CPsHdr;
+struct CPsHdr;
 class CPsTree;
 
 /***********************************************************************************************************
@@ -32,42 +32,42 @@ class CPsTree;
 
 class CPsTreeItem 
 {
-	int				_idDlg;			// resource id of the property page
-	LPDLGTEMPLATE	_pTemplate;		// locked template for the property page
-	HINSTANCE		_hInst;			// instance handle of the owning plugin dll
-	DLGPROC			_pfnDlgProc;	// dialog procedure for the property page
-	HWND			_hWnd;			// window handle for the property page if shown jet
-	DWORD			_dwFlags;		// some flags
-	int				_iPosition;		// initiating position if custom (used for sorting)
-	LPARAM			_initParam;
-	MCONTACT			_hContact;		// contact the page is accociated with (may be a meta subcontact if details dialog is shown for a meta contact)
-	LPCSTR			_pszProto;		// protocol the page is accociated with (is the contact's protocol if _hContact is not NULL)
-	LPCSTR			_pszPrefix;		// pointer to the dialog owning contact's protocol
+	int           _idDlg;      // resource id of the property page
+	LPDLGTEMPLATE _pTemplate;  // locked template for the property page
+	HINSTANCE     _hInst;      // instance handle of the owning plugin dll
+	DLGPROC       _pfnDlgProc; // dialog procedure for the property page
+	HWND          _hWnd;       // window handle for the property page if shown jet
+	DWORD         _dwFlags;    // some flags
+	int           _iPosition;  // initiating position if custom (used for sorting)
+	LPARAM        _initParam;
+	MCONTACT      _hContact;   // contact the page is accociated with (may be a meta subcontact if details dialog is shown for a meta contact)
+	LPCSTR        _pszProto;   // protocol the page is accociated with (is the contact's protocol if _hContact is not NULL)
+	LPCSTR        _pszPrefix;  // pointer to the dialog owning contact's protocol
 
-	HTREEITEM		_hItem;			// handle to the treeview item if visible (NULL if this item is hidden)
-	int				_iParent;		// index of the owning tree item
-	int				_iImage;		// index of treeview item's image
-	BYTE			_bState;		// initial state of this treeitem
-	LPSTR			_pszName;		// original name, given by plugin (not customized)
-	LPTSTR			_ptszLabel;		// string to setting in db holding information about this treeitem
+	HTREEITEM     _hItem;      // handle to the treeview item if visible (NULL if this item is hidden)
+	int           _iParent;    // index of the owning tree item
+	int           _iImage;     // index of treeview item's image
+	BYTE          _bState;     // initial state of this treeitem
+	LPSTR         _pszName;    // original name, given by plugin (not customized)
+	LPTSTR        _ptszLabel;  // string to setting in db holding information about this treeitem
 
 	LPCSTR	GlobalName();
 
-	int		Name(LPTSTR pszTitle, const BYTE bIsUnicode);
-	int		ItemLabel(const BYTE bReadDBValue);
-
+	int Icon(HIMAGELIST hIml, OPTIONSDIALOGPAGE *odp, BYTE bInitIconsOnly);
+	int ItemLabel(const BYTE bReadDBValue);
+	int Name(LPTSTR pszTitle, const BYTE bIsUnicode);
 	HICON	ProtoIcon();
-	int		Icon(HIMAGELIST hIml, OPTIONSDIALOGPAGE *odp, BYTE bInitIconsOnly);
 
 public:
 	CPsTreeItem();
 	~CPsTreeItem();
+
 	int Create(CPsHdr* pPsh, OPTIONSDIALOGPAGE *odp);
+	void Rename(const LPTSTR pszLabel);
 
 	__inline LPSTR Name() const { return _pszName; };
 	__inline LPCSTR Proto() const { return _pszProto; };
 	__inline LPTSTR Label() const { return _ptszLabel; };
-	void Rename( const LPTSTR pszLabel );
 	__inline MCONTACT hContact() const { return _hContact; };
 
 	__inline HWND Wnd() const { return _hWnd; };
@@ -132,17 +132,18 @@ public:
 #define PSTVF_STATE_CHANGED	0x00100000
 #define PSTVF_INITICONS		0x00200000		// flag that indicates the AddPage handler to load only basic stuff
 
-class CPsTree {
-	HWND					_hWndTree;
-	HIMAGELIST				_hImages;
-	CPsTreeItem**			_pItems;
-	int						_curItem;
-	int						_numItems;
-	DWORD					_dwFlags;
-	HWND					_hLabelEdit;
-	HTREEITEM				_hDragItem;
-	BYTE					_isDragging;
-	LPPS					_pPs;
+class CPsTree
+{
+	OBJLIST<CPsTreeItem> _pages;
+
+	HWND _hWndTree = nullptr;
+	HIMAGELIST _hImages = nullptr;
+	int _curItem = -1;
+	DWORD _dwFlags = 0;
+	HWND _hLabelEdit = nullptr;
+	HTREEITEM _hDragItem = nullptr;
+	bool _isDragging = false;
+	LPPS _pPs = nullptr;
 
 	WORD	SaveItemsState(LPCSTR pszGroup, HTREEITEM hRootItem, int& iItem);
 
@@ -150,56 +151,57 @@ public:
 	CPsTree(LPPS pPs);
 	~CPsTree();
 	
-	__inline void BeginDrag(HTREEITEM hDragItem) { _isDragging = TRUE; _hDragItem = hDragItem; };
-	__inline void EndDrag() { _isDragging = FALSE; _hDragItem = nullptr; };
-	__inline BYTE IsDragging() const { return _isDragging; };
-	__inline HTREEITEM DragItem() const { return _hDragItem; };
+	__inline void BeginDrag(HTREEITEM hDragItem) { _isDragging = true; _hDragItem = hDragItem; }
+	__inline void EndDrag() { _isDragging = false; _hDragItem = nullptr; }
+	__inline bool IsDragging() const { return _isDragging; }
+	__inline HTREEITEM DragItem() const { return _hDragItem; }
 
-	__inline DWORD Flags() const { return _dwFlags; };
-	__inline void Flags(DWORD dwFlags) { _dwFlags = dwFlags; };
-	__inline void AddFlags(DWORD dwFlags) { _dwFlags |= dwFlags; };
-	__inline void RemoveFlags(DWORD dwFlags) { _dwFlags &= ~dwFlags; };
+	__inline DWORD Flags() const { return _dwFlags; }
+	__inline void Flags(DWORD dwFlags) { _dwFlags = dwFlags; }
+	__inline void AddFlags(DWORD dwFlags) { _dwFlags |= dwFlags; }
+	__inline void RemoveFlags(DWORD dwFlags) { _dwFlags &= ~dwFlags; }
 
-	__inline int NumItems() const { return _numItems; };
-	__inline HWND Window() const { return _hWndTree; };
-	__inline HIMAGELIST ImageList() const { return _hImages; };
-	__inline BYTE IsIndexValid(const int index) const { return (index >= 0 && index < _numItems); };
+	__inline int NumItems() const { return _pages.getCount(); }
+	__inline HWND Window() const { return _hWndTree; }
+	__inline HIMAGELIST ImageList() const { return _hImages; }
+	__inline BYTE IsIndexValid(const int index) const { return (index >= 0 && index < _pages.getCount()); }
 	
-	__inline CPsTreeItem* TreeItem(int index) const { return (IsIndexValid(index) ? _pItems[index] : nullptr); };
-	__inline HTREEITEM TreeItemHandle(int index) const { return (IsIndexValid(index) ? _pItems[index]->Hti() : nullptr); };
+	__inline CPsTreeItem* TreeItem(int index) const { return (IsIndexValid(index) ? &_pages[index] : nullptr); };
+	__inline HTREEITEM TreeItemHandle(int index) const { return (IsIndexValid(index) ? _pages[index].Hti() : nullptr); };
 
 	__inline int CurrentItemIndex() const { return _curItem; };
 	__inline CPsTreeItem* CurrentItem() const { return TreeItem(CurrentItemIndex()); };
 
-	int				AddDummyItem(LPCSTR pszGroup);
-	BYTE			Create(HWND hWndTree, CPsHdr* pPsh);
-	BYTE			InitTreeItems(LPWORD needWidth);
-	
-	void			HideItem(const int iPageIndex);
+	int  AddDummyItem(LPCSTR pszGroup);
+	BYTE Create(HWND hWndTree, CPsHdr *pPsh);
+	BYTE InitTreeItems(LPWORD needWidth);
+	void Remove(HINSTANCE);
+
+	void HideItem(const int iPageIndex);
 	HTREEITEM ShowItem(const int iPageIndex, LPWORD needWidth);
 
 	HTREEITEM MoveItem(HTREEITEM hItem, HTREEITEM hInsertAfter, BYTE bAsChild = FALSE);
-	void			SaveState();
-	void			DBResetState();
+	void SaveState();
+	void DBResetState();
 
-	int				FindItemIndexByHandle(HTREEITEM hItem);
-	int				FindItemIndexByName(LPCSTR pszName);
+	int FindItemIndexByHandle(HTREEITEM hItem);
+	int FindItemIndexByName(LPCSTR pszName);
 
-	CPsTreeItem*	FindItemByName(LPCSTR pszName);
-	CPsTreeItem*	FindItemByHandle(HTREEITEM hItem);
-	HTREEITEM		FindItemHandleByName(LPCSTR pszName);
-	CPsTreeItem*	FindItemByResource(HINSTANCE hInst, int idDlg);
+	CPsTreeItem *FindItemByName(LPCSTR pszName);
+	CPsTreeItem *FindItemByHandle(HTREEITEM hItem);
+	HTREEITEM    FindItemHandleByName(LPCSTR pszName);
+	CPsTreeItem *FindItemByResource(HINSTANCE hInst, int idDlg);
 
-	int				BeginLabelEdit( HTREEITEM hItem );
-	int				EndLabelEdit( const BYTE bSave );
-	void			PopupMenu();
-	
-	void			OnIconsChanged();
-	BYTE			OnInfoChanged();
-	BYTE			OnSelChanging();
-	void			OnSelChanged(LPNMTREEVIEW lpnmtv);
-	void			OnCancel();
-	int				OnApply();
+	int  BeginLabelEdit(HTREEITEM hItem);
+	int  EndLabelEdit(const BYTE bSave);
+	void PopupMenu();
+
+	void OnIconsChanged();
+	BYTE OnInfoChanged();
+	BYTE OnSelChanging();
+	void OnSelChanged(LPNMTREEVIEW lpnmtv);
+	void OnCancel();
+	int  OnApply();
 };
 
 /***********************************************************************************************************
@@ -207,33 +209,30 @@ public:
  ***********************************************************************************************************/
 
 // internal flags for the PSP structure
-#define PSPF_CHANGED				4096
-#define PSPF_PROTOPREPENDED			8192	// the first token of the title is the protocol
+#define PSPF_CHANGED            4096
+#define PSPF_PROTOPREPENDED     8192 // the first token of the title is the protocol
 
-#define PSF_PROTOPAGESONLY			64		// load only contact's protocol pages
-#define PSF_PROTOPAGESONLY_INIT		128
+#define PSF_PROTOPAGESONLY        64 // load only contact's protocol pages
+#define PSF_PROTOPAGESONLY_INIT  128
 
 class CPsUpload;
 
-class CPsHdr 
+struct CPsHdr
 {
-public:
-	DWORD			_dwSize;		// size of this class in bytes
-	MCONTACT		_hContact;		// handle to the owning contact
-	LPCSTR			_pszProto;		// owning contact's protocol 
-	LPCSTR			_pszPrefix;		// name prefix for treeitem settings
-	CPsTreeItem**	_pPages;		// the pages
-	WORD			_numPages;		// number of pages
-	DWORD			_dwFlags;		// some option flags
-	HIMAGELIST		_hImages;		// the imagelist with all tree item icons
-	LIST<wchar_t>		_ignore;		// list of to skipp items when adding metasubcontacts pages
-	int				_nSubContact;	// index of a current subcontact
+	MCONTACT _hContact = 0;    // handle to the owning contact
+	LPCSTR   _pszProto = 0;    // owning contact's protocol 
+	LPCSTR   _pszPrefix = 0;   // name prefix for treeitem settings
+	CPsTreeItem** _pPages = 0; // the pages
+	WORD     _numPages = 0;    // number of pages
+	DWORD    _dwFlags = 0;     // some option flags
+	HIMAGELIST _hImages = 0;   // the imagelist with all tree item icons
+	LIST<wchar_t> _ignore;     // list of skipped items when adding metasubcontacts pages
+	int      _nSubContact = 0; // index of a current subcontact
 
 	CPsHdr();
 	~CPsHdr();
 	
 	void Free_pPages();
-
 };
 
 struct TAckInfo 
@@ -249,9 +248,11 @@ struct TPropSheet
 	MCONTACT	hContact;
 	CHAR pszProto[MAXMODULELABELLENGTH];
 
-	HANDLE hProtoAckEvent;		// eventhook for protocol acks
-	HANDLE hSettingChanged;	// eventhook searching for changed contact information
-	HANDLE hIconsChanged;		// eventhook for changed icons in icolib
+	HANDLE hProtoAckEvent;  // eventhook for protocol acks
+	HANDLE hSettingChanged; // eventhook searching for changed contact information
+	HANDLE hIconsChanged;   // eventhook for changed icons in icolib
+	HANDLE hModuleUnloaded; // eventhook for unloading modules
+
 	HFONT hCaptionFont;
 	HFONT hBoldFont;
 	RECT rcDisplay;
@@ -268,6 +269,6 @@ struct TPropSheet
 	CPsUpload *pUpload;
 };
 
-void	DlgContactInfoInitTreeIcons();
-void	DlgContactInfoLoadModule();
-void	DlgContactInfoUnLoadModule();
+void DlgContactInfoInitTreeIcons();
+void DlgContactInfoLoadModule();
+void DlgContactInfoUnLoadModule();

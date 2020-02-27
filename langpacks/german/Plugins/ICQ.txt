@@ -2,12 +2,14 @@
 ;============================================================
 ;  File: ICQ.dll
 ;  Plugin: ICQ-WIM protocol
-;  Version: 0.95.11.5
+;  Version: 0.95.11.8
 ;  Authors: George Hazan
 ;============================================================
 [ICQ protocol support for Miranda NG.]
 ICQ-Protokollunterstützung für Miranda NG.
 ;file \protocols\ICQ-WIM\res\resources.rc
+[Edit server groups]
+Servergruppen bearbeiten
 [UIN/e-mail:]
 UIN/E-Mail:
 [Password:]
@@ -21,7 +23,7 @@ Benachrichtigungen mittels Systemtray-Symbol
 [Launch mailbox in a browser on click]
 Beim anklicken Postfach im Browser öffnen
 [Show error popups]
-
+Fehler-Popups anzeigen
 [Notifications]
 Benachrichtigung
 [If a contact goes Offline, set this status instead and cache it for given timeout in seconds (0 - disabled)]
@@ -57,7 +59,7 @@ Zuletzt gesehen:
 [Enter ICQ Password]
 ICQ-Passwort eingeben
 [Enter a password:]
-
+Passwort eingeben:
 [Remember this session password]
 Dieses Sitzungspasswort merken
 ;file \protocols\ICQ-WIM\src\groupchats.cpp
@@ -87,11 +89,19 @@ Sie haben %d ungelesene E-Mails
 %s Serververbindung
 [Synchronize server groups]
 Servergruppen synchronisieren
+[Name]
+Name
+[Rename]
+Umbenennen
+[Delete]
+Löschen
+[Enter new group name]
+Neuen Gruppennamen eingeben
 [UIN/e-mail/phone]
 UIN/E-Mail/Telefon
 ;file \protocols\ICQ-WIM\src\server.cpp
 [You have not entered an ICQ number or password.\nConfigure this in Options -> Network -> ICQ and try again.]
-
+Sie haben keine ICQ-Nummer oder -Passwort eingegeben.\nGeben Sie dies unter Einstellungen > Netzwerk > ICQ ein und versuchen Sie es nochmal.
 [Connection failed.\nYour ICQ number or password was rejected (%d).]
 Verbindung fehlgeschlagen.\nICQ-Nummer oder Passwort wurden abgelehnt (%d).
 [Connection failed.\nThe server is temporarily unavailable (%d).]
@@ -106,3 +116,5 @@ Mitglied
 Unbekannter Sticker
 [User sent a sticker:]
 Benutzer hat einen Sticker gesendet:
+[Buddy addition failed]
+Hinzufügen eines Freundes fehlgeschlagen

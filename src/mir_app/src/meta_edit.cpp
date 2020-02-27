@@ -1,7 +1,7 @@
 /*
 former MetaContacts Plugin for Miranda IM.
 
-Copyright © 2014-19 Miranda NG team
+Copyright © 2014-20 Miranda NG team
 Copyright © 2004-07 Scott Ellis
 Copyright © 2004 Universite Louis PASTEUR, STRASBOURG.
 
@@ -61,7 +61,7 @@ static void FillContactList(HWND hList)
 		ListView_InsertItem(hList, &LvItem);
 
 		LvItem.iSubItem = 1; // id
-		char *szProto = GetContactProto(g_data.hContact[i]);
+		char *szProto = Proto_GetBaseAccountName(g_data.hContact[i]);
 		if (szProto) {
 			PROTOACCOUNT *pa = Proto_GetAccount(szProto);
 

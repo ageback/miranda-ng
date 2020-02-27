@@ -1,6 +1,6 @@
 /*
 
-Copyright 2000-12 Miranda IM, 2012-19 Miranda NG team,
+Copyright 2000-12 Miranda IM, 2012-20 Miranda NG team,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
 
@@ -120,7 +120,7 @@ bool CMsgDialog::OnInitDialog()
 {
 	CSuper::OnInitDialog();
 
-	m_szProto = GetContactProto(m_hContact);
+	m_szProto = Proto_GetBaseAccountName(m_hContact);
 	m_bIsMeta = db_mc_isMeta(m_hContact) != 0;
 	m_hTimeZone = TimeZone_CreateByContact(m_hContact, nullptr, TZF_KNOWNONLY);
 	m_wMinute = 61;
@@ -973,7 +973,8 @@ LRESULT CMsgDialog::WndProc_Message(UINT msg, WPARAM wParam, LPARAM lParam)
 {
 	switch (msg) {
 	case WM_MOUSEWHEEL:
-		LOG()->WndProc(msg, wParam, lParam);
+		if (m_pLog->GetType() == 0)
+			LOG()->WndProc(msg, wParam, lParam);
 		m_iLastEnterTime = 0;
 		return TRUE;
 

@@ -2,7 +2,7 @@
 
 Miranda NG: the free IM client for Microsoft* Windows*
 
-Copyright (C) 2012-19 Miranda NG team (https://miranda-ng.org)
+Copyright (C) 2012-20 Miranda NG team (https://miranda-ng.org)
 Copyright (c) 2000-08 Miranda ICQ/IM project,
 all portions of this codebase are copyrighted to the people
 listed in contributors.txt.
@@ -32,8 +32,8 @@ struct PROTO_INTERFACE;
 #include "statusmodes.h"
 
 #include <m_core.h>
+#include <m_system.h>
 #include <m_genmenu.h>
-#include <m_system_cpp.h>
 
 struct CCSDATA
 {
@@ -187,15 +187,6 @@ EXTERN_C MIR_APP_DLL(const char*) Proto_GetUniqueId(const char *szModuleName);
 // sets a name of a variable inside a protocol's module that identifies a contact
 
 EXTERN_C MIR_APP_DLL(void) Proto_SetUniqueId(const char *szProtoName, const char *szUniqueId);
-
-/////////////////////////////////////////////////////////////////////////////////////////
-// gets the network-level protocol associated with a contact
-// Returns a char* pointing to the asciiz name of the protocol or NULL if the
-// contact has no protocol. There is no need to free() it or anything.
-// This is the name of the module that actually accesses the network for that
-// contact.
-
-EXTERN_C MIR_APP_DLL(char*) GetContactProto(MCONTACT hContact);
 
 /////////////////////////////////////////////////////////////////////////////////////////
 // determines whether the specified contact has the given protocol in its chain

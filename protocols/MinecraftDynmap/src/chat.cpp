@@ -3,7 +3,7 @@
 Minecraft Dynmap plugin for Miranda Instant Messenger
 _____________________________________________
 
-Copyright © 2015-17 Robert Pösel, 2017-19 Miranda NG team
+Copyright © 2015-17 Robert Pösel, 2017-20 Miranda NG team
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -49,8 +49,7 @@ void MinecraftDynmapProto::UpdateChat(const char *name, const char *message, con
 int MinecraftDynmapProto::OnChatEvent(WPARAM, LPARAM lParam)
 {
 	GCHOOK *hook = reinterpret_cast<GCHOOK*>(lParam);
-
-	if(strcmp(hook->pszModule,m_szModuleName))
+	if(strcmp(hook->si->pszModule,m_szModuleName))
 		return 0;
 
 	switch(hook->iType) {

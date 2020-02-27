@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2015-19 Miranda NG team (https://miranda-ng.org)
+Copyright (c) 2015-20 Miranda NG team (https://miranda-ng.org)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -96,7 +96,7 @@ void CSkypeGCCreateDlg::btnOk_OnOk(CCtrlButton*)
 void CSkypeGCCreateDlg::FilterList(CCtrlClc *)
 {
 	for (auto &hContact : Contacts()) {
-		char *proto = GetContactProto(hContact);
+		char *proto = Proto_GetBaseAccountName(hContact);
 		if (mir_strcmp(proto, m_proto->m_szModuleName) || m_proto->isChatRoom(hContact))
 			if (HANDLE hItem = m_clc.FindContact(hContact))
 				m_clc.DeleteItem(hItem);
