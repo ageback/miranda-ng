@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: UInfoEx.dll
 ;  Plugin: User info ext
-;  Version: 0.8.5.2
+;  Version: 0.9.0.1
 ;  Authors: DeathAxe, Yasnovidyashii, Merlin, K. Romanov, Kreol
 ;============================================================
 [Extended UserInfo module for Miranda NG. Provides interface to edit all contact information.]
@@ -272,18 +272,6 @@ John Doe（1/10）
 子分组菜单
 [Account menu]
 帐户菜单
-[Extra icons]
-额外图标
-[Replace the following default icons:]
-替换以下默认图标：
-[Homepage]
-主页
-[Phone]
-电话
-[E-mail]
-电子邮件
-[Gender]
-性别
 [Misc]
 杂项
 [Show 'Restart' menu item]
@@ -532,12 +520,16 @@ IM 命名
 导出
 [Goto]
 转到
+[Phone]
+电话
 [Fax]
 传真
 [Cellular]
 移动电话
 [Custom phone]
 自定义电话
+[E-mail]
+电子邮件
 [Down arrow]
 向下箭头
 [Add]
@@ -1084,11 +1076,6 @@ sen.
 发送电子邮件
 [Memory allocation error!]
 内存分配错误！
-[E-mail (UInfoEx)]
-电子邮件（UInfoEx）
-;file \plugins\UserInfoEx\src\svc_gender.cpp
-[Gender (UInfoEx)]
-性别（UInfoEx）
 ;file \plugins\UserInfoEx\src\svc_homepage.cpp
 [User has no valid homepage]
 用户没有有效的主页
@@ -1096,11 +1083,6 @@ sen.
 查看主页
 [&Homepage]
 主页(&H)
-[Homepage (UInfoEx)]
-主页（UInfoEx）
-;file \plugins\UserInfoEx\src\svc_phone.cpp
-[Phone (UInfoEx)]
-电话（UInfoEx）
 ;file \plugins\UserInfoEx\src\svc_refreshci.cpp
 [[b]%s (%S)...[/b]\n%d Contacts remaining]
 [b]%s (%S)...[/b]\n%d 联系人重命名

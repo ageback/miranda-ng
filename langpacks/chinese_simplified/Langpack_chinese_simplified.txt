@@ -7,7 +7,7 @@ Last-Modified-Using: Miranda NG 0.95.11
 ;============================================================
 ;  File: miranda32/64.exe
 ;  Module: Miranda Core
-;  Version: 0.95.11
+;  Version: 0.95.12
 ;============================================================
 [Become idle if the following is left unattended:]
 如果无人看管，则变为空闲：
@@ -5242,7 +5242,7 @@ URL：
 ;============================================================
 ;  File: Clist_modern.dll
 ;  Plugin: Modern contact list
-;  Version: 0.9.1.8
+;  Version: 0.9.1.9
 ;  Authors: Artem Shpynov, Ricardo Pescuma Domenecci and Anton Senko based on clist_mw by Bethoven
 ;============================================================
 [Displays contacts, event notifications, protocol status with advanced visual modifications. Supported multi-window modifications, enhanced metacontact cooperation.]
@@ -7393,7 +7393,7 @@ GnuPG插件 - 选择公钥
 ;============================================================
 ;  File: DbEditorPP.dll
 ;  Plugin: Database editor++
-;  Version: 4.0.1.2
+;  Version: 4.0.1.3
 ;  Authors: Bio, Jonathan Gordon
 ;============================================================
 [Advanced Database Editor.]
@@ -7737,6 +7737,8 @@ Unicode 设置
 标准
 [Set password]
 设置密码
+[Error]
+错误
 [Database]
 数据库
 [Compact]
@@ -7894,7 +7896,7 @@ Miranda NG [%s] 数据库备份
 ;============================================================
 ;  File: Discord.dll
 ;  Plugin: Discord protocol
-;  Version: 0.6.2.1
+;  Version: 0.6.2.3
 ;  Authors: George Hazan
 ;============================================================
 [User details]
@@ -7923,6 +7925,10 @@ Miranda NG [%s] 数据库备份
 %s 服务器连接
 [User ID]
 用户 ID
+[Owners]
+拥有者
+[Participants]
+参加者
 [Preview]
 预览
 #muuid {2a1081d1-aee3-4091-b70d-ae46d09f9a7f}
@@ -8084,83 +8090,47 @@ Exchange 通知
 强制重新连接到Exchange服务器...
 [Connecting to Exchange ...]
 正在连接到 Exchange ...
-#muuid {8432b009-ff32-4727-aae6-a9035038fd58}
+#muuid {ee0543fb-711d-4ac8-b6c0-1dda4838107e}
 ;============================================================
 ;  File: Facebook.dll
 ;  Plugin: Facebook
-;  Version: 0.4.2.4
-;  Authors: Michal Zelinka, Robert Pösel
+;  Version: 0.1.0.3
+;  Authors: Miranda NG Team
 ;============================================================
 [E-mail:]
 电子邮件：
 [Password:]
 密码：
-[Text:]
-文字：
-[URL:]
-URL：
-[Cancel]
-取消
 [User details]
 用户详情
 [Contacts]
 联系人
-[Extra]
-额外
-[Advanced]
-高级
-[Bots challenge test]
-机器人挑战测试
-[Instruction:]
-指令：
-[Submit]
-提交
-[Messages]
-消息
+[Group chats]
+分组聊天
 [Do not open chat windows on creation]
 不要在创建时打开聊天窗口
-[Enter the text you see]
-输入你看到的文字
-[User &details]
-用户详情(&D)
-[User]
-用户
-[Notifications]
-通知
-[Unknown error]
-未知错误
-[Default]
-默认
-[files]
-文件
-[%s is typing a message...]
-%s 正在输入消息...
-[%s server connection]
-%s 服务器连接
-[Unable to initialize Netlib for %s.]
-无法为%s初始化Netlib。
+[Send group chat invitation]
+发送群聊邀请
+[&Invite]
+邀请(&I)
+[Cancel]
+取消
+[&Invite a user]
+邀请一个用户(&I)
 [Network]
 网络
 [Account]
 帐户
-[Events]
-事件
-[Messaging]
-消息
-[Other events]
-其他事件
-[Notification]
-通知
-[Other event]
-其他事件
-[Angry]
-生气
-[Love]
-爱
-[Sad]
-悲伤
-[Services...]
-服务...
+[%s server connection]
+%s 服务器连接
+[Participant]
+参加者
+[URL]
+URL
+[Title]
+标题
+[Description]
+描述
 #muuid {ce2c0401-f9e0-40d7-8e95-1a4197d7ab04}
 ;============================================================
 ;  File: FavContacts.dll
@@ -10185,7 +10155,7 @@ HTTP 共享新文件
 ;============================================================
 ;  File: ICQ.dll
 ;  Plugin: ICQ-WIM protocol
-;  Version: 0.95.11.6
+;  Version: 0.95.11.8
 ;  Authors: George Hazan
 ;============================================================
 [Password:]
@@ -10739,8 +10709,6 @@ Miranda NG 的 Jabber (XMPP) 协议支持。
 保持连接活动
 [Automatically delete contacts not in my roster]
 自动删除不在我的名单中的联系人
-[User directory:]
-用户目录：
 [Language for human-readable resources:]
 人类可读资源的语言：
 [File Transfer]
@@ -10749,8 +10717,6 @@ Miranda NG 的 Jabber (XMPP) 协议支持。
 允许通过直接的点对点连接发送文件
 [Specify external address:]
 指定外部地址：
-[Allow file sending through bytestream proxy server:]
-允许通过字节流代理服务器发送文件：
 [Miscellaneous]
 杂项
 [Hint:]
@@ -11127,8 +11093,6 @@ Jabber 代理注册
 可以发送和接收ping请求
 [Supports data forms]
 支持数据表单
-[Can request and respond to events relating to the delivery, display, and composition of messages]
-可以请求与回复与消息的传递，显示，和组成相关的事件
 [Supports vCard]
 支持 vCard
 [Supports XHTML formatting of chat messages]
@@ -11199,14 +11163,14 @@ Jabber 代理注册
 参加者
 [Moderator]
 主持人
-[Owners]
-拥有者
-[Moderators]
-主持人
-[Participants]
-参加者
 [Visitors]
 访问者
+[Participants]
+参加者
+[Moderators]
+主持人
+[Owners]
+拥有者
 [User %s is now banned.]
 用户 %s 现在被禁止。
 [User %s changed status to %s with message: %s]
@@ -11383,6 +11347,8 @@ Jabber 错误
 添加搜索目录
 [Use this proxy]
 使用这个代理
+[Use for uploads]
+用于上传
 [Commands...]
 命令...
 [Logon]
@@ -11557,8 +11523,6 @@ Jabber 书签错误
 收到 Http 认证请求
 [Jabber account chooser]
 Jabber 帐户选择器
-[Convert]
-转换
 [Add to Bookmarks]
 添加到书签
 [Commands]
@@ -11573,10 +11537,6 @@ Jabber 资源
 上次活跃
 [Server's Choice]
 服务器的选择
-[&Convert to Contact]
-转换为联系人(&C)
-[&Convert to Chat Room]
-转换为聊天室(&C)
 [Services...]
 服务...
 [Registered Transports]
@@ -12021,8 +11981,8 @@ Jabber 协议选项
 你必须在线
 [Messaging]
 消息
-[Send messages slower, but with full acknowledgment]
-发送消息较慢，但完全确认
+[Use message delivery receipts (XEP-0184)]
+使用消息传递回执 (XEP-0184)
 [Enable avatars]
 启用头像
 [Log chat state changes]
@@ -12875,7 +12835,7 @@ Jabber vCard：编辑电话号码
 ;============================================================
 ;  File: KeyboardNotify.dll
 ;  Plugin: Keyboard notify ext.
-;  Version: 1.5.7.7
+;  Version: 1.6.0.1
 ;  Authors: TioDuke
 ;============================================================
 [Flashes your keyboard LEDs when a message has arrived.]
@@ -12928,10 +12888,10 @@ Jabber vCard：编辑电话号码
 在线
 [Away]
 离开
-[Occupied]
-忙碌
 [Not available]
 不可用
+[Occupied]
+忙碌
 [Do not disturb]
 勿扰
 [Free for chat]
@@ -13064,6 +13024,10 @@ URL 事件
 键盘通知主题
 [All Files]
 所有文件
+[Keyboard Flash]
+键盘闪动
+[Events]
+事件
 [Accounts]
 帐户
 [Rules]
@@ -13072,10 +13036,6 @@ URL 事件
 闪动
 [Themes]
 主题
-[Keyboard Flash]
-键盘闪动
-[Events]
-事件
 #muuid {DA0B09F5-9C66-488C-AE37-8A5F191C9079}
 ;============================================================
 ;  File: LinkList.dll
@@ -13627,7 +13587,7 @@ C 库文件夹
 ;============================================================
 ;  File: Msg_Export.dll
 ;  Plugin: Message export
-;  Version: 3.1.2.3
+;  Version: 3.1.2.4
 ;  Authors: Kennet Nielsen, mod by ring0
 ;============================================================
 [Exports every message, URL or file you receive to a text file.]
@@ -14960,7 +14920,7 @@ Non-IM 联系人(&N)
 ;============================================================
 ;  File: NotesReminders.dll
 ;  Plugin: Sticky Notes & Reminders
-;  Version: 0.2.0.4
+;  Version: 0.2.1.0
 ;  Authors: Joe Kucera, Lubomir Kolev Ivanov, Georg Fischer
 ;============================================================
 [Sticky Notes & Reminders Implementation for Miranda NG.]
@@ -15113,6 +15073,8 @@ Miranda NG 的固定便签和提醒实现。
 所有笔记带到前面
 [New Reminder]
 新提醒
+[View Reminders]
+查看提醒
 [Delete All Notes]
 删除所有笔记
 [Show/Hide Notes]
@@ -15121,8 +15083,6 @@ Miranda NG 的固定便签和提醒实现。
 在顶层标题图标上
 [Delete All Reminders]
 删除所有提醒
-[View Reminders]
-查看提醒
 [Not on Top Caption Icon]
 不在顶层标题图标上
 [Hide Note Icon]
@@ -15145,16 +15105,6 @@ Miranda NG 的固定便签和提醒实现。
 添加新提醒
 [Notes && Reminders]
 笔记 && 提醒
-[New &Note]
-新笔记(&N)
-[Vie&w Notes]
-查看笔记(&W)
-[&Delete All Notes]
-删除所有笔记(&D)
-[&Bring All to Front]
-全部带到前面(&B)
-[Miranda could not load the Notes & Reminders plugin, Msftedit.dll is missing. If you are using WINE, please make sure you have Msftedit.dll installed. Press 'Yes' to continue loading Miranda.]
-Miranda无法加载 Notes & Reminders 插件，缺少Msftedit.dll。如果您使用的是WINE，请确保安装了Msftedit.dll。按'是'继续加载 Miranda。
 [Alerts]
 警告
 [Reminder triggered]
@@ -18398,7 +18348,7 @@ Miranda 相关
 ;============================================================
 ;  File: SkypeWeb.dll
 ;  Plugin: Skype protocol (Web)
-;  Version: 0.12.3.4
+;  Version: 0.12.3.5
 ;  Authors: Miranda NG team
 ;============================================================
 [Cancel]
@@ -18435,6 +18385,8 @@ Miranda 相关
 文件
 [Unknown event]
 未知事件
+[Preview]
+预览
 [Protocol icon]
 协议图标
 [Protocols]
@@ -18740,7 +18692,7 @@ d'Oh!
 ;============================================================
 ;  File: StatusManager.dll
 ;  Plugin: Status manager
-;  Version: 1.2.0.5
+;  Version: 1.2.0.6
 ;  Authors: P Boon
 ;============================================================
 [A connection checker and auto away module. Also allows you to define the status Miranda should set on startup, configurable per protocol.]
@@ -19186,7 +19138,7 @@ APM 恢复时重新连接
 ;============================================================
 ;  File: TabSRMM.dll
 ;  Plugin: TabSRMM
-;  Version: 3.6.0.1
+;  Version: 3.6.0.4
 ;  Authors: The Miranda developers team and contributors
 ;============================================================
 [IM and group chat module for Miranda NG.]
@@ -22096,7 +22048,7 @@ TranslitSwitcher
 ;============================================================
 ;  File: Twitter.dll
 ;  Plugin: Twitter protocol
-;  Version: 1.3.1.1
+;  Version: 1.3.1.2
 ;  Authors: dentist, omniwolf, Thief
 ;============================================================
 [Server:]
@@ -22149,7 +22101,7 @@ TranslitSwitcher
 ;============================================================
 ;  File: UInfoEx.dll
 ;  Plugin: User info ext
-;  Version: 0.8.5.2
+;  Version: 0.9.0.1
 ;  Authors: DeathAxe, Yasnovidyashii, Merlin, K. Romanov, Kreol
 ;============================================================
 [Extended UserInfo module for Miranda NG. Provides interface to edit all contact information.]
@@ -22418,18 +22370,6 @@ John Doe（1/10）
 子分组菜单
 [Account menu]
 帐户菜单
-[Extra icons]
-额外图标
-[Replace the following default icons:]
-替换以下默认图标：
-[Homepage]
-主页
-[Phone]
-电话
-[E-mail]
-电子邮件
-[Gender]
-性别
 [Misc]
 杂项
 [Show 'Restart' menu item]
@@ -22668,12 +22608,16 @@ IM 命名
 导出
 [Goto]
 转到
+[Phone]
+电话
 [Fax]
 传真
 [Cellular]
 移动电话
 [Custom phone]
 自定义电话
+[E-mail]
+电子邮件
 [Down arrow]
 向下箭头
 [Add]
@@ -23210,20 +23154,12 @@ sen.
 发送电子邮件
 [Memory allocation error!]
 内存分配错误！
-[E-mail (UInfoEx)]
-电子邮件（UInfoEx）
-[Gender (UInfoEx)]
-性别（UInfoEx）
 [User has no valid homepage]
 用户没有有效的主页
 [View Homepage]
 查看主页
 [&Homepage]
 主页(&H)
-[Homepage (UInfoEx)]
-主页（UInfoEx）
-[Phone (UInfoEx)]
-电话（UInfoEx）
 [[b]%s (%S)...[/b]\n%d Contacts remaining]
 [b]%s (%S)...[/b]\n%d 联系人重命名
 [Abort Refreshing Contact Details]
@@ -23416,7 +23352,7 @@ Miranda 相关
 ;============================================================
 ;  File: VKontakte.dll
 ;  Plugin: VKontakte protocol
-;  Version: 0.1.9.2
+;  Version: 0.1.10.0
 ;  Authors: Miranda NG team
 ;============================================================
 [Status message]

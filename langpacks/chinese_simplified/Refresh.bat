@@ -4,7 +4,7 @@ REM ====== VARIABLES ========
 
 set "language=chinese_simplified"
 set "oldLangpackPath="
-set "mirandaPath=D:\@Programs\Miranda-IM-NG\"
+set "mirandaPath=D:\!utils\Miranda-IM-NG\"
 
 REM =========================
 

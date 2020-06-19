@@ -32,3 +32,4 @@
 [Connection failed.\nUnknown error during sign on: %d]
 [Unknown sticker]
 [User sent a sticker:]
+[Buddy addition failed]

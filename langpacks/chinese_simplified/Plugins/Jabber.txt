@@ -76,8 +76,6 @@ Miranda NG 的 Jabber (XMPP) 协议支持。
 保持连接活动
 [Automatically delete contacts not in my roster]
 自动删除不在我的名单中的联系人
-[User directory:]
-用户目录：
 [Language for human-readable resources:]
 人类可读资源的语言：
 [File Transfer]
@@ -86,8 +84,6 @@ Miranda NG 的 Jabber (XMPP) 协议支持。
 允许通过直接的点对点连接发送文件
 [Specify external address:]
 指定外部地址：
-[Allow file sending through bytestream proxy server:]
-允许通过字节流代理服务器发送文件：
 [Miscellaneous]
 杂项
 [Hint:]
@@ -470,8 +466,6 @@ Jabber 代理注册
 可以发送和接收ping请求
 [Supports data forms]
 支持数据表单
-[Can request and respond to events relating to the delivery, display, and composition of messages]
-可以请求与回复与消息的传递，显示，和组成相关的事件
 [Supports vCard]
 支持 vCard
 [Supports XHTML formatting of chat messages]
@@ -544,14 +538,14 @@ Jabber 代理注册
 参加者
 [Moderator]
 主持人
-[Owners]
-拥有者
-[Moderators]
-主持人
-[Participants]
-参加者
 [Visitors]
 访问者
+[Participants]
+参加者
+[Moderators]
+主持人
+[Owners]
+拥有者
 [User %s is now banned.]
 用户 %s 现在被禁止。
 [User %s changed status to %s with message: %s]
@@ -730,6 +724,8 @@ Jabber 错误
 添加搜索目录
 [Use this proxy]
 使用这个代理
+[Use for uploads]
+用于上传
 [Commands...]
 命令...
 [Logon]
@@ -911,8 +907,6 @@ Jabber 书签错误
 ;file \protocols\JabberG\src\jabber_menu.cpp
 [Jabber account chooser]
 Jabber 帐户选择器
-[Convert]
-转换
 [Add to Bookmarks]
 添加到书签
 [Commands]
@@ -927,10 +921,6 @@ Jabber 资源
 上次活跃
 [Server's Choice]
 服务器的选择
-[&Convert to Contact]
-转换为联系人(&C)
-[&Convert to Chat Room]
-转换为聊天室(&C)
 [Services...]
 服务...
 [Registered Transports]
@@ -1380,8 +1370,8 @@ Jabber 协议选项
 你必须在线
 [Messaging]
 消息
-[Send messages slower, but with full acknowledgment]
-发送消息较慢，但完全确认
+[Use message delivery receipts (XEP-0184)]
+使用消息传递回执 (XEP-0184)
 [Enable avatars]
 启用头像
 [Log chat state changes]

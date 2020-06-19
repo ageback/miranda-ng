@@ -1,7 +1,7 @@
 ;============================================================
 ;  File: miranda32/64.exe
 ;  Module: Miranda Core
-;  Version: 0.95.11
+;  Version: 0.95.12
 ;============================================================
 ;file \src\core\stdautoaway\res\resource.rc
 [Become idle if the following is left unattended:]
@@ -1152,6 +1152,8 @@ Miranda NG 正在重启。\n请稍等...
 关于 Miranda NG
 [Credits >]
 贡献者 >
+[Hidden window]
+
 [Tray]
 托盘
 [&Hide/Show]
@@ -2521,7 +2523,7 @@ Miranda 范围
 <根分组>
 [&Move to group]
 移到分组(&M)
-;file \src\mir_app\src\netliblog.cpp
+;file \src\mir_app\src\netlib_log.cpp
 [Standard Netlib log]
 标准 Netlib 日志
 [No times]
@@ -2538,7 +2540,7 @@ Miranda 范围
 选择将创建日志文件的位置
 [Select program to be run]
 选择要运行的程序
-;file \src\mir_app\src\netlibopts.cpp
+;file \src\mir_app\src\netlib_opts.cpp
 [<mixed>]
 <混合>
 [<All connections>]

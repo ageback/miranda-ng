@@ -2,7 +2,7 @@
 ;============================================================
 ;  File: NotesReminders.dll
 ;  Plugin: Sticky Notes & Reminders
-;  Version: 0.2.0.4
+;  Version: 0.2.1.0
 ;  Authors: Joe Kucera, Lubomir Kolev Ivanov, Georg Fischer
 ;============================================================
 [Sticky Notes & Reminders Implementation for Miranda NG.]
@@ -157,6 +157,8 @@ Miranda NG 的固定便签和提醒实现。
 所有笔记带到前面
 [New Reminder]
 新提醒
+[View Reminders]
+查看提醒
 ;file \plugins\NotesAndReminders\src\main.cpp
 [Delete All Notes]
 删除所有笔记
@@ -166,8 +168,6 @@ Miranda NG 的固定便签和提醒实现。
 在顶层标题图标上
 [Delete All Reminders]
 删除所有提醒
-[View Reminders]
-查看提醒
 [Not on Top Caption Icon]
 不在顶层标题图标上
 [Hide Note Icon]
@@ -190,16 +190,6 @@ Miranda NG 的固定便签和提醒实现。
 添加新提醒
 [Notes && Reminders]
 笔记 && 提醒
-[New &Note]
-新笔记(&N)
-[Vie&w Notes]
-查看笔记(&W)
-[&Delete All Notes]
-删除所有笔记(&D)
-[&Bring All to Front]
-全部带到前面(&B)
-[Miranda could not load the Notes & Reminders plugin, Msftedit.dll is missing. If you are using WINE, please make sure you have Msftedit.dll installed. Press 'Yes' to continue loading Miranda.]
-Miranda无法加载 Notes & Reminders 插件，缺少Msftedit.dll。如果您使用的是WINE，请确保安装了Msftedit.dll。按'是'继续加载 Miranda。
 [Alerts]
 警告
 [Reminder triggered]
